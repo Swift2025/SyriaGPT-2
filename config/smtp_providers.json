@@ -1,0 +1,100 @@
+{
+  "gmail": {
+    "name": "Gmail",
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_port_ssl": 465,
+    "use_tls": true,
+    "use_ssl": false,
+    "requires_auth": true,
+    "app_password_required": true,
+    "instructions": "Use App Password instead of regular password. Enable 2FA and generate App Password in Google Account settings. Prefer TLS (port 587) over SSL (port 465) for better compatibility.",
+    "setup_url": "https://support.google.com/accounts/answer/185833",
+    "preferred_port": 587,
+    "preferred_encryption": "tls"
+  },
+  "hotmail": {
+    "name": "Hotmail",
+    "smtp_host": "smtp-mail.outlook.com",
+    "smtp_port": 587,
+    "smtp_port_ssl": 465,
+    "use_tls": true,
+    "use_ssl": false,
+    "requires_auth": true,
+    "app_password_required": false,
+    "instructions": "Use your regular Hotmail password. If 2FA is enabled, use App Password.",
+    "setup_url": "https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-8361e398-8af4-4e97-b147-6c6c4ac95353"
+  },
+  "outlook": {
+    "name": "Outlook",
+    "smtp_host": "smtp-mail.outlook.com",
+    "smtp_port": 587,
+    "smtp_port_ssl": 465,
+    "use_tls": true,
+    "use_ssl": false,
+    "requires_auth": true,
+    "app_password_required": false,
+    "instructions": "Use your regular Outlook password. If 2FA is enabled, use App Password.",
+    "setup_url": "https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-8361e398-8af4-4e97-b147-6c6c4ac95353"
+  },
+  "yahoo": {
+    "name": "Yahoo Mail",
+    "smtp_host": "smtp.mail.yahoo.com",
+    "smtp_port": 587,
+    "smtp_port_ssl": 465,
+    "use_tls": true,
+    "use_ssl": false,
+    "requires_auth": true,
+    "app_password_required": true,
+    "instructions": "Use App Password instead of regular password. Enable 2FA and generate App Password in Yahoo Account settings.",
+    "setup_url": "https://help.yahoo.com/kb/SLN15241.html"
+  },
+  "protonmail": {
+    "name": "ProtonMail",
+    "smtp_host": "127.0.0.1",
+    "smtp_port": 1025,
+    "smtp_port_ssl": 1025,
+    "use_tls": false,
+    "use_ssl": false,
+    "requires_auth": false,
+    "app_password_required": false,
+    "instructions": "ProtonMail requires Bridge application for SMTP access. Install ProtonMail Bridge and configure it.",
+    "setup_url": "https://protonmail.com/bridge/"
+  },
+  "icloud": {
+    "name": "iCloud Mail",
+    "smtp_host": "smtp.mail.me.com",
+    "smtp_port": 587,
+    "smtp_port_ssl": 465,
+    "use_tls": true,
+    "use_ssl": false,
+    "requires_auth": true,
+    "app_password_required": true,
+    "instructions": "Use App Password instead of regular password. Enable 2FA and generate App Password in Apple ID settings.",
+    "setup_url": "https://support.apple.com/en-us/HT208525"
+  },
+  "zoho": {
+    "name": "Zoho Mail",
+    "smtp_host": "smtp.zoho.com",
+    "smtp_port": 587,
+    "smtp_port_ssl": 465,
+    "use_tls": true,
+    "use_ssl": false,
+    "requires_auth": true,
+    "app_password_required": false,
+    "instructions": "Use your regular Zoho password or generate an App Password for better security.",
+    "setup_url": "https://www.zoho.com/mail/help/adminconsole/email-server-settings.html"
+  },
+  "custom": {
+    "name": "Custom SMTP Server",
+    "smtp_host": "",
+    "smtp_port": 587,
+    "smtp_port_ssl": 465,
+    "use_tls": true,
+    "use_ssl": false,
+    "requires_auth": true,
+    "app_password_required": false,
+    "instructions": "Configure your custom SMTP server settings. Contact your email provider for specific settings.",
+    "setup_url": ""
+  }
+}

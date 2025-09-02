@@ -1,0 +1,43 @@
+fastapi==0.116.1
+uvicorn==0.35.0
+pydantic==2.11.7
+starlette==0.47.2
+sqlalchemy==2.0.34
+psycopg2-binary==2.9.10
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+python-multipart==0.0.7
+alembic==1.12.1
+authlib==1.3.0
+httpx==0.25.2
+fastapi-users[oauth]==12.1.3
+fastapi-users[sqlalchemy]==12.1.3
+emails==0.6.0
+jinja2==3.1.2
+aiosmtplib==3.0.1
+python-dotenv==1.0.0
+pyotp==2.9.0
+qrcode[pil]==7.4.2
+slowapi==0.1.9
+
+# Web Scraping and HTTP
+beautifulsoup4==4.12.3
+requests==2.31.0
+aiohttp==3.9.1
+redis==5.0.1
+lxml>=5.1.0
+selenium==4.15.2
+webdriver-manager==4.0.1
+aiohttp==3.9.1
+
+# Vector Database and AI - Latest Gemini and GenAI
+numpy>=1.24.0
+qdrant-client>=1.15.0
+google-generativeai==0.8.0
+google-auth>=2.0.0
+
+# Async HTTP
+aiofiles==23.2.1
+
+# Testing and development
+requests==2.31.0

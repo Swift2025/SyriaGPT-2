@@ -1,0 +1,16 @@
+{
+  "google": {
+    "name": "google",
+    "display_name": "Google",
+    "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth",
+    "access_token_url": "https://oauth2.googleapis.com/token",
+    "user_info_url": "https://www.googleapis.com/oauth2/v2/userinfo",
+    "scope": "openid email profile",
+    "user_info_mapping": {
+      "provider_id": "id",
+      "email": "email",
+      "name": "name",
+      "picture": "picture"
+    }
+  }
+}

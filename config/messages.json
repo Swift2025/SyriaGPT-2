@@ -1,0 +1,56 @@
+{
+  "registration": {
+    "success": "Registration successful. Please verify your email address.",
+    "success_oauth": "Successfully registered via {provider}",
+    "email_verification_sent": "Registration successful. Please check your email to verify your account.",
+    "email_send_failed": "Registration successful. Email verification failed to send - please contact support."
+  },
+  "login": {
+    "success": "Login successful. Welcome back!",
+    "success_oauth": "Successfully logged in via {provider}",
+    "two_factor_required": "Please provide your 2FA code to complete login."
+  },
+  "verification": {
+    "success": "Email verified successfully",
+    "invalid_token": "Invalid or expired verification token",
+    "already_verified": "Email is already verified"
+  },
+  "errors": {
+    "invalid_credentials": "Invalid email or password",
+    "email_exists": "Email already registered",
+    "phone_exists": "Phone number already registered",
+    "registration_failed": "Registration failed: {error}",
+    "registration_failed_generic": "Registration failed. Please try again later.",
+    "oauth_no_email": "OAuth provider did not return email address",
+    "oauth_failed": "OAuth registration failed: {error}",
+    "oauth_callback_failed": "OAuth callback failed: {error}",
+    "oauth_not_configured": "OAuth provider '{provider}' is not configured",
+    "oauth_user_info_failed": "Failed to get user information from OAuth provider",
+    "verification_failed": "Verification failed: {error}",
+    "authorization_url_failed": "Failed to get authorization URL: {error}",
+        "invalid_provider": "OAuth provider '{provider}' is not supported",
+    "social_login_failed": "Social login failed. Please try again later.",
+    "session_cleanup_failed": "Session cleanup failed. Please try again later.",
+    "session_creation_failed": "Session creation failed. Please try again later."
+  },
+  "validation": {
+    "password_too_short": "Password must be at least 8 characters long",
+    "password_no_uppercase": "Password must contain at least one uppercase letter",
+    "password_no_lowercase": "Password must contain at least one lowercase letter",
+    "password_no_number": "Password must contain at least one number",
+    "password_no_special": "Password must contain at least one special character",
+    "password_strong": "Password is strong",
+    "phone_invalid": "Invalid phone number format"
+  },
+  "email": {
+    "subject_verification": "Welcome to Syria GPT - Verify Your Email",
+    "subject_welcome": "Welcome to Syria GPT - Account Verified!",
+    "verification_title": "Welcome to Syria GPT!",
+    "welcome_title": "Email Successfully Verified!"
+  },
+  "service": {
+    "healthy": "healthy",
+    "registration_service": "registration",
+    "version": "1.0.0"
+  }
+}
