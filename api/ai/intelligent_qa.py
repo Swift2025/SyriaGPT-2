@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status, Query
 from typing import Optional, List
 import logging
 import time
+import datetime
 
 from services.ai.intelligent_qa_service import intelligent_qa_service
 from models.schemas.request_models import QuestionCreateRequest
@@ -310,7 +311,7 @@ async def get_quota_status(current_user: User = Depends(get_current_user)):
             "error": str(e),
             "data": {
                 "gemini": {"status": "unknown", "error": str(e)},
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.datetime.now().isoformat()
             }
         }
         

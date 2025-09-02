@@ -214,7 +214,7 @@ Create a `.env` file in the root directory with the following variables:
 
 ```env
 # Database Configuration
-DATABASE_URL=postgresql://admin:admin123@localhost:5432/syriagpt
+DATABASE_URL=postgresql://admin:admin123@db:5432/syriagpt
 REDIS_URL=redis://localhost:6379
 
 # AI Configuration
