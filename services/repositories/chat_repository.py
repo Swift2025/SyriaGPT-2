@@ -369,8 +369,36 @@ class ChatRepository:
         """Get chat analytics for user"""
         start_time = time.time()
         try:
-            query = self.db.query(Chat).filter(Chat.user_id == uuid.UUID(user_id))
-            message_query = self.db.query(ChatMessage).join(Chat).filter(Chat.user_id == uuid.UUID(user_id))
+            # Handle user_id conversion safely
+            try:
+                if isinstance(user_id, str):
+                    user_uuid = uuid.UUID(user_id)
+                else:
+                    user_uuid = user_id
+            except ValueError as e:
+                logger.error(f"❌ Invalid user_id format: {user_id}, error: {e}")
+                raise ValueError(f"Invalid user_id format: {user_id}")
+            
+            # Check if user has any chats first
+            chat_exists = self.db.query(Chat).filter(Chat.user_id == user_uuid).first()
+            if not chat_exists:
+                # User has no chats, return default analytics
+                analytics = {
+                    "total_chats": 0,
+                    "total_messages": 0,
+                    "ai_responses": 0,
+                    "average_response_time_ms": 0.0,
+                    "most_used_language": "auto",
+                    "most_used_model": "gemini-1.5-flash"
+                }
+                
+                duration = time.time() - start_time
+                log_performance(logger, "get_chat_analytics", duration)
+                log_function_exit(logger, "get_chat_analytics", duration=duration)
+                return analytics
+            
+            query = self.db.query(Chat).filter(Chat.user_id == user_uuid)
+            message_query = self.db.query(ChatMessage).join(Chat).filter(Chat.user_id == user_uuid)
             
             if date_range_start:
                 query = query.filter(Chat.created_at >= date_range_start)
@@ -394,12 +422,12 @@ class ChatRepository:
             
             # Most used language
             most_used_language = self.db.query(Chat.language, func.count(Chat.id)).filter(
-                Chat.user_id == uuid.UUID(user_id)
+                Chat.user_id == user_uuid
             ).group_by(Chat.language).order_by(desc(func.count(Chat.id))).first()
             
             # Most used model
             most_used_model = self.db.query(Chat.model_preference, func.count(Chat.id)).filter(
-                Chat.user_id == uuid.UUID(user_id)
+                Chat.user_id == user_uuid
             ).group_by(Chat.model_preference).order_by(desc(func.count(Chat.id))).first()
             
             analytics = {

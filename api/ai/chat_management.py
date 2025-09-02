@@ -21,7 +21,7 @@ from models.schemas.response_models import (
 )
 from services.ai.chat_management_service import chat_management_service
 from services.auth.session_management_service import get_session_management_service
-from services.dependencies import get_current_user
+from services.auth_utils import get_current_user_simple as get_current_user
 from services.database.database import get_db
 from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance
 
@@ -34,7 +34,7 @@ router = APIRouter(prefix="/chat", tags=["Chat Management"])
 @router.post("/", response_model=ChatCreateResponse)
 async def create_chat(
     request: ChatCreateRequest,
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     💬 Create a new chat
@@ -45,7 +45,7 @@ async def create_chat(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         result = await chat_management_service.create_chat(
             user_id=user_id,
             title=request.title,
@@ -72,11 +72,62 @@ async def create_chat(
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# Statistics - Must be defined before /{chat_id} to avoid routing conflicts
+@router.get("/stats", response_model=ChatStatsResponse)
+async def get_chat_stats(
+    current_user = Depends(get_current_user)
+):
+    """
+    📈 Get chat statistics
+    
+    Retrieves comprehensive statistics about user's chat activity.
+    """
+    log_function_entry(logger, "get_chat_stats")
+    start_time = time.time()
+    
+    try:
+        user_id = str(current_user.id)
+        logger.debug(f"🔍 Getting chat stats for user_id: {user_id} (type: {type(user_id)})")
+        logger.debug(f"🔍 Current user ID type: {type(current_user.id)}")
+        
+        result = await chat_management_service.get_chat_analytics(user_id=user_id)
+        
+        analytics = result["data"]["analytics"]
+        
+        duration = time.time() - start_time
+        log_performance(logger, "get_chat_stats", duration)
+        log_function_exit(logger, "get_chat_stats", duration=duration)
+        
+        return ChatStatsResponse(
+            total_chats=analytics["total_chats"],
+            active_chats=analytics["total_chats"],  # Could be filtered
+            archived_chats=0,  # Could be calculated
+            pinned_chats=0,  # Could be calculated
+            total_messages=analytics["total_messages"],
+            ai_responses=analytics["ai_responses"],
+            average_messages_per_chat=analytics["total_messages"] / max(analytics["total_chats"], 1),
+            average_response_time_ms=analytics["average_response_time_ms"],
+            chats_created_today=0,  # Could be calculated
+            chats_created_this_week=0,  # Could be calculated
+            chats_created_this_month=0,  # Could be calculated
+            most_active_hour=0,  # Could be calculated
+            most_used_language=analytics["most_used_language"],
+            most_used_model=analytics["most_used_model"]
+        )
+    except Exception as e:
+        duration = time.time() - start_time
+        logger.error(f"❌ Error getting chat stats: {e}")
+        logger.error(f"❌ Error type: {type(e)}")
+        logger.error(f"❌ Error details: {str(e)}")
+        log_function_exit(logger, "get_chat_stats", duration=duration)
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @router.get("/{chat_id}", response_model=ChatDetailResponse)
 async def get_chat(
     chat_id: str = Path(..., description="Chat ID"),
     include_messages: bool = Query(True, description="Include chat messages"),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     📋 Get chat details
@@ -87,7 +138,7 @@ async def get_chat(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         result = await chat_management_service.get_chat(
             chat_id=chat_id,
             user_id=user_id,
@@ -120,7 +171,7 @@ async def get_chat(
 async def update_chat(
     request: ChatUpdateRequest,
     chat_id: str = Path(..., description="Chat ID"),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     ✏️ Update chat
@@ -131,7 +182,7 @@ async def update_chat(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         update_data = request.dict(exclude_unset=True)
         result = await chat_management_service.update_chat(
             chat_id=chat_id,
@@ -162,7 +213,7 @@ async def update_chat(
 @router.delete("/{chat_id}")
 async def delete_chat(
     chat_id: str = Path(..., description="Chat ID"),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     🗑️ Delete chat
@@ -173,7 +224,7 @@ async def delete_chat(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         result = await chat_management_service.delete_chat(
             chat_id=chat_id,
             user_id=user_id
@@ -212,7 +263,7 @@ async def search_chats(
     message_count_max: Optional[int] = Query(None, description="Maximum message count"),
     page: int = Query(1, ge=1, description="Page number"),
     page_size: int = Query(10, ge=1, le=100, description="Page size"),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     🔍 Search chats
@@ -223,7 +274,7 @@ async def search_chats(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         filters = {
             "title": title,
             "language": language,
@@ -271,7 +322,7 @@ async def search_chats(
 async def send_message(
     request: ChatMessageRequest,
     chat_id: str = Path(..., description="Chat ID"),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     💬 Send message
@@ -282,7 +333,7 @@ async def send_message(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         result = await chat_management_service.send_message(
             chat_id=chat_id,
             user_id=user_id,
@@ -321,7 +372,7 @@ async def get_chat_messages(
     chat_id: str = Path(..., description="Chat ID"),
     limit: int = Query(100, ge=1, le=1000, description="Number of messages to retrieve"),
     offset: int = Query(0, ge=0, description="Message offset"),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     📨 Get chat messages
@@ -332,7 +383,7 @@ async def get_chat_messages(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         # Get chat with messages
         result = await chat_management_service.get_chat(
             chat_id=chat_id,
@@ -374,7 +425,7 @@ async def get_chat_messages(
 async def add_feedback(
     request: ChatFeedbackRequest,
     message_id: str = Path(..., description="Message ID"),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     ⭐ Add feedback
@@ -385,7 +436,7 @@ async def add_feedback(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         result = await chat_management_service.add_feedback(
             message_id=message_id,
             user_id=user_id,
@@ -418,7 +469,7 @@ async def add_feedback(
 # Settings Operations
 @router.get("/settings", response_model=ChatSettingsResponse)
 async def get_chat_settings(
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     ⚙️ Get chat settings
@@ -429,7 +480,7 @@ async def get_chat_settings(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         result = await chat_management_service.get_chat_settings(user_id=user_id)
         
         duration = time.time() - start_time
@@ -447,7 +498,7 @@ async def get_chat_settings(
 @router.put("/settings", response_model=ChatSettingsResponse)
 async def update_chat_settings(
     request: ChatSettingsRequest,
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     ⚙️ Update chat settings
@@ -458,7 +509,7 @@ async def update_chat_settings(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         update_data = request.dict(exclude_unset=True)
         result = await chat_management_service.update_chat_settings(
             user_id=user_id,
@@ -486,7 +537,7 @@ async def get_chat_analytics(
     include_message_content: bool = Query(False, description="Include message content in analytics"),
     include_user_metrics: bool = Query(True, description="Include user metrics"),
     include_model_metrics: bool = Query(True, description="Include model metrics"),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     📊 Get chat analytics
@@ -497,7 +548,7 @@ async def get_chat_analytics(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         result = await chat_management_service.get_chat_analytics(
             user_id=user_id,
             date_range_start=date_range_start,
@@ -532,7 +583,7 @@ async def get_chat_analytics(
 @router.post("/bulk-action", response_model=ChatBulkActionResponse)
 async def bulk_action_chats(
     request: ChatBulkActionRequest,
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     🔄 Bulk action on chats
@@ -543,7 +594,7 @@ async def bulk_action_chats(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         result = await chat_management_service.bulk_action_chats(
             user_id=user_id,
             chat_ids=request.chat_ids,
@@ -572,7 +623,7 @@ async def bulk_action_chats(
 async def export_chat(
     request: ChatExportRequest,
     chat_id: str = Path(..., description="Chat ID"),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     📤 Export chat
@@ -583,7 +634,7 @@ async def export_chat(
     start_time = time.time()
     
     try:
-        user_id = current_user["id"]
+        user_id = str(current_user.id)
         result = await chat_management_service.export_chat(
             chat_id=chat_id,
             user_id=user_id,
@@ -615,49 +666,6 @@ async def export_chat(
 
 
 # Statistics
-@router.get("/stats", response_model=ChatStatsResponse)
-async def get_chat_stats(
-    current_user: Dict[str, Any] = Depends(get_current_user)
-):
-    """
-    📈 Get chat statistics
-    
-    Retrieves comprehensive statistics about user's chat activity.
-    """
-    log_function_entry(logger, "get_chat_stats")
-    start_time = time.time()
-    
-    try:
-        user_id = current_user["id"]
-        result = await chat_management_service.get_chat_analytics(user_id=user_id)
-        
-        analytics = result["data"]["analytics"]
-        
-        duration = time.time() - start_time
-        log_performance(logger, "get_chat_stats", duration)
-        log_function_exit(logger, "get_chat_stats", duration=duration)
-        
-        return ChatStatsResponse(
-            total_chats=analytics["total_chats"],
-            active_chats=analytics["total_chats"],  # Could be filtered
-            archived_chats=0,  # Could be calculated
-            pinned_chats=0,  # Could be calculated
-            total_messages=analytics["total_messages"],
-            ai_responses=analytics["ai_responses"],
-            average_messages_per_chat=analytics["total_messages"] / max(analytics["total_chats"], 1),
-            average_response_time_ms=analytics["average_response_time_ms"],
-            chats_created_today=0,  # Could be calculated
-            chats_created_this_week=0,  # Could be calculated
-            chats_created_this_month=0,  # Could be calculated
-            most_active_hour=0,  # Could be calculated
-            most_used_language=analytics["most_used_language"],
-            most_used_model=analytics["most_used_model"]
-        )
-    except Exception as e:
-        duration = time.time() - start_time
-        logger.error(f"❌ Error getting chat stats: {e}")
-        log_function_exit(logger, "get_chat_stats", duration=duration)
-        raise HTTPException(status_code=500, detail=str(e))
 
 
 # Session Management Endpoints (Merged from session management)
@@ -665,7 +673,7 @@ async def get_chat_stats(
 async def search_sessions(
     search_request: SessionSearchRequest = Depends(),
     db = Depends(get_db),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     🔍 Search sessions
@@ -678,7 +686,7 @@ async def search_sessions(
     
     try:
         # Check if user has admin privileges
-        if current_user.get("status") != "active":
+        if current_user.status != "active":
             raise HTTPException(
                 status_code=403,
                 detail="Insufficient permissions"
@@ -705,7 +713,7 @@ async def search_sessions(
 @router.get("/sessions/stats", response_model=SessionStatsResponse)
 async def get_session_stats(
     db = Depends(get_db),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     📊 Get session statistics
@@ -718,7 +726,7 @@ async def get_session_stats(
     
     try:
         # Check if user has admin privileges
-        if current_user.get("status") != "active":
+        if current_user.status != "active":
             raise HTTPException(
                 status_code=403,
                 detail="Insufficient permissions"
@@ -744,7 +752,7 @@ async def get_session_stats(
 async def get_session(
     session_id: str,
     db = Depends(get_db),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     📋 Get session details
@@ -763,7 +771,7 @@ async def get_session(
             raise HTTPException(status_code=404, detail="Session not found")
         
         # Check if user is accessing their own session or has admin privileges
-        if session.user_id != str(current_user["id"]) and current_user.get("status") != "active":
+        if session.user_id != str(current_user.id) and current_user.status != "active":
             raise HTTPException(status_code=403, detail="Insufficient permissions")
         
         duration = time.time() - start_time
@@ -785,7 +793,7 @@ async def get_session(
 async def get_session_detail(
     session_id: str,
     db = Depends(get_db),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     📋 Get detailed session information
@@ -804,7 +812,7 @@ async def get_session_detail(
             raise HTTPException(status_code=404, detail="Session not found")
         
         # Check if user is accessing their own session or has admin privileges
-        if session_detail.session.user_id != str(current_user["id"]) and current_user.get("status") != "active":
+        if session_detail.session.user_id != str(current_user.id) and current_user.status != "active":
             raise HTTPException(status_code=403, detail="Insufficient permissions")
         
         duration = time.time() - start_time
@@ -826,7 +834,7 @@ async def get_session_detail(
 async def create_session(
     create_request: SessionCreateRequest,
     db = Depends(get_db),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     ➕ Create new session
@@ -838,7 +846,7 @@ async def create_session(
     
     try:
         session_service = get_session_management_service()
-        result = session_service.create_session(db, str(current_user["id"]), create_request)
+        result = session_service.create_session(db, str(current_user.id), create_request)
         
         if not result:
             raise HTTPException(status_code=400, detail="Failed to create session")
@@ -863,7 +871,7 @@ async def update_session(
     session_id: str,
     update_request: SessionUpdateRequest,
     db = Depends(get_db),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     ✏️ Update session
@@ -883,7 +891,7 @@ async def update_session(
             raise HTTPException(status_code=404, detail="Session not found")
         
         # Check if user is updating their own session or has admin privileges
-        if session.user_id != str(current_user["id"]) and current_user.get("status") != "active":
+        if session.user_id != str(current_user.id) and current_user.status != "active":
             raise HTTPException(status_code=403, detail="Insufficient permissions")
         
         result = session_service.update_session(db, session_id, update_request)
@@ -910,7 +918,7 @@ async def update_session(
 async def revoke_session(
     session_id: str,
     db = Depends(get_db),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     🗑️ Revoke session
@@ -930,7 +938,7 @@ async def revoke_session(
             raise HTTPException(status_code=404, detail="Session not found")
         
         # Check if user is revoking their own session or has admin privileges
-        if session.user_id != str(current_user["id"]) and current_user.get("status") != "active":
+        if session.user_id != str(current_user.id) and current_user.status != "active":
             raise HTTPException(status_code=403, detail="Insufficient permissions")
         
         success = session_service.revoke_session(db, session_id)
@@ -958,7 +966,7 @@ async def extend_session(
     session_id: str,
     hours: int = Query(..., ge=1, le=720, description="Hours to extend session"),
     db = Depends(get_db),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     ⏰ Extend session
@@ -978,7 +986,7 @@ async def extend_session(
             raise HTTPException(status_code=404, detail="Session not found")
         
         # Check if user is extending their own session or has admin privileges
-        if session.user_id != str(current_user["id"]) and current_user.get("status") != "active":
+        if session.user_id != str(current_user.id) and current_user.status != "active":
             raise HTTPException(status_code=403, detail="Insufficient permissions")
         
         success = session_service.extend_session(db, session_id, hours)
@@ -1005,7 +1013,7 @@ async def extend_session(
 async def bulk_action_sessions(
     request: SessionBulkActionRequest,
     db = Depends(get_db),
-    current_user: Dict[str, Any] = Depends(get_current_user)
+    current_user = Depends(get_current_user)
 ):
     """
     🔄 Bulk action on sessions
@@ -1018,7 +1026,7 @@ async def bulk_action_sessions(
     
     try:
         # Check if user has admin privileges
-        if current_user.get("status") != "active":
+        if current_user.status != "active":
             raise HTTPException(status_code=403, detail="Insufficient permissions")
         
         session_service = get_session_management_service()

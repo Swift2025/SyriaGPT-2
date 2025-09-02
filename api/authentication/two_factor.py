@@ -8,12 +8,18 @@ from models.schemas.request_models import TwoFactorVerifyRequest
 from services.repositories import get_user_repository
 from services.auth import get_two_factor_auth_service
 from services.database.database import get_db
-from services.database.redis_service import redis_service
 import time
 from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
 import logging
+from typing import Dict, List
+from collections import defaultdict
+import threading
 
 logger = get_logger(__name__)
+
+# In-memory storage for rate limiting (simple alternative to Redis)
+_rate_limit_storage = defaultdict(dict)
+_rate_limit_lock = threading.Lock()
 
 class TwoFactorService:
     def __init__(self):
@@ -22,64 +28,82 @@ class TwoFactorService:
         self.attempt_window = 600  # 10 minutes window for attempts
     
     def _get_rate_limit_key(self, user_id: str) -> str:
-        """Generate Redis key for rate limiting"""
+        """Generate key for rate limiting"""
         return f"2fa_rate_limit:{user_id}"
     
     def _check_rate_limit(self, user_id: str) -> bool:
-        """Check if user is rate limited"""
+        """Check if user is rate limited using in-memory storage"""
         try:
-            if not redis_service.is_connected():
-                return False  # Allow if Redis is not available
-            
             key = self._get_rate_limit_key(user_id)
             current_time = int(time.time())
             
-            # Get current attempts
-            attempts_data = redis_service.get_custom_data(key)
-            if not attempts_data:
-                return False  # No previous attempts
-            
-            attempts = attempts_data.get("attempts", [])
-            window_start = current_time - self.attempt_window
-            
-            # Remove old attempts outside the window
-            recent_attempts = [t for t in attempts if t > window_start]
-            
-            # Check if user is locked out
-            if len(recent_attempts) >= self.max_attempts:
-                return True  # Rate limited
-            
-            return False
-            
+            with _rate_limit_lock:
+                # Get current attempts
+                attempts_data = _rate_limit_storage.get(key, {})
+                if not attempts_data:
+                    return False  # No previous attempts
+                
+                attempts = attempts_data.get("attempts", [])
+                window_start = current_time - self.attempt_window
+                
+                # Remove old attempts outside the window
+                recent_attempts = [t for t in attempts if t > window_start]
+                
+                # Check if user is locked out
+                if len(recent_attempts) >= self.max_attempts:
+                    return True  # Rate limited
+                
+                return False
+                
         except Exception as e:
             logger.error(f"Rate limit check failed: {e}")
             return False  # Allow if rate limiting fails
     
     def _record_attempt(self, user_id: str, success: bool):
-        """Record a 2FA attempt"""
+        """Record a 2FA attempt using in-memory storage"""
         try:
-            if not redis_service.is_connected():
-                return
-            
             key = self._get_rate_limit_key(user_id)
             current_time = int(time.time())
             
-            attempts_data = redis_service.get_custom_data(key) or {"attempts": []}
-            attempts = attempts_data.get("attempts", [])
-            
-            if success:
-                # Clear attempts on success
-                attempts_data["attempts"] = []
-            else:
-                # Add failed attempt
-                attempts.append(current_time)
-                attempts_data["attempts"] = attempts
-            
-            # Store with expiry
-            redis_service.cache_custom_data(key, attempts_data, expiry=self.lockout_duration)
-            
+            with _rate_limit_lock:
+                attempts_data = _rate_limit_storage.get(key, {"attempts": []})
+                attempts = attempts_data.get("attempts", [])
+                
+                if success:
+                    # Clear attempts on success
+                    attempts_data["attempts"] = []
+                else:
+                    # Add failed attempt
+                    attempts.append(current_time)
+                    attempts_data["attempts"] = attempts
+                
+                # Store with expiry (clean up old data)
+                attempts_data["last_updated"] = current_time
+                _rate_limit_storage[key] = attempts_data
+                
+                # Clean up old entries (older than 1 hour)
+                self._cleanup_old_entries()
+                
         except Exception as e:
             logger.error(f"Failed to record 2FA attempt: {e}")
+    
+    def _cleanup_old_entries(self):
+        """Clean up old rate limit entries to prevent memory leaks"""
+        try:
+            current_time = int(time.time())
+            cleanup_threshold = current_time - 3600  # 1 hour
+            
+            keys_to_remove = []
+            for key, data in _rate_limit_storage.items():
+                last_updated = data.get("last_updated", 0)
+                if last_updated < cleanup_threshold:
+                    keys_to_remove.append(key)
+            
+            for key in keys_to_remove:
+                del _rate_limit_storage[key]
+                
+        except Exception as e:
+            logger.error(f"Failed to cleanup old rate limit entries: {e}")
 
     def setup_2fa(self, current_user: User, db: Session):
         log_function_entry(logger, "setup_2fa")

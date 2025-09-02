@@ -1,6 +1,6 @@
 """Add chat tables
 
-Revision ID: add_chat_tables
+Revision ID: head
 Revises: add_oauth_token_fields
 Create Date: 2024-01-01 12:00:00.000000
 
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision = 'add_chat_tables'
-down_revision = 'add_oauth_token_fields'
+revision = 'head'
+down_revision = 'add_qa_pairs_table'
 branch_labels = None
 depends_on = None
 

@@ -9,7 +9,7 @@ from config.logging_config import get_logger, log_function_entry, log_function_e
 
 logger = get_logger(__name__)
 
-DATABASE_URL = str(os.getenv("DATABASE_URL", "postgresql+psycopg2://admin:admin123@db:5432/syriagpt"))
+DATABASE_URL = str(os.getenv("DATABASE_URL", "postgresql+psycopg2://admin:admin123@localhost:5432/syriagpt"))
 
 logger.debug(f"🔧 Initializing database connection with URL: {DATABASE_URL.split('@')[1] if '@' in DATABASE_URL else '[REDACTED]'}")
 

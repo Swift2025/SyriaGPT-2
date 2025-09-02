@@ -18,12 +18,245 @@ import logging
 import os
 import time
 from functools import wraps
+from contextlib import asynccontextmanager
+from typing import Dict, Any
 
 # Initialize verbose logging
 from config.logging_config import setup_logging, get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
 setup_logging()
 
 logger = get_logger(__name__)
+
+# Global initialization state
+initialization_state = {
+    "status": "not_started",  # not_started, in_progress, completed, failed
+    "start_time": None,
+    "components": {
+        "knowledge_base": {"status": "pending", "message": "Not started"},
+        "qdrant": {"status": "pending", "message": "Not started"},
+        "embedding_service": {"status": "pending", "message": "Not started"},
+        "gemini_service": {"status": "pending", "message": "Not started"}
+    },
+    "overall_progress": 0,
+    "error": None
+}
+
+class InitializationManager:
+    """Manages asynchronous initialization of the Syria GPT system"""
+    
+    def __init__(self):
+        self.state = initialization_state
+        self._initialization_task = None
+    
+    async def start_initialization(self):
+        """Start initialization in the background"""
+        if self.state["status"] == "in_progress":
+            logger.warning("Initialization already in progress")
+            return
+        
+        # Reset state for fresh initialization
+        self.state["status"] = "in_progress"
+        self.state["start_time"] = time.time()
+        self.state["overall_progress"] = 0
+        self.state["error"] = None
+        
+        # Reset component states
+        for component in self.state["components"].values():
+            component["status"] = "pending"
+            component["message"] = "Not started"
+        
+        # Start initialization in background
+        try:
+            self._initialization_task = asyncio.create_task(self._initialize_system())
+            logger.info("🚀 Background initialization started")
+        except Exception as e:
+            logger.error(f"Failed to start background initialization: {e}")
+            self.state["status"] = "failed"
+            self.state["error"] = str(e)
+            raise
+    
+    async def _initialize_system(self):
+        """Perform the actual initialization work"""
+        try:
+            logger.info("🚀 Starting Syria GPT system initialization...")
+            
+            # Step 1: Initialize knowledge base (25% of progress)
+            logger.debug("📚 Initializing knowledge base...")
+            self.state["components"]["knowledge_base"]["status"] = "in_progress"
+            self.state["components"]["knowledge_base"]["message"] = "Loading knowledge data..."
+            
+            from services.ai.intelligent_qa_service import intelligent_qa_service
+            knowledge_result = await intelligent_qa_service.initialize_system()
+            
+            if knowledge_result.get("status") == "success":
+                self.state["components"]["knowledge_base"]["status"] = "completed"
+                self.state["components"]["knowledge_base"]["message"] = "Knowledge base loaded successfully"
+            else:
+                self.state["components"]["knowledge_base"]["status"] = "failed"
+                self.state["components"]["knowledge_base"]["message"] = f"Failed: {knowledge_result.get('error', 'Unknown error')}"
+            
+            self.state["overall_progress"] = 25
+            
+            # Step 2: Check Qdrant connection (25% of progress)
+            logger.debug("🔍 Checking Qdrant connection...")
+            self.state["components"]["qdrant"]["status"] = "in_progress"
+            self.state["components"]["qdrant"]["message"] = "Testing connection..."
+            
+            from services.ai.qdrant_service import qdrant_service
+            qdrant_healthy = qdrant_service.is_connected()
+            
+            if qdrant_healthy:
+                self.state["components"]["qdrant"]["status"] = "completed"
+                self.state["components"]["qdrant"]["message"] = "Connected successfully"
+            else:
+                self.state["components"]["qdrant"]["status"] = "failed"
+                self.state["components"]["qdrant"]["message"] = "Connection failed"
+            
+            self.state["overall_progress"] = 50
+            
+            # Step 3: Check embedding service (25% of progress)
+            logger.debug("🧠 Checking embedding service...")
+            self.state["components"]["embedding_service"]["status"] = "in_progress"
+            self.state["components"]["embedding_service"]["message"] = "Testing service..."
+            
+            from services.ai.embedding_service import embedding_service
+            embedding_healthy = embedding_service.is_available()
+            
+            if embedding_healthy:
+                self.state["components"]["embedding_service"]["status"] = "completed"
+                self.state["components"]["embedding_service"]["message"] = "Service available"
+            else:
+                self.state["components"]["embedding_service"]["status"] = "failed"
+                self.state["components"]["embedding_service"]["message"] = "Service unavailable"
+            
+            self.state["overall_progress"] = 75
+            
+            # Step 4: Check Gemini service (25% of progress)
+            logger.debug("🤖 Checking Gemini service...")
+            self.state["components"]["gemini_service"]["status"] = "in_progress"
+            self.state["components"]["gemini_service"]["message"] = "Testing service..."
+            
+            from services.ai.gemini_service import gemini_service
+            gemini_healthy = gemini_service.is_available()
+            
+            if gemini_healthy:
+                self.state["components"]["gemini_service"]["status"] = "completed"
+                self.state["components"]["gemini_service"]["message"] = "Service available"
+            else:
+                self.state["components"]["gemini_service"]["status"] = "failed"
+                self.state["components"]["gemini_service"]["message"] = "Service unavailable"
+            
+            self.state["overall_progress"] = 100
+            
+            # Determine overall status
+            failed_components = sum(1 for comp in self.state["components"].values() if comp["status"] == "failed")
+            
+            if failed_components == 0:
+                self.state["status"] = "completed"
+                logger.info("✅ Syria GPT system initialization completed successfully")
+            elif failed_components < len(self.state["components"]):
+                self.state["status"] = "completed"
+                logger.warning(f"⚠️ Syria GPT system initialized with {failed_components} failed components")
+            else:
+                self.state["status"] = "failed"
+                logger.error("❌ Syria GPT system initialization failed completely")
+            
+            duration = time.time() - self.state["start_time"]
+            logger.info(f"🚀 System initialization completed in {duration:.2f} seconds")
+            
+        except Exception as e:
+            duration = time.time() - self.state["start_time"] if self.state["start_time"] else 0
+            self.state["status"] = "failed"
+            self.state["error"] = str(e)
+            logger.error(f"❌ System initialization failed after {duration:.2f} seconds: {e}")
+    
+    def get_status(self) -> Dict[str, Any]:
+        """Get current initialization status"""
+        return self.state.copy()
+    
+    def is_ready(self) -> bool:
+        """Check if the system is ready to handle requests"""
+        return self.state["status"] == "completed"
+    
+    def get_health_status(self) -> Dict[str, Any]:
+        """Get health status for health check endpoint"""
+        if self.state["status"] == "not_started":
+            return {
+                "status": "starting",
+                "message": "System is starting up",
+                "initialization": self.state
+            }
+        elif self.state["status"] == "in_progress":
+            return {
+                "status": "initializing",
+                "message": "System is initializing",
+                "initialization": self.state
+            }
+        elif self.state["status"] == "completed":
+            failed_components = sum(1 for comp in self.state["components"].values() if comp["status"] == "failed")
+            if failed_components == 0:
+                return {
+                    "status": "healthy",
+                    "message": "System is fully operational",
+                    "initialization": self.state
+                }
+            else:
+                return {
+                    "status": "degraded",
+                    "message": f"System is operational with {failed_components} failed components",
+                    "initialization": self.state
+                }
+        else:  # failed
+            return {
+                "status": "unhealthy",
+                "message": "System initialization failed",
+                "initialization": self.state
+            }
+    
+    async def restart_initialization(self) -> bool:
+        """Restart initialization if it has failed or completed"""
+        if self.state["status"] == "in_progress":
+            logger.warning("Cannot restart initialization while it's in progress")
+            return False
+        
+        try:
+            logger.info("🔄 Restarting system initialization...")
+            await self.start_initialization()
+            return True
+        except Exception as e:
+            logger.error(f"Failed to restart initialization: {e}")
+            return False
+
+# Global initialization manager instance
+init_manager = InitializationManager()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Manage application lifespan with async initialization"""
+    logger.info("🚀 Starting Syria GPT application...")
+    
+    try:
+        # Start initialization in background
+        await init_manager.start_initialization()
+        logger.info("✅ Background initialization started successfully")
+    except Exception as e:
+        logger.error(f"❌ Failed to start background initialization: {e}")
+        # Continue startup even if initialization fails
+    
+    yield
+    
+    logger.info("🛑 Shutting down Syria GPT application...")
+    
+    # Cancel any ongoing initialization
+    if init_manager._initialization_task and not init_manager._initialization_task.done():
+        logger.info("🔄 Cancelling ongoing initialization...")
+        init_manager._initialization_task.cancel()
+        try:
+            await init_manager._initialization_task
+        except asyncio.CancelledError:
+            logger.info("✅ Initialization task cancelled successfully")
+        except Exception as e:
+            logger.warning(f"⚠️ Error while cancelling initialization task: {e}")
 
 # Security schemes for Swagger UI
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
@@ -69,7 +302,7 @@ app = FastAPI(
     - 🤖 **AI-Powered Q&A** using Google Gemini
     - 💬 **AI Chat Management** with persistent conversations and session management
     - 🔍 **Vector Search** with Qdrant
-    - 💾 **Redis Caching** for fast responses
+    - 🔍 **Vector Search** with Qdrant for intelligent responses
     - 🌍 **Multilingual Support** (Arabic & English)
     - 📧 **Email Verification**
     - 🔐 **Two-Factor Authentication**
@@ -111,7 +344,8 @@ app = FastAPI(
             "name": "SMTP Configuration",
             "description": "Dynamic SMTP configuration and email provider management"
         }
-    ]
+    ],
+    lifespan=lifespan
 )
 
 logger.debug("[CONFIG] Configuring rate limiter and exception handlers...")
@@ -285,43 +519,7 @@ def custom_openapi():
 
 app.openapi = custom_openapi
 
-@app.on_event("startup")
-async def startup_event():
-    """
-    Initialize the Syria GPT Q&A system on startup.
-    This loads all knowledge data from the data folder into Redis and Qdrant.
-    """
-    log_function_entry(logger, "startup_event")
-    start_time = time.time()
-    
-    try:
-        logger.info("[STARTUP] Starting Syria GPT application...")
-        
-        # Import here to avoid circular imports
-        logger.debug("[IMPORT] Importing intelligent Q&A service...")
-        from services.ai.intelligent_qa_service import intelligent_qa_service
-        logger.debug("[IMPORT] Intelligent Q&A service imported successfully")
-        
-        # Initialize the system
-        logger.debug("[INIT] Initializing intelligent Q&A system...")
-        init_result = await intelligent_qa_service.initialize_system()
-        
-        if init_result.get("status") == "success":
-            duration = time.time() - start_time
-            log_performance(logger, "System initialization", duration)
-            logger.info("[STARTUP] Syria GPT system initialized successfully")
-        else:
-            error_msg = init_result.get('error', 'Unknown error')
-            logger.error(f"[STARTUP] System initialization failed: {error_msg}")
-            log_error_with_context(logger, Exception(error_msg), "startup_event", init_result=init_result)
-            
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "startup_event", duration=duration)
-        logger.error(f"[STARTUP] Startup initialization failed: {e}")
-        # Don't fail the startup, just log the error
-    
-    log_function_exit(logger, "startup_event", duration=time.time() - start_time)
+# Startup event removed - replaced with lifespan context manager
 
 @app.get("/")
 def read_root():
@@ -333,7 +531,7 @@ def read_root():
             "message": "Welcome to Syria GPT!", 
             "version": "1.0.0",
             "ai_provider": "Google Gemini",
-            "features": ["Intelligent Q&A", "Vector Search", "Redis Caching", "Multilingual Support"]
+            "features": ["Intelligent Q&A", "Vector Search", "Multilingual Support"]
         }
         
         duration = time.time() - start_time
@@ -651,16 +849,19 @@ def get_oauth_refresh_url(email: str):
 def health_check():
     """
     System health check - No authentication required
+    Returns the current health status including initialization progress
     """
     log_function_entry(logger, "health_check")
     start_time = time.time()
     
     try:
+        health_status = init_manager.get_health_status()
+        
         response = {
-            "status": "healthy",
             "service": "Syria GPT API",
             "version": "1.0.0",
-            "timestamp": "2024-01-01T00:00:00Z"
+            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            **health_status
         }
         
         duration = time.time() - start_time
@@ -672,4 +873,173 @@ def health_check():
         duration = time.time() - start_time
         log_error_with_context(logger, e, "health_check", duration=duration)
         log_function_exit(logger, "health_check", duration=duration)
+        raise
+
+@app.get("/test/initialization", tags=["system"])
+def get_initialization_status():
+    """
+    Get detailed initialization status - No authentication required
+    Returns the current status of all initialization components
+    """
+    log_function_entry(logger, "get_initialization_status")
+    start_time = time.time()
+    
+    try:
+        status = init_manager.get_status()
+        
+        response = {
+            "initialization_status": status,
+            "is_ready": init_manager.is_ready(),
+            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        }
+        
+        duration = time.time() - start_time
+        log_performance(logger, "Initialization status check", duration)
+        log_function_exit(logger, "get_initialization_status", result=response, duration=duration)
+        return response
+        
+    except Exception as e:
+        duration = time.time() - start_time
+        log_error_with_context(logger, e, "get_initialization_status", duration=duration)
+        log_function_exit(logger, "get_initialization_status", duration=duration)
+        raise
+
+@app.post("/test/initialization/restart", tags=["system"])
+async def restart_initialization():
+    """
+    Restart system initialization - No authentication required
+    Useful for administrators to restart failed initialization
+    """
+    log_function_entry(logger, "restart_initialization")
+    start_time = time.time()
+    
+    try:
+        success = await init_manager.restart_initialization()
+        
+        if success:
+            response = {
+                "status": "success",
+                "message": "Initialization restart initiated",
+                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            }
+        else:
+            response = {
+                "status": "error",
+                "message": "Failed to restart initialization",
+                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            }
+        
+        duration = time.time() - start_time
+        log_performance(logger, "Initialization restart", duration)
+        log_function_exit(logger, "restart_initialization", result=response, duration=duration)
+        return response
+        
+    except Exception as e:
+        duration = time.time() - start_time
+        log_error_with_context(logger, e, "restart_initialization", duration=duration)
+        log_function_exit(logger, "restart_initialization", duration=duration)
+        raise
+
+@app.get("/test/database", tags=["system"])
+def check_database():
+    """
+    Database health check and migration status - No authentication required
+    Returns detailed database information and missing tables
+    """
+    log_function_entry(logger, "check_database")
+    start_time = time.time()
+    
+    try:
+        from services.database.health_check import check_database_health, get_database_info
+        from services.database.database import get_db
+        
+        db = next(get_db())
+        
+        # Check database health
+        health = check_database_health(db)
+        
+        # Get database info
+        info = get_database_info(db)
+        
+        db.close()
+        
+        response = {
+            "database_health": health,
+            "database_info": info,
+            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "recommendations": []
+        }
+        
+        # Add recommendations based on health status
+        if health.get("missing_tables"):
+            response["recommendations"].append({
+                "action": "run_migrations",
+                "message": f"Run database migrations to create missing tables: {', '.join(health['missing_tables'])}",
+                "command": "alembic upgrade head"
+            })
+        
+        if health.get("status") == "unhealthy":
+            response["recommendations"].append({
+                "action": "check_connection",
+                "message": "Check database connection and credentials",
+                "details": "Verify DATABASE_URL environment variable and database server status"
+            })
+        
+        duration = time.time() - start_time
+        log_performance(logger, "Database check", duration)
+        log_function_exit(logger, "check_database", result=response, duration=duration)
+        return response
+        
+    except Exception as e:
+        duration = time.time() - start_time
+        log_error_with_context(logger, e, "check_database", duration=duration)
+        log_function_exit(logger, "check_database", duration=duration)
+        raise
+
+@app.post("/test/database/migrate", tags=["system"])
+def run_database_migration():
+    """
+    Run database migrations - No authentication required
+    Attempts to run pending database migrations
+    """
+    log_function_entry(logger, "run_database_migration")
+    start_time = time.time()
+    
+    try:
+        import subprocess
+        import sys
+        
+        # Run alembic upgrade head
+        result = subprocess.run(
+            [sys.executable, "-m", "alembic", "upgrade", "head"],
+            capture_output=True,
+            text=True,
+            cwd="."
+        )
+        
+        if result.returncode == 0:
+            response = {
+                "status": "success",
+                "message": "Database migrations completed successfully",
+                "output": result.stdout,
+                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            }
+        else:
+            response = {
+                "status": "error",
+                "message": "Database migrations failed",
+                "error": result.stderr,
+                "return_code": result.returncode,
+                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            }
+        
+        duration = time.time() - start_time
+        log_performance(logger, "Database migration", duration)
+        log_function_exit(logger, "run_database_migration", result=response, duration=duration)
+        return response
+        
+    except Exception as e:
+        duration = time.time() - start_time
+        log_error_with_context(logger, e, "run_database_migration", duration=duration)
+        log_function_exit(logger, "run_database_migration", duration=duration)
         raise

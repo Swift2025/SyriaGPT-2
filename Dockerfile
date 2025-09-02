@@ -15,9 +15,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip check
-
-RUN pip install -r requirements.txt --verbose
+RUN pip install -r requirements.txt
 
 # Change ownership of the app directory to the non-root user
 RUN chown -R appuser:appuser /app

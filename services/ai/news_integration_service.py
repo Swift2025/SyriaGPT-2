@@ -278,12 +278,13 @@ class NewsIntegrationService:
                         continue
                     
                     # Store in Qdrant
+                    metadata = qa_pair["metadata"].copy() if qa_pair["metadata"] else {}
+                    metadata["answer"] = qa_pair["answer"]
                     success = await qdrant_service.store_qa_embedding(
                         qa_id=qa_pair["id"],
                         question=qa_pair["question"],
-                        answer=qa_pair["answer"],
                         embedding=question_embedding,
-                        metadata=qa_pair["metadata"]
+                        metadata=metadata
                     )
                     
                     if success:

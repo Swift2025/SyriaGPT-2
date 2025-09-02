@@ -24,20 +24,18 @@ slowapi==0.1.9
 beautifulsoup4==4.12.3
 requests==2.31.0
 aiohttp==3.9.1
-redis==5.0.1
 lxml>=5.1.0
 selenium==4.15.2
 webdriver-manager==4.0.1
-aiohttp==3.9.1
 
 # Vector Database and AI - Latest Gemini and GenAI
 numpy>=1.24.0
 qdrant-client>=1.15.0
-google-generativeai==0.8.0
+google-generativeai>=0.8.0
 google-auth>=2.0.0
+google-cloud-aiplatform>=1.0.0
 
 # Async HTTP
 aiofiles==23.2.1
 
 # Testing and development
-requests==2.31.0

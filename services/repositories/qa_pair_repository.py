@@ -14,10 +14,6 @@ class QAPairRepository:
     Handles CRUD operations for the intelligent Q&A system.
     """
     
-    def __init__(self):
-        """Initialize the QAPairRepository"""
-        logger.debug("Initializing QAPairRepository")
-    
     def create_qa_pair(
         self,
         db: Session,

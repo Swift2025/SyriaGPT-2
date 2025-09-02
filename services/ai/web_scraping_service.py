@@ -12,7 +12,7 @@ import hashlib
 from dataclasses import dataclass
 from pathlib import Path
 
-from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
+from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance
 
 logger = get_logger(__name__)
 
@@ -105,52 +105,18 @@ class WebScrapingService:
         
         # Headers to mimic a real browser
         self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-            "Accept-Language": "ar-SA,ar;q=0.9,en-US;q=0.8,en;q=0.7",
-            "Accept-Encoding": "gzip, deflate, br",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+            "Accept-Language": "ar,en-US;q=0.7,en;q=0.3",
+            "Accept-Encoding": "gzip, deflate",
             "Connection": "keep-alive",
             "Upgrade-Insecure-Requests": "1",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "none",
-            "Sec-Fetch-User": "?1",
-            "Cache-Control": "max-age=0",
-            "DNT": "1"
         }
         
         # Content filters for quality
         self.min_content_length = 100
         self.max_content_length = 50000
         self.blocked_words = ["advertisement", "ad", "sponsored", "cookie", "privacy policy"]
-        
-        # Fallback content for sources that might fail scraping
-        self.fallback_content = {
-            "sana": {
-                "title": "وكالة الأنباء السورية",
-                "content": "وكالة الأنباء السورية (سانا) هي الوكالة الرسمية للأنباء في الجمهورية العربية السورية. تأسست عام 1965 وتقوم بتغطية الأخبار المحلية والدولية. تقدم الوكالة معلومات موثوقة عن الأحداث في سوريا والمنطقة العربية والعالم.",
-                "url": "https://www.sana.sy",
-                "source": "sana"
-            },
-            "halab_today": {
-                "title": "حلب اليوم",
-                "content": "حلب اليوم هي منصة إخبارية سورية تركز على أخبار مدينة حلب والمنطقة المحيطة بها. تقدم تغطية شاملة للأحداث المحلية والإقليمية، مع التركيز على التنمية وإعادة الإعمار في المدينة.",
-                "url": "https://halabtoday.tv",
-                "source": "halab_today"
-            },
-            "syria_tv": {
-                "title": "سوريا تي في",
-                "content": "سوريا تي في هي قناة تلفزيونية سورية تقدم الأخبار والبرامج الإخبارية. تغطي الأحداث المحلية والدولية من منظور سوري، مع التركيز على القضايا العربية والإقليمية.",
-                "url": "https://www.syria.tv",
-                "source": "syria_tv"
-            },
-            "government": {
-                "title": "البوابة الإلكترونية للحكومة السورية",
-                "content": "البوابة الإلكترونية الرسمية للحكومة السورية تقدم معلومات عن الخدمات الحكومية والإعلانات الرسمية والقوانين والتشريعات. تعمل على تسهيل الوصول للمعلومات والخدمات الحكومية للمواطنين.",
-                "url": "https://www.egov.sy",
-                "source": "government"
-            }
-        }
         
     async def __aenter__(self):
         """Async context manager entry"""
@@ -167,25 +133,11 @@ class WebScrapingService:
         start_time = time.time()
         
         try:
-            # Create connector with SSL context and better error handling
-            connector = aiohttp.TCPConnector(
-                limit=self.max_concurrent_requests,
-                ssl=False,  # Disable SSL verification for problematic sites
-                force_close=True,
-                enable_cleanup_closed=True
-            )
-            
-            # Create timeout with longer values for slow sites
-            timeout = aiohttp.ClientTimeout(
-                total=self.timeout,
-                connect=10,
-                sock_read=20
-            )
-            
+            connector = aiohttp.TCPConnector(limit=self.max_concurrent_requests)
             self.session = aiohttp.ClientSession(
                 connector=connector,
                 headers=self.headers,
-                timeout=timeout
+                timeout=aiohttp.ClientTimeout(total=self.timeout)
             )
             
             duration = time.time() - start_time
@@ -196,7 +148,7 @@ class WebScrapingService:
             
         except Exception as e:
             duration = time.time() - start_time
-            log_error_with_context(logger, e, "initialize", duration=duration)
+            log_function_exit(logger, "initialize", duration=duration)
             logger.error(f"❌ Failed to initialize web scraping service: {e}")
             raise
             
@@ -311,19 +263,6 @@ class WebScrapingService:
             main_page_content = await self._fetch_page(main_page_url)
             
             if not main_page_content:
-                # If scraping fails, use fallback content
-                logger.warning(f"Failed to fetch content from {source_name}, using fallback content")
-                fallback = self.fallback_content.get(source_name)
-                if fallback:
-                    article = ScrapedArticle(
-                        title=fallback["title"],
-                        content=fallback["content"],
-                        url=fallback["url"],
-                        source=fallback["source"],
-                        language=source_config["language"],
-                        scraped_at=datetime.now().isoformat()
-                    )
-                    articles.append(article)
                 return articles
                 
             # Parse the main page
@@ -331,10 +270,6 @@ class WebScrapingService:
             
             # Find article links
             article_links = self._extract_article_links(soup, source_config)
-            
-            # If no article links found, try alternative selectors
-            if not article_links:
-                article_links = self._extract_article_links_alternative(soup, source_config)
             
             # Limit the number of articles to process
             article_links = article_links[:max_articles]
@@ -352,36 +287,9 @@ class WebScrapingService:
                 except Exception as e:
                     logger.warning(f"Failed to scrape article {link}: {e}")
                     continue
-            
-            # If no articles were scraped, use fallback content
-            if not articles:
-                logger.warning(f"No articles scraped from {source_name}, using fallback content")
-                fallback = self.fallback_content.get(source_name)
-                if fallback:
-                    article = ScrapedArticle(
-                        title=fallback["title"],
-                        content=fallback["content"],
-                        url=fallback["url"],
-                        source=fallback["source"],
-                        language=source_config["language"],
-                        scraped_at=datetime.now().isoformat()
-                    )
-                    articles.append(article)
                     
         except Exception as e:
             logger.error(f"Failed to scrape source {source_name}: {e}")
-            # Use fallback content on complete failure
-            fallback = self.fallback_content.get(source_name)
-            if fallback:
-                article = ScrapedArticle(
-                    title=fallback["title"],
-                    content=fallback["content"],
-                    url=fallback["url"],
-                    source=fallback["source"],
-                    language=source_config["language"],
-                    scraped_at=datetime.now().isoformat()
-                )
-                articles.append(article)
             
         return articles
         
@@ -465,98 +373,6 @@ class WebScrapingService:
         
         for pattern in article_patterns:
             if re.search(pattern, url, re.IGNORECASE):
-                return True
-                
-        return False
-        
-    def _extract_article_links_alternative(self, soup: BeautifulSoup, source_config: Dict) -> List[str]:
-        """Alternative method to extract article links using different strategies"""
-        links = []
-        base_url = source_config["base_url"]
-        
-        # Strategy 1: Look for any links with text content
-        for link in soup.find_all('a', href=True):
-            href = link.get('href')
-            link_text = link.get_text(strip=True)
-            
-            if not href or not link_text:
-                continue
-                
-            # Convert relative URLs to absolute
-            if href.startswith('/'):
-                href = urljoin(base_url, href)
-            elif not href.startswith('http'):
-                href = urljoin(base_url, href)
-                
-            # Check if this looks like an article link
-            if self._is_article_link_alternative(href, link_text, source_config):
-                links.append(href)
-        
-        # Strategy 2: Look for divs with news-like classes
-        news_selectors = [
-            '.news', '.article', '.post', '.story', '.item',
-            '.content', '.main', '.primary', '.featured'
-        ]
-        
-        for selector in news_selectors:
-            elements = soup.select(selector)
-            for element in elements:
-                # Look for links within these elements
-                for link in element.find_all('a', href=True):
-                    href = link.get('href')
-                    if href:
-                        if href.startswith('/'):
-                            href = urljoin(base_url, href)
-                        elif not href.startswith('http'):
-                            href = urljoin(base_url, href)
-                        links.append(href)
-        
-        # Remove duplicates while preserving order
-        seen = set()
-        unique_links = []
-        for link in links:
-            if link not in seen and link not in self.scraped_urls:
-                seen.add(link)
-                unique_links.append(link)
-                
-        return unique_links
-    
-    def _is_article_link_alternative(self, url: str, link_text: str, source_config: Dict) -> bool:
-        """Alternative method to check if a URL looks like an article link"""
-        # Skip if already scraped
-        if url in self.scraped_urls:
-            return False
-            
-        # Check if URL is from the same domain
-        parsed_url = urlparse(url)
-        parsed_base = urlparse(source_config["base_url"])
-        
-        if parsed_url.netloc != parsed_base.netloc:
-            return False
-            
-        # Check for article-like patterns in the URL
-        article_patterns = [
-            r'/news/', r'/article/', r'/post/', r'/story/',
-            r'/arabic/', r'/ar/', r'/en/',
-            r'\d{4}/\d{2}/\d{2}',  # Date patterns
-            r'\d+$',  # Ends with number
-            r'\.html?$',  # Ends with .html or .htm
-            r'\.php$',  # Ends with .php
-            r'\.asp$',  # Ends with .asp
-        ]
-        
-        for pattern in article_patterns:
-            if re.search(pattern, url, re.IGNORECASE):
-                return True
-        
-        # Check if link text suggests it's an article
-        article_keywords = [
-            'news', 'article', 'story', 'report', 'analysis',
-            'أخبار', 'مقال', 'تقرير', 'تحليل', 'خبر'
-        ]
-        
-        for keyword in article_keywords:
-            if keyword.lower() in link_text.lower():
                 return True
                 
         return False
@@ -739,49 +555,6 @@ class WebScrapingService:
                 
         return True
         
-    async def get_health(self) -> Dict[str, Any]:
-        """Get health status of the web scraping service"""
-        try:
-            # Check if session is available
-            if not self.session:
-                return {
-                    "available": False,
-                    "error": "Session not initialized",
-                    "details": "Web scraping service not ready"
-                }
-            
-            # Check if we can make a simple request
-            test_url = "https://httpbin.org/get"
-            try:
-                async with self.session.get(test_url, timeout=5) as response:
-                    if response.status == 200:
-                        return {
-                            "available": True,
-                            "session_status": "healthy",
-                            "test_request": "successful",
-                            "available_sources": list(self.news_sources.keys()),
-                            "rate_limit_delay": self.rate_limit_delay
-                        }
-                    else:
-                        return {
-                            "available": False,
-                            "error": f"Test request failed with status {response.status}",
-                            "details": "HTTP request test unsuccessful"
-                        }
-            except Exception as e:
-                return {
-                    "available": False,
-                    "error": f"Test request failed: {str(e)}",
-                    "details": "Cannot make test HTTP request"
-                }
-                
-        except Exception as e:
-            return {
-                "available": False,
-                "error": str(e),
-                "details": "Health check failed with exception"
-            }
-
     async def get_scraping_stats(self) -> Dict[str, Any]:
         """Get statistics about scraping activity"""
         return {
@@ -793,73 +566,9 @@ class WebScrapingService:
         }
         
     async def clear_scraped_urls(self):
-        """Clear the set of scraped URLs"""
+        """Clear the list of scraped URLs"""
         self.scraped_urls.clear()
-        logger.info("Cleared scraped URLs cache")
-
-    async def search_and_scrape(self, query: str, context: Optional[str] = None, max_results: int = 3) -> Optional[Dict[str, Any]]:
-        """
-        Search and scrape relevant content for a specific query.
-        This method is designed to work with the intelligent Q&A service.
-        
-        Args:
-            query: The search query/question
-            context: Optional context to refine the search
-            max_results: Maximum number of articles to return
-            
-        Returns:
-            Dictionary with relevant content and sources, or None if no content found
-        """
-        try:
-            if not self.session:
-                await self.initialize()
-            
-            # For now, scrape recent news and filter by relevance
-            # In a production system, this would use a proper search API
-            scraping_results = await self.scrape_news_sources(max_articles=max_results * 2)
-            
-            if not scraping_results.get("articles"):
-                return None
-            
-            # Filter articles by relevance to the query
-            relevant_articles = []
-            query_lower = query.lower()
-            
-            for article in scraping_results["articles"]:
-                # Simple relevance scoring based on title and content
-                title_score = sum(1 for word in query_lower.split() if word in article.title.lower())
-                content_score = sum(1 for word in query_lower.split() if word in article.content.lower())
-                
-                if title_score > 0 or content_score > 0:
-                    relevant_articles.append({
-                        "title": article.title,
-                        "content": article.content[:500],  # Limit content length
-                        "url": article.url,
-                        "source": article.source,
-                        "relevance_score": title_score + content_score
-                    })
-            
-            # Sort by relevance and limit results
-            relevant_articles.sort(key=lambda x: x["relevance_score"], reverse=True)
-            relevant_articles = relevant_articles[:max_results]
-            
-            if not relevant_articles:
-                return None
-            
-            # Return formatted content
-            return {
-                "content": "\n\n".join([f"{article['title']}\n{article['content']}" for article in relevant_articles]),
-                "sources": [{"title": article["title"], "url": article["url"], "source": article["source"]} for article in relevant_articles],
-                "metadata": {
-                    "total_results": len(relevant_articles),
-                    "query": query,
-                    "scraped_at": datetime.now().isoformat()
-                }
-            }
-            
-        except Exception as e:
-            logger.error(f"Failed to search and scrape content for query '{query}': {e}")
-            return None
+        logger.info("🧹 Cleared scraped URLs cache")
 
 # Global web scraping service instance
 web_scraping_service = WebScrapingService()

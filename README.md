@@ -6,7 +6,7 @@
 [![Python](https://img.shields.io/badge/Python-3.13-blue?style=flat-square&logo=python)](https://www.python.org/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-3.9-2496ED?style=flat-square&logo=docker)](https://www.docker.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
-[![Redis](https://img.shields.io/badge/Redis-7-DC382D?style=flat-square&logo=redis)](https://redis.io/)
+
 [![Qdrant](https://img.shields.io/badge/Qdrant-1.15-FF6B6B?style=flat-square)](https://qdrant.tech/)
 
 ## 📖 Table of Contents
@@ -36,10 +36,9 @@ SyriaGPT is an intelligent question-answering system specifically designed to pr
 - **Intelligent Q&A**: Advanced question processing with semantic understanding
 - **Multi-language Support**: English and Arabic language support
 - **Vector Search**: Semantic similarity search using Qdrant vector database
-- **Caching System**: Redis-based caching for improved performance
 - **User Authentication**: Complete user management with OAuth support
 - **Session Management**: Persistent user sessions and conversation history
-- **Real-time Processing**: Fast response times with intelligent caching
+- **Real-time Processing**: Fast response times with vector search
 
 ## ✨ Features
 
@@ -60,7 +59,6 @@ SyriaGPT is an intelligent question-answering system specifically designed to pr
 ### 📊 Data Management
 - **Comprehensive Knowledge Base**: Extensive Syria-related data
 - **Vector Database**: Qdrant for semantic search capabilities
-- **Caching Layer**: Redis for performance optimization
 - **Session Storage**: Persistent user sessions and history
 
 ### 🌐 API Features
@@ -75,25 +73,24 @@ SyriaGPT is an intelligent question-answering system specifically designed to pr
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   FastAPI App   │    │   PostgreSQL    │    │     Redis       │
-│   (Port 9000)   │◄──►│   (Port 5432)   │    │   (Port 6379)   │
+│   FastAPI App   │    │   PostgreSQL    │    │   Qdrant        │
+│   (Port 9000)   │◄──►│   (Port 5432)   │◄──►│   (Port 6333)   │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
          │                       │                       │
          ▼                       ▼                       ▼
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Qdrant        │    │   Google Gemini │    │   Email Service │
-│   (Port 6333)   │    │   API           │    │   (SMTP)        │
+│   Google Gemini │    │   Email Service │    │   Vector Search │
+│   AI           │    │   (SMTP)        │    │   Engine        │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
 ### Processing Pipeline
 
 1. **Input Normalization** → Question preprocessing and standardization
-2. **Cache Check** → Redis lookup for existing answers
-3. **Semantic Search** → Qdrant vector similarity search
-4. **Quality Evaluation** → Confidence scoring and validation
-5. **AI Generation** → Google Gemini API for new answers
-6. **Storage** → Multi-system persistence (PostgreSQL, Redis, Qdrant)
+2. **Semantic Search** → Qdrant vector similarity search
+3. **Quality Evaluation** → Confidence scoring and validation
+4. **AI Generation** → Google Gemini API for new answers
+5. **Storage** → Multi-system persistence (PostgreSQL, Qdrant)
 
 ## 🛠️ Technology Stack
 
@@ -104,7 +101,6 @@ SyriaGPT is an intelligent question-answering system specifically designed to pr
 
 ### Database & Storage
 - **PostgreSQL 15**: Primary relational database
-- **Redis 7**: In-memory caching and session storage
 - **Qdrant 1.15**: Vector database for semantic search
 
 ### AI & Machine Learning
@@ -193,7 +189,7 @@ Before setting up SyriaGPT, ensure you have the following installed:
 
 5. **Start required services**
    ```bash
-   docker-compose up -d db redis qdrant
+   docker-compose up -d db qdrant
    ```
 
 6. **Run database migrations**
@@ -214,8 +210,7 @@ Create a `.env` file in the root directory with the following variables:
 
 ```env
 # Database Configuration
-DATABASE_URL=postgresql://admin:admin123@db:5432/syriagpt
-REDIS_URL=redis://localhost:6379
+DATABASE_URL=postgresql://admin:admin123@localhost:5432/syriagpt
 
 # AI Configuration
 GEMINI_API_KEY=your_gemini_api_key_here
@@ -500,14 +495,13 @@ uvicorn main:app --reload --host 0.0.0.0 --port 9000
 - **Application Logs**: Check container logs with `docker-compose logs -f app`
 - **Database Monitoring**: Use PgAdmin at http://localhost:5050
 - **Health Checks**: Monitor `/intelligent-qa/health` endpoint
-- **Performance**: Monitor response times and cache hit rates
+- **Performance**: Monitor response times and vector search performance
 
 ### Scaling Considerations
 
 - **Horizontal Scaling**: Use multiple application instances behind a load balancer
 - **Database Scaling**: Consider read replicas for PostgreSQL
-- **Cache Scaling**: Use Redis Cluster for high availability
-- **Vector Database**: Scale Qdrant with multiple nodes
+- **Vector Database Scaling**: Scale Qdrant with multiple nodes
 
 ## 🤝 Contributing
 
