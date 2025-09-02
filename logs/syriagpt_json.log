@@ -14712,3 +14712,44 @@ AttributeError: module 'datetime' has no attribute 'now'
 {"timestamp": "2025-09-02 07:58:38", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-51", "message": "Waiting for application shutdown."}
 {"timestamp": "2025-09-02 07:58:38", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-51", "message": "Application shutdown complete."}
 {"timestamp": "2025-09-02 07:58:38", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-51", "message": "Finished server process [1849]"}
+{"timestamp": "2025-09-02 07:58:40", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-52", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:58:40", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-52", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:58:41", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-52", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:58:41", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-52", "message": "Started server process [1890]"}
+{"timestamp": "2025-09-02 07:58:41", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-52", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:58:41", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-52", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:58:41", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-52", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:58:41", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-52", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:58:41", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-52", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:58:41", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-52", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:58:41", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "MainThread", "process": "SpawnProcess-52", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:58:41", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-52", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:58:44", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-52", "message": "Failed to answer question with Gemini: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 15
+}
+]"}
+{"timestamp": "2025-09-02 07:58:44", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "227", "function": "log_performance", "thread": "MainThread", "process": "SpawnProcess-52", "message": "[PERF] Performance: System initialization took 3.312s - Context: {}"}
+{"timestamp": "2025-09-02 07:58:44", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "89", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-52", "message": "✅ Enhanced Syria GPT Q&A system initialized successfully (2/4 services healthy)"}
+{"timestamp": "2025-09-02 07:58:44", "level": "INFO", "logger": "main", "file": "logging_config.py", "line": "227", "function": "log_performance", "thread": "MainThread", "process": "SpawnProcess-52", "message": "[PERF] Performance: System initialization took 3.323s - Context: {}"}
+{"timestamp": "2025-09-02 07:58:44", "level": "INFO", "logger": "main", "file": "main.py", "line": "312", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-52", "message": "[STARTUP] Syria GPT system initialized successfully"}
+{"timestamp": "2025-09-02 07:58:44", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-52", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:58:44", "level": "INFO", "logger": "uvicorn.access", "file": "h11_impl.py", "line": "473", "function": "send", "thread": "MainThread", "process": "SpawnProcess-52", "message": "172.18.0.1:56936 - "GET /docs HTTP/1.1" 200"}
+{"timestamp": "2025-09-02 07:58:44", "level": "INFO", "logger": "main", "file": "logging_config.py", "line": "227", "function": "log_performance", "thread": "MainThread", "process": "SpawnProcess-52", "message": "[PERF] Performance: OpenAPI schema generation took 0.053s - Context: {}"}
+{"timestamp": "2025-09-02 07:58:44", "level": "INFO", "logger": "uvicorn.access", "file": "h11_impl.py", "line": "473", "function": "send", "thread": "MainThread", "process": "SpawnProcess-52", "message": "172.18.0.1:56936 - "GET /openapi.json HTTP/1.1" 200"}
