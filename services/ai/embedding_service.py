@@ -1,63 +1,51 @@
 import os
 import logging
 import asyncio
-from typing import List, Optional, Union, Dict, Any
 import numpy as np
-from config.logging_config import get_logger
-
-# Import the latest Google GenAI library
-try:
-    import google.generativeai as genai
-    GENAI_AVAILABLE = True
-except ImportError as e:
-    GENAI_AVAILABLE = False
-from typing import List, Optional, Union
-
-from google import genai
-from google.genai.types import EmbedContentConfig
-import numpy as np
+from typing import Union, List, Optional, Dict, Any
 from config.logging_config import get_logger
 
 logger = get_logger(__name__)
 
+# Check if Google GenAI is available
+try:
+    import google.generativeai as genai
+    GENAI_AVAILABLE = True
+except ImportError:
+    GENAI_AVAILABLE = False
+    logger.warning("Google GenAI library not available. Install with: pip install google-generativeai")
+
 class EmbeddingService:
     """
-    Embedding service using Google GenAI library (gemini-embedding-001).
-    Requires GOOGLE_API_KEY or GEMINI_API_KEY in environment.
+    Service for generating text embeddings using Google GenAI.
+    Supports both single and batch text processing.
     """
     
-    def __init__(self, model_name: str = "models/embedding-001", output_dim: Optional[int] = None):
-        self.model_name = model_name
-        self.output_dim = output_dim 
+    def __init__(self, output_dim: Optional[int] = None):
         self.api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
+        self.model_name = "embedding-001"  # Google's embedding model
+        self.output_dim = output_dim
         self.client = None
         
-        # Initialize client if possible
         if GENAI_AVAILABLE and self.api_key:
             self._initialize_client()
-            logger.info(f"Initialized Gemini EmbeddingService with model={self.model_name}, output_dim={self.output_dim}")
         else:
-            if not GENAI_AVAILABLE:
-                logger.error("Google GenAI library not available. Please install: pip install google-generativeai")
-            if not self.api_key:
-                logger.error("GOOGLE_API_KEY or GEMINI_API_KEY not found in environment variables")
-            logger.warning("EmbeddingService initialized but not fully configured")
-
+            logger.warning("Embedding service not available - missing API key or library")
+    
     def _initialize_client(self):
-        """Initialize GenAI client"""
+        """Initialize the GenAI client"""
         try:
             genai.configure(api_key=self.api_key)
             self.client = genai
-            logger.info("GenAI client initialized successfully")
+            logger.info(f"Embedding service initialized with model: {self.model_name}")
         except Exception as e:
-            logger.error(f"Failed to initialize GenAI client: {e}")
+            logger.error(f"Failed to initialize embedding client: {e}")
             self.client = None
-
+    
     async def generate_embedding(
         self,
         text: Union[str, List[str]]
     ) -> Optional[Union[List[float], List[List[float]]]]:
-<<<<<<< HEAD
         """
         Generate embeddings using Google GenAI.
         
@@ -67,8 +55,6 @@ class EmbeddingService:
         Returns:
             Single embedding or list of embeddings
         """
-=======
->>>>>>> 72b87816b64a29691b388b79eb40ec26d86dc91c
         if not text:
             return None
 
@@ -76,7 +62,6 @@ class EmbeddingService:
         texts = [text] if is_single else text
 
         try:
-<<<<<<< HEAD
             if not self.client:
                 raise RuntimeError("Embedding client not initialized")
 
@@ -84,7 +69,7 @@ class EmbeddingService:
             embeddings = []
             for text_item in texts:
                 try:
-                    # Use the embedding model
+                    # Use the embedding model with the correct API
                     result = await asyncio.get_event_loop().run_in_executor(
                         None,
                         lambda: self.client.embed_content(
@@ -137,46 +122,22 @@ class EmbeddingService:
                 except Exception as e:
                     logger.error(f"Failed to generate embedding for text: {e}")
                     raise RuntimeError(f"Embedding generation failed: {e}")
-=======
-            config = EmbedContentConfig()
-            if self.output_dim:
-                config.output_dimensionality = self.output_dim
-
-            result = await asyncio.get_event_loop().run_in_executor(
-                None,
-                lambda: self.client.models.embed_content(
-                    model=self.model_name,
-                    contents=texts,
-                    config=config
-                )
-            )
-            embeddings = result.embeddings  # list of embeddings
->>>>>>> 72b87816b64a29691b388b79eb40ec26d86dc91c
 
             return embeddings[0] if is_single else embeddings
 
         except Exception as e:
-<<<<<<< HEAD
             logger.error(f"GenAI API embedding failed: {e}", exc_info=True)
             raise RuntimeError(f"Embedding service failed: {e}")
 
     def get_embedding_dimension(self) -> Optional[int]:
         """Get the embedding dimension"""
         return self.output_dim or 768
-=======
-            logger.error(f"Gemini API embedding failed: {e}", exc_info=True)
-            return None
-
-    def get_embedding_dimension(self) -> Optional[int]:
-        return self.output_dim
->>>>>>> 72b87816b64a29691b388b79eb40ec26d86dc91c
 
     async def compute_similarity(
         self,
         embedding1: List[float],
         embedding2: List[float]
     ) -> float:
-<<<<<<< HEAD
         """
         Compute cosine similarity between two embeddings.
         
@@ -206,17 +167,6 @@ class EmbeddingService:
                 
             return float(dot / (n1 * n2))
             
-=======
-        try:
-            vec1 = np.array(embedding1)
-            vec2 = np.array(embedding2)
-            dot = np.dot(vec1, vec2)
-            n1 = np.linalg.norm(vec1)
-            n2 = np.linalg.norm(vec2)
-            if n1 == 0 or n2 == 0:
-                return 0.0
-            return float(dot / (n1 * n2))
->>>>>>> 72b87816b64a29691b388b79eb40ec26d86dc91c
         except Exception as e:
             logger.error(f"Similarity computation failed: {e}", exc_info=True)
             return 0.0
@@ -226,7 +176,6 @@ class EmbeddingService:
         original_question: str,
         num_variants: int = 3
     ) -> List[str]:
-<<<<<<< HEAD
         """
         Generate question variants using simple rule-based approach.
         This is a fallback when Gemini is not available.
@@ -387,24 +336,3 @@ class EmbeddingService:
 
 # Global embedding service instance
 embedding_service = EmbeddingService(output_dim=768)
-=======
-        variants = []
-
-        if any(char in original_question for char in 'أبتثجحخدذرزسشصضطظعغفقكلمنهوي'):
-            variants.extend([
-                f"ما هو {original_question}",
-                f"أخبرني عن {original_question}",
-                f"شرح {original_question}",
-            ])
-        else:
-            variants.extend([
-                f"What is {original_question}?",
-                f"Tell me about {original_question}",
-                f"Explain {original_question}",
-            ])
-
-        return variants[:num_variants]
-
-# Example global instance
-embedding_service = EmbeddingService(output_dim=3072)
->>>>>>> 72b87816b64a29691b388b79eb40ec26d86dc91c

@@ -1,0 +1,34 @@
+2025-09-02 06:59:01 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+2025-09-02 06:59:01 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 163, in embed_content
+    model = model_types.make_model_name(model)
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/types/model_types.py", line 362, in make_model_name
+    raise ValueError(
+        f"Invalid model name: '{name}'. Model names should start with 'models/' or 'tunedModels/'."
+    )
+ValueError: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.

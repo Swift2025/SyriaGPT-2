@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive API Testing - SyriaGPT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: background 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .tabs {
+            display: flex;
+            background: white;
+            border-radius: 15px 15px 0 0;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            background: #f8f9fa;
+            border: none;
+            transition: background 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .tab.active {
+            background: white;
+            color: #667eea;
+        }
+        
+        .tab:hover:not(.active) {
+            background: #e9ecef;
+        }
+        
+        .tab-content {
+            background: white;
+            border-radius: 0 0 15px 15px;
+            padding: 30px;
+            min-height: 600px;
+        }
+        
+        .tab-pane {
+            display: none;
+        }
+        
+        .tab-pane.active {
+            display: block;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .card h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        
+        .btn-success { background: #28a745; }
+        .btn-success:hover { background: #218838; }
+        .btn-warning { background: #ffc107; color: #212529; }
+        .btn-warning:hover { background: #e0a800; }
+        .btn-danger { background: #dc3545; }
+        .btn-danger:hover { background: #c82333; }
+        .btn-secondary { background: #6c757d; }
+        .btn-secondary:hover { background: #5a6268; }
+        
+        .response {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .response.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .response.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .auth-token {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .auth-token h4 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        
+        .token-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .token-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .token-actions .btn {
+            flex: 1;
+            min-width: 120px;
+            margin-bottom: 0;
+        }
+        
+        .quick-test {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .quick-test h4 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        
+        .quick-test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-online { background: #28a745; }
+        .status-offline { background: #dc3545; }
+        .status-warning { background: #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>🧪 Comprehensive API Testing</h1>
+            <p>Test all API endpoints from a single interface</p>
+        </div>
+        
+        <!-- Authentication Token -->
+        <div class="auth-token">
+            <h4>🔑 Authentication Token</h4>
+            <input type="text" id="authToken" class="token-input" placeholder="Enter your Bearer token here..." value="">
+            <div class="token-actions">
+                <button type="button" class="btn btn-secondary" onclick="loadTokenFromStorage()">Load from Storage</button>
+                <button type="button" class="btn btn-success" onclick="saveTokenToStorage()">Save to Storage</button>
+                <button type="button" class="btn btn-warning" onclick="clearToken()">Clear Token</button>
+                <button type="button" class="btn" onclick="testToken()">Test Token</button>
+            </div>
+        </div>
+        
+        <!-- Quick System Status -->
+        <div class="quick-test">
+            <h4>📊 Quick System Status</h4>
+            <div class="quick-test-grid">
+                <button type="button" class="btn" onclick="checkSystemHealth()">System Health</button>
+                <button type="button" class="btn" onclick="checkAuthHealth()">Auth Health</button>
+                <button type="button" class="btn" onclick="checkSMTPHealth()">SMTP Health</button>
+                <button type="button" class="btn" onclick="checkAIHealth()">AI Health</button>
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('auth')">🔐 Authentication</button>
+            <button class="tab" onclick="showTab('ai')">🤖 AI & Q&A</button>
+            <button class="tab" onclick="showTab('data')">📝 Data Management</button>
+            <button class="tab" onclick="showTab('system')">⚙️ System</button>
+        </div>
+        
+        <div class="tab-content">
+            <!-- Authentication Tab -->
+            <div id="auth" class="tab-pane active">
+                <div class="grid">
+                    <div class="card">
+                        <h3>👤 User Management</h3>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/users/', 'Get Users')">Get Users</button>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/users/stats', 'Get User Stats')">Get User Stats</button>
+                        <button type="button" class="btn btn-warning" onclick="testEndpoint('PUT', '/users/profile', 'Update Profile')">Update Profile</button>
+                        <div id="response-users" class="response"></div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🔑 Authentication</h3>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/auth/me', 'Get Current User')">Get Current User</button>
+                        <button type="button" class="btn btn-warning" onclick="testEndpoint('POST', '/auth/2fa/setup', 'Setup 2FA')">Setup 2FA</button>
+                        <button type="button" class="btn btn-secondary" onclick="testEndpoint('POST', '/auth/2fa/verify', 'Verify 2FA')">Verify 2FA</button>
+                        <div id="response-auth" class="response"></div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>📧 Password Management</h3>
+                        <button type="button" class="btn btn-warning" onclick="testEndpoint('POST', '/auth/forgot-password', 'Forgot Password')">Forgot Password</button>
+                        <button type="button" class="btn btn-success" onclick="testEndpoint('POST', '/auth/reset-password', 'Reset Password')">Reset Password</button>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/auth/debug-token', 'Debug Token')">Debug Token</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI & Q&A Tab -->
+            <div id="ai" class="tab-pane">
+                <div class="grid">
+                    <div class="card">
+                        <h3>🧠 Intelligent Q&A</h3>
+                        <button type="button" class="btn" onclick="testEndpoint('POST', '/intelligent-qa/ask', 'Ask Question')">Ask Question</button>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/intelligent-qa/health', 'AI Health')">AI Health</button>
+                        <div id="response-ai" class="response"></div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>💬 Chat Management</h3>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/chat/', 'Get Chats')">Get Chats</button>
+                        <button type="button" class="btn btn-success" onclick="testEndpoint('POST', '/chat/', 'Create Chat')">Create Chat</button>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/chat/1/messages', 'Get Messages')">Get Messages</button>
+                        <div id="response-chat" class="response"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Data Management Tab -->
+            <div id="data" class="tab-pane">
+                <div class="grid">
+                    <div class="card">
+                        <h3>❓ Questions</h3>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/questions/', 'Get Questions')">Get Questions</button>
+                        <button type="button" class="btn btn-success" onclick="testEndpoint('POST', '/questions/', 'Create Question')">Create Question</button>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/questions/1', 'Get Question by ID')">Get by ID</button>
+                        <div id="response-questions" class="response"></div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>💡 Answers</h3>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/answers/', 'Get Answers')">Get Answers</button>
+                        <button type="button" class="btn btn-success" onclick="testEndpoint('POST', '/answers/', 'Create Answer')">Create Answer</button>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/answers/question/1', 'Get by Question')">Get by Question</button>
+                        <div id="response-answers" class="response"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- System Tab -->
+            <div id="system" class="tab-pane">
+                <div class="grid">
+                    <div class="card">
+                        <h3>📧 SMTP Configuration</h3>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/smtp/providers', 'Get SMTP Providers')">Get Providers</button>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/smtp/health', 'SMTP Health')">SMTP Health</button>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/smtp/supported-domains', 'Supported Domains')">Supported Domains</button>
+                        <div id="response-smtp" class="response"></div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🔐 Session Management</h3>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/session/current', 'Current Session')">Current Session</button>
+                        <button type="button" class="btn" onclick="testEndpoint('GET', '/session/history', 'Session History')">Session History</button>
+                        <button type="button" class="btn btn-danger" onclick="testEndpoint('POST', '/session/logout', 'Logout')">Logout</button>
+                        <div id="response-session" class="response"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Processing API request...</p>
+        </div>
+    </div>
+    
+    <script>
+        let currentTab = 'auth';
+        
+        // Load token from localStorage on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTokenFromStorage();
+        });
+        
+        function showTab(tabName) {
+            // Hide all tab panes
+            document.querySelectorAll('.tab-pane').forEach(pane => {
+                pane.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab pane
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to selected tab
+            event.target.classList.add('active');
+            
+            currentTab = tabName;
+        }
+        
+        function getAuthHeaders() {
+            const token = document.getElementById('authToken').value;
+            return token ? { 'Authorization': `Bearer ${token}` } : {};
+        }
+        
+        async function testEndpoint(method, endpoint, description) {
+            showLoading(true);
+            
+            try {
+                const options = {
+                    method: method,
+                    headers: {
+                        ...getAuthHeaders(),
+                        'Content-Type': 'application/json'
+                    }
+                };
+                
+                // Add body for POST/PUT requests
+                if (['POST', 'PUT'].includes(method)) {
+                    options.body = JSON.stringify(getSampleData(endpoint));
+                }
+                
+                const response = await fetch(endpoint, options);
+                const data = await response.json();
+                
+                // Show response in appropriate card
+                const responseId = getResponseId(endpoint);
+                showResponse(responseId, response.ok, data);
+                
+            } catch (error) {
+                const responseId = getResponseId(endpoint);
+                showResponse(responseId, false, { error: error.message });
+            } finally {
+                showLoading(false);
+            }
+        }
+        
+        function getResponseId(endpoint) {
+            if (endpoint.includes('/users')) return 'response-users';
+            if (endpoint.includes('/auth')) return 'response-auth';
+            if (endpoint.includes('/intelligent-qa') || endpoint.includes('/ai')) return 'response-ai';
+            if (endpoint.includes('/chat')) return 'response-chat';
+            if (endpoint.includes('/questions')) return 'response-questions';
+            if (endpoint.includes('/answers')) return 'response-answers';
+            if (endpoint.includes('/smtp')) return 'response-smtp';
+            if (endpoint.includes('/session')) return 'response-session';
+            return 'response-auth';
+        }
+        
+        function getSampleData(endpoint) {
+            const samples = {
+                '/questions/': {
+                    title: 'Sample Question Title',
+                    content: 'This is a sample question content for testing purposes.',
+                    category: 'general',
+                    tags: ['test', 'sample']
+                },
+                '/answers/': {
+                    content: 'This is a sample answer content for testing purposes.',
+                    question_id: 1,
+                    is_correct: false
+                },
+                '/chat/': {
+                    title: 'Sample Chat Session',
+                    description: 'A test chat session for API testing'
+                },
+                '/auth/2fa/setup': {
+                    method: 'totp'
+                },
+                '/auth/2fa/verify': {
+                    code: '123456'
+                },
+                '/auth/forgot-password': {
+                    email: 'test@example.com'
+                },
+                '/auth/reset-password': {
+                    token: 'sample-reset-token',
+                    new_password: 'newPassword123!'
+                },
+                '/users/profile': {
+                    first_name: 'Test',
+                    last_name: 'User',
+                    bio: 'Test user bio'
+                }
+            };
+            
+            return samples[endpoint] || {};
+        }
+        
+        async function checkSystemHealth() {
+            await testEndpoint('GET', '/auth/health', 'System Health');
+        }
+        
+        async function checkAuthHealth() {
+            await testEndpoint('GET', '/auth/health', 'Auth Health');
+        }
+        
+        async function checkSMTPHealth() {
+            await testEndpoint('GET', '/smtp/health', 'SMTP Health');
+        }
+        
+        async function checkAIHealth() {
+            await testEndpoint('GET', '/intelligent-qa/health', 'AI Health');
+        }
+        
+        function loadTokenFromStorage() {
+            const token = localStorage.getItem('syriagpt_auth_token');
+            if (token) {
+                document.getElementById('authToken').value = token;
+            }
+        }
+        
+        function saveTokenToStorage() {
+            const token = document.getElementById('authToken').value;
+            if (token) {
+                localStorage.setItem('syriagpt_auth_token', token);
+                alert('Token saved to storage!');
+            }
+        }
+        
+        function clearToken() {
+            document.getElementById('authToken').value = '';
+            localStorage.removeItem('syriagpt_auth_token');
+            alert('Token cleared!');
+        }
+        
+        async function testToken() {
+            const token = document.getElementById('authToken').value;
+            if (!token) {
+                alert('Please enter a token to test');
+                return;
+            }
+            
+            showLoading(true);
+            
+            try {
+                const response = await fetch('/auth/me', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await response.json();
+                
+                if (response.ok) {
+                    alert('✅ Token is valid! User: ' + (data.user?.email || 'Unknown'));
+                } else {
+                    alert('❌ Token is invalid: ' + (data.message || 'Unknown error'));
+                }
+            } catch (error) {
+                alert('❌ Error testing token: ' + error.message);
+            } finally {
+                showLoading(false);
+            }
+        }
+        
+        function showResponse(elementId, isSuccess, data) {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.className = `response ${isSuccess ? 'success' : 'error'}`;
+            element.textContent = JSON.stringify(data, null, 2);
+        }
+        
+        function showLoading(show) {
+            document.getElementById('loading').style.display = show ? 'block' : 'none';
+        }
+        
+        // Auto-fill with test data
+        document.getElementById('authToken').value = 'your-bearer-token-here';
+    </script>
+</body>
+</html>

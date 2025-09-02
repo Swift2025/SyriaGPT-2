@@ -1,0 +1,45 @@
+{"timestamp": "2025-09-02 06:59:00", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-2", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 06:59:00", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-2", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 06:59:00", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-2", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 06:59:00", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-2", "message": "Started server process [26]"}
+{"timestamp": "2025-09-02 06:59:00", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-2", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 06:59:00", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-2", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 06:59:00", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-2", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 06:59:00", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-2", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 06:59:00", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-2", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 06:59:01", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-2", "message": "HTTP Request: PUT http://qdrant:6333/collections/syria_qa_vectors "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 06:59:01", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "64", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-2", "message": "Created Qdrant collection: syria_qa_vectors"}
+{"timestamp": "2025-09-02 06:59:01", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-2", "message": "Failed to generate embedding for text: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}
+{"timestamp": "2025-09-02 06:59:01", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-2", "message": "GenAI API embedding failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 163, in embed_content
+    model = model_types.make_model_name(model)
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/types/model_types.py", line 362, in make_model_name
+    raise ValueError(
+        f"Invalid model name: '{name}'. Model names should start with 'models/' or 'tunedModels/'."
+    )
+ValueError: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.

@@ -8,11 +8,8 @@ import json
 from config.logging_config import get_logger
 import time
 import ast
-<<<<<<< HEAD
 from datetime import datetime
 import re
-=======
->>>>>>> 72b87816b64a29691b388b79eb40ec26d86dc91c
 
 logger = get_logger(__name__)
 
@@ -23,15 +20,9 @@ class GeminiService:
     """
     
     def __init__(self):
-<<<<<<< HEAD
         self.api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
         self.model_name = "gemini-1.5-flash"  # Fast model for Q&A
         self.pro_model_name = "gemini-1.5-pro"  # More capable model for complex queries
-=======
-        self.api_key = os.getenv("GOOGLE_API_KEY")
-        self.model_name = "gemini-2.5-flash"  # Fast model for Q&A
-        self.pro_model_name = "gemini-2.5-pro"  # More capable model for complex queries
->>>>>>> 72b87816b64a29691b388b79eb40ec26d86dc91c
         self.client = None
         self.model = None
         self.pro_model = None
@@ -41,12 +32,8 @@ class GeminiService:
     def _initialize_client(self):
         """Initialize Gemini client with latest GenAI library"""
         if not self.api_key:
-<<<<<<< HEAD
             logger.warning("GOOGLE_API_KEY or GEMINI_API_KEY not found - Gemini service will be unavailable")
             self.client = None
-=======
-            logger.warning("GOOGLE_API_KEY not found - using mock mode")
->>>>>>> 72b87816b64a29691b388b79eb40ec26d86dc91c
             self.model = None
             self.pro_model = None
             return
@@ -94,145 +81,291 @@ class GeminiService:
     async def answer_question(
         self,
         question: str,
-<<<<<<< HEAD
         context: Optional[str] = None,
         language: str = "auto",
         previous_qa_pairs: Optional[List[Dict[str, Any]]] = None
-    ) -> Dict[str, Any]:
+    ) -> Optional[Dict[str, Any]]:
         """
-        Answer a question using Gemini API with context and previous Q&A pairs.
+        Answer a question using Gemini AI with optional context and conversation history.
         
         Args:
-            question: The user's question
-            context: Additional context (e.g., from web scraping)
-            language: Preferred response language
-            previous_qa_pairs: Previous Q&A pairs for context
+            question: The question to answer
+            context: Optional context information (e.g., web scraped content)
+            language: Language preference (auto-detected if "auto")
+            previous_qa_pairs: Optional list of previous Q&A pairs for context
             
         Returns:
-            Dictionary with answer and metadata
+            Dictionary with answer and metadata, or None if failed
         """
-        log_function_entry(logger, "answer_question", question_length=len(question), has_context=bool(context))
-        start_time = time.time()
+        if not self.is_connected():
+            logger.error("Gemini service not connected")
+            return None
         
         try:
-            if not self.api_key or not self.model:
-                raise RuntimeError("Gemini API key not configured or model not initialized")
+            start_time = time.time()
             
-            # Build the prompt
-            prompt_parts = []
+            # Build the prompt with context
+            prompt = self._build_prompt(question, context, language, previous_qa_pairs)
             
-            # System instruction
-            system_instruction = """أنت مساعد ذكي متخصص في الإجابة على الأسئلة المتعلقة بسوريا. 
-            يجب أن تكون إجاباتك دقيقة ومحدثة ومفيدة. استخدم المعلومات المتاحة في السياق المقدم.
-            إذا لم تكن متأكداً من إجابة، اعترف بذلك وقدم أفضل ما يمكنك من معلومات."""
-            
-            prompt_parts.append(system_instruction)
-            
-            # Add context if provided
-            if context:
-                prompt_parts.append(f"معلومات خلفية:\n{context}")
-            
-            # Add previous Q&A pairs for context
-            if previous_qa_pairs:
-                prompt_parts.append("أسئلة وأجوبة سابقة للسياق:")
-                for i, qa in enumerate(previous_qa_pairs[:3]):  # Limit to 3 previous Q&A
-                    prompt_parts.append(f"س: {qa.get('question', '')}")
-                    prompt_parts.append(f"ج: {qa.get('answer', '')}")
-                prompt_parts.append("")
-            
-            # Add the current question
-            prompt_parts.append(f"السؤال: {question}")
-            prompt_parts.append("الإجابة:")
-            
-            full_prompt = "\n".join(prompt_parts)
+            # Use the appropriate model based on complexity
+            model_to_use = self.pro_model if self._is_complex_question(question, context) else self.model
             
             # Generate response
             response = await asyncio.get_event_loop().run_in_executor(
                 None,
-                lambda: self.model.generate_content(full_prompt)
+                lambda: model_to_use.generate_content(prompt)
             )
             
             if not response or not response.text:
-                raise RuntimeError("Empty response from Gemini")
+                logger.warning("Empty response from Gemini")
+                return None
             
-            answer = response.text.strip()
+            # Process and validate response
+            processed_response = self._process_response(response.text, question, language)
             
-            # Calculate confidence based on response length and content
-            confidence = self._calculate_confidence(answer, question)
+            if not processed_response:
+                logger.warning("Failed to process Gemini response")
+                return None
             
-            # Extract keywords
-            keywords = self._extract_keywords(answer)
+            processing_time = time.time() - start_time
             
-            # Determine language
-            detected_language = self._detect_language(answer) if language == "auto" else language
+            # Extract confidence and other metadata
+            confidence = self._extract_confidence(processed_response, context)
             
-            result = {
-                "answer": answer,
-                "confidence": confidence,
-                "language": detected_language,
-                "keywords": keywords,
-                "model_used": self.model_name,
-                "processing_time": time.time() - start_time,
-                "sources": [],  # Will be populated if we have web scraping data
-                "created_at": datetime.now().isoformat()
-            }
-            
-            duration = time.time() - start_time
-            log_performance(logger, "Gemini question answering", duration, question_length=len(question))
-            log_function_exit(logger, "answer_question", result={"answer_length": len(answer)}, duration=duration)
-            
-            return result
-            
-        except Exception as e:
-            duration = time.time() - start_time
-            log_error_with_context(logger, e, "answer_question", question=question, duration=duration)
-            logger.error(f"Failed to get answer from Gemini: {e}")
-            log_function_exit(logger, "answer_question", duration=duration)
-            raise RuntimeError(f"Failed to get answer from Gemini: {e}")
-=======
-    ) -> Optional[Dict[str, Any]]:
-        
-        try:
-            prompt = f"أجب على السؤال التالي بما يتوافق مع المجتمع السوري: {question}"
-            answer = self.model.generate_answer(prompt)
             return {
-                "answer": answer,
-                "model_used": self.model_name
+                "answer": processed_response,
+                "confidence": confidence,
+                "language": language,
+                "model_used": model_to_use.model_name,
+                "processing_time": processing_time,
+                "sources": self._extract_sources(context),
+                "keywords": self._extract_keywords(processed_response),
+                "timestamp": datetime.now().isoformat()
             }
             
         except Exception as e:
-            logger.error(f"Failed to get answer from Gemini: {e}")
+            logger.error(f"Failed to answer question with Gemini: {e}")
             return None
     
->>>>>>> 72b87816b64a29691b388b79eb40ec26d86dc91c
+    def _build_prompt(
+        self,
+        question: str,
+        context: Optional[str] = None,
+        language: str = "auto",
+        previous_qa_pairs: Optional[List[Dict[str, Any]]] = None
+    ) -> str:
+        """Build a comprehensive prompt for Gemini"""
+        prompt_parts = []
+        
+        # System instructions
+        system_instructions = self._get_system_instructions(language)
+        prompt_parts.append(system_instructions)
+        
+        # Context information
+        if context:
+            prompt_parts.append(f"Context Information:\n{context}\n")
+        
+        # Previous Q&A pairs for conversation context
+        if previous_qa_pairs:
+            prompt_parts.append("Previous Questions and Answers:")
+            for qa in previous_qa_pairs[-3:]:  # Last 3 Q&A pairs
+                prompt_parts.append(f"Q: {qa.get('question', '')}")
+                prompt_parts.append(f"A: {qa.get('answer', '')}\n")
+        
+        # Current question
+        prompt_parts.append(f"Question: {question}")
+        
+        # Language-specific instructions
+        if language != "auto":
+            lang_instruction = self._get_language_instruction(language)
+            if lang_instruction:
+                prompt_parts.append(f"\n{lang_instruction}")
+        
+        return "\n".join(prompt_parts)
+    
+    def _get_system_instructions(self, language: str) -> str:
+        """Get system instructions based on language"""
+        base_instructions = """
+You are SyriaGPT, an intelligent AI assistant specialized in providing accurate, helpful, and contextually relevant information about Syria. 
+
+Your responses should be:
+- Accurate and fact-based
+- Helpful and informative
+- Respectful of cultural sensitivities
+- Well-structured and easy to understand
+- Based on the provided context when available
+
+When answering questions:
+1. Use the provided context if available
+2. Provide comprehensive but concise answers
+3. If you're unsure about specific details, acknowledge the limitations
+4. Focus on factual information rather than opinions
+5. Be sensitive to the complex historical and political context of Syria
+"""
+        
+        if language == "ar" or any(char in "أبتثجحخدذرزسشصضطظعغفقكلمنهوي" for char in language):
+            base_instructions += "\nأجب باللغة العربية بشكل واضح ومفهوم."
+        
+        return base_instructions
+    
+    def _get_language_instruction(self, language: str) -> str:
+        """Get language-specific instruction"""
+        language_instructions = {
+            "en": "Please respond in English.",
+            "ar": "يرجى الإجابة باللغة العربية.",
+            "fr": "Veuillez répondre en français.",
+            "de": "Bitte antworten Sie auf Deutsch.",
+            "es": "Por favor, responda en español."
+        }
+        return language_instructions.get(language, "")
+    
+    def _is_complex_question(self, question: str, context: Optional[str] = None) -> bool:
+        """Determine if a question is complex enough to use the pro model"""
+        # Use pro model for longer questions or when context is provided
+        if context and len(context) > 1000:
+            return True
+        
+        # Use pro model for questions that seem complex
+        complex_indicators = [
+            "explain", "analyze", "compare", "discuss", "evaluate",
+            "explain", "حلل", "قارن", "ناقش", "قيّم"
+        ]
+        
+        question_lower = question.lower()
+        return any(indicator in question_lower for indicator in complex_indicators)
+    
+    def _process_response(self, response_text: str, question: str, language: str) -> Optional[str]:
+        """Process and validate the Gemini response"""
+        if not response_text or len(response_text.strip()) < 10:
+            return None
+        
+        # Clean up the response
+        cleaned_response = response_text.strip()
+        
+        # Remove any markdown formatting if present
+        cleaned_response = re.sub(r'```[\w]*\n', '', cleaned_response)
+        cleaned_response = re.sub(r'```', '', cleaned_response)
+        
+        # Ensure the response is relevant to the question
+        if not self._is_response_relevant(cleaned_response, question):
+            logger.warning("Gemini response seems irrelevant to the question")
+            return None
+        
+        return cleaned_response
+    
+    def _is_response_relevant(self, response: str, question: str) -> bool:
+        """Check if the response is relevant to the question"""
+        # Simple relevance check - can be enhanced
+        question_words = set(re.findall(r'\w+', question.lower()))
+        response_words = set(re.findall(r'\w+', response.lower()))
+        
+        # Check for common words
+        common_words = question_words.intersection(response_words)
+        return len(common_words) >= min(2, len(question_words) // 2)
+    
+    def _extract_confidence(self, response: str, context: Optional[str] = None) -> float:
+        """Extract confidence score for the response"""
+        base_confidence = 0.8
+        
+        # Increase confidence if context is provided
+        if context:
+            base_confidence += 0.1
+        
+        # Increase confidence for longer, more detailed responses
+        if len(response) > 200:
+            base_confidence += 0.05
+        
+        # Decrease confidence for responses with uncertainty indicators
+        uncertainty_indicators = [
+            "I'm not sure", "I don't know", "might be", "could be",
+            "لست متأكداً", "لا أعرف", "قد يكون", "يمكن أن يكون"
+        ]
+        
+        for indicator in uncertainty_indicators:
+            if indicator.lower() in response.lower():
+                base_confidence -= 0.1
+                break
+        
+        return min(1.0, max(0.0, base_confidence))
+    
+    def _extract_sources(self, context: Optional[str] = None) -> List[str]:
+        """Extract source information from context"""
+        sources = []
+        
+        if context:
+            # Look for URL patterns
+            url_pattern = r'https?://[^\s]+'
+            urls = re.findall(url_pattern, context)
+            sources.extend(urls)
+            
+            # Look for source mentions
+            source_patterns = [
+                r'source[s]?\s*:\s*([^\n]+)',
+                r'from\s+([^\n]+)',
+                r'according\s+to\s+([^\n]+)'
+            ]
+            
+            for pattern in source_patterns:
+                matches = re.findall(pattern, context, re.IGNORECASE)
+                sources.extend(matches)
+        
+        return list(set(sources))  # Remove duplicates
+    
+    def _extract_keywords(self, response: str) -> List[str]:
+        """Extract key terms from the response"""
+        # Simple keyword extraction - can be enhanced with NLP
+        words = re.findall(r'\b\w{4,}\b', response.lower())
+        
+        # Filter out common stop words
+        stop_words = {
+            'this', 'that', 'with', 'have', 'will', 'from', 'they', 'know',
+            'want', 'been', 'good', 'much', 'some', 'time', 'very', 'when',
+            'just', 'into', 'than', 'more', 'other', 'about', 'many', 'then',
+            'them', 'these', 'people', 'only', 'would', 'there', 'could',
+            'their', 'said', 'each', 'which', 'she', 'do', 'how', 'if',
+            'up', 'out', 'so', 'but', 'he', 'we', 'my', 'has', 'her',
+            'our', 'one', 'all', 'can', 'had', 'by', 'for', 'not',
+            'are', 'you', 'or', 'an', 'at', 'as', 'be', 'to', 'of',
+            'and', 'in', 'is', 'it', 'the', 'a', 'on', 'was', 'i'
+        }
+        
+        keywords = [word for word in words if word not in stop_words]
+        
+        # Return top keywords by frequency
+        from collections import Counter
+        word_counts = Counter(keywords)
+        return [word for word, count in word_counts.most_common(10)]
     
     async def generate_question_variants(
         self,
-        original_question: str,
-        num_variants: int = 5
+        question: str,
+        num_variants: int = 3,
+        language: str = "auto"
     ) -> List[str]:
-<<<<<<< HEAD
         """
-        Generate question variants using Gemini.
+        Generate question variants for better search coverage.
         
         Args:
-            original_question: The original question
+            question: Original question
             num_variants: Number of variants to generate
+            language: Language preference
             
         Returns:
             List of question variants
         """
+        if not self.is_connected():
+            logger.warning("Gemini not available for question variants, using fallback")
+            return await self._generate_fallback_variants(question, num_variants, language)
+        
         try:
-            if not self.model:
-                raise RuntimeError("Gemini model not available")
-            
-            prompt = f"""أنشئ {num_variants} أسئلة مشابهة وتملك معنى السؤال الأصلي وبما يتوافق مع المجتمع السوري.
-            أعد النتيجة بتنسيق list من {num_variants} عناصر هكذا:
-            ["سؤال 1", "سؤال 2", "سؤال 3", "سؤال 4", "سؤال 5"]
-            لا تعد أي شيء مثل (إليك 5 أسئلة مشابهة تتناسب مع السياق السوري:) مباشرة اعط القائمة.
-            
-            السؤال الأصلي:
-            {original_question}"""
+            prompt = f"""
+Generate {num_variants} different ways to ask the same question. 
+The variants should be semantically equivalent but use different phrasing.
+
+Original question: {question}
+
+Generate {num_variants} variants:
+"""
             
             response = await asyncio.get_event_loop().run_in_executor(
                 None,
@@ -240,174 +373,153 @@ class GeminiService:
             )
             
             if not response or not response.text:
-                raise RuntimeError("Empty response from Gemini for question variants")
+                return await self._generate_fallback_variants(question, num_variants, language)
             
-            # Try to parse the response as a list
-            try:
-                # Clean the response text
-                text = response.text.strip()
-                if text.startswith('[') and text.endswith(']'):
-                    variants = ast.literal_eval(text)
-                    if isinstance(variants, list):
-                        return variants[:num_variants]
-            except (ValueError, SyntaxError):
-                pass
+            # Parse the response to extract variants
+            variants = self._parse_variants_from_response(response.text, num_variants)
             
-            # Fallback: split by newlines and clean
-            lines = response.text.strip().split('\n')
-            variants = []
-            for line in lines:
-                line = line.strip()
-                if line and not line.startswith('[') and not line.startswith(']'):
-                    # Remove numbering and quotes
-                    line = re.sub(r'^\d+\.\s*', '', line)
-                    line = re.sub(r'^["\']|["\']$', '', line)
-                    if line:
-                        variants.append(line)
-            
-            return variants[:num_variants]
-            
-        except Exception as e:
-            logger.error(f"Failed to generate question variants: {e}")
-            raise RuntimeError(f"Failed to generate question variants: {e}")
-    
-    def _calculate_confidence(self, answer: str, question: str) -> float:
-        """Calculate confidence score based on answer quality"""
-        try:
-            confidence = 0.8  # Base confidence
-            
-            # Adjust based on answer length
-            if len(answer) > 100:
-                confidence += 0.1
-            elif len(answer) < 50:
-                confidence -= 0.1
-            
-            # Adjust based on question-answer relevance
-            question_words = set(question.lower().split())
-            answer_words = set(answer.lower().split())
-            
-            if question_words and answer_words:
-                overlap = len(question_words.intersection(answer_words))
-                relevance = overlap / len(question_words)
-                confidence += relevance * 0.1
-            
-            # Ensure confidence is between 0.0 and 1.0
-            return max(0.0, min(1.0, confidence))
-            
-        except Exception as e:
-            logger.warning(f"Failed to calculate confidence: {e}")
-            return 0.8
-    
-    def _extract_keywords(self, text: str) -> List[str]:
-        """Extract keywords from text"""
-        try:
-            # Simple keyword extraction
-            words = text.lower().split()
-            # Filter out common words and short words
-            stop_words = {'في', 'من', 'إلى', 'على', 'هذا', 'هذه', 'التي', 'الذي', 'كان', 'هو', 'هي', 'و', 'أو', 'لكن', 'إذا', 'عندما', 'the', 'a', 'an', 'and', 'or', 'but', 'if', 'when', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should'}
-            
-            keywords = []
-            for word in words:
-                word = re.sub(r'[^\w\s]', '', word)
-                if len(word) > 3 and word not in stop_words:
-                    keywords.append(word)
-            
-            # Return unique keywords, limited to 10
-            return list(set(keywords))[:10]
-            
-        except Exception as e:
-            logger.warning(f"Failed to extract keywords: {e}")
-            return []
-    
-    def _detect_language(self, text: str) -> str:
-        """Detect language of text"""
-        try:
-            # Simple language detection based on character sets
-            arabic_chars = sum(1 for char in text if '\u0600' <= char <= '\u06FF')
-            english_chars = sum(1 for char in text if '\u0020' <= char <= '\u007F')
-            
-            if arabic_chars > english_chars:
-                return "ar"
+            if len(variants) >= num_variants:
+                return variants[:num_variants]
             else:
-                return "en"
+                # Fill remaining slots with fallback variants
+                fallback_variants = await self._generate_fallback_variants(question, num_variants - len(variants), language)
+                return variants + fallback_variants
                 
         except Exception as e:
-            logger.warning(f"Failed to detect language: {e}")
-            return "auto"
-=======
-        prompt = f"""أنشئ 5 أسئلة مشابهة و تملك معنى السؤال الأصلي و بما يتوافق مع المجتمع السوري:
-                    أعد النتيجة بتنسيق list من  5 عناصر هكذا:
-                    [ , , , , ]
-                    لا تعد اي شيئ مثل (إليك 5 أسئلة مشابهة تتناسب مع السياق السوري:) مباشرة اعط القائمة
-                    السؤال الأصلي:
-                    {original_question}"""
-        response = self.model.generate_answer(prompt)
-        variants = ast.literal_eval(response.candidates[0].content.parts[0].text)
-        return variants[:num_variants]
->>>>>>> 72b87816b64a29691b388b79eb40ec26d86dc91c
+            logger.warning(f"Failed to generate variants with Gemini: {e}, using fallback")
+            return await self._generate_fallback_variants(question, num_variants, language)
     
-    async def check_content_safety(self, text: str) -> Dict[str, Any]:
-        """Check content safety using Gemini"""
-        try:
-            if not self.model:
-                return {"is_safe": True, "safety_ratings": []}
+    def _parse_variants_from_response(self, response_text: str, num_variants: int) -> List[str]:
+        """Parse question variants from Gemini response"""
+        variants = []
+        
+        # Try to extract numbered variants
+        lines = response_text.split('\n')
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
             
-            prompt = f"""تحقق من سلامة المحتوى التالي وأعد تقييم السلامة:
-            {text}
+            # Remove numbering and clean up
+            cleaned_line = re.sub(r'^\d+[\.\)]\s*', '', line)
+            cleaned_line = re.sub(r'^[-*]\s*', '', cleaned_line)
             
-            أعد النتيجة بتنسيق JSON:
-            {{"is_safe": true/false, "safety_ratings": [{{"category": "...", "probability": "..."}}]}}"""
+            if cleaned_line and len(cleaned_line) > 10:
+                variants.append(cleaned_line)
             
-            response = await asyncio.get_event_loop().run_in_executor(
-                None,
-                lambda: self.model.generate_content(prompt)
-            )
-            
-            if response and response.text:
-                try:
-                    return json.loads(response.text)
-                except json.JSONDecodeError:
-                    pass
-            
-            return {"is_safe": True, "safety_ratings": []}
-            
-        except Exception as e:
-            logger.warning(f"Failed to check content safety: {e}")
-            return {"is_safe": True, "safety_ratings": []}
+            if len(variants) >= num_variants:
+                break
+        
+        return variants
     
-    async def get_system_health(self) -> Dict[str, Any]:
-        """Get system health status"""
+    async def _generate_fallback_variants(
+        self,
+        question: str,
+        num_variants: int,
+        language: str
+    ) -> List[str]:
+        """Generate fallback variants using simple rules"""
+        variants = []
+        
+        # Detect language
+        is_arabic = any(char in question for char in 'أبتثجحخدذرزسشصضطظعغفقكلمنهوي')
+        
+        if is_arabic:
+            # Arabic variants
+            arabic_prefixes = [
+                "ما هو",
+                "أخبرني عن",
+                "شرح",
+                "ما هي",
+                "كيف",
+                "متى",
+                "أين",
+                "لماذا"
+            ]
+            
+            for prefix in arabic_prefixes[:num_variants]:
+                if not question.startswith(prefix):
+                    variants.append(f"{prefix} {question}")
+                else:
+                    # Try different prefixes
+                    alt_prefixes = ["ما هو", "أخبرني عن", "شرح"]
+                    for alt_prefix in alt_prefixes:
+                        if alt_prefix != prefix:
+                            variants.append(f"{alt_prefix} {question}")
+                            break
+        else:
+            # English variants
+            english_prefixes = [
+                "What is",
+                "Tell me about",
+                "Explain",
+                "How",
+                "When",
+                "Where",
+                "Why",
+                "Can you describe"
+            ]
+            
+            for prefix in english_prefixes[:num_variants]:
+                if not question.startswith(prefix):
+                    variants.append(f"{prefix} {question}")
+                else:
+                    # Try different prefixes
+                    alt_prefixes = ["What is", "Tell me about", "Explain"]
+                    for alt_prefix in alt_prefixes:
+                        if alt_prefix != prefix:
+                            variants.append(f"{alt_prefix} {question}")
+                            break
+        
+        # Ensure we have unique variants
+        unique_variants = []
+        seen = set()
+        for variant in variants:
+            if variant not in seen:
+                unique_variants.append(variant)
+                seen.add(variant)
+        
+        return unique_variants[:num_variants]
+    
+    async def get_health(self) -> Dict[str, Any]:
+        """Get health status of the Gemini service"""
         try:
             if not self.is_connected():
                 return {
-                    "connected": False,
-                    "error": "Gemini client not initialized - missing API key"
+                    "available": False,
+                    "error": "Service not connected",
+                    "details": "API key missing or client not initialized"
                 }
             
-            # Test with a simple prompt
-            test_prompt = "Hello, this is a health check."
-            response = await asyncio.get_event_loop().run_in_executor(
-                None,
-                lambda: self.model.generate_content(test_prompt)
+            # Test with a simple question
+            test_response = await self.answer_question(
+                question="Hello, this is a health check.",
+                context="Health check test",
+                language="en"
             )
             
-            if response and response.text:
+            if test_response and test_response.get("answer"):
                 return {
-                    "connected": True,
-                    "model_name": self.model_name,
-                    "response_time": "normal",
-                    "api_key_configured": self.api_key is not None
+                    "available": True,
+                    "models": {
+                        "standard": self.model_name,
+                        "pro": self.pro_model_name
+                    },
+                    "api_key_configured": bool(self.api_key),
+                    "response_time": "normal"
                 }
             else:
                 return {
-                    "connected": False,
-                    "error": "No response from Gemini API"
+                    "available": False,
+                    "error": "Test question failed",
+                    "details": "Service connected but not responding properly"
                 }
                 
         except Exception as e:
             return {
-                "connected": False,
-                "error": str(e)
+                "available": False,
+                "error": str(e),
+                "details": "Health check failed with exception"
             }
 
 # Global Gemini service instance
