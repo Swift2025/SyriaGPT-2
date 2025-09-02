@@ -1,3 +1,0 @@
-services/ai/embedding_service.py
-services/ai/gemini_service.py
-services/ai/intelligent_qa_service.py
