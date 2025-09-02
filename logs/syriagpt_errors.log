@@ -32,3 +32,653 @@ Traceback (most recent call last):
   File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
     raise RuntimeError(f"Embedding generation failed: {e}")
 RuntimeError: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+2025-09-02 06:59:01 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 06:59:01 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 06:59:01 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}
+2025-09-02 06:59:02 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 06:59:02 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}
+2025-09-02 07:01:10 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+2025-09-02 07:01:10 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 163, in embed_content
+    model = model_types.make_model_name(model)
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/types/model_types.py", line 362, in make_model_name
+    raise ValueError(
+        f"Invalid model name: '{name}'. Model names should start with 'models/' or 'tunedModels/'."
+    )
+ValueError: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+2025-09-02 07:01:11 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:01:11 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:01:11 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}
+2025-09-02 07:01:11 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:01:11 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}
+2025-09-02 07:01:14 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+2025-09-02 07:01:14 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 163, in embed_content
+    model = model_types.make_model_name(model)
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/types/model_types.py", line 362, in make_model_name
+    raise ValueError(
+        f"Invalid model name: '{name}'. Model names should start with 'models/' or 'tunedModels/'."
+    )
+ValueError: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+2025-09-02 07:01:14 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:01:14 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:01:14 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}
+2025-09-02 07:01:14 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:01:14 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}
+2025-09-02 07:01:45 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+2025-09-02 07:01:45 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 163, in embed_content
+    model = model_types.make_model_name(model)
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/types/model_types.py", line 362, in make_model_name
+    raise ValueError(
+        f"Invalid model name: '{name}'. Model names should start with 'models/' or 'tunedModels/'."
+    )
+ValueError: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+2025-09-02 07:01:45 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:01:45 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:01:45 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}
+2025-09-02 07:01:45 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:01:45 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}
+2025-09-02 07:01:56 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: 403 Received http2 header with status: 403
+2025-09-02 07:01:56 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+2025-09-02 07:01:56 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:01:56 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:01:56 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}
+2025-09-02 07:01:56 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:01:56 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}
+2025-09-02 07:02:22 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: 403 Received http2 header with status: 403
+2025-09-02 07:02:22 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+2025-09-02 07:02:23 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:02:23 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (1/2 core services healthy)
+2025-09-02 07:02:23 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (1/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}
+2025-09-02 07:02:23 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (1/2 core services healthy)
+2025-09-02 07:02:23 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (1/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (1/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}
+2025-09-02 07:02:48 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: 403 Received http2 header with status: 403
+2025-09-02 07:02:48 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+2025-09-02 07:02:49 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:02:49 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (1/2 core services healthy)
+2025-09-02 07:02:49 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (1/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}
+2025-09-02 07:02:49 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (1/2 core services healthy)
+2025-09-02 07:02:49 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (1/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (1/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}
+2025-09-02 07:03:19 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: 403 Received http2 header with status: 403
+2025-09-02 07:03:19 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+2025-09-02 07:03:20 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:03:20 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:03:20 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}
+2025-09-02 07:03:20 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:03:20 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}
+2025-09-02 07:03:32 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: 403 Received http2 header with status: 403
+2025-09-02 07:03:33 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+2025-09-02 07:03:33 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:03:33 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (1/2 core services healthy)
+2025-09-02 07:03:33 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (1/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}
+2025-09-02 07:03:33 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (1/2 core services healthy)
+2025-09-02 07:03:33 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (1/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (1/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}
+2025-09-02 07:03:45 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: 403 Received http2 header with status: 403
+2025-09-02 07:03:45 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+2025-09-02 07:03:45 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:03:45 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:03:45 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}
+2025-09-02 07:03:45 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)
+2025-09-02 07:03:45 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}
+2025-09-02 07:03:59 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: 403 Received http2 header with status: 403
+2025-09-02 07:03:59 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+2025-09-02 07:03:59 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:03:59 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (1/2 core services healthy)
+2025-09-02 07:03:59 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (1/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}
+2025-09-02 07:03:59 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (1/2 core services healthy)
+2025-09-02 07:03:59 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (1/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (1/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}
+2025-09-02 07:04:17 - services.ai.embedding_service - ERROR - [embedding_service.py:123] - generate_embedding() - Failed to generate embedding for text: 403 Received http2 header with status: 403
+2025-09-02 07:04:17 - services.ai.embedding_service - ERROR - [embedding_service.py:129] - generate_embedding() - GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+2025-09-02 07:04:18 - services.ai.gemini_service - ERROR - [gemini_service.py:147] - answer_question() - Failed to answer question with Gemini: 403 Received http2 header with status: 403
+2025-09-02 07:04:18 - services.ai.intelligent_qa_service - ERROR - [intelligent_qa_service.py:93] - initialize_system() - ❌ Failed to initialize system: Core services are unhealthy (1/2 core services healthy)
+2025-09-02 07:04:18 - services.ai.intelligent_qa_service - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in initialize_system: Core services are unhealthy (1/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}
+2025-09-02 07:04:18 - main - ERROR - [main.py:315] - startup_event() - [STARTUP] System initialization failed: Core services are unhealthy (1/2 core services healthy)
+2025-09-02 07:04:18 - main - ERROR - [logging_config.py:231] - log_error_with_context() - [ERROR] Error in startup_event: Core services are unhealthy (1/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (1/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}

@@ -555,6 +555,49 @@ class WebScrapingService:
                 
         return True
         
+    async def get_health(self) -> Dict[str, Any]:
+        """Get health status of the web scraping service"""
+        try:
+            # Check if session is available
+            if not self.session:
+                return {
+                    "available": False,
+                    "error": "Session not initialized",
+                    "details": "Web scraping service not ready"
+                }
+            
+            # Check if we can make a simple request
+            test_url = "https://httpbin.org/get"
+            try:
+                async with self.session.get(test_url, timeout=5) as response:
+                    if response.status == 200:
+                        return {
+                            "available": True,
+                            "session_status": "healthy",
+                            "test_request": "successful",
+                            "available_sources": list(self.news_sources.keys()),
+                            "rate_limit_delay": self.rate_limit_delay
+                        }
+                    else:
+                        return {
+                            "available": False,
+                            "error": f"Test request failed with status {response.status}",
+                            "details": "HTTP request test unsuccessful"
+                        }
+            except Exception as e:
+                return {
+                    "available": False,
+                    "error": f"Test request failed: {str(e)}",
+                    "details": "Cannot make test HTTP request"
+                }
+                
+        except Exception as e:
+            return {
+                "available": False,
+                "error": str(e),
+                "details": "Health check failed with exception"
+            }
+
     async def get_scraping_stats(self) -> Dict[str, Any]:
         """Get statistics about scraping activity"""
         return {

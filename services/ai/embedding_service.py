@@ -23,7 +23,7 @@ class EmbeddingService:
     
     def __init__(self, output_dim: Optional[int] = None):
         self.api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
-        self.model_name = "embedding-001"  # Google's embedding model
+        self.model_name = "models/embedding-001"  # Google's embedding model - must start with 'models/'
         self.output_dim = output_dim
         self.client = None
         
@@ -69,7 +69,7 @@ class EmbeddingService:
             embeddings = []
             for text_item in texts:
                 try:
-                    # Use the embedding model with the correct API
+                    # Use the embedding model
                     result = await asyncio.get_event_loop().run_in_executor(
                         None,
                         lambda: self.client.embed_content(

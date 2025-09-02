@@ -250,6 +250,72 @@ class QdrantService:
         await self.delete_qa_embedding(qa_id)
         return await self.store_qa_embedding(qa_id, question, embedding, metadata)
     
+    async def store_qa_pair(
+        self,
+        qa_pair_id: int,
+        question: str,
+        answer: str,
+        question_embedding: List[float]
+    ) -> bool:
+        """
+        Store a Q&A pair in Qdrant (compatibility method for intelligent QA service)
+        
+        Args:
+            qa_pair_id: PostgreSQL Q&A pair ID
+            question: The question text
+            answer: The answer text
+            question_embedding: Vector embedding of the question
+        
+        Returns:
+            Success status
+        """
+        return await self.store_qa_embedding(
+            qa_id=str(qa_pair_id),
+            question=question,
+            embedding=question_embedding,
+            metadata={
+                "answer": answer,
+                "postgresql_id": qa_pair_id,
+                "stored_at": time.time()
+            }
+        )
+    
+    async def get_health(self) -> Dict[str, Any]:
+        """Get health status of the Qdrant service"""
+        try:
+            if not self.client:
+                return {
+                    "available": False,
+                    "error": "Client not initialized",
+                    "details": "Qdrant client not available"
+                }
+            
+            if not self.is_connected():
+                return {
+                    "available": False,
+                    "error": "Connection failed",
+                    "details": "Cannot connect to Qdrant server"
+                }
+            
+            # Test with a simple operation
+            collections = await asyncio.to_thread(self.client.get_collections)
+            
+            return {
+                "available": True,
+                "host": self.host,
+                "port": self.port,
+                "collection_name": self.collection_name,
+                "collections_count": len(collections.collections),
+                "connection_status": "healthy"
+            }
+            
+        except Exception as e:
+            return {
+                "available": False,
+                "error": str(e),
+                "details": "Health check failed with exception"
+            }
+
     async def get_collection_stats(self) -> Dict[str, Any]:
         """Get statistics about the vector collection"""
         if not self.client or not self.is_connected():

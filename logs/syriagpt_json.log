@@ -43,3 +43,837 @@ Traceback (most recent call last):
   File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
     raise RuntimeError(f"Embedding generation failed: {e}")
 RuntimeError: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+{"timestamp": "2025-09-02 06:59:01", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-2", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 06:59:01", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-2", "message": "❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 06:59:01", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-2", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}"}
+{"timestamp": "2025-09-02 06:59:01", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-2", "message": "[ERROR] Error details: Exception: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 06:59:02", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-2", "message": "[STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 06:59:02", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-2", "message": "[ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}"}
+{"timestamp": "2025-09-02 06:59:02", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-2", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:01:06", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "264", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-2", "message": "Shutting down"}
+{"timestamp": "2025-09-02 07:01:06", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-2", "message": "Waiting for application shutdown."}
+{"timestamp": "2025-09-02 07:01:06", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-2", "message": "Application shutdown complete."}
+{"timestamp": "2025-09-02 07:01:06", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-2", "message": "Finished server process [26]"}
+{"timestamp": "2025-09-02 07:01:10", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-3", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:01:10", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-3", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:01:10", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-3", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:01:10", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-3", "message": "Started server process [65]"}
+{"timestamp": "2025-09-02 07:01:10", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-3", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:01:10", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-3", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:01:10", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-3", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:01:10", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-3", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:01:10", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-3", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:01:10", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-3", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:01:10", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-3", "message": "Failed to generate embedding for text: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}
+{"timestamp": "2025-09-02 07:01:10", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-3", "message": "GenAI API embedding failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 163, in embed_content
+    model = model_types.make_model_name(model)
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/types/model_types.py", line 362, in make_model_name
+    raise ValueError(
+        f"Invalid model name: '{name}'. Model names should start with 'models/' or 'tunedModels/'."
+    )
+ValueError: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+{"timestamp": "2025-09-02 07:01:11", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-3", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:01:11", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-3", "message": "❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:11", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-3", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}"}
+{"timestamp": "2025-09-02 07:01:11", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-3", "message": "[ERROR] Error details: Exception: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:11", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-3", "message": "[STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:11", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-3", "message": "[ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}"}
+{"timestamp": "2025-09-02 07:01:11", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-3", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:01:14", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-4", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:01:14", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-4", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:01:14", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-4", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:01:14", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-4", "message": "Started server process [103]"}
+{"timestamp": "2025-09-02 07:01:14", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-4", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:01:14", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-4", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:01:14", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-4", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:01:14", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-4", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:01:14", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-4", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:01:14", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-4", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:01:14", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-4", "message": "Failed to generate embedding for text: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}
+{"timestamp": "2025-09-02 07:01:14", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-4", "message": "GenAI API embedding failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 163, in embed_content
+    model = model_types.make_model_name(model)
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/types/model_types.py", line 362, in make_model_name
+    raise ValueError(
+        f"Invalid model name: '{name}'. Model names should start with 'models/' or 'tunedModels/'."
+    )
+ValueError: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+{"timestamp": "2025-09-02 07:01:14", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-4", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:01:14", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-4", "message": "❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:14", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-4", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}"}
+{"timestamp": "2025-09-02 07:01:14", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-4", "message": "[ERROR] Error details: Exception: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:14", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-4", "message": "[STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:14", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-4", "message": "[ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}"}
+{"timestamp": "2025-09-02 07:01:14", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-4", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:01:34", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "264", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-4", "message": "Shutting down"}
+{"timestamp": "2025-09-02 07:01:34", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-4", "message": "Waiting for application shutdown."}
+{"timestamp": "2025-09-02 07:01:34", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-4", "message": "Application shutdown complete."}
+{"timestamp": "2025-09-02 07:01:34", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-4", "message": "Finished server process [103]"}
+{"timestamp": "2025-09-02 07:01:44", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-6", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:01:44", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-6", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:01:45", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-6", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:01:45", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-6", "message": "Started server process [160]"}
+{"timestamp": "2025-09-02 07:01:45", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-6", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:01:45", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-6", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:01:45", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-6", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:01:45", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-6", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:01:45", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-6", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:01:45", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-6", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:01:45", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-6", "message": "Failed to generate embedding for text: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}
+{"timestamp": "2025-09-02 07:01:45", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-6", "message": "GenAI API embedding failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 163, in embed_content
+    model = model_types.make_model_name(model)
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/types/model_types.py", line 362, in make_model_name
+    raise ValueError(
+        f"Invalid model name: '{name}'. Model names should start with 'models/' or 'tunedModels/'."
+    )
+ValueError: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'.
+{"timestamp": "2025-09-02 07:01:45", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-6", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:01:45", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-6", "message": "❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:45", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-6", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}"}
+{"timestamp": "2025-09-02 07:01:45", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-6", "message": "[ERROR] Error details: Exception: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:45", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-6", "message": "[STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:45", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-6", "message": "[ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': "Embedding service failed: Embedding generation failed: Invalid model name: 'embedding-001'. Model names should start with 'models/' or 'tunedModels/'."}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}"}
+{"timestamp": "2025-09-02 07:01:45", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-6", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:01:53", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "264", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-6", "message": "Shutting down"}
+{"timestamp": "2025-09-02 07:01:53", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-6", "message": "Waiting for application shutdown."}
+{"timestamp": "2025-09-02 07:01:53", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-6", "message": "Application shutdown complete."}
+{"timestamp": "2025-09-02 07:01:53", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-6", "message": "Finished server process [160]"}
+{"timestamp": "2025-09-02 07:01:55", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-7", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:01:55", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-7", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:01:56", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-7", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:01:56", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-7", "message": "Started server process [199]"}
+{"timestamp": "2025-09-02 07:01:56", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-7", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:01:56", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-7", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:01:56", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-7", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:01:56", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-7", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:01:56", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-7", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:01:56", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-7", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:01:56", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-7", "message": "Failed to generate embedding for text: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:01:56", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-7", "message": "GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403"}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+{"timestamp": "2025-09-02 07:01:56", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-7", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:01:56", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-7", "message": "❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:56", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-7", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}"}
+{"timestamp": "2025-09-02 07:01:56", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-7", "message": "[ERROR] Error details: Exception: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:56", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-7", "message": "[STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:01:56", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-7", "message": "[ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}"}
+{"timestamp": "2025-09-02 07:01:56", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-7", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:02:20", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "264", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-7", "message": "Shutting down"}
+{"timestamp": "2025-09-02 07:02:20", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-7", "message": "Waiting for application shutdown."}
+{"timestamp": "2025-09-02 07:02:20", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-7", "message": "Application shutdown complete."}
+{"timestamp": "2025-09-02 07:02:20", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-7", "message": "Finished server process [199]"}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-8", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-8", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-8", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-8", "message": "Started server process [239]"}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-8", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-8", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:02:22", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-8", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-8", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-8", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-8", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "MainThread", "process": "SpawnProcess-8", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:02:22", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-8", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:02:22", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-8", "message": "Failed to generate embedding for text: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:02:22", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-8", "message": "GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403"}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+{"timestamp": "2025-09-02 07:02:23", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-8", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:02:23", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-8", "message": "❌ Failed to initialize system: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:02:23", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-8", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (1/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}"}
+{"timestamp": "2025-09-02 07:02:23", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-8", "message": "[ERROR] Error details: Exception: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:02:23", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-8", "message": "[STARTUP] System initialization failed: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:02:23", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-8", "message": "[ERROR] Error in startup_event: Core services are unhealthy (1/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (1/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'error': "'WebScrapingService' object has no attribute 'get_health'"}}}}"}
+{"timestamp": "2025-09-02 07:02:23", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-8", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:02:46", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "264", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-8", "message": "Shutting down"}
+{"timestamp": "2025-09-02 07:02:46", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-8", "message": "Waiting for application shutdown."}
+{"timestamp": "2025-09-02 07:02:46", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-8", "message": "Application shutdown complete."}
+{"timestamp": "2025-09-02 07:02:46", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-8", "message": "Finished server process [239]"}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-9", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-9", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-9", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-9", "message": "Started server process [279]"}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-9", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-9", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:02:48", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-9", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-9", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-9", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-9", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "MainThread", "process": "SpawnProcess-9", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:02:48", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-9", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:02:48", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-9", "message": "Failed to generate embedding for text: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:02:48", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-9", "message": "GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403"}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+{"timestamp": "2025-09-02 07:02:49", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-9", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:02:49", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-9", "message": "❌ Failed to initialize system: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:02:49", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-9", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (1/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}"}
+{"timestamp": "2025-09-02 07:02:49", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-9", "message": "[ERROR] Error details: Exception: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:02:49", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-9", "message": "[STARTUP] System initialization failed: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:02:49", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-9", "message": "[ERROR] Error in startup_event: Core services are unhealthy (1/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (1/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}"}
+{"timestamp": "2025-09-02 07:02:49", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-9", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:03:17", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "264", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-9", "message": "Shutting down"}
+{"timestamp": "2025-09-02 07:03:17", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-9", "message": "Waiting for application shutdown."}
+{"timestamp": "2025-09-02 07:03:17", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-9", "message": "Application shutdown complete."}
+{"timestamp": "2025-09-02 07:03:17", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-9", "message": "Finished server process [279]"}
+{"timestamp": "2025-09-02 07:03:19", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-10", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:03:19", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-10", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:03:19", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-10", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:03:19", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-10", "message": "Started server process [319]"}
+{"timestamp": "2025-09-02 07:03:19", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-10", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:03:19", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-10", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:03:19", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-10", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:03:19", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-10", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:03:19", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-10", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:03:19", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-10", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:03:19", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-10", "message": "Failed to generate embedding for text: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:03:19", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-10", "message": "GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403"}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+{"timestamp": "2025-09-02 07:03:20", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-10", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:03:20", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-10", "message": "❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:20", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-10", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}"}
+{"timestamp": "2025-09-02 07:03:20", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-10", "message": "[ERROR] Error details: Exception: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:20", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-10", "message": "[STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:20", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-10", "message": "[ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}"}
+{"timestamp": "2025-09-02 07:03:20", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-10", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:03:30", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "264", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-10", "message": "Shutting down"}
+{"timestamp": "2025-09-02 07:03:30", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-10", "message": "Waiting for application shutdown."}
+{"timestamp": "2025-09-02 07:03:30", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-10", "message": "Application shutdown complete."}
+{"timestamp": "2025-09-02 07:03:30", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-10", "message": "Finished server process [319]"}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-11", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-11", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-11", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-11", "message": "Started server process [359]"}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-11", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-11", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:03:32", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-11", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-11", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-11", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-11", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "MainThread", "process": "SpawnProcess-11", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:03:32", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-11", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:03:32", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-11", "message": "Failed to generate embedding for text: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:03:33", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-11", "message": "GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403"}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+{"timestamp": "2025-09-02 07:03:33", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-11", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:03:33", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-11", "message": "❌ Failed to initialize system: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:33", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-11", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (1/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}"}
+{"timestamp": "2025-09-02 07:03:33", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-11", "message": "[ERROR] Error details: Exception: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:33", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-11", "message": "[STARTUP] System initialization failed: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:33", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-11", "message": "[ERROR] Error in startup_event: Core services are unhealthy (1/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (1/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}"}
+{"timestamp": "2025-09-02 07:03:33", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-11", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:03:42", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "264", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-11", "message": "Shutting down"}
+{"timestamp": "2025-09-02 07:03:42", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-11", "message": "Waiting for application shutdown."}
+{"timestamp": "2025-09-02 07:03:42", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-11", "message": "Application shutdown complete."}
+{"timestamp": "2025-09-02 07:03:42", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-11", "message": "Finished server process [359]"}
+{"timestamp": "2025-09-02 07:03:44", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-12", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:03:44", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-12", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:03:44", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-12", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:03:44", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-12", "message": "Started server process [399]"}
+{"timestamp": "2025-09-02 07:03:44", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-12", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:03:44", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-12", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:03:44", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-12", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:03:44", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-12", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:03:44", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-12", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:03:44", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-12", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:03:45", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-12", "message": "Failed to generate embedding for text: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:03:45", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-12", "message": "GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403"}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+{"timestamp": "2025-09-02 07:03:45", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-12", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:03:45", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-12", "message": "❌ Failed to initialize system: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:45", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-12", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (0/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}"}
+{"timestamp": "2025-09-02 07:03:45", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-12", "message": "[ERROR] Error details: Exception: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:45", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-12", "message": "[STARTUP] System initialization failed: Core services are unhealthy (0/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:45", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-12", "message": "[ERROR] Error in startup_event: Core services are unhealthy (0/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (0/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'unhealthy', 'error': "'QdrantService' object has no attribute 'get_health'"}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}"}
+{"timestamp": "2025-09-02 07:03:45", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-12", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:03:56", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "264", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-12", "message": "Shutting down"}
+{"timestamp": "2025-09-02 07:03:56", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-12", "message": "Waiting for application shutdown."}
+{"timestamp": "2025-09-02 07:03:56", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-12", "message": "Application shutdown complete."}
+{"timestamp": "2025-09-02 07:03:56", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-12", "message": "Finished server process [399]"}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-13", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-13", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-13", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-13", "message": "Started server process [439]"}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-13", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-13", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:03:58", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-13", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-13", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-13", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-13", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "MainThread", "process": "SpawnProcess-13", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:03:58", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-13", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:03:59", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-13", "message": "Failed to generate embedding for text: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:03:59", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-13", "message": "GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403"}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+{"timestamp": "2025-09-02 07:03:59", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-13", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:03:59", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-13", "message": "❌ Failed to initialize system: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:59", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-13", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (1/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}"}
+{"timestamp": "2025-09-02 07:03:59", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-13", "message": "[ERROR] Error details: Exception: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:59", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-13", "message": "[STARTUP] System initialization failed: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:03:59", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-13", "message": "[ERROR] Error in startup_event: Core services are unhealthy (1/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (1/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}"}
+{"timestamp": "2025-09-02 07:03:59", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-13", "message": "Application startup complete."}
+{"timestamp": "2025-09-02 07:04:15", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "264", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-13", "message": "Shutting down"}
+{"timestamp": "2025-09-02 07:04:15", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "67", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-13", "message": "Waiting for application shutdown."}
+{"timestamp": "2025-09-02 07:04:15", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "76", "function": "shutdown", "thread": "MainThread", "process": "SpawnProcess-13", "message": "Application shutdown complete."}
+{"timestamp": "2025-09-02 07:04:15", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "94", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-13", "message": "Finished server process [439]"}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "root", "file": "logging_config.py", "line": "157", "function": "setup_logging", "thread": "MainThread", "process": "SpawnProcess-14", "message": "[SETUP] Logging system initialized with level: INFO"}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "main", "file": "main.py", "line": "32", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-14", "message": "[STARTUP] Initializing Syria GPT FastAPI application..."}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "main", "file": "main.py", "line": "204", "function": "<module>", "thread": "MainThread", "process": "SpawnProcess-14", "message": "[ROUTER] All API routers included successfully"}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "uvicorn.error", "file": "server.py", "line": "84", "function": "_serve", "thread": "MainThread", "process": "SpawnProcess-14", "message": "Started server process [479]"}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "48", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-14", "message": "Waiting for application startup."}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "main", "file": "main.py", "line": "298", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-14", "message": "[STARTUP] Starting Syria GPT application..."}
+{"timestamp": "2025-09-02 07:04:17", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "205", "function": "log_function_entry", "thread": "MainThread", "process": "SpawnProcess-14", "message": "[ENTER] Entering function: initialize_system with params: {}"}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "67", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-14", "message": "🚀 Initializing Enhanced Syria GPT Q&A system..."}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-14", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "services.ai.qdrant_service", "file": "qdrant_service.py", "line": "66", "function": "_ensure_collection_exists", "thread": "MainThread", "process": "SpawnProcess-14", "message": "Qdrant collection syria_qa_vectors already exists"}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "MainThread", "process": "SpawnProcess-14", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:04:17", "level": "INFO", "logger": "httpx", "file": "_client.py", "line": "1013", "function": "_send_single_request", "thread": "asyncio_0", "process": "SpawnProcess-14", "message": "HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK""}
+{"timestamp": "2025-09-02 07:04:17", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "123", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-14", "message": "Failed to generate embedding for text: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:04:17", "level": "ERROR", "logger": "services.ai.embedding_service", "file": "embedding_service.py", "line": "129", "function": "generate_embedding", "thread": "MainThread", "process": "SpawnProcess-14", "message": "GenAI API embedding failed: Embedding generation failed: 403 Received http2 header with status: 403"}
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 73, in generate_embedding
+    result = await asyncio.get_event_loop().run_in_executor(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/app/services/ai/embedding_service.py", line 75, in <lambda>
+    lambda: self.client.embed_content(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=self.model_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        content=text_item
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/google/generativeai/embedding.py", line 213, in embed_content
+    embedding_response = client.embed_content(
+        embedding_request,
+        **request_options,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 1252, in embed_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Received http2 header with status: 403
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/services/ai/embedding_service.py", line 124, in generate_embedding
+    raise RuntimeError(f"Embedding generation failed: {e}")
+RuntimeError: Embedding generation failed: 403 Received http2 header with status: 403
+{"timestamp": "2025-09-02 07:04:18", "level": "ERROR", "logger": "services.ai.gemini_service", "file": "gemini_service.py", "line": "147", "function": "answer_question", "thread": "MainThread", "process": "SpawnProcess-14", "message": "Failed to answer question with Gemini: 403 Received http2 header with status: 403"}
+{"timestamp": "2025-09-02 07:04:18", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "intelligent_qa_service.py", "line": "93", "function": "initialize_system", "thread": "MainThread", "process": "SpawnProcess-14", "message": "❌ Failed to initialize system: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:04:18", "level": "ERROR", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-14", "message": "[ERROR] Error in initialize_system: Core services are unhealthy (1/2 core services healthy) - Context: {'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}"}
+{"timestamp": "2025-09-02 07:04:18", "level": "DEBUG", "logger": "services.ai.intelligent_qa_service", "file": "logging_config.py", "line": "232", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-14", "message": "[ERROR] Error details: Exception: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:04:18", "level": "ERROR", "logger": "main", "file": "main.py", "line": "315", "function": "startup_event", "thread": "MainThread", "process": "SpawnProcess-14", "message": "[STARTUP] System initialization failed: Core services are unhealthy (1/2 core services healthy)"}
+{"timestamp": "2025-09-02 07:04:18", "level": "ERROR", "logger": "main", "file": "logging_config.py", "line": "231", "function": "log_error_with_context", "thread": "MainThread", "process": "SpawnProcess-14", "message": "[ERROR] Error in startup_event: Core services are unhealthy (1/2 core services healthy) - Context: {'init_result': {'status': 'error', 'error': 'Core services are unhealthy (1/2 core services healthy)', 'health_checks': {'qdrant': {'status': 'healthy', 'details': {'available': True, 'host': 'qdrant', 'port': 6333, 'collection_name': 'syria_qa_vectors', 'collections_count': 1, 'connection_status': 'healthy'}}, 'embedding': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Embedding service failed: Embedding generation failed: 403 Received http2 header with status: 403'}}, 'gemini': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Test question failed', 'details': 'Service connected but not responding properly'}}, 'web_scraping': {'status': 'unhealthy', 'details': {'available': False, 'error': 'Session not initialized', 'details': 'Web scraping service not ready'}}}}}"}
+{"timestamp": "2025-09-02 07:04:18", "level": "INFO", "logger": "uvicorn.error", "file": "on.py", "line": "62", "function": "startup", "thread": "MainThread", "process": "SpawnProcess-14", "message": "Application startup complete."}
