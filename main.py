@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, HTTPBearer
 from fastapi.openapi.utils import get_openapi
+from fastapi.middleware.cors import CORSMiddleware
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from services.dependencies import limiter, get_current_user
@@ -347,6 +348,55 @@ app = FastAPI(
     ],
     lifespan=lifespan
 )
+
+# Configure CORS middleware
+logger.debug("[CONFIG] Configuring CORS middleware...")
+
+# Get CORS origins from environment or use defaults
+CORS_ORIGINS = os.getenv(
+    "CORS_ORIGINS", 
+    "http://localhost:3000,http://127.0.0.1:3000,http://localhost:9000,http://127.0.0.1:9000"
+).split(",")
+
+# Add Docker network origins if running in Docker
+if os.getenv("DOCKER_ENV") or os.getenv("RUNNING_IN_DOCKER"):
+    logger.debug("[CONFIG] Docker environment detected, adding Docker network origins")
+    docker_origins = [
+        "http://172.18.0.1:3000",
+        "http://172.18.0.1:9000",
+        "http://172.18.0.2:3000",
+        "http://172.18.0.2:9000",
+        "http://frontend:3000",
+        "http://app:9000"
+    ]
+    CORS_ORIGINS.extend(docker_origins)
+
+# Add wildcard for development if specified
+if os.getenv("CORS_ALLOW_ALL", "false").lower() == "true":
+    logger.debug("[CONFIG] CORS allow all enabled for development")
+    CORS_ORIGINS.append("*")
+
+logger.debug(f"[CONFIG] CORS origins configured: {CORS_ORIGINS}")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=CORS_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"],
+)
+logger.debug("[CONFIG] CORS middleware configured")
+
+# Add request logging middleware for debugging
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    logger.debug(f"[REQUEST] {request.method} {request.url} - Headers: {dict(request.headers)}")
+    response = await call_next(request)
+    logger.debug(f"[RESPONSE] {request.method} {request.url} - Status: {response.status_code}")
+    return response
+
+logger.debug("[CONFIG] Request logging middleware configured")
 
 logger.debug("[CONFIG] Configuring rate limiter and exception handlers...")
 app.state.limiter = limiter

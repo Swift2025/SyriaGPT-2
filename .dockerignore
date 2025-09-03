@@ -30,7 +30,8 @@ coverage.xml
 .env.local
 .env.*.local
 syriaenv
-frontend/
+frontend/.next/
+frontend/node_modules/
 
 # IDE
 .vscode/

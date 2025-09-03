@@ -155,8 +155,11 @@ class NewsIntegrationService:
             if not web_scraping_service.session:
                 await web_scraping_service.initialize()
             
-            # Scrape news sources
+                    # Scrape news sources (now all 14 specific RSS feeds)
             result = await web_scraping_service.scrape_news_sources(
+                sources=["sana_english", "sana_arabic", "al_watan", "syrian_observer", "syria_direct", 
+                        "nytimes_syria", "dailymail_syria", "thesun_syria", "thejournal_syria", 
+                        "syrianews_cc", "syria_freedom_forever", "guardian_syria", "syria_stories", "ahmad_sb"],
                 max_articles=self.max_articles_per_update
             )
             

@@ -59,47 +59,203 @@ class WebScrapingService:
         self.scraped_urls: Set[str] = set()
         self.last_request_time = 0
         
-        # Syrian news sources configuration
+        # Only the 5 specific RSS feeds requested
         self.news_sources = {
-            "sana": {
-                "base_url": "https://www.sana.sy",
-                "article_selector": "article, .news-item, .post",
-                "title_selector": "h1, h2, .title, .headline",
-                "content_selector": ".content, .article-content, .post-content, .text",
-                "date_selector": ".date, .published, time",
-                "author_selector": ".author, .byline",
-                "category_selector": ".category, .section",
-                "language": "ar"
+            "sana_english": {
+                "name": "Syrian Arab News Agency (English)",
+                "base_url": "https://sana.sy/en/feed/",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "The Syria Times is an official daily e-newspaper in English",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
             },
-            "halab_today": {
-                "base_url": "https://halabtoday.tv",
-                "article_selector": "article, .news-item, .post",
-                "title_selector": "h1, h2, .title, .headline",
-                "content_selector": ".content, .article-content, .post-content, .text",
-                "date_selector": ".date, .published, time",
-                "author_selector": ".author, .byline",
-                "category_selector": ".category, .section",
-                "language": "ar"
+            "sana_arabic": {
+                "name": "Syrian Arab News Agency (Arabic)",
+                "base_url": "https://sana.sy/ar/feed/",
+                "type": "rss_feed",
+                "language": "ar",
+                "description": "Syrian Arab News Agency - official national agency in Arabic",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
             },
-            "syria_tv": {
-                "base_url": "https://www.syria.tv",
-                "article_selector": "article, .news-item, .post",
-                "title_selector": "h1, h2, .title, .headline",
-                "content_selector": ".content, .article-content, .post-content, .text",
-                "date_selector": ".date, .published, time",
-                "author_selector": ".author, .byline",
-                "category_selector": ".category, .section",
-                "language": "ar"
+            "al_watan": {
+                "name": "Al-Watan",
+                "base_url": "https://alwatan.sy/feed",
+                "type": "rss_feed",
+                "language": "ar",
+                "description": "Latest news articles covering local affairs, sports, culture",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
             },
-            "government": {
-                "base_url": "https://www.egov.sy",
-                "article_selector": "article, .news-item, .announcement",
-                "title_selector": "h1, h2, .title, .headline",
-                "content_selector": ".content, .article-content, .announcement-content",
-                "date_selector": ".date, .published, time",
-                "author_selector": ".author, .byline",
-                "category_selector": ".category, .section",
-                "language": "ar"
+            "syrian_observer": {
+                "name": "The Syrian Observer",
+                "base_url": "https://syrianobserver.com/feed",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Daily online news service covering Syrian political and civil society news",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
+            },
+            "syria_direct": {
+                "name": "Syria Direct",
+                "base_url": "https://syriadirect.org/feed/",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Independent media organization promoting democratic future for Syria",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
+            },
+            "nytimes_syria": {
+                "name": "The New York Times - Syria",
+                "base_url": "https://www.nytimes.com/svc/collections/v1/publish/http://www.nytimes.com/topic/destination/syria/rss.xml",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Syria coverage from The New York Times",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
+            },
+            "dailymail_syria": {
+                "name": "Daily Mail - Syria",
+                "base_url": "https://www.dailymail.co.uk/news/syria/index.rss",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Syria news from Daily Mail UK",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
+            },
+            "thesun_syria": {
+                "name": "The Sun - Syria",
+                "base_url": "https://www.thesun.co.uk/where/syria/feed/",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Syria coverage from The Sun UK",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
+            },
+            "thejournal_syria": {
+                "name": "The Journal - Syria",
+                "base_url": "https://www.thejournal.ie/topic/syria/feed/",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Syria news from The Journal Ireland",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
+            },
+            "syrianews_cc": {
+                "name": "Syria News CC",
+                "base_url": "https://syrianews.cc/feed/",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Syria news from Syrianews.cc",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
+            },
+            "syria_freedom_forever": {
+                "name": "Syria Freedom Forever",
+                "base_url": "https://syriafreedomforever.wordpress.com/feed/",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Syria Freedom Forever blog",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
+            },
+            "guardian_syria": {
+                "name": "The Guardian - Syria",
+                "base_url": "https://www.theguardian.com/world/syria/rss",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Syria coverage from The Guardian UK",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
+            },
+            "syria_stories": {
+                "name": "Syria Stories",
+                "base_url": "https://syriastories.net/feed/",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Syria Stories website",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
+            },
+            "ahmad_sb": {
+                "name": "Ahmad SB",
+                "base_url": "https://ahmadsb.com/feed/",
+                "type": "rss_feed",
+                "language": "en",
+                "description": "Ahmad SB blog",
+                "content_selectors": {
+                    "rss_items": "item, entry",
+                    "title": "title",
+                    "content": "description, summary, content",
+                    "date": "pubDate, published, updated",
+                    "link": "link"
+                }
             }
         }
         
@@ -117,6 +273,21 @@ class WebScrapingService:
         self.min_content_length = 100
         self.max_content_length = 50000
         self.blocked_words = ["advertisement", "ad", "sponsored", "cookie", "privacy policy"]
+        
+        # Remove old RSS sources and newsletter sources since we're only using the 5 specific RSS feeds
+        self.rss_sources = {}
+        self.newsletter_sources = {}
+        
+        # Add limits to prevent infinite scraping
+        self.max_links_per_page = 100  # Maximum links to extract per page
+        self.max_scraped_urls_cache = 10000  # Maximum URLs to keep in memory
+        self.max_pages_per_source = 5  # Maximum pages to crawl per source
+        self.max_rss_entries = 50  # Maximum RSS entries to process per feed
+        self.max_newsletter_items = 30  # Maximum newsletter items to process per archive
+        
+        logger.info(f"🚀 WebScrapingService initialized with limits: max_links_per_page={self.max_links_per_page}, max_scraped_urls_cache={self.max_scraped_urls_cache}, max_pages_per_source={self.max_pages_per_source}")
+        logger.info(f"🌐 Web Sources configured: {len(self.news_sources)} sources available")
+        logger.info(f"🎯 Focused on 14 specific RSS feeds: SANA (EN/AR), Al-Watan, Syrian Observer, Syria Direct, NYT, Daily Mail, The Sun, The Journal, Syria News CC, Syria Freedom Forever, The Guardian, Syria Stories, Ahmad SB")
         
     async def __aenter__(self):
         """Async context manager entry"""
@@ -168,6 +339,24 @@ class WebScrapingService:
             await asyncio.sleep(sleep_time)
             
         self.last_request_time = time.time()
+        
+    async def configure_timeouts(self, 
+                                connection_timeout: int = 10,
+                                read_timeout: int = 25,
+                                total_timeout: int = 60,
+                                rss_parse_timeout: int = 15) -> None:
+        """Configure timeout settings for the scraping service"""
+        self.connection_timeout = connection_timeout
+        self.read_timeout = read_timeout
+        self.total_timeout = total_timeout
+        self.rss_parse_timeout = rss_parse_timeout
+        
+        logger.info(f"⏰ Timeout configuration updated: connection={connection_timeout}s, read={read_timeout}s, total={total_timeout}s, RSS={rss_parse_timeout}s")
+        
+        # Reinitialize session with new timeout settings if already initialized
+        if self.session:
+            await self.cleanup()
+            await self.initialize()
         
     async def scrape_news_sources(self, sources: List[str] = None, max_articles: int = 50) -> Dict[str, Any]:
         """
@@ -265,9 +454,97 @@ class WebScrapingService:
             if not main_page_content:
                 return articles
                 
-            # Parse the main page
-            soup = BeautifulSoup(main_page_content, 'html.parser')
+            # Handle different source types
+            source_type = source_config.get("type", "web")
             
+            if source_type == "rss_feed":
+                # For RSS feeds, parse the XML content directly
+                articles = await self._scrape_rss_feed_content(main_page_content, source_name, source_config, max_articles)
+            else:
+                # Default web scraping behavior
+                soup = BeautifulSoup(main_page_content, 'html.parser')
+                articles = await self._scrape_web_source(soup, source_name, source_config, max_articles)
+                
+        except Exception as e:
+            logger.error(f"Failed to scrape source {source_name}: {e}")
+            
+        return articles
+        
+    async def _scrape_rss_feed_content(self, rss_content: str, source_name: str, source_config: Dict, max_articles: int) -> List[ScrapedArticle]:
+        """Scrape content from RSS feed XML content"""
+        articles = []
+        
+        try:
+            # Parse RSS content (XML parsing)
+            soup = BeautifulSoup(rss_content, 'xml')
+            
+            # Find RSS items
+            items = soup.find_all(['item', 'entry'])
+            
+            logger.info(f"Found {len(items)} RSS items in {source_name}")
+            
+            # Limit the number of items to process
+            items = items[:max_articles]
+            
+            for item in items:
+                try:
+                    # Extract RSS item data using configured selectors
+                    title_elem = item.find(source_config["content_selectors"]["title"])
+                    link_elem = item.find(source_config["content_selectors"]["link"])
+                    description_elem = item.find(source_config["content_selectors"]["content"])
+                    date_elem = item.find(source_config["content_selectors"]["date"])
+                    
+                    if not title_elem or not link_elem:
+                        continue
+                        
+                    title = title_elem.get_text(strip=True)
+                    link = link_elem.get_text(strip=True) if link_elem.get_text() else link_elem.get('href', '')
+                    description = description_elem.get_text(strip=True) if description_elem else ""
+                    published_date = date_elem.get_text(strip=True) if date_elem else None
+                    
+                    # Validate content quality
+                    if not self._is_valid_article(title, description):
+                        continue
+                        
+                    # Clean and process content
+                    title = self._clean_text(title)
+                    description = self._clean_text(description)
+                    
+                    # Extract tags/keywords
+                    tags = self._extract_tags(soup, title, description)
+                    
+                    # Create article object
+                    article = ScrapedArticle(
+                        title=title,
+                        content=description,
+                        url=link,
+                        source=source_name,
+                        published_date=published_date,
+                        author=None,
+                        category="rss_feed",
+                        tags=tags,
+                        language=source_config["language"]
+                    )
+                    
+                    # Mark as scraped
+                    self.scraped_urls.add(link)
+                    
+                    articles.append(article)
+                    
+                except Exception as e:
+                    logger.warning(f"Failed to parse RSS item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Failed to scrape RSS feed content for {source_name}: {e}")
+            
+        return articles
+        
+    async def _scrape_web_source(self, soup: BeautifulSoup, source_name: str, source_config: Dict, max_articles: int) -> List[ScrapedArticle]:
+        """Scrape a single web source (using BeautifulSoup)"""
+        articles = []
+        
+        try:
             # Find article links
             article_links = self._extract_article_links(soup, source_config)
             
@@ -289,7 +566,7 @@ class WebScrapingService:
                     continue
                     
         except Exception as e:
-            logger.error(f"Failed to scrape source {source_name}: {e}")
+            logger.error(f"Failed to scrape web source {source_name}: {e}")
             
         return articles
         
@@ -562,7 +839,11 @@ class WebScrapingService:
             "scraped_urls": list(self.scraped_urls),
             "rate_limit_delay": self.rate_limit_delay,
             "max_concurrent_requests": self.max_concurrent_requests,
-            "available_sources": list(self.news_sources.keys())
+            "available_sources": list(self.news_sources.keys()),
+            "connection_timeout": self.connection_timeout,
+            "read_timeout": self.read_timeout,
+            "total_timeout": self.total_timeout,
+            "rss_parse_timeout": self.rss_parse_timeout
         }
         
     async def clear_scraped_urls(self):

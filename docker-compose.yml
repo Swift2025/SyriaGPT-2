@@ -7,10 +7,15 @@ services:
     command: uvicorn main:app --host 0.0.0.0 --port 9000 --reload
     env_file:
       - .env
+    environment:
+      - DOCKER_ENV=true
+      - RUNNING_IN_DOCKER=true
+      - CORS_ALLOW_ALL=true
     volumes:
       - .:/app
     ports:
       - "9000:9000"
+      - "3000:3000"
     depends_on:
       db:
         condition: service_healthy
