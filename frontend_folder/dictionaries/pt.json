@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "A Inteligência Artificial Síria",
+    "newChat": "Novo Chat",
+    "pastConversations": "Conversas Anteriores",
+    "lightMode": "Modo Claro",
+    "darkMode": "Modo Escuro",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Usuário Sírio",
+    "userEmail": "user@syriagpt.com",
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "upgradeToPro": "Atualizar para Pro",
+    "newBadge": "NOVO",
+    "helpCenter": "Central de Ajuda",
+    "aboutApp": "Sobre o App",
+    "logout": "Sair",
+    "logoutModal": {
+      "title": "Confirmar Saída",
+      "description": "Tem certeza de que deseja sair da sua conta?",
+      "cancel": "Cancelar",
+      "confirm": "Sim, Sair"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Seu assistente inteligente para responder a todas as suas perguntas",
+      "examples": "Exemplos",
+      "capabilities": "Capacidades",
+      "limitations": "Limitações",
+      "suggestions": {
+        "examples": [
+          "Explique como obter um cartão de identificação de forma simples",
+          "Dê-me os cursos aprovados na Universidade de Damasco",
+          "Quais são os ingredientes para Mahshi?"
+        ],
+        "capabilities": [
+          "Como fazer quiabo e sua relação histórica?",
+          "Quais são os procedimentos para o passaporte sírio?",
+          "Preciso de informações sobre investimentos"
+        ],
+        "limitations": [
+          "Como resolver um problema de computador?",
+          "Quais são as condições de registro na Universidade de Aleppo?",
+          "Dê-me um resumo das notícias de hoje na Síria"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Digitando..."
+    },
+    "regenerate": "Gerar Resposta Novamente",
+    "input": {
+      "placeholder": "Digite sua mensagem aqui, ou arraste um arquivo para anexar...",
+      "attachFile": "Anexar Arquivo",
+      "startRecording": "Iniciar Gravação",
+      "stopRecording": "Parar Gravação",
+      "removeFile": "Remover Arquivo"
+    },
+    "dragDrop": {
+      "title": "Arraste os arquivos aqui",
+      "subtitle": "PDF, Word, Texto (Máx 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "O reconhecimento de fala não é suportado neste navegador. Por favor, use o Chrome ou Edge.",
+      "permissionDenied": "Por favor, permita o acesso ao microfone nas configurações do seu navegador.",
+      "startFailed": "Falha ao iniciar a gravação. Verifique as configurações do seu navegador.",
+      "generalError": "Ocorreu um erro ao iniciar a gravação. Por favor, tente novamente.",
+      "no-speech": "Nenhuma fala foi detectada. Certifique-se de que sua voz está clara e o microfone está perto.",
+      "audio-capture": "Não é possível acessar o microfone. Certifique-se de que está conectado e a permissão foi concedida.",
+      "not-allowed": "A permissão foi negada. Por favor, permita o uso do microfone nas configurações do navegador.",
+      "network": "Erro de rede. Por favor, verifique sua conexão com a internet.",
+      "service-not-allowed": "O serviço de reconhecimento de fala está indisponível no momento.",
+      "language-not-supported": "O idioma não é suportado. Tente o navegador Chrome."
+    },
+    "footer": "Nosso objetivo é tornar os sistemas de IA mais naturais e seguros para interagir"
+  },
+  "chat": {
+    "fileAnalysisError": "Desculpe, ocorreu um erro ao analisar o arquivo: {error}",
+    "responseProcessingError": "Desculpe, ocorreu um erro ao processar a resposta.",
+    "networkError": "Desculpe, ocorreu um erro de conexão. Por favor, verifique sua conexão com a internet."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Sobre o Projeto SyriaGPT",
+      "description": "Conheça os objetivos e a visão do projeto SyriaGPT, o assistente inteligente especializado no contexto sírio."
+    },
+    "header": {
+      "title": "República Árabe Síria",
+      "subtitle": "REPÚBLICA ÁRABE SÍRIA",
+      "mapText": "Síria... é o Coração"
+    },
+    "main": {
+      "p1": "Este é um projeto nacional pioneiro adotado pelo governo sírio, com o objetivo de desenvolver um modelo de linguagem árabe avançado com foco especial no dialeto sírio. O objetivo deste projeto é ser uma plataforma de conhecimento e serviço que ajuda os cidadãos a interagir com os serviços governamentais e os setores público e privado de forma fácil e segura, fornecendo-lhes respostas precisas e confiáveis sobre procedimentos, leis e informações gerais.",
+      "p2": "Distingue-se pelo seu foco na língua local e pela capacidade de compreender dialetos juntamente com o árabe padrão, tornando-o próximo do utilizador no seu dia-a-dia. O projeto também garante a privacidade dos dados por ser hospedado em centros de dados nacionais e opera de acordo com altos padrões de segurança e neutralidade para garantir que os resultados sejam precisos e imparciais. Foi concebido para ser integrável com portais de governo eletrónico, aplicações oficiais e centros de atendimento, constituindo assim um passo fundamental para a melhoria da transformação digital na Síria.",
+      "p3": "O projeto procura servir múltiplas áreas, como facilitar procedimentos governamentais, apoiar a educação, simplificar diretrizes de saúde, auxiliar pequenas empresas e disseminar mensagens de emergência de forma rápida e clara. Representa, assim, um salto qualitativo na forma como os cidadãos acedem à informação, onde a interação em linguagem natural se torna um meio primário para simplificar transações e aproximar os cidadãos das instituições do Estado."
+    },
+    "footer": {
+      "backButton": "Voltar ao Chat",
+      "disclaimer": "O nosso objetivo é tornar os sistemas de IA mais naturais e seguros para interagir, em linha com o contexto sírio e as necessidades dos seus utilizadores. O seu feedback e sugestões ajudar-nos-ão a melhorar e a desenvolver o serviço para o servir melhor."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Esqueceu a Senha",
+      "description": "Recupere o acesso à sua conta SyriaGPT com passos simples e seguros."
+    },
+    "infoPanel": {
+      "title": "Recupere a Sua Conta com Segurança",
+      "description": "Estamos aqui para o ajudar a recuperar o acesso à sua conta com passos simples e seguros.",
+      "steps": {
+        "step1": {
+          "title": "Introduza o seu email",
+          "description": "O email registado na sua conta SyriaGPT"
+        },
+        "step2": {
+          "title": "Verifique o seu email",
+          "description": "Enviaremos um link seguro para redefinir a sua senha"
+        },
+        "step3": {
+          "title": "Crie uma nova senha",
+          "description": "Escolha uma senha forte e segura para a sua conta"
+        }
+      },
+      "securityTip": {
+        "title": "Dica de Segurança",
+        "description": "O link é válido por apenas 15 minutos para garantir a segurança da sua conta. Se não encontrar o email, verifique a sua pasta de spam."
+      }
+    },
+    "form": {
+      "title": "Esqueceu a Senha",
+      "description": "Introduza o seu email para receber um link de recuperação",
+      "emailLabel": "Endereço de Email",
+      "emailPlaceholder": "Introduza o seu email...",
+      "emailRequiredAlert": "Por favor, introduza o seu endereço de email.",
+      "submitButton": "Enviar Link de Recuperação",
+      "loadingButton": "A enviar...",
+      "rememberedPassword": "Lembrou-se da sua senha?",
+      "backToLogin": "Voltar ao Login"
+    },
+    "successScreen": {
+      "title": "Instruções Enviadas",
+      "checkEmailTitle": "Verifique o Seu Email",
+      "description": "Enviámos um link de recuperação de senha para:",
+      "tip1": "Verifique a sua caixa de entrada",
+      "tip2": "Não se esqueça de verificar a sua pasta de spam",
+      "tip3": "O link é válido apenas por 15 minutos",
+      "backToLoginButton": "Voltar ao Login"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Centro de Ajuda - SyriaGPT",
+      "description": "Encontre respostas às suas perguntas, guias de utilizador e contacte a equipa de suporte do SyriaGPT."
+    },
+    "header": {
+      "title": "Centro de Ajuda",
+      "description": "Bem-vindo ao centro de suporte do SyriaGPT! Estamos aqui para o ajudar a ter a melhor experiência possível."
+    },
+    "search": {
+      "placeholder": "Procure respostas, guias de utilizador ou faça uma pergunta..."
+    },
+    "categories": {
+      "title": "Navegar por Categoria",
+      "items": [
+        {
+          "title": "Começar",
+          "description": "Aprenda o básico de utilização da plataforma e aproveite todas as funcionalidades disponíveis."
+        },
+        {
+          "title": "Gestão de Conta",
+          "description": "Edite o seu perfil, gira as subscrições e as suas definições de segurança."
+        },
+        {
+          "title": "Funcionalidades Avançadas",
+          "description": "Utilize anexos de ficheiros, pesquisa por voz e inteligência artificial avançada."
+        },
+        {
+          "title": "Segurança e Privacidade",
+          "description": "Aprenda a proteger os seus dados e informações pessoais com os mais altos padrões de segurança."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "toggleOpen": "Ler Mais",
+      "toggleClose": "Fechar",
+      "items": [
+        {
+          "question": "Como posso iniciar um novo chat?",
+          "answer": "Para iniciar um novo chat, basta clicar no botão \"+ Novo Chat\" no topo da barra lateral. Também pode usar o atalho de teclado Ctrl+N para um início rápido."
+        },
+        {
+          "question": "Que tipos de ficheiros posso anexar?",
+          "answer": "Pode anexar ficheiros PDF, documentos Word (doc, docx), ficheiros PowerPoint, ficheiros de texto (txt) e imagens (jpg, png, gif). O tamanho máximo para um único ficheiro é de 10 MB, e pode anexar até 5 ficheiros por conversa."
+        },
+        {
+          "question": "As minhas conversas passadas são guardadas?",
+          "answer": "Sim, as suas conversas passadas são guardadas automática e seguramente na sua conta. Pode acedê-las a partir da lista \"Conversas Anteriores\" na barra lateral, organizadas por data ou tópico."
+        },
+        {
+          "question": "Como funcionam os modos claro e escuro?",
+          "answer": "Pode alternar entre os modos claro e escuro usando o botão dedicado na barra lateral. O sistema guarda automaticamente a sua preferência e aplica-a em todas as sessões futuras."
+        },
+        {
+          "question": "O que é a funcionalidade de voz para texto?",
+          "answer": "Pode usar o seu microfone para ditado por voz em árabe ou inglês. Clique no ícone do microfone na barra de entrada e comece a falar. O sistema converterá automaticamente a sua fala em texto."
+        },
+        {
+          "question": "Posso usar o SyriaGPT no meu telemóvel?",
+          "answer": "Sim, o SyriaGPT está disponível através do navegador web em todos os dispositivos inteligentes. A interface é totalmente responsiva e funciona perfeitamente em telemóveis e tablets."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Não encontrou o que procurava?",
+      "description": "A nossa equipa de suporte dedicada está disponível 24 horas por dia para o ajudar. Contacte-nos e responderemos em minutos!",
+      "emailButton": "Contactar por Email",
+      "chatButton": "Chat ao Vivo",
+      "phoneButton": "Chamada Telefónica",
+      "availability": "Disponível 24/7",
+      "responseTime": "Resposta em 5 minutos",
+      "languageSupport": "Suporte em Língua Árabe"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Login - SyriaGPT",
+      "description": "Faça login na sua conta SyriaGPT para aceder às suas conversas e funcionalidades avançadas."
+    },
+    "infoPanel": {
+      "title": "Bem-vindo de Volta",
+      "description": "Continue a explorar o mundo da inteligência artificial síria com",
+      "securityTitle": "Porque é que o SyriaGPT é Seguro?",
+      "features": [
+        {
+          "title": "Proteção Avançada de Dados",
+          "description": "Utilizamos tecnologias de encriptação avançadas para proteger as suas informações pessoais"
+        },
+        {
+          "title": "Autenticação de Dois Fatores",
+          "description": "Uma camada extra de proteção para garantir a segurança da sua conta"
+        },
+        {
+          "title": "Inteligência Artificial Local",
+          "description": "Tecnologia síria avançada que compreende a cultura e o contexto árabe"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Utilizadores Ativos" },
+        { "value": "99.9%", "label": "Tempo de Atividade" },
+        { "value": "24/7", "label": "Suporte" }
+      ]
+    },
+    "form": {
+      "title": "Login",
+      "description": "Introduza as suas credenciais para aceder à sua conta",
+      "emailLabel": "Endereço de Email",
+      "emailPlaceholder": "Introduza o seu email...",
+      "passwordLabel": "Senha",
+      "passwordPlaceholder": "Introduza a sua senha...",
+      "forgotPassword": "Esqueceu a senha?",
+      "showPassword": "Mostrar senha",
+      "hidePassword": "Ocultar senha",
+      "loginButton": "Login",
+      "loadingButton": "A verificar...",
+      "loginSuccessAlert": "Login bem-sucedido!",
+      "orSeparator": "ou",
+      "noAccount": "Não tem uma conta?",
+      "createAccount": "Criar uma nova conta"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Política de Privacidade - SyriaGPT",
+      "description": "Saiba como os seus dados pessoais são recolhidos, utilizados e protegidos quando utiliza os serviços do SyriaGPT."
+    },
+    "header": {
+      "title": "Política de Privacidade",
+      "lastUpdated": "Última Atualização: 25 de agosto de 2025",
+      "effectiveDate": "Efetiva Imediatamente"
+    },
+    "infoCards": [
+      {
+        "title": "Proteção Total",
+        "description": "Os seus dados estão protegidos com as mais recentes tecnologias de encriptação e segurança."
+      },
+      {
+        "title": "Controlo Total",
+        "description": "Você controla os seus dados e pode eliminá-los a qualquer momento."
+      },
+      {
+        "title": "Transparência Total",
+        "description": "Explicamos claramente o que recolhemos e como o utilizamos."
+      },
+      {
+        "title": "Sem Venda de Dados",
+        "description": "Não vendemos nem partilhamos os seus dados com terceiros."
+      }
+    ],
+    "toc": {
+      "title": "Conteúdos"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introdução",
+        "content": "Bem-vindo ao SyriaGPT. Levamos a sua privacidade a sério. Esta política descreve os tipos de informação que podemos recolher de si ou que pode fornecer quando visita ou utiliza a nossa aplicação, e as nossas práticas para recolher, utilizar, manter, proteger e divulgar essa informação."
+      },
+      {
+        "id": "data-collection",
+        "title": "Informação que Recolhemos",
+        "intro": "Podemos recolher vários tipos de informação de e sobre os utilizadores do nosso serviço, incluindo:",
+        "points": [
+          "Informação que fornece diretamente: como o seu nome, email e senha quando cria uma conta.",
+          "Conteúdo do utilizador: As mensagens, perguntas e ficheiros que carrega para o nosso serviço para análise.",
+          "Informação de utilização: Detalhes da sua utilização do nosso serviço, incluindo dados de tráfego e registos de utilização.",
+          "Informação do dispositivo: O seu tipo de navegador, sistema operativo e endereço IP."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Como Utilizamos a Sua Informação",
+        "intro": "Utilizamos a informação que recolhemos sobre si ou que nos fornece para os seguintes fins:",
+        "points": [
+          "Para lhe fornecer o nosso serviço e os seus conteúdos com a melhor qualidade possível.",
+          "Para melhorar e personalizar a sua experiência de acordo com as suas necessidades.",
+          "Para comunicar consigo sobre a sua conta ou o nosso serviço e avisos importantes.",
+          "Para fins de análise e pesquisa para melhorar os nossos produtos e serviços.",
+          "Para garantir a segurança da plataforma e prevenir o uso não autorizado."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Divulgação da Sua Informação",
+        "commitmentTitle": "O Nosso Compromisso Principal",
+        "commitmentText": "Não vendemos nem alugamos as suas informações pessoais a terceiros. Este é o nosso compromisso fundamental consigo.",
+        "content": "Podemos divulgar informações pessoais apenas nos seguintes casos: para cumprir qualquer ordem judicial ou lei, ou para proteger os direitos e a segurança do SyriaGPT e dos nossos clientes de ameaças de segurança graves."
+      },
+      {
+        "id": "data-security",
+        "title": "Segurança dos Dados",
+        "protectionTitle": "Medidas de Proteção Avançadas:",
+        "points": [
+          "Encriptação de ponta a ponta para todos os dados sensíveis",
+          "Servidores seguros protegidos por firewalls avançadas",
+          "Monitorização de segurança 24/7 para detetar ameaças",
+          "Cópias de segurança regulares e encriptadas para garantir a continuidade do serviço",
+          "Testes de segurança periódicos por especialistas independentes"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Os Seus Direitos",
+        "intro": "Como utilizador do nosso serviço, tem os seguintes direitos relativamente aos seus dados pessoais:",
+        "rights": [
+          {
+            "title": "Acesso e Revisão",
+            "description": "Solicitar uma cópia de todos os seus dados armazenados connosco"
+          },
+          {
+            "title": "Correção e Atualização",
+            "description": "Modificar ou corrigir qualquer informação imprecisa"
+          },
+          {
+            "title": "Eliminação Completa",
+            "description": "Eliminar permanentemente a sua conta e todos os seus dados"
+          },
+          {
+            "title": "Portabilidade e Exportação",
+            "description": "Exportar os seus dados num formato legível"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Alterações à Política",
+        "content": "A nossa política é notificá-lo de quaisquer alterações significativas 30 dias antes de entrarem em vigor. Quaisquer alterações serão publicadas nesta página com uma data de revisão atualizada. Encorajamo-lo a rever esta política regularmente para se manter informado sobre como protegemos a sua informação."
+      },
+      {
+        "id": "contact",
+        "title": "Contacte-nos",
+        "email": "Email",
+        "phone": "Telefone",
+        "availability": "A equipa de privacidade está disponível para responder às suas questões de domingo a quinta-feira, das 9h às 18h"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Perfil - SyriaGPT",
+      "description": "Gira as suas informações pessoais, definições de segurança e plano de subscrição no SyriaGPT."
+    },
+    "header": {
+      "title": "Perfil",
+      "description": "Gira as suas informações pessoais e definições de conta no SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Foto de Perfil",
+      "changeAvatar": "Alterar foto de perfil",
+      "joinDate": "Data de Adesão",
+      "currentPlan": "Plano Atual",
+      "freePlan": "Gratuito",
+      "conversations": "Conversas",
+      "activeDays": "Dias Ativos"
+    },
+    "personalInfo": {
+      "title": "Informações Pessoais",
+      "description": "Atualize o seu nome, email e definições básicas",
+      "fullName": "Nome Completo",
+      "email": "Endereço de Email",
+      "editButton": "Editar Informações",
+      "cancelButton": "Cancelar",
+      "saveButton": "Guardar Alterações",
+      "updateSuccess": "Perfil atualizado com sucesso!"
+    },
+    "security": {
+      "title": "Segurança e Senha",
+      "description": "Mantenha a sua conta segura atualizando regularmente a sua senha",
+      "currentPassword": "Senha Atual",
+      "currentPasswordPlaceholder": "Introduza a senha atual...",
+      "newPassword": "Nova Senha",
+      "newPasswordPlaceholder": "Introduza a nova senha...",
+      "confirmNewPassword": "Confirmar Nova Senha",
+      "confirmNewPasswordPlaceholder": "Confirme a nova senha...",
+      "updateButton": "Atualizar Senha",
+      "passwordMismatch": "As novas senhas não coincidem.",
+      "updateSuccess": "Senha alterada com sucesso!"
+    },
+    "subscription": {
+      "title": "Plano de Subscrição",
+      "description": "Está atualmente no plano Gratuito - obtenha mais funcionalidades",
+      "upgradeTitle": "Atualizar para Pro",
+      "upgradeDescription": "Obtenha funcionalidades adicionais e respostas prioritárias",
+      "upgradeButton": "Atualizar Agora"
+    },
+    "dangerZone": {
+      "title": "Zona de Perigo",
+      "description": "Estas ações são irreversíveis - proceda com cautela",
+      "deleteTitle": "Eliminar Conta Permanentemente",
+      "deleteDescription": "Todos os seus dados e conversas serão eliminados permanentemente",
+      "deleteButton": "Eliminar Conta"
+    },
+    "deleteModal": {
+      "title": "Confirmar Eliminação da Conta",
+      "message": "Tem a certeza absoluta? A sua conta e todos os seus dados serão eliminados permanentemente. Esta ação não pode ser desfeita.",
+      "cancelButton": "Cancelar",
+      "confirmButton": "Confirmar Eliminação",
+      "deleteSuccess": "A sua conta foi eliminada com sucesso."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Criar uma Nova Conta - SyriaGPT",
+      "description": "Junte-se à comunidade SyriaGPT e comece a explorar o poder da IA concebida para o contexto sírio."
+    },
+    "infoPanel": {
+      "title": "Junte-se à Comunidade SyriaGPT",
+      "description": "Descubra o poder da inteligência artificial concebida especificamente para a cultura e o contexto sírio",
+      "features": [
+        {
+          "title": "IA Avançada",
+          "description": "Tecnologias modernas treinadas em conteúdo árabe e sírio"
+        },
+        {
+          "title": "Segurança e Privacidade Garantidas",
+          "description": "Proteção avançada para os seus dados com encriptação de classe mundial"
+        },
+        {
+          "title": "Comunidade Ativa",
+          "description": "Junte-se a milhares de utilizadores sírios apaixonados por tecnologia"
+        },
+        {
+          "title": "Funcionalidades Exclusivas",
+          "description": "Ferramentas personalizadas para conteúdo sírio e árabe"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"O SyriaGPT mudou completamente a forma como trabalho. Uma compreensão profunda da língua e cultura síria.\"",
+        "author": "- Ahmed Al-Shami, Desenvolvedor"
+      }
+    },
+    "form": {
+      "title": "Criar uma Nova Conta",
+      "description": "Preencha os seguintes detalhes para criar a sua conta",
+      "firstName": "Primeiro Nome",
+      "lastName": "Último Nome",
+      "email": "Endereço de Email",
+      "password": "Senha",
+      "confirmPassword": "Confirmar Senha",
+      "placeholder": "Introduza {field}...",
+      "emailPlaceholder": "exemplo@email.com",
+      "passwordStrength": "Força da senha",
+      "strengthLevels": [
+        "Muito Fraca",
+        "Fraca",
+        "Média",
+        "Forte",
+        "Muito Forte"
+      ],
+      "submitButton": "Criar Nova Conta",
+      "loadingButton": "A criar conta...",
+      "googleButton": "Inscrever-se com o Google",
+      "orSeparator": "ou",
+      "hasAccount": "Já tem uma conta?",
+      "loginLink": "Login",
+      "termsAgreement": "Ao criar uma conta, concorda com os nossos",
+      "termsLink": "Termos de Utilização",
+      "and": "e",
+      "privacyLink": "Política de Privacidade",
+      "successAlert": "A sua conta foi criada com sucesso! Bem-vindo ao SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Deve ter pelo menos 2 caracteres",
+      "maxLength": "Demasiado longo",
+      "emailRequired": "O email é obrigatório",
+      "emailInvalid": "Endereço de email inválido",
+      "passwordLength": "A senha deve ter pelo menos 8 caracteres",
+      "passwordComplexity": "Deve conter uma letra maiúscula, uma letra minúscula e um número",
+      "passwordMismatch": "As senhas não coincidem"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Redefinir Senha - SyriaGPT",
+      "description": "Defina uma nova senha forte para a sua conta SyriaGPT."
+    },
+    "form": {
+      "title": "Definir uma Nova Senha",
+      "description": "Escolha uma senha forte para proteger a sua conta.",
+      "newPasswordLabel": "Nova Senha",
+      "confirmPasswordLabel": "Confirmar Senha",
+      "passwordMismatchError": "As senhas não coincidem.",
+      "submitButton": "Atualizar Senha",
+      "loadingButton": "A atualizar...",
+      "showPasswordAria": "Mostrar senha",
+      "hidePasswordAria": "Ocultar senha",
+      "mismatchToast": "Por favor, certifique-se de que as senhas coincidem.",
+      "loadingToast": "A atualizar senha...",
+      "successToast": "Senha atualizada com sucesso!"
+    },
+    "strengthIndicator": {
+      "title": "Força",
+      "levels": [
+        "Muito Fraca",
+        "Fraca",
+        "Aceitável",
+        "Boa",
+        "Forte",
+        "Muito Forte"
+      ]
+    },
+    "successScreen": {
+      "title": "Sucesso!",
+      "description": "A sua senha foi atualizada. Agora pode fazer login com segurança com as suas novas credenciais.",
+      "backToLoginButton": "Voltar ao Login"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Configurações - SyriaGPT",
+      "description": "Personalize a sua experiência SyriaGPT, gira a aparência, o idioma, as notificações e os dados."
+    },
+    "header": {
+      "title": "Configurações do SyriaGPT",
+      "description": "Personalize a sua experiência pessoal",
+      "unsavedChanges": "Alterações não guardadas"
+    },
+    "appearance": {
+      "title": "Aparência e Exibição",
+      "description": "Personalize a aparência da aplicação para se adequar às suas preferências",
+      "theme": "Estilo do Tema",
+      "themes": {
+        "light": { "label": "Claro", "description": "Ideal para uso diurno" },
+        "dark": {
+          "label": "Escuro",
+          "description": "Fácil para os olhos à noite"
+        },
+        "system": {
+          "label": "Sistema",
+          "description": "Segue as configurações do seu dispositivo"
+        }
+      },
+      "preview": {
+        "title": "Pré-visualizar Alterações",
+        "description": "Veja uma pré-visualização ao vivo das alterações antes de guardar",
+        "new": "NOVO"
+      }
+    },
+    "language": {
+      "title": "Idioma e Região",
+      "description": "Defina as configurações de idioma e regionais",
+      "interfaceLanguage": {
+        "title": "Idioma da Interface",
+        "description": "O idioma utilizado nos menus e elementos interativos",
+        "badge": "Auto"
+      },
+      "languages": {
+        "ar": "العربية (Síria)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Notificações e Sons",
+      "description": "Controle alertas e efeitos sonoros",
+      "enableNotifications": {
+        "title": "Ativar Notificações",
+        "description": "Receba alertas para mensagens e atualizações importantes"
+      },
+      "sounds": {
+        "title": "Sons",
+        "description": "Reproduzir sons ao enviar e receber mensagens"
+      }
+    },
+    "dataManagement": {
+      "title": "Gestão de Dados",
+      "description": "Controle a gravação e partilha dos seus dados",
+      "autoSave": {
+        "title": "Gravação Automática",
+        "description": "Grave automaticamente as suas conversas para consultar mais tarde"
+      },
+      "exportData": "Exportar Dados",
+      "clearHistory": "Limpar Conversas"
+    },
+    "advanced": {
+      "title": "Configurações Avançadas",
+      "description": "Opções avançadas para utilizadores profissionais",
+      "developerMode": {
+        "title": "Modo de Desenvolvedor",
+        "description": "Exibir informações técnicas adicionais e opções de desenvolvimento",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Análise",
+        "description": "Ajude a melhorar o serviço enviando dados de utilização anónimos"
+      }
+    },
+    "saveBar": {
+      "title": "Deseja guardar as alterações?",
+      "description": "As novas configurações serão aplicadas imediatamente",
+      "reset": "Repor",
+      "save": "Guardar Alterações",
+      "saving": "A guardar...",
+      "success": "Configurações guardadas com sucesso!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Confirmar Eliminação do Histórico",
+        "message": "Tem a certeza? Todas as suas conversas passadas serão eliminadas permanentemente. Esta ação não pode ser desfeita.",
+        "confirm": "Sim, eliminar",
+        "success": "Histórico de conversas limpo com sucesso."
+      },
+      "exportData": {
+        "title": "Exportar Dados",
+        "message": "Será gerada uma cópia de todos os seus dados e enviada para o seu email. Deseja prosseguir?",
+        "confirm": "Sim, prosseguir",
+        "success": "A exportar os seus dados..."
+      },
+      "cancel": "Cancelar"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Termos de Serviço - SyriaGPT",
+      "description": "Leia os termos e condições para utilizar os serviços do SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Mudar para Árabe",
+      "print": "Imprimir"
+    },
+    "title": "Termos de Serviço",
+    "subtitle": "Última Atualização: 24 de agosto de 2025",
+    "intro": "Bem-vindo ao SyriaGPT. Ao utilizar os nossos serviços, concorda com estes termos. Por favor, leia-os atentamente.",
+    "sectionsTitle": "Secções",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Aceitação dos Termos",
+        "content": "Ao aceder e utilizar o SyriaGPT, concorda em ficar vinculado por estes Termos e Condições. Se discordar de qualquer parte destes termos, não deve utilizar os nossos serviços."
+      },
+      {
+        "id": "services",
+        "title": "2. Descrição dos Serviços",
+        "content": "O SyriaGPT é um assistente de IA concebido para fornecer assistência em vários campos relacionados com o contexto sírio."
+      },
+      {
+        "id": "usage",
+        "title": "3. Utilização Aceitável",
+        "content": "Deve utilizar os nossos serviços de forma legal e ética. Está proibido de utilizar o serviço para fins ilegais ou prejudiciais."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Privacidade e Dados",
+        "content": "Respeitamos a sua privacidade e estamos empenhados em proteger os seus dados. Apenas recolhemos os dados necessários para fornecer o serviço e não os partilharemos sem o seu consentimento."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Propriedade Intelectual",
+        "content": "Todos os direitos reservados ao SyriaGPT. O conteúdo, design e logótipos são nossa propriedade. O conteúdo que cria utilizando o serviço permanece seu."
+      },
+      {
+        "id": "liability",
+        "title": "6. Isenção de Responsabilidade",
+        "content": "O serviço é fornecido \"tal como está\", sem quaisquer garantias. Não garantimos a exatidão ou a integridade da informação fornecida e não somos responsáveis por quaisquer danos resultantes da sua utilização."
+      },
+      {
+        "id": "termination",
+        "title": "7. Rescisão do Serviço",
+        "content": "Reservamo-nos o direito de rescindir ou suspender a sua conta em caso de violação destes termos ou em caso de comportamento prejudicial ou ilegal."
+      },
+      {
+        "id": "contact",
+        "title": "8. Contacte-nos",
+        "content": "Para quaisquer questões sobre estes termos, por favor contacte-nos por email: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Li e concordo com os termos",
+    "continueButton": "Continuar",
+    "backToTop": "Voltar ao Topo",
+    "expandAll": "Expandir Tudo",
+    "collapseAll": "Recolher Tudo",
+    "readingProgress": "Progresso da Leitura",
+    "copyright": "© {year} SyriaGPT. Todos os direitos reservados."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Atualizar para Pro - SyriaGPT",
+      "description": "Desfrute de capacidades ilimitadas, velocidade superior e acesso prioritário a novas funcionalidades com o SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Atualizar para Pro",
+      "description": "Desfrute de capacidades ilimitadas, velocidade superior e acesso prioritário a novas funcionalidades"
+    },
+    "stats": [
+      { "value": "10x", "label": "Resposta Mais Rápida" },
+      { "value": "∞", "label": "Mensagens Ilimitadas" },
+      { "value": "24/7", "label": "Suporte Contínuo" }
+    ],
+    "billingToggle": {
+      "monthly": "Mensal",
+      "yearly": "Anual",
+      "saving": "Poupe 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Plano Gratuito",
+        "subtitle": "Plano Atual",
+        "price": "$0",
+        "period": "Vitalício",
+        "features": [
+          "Acesso ao modelo básico",
+          "20 mensagens por dia",
+          "Velocidade de resposta padrão",
+          "Funcionalidades básicas"
+        ],
+        "buttonText": "O Seu Plano Atual"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Para profissionais e empresas",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "por mês",
+        "periodYearly": "por ano",
+        "popular": "Mais Popular",
+        "features": [
+          "Modelo GPT-4 avançado",
+          "Mensagens ilimitadas",
+          "Velocidade de resposta superior",
+          "Acesso prioritário a novas funcionalidades",
+          "Suporte técnico especializado",
+          "Interface melhorada sem anúncios"
+        ],
+        "buttonText": "Atualizar Agora"
+      }
+    },
+    "comparison": {
+      "title": "Comparar Planos",
+      "featureHeader": "Funcionalidades",
+      "freeHeader": "Gratuito",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Acesso ao modelo básico", "free": true, "pro": true },
+        { "text": "Mensagens diárias limitadas (20)", "free": true, "pro": false },
+        { "text": "Mensagens ilimitadas", "free": false, "pro": true },
+        {
+          "text": "Acesso ao modelo GPT-4 avançado",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Velocidade de resposta padrão", "free": true, "pro": false },
+        {
+          "text": "Velocidade de resposta superior (10x mais rápida)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Acesso prioritário a novas funcionalidades",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Suporte técnico especializado",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Interface sem anúncios", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "toggleOpen": "Ler Mais",
+      "toggleClose": "Fechar",
+      "items": [
+        {
+          "question": "Posso cancelar a minha subscrição a qualquer momento?",
+          "answer": "Sim, claro. Pode cancelar a sua subscrição do plano Pro a qualquer momento a partir da página \"Gestão de Conta\". Continuará a ter acesso às funcionalidades Pro até ao final do período de faturação atual, e não serão feitas mais cobranças."
+        },
+        {
+          "question": "Que métodos de pagamento são aceites?",
+          "answer": "Aceitamos todos os principais cartões de crédito e débito (Visa, MasterCard, American Express), bem como Sham Cash e carteiras eletrónicas locais. Todos os pagamentos são processados de forma segura e encriptada através do nosso parceiro, Stripe."
+        },
+        {
+          "question": "O que acontece no final do período de faturação anual?",
+          "answer": "A sua subscrição anual será renovada automaticamente, a menos que a cancele nas configurações da sua conta. Enviaremos um email de lembrete uma semana antes da data de renovação com os detalhes do valor a pagar."
+        },
+        {
+          "question": "Posso obter um reembolso?",
+          "answer": "Sim, oferecemos uma garantia de reembolso total de 30 dias a partir da data da subscrição se não estiver satisfeito com o serviço por qualquer motivo. Basta contactar a nossa equipa de suporte e processaremos o seu pedido de reembolso imediatamente."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Pronto para Começar?",
+      "description": "Junte-se a milhares de utilizadores que escolheram o SyriaGPT Pro para uma experiência de IA superior",
+      "buttonText": "Comece Agora por {price}",
+      "guarantee": "Garantia de reembolso total de 30 dias"
+    },
+    "alert": "Será redirecionado para a página de pagamento..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Verificar Email - SyriaGPT",
+      "description": "Introduza o código de verificação enviado para o seu email para confirmar a sua conta SyriaGPT."
+    },
+    "header": {
+      "title": "Verifique o Seu Email",
+      "description": "Introduza o código de verificação enviado para"
+    },
+    "form": {
+      "label": "código de verificação de 6 dígitos",
+      "verifyButton": "Verificar Código",
+      "verifyingButton": "A verificar...",
+      "resend": {
+        "question": "Não recebeu o código?",
+        "resendButton": "Reenviar Código",
+        "resendingButton": "A reenviar...",
+        "cooldown": "Reenviar em {seconds} segundos"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Verificação Bem-sucedida!",
+        "description": "O seu email foi confirmado com sucesso",
+        "redirecting": "A redirecionar para o painel de controlo..."
+      },
+      "error": {
+        "title": "Falha na Verificação",
+        "tryAgainButton": "Tentar Novamente"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Por favor, introduza o código de verificação de 6 dígitos",
+      "invalidCode": "Código de verificação inválido. Por favor, tente novamente.",
+      "generic": "Ocorreu um erro durante a verificação. Por favor, tente novamente.",
+      "resendFailed": "Falha ao enviar o código de verificação. Por favor, tente novamente."
+    },
+    "backToLogin": "Voltar ao Login",
+    "securityNote": {
+      "title": "Nota de Segurança:",
+      "points": [
+        "Não partilhe o código de verificação com ninguém",
+        "O código de verificação é válido apenas por 10 minutos",
+        "Verifique o endereço de email do remetente"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Um novo código de verificação foi enviado para o seu email"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Ocorreu um Erro - SyriaGPT",
+      "description": "Página de erro personalizada para o projeto SyriaGPT."
+    },
+    "offlineMessage": "Está atualmente offline",
+    "errorCode": "Erro {statusCode}",
+    "title": "Ocorreu um Erro Inesperado",
+    "description": "Pedimos sinceras desculpas pelo inconveniente. A nossa equipa técnica foi notificada e está a trabalhar para resolver o problema o mais rapidamente possível.",
+    "retryButton": "Tentar Novamente",
+    "retryingButton": "A tentar novamente...",
+    "homeButton": "Início",
+    "backButton": "Voltar",
+    "suggestionsTitle": "O que pode tentar agora:",
+    "suggestion1": "Atualizar a página pode resolver o problema.",
+    "suggestion2": "Por favor, verifique a sua conexão com a internet.",
+    "suggestion3": "Se o problema persistir, não hesite em contactar-nos.",
+    "accordion": {
+      "title": "Detalhes Técnicos para Desenvolvedores",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "code": "Código:",
+      "message": "Mensagem:",
+      "digest": "Digest:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Página Não Encontrada - SyriaGPT",
+      "description": "A página que procura não existe ou foi movida."
+    },
+    "title": "Parece que se perdeu nas páginas!",
+    "description": "A página que procura não existe ou foi movida",
+    "currentLocation": "Localização Atual: Desconhecida",
+    "search": {
+      "placeholder": "Procure a página que deseja...",
+      "button": "Procurar",
+      "searching": "A procurar..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Página Anterior",
+        "description": "Volte para onde veio"
+      },
+      "homePage": {
+        "title": "Página Inicial",
+        "description": "Começar de novo"
+      }
+    },
+    "suggestions": {
+      "title": "Páginas que lhe podem interessar",
+      "items": [
+        { "title": "Página Inicial", "description": "Voltar ao início" },
+        { "title": "Chat", "description": "Iniciar uma nova conversa" },
+        { "title": "Ajuda", "description": "Obter ajuda" },
+        { "title": "Sobre a Síria", "description": "Descobrir mais" }
+      ]
+    },
+    "history": {
+      "title": "Páginas Visitadas Recentemente"
+    },
+    "funFact": {
+      "title": "Enquanto encontra o seu caminho...",
+      "facts": [
+        "Sabia que? Damasco é a capital continuamente habitada mais antiga do mundo!",
+        "Sabia que? O primeiro alfabeto da história foi inventado em Ugarit, na Síria!",
+        "Sabia que? O pistácio de Aleppo pode viver mais de 300 anos!",
+        "Sabia que? O Krak des Chevaliers na Síria é um dos castelos mais bem preservados do mundo!",
+        "Sabia que? A rosa de Damasco é considerada um dos melhores tipos de rosas do mundo!"
+      ]
+    },
+    "support": {
+      "message": "Se acredita que isto é um erro, por favor contacte-nos",
+      "helpCenter": "Centro de Ajuda",
+      "technicalSupport": "Suporte Técnico"
+    }
+  },
+  "loader": {
+    "title": "a carregar...",
+    "loading": "Por favor, aguarde um minuto..."
+  }
+}

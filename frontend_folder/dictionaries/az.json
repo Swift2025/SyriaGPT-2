@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Suriya Süni İntellekti",
+    "newChat": "Yeni Söhbət",
+    "pastConversations": "Keçmiş Söhbətlər",
+    "lightMode": "İşıqlı Rejim",
+    "darkMode": "Qaranlıq Rejim",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Suriyalı İstifadəçi",
+    "userEmail": "user@syriagpt.com",
+    "profile": "Profil",
+    "settings": "Parametrlər",
+    "upgradeToPro": "Pro-ya Yüksəlt",
+    "newBadge": "YENİ",
+    "helpCenter": "Yardım Mərkəzi",
+    "aboutApp": "Tətbiq haqqında",
+    "logout": "Çıxış",
+    "logoutModal": {
+      "title": "Çıxışı Təsdiqlə",
+      "description": "Hesabınızdan çıxmaq istədiyinizə əminsiniz?",
+      "cancel": "Ləğv et",
+      "confirm": "Bəli, Çıxış"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Bütün sorğularınıza cavab vermək üçün ağıllı köməkçiniz",
+      "examples": "Nümunələr",
+      "capabilities": "İmkanlar",
+      "limitations": "Məhdudiyyətlər",
+      "suggestions": {
+        "examples": [
+          "Şəxsiyyət vəsiqəsini sadəcə necə əldə etməyi izah edin",
+          "Dəməşq Universitetində təsdiqlənmiş kursları mənə verin",
+          "Məhşi üçün inqrediyentlər hansılardır?"
+        ],
+        "capabilities": [
+          "Bamiyəni necə hazırlamaq olar və onun tarixi əlaqəsi nədir?",
+          "Suriya pasportu üçün hansı tədbirlər görülür?",
+          "İnvestisiya haqqında məlumata ehtiyacım var"
+        ],
+        "limitations": [
+          "Kompüter problemini necə həll etmək olar?",
+          "Hələb Universitetində qeydiyyat şərtləri hansılardır?",
+          "Bu gün Suriyadakı xəbərlərin xülasəsini mənə verin"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Yazır..."
+    },
+    "regenerate": "Cavabı Yenidən Yarat",
+    "input": {
+      "placeholder": "Mesajınızı bura yazın və ya fayl əlavə etmək üçün sürüşdürün...",
+      "attachFile": "Fayl Əlavə Et",
+      "startRecording": "Səsyazmanı Başlat",
+      "stopRecording": "Səsyazmanı Dayandır",
+      "removeFile": "Faylı Sil"
+    },
+    "dragDrop": {
+      "title": "Faylları bura atın",
+      "subtitle": "PDF, Word, Mətn (Maks. 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Bu brauzerdə nitq tanıma dəstəklənmir. Lütfən, Chrome və ya Edge istifadə edin.",
+      "permissionDenied": "Lütfən, brauzerinizin parametrlərində mikrofona girişi icazə verin.",
+      "startFailed": "Səsyazmanı başlatmaq alınmadı. Brauzerinizin parametrlərini yoxlayın.",
+      "generalError": "Səsyazmanı başlatarkən xəta baş verdi. Lütfən, yenidən cəhd edin.",
+      "no-speech": "Nitq aşkar edilmədi. Səsinizin aydın olduğundan və mikrofonun yaxın olduğundan əmin olun.",
+      "audio-capture": "Mikrofona daxil olmaq mümkün deyil. Onun qoşulduğundan və icazə verildiyindən əmin olun.",
+      "not-allowed": "Giriş rədd edildi. Lütfən, brauzer parametrlərindən mikrofon istifadəsinə icazə verin.",
+      "network": "Şəbəkə xətası. Lütfən, internet bağlantınızı yoxlayın.",
+      "service-not-allowed": "Nitq tanıma xidməti hazırda mövcud deyil.",
+      "language-not-supported": "Dil dəstəklənmir. Chrome brauzerini sınayın."
+    },
+    "footer": "Məqsədimiz süni intellekt sistemləri ilə qarşılıqlı əlaqəni daha təbii və təhlükəsiz etməkdir"
+  },
+  "chat": {
+    "fileAnalysisError": "Üzr istəyirik, faylın təhlili zamanı xəta baş verdi: {error}",
+    "responseProcessingError": "Üzr istəyirik, cavabın emalı zamanı xəta baş verdi.",
+    "networkError": "Üzr istəyirik, bağlantı xətası baş verdi. Lütfən, internet bağlantınızı yoxlayın."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "SyriaGPT Layihəsi Haqqında",
+      "description": "Suriya kontekstində ixtisaslaşmış ağıllı köməkçi olan SyriaGPT layihəsinin məqsədləri və vizyonu haqqında məlumat əldə edin."
+    },
+    "header": {
+      "title": "Suriya Ərəb Respublikası",
+      "subtitle": "SURİYA ƏRƏB RESPUBLİKASI",
+      "mapText": "Suriya... Ürəkdir"
+    },
+    "main": {
+      "p1": "Bu, Suriya hökuməti tərəfindən qəbul edilmiş qabaqcıl milli layihədir və Suriya dialektinə xüsusi diqqət yetirməklə inkişaf etmiş ərəb dili modelini inkişaf etdirmək məqsədi daşıyır. Bu layihənin məqsədi vətəndaşlara dövlət xidmətləri və dövlət və özəl sektorlarla asan və təhlükəsiz şəkildə qarşılıqlı əlaqədə olmağa kömək edən, onlara prosedurlar, qanunlar və ümumi məlumatlar haqqında dəqiq və etibarlı cavablar verən bir bilik və xidmət platforması olmaqdır.",
+      "p2": "O, yerli dilə diqqət yetirməsi və standart ərəb dili ilə yanaşı dialektləri anlamaq qabiliyyəti ilə fərqlənir ki, bu da onu istifadəçinin gündəlik həyatına yaxınlaşdırır. Layihə həmçinin milli məlumat mərkəzlərində yerləşdirilməklə məlumatların məxfiliyini təmin edir və nəticələrin dəqiq və qərəzsiz olmasını təmin etmək üçün yüksək təhlükəsizlik və neytrallıq standartlarına uyğun fəaliyyət göstərir. O, elektron hökumət portalları, rəsmi tətbiqlər və zəng mərkəzləri ilə inteqrasiya olunmaq üçün nəzərdə tutulmuşdur və beləliklə, Suriyada rəqəmsal transformasiyanın gücləndirilməsi istiqamətində fundamental bir addım təşkil edir.",
+      "p3": "Layihə dövlət prosedurlarının asanlaşdırılması, təhsilə dəstək, səhiyyə təlimatlarının sadələşdirilməsi, kiçik biznesə yardım və təcili mesajların sürətli və aydın şəkildə yayılması kimi bir çox sahəyə xidmət etməyi hədəfləyir. Beləliklə, o, vətəndaşların məlumata necə daxil olmasında keyfiyyətli bir sıçrayışı təmsil edir, burada təbii dildə qarşılıqlı əlaqə əməliyyatları sadələşdirmək və vətəndaşları dövlət qurumlarına yaxınlaşdırmaq üçün əsas vasitəyə çevrilir."
+    },
+    "footer": {
+      "backButton": "Söhbətə Qayıt",
+      "disclaimer": "Məqsədimiz süni intellekt sistemləri ilə qarşılıqlı əlaqəni Suriya kontekstinə və onun istifadəçilərinin ehtiyaclarına uyğun olaraq daha təbii və təhlükəsiz etməkdir. Sizin rəy və təklifləriniz sizə daha yaxşı xidmət göstərmək üçün xidməti təkmilləşdirməyə və inkişaf etdirməyə kömək edəcək."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Şifrəni Unutdum",
+      "description": "Sadə və təhlükəsiz addımlarla SyriaGPT hesabınıza girişi bərpa edin."
+    },
+    "infoPanel": {
+      "title": "Hesabınızı Təhlükəsiz Şəkildə Bərpa Edin",
+      "description": "Biz sizə sadə və təhlükəsiz addımlarla hesabınıza girişi bərpa etməyə kömək etmək üçün buradayıq.",
+      "steps": {
+        "step1": {
+          "title": "E-poçtunuzu daxil edin",
+          "description": "SyriaGPT hesabınızda qeydiyyatdan keçmiş e-poçt"
+        },
+        "step2": {
+          "title": "E-poçtunuzu yoxlayın",
+          "description": "Şifrənizi sıfırlamaq üçün sizə təhlükəsiz bir link göndərəcəyik"
+        },
+        "step3": {
+          "title": "Yeni şifrə yaradın",
+          "description": "Hesabınız üçün güclü və təhlükəsiz bir şifrə seçin"
+        }
+      },
+      "securityTip": {
+        "title": "Təhlükəsizlik Məsləhəti",
+        "description": "Hesabınızın təhlükəsizliyini təmin etmək üçün link yalnız 15 dəqiqə etibarlıdır. E-poçtu tapmasanız, spam qovluğunuzu yoxlayın."
+      }
+    },
+    "form": {
+      "title": "Şifrəni Unutdum",
+      "description": "Bərpa linki almaq üçün e-poçtunuzu daxil edin",
+      "emailLabel": "E-poçt Ünvanı",
+      "emailPlaceholder": "E-poçtunuzu daxil edin...",
+      "emailRequiredAlert": "Lütfən, e-poçt ünvanınızı daxil edin.",
+      "submitButton": "Bərpa Linkini Göndər",
+      "loadingButton": "Göndərilir...",
+      "rememberedPassword": "Şifrənizi xatırladınız?",
+      "backToLogin": "Girişə Qayıt"
+    },
+    "successScreen": {
+      "title": "Təlimatlar Göndərildi",
+      "checkEmailTitle": "E-poçtunuzu Yoxlayın",
+      "description": "Şifrə bərpa linkini göndərdik:",
+      "tip1": "Gələnlər qutunuzu yoxlayın",
+      "tip2": "Spam qovluğunuzu yoxlamağı unutmayın",
+      "tip3": "Link yalnız 15 dəqiqə etibarlıdır",
+      "backToLoginButton": "Girişə Qayıt"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Yardım Mərkəzi - SyriaGPT",
+      "description": "Suallarınıza cavablar, istifadəçi təlimatları tapın və SyriaGPT dəstək komandası ilə əlaqə saxlayın."
+    },
+    "header": {
+      "title": "Yardım Mərkəzi",
+      "description": "SyriaGPT dəstək mərkəzinə xoş gəlmisiniz! Biz sizə mümkün olan ən yaxşı təcrübəni əldə etməyə kömək etmək üçün buradayıq."
+    },
+    "search": {
+      "placeholder": "Cavablar, istifadəçi təlimatları axtarın və ya sual verin..."
+    },
+    "categories": {
+      "title": "Kateqoriyaya görə Bax",
+      "items": [
+        {
+          "title": "Başlanğıc",
+          "description": "Platformadan istifadənin əsaslarını öyrənin və mövcud olan bütün funksiyalardan yararlanın."
+        },
+        {
+          "title": "Hesab İdarəetməsi",
+          "description": "Profilinizi redaktə edin, abunəlikləri və təhlükəsizlik parametrlərinizi idarə edin."
+        },
+        {
+          "title": "Genişləndirilmiş Funksiyalar",
+          "description": "Fayl əlavələrindən, səsli axtarışdan və qabaqcıl süni intellektdən istifadə edin."
+        },
+        {
+          "title": "Təhlükəsizlik və Məxfilik",
+          "description": "Məlumatlarınızı və şəxsi məlumatlarınızı ən yüksək təhlükəsizlik standartları ilə necə qoruyacağınızı öyrənin."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Tez-tez Verilən Suallar",
+      "toggleOpen": "Daha Çox Oxu",
+      "toggleClose": "Bağla",
+      "items": [
+        {
+          "question": "Yeni söhbəti necə başlada bilərəm?",
+          "answer": "Yeni söhbətə başlamaq üçün sadəcə yan panelin yuxarısındakı \"+ Yeni Söhbət\" düyməsini basın. Sürətli başlanğıc üçün Ctrl+N klaviatura qısayolundan da istifadə edə bilərsiniz."
+        },
+        {
+          "question": "Hansı növ faylları əlavə edə bilərəm?",
+          "answer": "Siz PDF faylları, Word sənədləri (doc, docx), PowerPoint faylları, mətn faylları (txt) və şəkillər (jpg, png, gif) əlavə edə bilərsiniz. Bir fayl üçün maksimum ölçü 10 MB-dır və hər söhbətə 5-ə qədər fayl əlavə edə bilərsiniz."
+        },
+        {
+          "question": "Keçmiş söhbətlərim saxlanılırmı?",
+          "answer": "Bəli, keçmiş söhbətləriniz avtomatik və təhlükəsiz şəkildə hesabınızda saxlanılır. Onlara yan paneldəki \"Keçmiş Söhbətlər\" siyahısından, tarixə və ya mövzuya görə təşkil edilmiş şəkildə daxil ola bilərsiniz."
+        },
+        {
+          "question": "İşıqlı və qaranlıq rejimlər necə işləyir?",
+          "answer": "Siz yan paneldəki xüsusi düyməni istifadə edərək işıqlı və qaranlıq rejimlər arasında keçid edə bilərsiniz. Sistem avtomatik olaraq seçiminizi yadda saxlayır və gələcək bütün sessiyalarda tətbiq edir."
+        },
+        {
+          "question": "Səsdən mətnə funksiyası nədir?",
+          "answer": "Siz mikrofonunuzu ərəb və ya ingilis dilində səsli diktə üçün istifadə edə bilərsiniz. Giriş çubuğundakı mikrofon ikonuna klikləyin və danışmağa başlayın. Sistem avtomatik olaraq nitqinizi mətnə çevirəcək."
+        },
+        {
+          "question": "Mobil telefonumda SyriaGPT-dən istifadə edə bilərəmmi?",
+          "answer": "Bəli, SyriaGPT bütün smart cihazlarda veb brauzer vasitəsilə mövcuddur. İnterfeys tamamilə cavabdehdir və telefonlarda və planşetlərdə mükəmməl işləyir."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Axtardığınızı tapmadınız?",
+      "description": "Bizim xüsusi dəstək komandamız sizə kömək etmək üçün gecə-gündüz hazırdır. Bizimlə əlaqə saxlayın və bir neçə dəqiqə ərzində sizə cavab verəcəyik!",
+      "emailButton": "E-poçtla Əlaqə",
+      "chatButton": "Canlı Söhbət",
+      "phoneButton": "Telefon Zəngi",
+      "availability": "24/7 Mövcuddur",
+      "responseTime": "5 dəqiqə ərzində cavab",
+      "languageSupport": "Ərəb Dili Dəstəyi"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Giriş - SyriaGPT",
+      "description": "Söhbətlərinizə və genişləndirilmiş funksiyalara daxil olmaq üçün SyriaGPT hesabınıza daxil olun."
+    },
+    "infoPanel": {
+      "title": "Yenidən Xoş Gəlmisiniz",
+      "description": "Suriya süni intellekt dünyasını kəşf etməyə davam edin",
+      "securityTitle": "Niyə SyriaGPT Təhlükəsizdir?",
+      "features": [
+        {
+          "title": "Genişləndirilmiş Məlumat Qorunması",
+          "description": "Şəxsi məlumatlarınızı qorumaq üçün qabaqcıl şifrələmə texnologiyalarından istifadə edirik"
+        },
+        {
+          "title": "İki Faktorlu Doğrulama",
+          "description": "Hesabınızın təhlükəsizliyini təmin etmək üçün əlavə bir qoruma qatı"
+        },
+        {
+          "title": "Yerli Süni İntellekt",
+          "description": "Ərəb mədəniyyətini və kontekstini anlayan qabaqcıl Suriya texnologiyası"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Aktiv İstifadəçilər" },
+        { "value": "99.9%", "label": "İşləmə Müddəti" },
+        { "value": "24/7", "label": "Dəstək" }
+      ]
+    },
+    "form": {
+      "title": "Giriş",
+      "description": "Hesabınıza daxil olmaq üçün məlumatlarınızı daxil edin",
+      "emailLabel": "E-poçt Ünvanı",
+      "emailPlaceholder": "E-poçtunuzu daxil edin...",
+      "passwordLabel": "Şifrə",
+      "passwordPlaceholder": "Şifrənizi daxil edin...",
+      "forgotPassword": "Şifrəni unutdunuz?",
+      "showPassword": "Şifrəni göstər",
+      "hidePassword": "Şifrəni gizlət",
+      "loginButton": "Daxil ol",
+      "loadingButton": "Doğrulanır...",
+      "loginSuccessAlert": "Giriş uğurlu oldu!",
+      "orSeparator": "və ya",
+      "noAccount": "Hesabınız yoxdur?",
+      "createAccount": "Yeni hesab yaradın"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Məxfilik Siyasəti - SyriaGPT",
+      "description": "SyriaGPT xidmətlərindən istifadə edərkən şəxsi məlumatlarınızın necə toplandığını, istifadə edildiyini və qorunduğunu öyrənin."
+    },
+    "header": {
+      "title": "Məxfilik Siyasəti",
+      "lastUpdated": "Son Yenilənmə: 25 Avqust 2025",
+      "effectiveDate": "Dərhal Qüvvəyə Minir"
+    },
+    "infoCards": [
+      {
+        "title": "Tam Qoruma",
+        "description": "Məlumatlarınız ən son şifrələmə və təhlükəsizlik texnologiyaları ilə qorunur."
+      },
+      {
+        "title": "Tam Nəzarət",
+        "description": "Siz məlumatlarınıza nəzarət edirsiniz və onları istənilən vaxt silə bilərsiniz."
+      },
+      {
+        "title": "Tam Şəffaflıq",
+        "description": "Biz nə topladığımızı və onu necə istifadə etdiyimizi aydın şəkildə izah edirik."
+      },
+      {
+        "title": "Məlumat Satışı Yoxdur",
+        "description": "Biz məlumatlarınızı üçüncü tərəflərə satmırıq və ya paylaşmırıq."
+      }
+    ],
+    "toc": {
+      "title": "Mündəricat"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Giriş",
+        "content": "SyriaGPT-ə xoş gəlmisiniz. Biz sizin məxfiliyinizi ciddi qəbul edirik. Bu siyasət, tətbiqimizi ziyarət etdiyiniz və ya istifadə etdiyiniz zaman sizdən toplaya biləcəyimiz və ya təqdim edə biləcəyiniz məlumat növlərini və bu məlumatları toplamaq, istifadə etmək, saxlamaq, qorumaq və açıqlamaq üçün tətbiq etdiyimiz təcrübələri təsvir edir."
+      },
+      {
+        "id": "data-collection",
+        "title": "Topladığımız Məlumatlar",
+        "intro": "Xidmətimizin istifadəçilərindən və onlar haqqında bir neçə növ məlumat toplaya bilərik, o cümlədən:",
+        "points": [
+          "Birbaşa təqdim etdiyiniz məlumatlar: hesab yaratdığınız zaman adınız, e-poçtunuz və şifrəniz kimi.",
+          "İstifadəçi məzmunu: Təhlil üçün xidmətimizə yüklədiyiniz mesajlar, suallar və fayllar.",
+          "İstifadə məlumatları: Trafik məlumatları və istifadə qeydləri daxil olmaqla, xidmətimizdən istifadənizin təfərrüatları.",
+          "Cihaz məlumatları: Brauzerinizin növü, əməliyyat sistemi və IP ünvanınız."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Məlumatlarınızı Necə İstifadə Edirik",
+        "intro": "Sizin haqqınızda topladığımız və ya bizə təqdim etdiyiniz məlumatları aşağıdakı məqsədlər üçün istifadə edirik:",
+        "points": [
+          "Xidmətimizi və onun məzmununu sizə mümkün olan ən yaxşı keyfiyyətdə təqdim etmək.",
+          "Təcrübənizi ehtiyaclarınıza uyğun olaraq təkmilləşdirmək və fərdiləşdirmək.",
+          "Hesabınız və ya xidmətimiz və vacib bildirişlər haqqında sizinlə əlaqə saxlamaq.",
+          "Məhsul və xidmətlərimizi təkmilləşdirmək üçün təhlil və tədqiqat məqsədləri üçün.",
+          "Platformanın təhlükəsizliyini təmin etmək və icazəsiz istifadənin qarşısını almaq."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Məlumatlarınızın Açıqlanması",
+        "commitmentTitle": "Əsas Öhdəliyimiz",
+        "commitmentText": "Biz şəxsi məlumatlarınızı üçüncü tərəflərə satmırıq və ya icarəyə vermirik. Bu, sizə qarşı əsas öhdəliyimizdir.",
+        "content": "Biz şəxsi məlumatları yalnız aşağıdakı hallarda açıqlaya bilərik: hər hansı bir məhkəmə qərarına və ya qanuna əməl etmək, və ya SyriaGPT-nin və müştərilərimizin hüquqlarını və təhlükəsizliyini ciddi təhlükəsizlik təhdidlərindən qorumaq üçün."
+      },
+      {
+        "id": "data-security",
+        "title": "Məlumat Təhlükəsizliyi",
+        "protectionTitle": "Genişləndirilmiş Qoruma Tədbirləri:",
+        "points": [
+          "Bütün həssas məlumatlar üçün ucdan-uca şifrələmə",
+          "Qabaqcıl təhlükəsizlik divarları ilə qorunan təhlükəsiz serverlər",
+          "Təhdidləri aşkar etmək üçün 24/7 təhlükəsizlik monitorinqi",
+          "Xidmətin davamlılığını təmin etmək üçün müntəzəm və şifrələnmiş ehtiyat nüsxələri",
+          "Müstəqil ekspertlər tərəfindən dövri təhlükəsizlik testləri"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Sizin Hüquqlarınız",
+        "intro": "Xidmətimizin istifadəçisi olaraq, şəxsi məlumatlarınızla bağlı aşağıdakı hüquqlara maliksiniz:",
+        "rights": [
+          {
+            "title": "Giriş və Baxış",
+            "description": "Bizdə saxlanılan bütün məlumatlarınızın bir nüsxəsini tələb edin"
+          },
+          {
+            "title": "Düzəliş və Yeniləmə",
+            "description": "Hər hansı bir qeyri-dəqiq məlumatı dəyişdirin və ya düzəldin"
+          },
+          {
+            "title": "Tam Silinmə",
+            "description": "Hesabınızı və bütün məlumatlarınızı birdəfəlik silin"
+          },
+          {
+            "title": "Daşınabilirlik və İxrac",
+            "description": "Məlumatlarınızı oxunaqlı formatda ixrac edin"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Siyasətdə Dəyişikliklər",
+        "content": "Siyasətimiz, hər hansı bir əhəmiyyətli dəyişiklikdən 30 gün əvvəl sizi məlumatlandırmaqdır. Hər hansı bir dəyişiklik bu səhifədə yenilənmiş bir redaktə tarixi ilə dərc ediləcək. Məlumatlarınızı necə qoruduğumuz barədə məlumatlı olmaq üçün bu siyasəti müntəzəm olaraq nəzərdən keçirməyinizi tövsiyə edirik."
+      },
+      {
+        "id": "contact",
+        "title": "Bizimlə Əlaqə",
+        "email": "E-poçt",
+        "phone": "Telefon",
+        "availability": "Məxfilik komandası bazar günündən cümə axşamına, səhər 9-dan axşam 6-a qədər sorğularınıza cavab vermək üçün hazırdır"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profil - SyriaGPT",
+      "description": "SyriaGPT-də şəxsi məlumatlarınızı, təhlükəsizlik parametrlərinizi və abunəlik planınızı idarə edin."
+    },
+    "header": {
+      "title": "Profil",
+      "description": "SyriaGPT-də şəxsi məlumatlarınızı və hesab parametrlərinizi idarə edin"
+    },
+    "sidebar": {
+      "avatarAlt": "Profil Şəkli",
+      "changeAvatar": "Profil şəklini dəyişdir",
+      "joinDate": "Qoşulma Tarixi",
+      "currentPlan": "Cari Plan",
+      "freePlan": "Pulsuz",
+      "conversations": "Söhbətlər",
+      "activeDays": "Aktiv Günlər"
+    },
+    "personalInfo": {
+      "title": "Şəxsi Məlumat",
+      "description": "Adınızı, e-poçtunuzu və əsas parametrlərinizi yeniləyin",
+      "fullName": "Tam Ad",
+      "email": "E-poçt Ünvanı",
+      "editButton": "Məlumatı Redaktə Et",
+      "cancelButton": "Ləğv et",
+      "saveButton": "Dəyişiklikləri Yadda Saxla",
+      "updateSuccess": "Profil uğurla yeniləndi!"
+    },
+    "security": {
+      "title": "Təhlükəsizlik və Şifrə",
+      "description": "Şifrənizi müntəzəm olaraq yeniləyərək hesabınızı təhlükəsiz saxlayın",
+      "currentPassword": "Cari Şifrə",
+      "currentPasswordPlaceholder": "Cari şifrəni daxil edin...",
+      "newPassword": "Yeni Şifrə",
+      "newPasswordPlaceholder": "Yeni şifrəni daxil edin...",
+      "confirmNewPassword": "Yeni Şifrəni Təsdiqlə",
+      "confirmNewPasswordPlaceholder": "Yeni şifrəni təsdiqləyin...",
+      "updateButton": "Şifrəni Yenilə",
+      "passwordMismatch": "Yeni şifrələr uyğun gəlmir.",
+      "updateSuccess": "Şifrə uğurla dəyişdirildi!"
+    },
+    "subscription": {
+      "title": "Abunəlik Planı",
+      "description": "Siz hazırda Pulsuz plandasınız - daha çox funksiya əldə edin",
+      "upgradeTitle": "Pro-ya Yüksəlt",
+      "upgradeDescription": "Əlavə funksiyalar və prioritetli cavablar əldə edin",
+      "upgradeButton": "İndi Yüksəlt"
+    },
+    "dangerZone": {
+      "title": "Təhlükəli Zona",
+      "description": "Bu hərəkətlər geri qaytarılmazdır - ehtiyatla davam edin",
+      "deleteTitle": "Hesabı Birdəfəlik Sil",
+      "deleteDescription": "Bütün məlumatlarınız və söhbətləriniz birdəfəlik silinəcək",
+      "deleteButton": "Hesabı Sil"
+    },
+    "deleteModal": {
+      "title": "Hesab Silinməsini Təsdiqlə",
+      "message": "Tamamilə əminsiniz? Hesabınız və bütün məlumatlarınız birdəfəlik silinəcək. Bu hərəkəti geri qaytarmaq mümkün deyil.",
+      "cancelButton": "Ləğv et",
+      "confirmButton": "Silinməni Təsdiqlə",
+      "deleteSuccess": "Hesabınız uğurla silindi."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Yeni Hesab Yarat - SyriaGPT",
+      "description": "SyriaGPT icmasına qoşulun və Suriya konteksti üçün hazırlanmış süni intellektin gücünü kəşf etməyə başlayın."
+    },
+    "infoPanel": {
+      "title": "SyriaGPT İcmasına Qoşulun",
+      "description": "Suriya mədəniyyəti və konteksti üçün xüsusi olaraq hazırlanmış süni intellektin gücünü kəşf edin",
+      "features": [
+        {
+          "title": "Genişləndirilmiş Süni İntellekt",
+          "description": "Ərəb və Suriya məzmunu üzrə təlim keçmiş müasir texnologiyalar"
+        },
+        {
+          "title": "Təminatlı Təhlükəsizlik və Məxfilik",
+          "description": "Dünya səviyyəli şifrələmə ilə məlumatlarınız üçün genişləndirilmiş qoruma"
+        },
+        {
+          "title": "Aktiv İcma",
+          "description": "Texnologiyaya həvəsli minlərlə Suriyalı istifadəçiyə qoşulun"
+        },
+        {
+          "title": "Eksklüziv Funksiyalar",
+          "description": "Suriya və ərəb məzmunu üçün xüsusi alətlər"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT işləmə tərzimi tamamilə dəyişdi. Suriya dili və mədəniyyətinin dərin anlaşılması.\"",
+        "author": "- Əhməd Əl-Şami, Proqramçı"
+      }
+    },
+    "form": {
+      "title": "Yeni Hesab Yarat",
+      "description": "Hesabınızı yaratmaq üçün aşağıdakı məlumatları doldurun",
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "email": "E-poçt Ünvanı",
+      "password": "Şifrə",
+      "confirmPassword": "Şifrəni Təsdiqlə",
+      "placeholder": "{field} daxil edin...",
+      "emailPlaceholder": "nümunə@epost.com",
+      "passwordStrength": "Şifrənin gücü",
+      "strengthLevels": [
+        "Çox Zəif",
+        "Zəif",
+        "Orta",
+        "Güclü",
+        "Çox Güclü"
+      ],
+      "submitButton": "Yeni Hesab Yarat",
+      "loadingButton": "Hesab yaradılır...",
+      "googleButton": "Google ilə Qeydiyyatdan Keç",
+      "orSeparator": "və ya",
+      "hasAccount": "Artıq hesabınız var?",
+      "loginLink": "Daxil ol",
+      "termsAgreement": "Hesab yaratmaqla, bizim",
+      "termsLink": "İstifadə Şərtləri",
+      "and": "və",
+      "privacyLink": "Məxfilik Siyasəti",
+      "successAlert": "Hesabınız uğurla yaradıldı! SyriaGPT-ə xoş gəlmisiniz"
+    },
+    "validation": {
+      "minLength": "Ən azı 2 simvol olmalıdır",
+      "maxLength": "Çox uzundur",
+      "emailRequired": "E-poçt tələb olunur",
+      "emailInvalid": "Yanlış e-poçt ünvanı",
+      "passwordLength": "Şifrə ən azı 8 simvol olmalıdır",
+      "passwordComplexity": "Böyük hərf, kiçik hərf və rəqəm olmalıdır",
+      "passwordMismatch": "Şifrələr uyğun gəlmir"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Şifrəni Sıfırla - SyriaGPT",
+      "description": "SyriaGPT hesabınız üçün yeni, güclü bir şifrə təyin edin."
+    },
+    "form": {
+      "title": "Yeni Şifrə Təyin Et",
+      "description": "Hesabınızı qorumaq üçün güclü bir şifrə seçin.",
+      "newPasswordLabel": "Yeni Şifrə",
+      "confirmPasswordLabel": "Şifrəni Təsdiqlə",
+      "passwordMismatchError": "Şifrələr uyğun gəlmir.",
+      "submitButton": "Şifrəni Yenilə",
+      "loadingButton": "Yenilənir...",
+      "showPasswordAria": "Şifrəni göstər",
+      "hidePasswordAria": "Şifrəni gizlət",
+      "mismatchToast": "Lütfən, şifrələrin uyğun olduğundan əmin olun.",
+      "loadingToast": "Şifrə yenilənir...",
+      "successToast": "Şifrə uğurla yeniləndi!"
+    },
+    "strengthIndicator": {
+      "title": "Güc",
+      "levels": [
+        "Çox Zəif",
+        "Zəif",
+        "Qəbul Edilən",
+        "Yaxşı",
+        "Güclü",
+        "Çox Güclü"
+      ]
+    },
+    "successScreen": {
+      "title": "Uğurlu!",
+      "description": "Şifrəniz yeniləndi. İndi yeni məlumatlarınızla təhlükəsiz şəkildə daxil ola bilərsiniz.",
+      "backToLoginButton": "Girişə Qayıt"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Parametrlər - SyriaGPT",
+      "description": "SyriaGPT təcrübənizi fərdiləşdirin, görünüşü, dili, bildirişləri və məlumatları idarə edin."
+    },
+    "header": {
+      "title": "SyriaGPT Parametrləri",
+      "description": "Şəxsi təcrübənizi fərdiləşdirin",
+      "unsavedChanges": "Yadda saxlanılmamış dəyişikliklər"
+    },
+    "appearance": {
+      "title": "Görünüş və Ekran",
+      "description": "Tətbiqin görünüşünü və hissini seçimlərinizə uyğun olaraq fərdiləşdirin",
+      "theme": "Mövzu Stili",
+      "themes": {
+        "light": { "label": "İşıqlı", "description": "Gündüz istifadəsi üçün idealdır" },
+        "dark": {
+          "label": "Qaranlıq",
+          "description": "Gecə gözlər üçün asandır"
+        },
+        "system": {
+          "label": "Sistem",
+          "description": "Cihazınızın parametrlərinə uyğun gəlir"
+        }
+      },
+      "preview": {
+        "title": "Dəyişikliklərin Önizləməsi",
+        "description": "Yadda saxlamadan əvvəl dəyişikliklərin canlı önizləməsini görün",
+        "new": "YENİ"
+      }
+    },
+    "language": {
+      "title": "Dil və Region",
+      "description": "Dil və regional parametrləri təyin edin",
+      "interfaceLanguage": {
+        "title": "İnterfeys Dili",
+        "description": "Menyularda və interaktiv elementlərdə istifadə olunan dil",
+        "badge": "Avto"
+      },
+      "languages": {
+        "ar": "العربية (Suriya)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Bildirişlər və Səslər",
+      "description": "Xəbərdarlıqları və səs effektlərini idarə edin",
+      "enableNotifications": {
+        "title": "Bildirişləri Aktivləşdir",
+        "description": "Mesajlar və vacib yeniləmələr üçün xəbərdarlıqlar alın"
+      },
+      "sounds": {
+        "title": "Səslər",
+        "description": "Mesaj göndərərkən və alarkən səsləri səsləndirin"
+      }
+    },
+    "dataManagement": {
+      "title": "Məlumatların İdarə Edilməsi",
+      "description": "Məlumatlarınızın saxlanmasını və paylaşılmasını idarə edin",
+      "autoSave": {
+        "title": "Avtomatik Yadda Saxla",
+        "description": "Söhbətlərinizi daha sonra müraciət etmək üçün avtomatik olaraq yadda saxlayın"
+      },
+      "exportData": "Məlumatları İxrac Et",
+      "clearHistory": "Söhbətləri Təmizlə"
+    },
+    "advanced": {
+      "title": "Genişləndirilmiş Parametrlər",
+      "description": "Peşəkar istifadəçilər üçün genişləndirilmiş seçimlər",
+      "developerMode": {
+        "title": "Tərtibatçı Rejimi",
+        "description": "Əlavə texniki məlumatları və inkişaf seçimlərini göstərin",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Analitika",
+        "description": "Anonim istifadə məlumatları göndərərək xidməti təkmilləşdirməyə kömək edin"
+      }
+    },
+    "saveBar": {
+      "title": "Dəyişiklikləri yadda saxlamaq istəyirsiniz?",
+      "description": "Yeni parametrlər dərhal tətbiq ediləcək",
+      "reset": "Sıfırla",
+      "save": "Dəyişiklikləri Yadda Saxla",
+      "saving": "Yadda saxlanılır...",
+      "success": "Parametrlər uğurla yadda saxlandı!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Tarixçənin Silinməsini Təsdiqlə",
+        "message": "Əminsiniz? Bütün keçmiş söhbətləriniz birdəfəlik silinəcək. Bu hərəkəti geri qaytarmaq mümkün deyil.",
+        "confirm": "Bəli, sil",
+        "success": "Söhbət tarixçəsi uğurla təmizləndi."
+      },
+      "exportData": {
+        "title": "Məlumatları İxrac Et",
+        "message": "Bütün məlumatlarınızın bir nüsxəsi yaradılacaq və e-poçtunuza göndəriləcək. Davam etmək istəyirsiniz?",
+        "confirm": "Bəli, davam et",
+        "success": "Məlumatlarınız ixrac edilir..."
+      },
+      "cancel": "Ləğv et"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Xidmət Şərtləri - SyriaGPT",
+      "description": "SyriaGPT xidmətlərindən istifadə üçün şərtləri və qaydaları oxuyun."
+    },
+    "header": {
+      "switchLanguage": "Ərəb dilinə keç",
+      "print": "Çap et"
+    },
+    "title": "Xidmət Şərtləri",
+    "subtitle": "Son Yenilənmə: 24 Avqust 2025",
+    "intro": "SyriaGPT-ə xoş gəlmisiniz. Xidmətlərimizdən istifadə etməklə, bu şərtlərlə razılaşırsınız. Lütfən, onları diqqətlə oxuyun.",
+    "sectionsTitle": "Bölmələr",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Şərtlərin Qəbulu",
+        "content": "SyriaGPT-ə daxil olmaqla və istifadə etməklə, bu Şərtlər və Qaydalara tabe olmağa razılaşırsınız. Bu şərtlərin hər hansı bir hissəsi ilə razı deyilsinizsə, xidmətlərimizdən istifadə etməməlisiniz."
+      },
+      {
+        "id": "services",
+        "title": "2. Xidmətlərin Təsviri",
+        "content": "SyriaGPT, Suriya konteksti ilə əlaqəli müxtəlif sahələrdə yardım göstərmək üçün hazırlanmış bir süni intellekt köməkçisidir."
+      },
+      {
+        "id": "usage",
+        "title": "3. Qəbul Edilən İstifadə",
+        "content": "Xidmətlərimizi qanuni və etik şəkildə istifadə etməlisiniz. Xidməti qeyri-qanuni və ya zərərli məqsədlər üçün istifadə etmək qadağandır."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Məxfilik və Məlumatlar",
+        "content": "Biz sizin məxfiliyinizi hörmətlə yanaşırıq və məlumatlarınızı qorumağa sadiqik. Biz yalnız xidməti təmin etmək üçün zəruri məlumatları toplayırıq və sizin razılığınız olmadan onları paylaşmayacağıq."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Əqli Mülkiyyət",
+        "content": "Bütün hüquqlar SyriaGPT-ə məxsusdur. Məzmun, dizayn və loqolar bizim mülkiyyətimizdir. Xidmətdən istifadə edərək yaratdığınız məzmun sizin olaraq qalır."
+      },
+      {
+        "id": "liability",
+        "title": "6. Məsuliyyətdən İmtina",
+        "content": "Xidmət heç bir zəmanət olmadan \"olduğu kimi\" təqdim olunur. Biz təqdim olunan məlumatların dəqiqliyini və ya tamlığını təmin etmirik və onun istifadəsindən yaranan hər hansı bir ziyana görə məsuliyyət daşımırıq."
+      },
+      {
+        "id": "termination",
+        "title": "7. Xidmətin Dayandırılması",
+        "content": "Biz bu şərtlərin pozulması və ya zərərli və ya qeyri-qanuni davranış halında hesabınızı dayandırmaq və ya ləğv etmək hüququnu özümüzdə saxlayırıq."
+      },
+      {
+        "id": "contact",
+        "title": "8. Bizimlə Əlaqə",
+        "content": "Bu şərtlərlə bağlı hər hansı bir sualınız üçün, lütfən, bizimlə e-poçt vasitəsilə əlaqə saxlayın: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Şərtləri oxudum və razıyam",
+    "continueButton": "Davam et",
+    "backToTop": "Yuxarıya Qayıt",
+    "expandAll": "Hamısını Genişlət",
+    "collapseAll": "Hamısını Yığ",
+    "readingProgress": "Oxuma Tərəqqisi",
+    "copyright": "© {year} SyriaGPT. Bütün hüquqlar qorunur."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Pro-ya Yüksəlt - SyriaGPT",
+      "description": "SyriaGPT Pro ilə məhdudiyyətsiz imkanlar, üstün sürət və yeni funksiyalara prioritetli girişdən həzz alın."
+    },
+    "header": {
+      "title": "Pro-ya Yüksəlt",
+      "description": "Məhdudiyyətsiz imkanlar, üstün sürət və yeni funksiyalara prioritetli girişdən həzz alın"
+    },
+    "stats": [
+      { "value": "10x", "label": "Daha Sürətli Cavab" },
+      { "value": "∞", "label": "Məhdudiyyətsiz Mesajlar" },
+      { "value": "24/7", "label": "Davamlı Dəstək" }
+    ],
+    "billingToggle": {
+      "monthly": "Aylıq",
+      "yearly": "İllik",
+      "saving": "20% Qənaət Edin"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Pulsuz Plan",
+        "subtitle": "Cari Plan",
+        "price": "0 AZN",
+        "period": "Ömürlük",
+        "features": [
+          "Əsas modelə giriş",
+          "Gündə 20 mesaj",
+          "Standart cavab sürəti",
+          "Əsas funksiyalar"
+        ],
+        "buttonText": "Sizin Cari Planınız"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Peşəkarlar və bizneslər üçün",
+        "priceMonthly": "17 AZN",
+        "priceYearly": "163 AZN",
+        "periodMonthly": "ayda",
+        "periodYearly": "ildə",
+        "popular": "Ən Populyar",
+        "features": [
+          "Genişləndirilmiş GPT-4 modeli",
+          "Məhdudiyyətsiz mesajlar",
+          "Üstün cavab sürəti",
+          "Yeni funksiyalara prioritetli giriş",
+          "Xüsusi texniki dəstək",
+          "Reklamsız təkmilləşdirilmiş interfeys"
+        ],
+        "buttonText": "İndi Yüksəlt"
+      }
+    },
+    "comparison": {
+      "title": "Planları Müqayisə Et",
+      "featureHeader": "Funksiyalar",
+      "freeHeader": "Pulsuz",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Əsas modelə giriş", "free": true, "pro": true },
+        { "text": "Məhdud gündəlik mesajlar (20)", "free": true, "pro": false },
+        { "text": "Məhdudiyyətsiz mesajlar", "free": false, "pro": true },
+        {
+          "text": "Genişləndirilmiş GPT-4 modelinə giriş",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Standart cavab sürəti", "free": true, "pro": false },
+        {
+          "text": "Üstün cavab sürəti (10x daha sürətli)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Yeni funksiyalara prioritetli giriş",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Xüsusi texniki dəstək",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Reklamsız interfeys", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Tez-tez Verilən Suallar",
+      "toggleOpen": "Daha Çox Oxu",
+      "toggleClose": "Bağla",
+      "items": [
+        {
+          "question": "Abunəliyimi istənilən vaxt ləğv edə bilərəmmi?",
+          "answer": "Bəli, əlbəttə. Pro plan abunəliyinizi istənilən vaxt \"Hesab İdarəetməsi\" səhifəsindən ləğv edə bilərsiniz. Cari faktura dövrünün sonuna qədər Pro funksiyalarına girişiniz davam edəcək və heç bir əlavə ödəniş tutulmayacaq."
+        },
+        {
+          "question": "Hansı ödəniş üsulları qəbul edilir?",
+          "answer": "Biz bütün əsas kredit və debet kartlarını (Visa, MasterCard, American Express) həmçinin Sham Cash və yerli elektron pul kisələrini qəbul edirik. Bütün ödənişlər tərəfdaşımız Stripe vasitəsilə təhlükəsiz və şifrələnmiş şəkildə emal edilir."
+        },
+        {
+          "question": "İllik faktura dövrünün sonunda nə baş verir?",
+          "answer": "İllik abunəliyiniz hesab parametrlərinizdən ləğv etmədiyiniz təqdirdə avtomatik olaraq yenilənəcək. Yenilənmə tarixindən bir həftə əvvəl sizə ödəniləcək məbləğin təfərrüatları ilə bir xatırlatma e-poçtu göndərəcəyik."
+        },
+        {
+          "question": "Geri ödəniş ala bilərəmmi?",
+          "answer": "Bəli, hər hansı bir səbəbdən xidmətdən razı qalmasanız, abunəlik tarixindən etibarən tam 30 günlük pul geri qaytarma zəmanəti təklif edirik. Sadəcə dəstək komandamızla əlaqə saxlayın və biz geri ödəniş tələbinizi dərhal emal edəcəyik."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Başlamağa Hazırsınız?",
+      "description": "Üstün süni intellekt təcrübəsi üçün SyriaGPT Pro-nu seçən minlərlə istifadəçiyə qoşulun",
+      "buttonText": "{price} üçün İndi Başla",
+      "guarantee": "30 günlük tam pul geri qaytarma zəmanəti"
+    },
+    "alert": "Siz ödəniş səhifəsinə yönləndiriləcəksiniz..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "E-poçtu Doğrula - SyriaGPT",
+      "description": "SyriaGPT hesabınızı təsdiqləmək üçün e-poçtunuza göndərilən doğrulama kodunu daxil edin."
+    },
+    "header": {
+      "title": "E-poçtunuzu Doğrulayın",
+      "description": "Göndərilən doğrulama kodunu daxil edin"
+    },
+    "form": {
+      "label": "6 rəqəmli doğrulama kodu",
+      "verifyButton": "Kodu Doğrula",
+      "verifyingButton": "Doğrulanır...",
+      "resend": {
+        "question": "Kodu almadınız?",
+        "resendButton": "Kodu Yenidən Göndər",
+        "resendingButton": "Yenidən göndərilir...",
+        "cooldown": "{seconds} saniyə sonra yenidən göndər"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Doğrulama Uğurlu Oldu!",
+        "description": "E-poçtunuz uğurla təsdiqləndi",
+        "redirecting": "İdarəetmə panelinə yönləndirilir..."
+      },
+      "error": {
+        "title": "Doğrulama Uğursuz Oldu",
+        "tryAgainButton": "Yenidən Cəhd Et"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Lütfən, 6 rəqəmli doğrulama kodunu daxil edin",
+      "invalidCode": "Yanlış doğrulama kodu. Lütfən, yenidən cəhd edin.",
+      "generic": "Doğrulama zamanı xəta baş verdi. Lütfən, yenidən cəhd edin.",
+      "resendFailed": "Doğrulama kodunu göndərmək alınmadı. Lütfən, yenidən cəhd edin."
+    },
+    "backToLogin": "Girişə Qayıt",
+    "securityNote": {
+      "title": "Təhlükəsizlik Qeydi:",
+      "points": [
+        "Doğrulama kodunu heç kimlə paylaşmayın",
+        "Doğrulama kodu yalnız 10 dəqiqə etibarlıdır",
+        "Göndərənin e-poçt ünvanını yoxlayın"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Yeni doğrulama kodu e-poçtunuza göndərildi"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Xəta Baş Verdi - SyriaGPT",
+      "description": "SyriaGPT layihəsi üçün xüsusi xəta səhifəsi."
+    },
+    "offlineMessage": "Siz hazırda oflaynsınız",
+    "errorCode": "Xəta {statusCode}",
+    "title": "Gözlənilməz Xəta Baş Verdi",
+    "description": "Narahatlığa görə səmimi qəlbdən üzr istəyirik. Texniki komandamız məlumatlandırılıb və problemi mümkün qədər tez həll etmək üçün çalışır.",
+    "retryButton": "Yenidən Cəhd Et",
+    "retryingButton": "Yenidən cəhd edilir...",
+    "homeButton": "Ana Səhifə",
+    "backButton": "Geri",
+    "suggestionsTitle": "İndi nə cəhd edə bilərsiniz:",
+    "suggestion1": "Səhifəni yeniləmək problemi həll edə bilər.",
+    "suggestion2": "Lütfən, internet bağlantınızı yoxlayın.",
+    "suggestion3": "Problem davam edərsə, bizimlə əlaqə saxlamaqdan çəkinməyin.",
+    "accordion": {
+      "title": "Tərtibatçılar üçün Texniki Təfərrüatlar",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı",
+      "code": "Kod:",
+      "message": "Mesaj:",
+      "digest": "Xülasə:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Səhifə Tapılmadı - SyriaGPT",
+      "description": "Axtardığınız səhifə mövcud deyil və ya köçürülüb."
+    },
+    "title": "Görünür, səhifələrdə itmisiniz!",
+    "description": "Axtardığınız səhifə mövcud deyil və ya köçürülüb",
+    "currentLocation": "Cari Məkan: Naməlum",
+    "search": {
+      "placeholder": "İstədiyiniz səhifəni axtarın...",
+      "button": "Axtar",
+      "searching": "Axtarılır..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Əvvəlki Səhifə",
+        "description": "Gəldiyiniz yerə qayıdın"
+      },
+      "homePage": {
+        "title": "Ana Səhifə",
+        "description": "Yenidən başla"
+      }
+    },
+    "suggestions": {
+      "title": "Sizi maraqlandıra biləcək səhifələr",
+      "items": [
+        { "title": "Ana Səhifə", "description": "Başlanğıca qayıt" },
+        { "title": "Söhbət", "description": "Yeni söhbətə başla" },
+        { "title": "Yardım", "description": "Yardım al" },
+        { "title": "Suriya haqqında", "description": "Daha çox kəşf et" }
+      ]
+    },
+    "history": {
+      "title": "Son Ziyarət Edilən Səhifələr"
+    },
+    "funFact": {
+      "title": "Yolunuzu taparkən...",
+      "facts": [
+        "Bilirsinizmi? Dəməşq dünyanın ən qədim davamlı məskunlaşmış paytaxtıdır!",
+        "Bilirsinizmi? Tarixdə ilk əlifba Suriyanın Uqarit şəhərində icad edilib!",
+        "Bilirsinizmi? Hələb püstə ağacı 300 ildən çox yaşaya bilər!",
+        "Bilirsinizmi? Suriyadakı Krak de Şevalye dünyanın ən yaxşı qorunan qalalarından biridir!",
+        "Bilirsinizmi? Dəməşq qızılgülü dünyanın ən yaxşı qızılgül növlərindən biri hesab olunur!"
+      ]
+    },
+    "support": {
+      "message": "Bunun bir xəta olduğuna inanırsınızsa, lütfən, bizimlə əlaqə saxlayın",
+      "helpCenter": "Yardım Mərkəzi",
+      "technicalSupport": "Texniki Dəstək"
+    }
+  },
+  "loader": {
+    "title": "yüklənir...",
+    "loading": "Lütfən, bir dəqiqə gözləyin..."
+  }
+}

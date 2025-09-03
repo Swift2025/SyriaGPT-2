@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Basirar Artificial ta Siriya",
+    "newChat": "Sabon Hira",
+    "pastConversations": "Tattaunawar da suka wuce",
+    "lightMode": "Yanayin Haske",
+    "darkMode": "Yanayin Duhu",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Mai Amfani daga Siriya",
+    "userEmail": "user@syriagpt.com",
+    "profile": "Profile",
+    "settings": "Saituna",
+    "upgradeToPro": "Haɓaka zuwa Pro",
+    "newBadge": "SABO",
+    "helpCenter": "Cibiyar Taimako",
+    "aboutApp": "Game da App",
+    "logout": "Fita",
+    "logoutModal": {
+      "title": "Tabbatar da Fita",
+      "description": "Shin ka tabbata kana son fita daga asusunka?",
+      "cancel": "Soke",
+      "confirm": "Ee, Fita"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Mataimakin ka mai hankali don amsa dukkan tambayoyinka",
+      "examples": "Misalai",
+      "capabilities": "Iyakoki",
+      "limitations": "Iyakoki",
+      "suggestions": {
+        "examples": [
+          "Bayyana yadda ake samun katin shaida cikin sauki",
+          "Ka ba ni darussan da aka amince da su a Jami'ar Damascus",
+          "Menene kayan hadin Mahshi?"
+        ],
+        "capabilities": [
+          "Yaya ake yin kubewa da kuma alakarta da tarihi?",
+          "Menene tsare-tsaren fasfo na Siriya?",
+          "Ina bukatar bayani game da zuba jari"
+        ],
+        "limitations": [
+          "Yaya za a magance matsalar kwamfuta?",
+          "Menene sharuddan rajista a Jami'ar Aleppo?",
+          "Ka ba ni takaitaccen labaran yau a Siriya"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Yana rubutawa..."
+    },
+    "regenerate": "Sake Samar da Amsa",
+    "input": {
+      "placeholder": "Rubuta sakonka a nan, ko jawo fayil don haɗawa...",
+      "attachFile": "Haɗa Fayil",
+      "startRecording": "Fara Rikodi",
+      "stopRecording": "Dakatar da Rikodi",
+      "removeFile": "Cire Fayil"
+    },
+    "dragDrop": {
+      "title": "Ajiye fayiloli a nan",
+      "subtitle": "PDF, Word, Rubutu (Max 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Ba a goyan bayan gane magana a wannan burauzar. Da fatan za a yi amfani da Chrome ko Edge.",
+      "permissionDenied": "Da fatan za a ba da izinin shiga makirufo a cikin saitunan burauzarka.",
+      "startFailed": "An kasa fara rikodi. Duba saitunan burauzarka.",
+      "generalError": "An sami kuskure yayin fara rikodi. Da fatan za a sake gwadawa.",
+      "no-speech": "Ba a gano magana ba. Tabbatar muryarka a bayyane take kuma makirufo yana kusa.",
+      "audio-capture": "Ba za a iya shiga makirufo ba. Tabbatar an haɗa shi kuma an ba da izini.",
+      "not-allowed": "An ƙi izini. Da fatan za a ba da izinin amfani da makirufo daga saitunan burauza.",
+      "network": "Kuskuren hanyar sadarwa. Da fatan za a duba haɗin intanet ɗinka.",
+      "service-not-allowed": "Sabis ɗin gane magana ba ya samuwa a halin yanzu.",
+      "language-not-supported": "Ba a goyan bayan harshen. Gwada burauzar Chrome."
+    },
+    "footer": "Manufarmu ita ce mu sa tsarin AI ya zama na halitta da aminci don hulɗa da shi"
+  },
+  "chat": {
+    "fileAnalysisError": "Yi haƙuri, an sami kuskure yayin nazarin fayil ɗin: {error}",
+    "responseProcessingError": "Yi haƙuri, an sami kuskure yayin sarrafa amsar.",
+    "networkError": "Yi haƙuri, an sami kuskuren haɗi. Da fatan za a duba haɗin intanet ɗinka."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Game da aikin SyriaGPT",
+      "description": "Koyi game da manufofi da hangen nesa na aikin SyriaGPT, mataimaki mai hankali wanda ya kware a cikin mahallin Siriya."
+    },
+    "header": {
+      "title": "Jamhuriyar Larabawa ta Siriya",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "Siriya.. ita ce Zuciya"
+    },
+    "main": {
+      "p1": "Wannan wani aiki ne na kasa da kasa wanda gwamnatin Siriya ta dauki nauyinsa, da nufin samar da wani ingantaccen tsarin harshen Larabci tare da mai da hankali na musamman kan yaren Siriya. Manufar wannan aikin ita ce ta zama dandamali na ilimi da sabis wanda ke taimaka wa 'yan ƙasa su yi hulɗa da ayyukan gwamnati da sassan jama'a da masu zaman kansu cikin sauƙi da aminci, yana ba su amsoshi daidai kuma abin dogaro game da hanyoyin, dokoki, da bayanai na gaba ɗaya.",
+      "p2": "An bambanta shi da mayar da hankali kan harshen gida da kuma ikon fahimtar yaruka tare da Larabci na yau da kullun, wanda ke sa shi kusa da mai amfani a rayuwarsu ta yau da kullun. Aikin kuma yana tabbatar da sirrin bayanai ta hanyar kasancewa a cikin cibiyoyin bayanai na ƙasa kuma yana aiki bisa ga manyan ka'idojin aminci da tsaka-tsaki don tabbatar da cewa fitarwa daidai ce kuma ba ta da son zuciya. An tsara shi don a iya haɗa shi da hanyoyin e-gwamnati, aikace-aikace na hukuma, da cibiyoyin kira, don haka ya zama mataki na asali don haɓaka canjin dijital a Siriya.",
+      "p3": "Aikin yana neman yin hidima a fannoni da yawa kamar sauƙaƙe hanyoyin gwamnati, tallafawa ilimi, sauƙaƙe jagororin kiwon lafiya, taimaka wa ƙananan kasuwanci, da yada saƙonnin gaggawa cikin sauri da haske. Don haka yana wakiltar wani babban ci gaba a yadda 'yan ƙasa ke samun bayanai, inda hulɗa a cikin harshe na halitta ya zama babbar hanya don sauƙaƙe ma'amaloli da kusantar da 'yan ƙasa ga cibiyoyin gwamnati."
+    },
+    "footer": {
+      "backButton": "Koma zuwa Hira",
+      "disclaimer": "Manufarmu ita ce mu sa tsarin AI ya zama na halitta da aminci don hulɗa da shi, daidai da mahallin Siriya da bukatun masu amfani da shi. Ra'ayoyinku da shawarwarinku za su taimaka mana mu inganta da haɓaka sabis ɗin don yi muku hidima mafi kyau."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "An Manta Kalmar Sirri",
+      "description": "Sake samun damar shiga asusunka na SyriaGPT tare da matakai masu sauƙi da aminci."
+    },
+    "infoPanel": {
+      "title": "Sake dawo da Asusunka cikin Aminci",
+      "description": "Muna nan don taimaka maka ka sake samun damar shiga asusunka tare da matakai masu sauƙi da aminci.",
+      "steps": {
+        "step1": {
+          "title": "Shigar da imel ɗinka",
+          "description": "Imel ɗin da aka yi rajista da asusunka na SyriaGPT"
+        },
+        "step2": {
+          "title": "Duba imel ɗinka",
+          "description": "Za mu aiko maka da wata hanyar haɗi mai aminci don sake saita kalmar sirrinka"
+        },
+        "step3": {
+          "title": "Ƙirƙiri sabuwar kalmar sirri",
+          "description": "Zaɓi kalmar sirri mai ƙarfi da aminci don asusunka"
+        }
+      },
+      "securityTip": {
+        "title": "Tukwicin Tsaro",
+        "description": "Hanyar haɗin tana aiki ne kawai na mintuna 15 don tabbatar da tsaron asusunka. Idan ba ka sami imel ɗin ba, duba babban fayil ɗin spam ɗinka."
+      }
+    },
+    "form": {
+      "title": "An Manta Kalmar Sirri",
+      "description": "Shigar da imel ɗinka don karɓar hanyar haɗin dawo da shi",
+      "emailLabel": "Adireshin Imel",
+      "emailPlaceholder": "Shigar da imel ɗinka...",
+      "emailRequiredAlert": "Da fatan za a shigar da adireshin imel ɗinka.",
+      "submitButton": "Aika Hanyar Haɗin Dawo da shi",
+      "loadingButton": "Ana aikawa...",
+      "rememberedPassword": "Ka tuna kalmar sirrinka?",
+      "backToLogin": "Koma zuwa Shiga"
+    },
+    "successScreen": {
+      "title": "An Aika Umarni",
+      "checkEmailTitle": "Duba Imel ɗinka",
+      "description": "Mun aiko da hanyar haɗin dawo da kalmar sirri zuwa:",
+      "tip1": "Duba akwatin saƙo naka",
+      "tip2": "Kada ka manta ka duba babban fayil ɗin spam ɗinka",
+      "tip3": "Hanyar haɗin tana aiki ne kawai na mintuna 15",
+      "backToLoginButton": "Koma zuwa Shiga"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Cibiyar Taimako - SyriaGPT",
+      "description": "Nemo amsoshin tambayoyinka, jagororin mai amfani, da tuntuɓi ƙungiyar tallafi ta SyriaGPT."
+    },
+    "header": {
+      "title": "Cibiyar Taimako",
+      "description": "Barka da zuwa cibiyar tallafi ta SyriaGPT! Muna nan don taimaka maka ka sami mafi kyawun gogewa."
+    },
+    "search": {
+      "placeholder": "Nemo amsoshi, jagororin mai amfani, ko yi tambaya..."
+    },
+    "categories": {
+      "title": "Bincika ta Rukunin",
+      "items": [
+        {
+          "title": "Farawa",
+          "description": "Koyi tushen amfani da dandamali kuma ka yi amfani da duk fasalulluka da ke akwai."
+        },
+        {
+          "title": "Gudanar da Asusu",
+          "description": "Shirya bayananka, sarrafa biyan kuɗi, da saitunan tsaro."
+        },
+        {
+          "title": "Fasalulluka na Gaba",
+          "description": "Yi amfani da haɗe-haɗen fayil, binciken murya, da hankali na wucin gadi na gaba."
+        },
+        {
+          "title": "Tsaro & Sirri",
+          "description": "Koyi yadda ake kare bayananka da bayanan sirri tare da manyan ka'idojin tsaro."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Tambayoyin da ake yawan yi",
+      "toggleOpen": "Kara Karatu",
+      "toggleClose": "Rufe",
+      "items": [
+        {
+          "question": "Yaya zan fara sabon hira?",
+          "answer": "Don fara sabon hira, kawai danna maɓallin \"+ Sabon Hira\" a saman gefen gefe. Hakanan zaka iya amfani da gajeren hanyar keyboard Ctrl+N don farawa da sauri."
+        },
+        {
+          "question": "Wadanne nau'ikan fayiloli zan iya haɗawa?",
+          "answer": "Zaka iya haɗa fayilolin PDF, takardun Word (doc, docx), fayilolin PowerPoint, fayilolin rubutu (txt), da hotuna (jpg, png, gif). Matsakaicin girman fayil guda ɗaya shine 10 MB, kuma zaka iya haɗa har zuwa fayiloli 5 a kowace hira."
+        },
+        {
+          "question": "Shin an adana tattaunawata da suka wuce?",
+          "answer": "Ee, an adana tattaunawarka da suka wuce ta atomatik kuma cikin aminci a cikin asusunka. Zaka iya samun damar su daga jerin \"Tattaunawar da suka wuce\" a gefen gefe, wanda aka tsara ta kwanan wata ko batun."
+        },
+        {
+          "question": "Yaya yanayin haske da duhu ke aiki?",
+          "answer": "Zaka iya canzawa tsakanin yanayin haske da duhu ta amfani da maɓallin da aka keɓe a gefen gefe. Tsarin yana adana fifikonka ta atomatik kuma yana amfani da shi a duk zaman da za a yi nan gaba."
+        },
+        {
+          "question": "Menene fasalin murya-zuwa-rubutu?",
+          "answer": "Zaka iya amfani da makirufonka don rubutun murya a cikin Larabci ko Ingilishi. Danna alamar makirufo a cikin sandar shigarwa kuma ka fara magana. Tsarin zai canza maganarka zuwa rubutu ta atomatik."
+        },
+        {
+          "question": "Zan iya amfani da SyriaGPT a wayar hannu ta?",
+          "answer": "Ee, SyriaGPT yana samuwa ta hanyar burauzar yanar gizo a kan dukkan na'urori masu wayo. Fuskar tana da cikakkiyar amsawa kuma tana aiki daidai a kan wayoyi da kwamfutar hannu."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Ba ka sami abin da kake nema ba?",
+      "description": "Ƙungiyar tallafinmu da aka keɓe tana samuwa a kowane lokaci don taimaka maka. Tuntube mu kuma za mu dawo gare ka cikin mintuna!",
+      "emailButton": "Tuntuɓi ta Imel",
+      "chatButton": "Hira kai tsaye",
+      "phoneButton": "Kiran Waya",
+      "availability": "Akwai 24/7",
+      "responseTime": "Amsa cikin mintuna 5",
+      "languageSupport": "Taimako a Harshen Larabci"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Shiga - SyriaGPT",
+      "description": "Shiga cikin asusunka na SyriaGPT don samun damar tattaunawarka da fasalulluka na gaba."
+    },
+    "infoPanel": {
+      "title": "Barka da dawowa",
+      "description": "Ci gaba da binciken duniyar hankali na wucin gadi na Siriya tare da",
+      "securityTitle": "Me yasa SyriaGPT ke da aminci?",
+      "features": [
+        {
+          "title": "Kariyar Bayanai na Gaba",
+          "description": "Muna amfani da fasahohin ɓoyewa na gaba don kare bayanan sirrinka"
+        },
+        {
+          "title": "Tabbatarwa ta Matakai Biyu",
+          "description": "Wani ƙarin matakin kariya don tabbatar da tsaron asusunka"
+        },
+        {
+          "title": "Hankali na Wucin Gadi na Gida",
+          "description": "Fasahar Siriya ta gaba wacce ke fahimtar al'adun Larabawa da mahallin"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Masu Amfani da Aiki" },
+        { "value": "99.9%", "label": "Lokacin Aiki" },
+        { "value": "24/7", "label": "Taimako" }
+      ]
+    },
+    "form": {
+      "title": "Shiga",
+      "description": "Shigar da bayanan shiga don samun damar asusunka",
+      "emailLabel": "Adireshin Imel",
+      "emailPlaceholder": "Shigar da imel ɗinka...",
+      "passwordLabel": "Kalmar Sirri",
+      "passwordPlaceholder": "Shigar da kalmar sirrinka...",
+      "forgotPassword": "An manta kalmar sirri?",
+      "showPassword": "Nuna kalmar sirri",
+      "hidePassword": "Ɓoye kalmar sirri",
+      "loginButton": "Shiga",
+      "loadingButton": "Ana tabbatarwa...",
+      "loginSuccessAlert": "An shiga cikin nasara!",
+      "orSeparator": "ko",
+      "noAccount": "Ba ka da asusu?",
+      "createAccount": "Ƙirƙiri sabon asusu"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Manufar Sirri - SyriaGPT",
+      "description": "Koyi yadda ake tattara, amfani, da kare bayananka na sirri lokacin da kake amfani da sabis na SyriaGPT."
+    },
+    "header": {
+      "title": "Manufar Sirri",
+      "lastUpdated": "An sabunta ta ƙarshe: 25 ga Agusta, 2025",
+      "effectiveDate": "Yana aiki nan da nan"
+    },
+    "infoCards": [
+      {
+        "title": "Cikakken Kariya",
+        "description": "An kare bayananka da sabbin fasahohin ɓoyewa da tsaro."
+      },
+      {
+        "title": "Cikakken Iko",
+        "description": "Kuna sarrafa bayananku kuma kuna iya share su a kowane lokaci."
+      },
+      {
+        "title": "Cikakken Bayyanawa",
+        "description": "Muna bayyana a sarari abin da muke tattarawa da yadda muke amfani da shi."
+      },
+      {
+        "title": "Babu Siyar da Bayanai",
+        "description": "Ba ma sayarwa ko raba bayananka da wasu kamfanoni."
+      }
+    ],
+    "toc": {
+      "title": "Abubuwan Ciki"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Gabatarwa",
+        "content": "Barka da zuwa SyriaGPT. Muna ɗaukar sirrinka da muhimmanci. Wannan manufar tana bayyana nau'ikan bayanan da za mu iya tattarawa daga gare ka ko kuma waɗanda za ka iya bayarwa lokacin da ka ziyarci ko amfani da aikace-aikacenmu, da kuma ayyukanmu na tattarawa, amfani, kiyayewa, karewa, da bayyana wannan bayanin."
+      },
+      {
+        "id": "data-collection",
+        "title": "Bayanin da muke Tattarawa",
+        "intro": "Za mu iya tattara nau'ikan bayanai da yawa daga da game da masu amfani da sabis ɗinmu, gami da:",
+        "points": [
+          "Bayanin da kake bayarwa kai tsaye: kamar sunanka, imel, da kalmar sirri lokacin da ka ƙirƙiri asusu.",
+          "Abun ciki na mai amfani: Saƙonni, tambayoyi, da fayilolin da kake loda zuwa sabis ɗinmu don nazari.",
+          "Bayanin amfani: Cikakkun bayanai game da amfani da sabis ɗinmu, gami da bayanan zirga-zirga da rajistan ayyukan amfani.",
+          "Bayanin na'ura: Nau'in burauzarka, tsarin aiki, da adireshin IP."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Yadda muke Amfani da Bayaninka",
+        "intro": "Muna amfani da bayanan da muke tattarawa game da kai ko kuma waɗanda kake bayarwa mana don dalilai masu zuwa:",
+        "points": [
+          "Don samar maka da sabis ɗinmu da abubuwan da ke cikinsa a cikin mafi kyawun inganci.",
+          "Don inganta da keɓance gogewarka bisa ga bukatunka.",
+          "Don sadarwa da kai game da asusunka ko sabis ɗinmu da muhimman sanarwa.",
+          "Don dalilai na nazari da bincike don inganta samfuranmu da sabis ɗinmu.",
+          "Don tabbatar da tsaron dandamali da hana amfani da ba a ba da izini ba."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Bayyana Bayaninka",
+        "commitmentTitle": "Babban Alƙawarinmu",
+        "commitmentText": "Ba ma sayarwa ko hayar bayanan sirrinka ga wasu kamfanoni. Wannan shine babban alƙawarinmu a gare ka.",
+        "content": "Za mu iya bayyana bayanan sirri ne kawai a cikin waɗannan yanayi: don bin umarnin kotu ko doka, ko don kare haƙƙoƙi da amincin SyriaGPT da abokan cinikinmu daga manyan barazanar tsaro."
+      },
+      {
+        "id": "data-security",
+        "title": "Tsaron Bayanai",
+        "protectionTitle": "Matakan Kariya na Gaba:",
+        "points": [
+          "Ɓoyewa daga ƙarshe zuwa ƙarshe don duk bayanan da ke da mahimmanci",
+          "Sabis masu aminci waɗanda aka kare su da manyan bangon wuta",
+          "Kula da tsaro 24/7 don gano barazana",
+          "Ajiyar ajiya na yau da kullun da aka ɓoye don tabbatar da ci gaban sabis",
+          "Gwajin tsaro na lokaci-lokaci da masana masu zaman kansu ke yi"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Haƙƙoƙinka",
+        "intro": "A matsayinka na mai amfani da sabis ɗinmu, kana da haƙƙoƙi masu zuwa game da bayananka na sirri:",
+        "rights": [
+          {
+            "title": "Samun dama da Bita",
+            "description": "Nemi kwafin duk bayananka da aka adana tare da mu"
+          },
+          {
+            "title": "Gyara da Sabuntawa",
+            "description": "Gyara ko gyara duk wani bayani da ba daidai ba"
+          },
+          {
+            "title": "Cirewa Gaba ɗaya",
+            "description": "Share asusunka da duk bayananka har abada"
+          },
+          {
+            "title": "Canja wuri da Fitarwa",
+            "description": "Fitar da bayananka a cikin tsari mai karantawa"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Canje-canje ga Manufar",
+        "content": "Manufarmu ita ce mu sanar da kai game da duk wani babban canji kwanaki 30 kafin ya fara aiki. Duk wani canji za a buga shi a wannan shafin tare da sabunta ranar bita. Muna ƙarfafa ka ka sake duba wannan manufar akai-akai don ci gaba da sanin yadda muke kare bayananka."
+      },
+      {
+        "id": "contact",
+        "title": "Tuntube Mu",
+        "email": "Imel",
+        "phone": "Waya",
+        "availability": "Ƙungiyar sirri tana samuwa don amsa tambayoyinka daga Lahadi zuwa Alhamis, 9 na safe - 6 na yamma"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profile - SyriaGPT",
+      "description": "Sarrafa bayananka na sirri, saitunan tsaro, da shirin biyan kuɗi a cikin SyriaGPT."
+    },
+    "header": {
+      "title": "Profile",
+      "description": "Sarrafa bayananka na sirri da saitunan asusu a cikin SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Hoton Profile",
+      "changeAvatar": "Canja hoton profile",
+      "joinDate": "Ranar Shiga",
+      "currentPlan": "Shirin Yanzu",
+      "freePlan": "Kyauta",
+      "conversations": "Tattaunawa",
+      "activeDays": "Kwanaki masu Aiki"
+    },
+    "personalInfo": {
+      "title": "Bayanin Sirri",
+      "description": "Sabunta sunanka, imel, da saitunan asali",
+      "fullName": "Cikakken Suna",
+      "email": "Adireshin Imel",
+      "editButton": "Shirya Bayani",
+      "cancelButton": "Soke",
+      "saveButton": "Ajiye Canje-canje",
+      "updateSuccess": "An sabunta profile cikin nasara!"
+    },
+    "security": {
+      "title": "Tsaro & Kalmar Sirri",
+      "description": "Kiyaye asusunka ta hanyar sabunta kalmar sirrinka akai-akai",
+      "currentPassword": "Kalmar Sirri ta Yanzu",
+      "currentPasswordPlaceholder": "Shigar da kalmar sirri ta yanzu...",
+      "newPassword": "Sabuwar Kalmar Sirri",
+      "newPasswordPlaceholder": "Shigar da sabuwar kalmar sirri...",
+      "confirmNewPassword": "Tabbatar da Sabuwar Kalmar Sirri",
+      "confirmNewPasswordPlaceholder": "Tabbatar da sabuwar kalmar sirri...",
+      "updateButton": "Sabunta Kalmar Sirri",
+      "passwordMismatch": "Sabbin kalmomin sirri ba su dace ba.",
+      "updateSuccess": "An canza kalmar sirri cikin nasara!"
+    },
+    "subscription": {
+      "title": "Shirin Biyan Kuɗi",
+      "description": "A halin yanzu kana kan shirin Kyauta - sami ƙarin fasalulluka",
+      "upgradeTitle": "Haɓaka zuwa Pro",
+      "upgradeDescription": "Sami ƙarin fasalulluka da amsoshi na fifiko",
+      "upgradeButton": "Haɓaka Yanzu"
+    },
+    "dangerZone": {
+      "title": "Yankin Hadari",
+      "description": "Waɗannan ayyukan ba za a iya juyawa ba - ci gaba da taka tsantsan",
+      "deleteTitle": "Share Asusu Har Abada",
+      "deleteDescription": "Duk bayananka da tattaunawarka za a share su har abada",
+      "deleteButton": "Share Asusu"
+    },
+    "deleteModal": {
+      "title": "Tabbatar da Share Asusu",
+      "message": "Shin ka tabbata? Za a share asusunka da duk bayananka har abada. Ba za a iya juyar da wannan aikin ba.",
+      "cancelButton": "Soke",
+      "confirmButton": "Tabbatar da Sharewa",
+      "deleteSuccess": "An share asusunka cikin nasara."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Ƙirƙiri Sabon Asusu - SyriaGPT",
+      "description": "Shiga cikin al'ummar SyriaGPT kuma ka fara binciken ikon AI da aka tsara don mahallin Siriya."
+    },
+    "infoPanel": {
+      "title": "Shiga cikin Al'ummar SyriaGPT",
+      "description": "Gano ikon hankali na wucin gadi da aka tsara musamman don al'adun Siriya da mahallin",
+      "features": [
+        {
+          "title": "AI na Gaba",
+          "description": "Fasahohin zamani da aka horar da su akan abun ciki na Larabci da Siriya"
+        },
+        {
+          "title": "Tabbatar da Tsaro & Sirri",
+          "description": "Kariyar gaba don bayananka tare da ɓoyewa na duniya"
+        },
+        {
+          "title": "Al'umma mai Aiki",
+          "description": "Shiga cikin dubban masu amfani da Siriya masu sha'awar fasaha"
+        },
+        {
+          "title": "Fasalulluka na Musamman",
+          "description": "Kayan aiki na musamman don abun ciki na Siriya da Larabci"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT ya canza yadda nake aiki gaba ɗaya. Cikakken fahimtar harshen Siriya da al'adunsu.\"",
+        "author": "- Ahmed Al-Shami, Mai Haɓakawa"
+      }
+    },
+    "form": {
+      "title": "Ƙirƙiri Sabon Asusu",
+      "description": "Cika bayanan da ke ƙasa don ƙirƙirar asusunka",
+      "firstName": "Sunan Farko",
+      "lastName": "Sunan Karshe",
+      "email": "Adireshin Imel",
+      "password": "Kalmar Sirri",
+      "confirmPassword": "Tabbatar da Kalmar Sirri",
+      "placeholder": "Shigar da {field}...",
+      "emailPlaceholder": "misali@email.com",
+      "passwordStrength": "Ƙarfin kalmar sirri",
+      "strengthLevels": [
+        "Mai Rauni Sosai",
+        "Mai Rauni",
+        "Matsakaici",
+        "Mai Ƙarfi",
+        "Mai Ƙarfi Sosai"
+      ],
+      "submitButton": "Ƙirƙiri Sabon Asusu",
+      "loadingButton": "Ana ƙirƙirar asusu...",
+      "googleButton": "Yi rajista da Google",
+      "orSeparator": "ko",
+      "hasAccount": "Tuni kana da asusu?",
+      "loginLink": "Shiga",
+      "termsAgreement": "Ta hanyar ƙirƙirar asusu, ka amince da namu",
+      "termsLink": "Sharuɗɗan Amfani",
+      "and": "da",
+      "privacyLink": "Manufar Sirri",
+      "successAlert": "An ƙirƙiri asusunka cikin nasara! Barka da zuwa SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Dole ne ya zama aƙalla haruffa 2",
+      "maxLength": "Ya yi tsayi da yawa",
+      "emailRequired": "Ana buƙatar imel",
+      "emailInvalid": "Adireshin imel mara inganci",
+      "passwordLength": "Dole ne kalmar sirri ta zama aƙalla haruffa 8",
+      "passwordComplexity": "Dole ne ya ƙunshi babban harafi, ƙaramin harafi, da lamba",
+      "passwordMismatch": "Kalmomin sirri ba su dace ba"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Sake saita Kalmar Sirri - SyriaGPT",
+      "description": "Saita sabuwar kalmar sirri mai ƙarfi don asusunka na SyriaGPT."
+    },
+    "form": {
+      "title": "Saita Sabuwar Kalmar Sirri",
+      "description": "Zaɓi kalmar sirri mai ƙarfi don kare asusunka.",
+      "newPasswordLabel": "Sabuwar Kalmar Sirri",
+      "confirmPasswordLabel": "Tabbatar da Kalmar Sirri",
+      "passwordMismatchError": "Kalmomin sirri ba su dace ba.",
+      "submitButton": "Sabunta Kalmar Sirri",
+      "loadingButton": "Ana sabuntawa...",
+      "showPasswordAria": "Nuna kalmar sirri",
+      "hidePasswordAria": "Ɓoye kalmar sirri",
+      "mismatchToast": "Da fatan za a tabbatar kalmomin sirri sun dace.",
+      "loadingToast": "Ana sabunta kalmar sirri...",
+      "successToast": "An sabunta kalmar sirri cikin nasara!"
+    },
+    "strengthIndicator": {
+      "title": "Ƙarfi",
+      "levels": [
+        "Mai Rauni Sosai",
+        "Mai Rauni",
+        "Karɓaɓɓe",
+        "Mai Kyau",
+        "Mai Ƙarfi",
+        "Mai Ƙarfi Sosai"
+      ]
+    },
+    "successScreen": {
+      "title": "Nasarar!",
+      "description": "An sabunta kalmar sirrinka. Yanzu zaka iya shiga cikin aminci tare da sabbin bayanan shiga.",
+      "backToLoginButton": "Koma zuwa Shiga"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Saituna - SyriaGPT",
+      "description": "Keɓance gogewarka ta SyriaGPT, sarrafa bayyanar, harshe, sanarwa, da bayanai."
+    },
+    "header": {
+      "title": "Saitunan SyriaGPT",
+      "description": "Keɓance gogewarka ta sirri",
+      "unsavedChanges": "Canje-canjen da ba a adana ba"
+    },
+    "appearance": {
+      "title": "Bayyanar & Nuni",
+      "description": "Keɓance bayyanar da jin daɗin aikace-aikacen don dacewa da abubuwan da kake so",
+      "theme": "Salon Jigo",
+      "themes": {
+        "light": { "label": "Haske", "description": "Mafi dacewa don amfani da rana" },
+        "dark": {
+          "label": "Duhu",
+          "description": "Mai sauƙi ga idanu da dare"
+        },
+        "system": {
+          "label": "Tsarin",
+          "description": "Yana bin saitunan na'urarka"
+        }
+      },
+      "preview": {
+        "title": "Duba Canje-canje",
+        "description": "Duba samfoti kai tsaye na canje-canje kafin adanawa",
+        "new": "SABO"
+      }
+    },
+    "language": {
+      "title": "Harshe & Yanki",
+      "description": "Saita harshe da saitunan yanki",
+      "interfaceLanguage": {
+        "title": "Harshen Fuska",
+        "description": "Harshen da ake amfani da shi a cikin menu da abubuwan hulɗa",
+        "badge": "Atomatik"
+      },
+      "languages": {
+        "ar": "العربية (Siriya)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Sanarwa & Sauti",
+      "description": "Sarrafa faɗakarwa da tasirin sauti",
+      "enableNotifications": {
+        "title": "Kunna Sanarwa",
+        "description": "Karɓi faɗakarwa don saƙonni da muhimman sabuntawa"
+      },
+      "sounds": {
+        "title": "Sauti",
+        "description": " kunna sauti lokacin aikawa da karɓar saƙonni"
+      }
+    },
+    "dataManagement": {
+      "title": "Gudanar da Bayanai",
+      "description": "Sarrafa adanawa da raba bayananka",
+      "autoSave": {
+        "title": "Adanawa ta Atomatik",
+        "description": "Adana tattaunawarka ta atomatik don komawa gare su daga baya"
+      },
+      "exportData": "Fitar da Bayanai",
+      "clearHistory": "Share Tattaunawa"
+    },
+    "advanced": {
+      "title": "Saituna na Gaba",
+      "description": "Zaɓuɓɓuka na gaba don masu amfani da ƙwararru",
+      "developerMode": {
+        "title": "Yanayin Mai Haɓakawa",
+        "description": "Nuna ƙarin bayanan fasaha da zaɓuɓɓukan haɓakawa",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Nazari",
+        "description": "Taimaka wajen inganta sabis ta hanyar aika bayanan amfani da ba a san su ba"
+      }
+    },
+    "saveBar": {
+      "title": "Shin kana son adana canje-canjen?",
+      "description": "Za a yi amfani da sabbin saitunan nan da nan",
+      "reset": "Sake saiti",
+      "save": "Ajiye Canje-canje",
+      "saving": "Ana adanawa...",
+      "success": "An adana saitunan cikin nasara!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Tabbatar da Share Tarihi",
+        "message": "Shin ka tabbata? Za a share duk tattaunawarka da suka wuce har abada. Ba za a iya juyar da wannan aikin ba.",
+        "confirm": "Ee, share",
+        "success": "An share tarihin tattaunawa cikin nasara."
+      },
+      "exportData": {
+        "title": "Fitar da Bayanai",
+        "message": "Za a samar da kwafin duk bayananka kuma a aiko maka da shi ta imel. Shin kana son ci gaba?",
+        "confirm": "Ee, ci gaba",
+        "success": "Ana fitar da bayananka..."
+      },
+      "cancel": "Soke"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Sharuɗɗan Sabis - SyriaGPT",
+      "description": "Karanta sharuɗɗa da ƙa'idodin amfani da sabis na SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Canja zuwa Larabci",
+      "print": "Buga"
+    },
+    "title": "Sharuɗɗan Sabis",
+    "subtitle": "An sabunta ta ƙarshe: 24 ga Agusta, 2025",
+    "intro": "Barka da zuwa SyriaGPT. Ta hanyar amfani da sabis ɗinmu, ka amince da waɗannan sharuɗɗan. Da fatan za a karanta su a hankali.",
+    "sectionsTitle": "Sassan",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Amincewa da Sharuɗɗa",
+        "content": "Ta hanyar shiga da amfani da SyriaGPT, ka amince da bin waɗannan Sharuɗɗa da Ƙa'idodi. Idan ba ka yarda da kowane bangare na waɗannan sharuɗɗan ba, bai kamata ka yi amfani da sabis ɗinmu ba."
+      },
+      {
+        "id": "services",
+        "title": "2. Bayanin Sabis",
+        "content": "SyriaGPT wani mataimaki ne na AI da aka tsara don samar da taimako a fannoni daban-daban da suka shafi mahallin Siriya."
+      },
+      {
+        "id": "usage",
+        "title": "3. Amfani da ya dace",
+        "content": "Dole ne ka yi amfani da sabis ɗinmu bisa doka da ɗa'a. An hana ka amfani da sabis ɗin don dalilai na haram ko cutarwa."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Sirri da Bayanai",
+        "content": "Muna girmama sirrinka kuma mun himmatu wajen kare bayananka. Muna tattara bayanan da ake buƙata ne kawai don samar da sabis kuma ba za mu raba su ba tare da izininka ba."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Mallakar Hankali",
+        "content": "Duk haƙƙoƙi an tanada su ga SyriaGPT. Abun ciki, zane, da tambura mallakinmu ne. Abun cikin da kake ƙirƙira ta amfani da sabis ɗin ya kasance naka."
+      },
+      {
+        "id": "liability",
+        "title": "6. Sanarwa",
+        "content": "Ana samar da sabis ɗin \"kamar yadda yake\" ba tare da wani garanti ba. Ba ma garantin daidaito ko cikar bayanan da aka bayar kuma ba mu da alhakin duk wata lalacewa da ta samo asali daga amfani da shi."
+      },
+      {
+        "id": "termination",
+        "title": "7. Dakatar da Sabis",
+        "content": "Muna da haƙƙin dakatarwa ko dakatar da asusunka idan an keta waɗannan sharuɗɗan ko kuma idan an yi amfani da shi ta hanyar cutarwa ko haram."
+      },
+      {
+        "id": "contact",
+        "title": "8. Tuntube Mu",
+        "content": "Don kowace tambaya game da waɗannan sharuɗɗan, da fatan za a tuntube mu ta imel: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Na karanta kuma na amince da sharuɗɗan",
+    "continueButton": "Ci gaba",
+    "backToTop": "Koma zuwa Sama",
+    "expandAll": "Faɗaɗa Duka",
+    "collapseAll": "Rufe Duka",
+    "readingProgress": "Ci gaban Karatu",
+    "copyright": "© {year} SyriaGPT. An kiyaye duk haƙƙoƙi."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Haɓaka zuwa Pro - SyriaGPT",
+      "description": "Ji daɗin iyakokin da ba su da iyaka, saurin gaske, da samun dama na fifiko ga sabbin fasalulluka tare da SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Haɓaka zuwa Pro",
+      "description": "Ji daɗin iyakokin da ba su da iyaka, saurin gaske, da samun dama na fifiko ga sabbin fasalulluka"
+    },
+    "stats": [
+      { "value": "10x", "label": "Amsa da sauri" },
+      { "value": "∞", "label": "Saƙonni marasa iyaka" },
+      { "value": "24/7", "label": "Taimako na ci gaba" }
+    ],
+    "billingToggle": {
+      "monthly": "Kowane wata",
+      "yearly": "Kowace shekara",
+      "saving": "Ajiye 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Shirin Kyauta",
+        "subtitle": "Shirin Yanzu",
+        "price": "$0",
+        "period": "Har abada",
+        "features": [
+          "Samun dama ga tsarin asali",
+          "Saƙonni 20 a kowace rana",
+          "Saurin amsawa na yau da kullun",
+          "Fasalulluka na asali"
+        ],
+        "buttonText": "Shirinka na Yanzu"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Don ƙwararru da kasuwanci",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "kowane wata",
+        "periodYearly": "kowace shekara",
+        "popular": "Mafi Shahara",
+        "features": [
+          "Tsarin GPT-4 na gaba",
+          "Saƙonni marasa iyaka",
+          "Saurin amsawa na musamman",
+          "Samun dama na fifiko ga sabbin fasalulluka",
+          "Taimakon fasaha na musamman",
+          "Fuskar da aka inganta ba tare da talla ba"
+        ],
+        "buttonText": "Haɓaka Yanzu"
+      }
+    },
+    "comparison": {
+      "title": "Kwatanta Shirye-shirye",
+      "featureHeader": "Fasalulluka",
+      "freeHeader": "Kyauta",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Samun dama ga tsarin asali", "free": true, "pro": true },
+        { "text": "Iyakantattun saƙonni na yau da kullun (20)", "free": true, "pro": false },
+        { "text": "Saƙonni marasa iyaka", "free": false, "pro": true },
+        {
+          "text": "Samun dama ga tsarin GPT-4 na gaba",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Saurin amsawa na yau da kullun", "free": true, "pro": false },
+        {
+          "text": "Saurin amsawa na musamman (10x da sauri)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Samun dama na fifiko ga sabbin fasalulluka",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Taimakon fasaha na musamman",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Fuskar da ba ta da talla", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Tambayoyin da ake yawan yi",
+      "toggleOpen": "Kara Karatu",
+      "toggleClose": "Rufe",
+      "items": [
+        {
+          "question": "Zan iya soke biyan kuɗi na a kowane lokaci?",
+          "answer": "Ee, tabbas. Zaka iya soke biyan kuɗin shirinka na Pro a kowane lokaci daga shafin \"Gudanar da Asusu\". Za ka ci gaba da samun damar fasalulluka na Pro har zuwa ƙarshen lokacin biyan kuɗi na yanzu, kuma ba za a sake cire maka kuɗi ba."
+        },
+        {
+          "question": "Wadanne hanyoyin biyan kuɗi ake karɓa?",
+          "answer": "Muna karɓar duk manyan katunan kuɗi da zare kudi (Visa, MasterCard, American Express) da kuma Sham Cash da walat ɗin lantarki na gida. Ana sarrafa duk biyan kuɗi cikin aminci kuma an ɓoye su ta hanyar abokin aikinmu, Stripe."
+        },
+        {
+          "question": "Me ke faruwa a ƙarshen lokacin biyan kuɗi na shekara-shekara?",
+          "answer": "Biyan kuɗinka na shekara-shekara zai sabunta ta atomatik sai dai idan ka soke shi daga saitunan asusunka. Za mu aiko maka da imel na tunatarwa mako guda kafin ranar sabuntawa tare da cikakkun bayanai game da adadin da ake biya."
+        },
+        {
+          "question": "Zan iya samun kuɗin da aka dawo min?",
+          "answer": "Ee, muna ba da garantin dawo da kuɗi na kwanaki 30 daga ranar biyan kuɗi idan ba ka gamsu da sabis ɗin ba saboda kowane dalili. Kawai tuntuɓi ƙungiyar tallafinmu, kuma za mu sarrafa buƙatarka ta dawo da kuɗi nan da nan."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Shirye don Farawa?",
+      "description": "Shiga cikin dubban masu amfani da suka zaɓi SyriaGPT Pro don samun gogewa ta musamman ta AI",
+      "buttonText": "Fara Yanzu don {price}",
+      "guarantee": "Garantin dawo da kuɗi na kwanaki 30"
+    },
+    "alert": "Za a tura ka zuwa shafin biyan kuɗi..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Tabbatar da Imel - SyriaGPT",
+      "description": "Shigar da lambar tabbatarwa da aka aiko zuwa imel ɗinka don tabbatar da asusunka na SyriaGPT."
+    },
+    "header": {
+      "title": "Tabbatar da Imel ɗinka",
+      "description": "Shigar da lambar tabbatarwa da aka aiko zuwa"
+    },
+    "form": {
+      "label": "Lambar tabbatarwa mai lamba 6",
+      "verifyButton": "Tabbatar da Lamba",
+      "verifyingButton": "Ana tabbatarwa...",
+      "resend": {
+        "question": "Ba ka karɓi lambar ba?",
+        "resendButton": "Sake Aika Lamba",
+        "resendingButton": "Ana sake aikawa...",
+        "cooldown": "Sake aikawa cikin daƙiƙa {seconds}"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Tabbatarwa ta yi nasara!",
+        "description": "An tabbatar da imel ɗinka cikin nasara",
+        "redirecting": "Ana tura ka zuwa dashboard..."
+      },
+      "error": {
+        "title": "Tabbatarwa ta gaza",
+        "tryAgainButton": "Sake Gwadawa"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Da fatan za a shigar da lambar tabbatarwa mai lamba 6",
+      "invalidCode": "Lambar tabbatarwa mara inganci. Da fatan za a sake gwadawa.",
+      "generic": "An sami kuskure yayin tabbatarwa. Da fatan za a sake gwadawa.",
+      "resendFailed": "An kasa aika lambar tabbatarwa. Da fatan za a sake gwadawa."
+    },
+    "backToLogin": "Koma zuwa Shiga",
+    "securityNote": {
+      "title": "Bayanin Tsaro:",
+      "points": [
+        "Kada ka raba lambar tabbatarwa da kowa",
+        "Lambar tabbatarwa tana aiki ne kawai na mintuna 10",
+        "Duba adireshin imel na mai aikawa"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "An aiko da sabuwar lambar tabbatarwa zuwa imel ɗinka"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "An Sami Kuskure - SyriaGPT",
+      "description": "Shafin kuskure na musamman don aikin SyriaGPT."
+    },
+    "offlineMessage": "A halin yanzu ba ka kan layi",
+    "errorCode": "Kuskure {statusCode}",
+    "title": "An Sami Kuskuren da ba a zata ba",
+    "description": "Muna neman afuwa da gaske saboda rashin jin daɗin. An sanar da ƙungiyar fasaharmu kuma tana aiki don magance matsalar da wuri-wuri.",
+    "retryButton": "Sake Gwadawa",
+    "retryingButton": "Ana sake gwadawa...",
+    "homeButton": "Gida",
+    "backButton": "Baya",
+    "suggestionsTitle": "Abin da zaka iya gwadawa yanzu:",
+    "suggestion1": "Sake loda shafin na iya magance matsalar.",
+    "suggestion2": "Da fatan za a duba haɗin intanet ɗinka.",
+    "suggestion3": "Idan matsalar ta ci gaba, kada ka yi jinkirin tuntuɓar mu.",
+    "accordion": {
+      "title": "Cikakkun Bayanai na Fasaha don Masu Haɓakawa",
+      "copy": "Kwafi",
+      "copied": "An kwafa",
+      "code": "Lamba:",
+      "message": "Saƙo:",
+      "digest": "Takaitawa:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Ba a Sami Shafin ba - SyriaGPT",
+      "description": "Shafin da kake nema ba ya wanzu ko an motsa shi."
+    },
+    "title": "Da alama ka ɓace a cikin shafuka!",
+    "description": "Shafin da kake nema ba ya wanzu ko an motsa shi",
+    "currentLocation": "Wurin Yanzu: Ba a sani ba",
+    "search": {
+      "placeholder": "Nemo shafin da kake so...",
+      "button": "Nemo",
+      "searching": "Ana nema..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Shafin da ya gabata",
+        "description": "Koma inda ka fito"
+      },
+      "homePage": {
+        "title": "Shafin Gida",
+        "description": "Fara daga farko"
+      }
+    },
+    "suggestions": {
+      "title": "Shafukan da za su iya ba ka sha'awa",
+      "items": [
+        { "title": "Shafin Gida", "description": "Koma zuwa farko" },
+        { "title": "Hira", "description": "Fara sabon hira" },
+        { "title": "Taimako", "description": "Samu taimako" },
+        { "title": "Game da Siriya", "description": "Gano ƙarin" }
+      ]
+    },
+    "history": {
+      "title": "Shafukan da aka Ziyarci Kwanan nan"
+    },
+    "funFact": {
+      "title": "Yayin da kake neman hanyarka...",
+      "facts": [
+        "Shin ka sani? Damascus ita ce birni mafi tsufa a duniya da ake ci gaba da zama a ciki!",
+        "Shin ka sani? An ƙirƙiri haruffa na farko a tarihi a Ugarit, Siriya!",
+        "Shin ka sani? Itacen pistachio na Aleppo na iya rayuwa sama da shekaru 300!",
+        "Shin ka sani? Krak des Chevaliers a Siriya yana ɗaya daga cikin manyan kagarorin da aka fi kiyayewa a duniya!",
+        "Shin ka sani? Furen Damask ana ɗaukarsa ɗaya daga cikin mafi kyawun nau'ikan fure a duniya!"
+      ]
+    },
+    "support": {
+      "message": "Idan ka yi imanin wannan kuskure ne, da fatan za a tuntube mu",
+      "helpCenter": "Cibiyar Taimako",
+      "technicalSupport": "Taimakon Fasaha"
+    }
+  },
+  "loader": {
+    "title": "ana lodawa...",
+    "loading": "Da fatan za a jira minti ɗaya..."
+  }
+}

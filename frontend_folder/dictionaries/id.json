@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Kecerdasan Buatan Suriah",
+    "newChat": "Obrolan Baru",
+    "pastConversations": "Percakapan Sebelumnya",
+    "lightMode": "Mode Terang",
+    "darkMode": "Mode Gelap",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Pengguna Suriah",
+    "userEmail": "user@syriagpt.com",
+    "profile": "Profil",
+    "settings": "Pengaturan",
+    "upgradeToPro": "Tingkatkan ke Pro",
+    "newBadge": "BARU",
+    "helpCenter": "Pusat Bantuan",
+    "aboutApp": "Tentang Aplikasi",
+    "logout": "Keluar",
+    "logoutModal": {
+      "title": "Konfirmasi Keluar",
+      "description": "Apakah Anda yakin ingin keluar dari akun Anda?",
+      "cancel": "Batal",
+      "confirm": "Ya, Keluar"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Asisten cerdas Anda untuk menjawab semua pertanyaan Anda",
+      "examples": "Contoh",
+      "capabilities": "Kemampuan",
+      "limitations": "Batasan",
+      "suggestions": {
+        "examples": [
+          "Jelaskan cara mendapatkan KTP dengan sederhana",
+          "Berikan saya mata kuliah yang disetujui di Universitas Damaskus",
+          "Apa saja bahan untuk membuat Mahshi?"
+        ],
+        "capabilities": [
+          "Bagaimana cara membuat okra dan hubungannya dengan sejarah?",
+          "Apa saja pengaturan paspor Suriah?",
+          "Saya butuh informasi tentang investasi"
+        ],
+        "limitations": [
+          "Bagaimana cara mengatasi masalah komputer?",
+          "Apa saja syarat pendaftaran di Universitas Aleppo?",
+          "Berikan saya ringkasan berita hari ini di Suriah"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Mengetik..."
+    },
+    "regenerate": "Hasilkan Ulang Respons",
+    "input": {
+      "placeholder": "Ketik pesan Anda di sini, atau seret file untuk melampirkan...",
+      "attachFile": "Lampirkan File",
+      "startRecording": "Mulai Merekam",
+      "stopRecording": "Hentikan Merekam",
+      "removeFile": "Hapus File"
+    },
+    "dragDrop": {
+      "title": "Letakkan file di sini",
+      "subtitle": "PDF, Word, Teks (Maks 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Pengenalan suara tidak didukung di browser ini. Silakan gunakan Chrome atau Edge.",
+      "permissionDenied": "Harap izinkan akses mikrofon di pengaturan browser Anda.",
+      "startFailed": "Gagal memulai rekaman. Periksa pengaturan browser Anda.",
+      "generalError": "Terjadi kesalahan saat memulai rekaman. Silakan coba lagi.",
+      "no-speech": "Tidak ada ucapan yang terdeteksi. Pastikan suara Anda jelas dan mikrofon dekat.",
+      "audio-capture": "Tidak dapat mengakses mikrofon. Pastikan terhubung dan izin telah diberikan.",
+      "not-allowed": "Izin ditolak. Harap izinkan penggunaan mikrofon dari pengaturan browser.",
+      "network": "Kesalahan jaringan. Silakan periksa koneksi internet Anda.",
+      "service-not-allowed": "Layanan pengenalan suara saat ini tidak tersedia.",
+      "language-not-supported": "Bahasa tidak didukung. Coba browser Chrome."
+    },
+    "footer": "Tujuan kami adalah membuat sistem AI lebih alami dan aman untuk berinteraksi"
+  },
+  "chat": {
+    "fileAnalysisError": "Maaf, terjadi kesalahan saat menganalisis file: {error}",
+    "responseProcessingError": "Maaf, terjadi kesalahan saat memproses respons.",
+    "networkError": "Maaf, terjadi kesalahan koneksi. Silakan periksa koneksi internet Anda."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Tentang Proyek SyriaGPT",
+      "description": "Pelajari tentang tujuan dan visi proyek SyriaGPT, asisten cerdas yang berspesialisasi dalam konteks Suriah."
+    },
+    "header": {
+      "title": "Republik Arab Suriah",
+      "subtitle": "REPUBLIK ARAB SURIAH",
+      "mapText": "Suriah.. adalah Hati"
+    },
+    "main": {
+      "p1": "Ini adalah proyek nasional perintis yang diadopsi oleh pemerintah Suriah, yang bertujuan untuk mengembangkan model bahasa Arab canggih dengan fokus khusus pada dialek Suriah. Tujuan dari proyek ini adalah menjadi platform pengetahuan dan layanan yang membantu warga berinteraksi dengan layanan pemerintah dan sektor publik dan swasta dengan mudah dan aman, memberi mereka jawaban yang akurat dan andal tentang prosedur, hukum, dan informasi umum.",
+      "p2": "Ini dibedakan oleh fokusnya pada bahasa lokal dan kemampuan untuk memahami dialek di samping bahasa Arab standar, membuatnya dekat dengan pengguna dalam kehidupan sehari-hari mereka. Proyek ini juga memastikan privasi data dengan dihosting di pusat data nasional dan beroperasi sesuai dengan standar keamanan dan netralitas yang tinggi untuk memastikan bahwa hasilnya akurat dan tidak bias. Ini dirancang untuk dapat diintegrasikan dengan portal e-government, aplikasi resmi, dan pusat panggilan, sehingga membentuk langkah mendasar menuju peningkatan transformasi digital di Suriah.",
+      "p3": "Proyek ini berupaya melayani berbagai bidang seperti memfasilitasi prosedur pemerintah, mendukung pendidikan, menyederhanakan pedoman kesehatan, membantu usaha kecil, dan menyebarkan pesan darurat dengan cepat dan jelas. Dengan demikian, ini merupakan lompatan kualitatif dalam cara warga mengakses informasi, di mana interaksi dalam bahasa alami menjadi sarana utama untuk menyederhanakan transaksi dan mendekatkan warga dengan lembaga negara."
+    },
+    "footer": {
+      "backButton": "Kembali ke Obrolan",
+      "disclaimer": "Tujuan kami adalah membuat sistem AI lebih alami dan aman untuk berinteraksi, sejalan dengan konteks Suriah dan kebutuhan penggunanya. Umpan balik dan saran Anda akan membantu kami meningkatkan dan mengembangkan layanan untuk melayani Anda dengan lebih baik."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Lupa Kata Sandi",
+      "description": "Dapatkan kembali akses ke akun SyriaGPT Anda dengan langkah-langkah sederhana dan aman."
+    },
+    "infoPanel": {
+      "title": "Pulihkan Akun Anda dengan Aman",
+      "description": "Kami di sini untuk membantu Anda mendapatkan kembali akses ke akun Anda dengan langkah-langkah sederhana dan aman.",
+      "steps": {
+        "step1": {
+          "title": "Masukkan email Anda",
+          "description": "Email yang terdaftar dengan akun SyriaGPT Anda"
+        },
+        "step2": {
+          "title": "Periksa email Anda",
+          "description": "Kami akan mengirimi Anda tautan aman untuk mengatur ulang kata sandi Anda"
+        },
+        "step3": {
+          "title": "Buat kata sandi baru",
+          "description": "Pilih kata sandi yang kuat dan aman untuk akun Anda"
+        }
+      },
+      "securityTip": {
+        "title": "Tips Keamanan",
+        "description": "Tautan ini hanya berlaku selama 15 menit untuk memastikan keamanan akun Anda. Jika Anda tidak menemukan email, periksa folder spam Anda."
+      }
+    },
+    "form": {
+      "title": "Lupa Kata Sandi",
+      "description": "Masukkan email Anda untuk menerima tautan pemulihan",
+      "emailLabel": "Alamat Email",
+      "emailPlaceholder": "Masukkan email Anda...",
+      "emailRequiredAlert": "Harap masukkan alamat email Anda.",
+      "submitButton": "Kirim Tautan Pemulihan",
+      "loadingButton": "Mengirim...",
+      "rememberedPassword": "Ingat kata sandi Anda?",
+      "backToLogin": "Kembali ke Login"
+    },
+    "successScreen": {
+      "title": "Instruksi Terkirim",
+      "checkEmailTitle": "Periksa Email Anda",
+      "description": "Kami telah mengirimkan tautan pemulihan kata sandi ke:",
+      "tip1": "Periksa kotak masuk Anda",
+      "tip2": "Jangan lupa periksa folder spam Anda",
+      "tip3": "Tautan ini hanya berlaku selama 15 menit",
+      "backToLoginButton": "Kembali ke Login"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Pusat Bantuan - SyriaGPT",
+      "description": "Temukan jawaban atas pertanyaan Anda, panduan pengguna, dan hubungi tim dukungan SyriaGPT."
+    },
+    "header": {
+      "title": "Pusat Bantuan",
+      "description": "Selamat datang di pusat dukungan SyriaGPT! Kami di sini untuk membantu Anda mendapatkan pengalaman terbaik."
+    },
+    "search": {
+      "placeholder": "Cari jawaban, panduan pengguna, atau ajukan pertanyaan..."
+    },
+    "categories": {
+      "title": "Jelajahi berdasarkan Kategori",
+      "items": [
+        {
+          "title": "Memulai",
+          "description": "Pelajari dasar-dasar penggunaan platform dan manfaatkan semua fitur yang tersedia."
+        },
+        {
+          "title": "Manajemen Akun",
+          "description": "Edit profil Anda, kelola langganan, dan pengaturan keamanan Anda."
+        },
+        {
+          "title": "Fitur Lanjutan",
+          "description": "Manfaatkan lampiran file, pencarian suara, dan kecerdasan buatan canggih."
+        },
+        {
+          "title": "Keamanan & Privasi",
+          "description": "Pelajari cara melindungi data dan informasi pribadi Anda dengan standar keamanan tertinggi."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Pertanyaan yang Sering Diajukan",
+      "toggleOpen": "Baca Selengkapnya",
+      "toggleClose": "Tutup",
+      "items": [
+        {
+          "question": "Bagaimana cara memulai obrolan baru?",
+          "answer": "Untuk memulai obrolan baru, cukup klik tombol \"+ Obrolan Baru\" di bagian atas sidebar. Anda juga dapat menggunakan pintasan keyboard Ctrl+N untuk memulai dengan cepat."
+        },
+        {
+          "question": "Jenis file apa yang bisa saya lampirkan?",
+          "answer": "Anda dapat melampirkan file PDF, dokumen Word (doc, docx), file PowerPoint, file teks (txt), dan gambar (jpg, png, gif). Ukuran maksimum untuk satu file adalah 10 MB, dan Anda dapat melampirkan hingga 5 file per percakapan."
+        },
+        {
+          "question": "Apakah percakapan saya sebelumnya disimpan?",
+          "answer": "Ya, percakapan Anda sebelumnya disimpan secara otomatis dan aman ke akun Anda. Anda dapat mengaksesnya dari daftar \"Percakapan Sebelumnya\" di sidebar, yang diatur berdasarkan tanggal atau topik."
+        },
+        {
+          "question": "Bagaimana cara kerja mode terang dan gelap?",
+          "answer": "Anda dapat beralih antara mode terang dan gelap menggunakan tombol khusus di sidebar. Sistem secara otomatis menyimpan preferensi Anda dan menerapkannya di semua sesi mendatang."
+        },
+        {
+          "question": "Apa itu fitur suara-ke-teks?",
+          "answer": "Anda dapat menggunakan mikrofon Anda untuk dikte suara dalam bahasa Arab atau Inggris. Klik ikon mikrofon di bilah input dan mulailah berbicara. Sistem akan secara otomatis mengubah ucapan Anda menjadi teks."
+        },
+        {
+          "question": "Bisakah saya menggunakan SyriaGPT di ponsel saya?",
+          "answer": "Ya, SyriaGPT tersedia melalui browser web di semua perangkat pintar. Antarmukanya sepenuhnya responsif dan berfungsi sempurna di ponsel dan tablet."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Tidak menemukan yang Anda cari?",
+      "description": "Tim dukungan kami yang berdedikasi tersedia sepanjang waktu untuk membantu Anda. Hubungi kami dan kami akan menghubungi Anda dalam beberapa menit!",
+      "emailButton": "Hubungi melalui Email",
+      "chatButton": "Obrolan Langsung",
+      "phoneButton": "Panggilan Telepon",
+      "availability": "Tersedia 24/7",
+      "responseTime": "Balas dalam 5 menit",
+      "languageSupport": "Dukungan Bahasa Arab"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Login - SyriaGPT",
+      "description": "Masuk ke akun SyriaGPT Anda untuk mengakses percakapan dan fitur-fitur canggih."
+    },
+    "infoPanel": {
+      "title": "Selamat Datang Kembali",
+      "description": "Lanjutkan menjelajahi dunia kecerdasan buatan Suriah dengan",
+      "securityTitle": "Mengapa SyriaGPT Aman?",
+      "features": [
+        {
+          "title": "Perlindungan Data Tingkat Lanjut",
+          "description": "Kami menggunakan teknologi enkripsi canggih untuk melindungi informasi pribadi Anda"
+        },
+        {
+          "title": "Otentikasi Dua Faktor",
+          "description": "Lapisan perlindungan ekstra untuk memastikan keamanan akun Anda"
+        },
+        {
+          "title": "Kecerdasan Buatan Lokal",
+          "description": "Teknologi Suriah canggih yang memahami budaya dan konteks Arab"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Pengguna Aktif" },
+        { "value": "99.9%", "label": "Waktu Aktif" },
+        { "value": "24/7", "label": "Dukungan" }
+      ]
+    },
+    "form": {
+      "title": "Login",
+      "description": "Masukkan kredensial Anda untuk mengakses akun Anda",
+      "emailLabel": "Alamat Email",
+      "emailPlaceholder": "Masukkan email Anda...",
+      "passwordLabel": "Kata Sandi",
+      "passwordPlaceholder": "Masukkan kata sandi Anda...",
+      "forgotPassword": "Lupa kata sandi?",
+      "showPassword": "Tampilkan kata sandi",
+      "hidePassword": "Sembunyikan kata sandi",
+      "loginButton": "Login",
+      "loadingButton": "Memverifikasi...",
+      "loginSuccessAlert": "Login berhasil!",
+      "orSeparator": "atau",
+      "noAccount": "Tidak punya akun?",
+      "createAccount": "Buat akun baru"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Kebijakan Privasi - SyriaGPT",
+      "description": "Pelajari bagaimana data pribadi Anda dikumpulkan, digunakan, dan dilindungi saat Anda menggunakan layanan SyriaGPT."
+    },
+    "header": {
+      "title": "Kebijakan Privasi",
+      "lastUpdated": "Terakhir Diperbarui: 25 Agustus 2025",
+      "effectiveDate": "Berlaku Segera"
+    },
+    "infoCards": [
+      {
+        "title": "Perlindungan Penuh",
+        "description": "Data Anda dilindungi dengan teknologi enkripsi dan keamanan terbaru."
+      },
+      {
+        "title": "Kontrol Penuh",
+        "description": "Anda mengontrol data Anda dan dapat menghapusnya kapan saja."
+      },
+      {
+        "title": "Transparansi Penuh",
+        "description": "Kami menjelaskan dengan jelas apa yang kami kumpulkan dan bagaimana kami menggunakannya."
+      },
+      {
+        "title": "Tidak Ada Penjualan Data",
+        "description": "Kami tidak menjual atau membagikan data Anda dengan pihak ketiga."
+      }
+    ],
+    "toc": {
+      "title": "Isi"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Pendahuluan",
+        "content": "Selamat datang di SyriaGPT. Kami menjaga privasi Anda dengan serius. Kebijakan ini menjelaskan jenis informasi yang mungkin kami kumpulkan dari Anda atau yang mungkin Anda berikan saat Anda mengunjungi atau menggunakan aplikasi kami, dan praktik kami untuk mengumpulkan, menggunakan, memelihara, melindungi, dan mengungkapkan informasi tersebut."
+      },
+      {
+        "id": "data-collection",
+        "title": "Informasi yang Kami Kumpulkan",
+        "intro": "Kami dapat mengumpulkan beberapa jenis informasi dari dan tentang pengguna layanan kami, termasuk:",
+        "points": [
+          "Informasi yang Anda berikan secara langsung: seperti nama, email, dan kata sandi Anda saat Anda membuat akun.",
+          "Konten pengguna: Pesan, pertanyaan, dan file yang Anda unggah ke layanan kami untuk dianalisis.",
+          "Informasi penggunaan: Detail penggunaan layanan kami oleh Anda, termasuk data lalu lintas dan log penggunaan.",
+          "Informasi perangkat: Jenis browser, sistem operasi, dan alamat IP Anda."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Bagaimana Kami Menggunakan Informasi Anda",
+        "intro": "Kami menggunakan informasi yang kami kumpulkan tentang Anda atau yang Anda berikan kepada kami untuk tujuan berikut:",
+        "points": [
+          "Untuk menyediakan layanan dan konten kami kepada Anda dengan kualitas terbaik.",
+          "Untuk meningkatkan dan mempersonalisasi pengalaman Anda sesuai dengan kebutuhan Anda.",
+          "Untuk berkomunikasi dengan Anda tentang akun Anda atau layanan kami dan pemberitahuan penting.",
+          "Untuk tujuan analisis dan penelitian guna meningkatkan produk dan layanan kami.",
+          "Untuk memastikan keamanan platform dan mencegah penggunaan yang tidak sah."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Pengungkapan Informasi Anda",
+        "commitmentTitle": "Komitmen Inti Kami",
+        "commitmentText": "Kami tidak menjual atau menyewakan informasi pribadi Anda kepada pihak ketiga. Ini adalah komitmen mendasar kami kepada Anda.",
+        "content": "Kami dapat mengungkapkan informasi pribadi hanya dalam kasus berikut: untuk mematuhi perintah pengadilan atau hukum apa pun, atau untuk melindungi hak dan keselamatan SyriaGPT dan pelanggan kami dari ancaman keamanan yang serius."
+      },
+      {
+        "id": "data-security",
+        "title": "Keamanan Data",
+        "protectionTitle": "Tindakan Perlindungan Tingkat Lanjut:",
+        "points": [
+          "Enkripsi ujung-ke-ujung untuk semua data sensitif",
+          "Server aman yang dilindungi oleh firewall canggih",
+          "Pemantauan keamanan 24/7 untuk mendeteksi ancaman",
+          "Pencadangan berkala dan terenkripsi untuk memastikan kelangsungan layanan",
+          "Pengujian keamanan berkala oleh para ahli independen"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Hak Anda",
+        "intro": "Sebagai pengguna layanan kami, Anda memiliki hak-hak berikut terkait data pribadi Anda:",
+        "rights": [
+          {
+            "title": "Akses dan Tinjauan",
+            "description": "Minta salinan semua data Anda yang tersimpan pada kami"
+          },
+          {
+            "title": "Koreksi dan Pembaruan",
+            "description": "Ubah atau perbaiki informasi yang tidak akurat"
+          },
+          {
+            "title": "Penghapusan Lengkap",
+            "description": "Hapus akun Anda dan semua data Anda secara permanen"
+          },
+          {
+            "title": "Portabilitas dan Ekspor",
+            "description": "Ekspor data Anda dalam format yang dapat dibaca"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Perubahan pada Kebijakan",
+        "content": "Kebijakan kami adalah memberi tahu Anda tentang perubahan signifikan apa pun 30 hari sebelum berlaku. Setiap perubahan akan diposting di halaman ini dengan tanggal revisi yang diperbarui. Kami mendorong Anda untuk meninjau kebijakan ini secara teratur untuk tetap mendapat informasi tentang bagaimana kami melindungi informasi Anda."
+      },
+      {
+        "id": "contact",
+        "title": "Hubungi Kami",
+        "email": "Email",
+        "phone": "Telepon",
+        "availability": "Tim privasi tersedia untuk menjawab pertanyaan Anda dari hari Minggu hingga Kamis, pukul 9 pagi - 6 sore"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profil - SyriaGPT",
+      "description": "Kelola informasi pribadi, pengaturan keamanan, dan paket langganan Anda di SyriaGPT."
+    },
+    "header": {
+      "title": "Profil",
+      "description": "Kelola informasi pribadi dan pengaturan akun Anda di SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Foto Profil",
+      "changeAvatar": "Ubah foto profil",
+      "joinDate": "Tanggal Bergabung",
+      "currentPlan": "Paket Saat Ini",
+      "freePlan": "Gratis",
+      "conversations": "Percakapan",
+      "activeDays": "Hari Aktif"
+    },
+    "personalInfo": {
+      "title": "Informasi Pribadi",
+      "description": "Perbarui nama, email, dan pengaturan dasar Anda",
+      "fullName": "Nama Lengkap",
+      "email": "Alamat Email",
+      "editButton": "Edit Informasi",
+      "cancelButton": "Batal",
+      "saveButton": "Simpan Perubahan",
+      "updateSuccess": "Profil berhasil diperbarui!"
+    },
+    "security": {
+      "title": "Keamanan & Kata Sandi",
+      "description": "Jaga keamanan akun Anda dengan memperbarui kata sandi Anda secara teratur",
+      "currentPassword": "Kata Sandi Saat Ini",
+      "currentPasswordPlaceholder": "Masukkan kata sandi saat ini...",
+      "newPassword": "Kata Sandi Baru",
+      "newPasswordPlaceholder": "Masukkan kata sandi baru...",
+      "confirmNewPassword": "Konfirmasi Kata Sandi Baru",
+      "confirmNewPasswordPlaceholder": "Konfirmasi kata sandi baru...",
+      "updateButton": "Perbarui Kata Sandi",
+      "passwordMismatch": "Kata sandi baru tidak cocok.",
+      "updateSuccess": "Kata sandi berhasil diubah!"
+    },
+    "subscription": {
+      "title": "Paket Langganan",
+      "description": "Anda saat ini menggunakan paket Gratis - dapatkan lebih banyak fitur",
+      "upgradeTitle": "Tingkatkan ke Pro",
+      "upgradeDescription": "Dapatkan fitur tambahan dan respons prioritas",
+      "upgradeButton": "Tingkatkan Sekarang"
+    },
+    "dangerZone": {
+      "title": "Zona Bahaya",
+      "description": "Tindakan ini tidak dapat diurungkan - lanjutkan dengan hati-hati",
+      "deleteTitle": "Hapus Akun Secara Permanen",
+      "deleteDescription": "Semua data dan percakapan Anda akan dihapus secara permanen",
+      "deleteButton": "Hapus Akun"
+    },
+    "deleteModal": {
+      "title": "Konfirmasi Penghapusan Akun",
+      "message": "Apakah Anda benar-benar yakin? Akun Anda dan semua data Anda akan dihapus secara permanen. Tindakan ini tidak dapat dibatalkan.",
+      "cancelButton": "Batal",
+      "confirmButton": "Konfirmasi Penghapusan",
+      "deleteSuccess": "Akun Anda telah berhasil dihapus."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Buat Akun Baru - SyriaGPT",
+      "description": "Bergabunglah dengan komunitas SyriaGPT dan mulailah menjelajahi kekuatan AI yang dirancang untuk konteks Suriah."
+    },
+    "infoPanel": {
+      "title": "Bergabunglah dengan Komunitas SyriaGPT",
+      "description": "Temukan kekuatan kecerdasan buatan yang dirancang khusus untuk budaya dan konteks Suriah",
+      "features": [
+        {
+          "title": "AI Canggih",
+          "description": "Teknologi modern yang dilatih pada konten Arab dan Suriah"
+        },
+        {
+          "title": "Keamanan & Privasi Terjamin",
+          "description": "Perlindungan canggih untuk data Anda dengan enkripsi kelas dunia"
+        },
+        {
+          "title": "Komunitas Aktif",
+          "description": "Bergabunglah dengan ribuan pengguna Suriah yang bersemangat tentang teknologi"
+        },
+        {
+          "title": "Fitur Eksklusif",
+          "description": "Alat khusus untuk konten Suriah dan Arab"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT telah sepenuhnya mengubah cara saya bekerja. Pemahaman mendalam tentang bahasa dan budaya Suriah.\"",
+        "author": "- Ahmed Al-Shami, Pengembang"
+      }
+    },
+    "form": {
+      "title": "Buat Akun Baru",
+      "description": "Isi detail berikut untuk membuat akun Anda",
+      "firstName": "Nama Depan",
+      "lastName": "Nama Belakang",
+      "email": "Alamat Email",
+      "password": "Kata Sandi",
+      "confirmPassword": "Konfirmasi Kata Sandi",
+      "placeholder": "Masukkan {field}...",
+      "emailPlaceholder": "contoh@email.com",
+      "passwordStrength": "Kekuatan kata sandi",
+      "strengthLevels": [
+        "Sangat Lemah",
+        "Lemah",
+        "Sedang",
+        "Kuat",
+        "Sangat Kuat"
+      ],
+      "submitButton": "Buat Akun Baru",
+      "loadingButton": "Membuat akun...",
+      "googleButton": "Daftar dengan Google",
+      "orSeparator": "atau",
+      "hasAccount": "Sudah punya akun?",
+      "loginLink": "Login",
+      "termsAgreement": "Dengan membuat akun, Anda menyetujui",
+      "termsLink": "Ketentuan Penggunaan",
+      "and": "dan",
+      "privacyLink": "Kebijakan Privasi",
+      "successAlert": "Akun Anda telah berhasil dibuat! Selamat datang di SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Harus minimal 2 karakter",
+      "maxLength": "Terlalu panjang",
+      "emailRequired": "Email wajib diisi",
+      "emailInvalid": "Alamat email tidak valid",
+      "passwordLength": "Kata sandi harus minimal 8 karakter",
+      "passwordComplexity": "Harus mengandung huruf besar, huruf kecil, dan angka",
+      "passwordMismatch": "Kata sandi tidak cocok"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Atur Ulang Kata Sandi - SyriaGPT",
+      "description": "Atur kata sandi baru yang kuat untuk akun SyriaGPT Anda."
+    },
+    "form": {
+      "title": "Atur Kata Sandi Baru",
+      "description": "Pilih kata sandi yang kuat untuk melindungi akun Anda.",
+      "newPasswordLabel": "Kata Sandi Baru",
+      "confirmPasswordLabel": "Konfirmasi Kata Sandi",
+      "passwordMismatchError": "Kata sandi tidak cocok.",
+      "submitButton": "Perbarui Kata Sandi",
+      "loadingButton": "Memperbarui...",
+      "showPasswordAria": "Tampilkan kata sandi",
+      "hidePasswordAria": "Sembunyikan kata sandi",
+      "mismatchToast": "Harap pastikan kata sandi cocok.",
+      "loadingToast": "Memperbarui kata sandi...",
+      "successToast": "Kata sandi berhasil diperbarui!"
+    },
+    "strengthIndicator": {
+      "title": "Kekuatan",
+      "levels": [
+        "Sangat Lemah",
+        "Lemah",
+        "Dapat Diterima",
+        "Baik",
+        "Kuat",
+        "Sangat Kuat"
+      ]
+    },
+    "successScreen": {
+      "title": "Berhasil!",
+      "description": "Kata sandi Anda telah diperbarui. Anda sekarang dapat login dengan aman menggunakan kredensial baru Anda.",
+      "backToLoginButton": "Kembali ke Login"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Pengaturan - SyriaGPT",
+      "description": "Sesuaikan pengalaman SyriaGPT Anda, kelola tampilan, bahasa, notifikasi, dan data."
+    },
+    "header": {
+      "title": "Pengaturan SyriaGPT",
+      "description": "Sesuaikan pengalaman pribadi Anda",
+      "unsavedChanges": "Perubahan yang belum disimpan"
+    },
+    "appearance": {
+      "title": "Tampilan & Penampilan",
+      "description": "Sesuaikan tampilan dan nuansa aplikasi agar sesuai dengan preferensi Anda",
+      "theme": "Gaya Tema",
+      "themes": {
+        "light": { "label": "Terang", "description": "Ideal untuk penggunaan siang hari" },
+        "dark": {
+          "label": "Gelap",
+          "description": "Nyaman di mata pada malam hari"
+        },
+        "system": {
+          "label": "Sistem",
+          "description": "Mengikuti pengaturan perangkat Anda"
+        }
+      },
+      "preview": {
+        "title": "Pratinjau Perubahan",
+        "description": "Lihat pratinjau langsung perubahan sebelum menyimpan",
+        "new": "BARU"
+      }
+    },
+    "language": {
+      "title": "Bahasa & Wilayah",
+      "description": "Atur bahasa dan pengaturan regional",
+      "interfaceLanguage": {
+        "title": "Bahasa Antarmuka",
+        "description": "Bahasa yang digunakan dalam menu dan elemen interaktif",
+        "badge": "Otomatis"
+      },
+      "languages": {
+        "ar": "العربية (Suriah)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Notifikasi & Suara",
+      "description": "Kontrol peringatan dan efek suara",
+      "enableNotifications": {
+        "title": "Aktifkan Notifikasi",
+        "description": "Terima peringatan untuk pesan dan pembaruan penting"
+      },
+      "sounds": {
+        "title": "Suara",
+        "description": "Putar suara saat mengirim dan menerima pesan"
+      }
+    },
+    "dataManagement": {
+      "title": "Manajemen Data",
+      "description": "Kontrol penyimpanan dan pembagian data Anda",
+      "autoSave": {
+        "title": "Simpan Otomatis",
+        "description": "Simpan percakapan Anda secara otomatis untuk dirujuk kembali nanti"
+      },
+      "exportData": "Ekspor Data",
+      "clearHistory": "Hapus Percakapan"
+    },
+    "advanced": {
+      "title": "Pengaturan Lanjutan",
+      "description": "Opsi lanjutan untuk pengguna profesional",
+      "developerMode": {
+        "title": "Mode Pengembang",
+        "description": "Tampilkan informasi teknis tambahan dan opsi pengembangan",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Analitik",
+        "description": "Bantu tingkatkan layanan dengan mengirimkan data penggunaan anonim"
+      }
+    },
+    "saveBar": {
+      "title": "Apakah Anda ingin menyimpan perubahan?",
+      "description": "Pengaturan baru akan segera diterapkan",
+      "reset": "Atur Ulang",
+      "save": "Simpan Perubahan",
+      "saving": "Menyimpan...",
+      "success": "Pengaturan berhasil disimpan!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Konfirmasi Penghapusan Riwayat",
+        "message": "Apakah Anda yakin? Semua percakapan Anda sebelumnya akan dihapus secara permanen. Tindakan ini tidak dapat dibatalkan.",
+        "confirm": "Ya, hapus",
+        "success": "Riwayat percakapan berhasil dihapus."
+      },
+      "exportData": {
+        "title": "Ekspor Data",
+        "message": "Salinan semua data Anda akan dibuat dan dikirim ke email Anda. Apakah Anda ingin melanjutkan?",
+        "confirm": "Ya, lanjutkan",
+        "success": "Mengekspor data Anda..."
+      },
+      "cancel": "Batal"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Ketentuan Layanan - SyriaGPT",
+      "description": "Baca syarat dan ketentuan untuk menggunakan layanan SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Beralih ke Bahasa Arab",
+      "print": "Cetak"
+    },
+    "title": "Ketentuan Layanan",
+    "subtitle": "Terakhir Diperbarui: 24 Agustus 2025",
+    "intro": "Selamat datang di SyriaGPT. Dengan menggunakan layanan kami, Anda menyetujui ketentuan ini. Harap baca dengan saksama.",
+    "sectionsTitle": "Bagian",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Penerimaan Ketentuan",
+        "content": "Dengan mengakses dan menggunakan SyriaGPT, Anda setuju untuk terikat oleh Syarat dan Ketentuan ini. Jika Anda tidak setuju dengan bagian mana pun dari ketentuan ini, Anda tidak boleh menggunakan layanan kami."
+      },
+      {
+        "id": "services",
+        "title": "2. Deskripsi Layanan",
+        "content": "SyriaGPT adalah asisten AI yang dirancang untuk memberikan bantuan di berbagai bidang yang berkaitan dengan konteks Suriah."
+      },
+      {
+        "id": "usage",
+        "title": "3. Penggunaan yang Dapat Diterima",
+        "content": "Anda harus menggunakan layanan kami secara legal dan etis. Anda dilarang menggunakan layanan untuk tujuan ilegal atau berbahaya."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Privasi dan Data",
+        "content": "Kami menghormati privasi Anda dan berkomitmen untuk melindungi data Anda. Kami hanya mengumpulkan data yang diperlukan untuk menyediakan layanan dan tidak akan membagikannya tanpa persetujuan Anda."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Kekayaan Intelektual",
+        "content": "Semua hak dilindungi oleh SyriaGPT. Konten, desain, dan logo adalah milik kami. Konten yang Anda buat menggunakan layanan tetap menjadi milik Anda."
+      },
+      {
+        "id": "liability",
+        "title": "6. Penafian",
+        "content": "Layanan ini disediakan \"sebagaimana adanya\" tanpa jaminan apa pun. Kami tidak menjamin keakuratan atau kelengkapan informasi yang diberikan dan tidak bertanggung jawab atas segala kerusakan yang diakibatkan oleh penggunaannya."
+      },
+      {
+        "id": "termination",
+        "title": "7. Penghentian Layanan",
+        "content": "Kami berhak untuk menghentikan atau menangguhkan akun Anda jika terjadi pelanggaran terhadap ketentuan ini atau jika terjadi perilaku berbahaya atau ilegal."
+      },
+      {
+        "id": "contact",
+        "title": "8. Hubungi Kami",
+        "content": "Untuk pertanyaan apa pun tentang ketentuan ini, silakan hubungi kami melalui email: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Saya telah membaca dan menyetujui ketentuan",
+    "continueButton": "Lanjutkan",
+    "backToTop": "Kembali ke Atas",
+    "expandAll": "Perluas Semua",
+    "collapseAll": "Ciutkan Semua",
+    "readingProgress": "Kemajuan Membaca",
+    "copyright": "© {year} SyriaGPT. Semua hak dilindungi."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Tingkatkan ke Pro - SyriaGPT",
+      "description": "Nikmati kemampuan tak terbatas, kecepatan superior, dan akses prioritas ke fitur-fitur baru dengan SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Tingkatkan ke Pro",
+      "description": "Nikmati kemampuan tak terbatas, kecepatan superior, dan akses prioritas ke fitur-fitur baru"
+    },
+    "stats": [
+      { "value": "10x", "label": "Respons Lebih Cepat" },
+      { "value": "∞", "label": "Pesan Tak Terbatas" },
+      { "value": "24/7", "label": "Dukungan Berkelanjutan" }
+    ],
+    "billingToggle": {
+      "monthly": "Bulanan",
+      "yearly": "Tahunan",
+      "saving": "Hemat 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Paket Gratis",
+        "subtitle": "Paket Saat Ini",
+        "price": "$0",
+        "period": "Seumur Hidup",
+        "features": [
+          "Akses ke model dasar",
+          "20 pesan per hari",
+          "Kecepatan respons standar",
+          "Fitur dasar"
+        ],
+        "buttonText": "Paket Anda Saat Ini"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Untuk para profesional dan bisnis",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "per bulan",
+        "periodYearly": "per tahun",
+        "popular": "Paling Populer",
+        "features": [
+          "Model GPT-4 canggih",
+          "Pesan tak terbatas",
+          "Kecepatan respons superior",
+          "Akses prioritas ke fitur-fitur baru",
+          "Dukungan teknis khusus",
+          "Antarmuka yang disempurnakan bebas iklan"
+        ],
+        "buttonText": "Tingkatkan Sekarang"
+      }
+    },
+    "comparison": {
+      "title": "Bandingkan Paket",
+      "featureHeader": "Fitur",
+      "freeHeader": "Gratis",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Akses ke model dasar", "free": true, "pro": true },
+        { "text": "Pesan harian terbatas (20)", "free": true, "pro": false },
+        { "text": "Pesan tak terbatas", "free": false, "pro": true },
+        {
+          "text": "Akses ke model GPT-4 canggih",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Kecepatan respons standar", "free": true, "pro": false },
+        {
+          "text": "Kecepatan respons superior (10x lebih cepat)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Akses prioritas ke fitur-fitur baru",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Dukungan teknis khusus",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Antarmuka bebas iklan", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Pertanyaan yang Sering Diajukan",
+      "toggleOpen": "Baca Selengkapnya",
+      "toggleClose": "Tutup",
+      "items": [
+        {
+          "question": "Bisakah saya membatalkan langganan saya kapan saja?",
+          "answer": "Ya, tentu saja. Anda dapat membatalkan langganan paket Pro Anda kapan saja dari halaman \"Manajemen Akun\". Anda akan terus memiliki akses ke fitur Pro hingga akhir periode penagihan saat ini, dan tidak akan ada biaya lebih lanjut yang dikenakan."
+        },
+        {
+          "question": "Metode pembayaran apa yang diterima?",
+          "answer": "Kami menerima semua kartu kredit dan debit utama (Visa, MasterCard, American Express) serta Sham Cash dan dompet elektronik lokal. Semua pembayaran diproses dengan aman dan dienkripsi melalui mitra kami, Stripe."
+        },
+        {
+          "question": "Apa yang terjadi di akhir periode penagihan tahunan?",
+          "answer": "Langganan tahunan Anda akan diperpanjang secara otomatis kecuali Anda membatalkannya dari pengaturan akun Anda. Kami akan mengirimi Anda email pengingat satu minggu sebelum tanggal perpanjangan dengan rincian jumlah yang harus dibayar."
+        },
+        {
+          "question": "Bisakah saya mendapatkan pengembalian dana?",
+          "answer": "Ya, kami menawarkan jaminan uang kembali penuh 30 hari sejak tanggal berlangganan jika Anda tidak puas dengan layanan karena alasan apa pun. Cukup hubungi tim dukungan kami, dan kami akan segera memproses permintaan pengembalian dana Anda."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Siap Memulai?",
+      "description": "Bergabunglah dengan ribuan pengguna yang telah memilih SyriaGPT Pro untuk pengalaman AI yang superior",
+      "buttonText": "Mulai Sekarang dengan {price}",
+      "guarantee": "Jaminan uang kembali penuh 30 hari"
+    },
+    "alert": "Anda akan diarahkan ke halaman pembayaran..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Verifikasi Email - SyriaGPT",
+      "description": "Masukkan kode verifikasi yang dikirim ke email Anda untuk mengonfirmasi akun SyriaGPT Anda."
+    },
+    "header": {
+      "title": "Verifikasi Email Anda",
+      "description": "Masukkan kode verifikasi yang dikirim ke"
+    },
+    "form": {
+      "label": "kode verifikasi 6 digit",
+      "verifyButton": "Verifikasi Kode",
+      "verifyingButton": "Memverifikasi...",
+      "resend": {
+        "question": "Tidak menerima kode?",
+        "resendButton": "Kirim Ulang Kode",
+        "resendingButton": "Mengirim ulang...",
+        "cooldown": "Kirim ulang dalam {seconds} detik"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Verifikasi Berhasil!",
+        "description": "Email Anda telah berhasil dikonfirmasi",
+        "redirecting": "Mengarahkan ke dasbor..."
+      },
+      "error": {
+        "title": "Verifikasi Gagal",
+        "tryAgainButton": "Coba Lagi"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Harap masukkan kode verifikasi 6 digit",
+      "invalidCode": "Kode verifikasi tidak valid. Silakan coba lagi.",
+      "generic": "Terjadi kesalahan saat verifikasi. Silakan coba lagi.",
+      "resendFailed": "Gagal mengirim kode verifikasi. Silakan coba lagi."
+    },
+    "backToLogin": "Kembali ke Login",
+    "securityNote": {
+      "title": "Catatan Keamanan:",
+      "points": [
+        "Jangan bagikan kode verifikasi dengan siapa pun",
+        "Kode verifikasi hanya berlaku selama 10 menit",
+        "Periksa alamat email pengirim"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Kode verifikasi baru telah dikirim ke email Anda"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Terjadi Kesalahan - SyriaGPT",
+      "description": "Halaman kesalahan khusus untuk proyek SyriaGPT."
+    },
+    "offlineMessage": "Anda saat ini offline",
+    "errorCode": "Kesalahan {statusCode}",
+    "title": "Terjadi Kesalahan yang Tidak Terduga",
+    "description": "Kami dengan tulus meminta maaf atas ketidaknyamanan ini. Tim teknis kami telah diberitahu dan sedang berupaya menyelesaikan masalah ini secepat mungkin.",
+    "retryButton": "Coba Lagi",
+    "retryingButton": "Mencoba lagi...",
+    "homeButton": "Beranda",
+    "backButton": "Kembali",
+    "suggestionsTitle": "Apa yang bisa Anda coba sekarang:",
+    "suggestion1": "Menyegarkan halaman mungkin bisa menyelesaikan masalah.",
+    "suggestion2": "Silakan periksa koneksi internet Anda.",
+    "suggestion3": "Jika masalah berlanjut, jangan ragu untuk menghubungi kami.",
+    "accordion": {
+      "title": "Detail Teknis untuk Pengembang",
+      "copy": "Salin",
+      "copied": "Disalin",
+      "code": "Kode:",
+      "message": "Pesan:",
+      "digest": "Intisari:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Halaman Tidak Ditemukan - SyriaGPT",
+      "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan."
+    },
+    "title": "Sepertinya Anda tersesat di halaman!",
+    "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan",
+    "currentLocation": "Lokasi Saat Ini: Tidak Diketahui",
+    "search": {
+      "placeholder": "Cari halaman yang Anda inginkan...",
+      "button": "Cari",
+      "searching": "Mencari..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Halaman Sebelumnya",
+        "description": "Kembali ke tempat asal Anda"
+      },
+      "homePage": {
+        "title": "Halaman Beranda",
+        "description": "Mulai dari awal"
+      }
+    },
+    "suggestions": {
+      "title": "Halaman yang mungkin menarik bagi Anda",
+      "items": [
+        { "title": "Halaman Beranda", "description": "Kembali ke awal" },
+        { "title": "Obrolan", "description": "Mulai percakapan baru" },
+        { "title": "Bantuan", "description": "Dapatkan bantuan" },
+        { "title": "Tentang Suriah", "description": "Temukan lebih banyak" }
+      ]
+    },
+    "history": {
+      "title": "Halaman yang Baru Dikunjungi"
+    },
+    "funFact": {
+      "title": "Sambil Anda menemukan jalan...",
+      "facts": [
+        "Tahukah Anda? Damaskus adalah ibu kota tertua yang terus dihuni di dunia!",
+        "Tahukah Anda? Alfabet pertama dalam sejarah ditemukan di Ugarit, Suriah!",
+        "Tahukah Anda? Pohon pistachio Aleppo dapat hidup lebih dari 300 tahun!",
+        "Tahukah Anda? Krak des Chevaliers di Suriah adalah salah satu kastil yang paling terawat baik di dunia!",
+        "Tahukah Anda? Mawar Damask dianggap sebagai salah satu jenis mawar terbaik di dunia!"
+      ]
+    },
+    "support": {
+      "message": "Jika Anda yakin ini adalah kesalahan, silakan hubungi kami",
+      "helpCenter": "Pusat Bantuan",
+      "technicalSupport": "Dukungan Teknis"
+    }
+  },
+  "loader": {
+    "title": "memuat...",
+    "loading": "Harap tunggu sebentar..."
+  }
+}

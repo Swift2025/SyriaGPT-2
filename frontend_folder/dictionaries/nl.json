@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "De Syrische Kunstmatige Intelligentie",
+    "newChat": "Nieuwe Chat",
+    "pastConversations": "Eerdere Gesprekken",
+    "lightMode": "Lichte Modus",
+    "darkMode": "Donkere Modus",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Syrische Gebruiker",
+    "userEmail": "gebruiker@syriagpt.com",
+    "profile": "Profiel",
+    "settings": "Instellingen",
+    "upgradeToPro": "Upgrade naar Pro",
+    "newBadge": "NIEUW",
+    "helpCenter": "Helpcentrum",
+    "aboutApp": "Over de App",
+    "logout": "Uitloggen",
+    "logoutModal": {
+      "title": "Uitloggen Bevestigen",
+      "description": "Weet u zeker dat u wilt uitloggen uit uw account?",
+      "cancel": "Annuleren",
+      "confirm": "Ja, Uitloggen"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Uw slimme assistent om al uw vragen te beantwoorden",
+      "examples": "Voorbeelden",
+      "capabilities": "Mogelijkheden",
+      "limitations": "Beperkingen",
+      "suggestions": {
+        "examples": [
+          "Leg eenvoudig uit hoe je een identiteitskaart krijgt",
+          "Geef me de goedgekeurde cursussen aan de Universiteit van Damascus",
+          "Wat zijn de ingrediënten voor Mahshi?"
+        ],
+        "capabilities": [
+          "Hoe maak je okra en wat is de historische relatie?",
+          "Wat zijn de regelingen voor het Syrische paspoort?",
+          "Ik heb informatie nodig over investeringen"
+        ],
+        "limitations": [
+          "Hoe los ik een computerprobleem op?",
+          "Wat zijn de inschrijvingsvoorwaarden aan de Universiteit van Aleppo?",
+          "Geef me een samenvatting van het nieuws van vandaag in Syrië"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Aan het typen..."
+    },
+    "regenerate": "Antwoord Opnieuw Genereren",
+    "input": {
+      "placeholder": "Typ hier uw bericht, of sleep een bestand om bij te voegen...",
+      "attachFile": "Bestand Bijvoegen",
+      "startRecording": "Opname Starten",
+      "stopRecording": "Opname Stoppen",
+      "removeFile": "Bestand Verwijderen"
+    },
+    "dragDrop": {
+      "title": "Sleep bestanden hierheen",
+      "subtitle": "PDF, Word, Tekst (Max 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Spraakherkenning wordt niet ondersteund in deze browser. Gebruik Chrome of Edge.",
+      "permissionDenied": "Sta microfoontoegang toe in uw browserinstellingen.",
+      "startFailed": "Kon de opname niet starten. Controleer uw browserinstellingen.",
+      "generalError": "Er is een fout opgetreden bij het starten van de opname. Probeer het opnieuw.",
+      "no-speech": "Geen spraak gedetecteerd. Zorg ervoor dat uw stem duidelijk is en de microfoon dichtbij is.",
+      "audio-capture": "Kan geen toegang krijgen tot de microfoon. Zorg ervoor dat deze is aangesloten en dat toestemming is verleend.",
+      "not-allowed": "Toestemming is geweigerd. Sta microfoongebruik toe via de browserinstellingen.",
+      "network": "Netwerkfout. Controleer uw internetverbinding.",
+      "service-not-allowed": "De spraakherkenningsservice is momenteel niet beschikbaar.",
+      "language-not-supported": "De taal wordt niet ondersteund. Probeer de Chrome-browser."
+    },
+    "footer": "Ons doel is om AI-systemen natuurlijker en veiliger te maken om mee te communiceren"
+  },
+  "chat": {
+    "fileAnalysisError": "Sorry, er is een fout opgetreden bij het analyseren van het bestand: {error}",
+    "responseProcessingError": "Sorry, er is een fout opgetreden bij het verwerken van het antwoord.",
+    "networkError": "Sorry, er is een verbindingsfout opgetreden. Controleer uw internetverbinding."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Over het SyriaGPT Project",
+      "description": "Leer over de doelen en visie van het SyriaGPT-project, de slimme assistent gespecialiseerd in de Syrische context."
+    },
+    "header": {
+      "title": "Syrische Arabische Republiek",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "Syrië... is het Hart"
+    },
+    "main": {
+      "p1": "Dit is een baanbrekend nationaal project dat door de Syrische regering is aangenomen, met als doel een geavanceerd Arabisch taalmodel te ontwikkelen met een speciale focus op het Syrische dialect. Het doel van dit project is om een kennis- en serviceplatform te zijn dat burgers helpt om gemakkelijk en veilig te communiceren met overheidsdiensten en de publieke en private sector, en hen te voorzien van nauwkeurige en betrouwbare antwoorden over procedures, wetten en algemene informatie.",
+      "p2": "Het onderscheidt zich door zijn focus op de lokale taal en het vermogen om dialecten naast standaard Arabisch te begrijpen, waardoor het dicht bij de gebruiker in hun dagelijks leven staat. Het project garandeert ook de privacy van gegevens door te worden gehost in nationale datacenters en werkt volgens hoge normen van veiligheid en neutraliteit om ervoor te zorgen dat de output nauwkeurig en onbevooroordeeld is. Het is ontworpen om integreerbaar te zijn met e-government portals, officiële applicaties en callcenters, en vormt zo een fundamentele stap in de richting van het verbeteren van de digitale transformatie in Syrië.",
+      "p3": "Het project streeft ernaar meerdere gebieden te bedienen, zoals het faciliteren van overheidsprocedures, het ondersteunen van onderwijs, het vereenvoudigen van gezondheidsrichtlijnen, het assisteren van kleine bedrijven en het snel en duidelijk verspreiden van noodberichten. Het vertegenwoordigt dus een kwalitatieve sprong in hoe burgers toegang krijgen tot informatie, waarbij interactie in natuurlijke taal een primair middel wordt om transacties te vereenvoudigen en burgers dichter bij de staatsinstellingen te brengen."
+    },
+    "footer": {
+      "backButton": "Terug naar Chat",
+      "disclaimer": "Ons doel is om AI-systemen natuurlijker en veiliger te maken om mee te communiceren, in lijn met de Syrische context en de behoeften van haar gebruikers. Uw feedback en suggesties zullen ons helpen de service te verbeteren en te ontwikkelen om u beter van dienst te zijn."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Wachtwoord Vergeten",
+      "description": "Krijg weer toegang tot uw SyriaGPT-account met eenvoudige en veilige stappen."
+    },
+    "infoPanel": {
+      "title": "Herstel Uw Account Veilig",
+      "description": "We zijn hier om u te helpen weer toegang te krijgen tot uw account met eenvoudige en veilige stappen.",
+      "steps": {
+        "step1": {
+          "title": "Voer uw e-mailadres in",
+          "description": "Het e-mailadres dat is geregistreerd bij uw SyriaGPT-account"
+        },
+        "step2": {
+          "title": "Controleer uw e-mail",
+          "description": "We sturen u een beveiligde link om uw wachtwoord opnieuw in te stellen"
+        },
+        "step3": {
+          "title": "Maak een nieuw wachtwoord aan",
+          "description": "Kies een sterk en veilig wachtwoord voor uw account"
+        }
+      },
+      "securityTip": {
+        "title": "Beveiligingstip",
+        "description": "De link is slechts 15 minuten geldig om de veiligheid van uw account te garanderen. Als u de e-mail niet vindt, controleer dan uw spammap."
+      }
+    },
+    "form": {
+      "title": "Wachtwoord Vergeten",
+      "description": "Voer uw e-mailadres in om een herstellink te ontvangen",
+      "emailLabel": "E-mailadres",
+      "emailPlaceholder": "Voer uw e-mailadres in...",
+      "emailRequiredAlert": "Voer uw e-mailadres in.",
+      "submitButton": "Herstellink Verzenden",
+      "loadingButton": "Verzenden...",
+      "rememberedPassword": "Wachtwoord onthouden?",
+      "backToLogin": "Terug naar Inloggen"
+    },
+    "successScreen": {
+      "title": "Instructies Verzonden",
+      "checkEmailTitle": "Controleer Uw E-mail",
+      "description": "We hebben een link voor wachtwoordherstel gestuurd naar:",
+      "tip1": "Controleer uw inbox",
+      "tip2": "Vergeet niet uw spammap te controleren",
+      "tip3": "De link is slechts 15 minuten geldig",
+      "backToLoginButton": "Terug naar Inloggen"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Helpcentrum - SyriaGPT",
+      "description": "Vind antwoorden op uw vragen, gebruikershandleidingen en neem contact op met het ondersteuningsteam van SyriaGPT."
+    },
+    "header": {
+      "title": "Helpcentrum",
+      "description": "Welkom bij het ondersteuningscentrum van SyriaGPT! We zijn hier om u te helpen de best mogelijke ervaring te krijgen."
+    },
+    "search": {
+      "placeholder": "Zoek naar antwoorden, gebruikershandleidingen of stel een vraag..."
+    },
+    "categories": {
+      "title": "Bladeren per Categorie",
+      "items": [
+        {
+          "title": "Aan de slag",
+          "description": "Leer de basisprincipes van het gebruik van het platform en profiteer van alle beschikbare functies."
+        },
+        {
+          "title": "Accountbeheer",
+          "description": "Bewerk uw profiel, beheer abonnementen en uw beveiligingsinstellingen."
+        },
+        {
+          "title": "Geavanceerde Functies",
+          "description": "Gebruik bestandsbijlagen, spraakgestuurd zoeken en geavanceerde kunstmatige intelligentie."
+        },
+        {
+          "title": "Beveiliging & Privacy",
+          "description": "Leer hoe u uw gegevens en persoonlijke informatie kunt beschermen met de hoogste beveiligingsnormen."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Veelgestelde Vragen",
+      "toggleOpen": "Lees Meer",
+      "toggleClose": "Sluiten",
+      "items": [
+        {
+          "question": "Hoe kan ik een nieuwe chat starten?",
+          "answer": "Om een nieuwe chat te starten, klikt u eenvoudig op de knop \"+ Nieuwe Chat\" bovenaan de zijbalk. U kunt ook de sneltoets Ctrl+N gebruiken voor een snelle start."
+        },
+        {
+          "question": "Welke soorten bestanden kan ik bijvoegen?",
+          "answer": "U kunt PDF-bestanden, Word-documenten (doc, docx), PowerPoint-bestanden, tekstbestanden (txt) en afbeeldingen (jpg, png, gif) bijvoegen. De maximale grootte voor een enkel bestand is 10 MB en u kunt maximaal 5 bestanden per gesprek bijvoegen."
+        },
+        {
+          "question": "Worden mijn eerdere gesprekken opgeslagen?",
+          "answer": "Ja, uw eerdere gesprekken worden automatisch en veilig opgeslagen in uw account. U kunt ze openen via de lijst \"Eerdere Gesprekken\" in de zijbalk, georganiseerd op datum of onderwerp."
+        },
+        {
+          "question": "Hoe werken de lichte en donkere modi?",
+          "answer": "U kunt schakelen tussen de lichte en donkere modi met de speciale knop in de zijbalk. Het systeem slaat uw voorkeur automatisch op en past deze toe in alle toekomstige sessies."
+        },
+        {
+          "question": "Wat is de spraak-naar-tekst functie?",
+          "answer": "U kunt uw microfoon gebruiken voor spraakdictatie in het Arabisch of Engels. Klik op het microfoonpictogram in de invoerbalk en begin met spreken. Het systeem zal uw spraak automatisch omzetten in tekst."
+        },
+        {
+          "question": "Kan ik SyriaGPT op mijn mobiele telefoon gebruiken?",
+          "answer": "Ja, SyriaGPT is beschikbaar via een webbrowser op alle slimme apparaten. De interface is volledig responsief en werkt perfect op telefoons en tablets."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Niet gevonden wat u zocht?",
+      "description": "Ons toegewijde ondersteuningsteam is de klok rond beschikbaar om u te helpen. Neem contact met ons op en we nemen binnen enkele minuten contact met u op!",
+      "emailButton": "Contact via E-mail",
+      "chatButton": "Live Chat",
+      "phoneButton": "Telefoongesprek",
+      "availability": "24/7 beschikbaar",
+      "responseTime": "Antwoord binnen 5 minuten",
+      "languageSupport": "Ondersteuning in het Arabisch"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Inloggen - SyriaGPT",
+      "description": "Log in op uw SyriaGPT-account om toegang te krijgen tot uw gesprekken en geavanceerde functies."
+    },
+    "infoPanel": {
+      "title": "Welkom Terug",
+      "description": "Blijf de wereld van de Syrische kunstmatige intelligentie verkennen met",
+      "securityTitle": "Waarom is SyriaGPT Veilig?",
+      "features": [
+        {
+          "title": "Geavanceerde Gegevensbescherming",
+          "description": "We gebruiken geavanceerde versleutelingstechnologieën om uw persoonlijke informatie te beschermen"
+        },
+        {
+          "title": "Twee-Factor Authenticatie",
+          "description": "Een extra beschermingslaag om de veiligheid van uw account te garanderen"
+        },
+        {
+          "title": "Lokale Kunstmatige Intelligentie",
+          "description": "Geavanceerde Syrische technologie die de Arabische cultuur en context begrijpt"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Actieve Gebruikers" },
+        { "value": "99.9%", "label": "Uptime" },
+        { "value": "24/7", "label": "Ondersteuning" }
+      ]
+    },
+    "form": {
+      "title": "Inloggen",
+      "description": "Voer uw inloggegevens in om toegang te krijgen tot uw account",
+      "emailLabel": "E-mailadres",
+      "emailPlaceholder": "Voer uw e-mailadres in...",
+      "passwordLabel": "Wachtwoord",
+      "passwordPlaceholder": "Voer uw wachtwoord in...",
+      "forgotPassword": "Wachtwoord vergeten?",
+      "showPassword": "Wachtwoord tonen",
+      "hidePassword": "Wachtwoord verbergen",
+      "loginButton": "Inloggen",
+      "loadingButton": "Verifiëren...",
+      "loginSuccessAlert": "Succesvol ingelogd!",
+      "orSeparator": "of",
+      "noAccount": "Heeft u geen account?",
+      "createAccount": "Maak een nieuw account aan"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Privacybeleid - SyriaGPT",
+      "description": "Leer hoe uw persoonlijke gegevens worden verzameld, gebruikt en beschermd wanneer u de diensten van SyriaGPT gebruikt."
+    },
+    "header": {
+      "title": "Privacybeleid",
+      "lastUpdated": "Laatst bijgewerkt: 25 augustus 2025",
+      "effectiveDate": "Onmiddellijk van kracht"
+    },
+    "infoCards": [
+      {
+        "title": "Volledige Bescherming",
+        "description": "Uw gegevens worden beschermd met de nieuwste versleutelings- en beveiligingstechnologieën."
+      },
+      {
+        "title": "Volledige Controle",
+        "description": "U heeft de controle over uw gegevens en kunt deze op elk moment verwijderen."
+      },
+      {
+        "title": "Volledige Transparantie",
+        "description": "We leggen duidelijk uit wat we verzamelen en hoe we het gebruiken."
+      },
+      {
+        "title": "Geen Verkoop van Gegevens",
+        "description": "We verkopen of delen uw gegevens niet met derden."
+      }
+    ],
+    "toc": {
+      "title": "Inhoudsopgave"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Inleiding",
+        "content": "Welkom bij SyriaGPT. We nemen uw privacy serieus. Dit beleid beschrijft de soorten informatie die we van u kunnen verzamelen of die u kunt verstrekken wanneer u onze applicatie bezoekt of gebruikt, en onze praktijken voor het verzamelen, gebruiken, onderhouden, beschermen en openbaar maken van die informatie."
+      },
+      {
+        "id": "data-collection",
+        "title": "Informatie die we verzamelen",
+        "intro": "We kunnen verschillende soorten informatie verzamelen van en over gebruikers van onze service, waaronder:",
+        "points": [
+          "Informatie die u rechtstreeks verstrekt: zoals uw naam, e-mailadres en wachtwoord wanneer u een account aanmaakt.",
+          "Gebruikersinhoud: De berichten, vragen en bestanden die u naar onze service uploadt voor analyse.",
+          "Gebruiksinformatie: Details over uw gebruik van onze service, inclusief verkeersgegevens en gebruikslogboeken.",
+          "Apparaatinformatie: Uw browsertype, besturingssysteem en IP-adres."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Hoe we uw informatie gebruiken",
+        "intro": "We gebruiken informatie die we over u verzamelen of die u ons verstrekt voor de volgende doeleinden:",
+        "points": [
+          "Om onze service en de inhoud ervan in de best mogelijke kwaliteit aan u te leveren.",
+          "Om uw ervaring te verbeteren en te personaliseren op basis van uw behoeften.",
+          "Om met u te communiceren over uw account of onze service en belangrijke mededelingen.",
+          "Voor analyse- en onderzoeksdoeleinden om onze producten en diensten te verbeteren.",
+          "Om de veiligheid van het platform te waarborgen en ongeautoriseerd gebruik te voorkomen."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Openbaarmaking van uw informatie",
+        "commitmentTitle": "Onze Kernverbintenis",
+        "commitmentText": "We verkopen of verhuren uw persoonlijke informatie niet aan derden. Dit is onze fundamentele verbintenis aan u.",
+        "content": "We kunnen persoonlijke informatie alleen in de volgende gevallen openbaar maken: om te voldoen aan een gerechtelijk bevel of wet, of om de rechten en veiligheid van SyriaGPT en onze klanten te beschermen tegen ernstige veiligheidsdreigingen."
+      },
+      {
+        "id": "data-security",
+        "title": "Gegevensbeveiliging",
+        "protectionTitle": "Geavanceerde Beschermingsmaatregelen:",
+        "points": [
+          "End-to-end versleuteling voor alle gevoelige gegevens",
+          "Beveiligde servers beschermd door geavanceerde firewalls",
+          "24/7 beveiligingsmonitoring om bedreigingen te detecteren",
+          "Regelmatige en versleutelde back-ups om de continuïteit van de service te garanderen",
+          "Periodieke beveiligingstests door onafhankelijke experts"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Uw Rechten",
+        "intro": "Als gebruiker van onze service heeft u de volgende rechten met betrekking tot uw persoonlijke gegevens:",
+        "rights": [
+          {
+            "title": "Toegang en Inzage",
+            "description": "Vraag een kopie aan van al uw gegevens die bij ons zijn opgeslagen"
+          },
+          {
+            "title": "Correctie en Update",
+            "description": "Wijzig of corrigeer onjuiste informatie"
+          },
+          {
+            "title": "Volledige Verwijdering",
+            "description": "Verwijder uw account en al uw gegevens permanent"
+          },
+          {
+            "title": "Overdraagbaarheid en Export",
+            "description": "Exporteer uw gegevens in een leesbaar formaat"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Wijzigingen in het Beleid",
+        "content": "Ons beleid is om u 30 dagen voordat ze van kracht worden op de hoogte te stellen van belangrijke wijzigingen. Eventuele wijzigingen worden op deze pagina geplaatst met een bijgewerkte revisiedatum. We moedigen u aan om dit beleid regelmatig te herzien om op de hoogte te blijven van hoe we uw informatie beschermen."
+      },
+      {
+        "id": "contact",
+        "title": "Neem contact met ons op",
+        "email": "E-mail",
+        "phone": "Telefoon",
+        "availability": "Het privacyteam is beschikbaar om uw vragen te beantwoorden van zondag tot donderdag, van 9.00 tot 18.00 uur"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profiel - SyriaGPT",
+      "description": "Beheer uw persoonlijke informatie, beveiligingsinstellingen en abonnementsplan in SyriaGPT."
+    },
+    "header": {
+      "title": "Profiel",
+      "description": "Beheer uw persoonlijke informatie en accountinstellingen in SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Profielfoto",
+      "changeAvatar": "Profielfoto wijzigen",
+      "joinDate": "Lid sinds",
+      "currentPlan": "Huidig Plan",
+      "freePlan": "Gratis",
+      "conversations": "Gesprekken",
+      "activeDays": "Actieve Dagen"
+    },
+    "personalInfo": {
+      "title": "Persoonlijke Informatie",
+      "description": "Werk uw naam, e-mailadres en basisinstellingen bij",
+      "fullName": "Volledige Naam",
+      "email": "E-mailadres",
+      "editButton": "Informatie Bewerken",
+      "cancelButton": "Annuleren",
+      "saveButton": "Wijzigingen Opslaan",
+      "updateSuccess": "Profiel succesvol bijgewerkt!"
+    },
+    "security": {
+      "title": "Beveiliging & Wachtwoord",
+      "description": "Houd uw account veilig door uw wachtwoord regelmatig bij te werken",
+      "currentPassword": "Huidig Wachtwoord",
+      "currentPasswordPlaceholder": "Voer huidig wachtwoord in...",
+      "newPassword": "Nieuw Wachtwoord",
+      "newPasswordPlaceholder": "Voer nieuw wachtwoord in...",
+      "confirmNewPassword": "Bevestig Nieuw Wachtwoord",
+      "confirmNewPasswordPlaceholder": "Bevestig nieuw wachtwoord...",
+      "updateButton": "Wachtwoord Bijwerken",
+      "passwordMismatch": "De nieuwe wachtwoorden komen niet overeen.",
+      "updateSuccess": "Wachtwoord succesvol gewijzigd!"
+    },
+    "subscription": {
+      "title": "Abonnementsplan",
+      "description": "U bevindt zich momenteel op het Gratis plan - krijg meer functies",
+      "upgradeTitle": "Upgrade naar Pro",
+      "upgradeDescription": "Krijg extra functies en prioriteitsreacties",
+      "upgradeButton": "Nu Upgraden"
+    },
+    "dangerZone": {
+      "title": "Gevarenzone",
+      "description": "Deze acties zijn onomkeerbaar - ga voorzichtig te werk",
+      "deleteTitle": "Account Permanent Verwijderen",
+      "deleteDescription": "Al uw gegevens en gesprekken worden permanent verwijderd",
+      "deleteButton": "Account Verwijderen"
+    },
+    "deleteModal": {
+      "title": "Accountverwijdering Bevestigen",
+      "message": "Weet u het absoluut zeker? Uw account en al uw gegevens worden permanent verwijderd. Deze actie kan niet ongedaan worden gemaakt.",
+      "cancelButton": "Annuleren",
+      "confirmButton": "Verwijdering Bevestigen",
+      "deleteSuccess": "Uw account is succesvol verwijderd."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Maak een Nieuw Account aan - SyriaGPT",
+      "description": "Word lid van de SyriaGPT-gemeenschap en begin met het verkennen van de kracht van AI die is ontworpen voor de Syrische context."
+    },
+    "infoPanel": {
+      "title": "Word lid van de SyriaGPT-gemeenschap",
+      "description": "Ontdek de kracht van kunstmatige intelligentie die speciaal is ontworpen voor de Syrische cultuur en context",
+      "features": [
+        {
+          "title": "Geavanceerde AI",
+          "description": "Moderne technologieën getraind op Arabische en Syrische inhoud"
+        },
+        {
+          "title": "Gegarandeerde Beveiliging & Privacy",
+          "description": "Geavanceerde bescherming voor uw gegevens met versleuteling van wereldklasse"
+        },
+        {
+          "title": "Actieve Gemeenschap",
+          "description": "Sluit u aan bij duizenden Syrische gebruikers die gepassioneerd zijn door technologie"
+        },
+        {
+          "title": "Exclusieve Functies",
+          "description": "Aangepaste tools voor Syrische en Arabische inhoud"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT heeft de manier waarop ik werk volledig veranderd. Een diep begrip van de Syrische taal en cultuur.\"",
+        "author": "- Ahmed Al-Shami, Ontwikkelaar"
+      }
+    },
+    "form": {
+      "title": "Maak een Nieuw Account aan",
+      "description": "Vul de volgende gegevens in om uw account aan te maken",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "email": "E-mailadres",
+      "password": "Wachtwoord",
+      "confirmPassword": "Bevestig Wachtwoord",
+      "placeholder": "Voer {field} in...",
+      "emailPlaceholder": "voorbeeld@email.com",
+      "passwordStrength": "Wachtwoordsterkte",
+      "strengthLevels": [
+        "Zeer Zwak",
+        "Zwak",
+        "Gemiddeld",
+        "Sterk",
+        "Zeer Sterk"
+      ],
+      "submitButton": "Nieuw Account Aanmaken",
+      "loadingButton": "Account aanmaken...",
+      "googleButton": "Aanmelden met Google",
+      "orSeparator": "of",
+      "hasAccount": "Heeft u al een account?",
+      "loginLink": "Inloggen",
+      "termsAgreement": "Door een account aan te maken, gaat u akkoord met onze",
+      "termsLink": "Gebruiksvoorwaarden",
+      "and": "en",
+      "privacyLink": "Privacybeleid",
+      "successAlert": "Uw account is succesvol aangemaakt! Welkom bij SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Moet minstens 2 tekens lang zijn",
+      "maxLength": "Te lang",
+      "emailRequired": "E-mailadres is verplicht",
+      "emailInvalid": "Ongeldig e-mailadres",
+      "passwordLength": "Wachtwoord moet minstens 8 tekens lang zijn",
+      "passwordComplexity": "Moet een hoofdletter, een kleine letter en een cijfer bevatten",
+      "passwordMismatch": "Wachtwoorden komen niet overeen"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Wachtwoord opnieuw instellen - SyriaGPT",
+      "description": "Stel een nieuw, sterk wachtwoord in voor uw SyriaGPT-account."
+    },
+    "form": {
+      "title": "Stel een Nieuw Wachtwoord in",
+      "description": "Kies een sterk wachtwoord om uw account te beschermen.",
+      "newPasswordLabel": "Nieuw Wachtwoord",
+      "confirmPasswordLabel": "Bevestig Wachtwoord",
+      "passwordMismatchError": "De wachtwoorden komen niet overeen.",
+      "submitButton": "Wachtwoord Bijwerken",
+      "loadingButton": "Bijwerken...",
+      "showPasswordAria": "Wachtwoord tonen",
+      "hidePasswordAria": "Wachtwoord verbergen",
+      "mismatchToast": "Zorg ervoor dat de wachtwoorden overeenkomen.",
+      "loadingToast": "Wachtwoord bijwerken...",
+      "successToast": "Wachtwoord succesvol bijgewerkt!"
+    },
+    "strengthIndicator": {
+      "title": "Sterkte",
+      "levels": [
+        "Zeer Zwak",
+        "Zwak",
+        "Acceptabel",
+        "Goed",
+        "Sterk",
+        "Zeer Sterk"
+      ]
+    },
+    "successScreen": {
+      "title": "Succes!",
+      "description": "Uw wachtwoord is bijgewerkt. U kunt nu veilig inloggen met uw nieuwe inloggegevens.",
+      "backToLoginButton": "Terug naar Inloggen"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Instellingen - SyriaGPT",
+      "description": "Pas uw SyriaGPT-ervaring aan, beheer uiterlijk, taal, meldingen en gegevens."
+    },
+    "header": {
+      "title": "SyriaGPT Instellingen",
+      "description": "Pas uw persoonlijke ervaring aan",
+      "unsavedChanges": "Niet-opgeslagen wijzigingen"
+    },
+    "appearance": {
+      "title": "Uiterlijk & Weergave",
+      "description": "Pas het uiterlijk van de applicatie aan uw voorkeuren aan",
+      "theme": "Thema Stijl",
+      "themes": {
+        "light": { "label": "Licht", "description": "Ideaal voor gebruik overdag" },
+        "dark": {
+          "label": "Donker",
+          "description": "Rustig voor de ogen 's nachts"
+        },
+        "system": {
+          "label": "Systeem",
+          "description": "Volgt de instellingen van uw apparaat"
+        }
+      },
+      "preview": {
+        "title": "Voorbeeld van Wijzigingen",
+        "description": "Bekijk een live voorbeeld van wijzigingen voordat u opslaat",
+        "new": "NIEUW"
+      }
+    },
+    "language": {
+      "title": "Taal & Regio",
+      "description": "Stel taal- en regionale instellingen in",
+      "interfaceLanguage": {
+        "title": "Interfacetaal",
+        "description": "De taal die wordt gebruikt in menu's en interactieve elementen",
+        "badge": "Auto"
+      },
+      "languages": {
+        "ar": "العربية (Syrië)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Meldingen & Geluiden",
+      "description": "Beheer waarschuwingen en geluidseffecten",
+      "enableNotifications": {
+        "title": "Meldingen Inschakelen",
+        "description": "Ontvang waarschuwingen voor berichten en belangrijke updates"
+      },
+      "sounds": {
+        "title": "Geluiden",
+        "description": "Speel geluiden af bij het verzenden en ontvangen van berichten"
+      }
+    },
+    "dataManagement": {
+      "title": "Gegevensbeheer",
+      "description": "Beheer het opslaan en delen van uw gegevens",
+      "autoSave": {
+        "title": "Automatisch Opslaan",
+        "description": "Sla uw gesprekken automatisch op om later te kunnen raadplegen"
+      },
+      "exportData": "Gegevens Exporteren",
+      "clearHistory": "Gesprekken Wissen"
+    },
+    "advanced": {
+      "title": "Geavanceerde Instellingen",
+      "description": "Geavanceerde opties voor professionele gebruikers",
+      "developerMode": {
+        "title": "Ontwikkelaarsmodus",
+        "description": "Toon extra technische informatie en ontwikkelingsopties",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Analyse",
+        "description": "Help de service te verbeteren door anonieme gebruiksgegevens te verzenden"
+      }
+    },
+    "saveBar": {
+      "title": "Wilt u de wijzigingen opslaan?",
+      "description": "De nieuwe instellingen worden onmiddellijk toegepast",
+      "reset": "Resetten",
+      "save": "Wijzigingen Opslaan",
+      "saving": "Opslaan...",
+      "success": "Instellingen succesvol opgeslagen!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Geschiedenis Verwijderen Bevestigen",
+        "message": "Weet u het zeker? Al uw eerdere gesprekken worden permanent verwijderd. Deze actie kan niet ongedaan worden gemaakt.",
+        "confirm": "Ja, verwijderen",
+        "success": "Gespreksgeschiedenis succesvol gewist."
+      },
+      "exportData": {
+        "title": "Gegevens Exporteren",
+        "message": "Er wordt een kopie van al uw gegevens gegenereerd en naar uw e-mailadres verzonden. Wilt u doorgaan?",
+        "confirm": "Ja, doorgaan",
+        "success": "Uw gegevens exporteren..."
+      },
+      "cancel": "Annuleren"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Servicevoorwaarden - SyriaGPT",
+      "description": "Lees de algemene voorwaarden voor het gebruik van de diensten van SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Overschakelen naar Arabisch",
+      "print": "Afdrukken"
+    },
+    "title": "Servicevoorwaarden",
+    "subtitle": "Laatst bijgewerkt: 24 augustus 2025",
+    "intro": "Welkom bij SyriaGPT. Door onze diensten te gebruiken, gaat u akkoord met deze voorwaarden. Lees ze aandachtig door.",
+    "sectionsTitle": "Secties",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Aanvaarding van de Voorwaarden",
+        "content": "Door SyriaGPT te openen en te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Algemene Voorwaarden. Als u het niet eens bent met enig deel van deze voorwaarden, dient u onze diensten niet te gebruiken."
+      },
+      {
+        "id": "services",
+        "title": "2. Beschrijving van de Diensten",
+        "content": "SyriaGPT is een AI-assistent die is ontworpen om hulp te bieden op verschillende gebieden die verband houden met de Syrische context."
+      },
+      {
+        "id": "usage",
+        "title": "3. Aanvaardbaar Gebruik",
+        "content": "U moet onze diensten legaal en ethisch gebruiken. Het is u verboden de service te gebruiken voor illegale of schadelijke doeleinden."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Privacy en Gegevens",
+        "content": "We respecteren uw privacy en zijn toegewijd aan het beschermen van uw gegevens. We verzamelen alleen de noodzakelijke gegevens om de service te verlenen en zullen deze niet delen zonder uw toestemming."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Intellectueel Eigendom",
+        "content": "Alle rechten voorbehouden aan SyriaGPT. De inhoud, het ontwerp en de logo's zijn ons eigendom. De inhoud die u met de service maakt, blijft van u."
+      },
+      {
+        "id": "liability",
+        "title": "6. Disclaimer",
+        "content": "De service wordt geleverd \"zoals ze is\" zonder enige garantie. We garanderen niet de juistheid of volledigheid van de verstrekte informatie en zijn niet verantwoordelijk voor enige schade die voortvloeit uit het gebruik ervan."
+      },
+      {
+        "id": "termination",
+        "title": "7. Beëindiging van de Service",
+        "content": "We behouden ons het recht voor om uw account te beëindigen of op te schorten in geval van schending van deze voorwaarden of in geval van schadelijk of illegaal gedrag."
+      },
+      {
+        "id": "contact",
+        "title": "8. Neem contact met ons op",
+        "content": "Voor vragen over deze voorwaarden kunt u contact met ons opnemen via e-mail: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Ik heb de voorwaarden gelezen en ga ermee akkoord",
+    "continueButton": "Doorgaan",
+    "backToTop": "Terug naar Boven",
+    "expandAll": "Alles Uitvouwen",
+    "collapseAll": "Alles Inklappen",
+    "readingProgress": "Leesvoortgang",
+    "copyright": "© {year} SyriaGPT. Alle rechten voorbehouden."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Upgrade naar Pro - SyriaGPT",
+      "description": "Geniet van onbeperkte mogelijkheden, superieure snelheid en prioritaire toegang tot nieuwe functies met SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Upgrade naar Pro",
+      "description": "Geniet van onbeperkte mogelijkheden, superieure snelheid en prioritaire toegang tot nieuwe functies"
+    },
+    "stats": [
+      { "value": "10x", "label": "Sneller Antwoord" },
+      { "value": "∞", "label": "Onbeperkte Berichten" },
+      { "value": "24/7", "label": "Continue Ondersteuning" }
+    ],
+    "billingToggle": {
+      "monthly": "Maandelijks",
+      "yearly": "Jaarlijks",
+      "saving": "Bespaar 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Gratis Plan",
+        "subtitle": "Huidig Plan",
+        "price": "$0",
+        "period": "Levenslang",
+        "features": [
+          "Toegang tot het basismodel",
+          "20 berichten per dag",
+          "Standaard antwoordsnelheid",
+          "Basisfuncties"
+        ],
+        "buttonText": "Uw Huidige Plan"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Voor professionals en bedrijven",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "per maand",
+        "periodYearly": "per jaar",
+        "popular": "Meest Populair",
+        "features": [
+          "Geavanceerd GPT-4 model",
+          "Onbeperkte berichten",
+          "Superieure antwoordsnelheid",
+          "Prioritaire toegang tot nieuwe functies",
+          "Gespecialiseerde technische ondersteuning",
+          "Verbeterde interface zonder advertenties"
+        ],
+        "buttonText": "Nu Upgraden"
+      }
+    },
+    "comparison": {
+      "title": "Plannen Vergelijken",
+      "featureHeader": "Functies",
+      "freeHeader": "Gratis",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Toegang tot het basismodel", "free": true, "pro": true },
+        { "text": "Beperkte dagelijkse berichten (20)", "free": true, "pro": false },
+        { "text": "Onbeperkte berichten", "free": false, "pro": true },
+        {
+          "text": "Toegang tot het geavanceerde GPT-4 model",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Standaard antwoordsnelheid", "free": true, "pro": false },
+        {
+          "text": "Superieure antwoordsnelheid (10x sneller)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Prioritaire toegang tot nieuwe functies",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Gespecialiseerde technische ondersteuning",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Interface zonder advertenties", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Veelgestelde Vragen",
+      "toggleOpen": "Lees Meer",
+      "toggleClose": "Sluiten",
+      "items": [
+        {
+          "question": "Kan ik mijn abonnement op elk moment opzeggen?",
+          "answer": "Ja, natuurlijk. U kunt uw Pro-planabonnement op elk moment opzeggen via de pagina \"Accountbeheer\". U blijft toegang hebben tot de Pro-functies tot het einde van de huidige factureringsperiode en er worden geen verdere kosten in rekening gebracht."
+        },
+        {
+          "question": "Welke betaalmethoden worden geaccepteerd?",
+          "answer": "We accepteren alle gangbare credit- en debitcards (Visa, MasterCard, American Express) evenals Sham Cash en lokale e-wallets. Alle betalingen worden veilig en versleuteld verwerkt via onze partner, Stripe."
+        },
+        {
+          "question": "Wat gebeurt er aan het einde van de jaarlijkse factureringsperiode?",
+          "answer": "Uw jaarabonnement wordt automatisch verlengd, tenzij u het opzegt via uw accountinstellingen. We sturen u een week voor de verlengingsdatum een herinneringsmail met de details van het verschuldigde bedrag."
+        },
+        {
+          "question": "Kan ik een terugbetaling krijgen?",
+          "answer": "Ja, we bieden een volledige 30-dagen geld-terug-garantie vanaf de datum van inschrijving als u om welke reden dan ook niet tevreden bent met de service. Neem gewoon contact op met ons ondersteuningsteam en we zullen uw terugbetalingsverzoek onmiddellijk verwerken."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Klaar om te Beginnen?",
+      "description": "Sluit u aan bij duizenden gebruikers die SyriaGPT Pro hebben gekozen voor een superieure AI-ervaring",
+      "buttonText": "Begin Nu voor {price}",
+      "guarantee": "30 dagen volledige geld-terug-garantie"
+    },
+    "alert": "U wordt doorgestuurd naar de betaalpagina..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "E-mail Verifiëren - SyriaGPT",
+      "description": "Voer de verificatiecode in die naar uw e-mail is verzonden om uw SyriaGPT-account te bevestigen."
+    },
+    "header": {
+      "title": "Verifieer Uw E-mail",
+      "description": "Voer de verificatiecode in die is verzonden naar"
+    },
+    "form": {
+      "label": "6-cijferige verificatiecode",
+      "verifyButton": "Code Verifiëren",
+      "verifyingButton": "Verifiëren...",
+      "resend": {
+        "question": "Code niet ontvangen?",
+        "resendButton": "Code Opnieuw Verzenden",
+        "resendingButton": "Opnieuw verzenden...",
+        "cooldown": "Opnieuw verzenden over {seconds} seconden"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Verificatie Succesvol!",
+        "description": "Uw e-mail is succesvol bevestigd",
+        "redirecting": "Doorsturen naar dashboard..."
+      },
+      "error": {
+        "title": "Verificatie Mislukt",
+        "tryAgainButton": "Probeer Opnieuw"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Voer de 6-cijferige verificatiecode in",
+      "invalidCode": "Ongeldige verificatiecode. Probeer het opnieuw.",
+      "generic": "Er is een fout opgetreden tijdens de verificatie. Probeer het opnieuw.",
+      "resendFailed": "Kon de verificatiecode niet verzenden. Probeer het opnieuw."
+    },
+    "backToLogin": "Terug naar Inloggen",
+    "securityNote": {
+      "title": "Beveiligingsnotitie:",
+      "points": [
+        "Deel de verificatiecode met niemand",
+        "De verificatiecode is slechts 10 minuten geldig",
+        "Controleer het e-mailadres van de afzender"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Een nieuwe verificatiecode is naar uw e-mail verzonden"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Er is een Fout Opgetreden - SyriaGPT",
+      "description": "Aangepaste foutpagina voor het SyriaGPT-project."
+    },
+    "offlineMessage": "U bent momenteel offline",
+    "errorCode": "Fout {statusCode}",
+    "title": "Er is een Onverwachte Fout Opgetreden",
+    "description": "Onze oprechte excuses voor het ongemak. Ons technische team is op de hoogte gebracht en werkt eraan om het probleem zo snel mogelijk op te lossen.",
+    "retryButton": "Opnieuw Proberen",
+    "retryingButton": "Opnieuw proberen...",
+    "homeButton": "Home",
+    "backButton": "Terug",
+    "suggestionsTitle": "Wat u nu kunt proberen:",
+    "suggestion1": "Het vernieuwen van de pagina kan het probleem oplossen.",
+    "suggestion2": "Controleer uw internetverbinding.",
+    "suggestion3": "Als het probleem aanhoudt, neem dan gerust contact met ons op.",
+    "accordion": {
+      "title": "Technische Details voor Ontwikkelaars",
+      "copy": "Kopiëren",
+      "copied": "Gekopieerd",
+      "code": "Code:",
+      "message": "Bericht:",
+      "digest": "Digest:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Pagina Niet Gevonden - SyriaGPT",
+      "description": "De pagina die u zoekt, bestaat niet of is verplaatst."
+    },
+    "title": "Het lijkt erop dat u verdwaald bent in de pagina's!",
+    "description": "De pagina die u zoekt, bestaat niet of is verplaatst",
+    "currentLocation": "Huidige Locatie: Onbekend",
+    "search": {
+      "placeholder": "Zoek naar de pagina die u wilt...",
+      "button": "Zoeken",
+      "searching": "Zoeken..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Vorige Pagina",
+        "description": "Ga terug naar waar u vandaan kwam"
+      },
+      "homePage": {
+        "title": "Startpagina",
+        "description": "Begin opnieuw"
+      }
+    },
+    "suggestions": {
+      "title": "Pagina's die u misschien interesseren",
+      "items": [
+        { "title": "Startpagina", "description": "Terug naar het begin" },
+        { "title": "Chat", "description": "Start een nieuw gesprek" },
+        { "title": "Help", "description": "Hulp krijgen" },
+        { "title": "Over Syrië", "description": "Ontdek meer" }
+      ]
+    },
+    "history": {
+      "title": "Recent Bezochte Pagina's"
+    },
+    "funFact": {
+      "title": "Terwijl u uw weg vindt...",
+      "facts": [
+        "Wist u dat? Damascus is de oudste continu bewoonde hoofdstad ter wereld!",
+        "Wist u dat? Het eerste alfabet in de geschiedenis werd uitgevonden in Ugarit, Syrië!",
+        "Wist u dat? De Aleppo-pistacheboom meer dan 300 jaar oud kan worden!",
+        "Wist u dat? Krak des Chevaliers in Syrië een van de best bewaarde kastelen ter wereld is!",
+        "Wist u dat? De Damastroos wordt beschouwd als een van de beste soorten rozen ter wereld!"
+      ]
+    },
+    "support": {
+      "message": "Als u denkt dat dit een fout is, neem dan contact met ons op",
+      "helpCenter": "Helpcentrum",
+      "technicalSupport": "Technische Ondersteuning"
+    }
+  },
+  "loader": {
+    "title": "laden...",
+    "loading": "Even geduld a.u.b...."
+  }
+}

@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Inteligjenca Artificiale Siriane",
+    "newChat": "Bisedë e Re",
+    "pastConversations": "Bisedat e Mëparshme",
+    "lightMode": "Modaliteti i Dritës",
+    "darkMode": "Modaliteti i Errët",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Përdorues Sirian",
+    "userEmail": "user@syriagpt.com",
+    "profile": "Profili",
+    "settings": "Cilësimet",
+    "upgradeToPro": "Përmirëso në Pro",
+    "newBadge": "E RE",
+    "helpCenter": "Qendra e Ndihmës",
+    "aboutApp": "Rreth Aplikacionit",
+    "logout": "Dil",
+    "logoutModal": {
+      "title": "Konfirmo Daljen",
+      "description": "A jeni i sigurt që doni të dilni nga llogaria juaj?",
+      "cancel": "Anulo",
+      "confirm": "Po, Dil"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Asistenti juaj inteligjent për t'iu përgjigjur të gjitha pyetjeve tuaja",
+      "examples": "Shembuj",
+      "capabilities": "Aftësitë",
+      "limitations": "Kufizimet",
+      "suggestions": {
+        "examples": [
+          "Shpjegoni si të merrni një kartë identiteti thjesht",
+          "Më jepni kurset e miratuara në Universitetin e Damaskut",
+          "Cilat janë përbërësit për Mahshi?"
+        ],
+        "capabilities": [
+          "Si të bëni bamje dhe cila është lidhja e saj historike?",
+          "Cilat janë rregulloret për pasaportën siriane?",
+          "Kam nevojë për informacion rreth investimeve"
+        ],
+        "limitations": [
+          "Si të zgjidhni një problem kompjuteri?",
+          "Cilat janë kushtet e regjistrimit në Universitetin e Alepos?",
+          "Më jepni një përmbledhje të lajmeve të sotme në Siri"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Po shkruan..."
+    },
+    "regenerate": "Rigjenero Përgjigjen",
+    "input": {
+      "placeholder": "Shkruani mesazhin tuaj këtu, ose tërhiqni një skedar për ta bashkëngjitur...",
+      "attachFile": "Bashkëngjit Skedar",
+      "startRecording": "Fillo Regjistrimin",
+      "stopRecording": "Ndalo Regjistrimin",
+      "removeFile": "Hiq Skedarin"
+    },
+    "dragDrop": {
+      "title": "Lëshoni skedarët këtu",
+      "subtitle": "PDF, Word, Tekst (Maks 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Njohja e të folurit nuk mbështetet në këtë shfletues. Ju lutemi përdorni Chrome ose Edge.",
+      "permissionDenied": "Ju lutemi lejoni qasjen në mikrofon në cilësimet e shfletuesit tuaj.",
+      "startFailed": "Dështoi fillimi i regjistrimit. Kontrolloni cilësimet e shfletuesit tuaj.",
+      "generalError": "Ndodhi një gabim gjatë fillimit të regjistrimit. Ju lutemi provoni përsëri.",
+      "no-speech": "Nuk u zbulua asnjë e folur. Sigurohuni që zëri juaj të jetë i qartë dhe mikrofoni të jetë afër.",
+      "audio-capture": "Nuk mund të qaset në mikrofon. Sigurohuni që është i lidhur dhe leja është dhënë.",
+      "not-allowed": "Leja u refuzua. Ju lutemi lejoni përdorimin e mikrofonit nga cilësimet e shfletuesit.",
+      "network": "Gabim rrjeti. Ju lutemi kontrolloni lidhjen tuaj të internetit.",
+      "service-not-allowed": "Shërbimi i njohjes së të folurit aktualisht nuk është i disponueshëm.",
+      "language-not-supported": "Gjuha nuk mbështetet. Provoni shfletuesin Chrome."
+    },
+    "footer": "Qëllimi ynë është t'i bëjmë sistemet e AI më natyrale dhe të sigurta për të ndërvepruar"
+  },
+  "chat": {
+    "fileAnalysisError": "Na vjen keq, ndodhi një gabim gjatë analizimit të skedarit: {error}",
+    "responseProcessingError": "Na vjen keq, ndodhi një gabim gjatë përpunimit të përgjigjes.",
+    "networkError": "Na vjen keq, ndodhi një gabim lidhjeje. Ju lutemi kontrolloni lidhjen tuaj të internetit."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Rreth Projektit SyriaGPT",
+      "description": "Mësoni rreth qëllimeve dhe vizionit të projektit SyriaGPT, asistenti inteligjent i specializuar në kontekstin sirian."
+    },
+    "header": {
+      "title": "Republika Arabe Siriane",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "Siria.. është Zemra"
+    },
+    "main": {
+      "p1": "Ky është një projekt kombëtar pionier i miratuar nga qeveria siriane, që synon të zhvillojë një model të avancuar të gjuhës arabe me një fokus të veçantë në dialektin sirian. Qëllimi i këtij projekti është të jetë një platformë njohurish dhe shërbimesh që ndihmon qytetarët të ndërveprojnë me shërbimet qeveritare dhe sektorin publik e privat lehtësisht dhe në mënyrë të sigurt, duke u ofruar atyre përgjigje të sakta dhe të besueshme rreth procedurave, ligjeve dhe informacionit të përgjithshëm.",
+      "p2": "Ai dallohet për fokusin e tij në gjuhën lokale dhe aftësinë për të kuptuar dialektet krahas arabishtes standarde, gjë që e bën atë të afërt me përdoruesin në jetën e tyre të përditshme. Projekti gjithashtu siguron privatësinë e të dhënave duke u hostuar në qendrat kombëtare të të dhënave dhe operon sipas standardeve të larta të sigurisë dhe neutralitetit për të siguruar që rezultatet të jetë i saktë dhe i paanshëm. Ai është projektuar për t'u integruar me portalet e qeverisjes elektronike, aplikacionet zyrtare dhe qendrat e thirrjeve, duke formuar kështu një hap themelor drejt përmirësimit të transformimit digjital në Siri.",
+      "p3": "Projekti synon të shërbejë në fusha të shumta si lehtësimi i procedurave qeveritare, mbështetja e arsimit, thjeshtimi i udhëzimeve shëndetësore, ndihma për bizneset e vogla dhe shpërndarja e mesazheve emergjente shpejt dhe qartë. Kështu, ai përfaqëson një hap cilësor në mënyrën se si qytetarët qasen në informacion, ku ndërveprimi në gjuhë natyrale bëhet një mjet kryesor për të thjeshtuar transaksionet dhe për të afruar qytetarët me institucionet shtetërore."
+    },
+    "footer": {
+      "backButton": "Kthehu te Biseda",
+      "disclaimer": "Qëllimi ynë është t'i bëjmë sistemet e AI më natyrale dhe të sigurta për të ndërvepruar, në përputhje me kontekstin sirian dhe nevojat e përdoruesve të tij. Reagimet dhe sugjerimet tuaja do të na ndihmojnë të përmirësojmë dhe zhvillojmë shërbimin për t'ju shërbyer më mirë."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Harruat Fjalëkalimin",
+      "description": "Riktheni qasjen në llogarinë tuaj SyriaGPT me hapa të thjeshtë dhe të sigurt."
+    },
+    "infoPanel": {
+      "title": "Riktheni Llogarinë Tuaj në Mënyrë të Sigurt",
+      "description": "Ne jemi këtu për t'ju ndihmuar të riktheni qasjen në llogarinë tuaj me hapa të thjeshtë dhe të sigurt.",
+      "steps": {
+        "step1": {
+          "title": "Vendosni email-in tuaj",
+          "description": "Email-i i regjistruar me llogarinë tuaj SyriaGPT"
+        },
+        "step2": {
+          "title": "Kontrolloni email-in tuaj",
+          "description": "Ne do t'ju dërgojmë një lidhje të sigurt për të rivendosur fjalëkalimin tuaj"
+        },
+        "step3": {
+          "title": "Krijoni një fjalëkalim të ri",
+          "description": "Zgjidhni një fjalëkalim të fortë dhe të sigurt për llogarinë tuaj"
+        }
+      },
+      "securityTip": {
+        "title": "Këshillë Sigurie",
+        "description": "Lidhja është e vlefshme vetëm për 15 minuta për të siguruar sigurinë e llogarisë suaj. Nëse nuk e gjeni email-in, kontrolloni dosjen tuaj të postës së padëshiruar."
+      }
+    },
+    "form": {
+      "title": "Harruat Fjalëkalimin",
+      "description": "Vendosni email-in tuaj për të marrë një lidhje rikuperimi",
+      "emailLabel": "Adresa e Email-it",
+      "emailPlaceholder": "Vendosni email-in tuaj...",
+      "emailRequiredAlert": "Ju lutemi vendosni adresën tuaj të email-it.",
+      "submitButton": "Dërgo Lidhjen e Rikuperimit",
+      "loadingButton": "Po dërgohet...",
+      "rememberedPassword": "E mbani mend fjalëkalimin tuaj?",
+      "backToLogin": "Kthehu te Hyrja"
+    },
+    "successScreen": {
+      "title": "Udhëzimet u Dërguan",
+      "checkEmailTitle": "Kontrolloni Email-in Tuaj",
+      "description": "Ne kemi dërguar një lidhje rikuperimi fjalëkalimi te:",
+      "tip1": "Kontrolloni kutinë tuaj postare",
+      "tip2": "Mos harroni të kontrolloni dosjen tuaj të postës së padëshiruar",
+      "tip3": "Lidhja është e vlefshme vetëm për 15 minuta",
+      "backToLoginButton": "Kthehu te Hyrja"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Qendra e Ndihmës - SyriaGPT",
+      "description": "Gjeni përgjigje për pyetjet tuaja, udhëzues përdoruesi dhe kontaktoni ekipin e mbështetjes së SyriaGPT."
+    },
+    "header": {
+      "title": "Qendra e Ndihmës",
+      "description": "Mirë se vini në qendrën e mbështetjes së SyriaGPT! Ne jemi këtu për t'ju ndihmuar të keni përvojën më të mirë të mundshme."
+    },
+    "search": {
+      "placeholder": "Kërkoni për përgjigje, udhëzues përdoruesi, ose bëni një pyetje..."
+    },
+    "categories": {
+      "title": "Shfleto sipas Kategorisë",
+      "items": [
+        {
+          "title": "Fillimi",
+          "description": "Mësoni bazat e përdorimit të platformës dhe përfitoni nga të gjitha veçoritë e disponueshme."
+        },
+        {
+          "title": "Menaxhimi i Llogarisë",
+          "description": "Redaktoni profilin tuaj, menaxhoni abonimet dhe cilësimet tuaja të sigurisë."
+        },
+        {
+          "title": "Veçori të Avancuara",
+          "description": "Përdorni bashkëngjitjet e skedarëve, kërkimin zanor dhe inteligjencën artificiale të avancuar."
+        },
+        {
+          "title": "Siguria & Privatësia",
+          "description": "Mësoni si të mbroni të dhënat dhe informacionin tuaj personal me standardet më të larta të sigurisë."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Pyetje të Shpeshta",
+      "toggleOpen": "Lexo më shumë",
+      "toggleClose": "Mbyll",
+      "items": [
+        {
+          "question": "Si mund të filloj një bisedë të re?",
+          "answer": "Për të filluar një bisedë të re, thjesht klikoni butonin \"+ Bisedë e Re\" në krye të shiritit anësor. Ju gjithashtu mund të përdorni shkurtoren e tastierës Ctrl+N për një fillim të shpejtë."
+        },
+        {
+          "question": "Çfarë lloj skedarësh mund të bashkëngjis?",
+          "answer": "Ju mund të bashkëngjisni skedarë PDF, dokumente Word (doc, docx), skedarë PowerPoint, skedarë teksti (txt) dhe imazhe (jpg, png, gif). Madhësia maksimale për një skedar të vetëm është 10 MB, dhe ju mund të bashkëngjisni deri në 5 skedarë për bisedë."
+        },
+        {
+          "question": "A ruhen bisedat e mia të mëparshme?",
+          "answer": "Po, bisedat tuaja të mëparshme ruhen automatikisht dhe në mënyrë të sigurt në llogarinë tuaj. Ju mund t'i qaseni ato nga lista \"Bisedat e Mëparshme\" në shiritin anësor, të organizuara sipas datës ose temës."
+        },
+        {
+          "question": "Si funksionojnë modalitetet e dritës dhe të errët?",
+          "answer": "Ju mund të kaloni midis modaliteteve të dritës dhe të errët duke përdorur butonin e dedikuar në shiritin anësor. Sistemi ruan automatikisht preferencën tuaj dhe e zbaton atë në të gjitha seancat e ardhshme."
+        },
+        {
+          "question": "Çfarë është veçoria zë-në-tekst?",
+          "answer": "Ju mund të përdorni mikrofonin tuaj për diktim zanor në arabisht ose anglisht. Klikoni ikonën e mikrofonit në shiritin e hyrjes dhe filloni të flisni. Sistemi do të konvertojë automatikisht të folurën tuaj në tekst."
+        },
+        {
+          "question": "A mund ta përdor SyriaGPT në telefonin tim celular?",
+          "answer": "Po, SyriaGPT është i disponueshëm përmes shfletuesit të uebit në të gjitha pajisjet inteligjente. Ndërfaqja është plotësisht responsive dhe funksionon në mënyrë të përsosur në telefona dhe tableta."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Nuk gjetët atë që po kërkonit?",
+      "description": "Ekipi ynë i përkushtuar i mbështetjes është i disponueshëm gjatë gjithë kohës për t'ju ndihmuar. Na kontaktoni dhe ne do t'ju kthejmë përgjigje brenda pak minutash!",
+      "emailButton": "Kontaktoni përmes Email-it",
+      "chatButton": "Bisedë e Drejtpërdrejtë",
+      "phoneButton": "Thirrje Telefonike",
+      "availability": "I disponueshëm 24/7",
+      "responseTime": "Përgjigje brenda 5 minutash",
+      "languageSupport": "Mbështetje në Gjuhën Arabe"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Hyr - SyriaGPT",
+      "description": "Hyni në llogarinë tuaj SyriaGPT për të qasur bisedat dhe veçoritë tuaja të avancuara."
+    },
+    "infoPanel": {
+      "title": "Mirë se u kthyet",
+      "description": "Vazhdoni të eksploroni botën e inteligjencës artificiale siriane me",
+      "securityTitle": "Pse është SyriaGPT i Sigurt?",
+      "features": [
+        {
+          "title": "Mbrojtje e Avancuar e të Dhënave",
+          "description": "Ne përdorim teknologji të avancuara të enkriptimit për të mbrojtur informacionin tuaj personal"
+        },
+        {
+          "title": "Autentikim me Dy Faktorë",
+          "description": "Një shtresë shtesë mbrojtjeje për të siguruar sigurinë e llogarisë suaj"
+        },
+        {
+          "title": "Inteligjencë Artificiale Lokale",
+          "description": "Teknologji e avancuar siriane që kupton kulturën dhe kontekstin arab"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Përdorues Aktivë" },
+        { "value": "99.9%", "label": "Koha e Punës" },
+        { "value": "24/7", "label": "Mbështetje" }
+      ]
+    },
+    "form": {
+      "title": "Hyr",
+      "description": "Vendosni kredencialet tuaja për të hyrë në llogarinë tuaj",
+      "emailLabel": "Adresa e Email-it",
+      "emailPlaceholder": "Vendosni email-in tuaj...",
+      "passwordLabel": "Fjalëkalimi",
+      "passwordPlaceholder": "Vendosni fjalëkalimin tuaj...",
+      "forgotPassword": "Harruat fjalëkalimin?",
+      "showPassword": "Shfaq fjalëkalimin",
+      "hidePassword": "Fshih fjalëkalimin",
+      "loginButton": "Hyr",
+      "loadingButton": "Po verifikohet...",
+      "loginSuccessAlert": "Hyrja u krye me sukses!",
+      "orSeparator": "ose",
+      "noAccount": "Nuk keni llogari?",
+      "createAccount": "Krijo një llogari të re"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Politika e Privatësisë - SyriaGPT",
+      "description": "Mësoni si mblidhen, përdoren dhe mbrohen të dhënat tuaja personale kur përdorni shërbimet e SyriaGPT."
+    },
+    "header": {
+      "title": "Politika e Privatësisë",
+      "lastUpdated": "Përditësuar së Fundi: 25 Gusht 2025",
+      "effectiveDate": "Hyn në Fuqi Menjëherë"
+    },
+    "infoCards": [
+      {
+        "title": "Mbrojtje e Plotë",
+        "description": "Të dhënat tuaja mbrohen me teknologjitë më të fundit të enkriptimit dhe sigurisë."
+      },
+      {
+        "title": "Kontroll i Plotë",
+        "description": "Ju kontrolloni të dhënat tuaja dhe mund t'i fshini ato në çdo kohë."
+      },
+      {
+        "title": "Transparencë e Plotë",
+        "description": "Ne shpjegojmë qartë se çfarë mbledhim dhe si e përdorim atë."
+      },
+      {
+        "title": "Pa Shitje të Dhënash",
+        "description": "Ne nuk i shesim ose ndajmë të dhënat tuaja me palë të treta."
+      }
+    ],
+    "toc": {
+      "title": "Përmbajtja"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Hyrje",
+        "content": "Mirë se vini në SyriaGPT. Ne e marrim seriozisht privatësinë tuaj. Kjo politikë përshkruan llojet e informacionit që mund të mbledhim nga ju ose që ju mund të ofroni kur vizitoni ose përdorni aplikacionin tonë, dhe praktikat tona për mbledhjen, përdorimin, mirëmbajtjen, mbrojtjen dhe zbulimin e atij informacioni."
+      },
+      {
+        "id": "data-collection",
+        "title": "Informacioni që Mbledhim",
+        "intro": "Ne mund të mbledhim disa lloje informacioni nga dhe rreth përdoruesve të shërbimit tonë, duke përfshirë:",
+        "points": [
+          "Informacionin që ju ofroni drejtpërdrejt: si emri, email-i dhe fjalëkalimi juaj kur krijoni një llogari.",
+          "Përmbajtja e përdoruesit: Mesazhet, pyetjet dhe skedarët që ju ngarkoni në shërbimin tonë për analizë.",
+          "Informacioni i përdorimit: Detajet e përdorimit tuaj të shërbimit tonë, duke përfshirë të dhënat e trafikut dhe regjistrat e përdorimit.",
+          "Informacioni i pajisjes: Lloji i shfletuesit tuaj, sistemi operativ dhe adresa IP."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Si e Përdorim Informacionin Tuaj",
+        "intro": "Ne përdorim informacionin që mbledhim rreth jush ose që ju na ofroni për qëllimet e mëposhtme:",
+        "points": [
+          "Për t'ju ofruar shërbimin tonë dhe përmbajtjen e tij në cilësinë më të mirë të mundshme.",
+          "Për të përmirësuar dhe personalizuar përvojën tuaj sipas nevojave tuaja.",
+          "Për të komunikuar me ju rreth llogarisë suaj ose shërbimit tonë dhe njoftimeve të rëndësishme.",
+          "Për qëllime analitike dhe kërkimore për të përmirësuar produktet dhe shërbimet tona.",
+          "Për të siguruar sigurinë e platformës dhe për të parandaluar përdorimin e paautorizuar."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Zbulimi i Informacionit Tuaj",
+        "commitmentTitle": "Angazhimi ynë Themelor",
+        "commitmentText": "Ne nuk i shesim ose japim me qira informacionin tuaj personal palëve të treta. Ky është angazhimi ynë themelor ndaj jush.",
+        "content": "Ne mund të zbulojmë informacion personal vetëm në rastet e mëposhtme: për të përmbushur ndonjë urdhër gjykate ose ligj, ose për të mbrojtur të drejtat dhe sigurinë e SyriaGPT dhe klientëve tanë nga kërcënime serioze të sigurisë."
+      },
+      {
+        "id": "data-security",
+        "title": "Siguria e të Dhënave",
+        "protectionTitle": "Masa të Avancuara Mbrojtjeje:",
+        "points": [
+          "Enkriptim fund-më-fund për të gjitha të dhënat e ndjeshme",
+          "Serverë të sigurt të mbrojtur nga firewall-e të avancuara",
+          "Monitorim sigurie 24/7 për të zbuluar kërcënime",
+          "Kopje rezervë të rregullta dhe të enkriptuara për të siguruar vazhdimësinë e shërbimit",
+          "Testime periodike të sigurisë nga ekspertë të pavarur"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Të Drejtat Tuaja",
+        "intro": "Si përdorues i shërbimit tonë, ju keni të drejtat e mëposhtme në lidhje me të dhënat tuaja personale:",
+        "rights": [
+          {
+            "title": "Qasja dhe Rishikimi",
+            "description": "Kërkoni një kopje të të gjitha të dhënave tuaja të ruajtura tek ne"
+          },
+          {
+            "title": "Korrigjimi dhe Përditësimi",
+            "description": "Modifikoni ose korrigjoni çdo informacion të pasaktë"
+          },
+          {
+            "title": "Fshirja e Plotë",
+            "description": "Fshini përgjithmonë llogarinë tuaj dhe të gjitha të dhënat tuaja"
+          },
+          {
+            "title": "Portabiliteti dhe Eksporti",
+            "description": "Eksportoni të dhënat tuaja në një format të lexueshëm"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Ndryshimet në Politikë",
+        "content": "Politika jonë është t'ju njoftojmë për çdo ndryshim të rëndësishëm 30 ditë para se të hyjnë në fuqi. Çdo ndryshim do të postohet në këtë faqe me një datë të përditësuar të rishikimit. Ne ju inkurajojmë të rishikoni rregullisht këtë politikë për të qëndruar të informuar se si e mbrojmë informacionin tuaj."
+      },
+      {
+        "id": "contact",
+        "title": "Na Kontaktoni",
+        "email": "Email",
+        "phone": "Telefon",
+        "availability": "Ekipi i privatësisë është i disponueshëm për t'iu përgjigjur pyetjeve tuaja nga e diela në të enjte, ora 9:00 - 18:00"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profili - SyriaGPT",
+      "description": "Menaxhoni informacionin tuaj personal, cilësimet e sigurisë dhe planin e abonimit në SyriaGPT."
+    },
+    "header": {
+      "title": "Profili",
+      "description": "Menaxhoni informacionin tuaj personal dhe cilësimet e llogarisë në SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Foto Profili",
+      "changeAvatar": "Ndrysho foton e profilit",
+      "joinDate": "Data e Anëtarësimit",
+      "currentPlan": "Plani Aktual",
+      "freePlan": "Falas",
+      "conversations": "Bisedat",
+      "activeDays": "Ditë Aktive"
+    },
+    "personalInfo": {
+      "title": "Informacion Personal",
+      "description": "Përditësoni emrin, email-in dhe cilësimet tuaja bazë",
+      "fullName": "Emri i Plotë",
+      "email": "Adresa e Email-it",
+      "editButton": "Redakto Informacionin",
+      "cancelButton": "Anulo",
+      "saveButton": "Ruaj Ndryshimet",
+      "updateSuccess": "Profili u përditësua me sukses!"
+    },
+    "security": {
+      "title": "Siguria & Fjalëkalimi",
+      "description": "Mbani llogarinë tuaj të sigurt duke përditësuar rregullisht fjalëkalimin tuaj",
+      "currentPassword": "Fjalëkalimi Aktual",
+      "currentPasswordPlaceholder": "Vendosni fjalëkalimin aktual...",
+      "newPassword": "Fjalëkalimi i Ri",
+      "newPasswordPlaceholder": "Vendosni fjalëkalimin e ri...",
+      "confirmNewPassword": "Konfirmo Fjalëkalimin e Ri",
+      "confirmNewPasswordPlaceholder": "Konfirmoni fjalëkalimin e ri...",
+      "updateButton": "Përditëso Fjalëkalimin",
+      "passwordMismatch": "Fjalëkalimet e reja nuk përputhen.",
+      "updateSuccess": "Fjalëkalimi u ndryshua me sukses!"
+    },
+    "subscription": {
+      "title": "Plani i Abonimit",
+      "description": "Ju jeni aktualisht në planin Falas - merrni më shumë veçori",
+      "upgradeTitle": "Përmirëso në Pro",
+      "upgradeDescription": "Merrni veçori shtesë dhe përgjigje prioritare",
+      "upgradeButton": "Përmirëso Tani"
+    },
+    "dangerZone": {
+      "title": "Zona e Rrezikut",
+      "description": "Këto veprime janë të pakthyeshme - vazhdoni me kujdes",
+      "deleteTitle": "Fshij Llogarinë Përgjithmonë",
+      "deleteDescription": "Të gjitha të dhënat dhe bisedat tuaja do të fshihen përgjithmonë",
+      "deleteButton": "Fshij Llogarinë"
+    },
+    "deleteModal": {
+      "title": "Konfirmo Fshirjen e Llogarisë",
+      "message": "A jeni absolutisht i sigurt? Llogaria juaj dhe të gjitha të dhënat tuaja do të fshihen përgjithmonë. Ky veprim nuk mund të zhbëhet.",
+      "cancelButton": "Anulo",
+      "confirmButton": "Konfirmo Fshirjen",
+      "deleteSuccess": "Llogaria juaj është fshirë me sukses."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Krijo një Llogari të Re - SyriaGPT",
+      "description": "Bashkohuni me komunitetin SyriaGPT dhe filloni të eksploroni fuqinë e AI të projektuar për kontekstin sirian."
+    },
+    "infoPanel": {
+      "title": "Bashkohuni me Komunitetin SyriaGPT",
+      "description": "Zbuloni fuqinë e inteligjencës artificiale të projektuar posaçërisht për kulturën dhe kontekstin sirian",
+      "features": [
+        {
+          "title": "AI e Avancuar",
+          "description": "Teknologji moderne të trajnuara në përmbajtje arabe dhe siriane"
+        },
+        {
+          "title": "Siguri & Privatësi e Garantuar",
+          "description": "Mbrojtje e avancuar për të dhënat tuaja me enkriptim të klasit botëror"
+        },
+        {
+          "title": "Komunitet Aktiv",
+          "description": "Bashkohuni me mijëra përdorues sirianë të apasionuar pas teknologjisë"
+        },
+        {
+          "title": "Veçori Ekskluzive",
+          "description": "Mjete të personalizuara për përmbajtje siriane dhe arabe"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT ka ndryshuar plotësisht mënyrën se si punoj. Një kuptim i thellë i gjuhës dhe kulturës siriane.\"",
+        "author": "- Ahmed Al-Shami, Zhvillues"
+      }
+    },
+    "form": {
+      "title": "Krijo një Llogari të Re",
+      "description": "Plotësoni detajet e mëposhtme për të krijuar llogarinë tuaj",
+      "firstName": "Emri",
+      "lastName": "Mbiemri",
+      "email": "Adresa e Email-it",
+      "password": "Fjalëkalimi",
+      "confirmPassword": "Konfirmo Fjalëkalimin",
+      "placeholder": "Vendosni {field}...",
+      "emailPlaceholder": "shembull@email.com",
+      "passwordStrength": "Forca e fjalëkalimit",
+      "strengthLevels": [
+        "Shumë e Dobët",
+        "E Dobët",
+        "Mesatare",
+        "E Fortë",
+        "Shumë e Fortë"
+      ],
+      "submitButton": "Krijo Llogari të Re",
+      "loadingButton": "Po krijon llogarinë...",
+      "googleButton": "Regjistrohu me Google",
+      "orSeparator": "ose",
+      "hasAccount": "Keni tashmë një llogari?",
+      "loginLink": "Hyr",
+      "termsAgreement": "Duke krijuar një llogari, ju pranoni",
+      "termsLink": "Kushtet e Përdorimit",
+      "and": "dhe",
+      "privacyLink": "Politikën e Privatësisë",
+      "successAlert": "Llogaria juaj është krijuar me sukses! Mirë se vini në SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Duhet të jetë të paktën 2 karaktere",
+      "maxLength": "Shumë e gjatë",
+      "emailRequired": "Email-i është i nevojshëm",
+      "emailInvalid": "Adresë email-i e pavlefshme",
+      "passwordLength": "Fjalëkalimi duhet të jetë të paktën 8 karaktere",
+      "passwordComplexity": "Duhet të përmbajë një shkronjë të madhe, një shkronjë të vogël dhe një numër",
+      "passwordMismatch": "Fjalëkalimet nuk përputhen"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Rivendos Fjalëkalimin - SyriaGPT",
+      "description": "Vendosni një fjalëkalim të ri dhe të fortë për llogarinë tuaj SyriaGPT."
+    },
+    "form": {
+      "title": "Vendosni një Fjalëkalim të Ri",
+      "description": "Zgjidhni një fjalëkalim të fortë për të mbrojtur llogarinë tuaj.",
+      "newPasswordLabel": "Fjalëkalimi i Ri",
+      "confirmPasswordLabel": "Konfirmo Fjalëkalimin",
+      "passwordMismatchError": "Fjalëkalimet nuk përputhen.",
+      "submitButton": "Përditëso Fjalëkalimin",
+      "loadingButton": "Po përditësohet...",
+      "showPasswordAria": "Shfaq fjalëkalimin",
+      "hidePasswordAria": "Fshih fjalëkalimin",
+      "mismatchToast": "Ju lutemi sigurohuni që fjalëkalimet të përputhen.",
+      "loadingToast": "Po përditësohet fjalëkalimi...",
+      "successToast": "Fjalëkalimi u përditësua me sukses!"
+    },
+    "strengthIndicator": {
+      "title": "Forca",
+      "levels": [
+        "Shumë e Dobët",
+        "E Dobët",
+        "E Pranueshme",
+        "E Mirë",
+        "E Fortë",
+        "Shumë e Fortë"
+      ]
+    },
+    "successScreen": {
+      "title": "Sukses!",
+      "description": "Fjalëkalimi juaj është përditësuar. Tani mund të hyni në mënyrë të sigurt me kredencialet tuaja të reja.",
+      "backToLoginButton": "Kthehu te Hyrja"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Cilësimet - SyriaGPT",
+      "description": "Personalizoni përvojën tuaj SyriaGPT, menaxhoni pamjen, gjuhën, njoftimet dhe të dhënat."
+    },
+    "header": {
+      "title": "Cilësimet e SyriaGPT",
+      "description": "Personalizoni përvojën tuaj personale",
+      "unsavedChanges": "Ndryshime të paruajtura"
+    },
+    "appearance": {
+      "title": "Pamja & Shfaqja",
+      "description": "Personalizoni pamjen dhe ndjesinë e aplikacionit për t'iu përshtatur preferencave tuaja",
+      "theme": "Stili i Temës",
+      "themes": {
+        "light": { "label": "E Dritës", "description": "Ideale për përdorim gjatë ditës" },
+        "dark": {
+          "label": "E Errët",
+          "description": "E lehtë për sytë natën"
+        },
+        "system": {
+          "label": "Sistemi",
+          "description": "Ndiqni cilësimet e pajisjes suaj"
+        }
+      },
+      "preview": {
+        "title": "Parashikimi i Ndryshimeve",
+        "description": "Shikoni një parashikim të drejtpërdrejtë të ndryshimeve para se të ruani",
+        "new": "E RE"
+      }
+    },
+    "language": {
+      "title": "Gjuha & Rajoni",
+      "description": "Vendosni gjuhën dhe cilësimet rajonale",
+      "interfaceLanguage": {
+        "title": "Gjuha e Ndërfaqes",
+        "description": "Gjuha e përdorur në menu dhe elemente interaktive",
+        "badge": "Automatike"
+      },
+      "languages": {
+        "ar": "العربية (Siri)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Njoftimet & Tingujt",
+      "description": "Kontrolloni alarmet dhe efektet zanore",
+      "enableNotifications": {
+        "title": "Aktivizo Njoftimet",
+        "description": "Merrni alarme për mesazhe dhe përditësime të rëndësishme"
+      },
+      "sounds": {
+        "title": "Tingujt",
+        "description": "Luaj tinguj kur dërgoni dhe merrni mesazhe"
+      }
+    },
+    "dataManagement": {
+      "title": "Menaxhimi i të Dhënave",
+      "description": "Kontrolloni ruajtjen dhe ndarjen e të dhënave tuaja",
+      "autoSave": {
+        "title": "Ruajtje Automatike",
+        "description": "Ruani automatikisht bisedat tuaja për t'iu referuar më vonë"
+      },
+      "exportData": "Eksporto të Dhënat",
+      "clearHistory": "Pastro Bisedat"
+    },
+    "advanced": {
+      "title": "Cilësime të Avancuara",
+      "description": "Opsione të avancuara për përdoruesit profesionistë",
+      "developerMode": {
+        "title": "Modaliteti i Zhvilluesit",
+        "description": "Shfaq informacion teknik shtesë dhe opsione zhvillimi",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Analitika",
+        "description": "Ndihmoni në përmirësimin e shërbimit duke dërguar të dhëna anonime të përdorimit"
+      }
+    },
+    "saveBar": {
+      "title": "Dëshironi të ruani ndryshimet?",
+      "description": "Cilësimet e reja do të zbatohen menjëherë",
+      "reset": "Rivendos",
+      "save": "Ruaj Ndryshimet",
+      "saving": "Po ruhet...",
+      "success": "Cilësimet u ruajtën me sukses!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Konfirmo Fshirjen e Historisë",
+        "message": "A jeni i sigurt? Të gjitha bisedat tuaja të mëparshme do të fshihen përgjithmonë. Ky veprim nuk mund të zhbëhet.",
+        "confirm": "Po, fshij",
+        "success": "Historia e bisedave u pastrua me sukses."
+      },
+      "exportData": {
+        "title": "Eksporto të Dhënat",
+        "message": "Një kopje e të gjitha të dhënave tuaja do të gjenerohet dhe do të dërgohet në email-in tuaj. Dëshironi të vazhdoni?",
+        "confirm": "Po, vazhdo",
+        "success": "Po eksportohen të dhënat tuaja..."
+      },
+      "cancel": "Anulo"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Kushtet e Shërbimit - SyriaGPT",
+      "description": "Lexoni kushtet dhe rregullat për përdorimin e shërbimeve të SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Kalo në Arabisht",
+      "print": "Printo"
+    },
+    "title": "Kushtet e Shërbimit",
+    "subtitle": "Përditësuar së Fundi: 24 Gusht 2025",
+    "intro": "Mirë se vini në SyriaGPT. Duke përdorur shërbimet tona, ju pranoni këto kushte. Ju lutemi lexojini me kujdes.",
+    "sectionsTitle": "Seksionet",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Pranimi i Kushteve",
+        "content": "Duke hyrë dhe përdorur SyriaGPT, ju pranoni të jeni të lidhur me këto Kushte dhe Rregulla. Nëse nuk pajtoheni me ndonjë pjesë të këtyre kushteve, nuk duhet të përdorni shërbimet tona."
+      },
+      {
+        "id": "services",
+        "title": "2. Përshkrimi i Shërbimeve",
+        "content": "SyriaGPT është një asistent AI i projektuar për të ofruar ndihmë në fusha të ndryshme që lidhen me kontekstin sirian."
+      },
+      {
+        "id": "usage",
+        "title": "3. Përdorimi i Pranueshëm",
+        "content": "Ju duhet të përdorni shërbimet tona në mënyrë ligjore dhe etike. Ju ndalohet të përdorni shërbimin për qëllime të paligjshme ose të dëmshme."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Privatësia dhe të Dhënat",
+        "content": "Ne respektojmë privatësinë tuaj dhe jemi të përkushtuar për të mbrojtur të dhënat tuaja. Ne mbledhim vetëm të dhëna të nevojshme për të ofruar shërbimin dhe nuk do t'i ndajmë ato pa pëlqimin tuaj."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Pronësia Intelektuale",
+        "content": "Të gjitha të drejtat i rezervohen SyriaGPT. Përmbajtja, dizajni dhe logot janë pronë e jona. Përmbajtja që ju krijoni duke përdorur shërbimin mbetet e juaja."
+      },
+      {
+        "id": "liability",
+        "title": "6. Mohimi i Përgjegjësisë",
+        "content": "Shërbimi ofrohet \"siç është\" pa asnjë garanci. Ne nuk garantojmë saktësinë ose plotësinë e informacionit të ofruar dhe nuk jemi përgjegjës për asnjë dëm që rezulton nga përdorimi i tij."
+      },
+      {
+        "id": "termination",
+        "title": "7. Ndërprerja e Shërbimit",
+        "content": "Ne rezervojmë të drejtën të ndërpresim ose pezullojmë llogarinë tuaj në rast të shkeljes së këtyre kushteve ose në rast të sjelljes së dëmshme ose të paligjshme."
+      },
+      {
+        "id": "contact",
+        "title": "8. Na Kontaktoni",
+        "content": "Për çdo pyetje rreth këtyre kushteve, ju lutemi na kontaktoni përmes email-it: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Kam lexuar dhe pajtohem me kushtet",
+    "continueButton": "Vazhdo",
+    "backToTop": "Kthehu në Fillim",
+    "expandAll": "Zgjero të Gjitha",
+    "collapseAll": "Palos të Gjitha",
+    "readingProgress": "Progresi i Leximit",
+    "copyright": "© {year} SyriaGPT. Të gjitha të drejtat e rezervuara."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Përmirëso në Pro - SyriaGPT",
+      "description": "Gëzoni aftësi të pakufizuara, shpejtësi superiore dhe qasje prioritare në veçoritë e reja me SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Përmirëso në Pro",
+      "description": "Gëzoni aftësi të pakufizuara, shpejtësi superiore dhe qasje prioritare në veçoritë e reja"
+    },
+    "stats": [
+      { "value": "10x", "label": "Përgjigje më e Shpejtë" },
+      { "value": "∞", "label": "Mesazhe të Pakufizuara" },
+      { "value": "24/7", "label": "Mbështetje e Vazhdueshme" }
+    ],
+    "billingToggle": {
+      "monthly": "Mujore",
+      "yearly": "Vjetore",
+      "saving": "Kurseni 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Plani Falas",
+        "subtitle": "Plani Aktual",
+        "price": "$0",
+        "period": "Përjetë",
+        "features": [
+          "Qasje në modelin bazë",
+          "20 mesazhe në ditë",
+          "Shpejtësi standarde e përgjigjes",
+          "Veçori bazë"
+        ],
+        "buttonText": "Plani Juaj Aktual"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Për profesionistë dhe biznese",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "në muaj",
+        "periodYearly": "në vit",
+        "popular": "Më Popullori",
+        "features": [
+          "Model i avancuar GPT-4",
+          "Mesazhe të pakufizuara",
+          "Shpejtësi superiore e përgjigjes",
+          "Qasje prioritare në veçoritë e reja",
+          "Mbështetje teknike e specializuar",
+          "Ndërfaqe e përmirësuar pa reklama"
+        ],
+        "buttonText": "Përmirëso Tani"
+      }
+    },
+    "comparison": {
+      "title": "Krahaso Planet",
+      "featureHeader": "Veçoritë",
+      "freeHeader": "Falas",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Qasje në modelin bazë", "free": true, "pro": true },
+        { "text": "Mesazhe ditore të kufizuara (20)", "free": true, "pro": false },
+        { "text": "Mesazhe të pakufizuara", "free": false, "pro": true },
+        {
+          "text": "Qasje në modelin e avancuar GPT-4",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Shpejtësi standarde e përgjigjes", "free": true, "pro": false },
+        {
+          "text": "Shpejtësi superiore e përgjigjes (10x më e shpejtë)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Qasje prioritare në veçoritë e reja",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Mbështetje teknike e specializuar",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Ndërfaqe pa reklama", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Pyetje të Shpeshta",
+      "toggleOpen": "Lexo më shumë",
+      "toggleClose": "Mbyll",
+      "items": [
+        {
+          "question": "A mund ta anuloj abonimin tim në çdo kohë?",
+          "answer": "Po, sigurisht. Ju mund ta anuloni abonimin tuaj të planit Pro në çdo kohë nga faqja \"Menaxhimi i Llogarisë\". Ju do të vazhdoni të keni qasje në veçoritë Pro deri në fund të periudhës aktuale të faturimit, dhe nuk do të bëhen më pagesa të tjera."
+        },
+        {
+          "question": "Cilat metoda pagese pranohen?",
+          "answer": "Ne pranojmë të gjitha kartat kryesore të kreditit dhe debitit (Visa, MasterCard, American Express) si dhe Sham Cash dhe kuletat elektronike lokale. Të gjitha pagesat përpunohen në mënyrë të sigurt dhe të enkriptuar përmes partnerit tonë, Stripe."
+        },
+        {
+          "question": "Çfarë ndodh në fund të periudhës vjetore të faturimit?",
+          "answer": "Abonimi juaj vjetor do të rinovohet automatikisht nëse nuk e anuloni atë nga cilësimet e llogarisë suaj. Ne do t'ju dërgojmë një email kujtese një javë para datës së rinovimit me detajet e shumës së duhur."
+        },
+        {
+          "question": "A mund të marr një rimbursim?",
+          "answer": "Po, ne ofrojmë një garanci të plotë 30-ditore të kthimit të parave nga data e abonimit nëse nuk jeni të kënaqur me shërbimin për çfarëdo arsye. Thjesht kontaktoni ekipin tonë të mbështetjes, dhe ne do të përpunojmë kërkesën tuaj për rimbursim menjëherë."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Gati për të Filluar?",
+      "description": "Bashkohuni me mijëra përdorues që kanë zgjedhur SyriaGPT Pro për një përvojë superiore të AI",
+      "buttonText": "Fillo Tani për {price}",
+      "guarantee": "Garanci e plotë 30-ditore e kthimit të parave"
+    },
+    "alert": "Ju do të ridrejtoheni në faqen e pagesës..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Verifiko Email-in - SyriaGPT",
+      "description": "Vendosni kodin e verifikimit të dërguar në email-in tuaj për të konfirmuar llogarinë tuaj SyriaGPT."
+    },
+    "header": {
+      "title": "Verifiko Email-in Tuaj",
+      "description": "Vendosni kodin e verifikimit të dërguar te"
+    },
+    "form": {
+      "label": "Kodi i verifikimit me 6 shifra",
+      "verifyButton": "Verifiko Kodin",
+      "verifyingButton": "Po verifikohet...",
+      "resend": {
+        "question": "Nuk e morët kodin?",
+        "resendButton": "Ridërgo Kodin",
+        "resendingButton": "Po ridërgohet...",
+        "cooldown": "Ridërgo pas {seconds} sekondash"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Verifikimi u Krye me Sukses!",
+        "description": "Email-i juaj është konfirmuar me sukses",
+        "redirecting": "Po ridrejtohet në panelin e kontrollit..."
+      },
+      "error": {
+        "title": "Verifikimi Dështoi",
+        "tryAgainButton": "Provo Përsëri"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Ju lutemi vendosni kodin e verifikimit me 6 shifra",
+      "invalidCode": "Kod verifikimi i pavlefshëm. Ju lutemi provoni përsëri.",
+      "generic": "Ndodhi një gabim gjatë verifikimit. Ju lutemi provoni përsëri.",
+      "resendFailed": "Dështoi dërgimi i kodit të verifikimit. Ju lutemi provoni përsëri."
+    },
+    "backToLogin": "Kthehu te Hyrja",
+    "securityNote": {
+      "title": "Shënim Sigurie:",
+      "points": [
+        "Mos e ndani kodin e verifikimit me askënd",
+        "Kodi i verifikimit është i vlefshëm vetëm për 10 minuta",
+        "Kontrolloni adresën e email-it të dërguesit"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Një kod i ri verifikimi është dërguar në email-in tuaj"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Ndodhi një Gabim - SyriaGPT",
+      "description": "Faqe gabimi e personalizuar për projektin SyriaGPT."
+    },
+    "offlineMessage": "Ju jeni aktualisht jashtë linje",
+    "errorCode": "Gabim {statusCode}",
+    "title": "Ndodhi një Gabim i Papritur",
+    "description": "Ne kërkojmë sinqerisht falje për bezdisjen. Ekipi ynë teknik është njoftuar dhe po punon për të zgjidhur problemin sa më shpejt të jetë e mundur.",
+    "retryButton": "Provo Përsëri",
+    "retryingButton": "Po provon përsëri...",
+    "homeButton": "Faqja Kryesore",
+    "backButton": "Kthehu",
+    "suggestionsTitle": "Çfarë mund të provoni tani:",
+    "suggestion1": "Rifreskimi i faqes mund ta zgjidhë problemin.",
+    "suggestion2": "Ju lutemi kontrolloni lidhjen tuaj të internetit.",
+    "suggestion3": "Nëse problemi vazhdon, mos hezitoni të na kontaktoni.",
+    "accordion": {
+      "title": "Detaje Teknike për Zhvilluesit",
+      "copy": "Kopjo",
+      "copied": "U kopjua",
+      "code": "Kodi:",
+      "message": "Mesazhi:",
+      "digest": "Përmbledhja:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Faqja nuk u Gjet - SyriaGPT",
+      "description": "Faqja që po kërkoni nuk ekziston ose është zhvendosur."
+    },
+    "title": "Duket se jeni humbur nëpër faqe!",
+    "description": "Faqja që po kërkoni nuk ekziston ose është zhvendosur",
+    "currentLocation": "Vendndodhja Aktuale: E Panjohur",
+    "search": {
+      "placeholder": "Kërkoni për faqen që dëshironi...",
+      "button": "Kërko",
+      "searching": "Po kërkon..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Faqja e Mëparshme",
+        "description": "Kthehuni aty ku erdhët"
+      },
+      "homePage": {
+        "title": "Faqja Kryesore",
+        "description": "Fillo nga e para"
+      }
+    },
+    "suggestions": {
+      "title": "Faqe që mund t'ju interesojnë",
+      "items": [
+        { "title": "Faqja Kryesore", "description": "Kthehu në fillim" },
+        { "title": "Biseda", "description": "Fillo një bisedë të re" },
+        { "title": "Ndihma", "description": "Merr ndihmë" },
+        { "title": "Rreth Sirisë", "description": "Zbuloni më shumë" }
+      ]
+    },
+    "history": {
+      "title": "Faqet e Vizituara Së Fundi"
+    },
+    "funFact": {
+      "title": "Ndërsa po gjeni rrugën tuaj...",
+      "facts": [
+        "A e dini? Damasku është kryeqyteti më i vjetër i banuar vazhdimisht në botë!",
+        "A e dini? Alfabeti i parë në histori u shpik në Ugarit, Siri!",
+        "A e dini? Pema e fëstëkut të Alepos mund të jetojë mbi 300 vjet!",
+        "A e dini? Krak des Chevaliers në Siri është një nga kështjellat më të ruajtura në botë!",
+        "A e dini? Trëndafili i Damaskut konsiderohet si një nga llojet më të mira të trëndafilave në botë!"
+      ]
+    },
+    "support": {
+      "message": "Nëse besoni se ky është një gabim, ju lutemi na kontaktoni",
+      "helpCenter": "Qendra e Ndihmës",
+      "technicalSupport": "Mbështetje Teknike"
+    }
+  },
+  "loader": {
+    "title": "po ngarkohet...",
+    "loading": "Ju lutemi prisni një minutë..."
+  }
+}

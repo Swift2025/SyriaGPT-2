@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Den Syriska Artificiella Intelligensen",
+    "newChat": "Ny Chatt",
+    "pastConversations": "Tidigare Konversationer",
+    "lightMode": "Ljust Läge",
+    "darkMode": "Mörkt Läge",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Syrisk Användare",
+    "userEmail": "användare@syriagpt.com",
+    "profile": "Profil",
+    "settings": "Inställningar",
+    "upgradeToPro": "Uppgradera till Pro",
+    "newBadge": "NY",
+    "helpCenter": "Hjälpcenter",
+    "aboutApp": "Om Appen",
+    "logout": "Logga ut",
+    "logoutModal": {
+      "title": "Bekräfta utloggning",
+      "description": "Är du säker på att du vill logga ut från ditt konto?",
+      "cancel": "Avbryt",
+      "confirm": "Ja, logga ut"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Din smarta assistent för att besvara alla dina frågor",
+      "examples": "Exempel",
+      "capabilities": "Förmågor",
+      "limitations": "Begränsningar",
+      "suggestions": {
+        "examples": [
+          "Förklara enkelt hur man skaffar ett ID-kort",
+          "Ge mig de godkända kurserna vid Damaskus universitet",
+          "Vilka är ingredienserna i Mahshi?"
+        ],
+        "capabilities": [
+          "Hur gör man okra och vad är dess historiska koppling?",
+          "Vilka är arrangemangen för det syriska passet?",
+          "Jag behöver information om investeringar"
+        ],
+        "limitations": [
+          "Hur löser man ett datorproblem?",
+          "Vilka är registreringsvillkoren vid Aleppos universitet?",
+          "Ge mig en sammanfattning av dagens nyheter i Syrien"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Skriver..."
+    },
+    "regenerate": "Generera Svar Igen",
+    "input": {
+      "placeholder": "Skriv ditt meddelande här, eller dra en fil för att bifoga...",
+      "attachFile": "Bifoga Fil",
+      "startRecording": "Starta Inspelning",
+      "stopRecording": "Stoppa Inspelning",
+      "removeFile": "Ta bort Fil"
+    },
+    "dragDrop": {
+      "title": "Släpp filer här",
+      "subtitle": "PDF, Word, Text (Max 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Taligenkänning stöds inte i den här webbläsaren. Använd Chrome eller Edge.",
+      "permissionDenied": "Tillåt åtkomst till mikrofonen i dina webbläsarinställningar.",
+      "startFailed": "Det gick inte att starta inspelningen. Kontrollera dina webbläsarinställningar.",
+      "generalError": "Ett fel uppstod vid start av inspelningen. Försök igen.",
+      "no-speech": "Inget tal upptäcktes. Se till att din röst är tydlig och att mikrofonen är nära.",
+      "audio-capture": "Kan inte komma åt mikrofonen. Se till att den är ansluten och att tillstånd har getts.",
+      "not-allowed": "Tillstånd nekades. Tillåt mikrofonanvändning från webbläsarinställningarna.",
+      "network": "Nätverksfel. Kontrollera din internetanslutning.",
+      "service-not-allowed": "Taligenkänningstjänsten är för närvarande inte tillgänglig.",
+      "language-not-supported": "Språket stöds inte. Prova webbläsaren Chrome."
+    },
+    "footer": "Vårt mål är att göra AI-system mer naturliga och säkra att interagera med"
+  },
+  "chat": {
+    "fileAnalysisError": "Ledsen, ett fel uppstod vid analys av filen: {error}",
+    "responseProcessingError": "Ledsen, ett fel uppstod vid bearbetning av svaret.",
+    "networkError": "Ledsen, ett anslutningsfel uppstod. Kontrollera din internetanslutning."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Om SyriaGPT-projektet",
+      "description": "Lär dig om målen och visionen för SyriaGPT-projektet, den smarta assistenten specialiserad på den syriska kontexten."
+    },
+    "header": {
+      "title": "Syriska Arabrepubliken",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "Syrien... är Hjärtat"
+    },
+    "main": {
+      "p1": "Detta är ett banbrytande nationellt projekt som antagits av den syriska regeringen, med syfte att utveckla en avancerad arabisk språkmodell med särskilt fokus på den syriska dialekten. Målet med detta projekt är att vara en kunskaps- och serviceplattform som hjälper medborgare att enkelt och säkert interagera med statliga tjänster och den offentliga och privata sektorn, och förse dem med korrekta och tillförlitliga svar om procedurer, lagar och allmän information.",
+      "p2": "Det utmärker sig genom sitt fokus på det lokala språket och förmågan att förstå dialekter vid sidan av standardarabiska, vilket gör det nära användaren i deras dagliga liv. Projektet säkerställer också dataintegritet genom att vara värd i nationella datacenter och fungerar enligt höga standarder för säkerhet och neutralitet för att säkerställa att resultaten är korrekta och opartiska. Det är utformat för att kunna integreras med e-förvaltningsportaler, officiella applikationer och callcenter, och utgör därmed ett grundläggande steg mot att förbättra den digitala omvandlingen i Syrien.",
+      "p3": "Projektet syftar till att tjäna flera områden som att underlätta statliga förfaranden, stödja utbildning, förenkla hälsoriktlinjer, hjälpa småföretag och sprida nödmeddelanden snabbt och tydligt. Det representerar därmed ett kvalitativt språng i hur medborgare får tillgång till information, där interaktion på naturligt språk blir ett primärt medel för att förenkla transaktioner och föra medborgarna närmare statliga institutioner."
+    },
+    "footer": {
+      "backButton": "Tillbaka till Chatt",
+      "disclaimer": "Vårt mål är att göra AI-system mer naturliga och säkra att interagera med, i linje med den syriska kontexten och dess användares behov. Din feedback och dina förslag hjälper oss att förbättra och utveckla tjänsten för att tjäna dig bättre."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Glömt Lösenord",
+      "description": "Återfå tillgång till ditt SyriaGPT-konto med enkla och säkra steg."
+    },
+    "infoPanel": {
+      "title": "Återställ Ditt Konto Säkert",
+      "description": "Vi är här för att hjälpa dig att återfå tillgång till ditt konto med enkla och säkra steg.",
+      "steps": {
+        "step1": {
+          "title": "Ange din e-postadress",
+          "description": "E-postadressen som är registrerad på ditt SyriaGPT-konto"
+        },
+        "step2": {
+          "title": "Kontrollera din e-post",
+          "description": "Vi skickar dig en säker länk för att återställa ditt lösenord"
+        },
+        "step3": {
+          "title": "Skapa ett nytt lösenord",
+          "description": "Välj ett starkt och säkert lösenord för ditt konto"
+        }
+      },
+      "securityTip": {
+        "title": "Säkerhetstips",
+        "description": "Länken är endast giltig i 15 minuter för att säkerställa ditt kontos säkerhet. Om du inte hittar e-postmeddelandet, kontrollera din skräppostmapp."
+      }
+    },
+    "form": {
+      "title": "Glömt Lösenord",
+      "description": "Ange din e-postadress för att få en återställningslänk",
+      "emailLabel": "E-postadress",
+      "emailPlaceholder": "Ange din e-postadress...",
+      "emailRequiredAlert": "Vänligen ange din e-postadress.",
+      "submitButton": "Skicka Återställningslänk",
+      "loadingButton": "Skickar...",
+      "rememberedPassword": "Kom du ihåg ditt lösenord?",
+      "backToLogin": "Tillbaka till Inloggning"
+    },
+    "successScreen": {
+      "title": "Instruktioner Skickade",
+      "checkEmailTitle": "Kontrollera Din E-post",
+      "description": "Vi har skickat en länk för lösenordsåterställning till:",
+      "tip1": "Kontrollera din inkorg",
+      "tip2": "Glöm inte att kontrollera din skräppostmapp",
+      "tip3": "Länken är endast giltig i 15 minuter",
+      "backToLoginButton": "Tillbaka till Inloggning"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Hjälpcenter - SyriaGPT",
+      "description": "Hitta svar på dina frågor, användarhandböcker och kontakta SyriaGPT:s supportteam."
+    },
+    "header": {
+      "title": "Hjälpcenter",
+      "description": "Välkommen till SyriaGPT:s supportcenter! Vi är här för att hjälpa dig att få den bästa möjliga upplevelsen."
+    },
+    "search": {
+      "placeholder": "Sök efter svar, användarhandböcker eller ställ en fråga..."
+    },
+    "categories": {
+      "title": "Bläddra efter Kategori",
+      "items": [
+        {
+          "title": "Komma igång",
+          "description": "Lär dig grunderna i att använda plattformen och dra nytta av alla tillgängliga funktioner."
+        },
+        {
+          "title": "Kontohantering",
+          "description": "Redigera din profil, hantera prenumerationer och dina säkerhetsinställningar."
+        },
+        {
+          "title": "Avancerade Funktioner",
+          "description": "Använd filbilagor, röstsökning och avancerad artificiell intelligens."
+        },
+        {
+          "title": "Säkerhet & Integritet",
+          "description": "Lär dig hur du skyddar dina data och personuppgifter med de högsta säkerhetsstandarderna."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Vanliga Frågor",
+      "toggleOpen": "Läs Mer",
+      "toggleClose": "Stäng",
+      "items": [
+        {
+          "question": "Hur startar jag en ny chatt?",
+          "answer": "För att starta en ny chatt, klicka helt enkelt på knappen \"+ Ny Chatt\" högst upp i sidofältet. Du kan också använda kortkommandot Ctrl+N för en snabb start."
+        },
+        {
+          "question": "Vilka typer av filer kan jag bifoga?",
+          "answer": "Du kan bifoga PDF-filer, Word-dokument (doc, docx), PowerPoint-filer, textfiler (txt) och bilder (jpg, png, gif). Den maximala storleken för en enskild fil är 10 MB, och du kan bifoga upp till 5 filer per konversation."
+        },
+        {
+          "question": "Sparas mina tidigare konversationer?",
+          "answer": "Ja, dina tidigare konversationer sparas automatiskt och säkert på ditt konto. Du kan komma åt dem från listan \"Tidigare Konversationer\" i sidofältet, organiserade efter datum eller ämne."
+        },
+        {
+          "question": "Hur fungerar ljust och mörkt läge?",
+          "answer": "Du kan växla mellan ljust och mörkt läge med den dedikerade knappen i sidofältet. Systemet sparar automatiskt din preferens och tillämpar den i alla framtida sessioner."
+        },
+        {
+          "question": "Vad är funktionen tal-till-text?",
+          "answer": "Du kan använda din mikrofon för röstinmatning på arabiska eller engelska. Klicka på mikrofonikonen i inmatningsfältet och börja tala. Systemet kommer automatiskt att omvandla ditt tal till text."
+        },
+        {
+          "question": "Kan jag använda SyriaGPT på min mobiltelefon?",
+          "answer": "Ja, SyriaGPT är tillgängligt via webbläsare på alla smarta enheter. Gränssnittet är fullt responsivt och fungerar perfekt på telefoner och surfplattor."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Hittade du inte vad du letade efter?",
+      "description": "Vårt dedikerade supportteam är tillgängligt dygnet runt för att hjälpa dig. Kontakta oss så återkommer vi inom några minuter!",
+      "emailButton": "Kontakta via E-post",
+      "chatButton": "Livechatt",
+      "phoneButton": "Telefonsamtal",
+      "availability": "Tillgänglig 24/7",
+      "responseTime": "Svar inom 5 minuter",
+      "languageSupport": "Support på Arabiska"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Logga in - SyriaGPT",
+      "description": "Logga in på ditt SyriaGPT-konto för att komma åt dina konversationer och avancerade funktioner."
+    },
+    "infoPanel": {
+      "title": "Välkommen Tillbaka",
+      "description": "Fortsätt utforska världen av syrisk artificiell intelligens med",
+      "securityTitle": "Varför är SyriaGPT Säkert?",
+      "features": [
+        {
+          "title": "Avancerat Dataskydd",
+          "description": "Vi använder avancerade krypteringstekniker för att skydda din personliga information"
+        },
+        {
+          "title": "Tvåfaktorsautentisering",
+          "description": "Ett extra skyddslager för att säkerställa ditt kontos säkerhet"
+        },
+        {
+          "title": "Lokal Artificiell Intelligens",
+          "description": "Avancerad syrisk teknologi som förstår arabisk kultur och kontext"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Aktiva Användare" },
+        { "value": "99.9%", "label": "Drifttid" },
+        { "value": "24/7", "label": "Support" }
+      ]
+    },
+    "form": {
+      "title": "Logga in",
+      "description": "Ange dina uppgifter för att komma åt ditt konto",
+      "emailLabel": "E-postadress",
+      "emailPlaceholder": "Ange din e-postadress...",
+      "passwordLabel": "Lösenord",
+      "passwordPlaceholder": "Ange ditt lösenord...",
+      "forgotPassword": "Glömt lösenord?",
+      "showPassword": "Visa lösenord",
+      "hidePassword": "Dölj lösenord",
+      "loginButton": "Logga in",
+      "loadingButton": "Verifierar...",
+      "loginSuccessAlert": "Inloggning lyckades!",
+      "orSeparator": "eller",
+      "noAccount": "Har du inget konto?",
+      "createAccount": "Skapa ett nytt konto"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Integritetspolicy - SyriaGPT",
+      "description": "Lär dig hur dina personuppgifter samlas in, används och skyddas när du använder SyriaGPT-tjänster."
+    },
+    "header": {
+      "title": "Integritetspolicy",
+      "lastUpdated": "Senast uppdaterad: 25 augusti 2025",
+      "effectiveDate": "Gäller Omedelbart"
+    },
+    "infoCards": [
+      {
+        "title": "Fullständigt Skydd",
+        "description": "Dina data skyddas med de senaste krypterings- och säkerhetsteknikerna."
+      },
+      {
+        "title": "Fullständig Kontroll",
+        "description": "Du kontrollerar dina data och kan radera dem när som helst."
+      },
+      {
+        "title": "Fullständig Transparens",
+        "description": "Vi förklarar tydligt vad vi samlar in och hur vi använder det."
+      },
+      {
+        "title": "Ingen Försäljning av Data",
+        "description": "Vi säljer eller delar inte dina data med tredje parter."
+      }
+    ],
+    "toc": {
+      "title": "Innehåll"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduktion",
+        "content": "Välkommen till SyriaGPT. Vi tar din integritet på allvar. Denna policy beskriver de typer av information vi kan samla in från dig eller som du kan tillhandahålla när du besöker eller använder vår applikation, och våra metoder för att samla in, använda, underhålla, skydda och avslöja den informationen."
+      },
+      {
+        "id": "data-collection",
+        "title": "Information Vi Samlar In",
+        "intro": "Vi kan samla in flera typer av information från och om användare av vår tjänst, inklusive:",
+        "points": [
+          "Information du tillhandahåller direkt: såsom ditt namn, e-post och lösenord när du skapar ett konto.",
+          "Användarinnehåll: Meddelanden, frågor och filer du laddar upp till vår tjänst för analys.",
+          "Användningsinformation: Detaljer om din användning av vår tjänst, inklusive trafikdata och användningsloggar.",
+          "Enhetsinformation: Din webbläsartyp, operativsystem och IP-adress."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Hur Vi Använder Din Information",
+        "intro": "Vi använder information som vi samlar in om dig eller som du tillhandahåller oss för följande ändamål:",
+        "points": [
+          "För att tillhandahålla vår tjänst och dess innehåll till dig i bästa möjliga kvalitet.",
+          "För att förbättra och anpassa din upplevelse efter dina behov.",
+          "För att kommunicera med dig om ditt konto eller vår tjänst och viktiga meddelanden.",
+          "För analys- och forskningsändamål för att förbättra våra produkter och tjänster.",
+          "För att säkerställa plattformens säkerhet och förhindra obehörig användning."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Avslöjande av Din Information",
+        "commitmentTitle": "Vårt Kärnåtagande",
+        "commitmentText": "Vi säljer eller hyr inte ut din personliga information till tredje parter. Detta är vårt grundläggande åtagande gentemot dig.",
+        "content": "Vi kan endast avslöja personlig information i följande fall: för att följa ett domstolsbeslut eller lag, eller för att skydda SyriaGPT:s och våra kunders rättigheter och säkerhet från allvarliga säkerhetshot."
+      },
+      {
+        "id": "data-security",
+        "title": "Datasäkerhet",
+        "protectionTitle": "Avancerade Skyddsåtgärder:",
+        "points": [
+          "End-to-end-kryptering för all känslig data",
+          "Säkra servrar skyddade av avancerade brandväggar",
+          "24/7 säkerhetsövervakning för att upptäcka hot",
+          "Regelbundna och krypterade säkerhetskopior för att säkerställa tjänstens kontinuitet",
+          "Periodiska säkerhetstester av oberoende experter"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Dina Rättigheter",
+        "intro": "Som användare av vår tjänst har du följande rättigheter gällande dina personuppgifter:",
+        "rights": [
+          {
+            "title": "Tillgång och Granskning",
+            "description": "Begär en kopia av all din data som lagras hos oss"
+          },
+          {
+            "title": "Rättelse och Uppdatering",
+            "description": "Ändra eller korrigera felaktig information"
+          },
+          {
+            "title": "Fullständig Radering",
+            "description": "Radera ditt konto och all din data permanent"
+          },
+          {
+            "title": "Portabilitet och Export",
+            "description": "Exportera din data i ett läsbart format"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Ändringar i Policyn",
+        "content": "Vår policy är att meddela dig om betydande ändringar 30 dagar innan de träder i kraft. Eventuella ändringar kommer att publiceras på denna sida med ett uppdaterat revisionsdatum. Vi uppmuntrar dig att regelbundet granska denna policy för att hålla dig informerad om hur vi skyddar din information."
+      },
+      {
+        "id": "contact",
+        "title": "Kontakta Oss",
+        "email": "E-post",
+        "phone": "Telefon",
+        "availability": "Integritetsteamet är tillgängligt för att besvara dina frågor från söndag till torsdag, 9:00 - 18:00"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profil - SyriaGPT",
+      "description": "Hantera din personliga information, säkerhetsinställningar och prenumerationsplan i SyriaGPT."
+    },
+    "header": {
+      "title": "Profil",
+      "description": "Hantera din personliga information och kontoinställningar i SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Profilbild",
+      "changeAvatar": "Ändra profilbild",
+      "joinDate": "Gick med den",
+      "currentPlan": "Nuvarande Plan",
+      "freePlan": "Gratis",
+      "conversations": "Konversationer",
+      "activeDays": "Aktiva Dagar"
+    },
+    "personalInfo": {
+      "title": "Personlig Information",
+      "description": "Uppdatera ditt namn, e-post och grundläggande inställningar",
+      "fullName": "Fullständigt Namn",
+      "email": "E-postadress",
+      "editButton": "Redigera Information",
+      "cancelButton": "Avbryt",
+      "saveButton": "Spara Ändringar",
+      "updateSuccess": "Profilen har uppdaterats!"
+    },
+    "security": {
+      "title": "Säkerhet & Lösenord",
+      "description": "Håll ditt konto säkert genom att regelbundet uppdatera ditt lösenord",
+      "currentPassword": "Nuvarande Lösenord",
+      "currentPasswordPlaceholder": "Ange nuvarande lösenord...",
+      "newPassword": "Nytt Lösenord",
+      "newPasswordPlaceholder": "Ange nytt lösenord...",
+      "confirmNewPassword": "Bekräfta Nytt Lösenord",
+      "confirmNewPasswordPlaceholder": "Bekräfta nytt lösenord...",
+      "updateButton": "Uppdatera Lösenord",
+      "passwordMismatch": "De nya lösenorden matchar inte.",
+      "updateSuccess": "Lösenordet har ändrats!"
+    },
+    "subscription": {
+      "title": "Prenumerationsplan",
+      "description": "Du är för närvarande på Gratis-planen - få fler funktioner",
+      "upgradeTitle": "Uppgradera till Pro",
+      "upgradeDescription": "Få ytterligare funktioner och prioriterade svar",
+      "upgradeButton": "Uppgradera Nu"
+    },
+    "dangerZone": {
+      "title": "Farlig Zon",
+      "description": "Dessa åtgärder är oåterkalleliga - fortsätt med försiktighet",
+      "deleteTitle": "Radera Konto Permanent",
+      "deleteDescription": "All din data och dina konversationer kommer att raderas permanent",
+      "deleteButton": "Radera Konto"
+    },
+    "deleteModal": {
+      "title": "Bekräfta Radering av Konto",
+      "message": "Är du helt säker? Ditt konto och all din data kommer att raderas permanent. Denna åtgärd kan inte ångras.",
+      "cancelButton": "Avbryt",
+      "confirmButton": "Bekräfta Radering",
+      "deleteSuccess": "Ditt konto har raderats."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Skapa ett Nytt Konto - SyriaGPT",
+      "description": "Gå med i SyriaGPT-gemenskapen och börja utforska kraften i AI designad för den syriska kontexten."
+    },
+    "infoPanel": {
+      "title": "Gå med i SyriaGPT-gemenskapen",
+      "description": "Upptäck kraften i artificiell intelligens designad specifikt för syrisk kultur och kontext",
+      "features": [
+        {
+          "title": "Avancerad AI",
+          "description": "Moderna teknologier tränade på arabiskt och syriskt innehåll"
+        },
+        {
+          "title": "Garanterad Säkerhet & Integritet",
+          "description": "Avancerat skydd för dina data med kryptering i världsklass"
+        },
+        {
+          "title": "Aktiv Gemenskap",
+          "description": "Gå med tusentals syriska användare som brinner för teknik"
+        },
+        {
+          "title": "Exklusiva Funktioner",
+          "description": "Anpassade verktyg för syriskt och arabiskt innehåll"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT har helt förändrat mitt sätt att arbeta. En djup förståelse för syriskt språk och kultur.\"",
+        "author": "- Ahmed Al-Shami, Utvecklare"
+      }
+    },
+    "form": {
+      "title": "Skapa ett Nytt Konto",
+      "description": "Fyll i följande uppgifter för att skapa ditt konto",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn",
+      "email": "E-postadress",
+      "password": "Lösenord",
+      "confirmPassword": "Bekräfta Lösenord",
+      "placeholder": "Ange {field}...",
+      "emailPlaceholder": "exempel@email.com",
+      "passwordStrength": "Lösenordsstyrka",
+      "strengthLevels": [
+        "Mycket Svagt",
+        "Svagt",
+        "Medel",
+        "Starkt",
+        "Mycket Starkt"
+      ],
+      "submitButton": "Skapa Nytt Konto",
+      "loadingButton": "Skapar konto...",
+      "googleButton": "Registrera dig med Google",
+      "orSeparator": "eller",
+      "hasAccount": "Har du redan ett konto?",
+      "loginLink": "Logga in",
+      "termsAgreement": "Genom att skapa ett konto godkänner du våra",
+      "termsLink": "Användarvillkor",
+      "and": "och",
+      "privacyLink": "Integritetspolicy",
+      "successAlert": "Ditt konto har skapats! Välkommen till SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Måste vara minst 2 tecken",
+      "maxLength": "För långt",
+      "emailRequired": "E-post krävs",
+      "emailInvalid": "Ogiltig e-postadress",
+      "passwordLength": "Lösenordet måste vara minst 8 tecken",
+      "passwordComplexity": "Måste innehålla en stor bokstav, en liten bokstav och en siffra",
+      "passwordMismatch": "Lösenorden matchar inte"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Återställ Lösenord - SyriaGPT",
+      "description": "Ställ in ett nytt, starkt lösenord för ditt SyriaGPT-konto."
+    },
+    "form": {
+      "title": "Ställ in ett Nytt Lösenord",
+      "description": "Välj ett starkt lösenord för att skydda ditt konto.",
+      "newPasswordLabel": "Nytt Lösenord",
+      "confirmPasswordLabel": "Bekräfta Lösenord",
+      "passwordMismatchError": "Lösenorden matchar inte.",
+      "submitButton": "Uppdatera Lösenord",
+      "loadingButton": "Uppdaterar...",
+      "showPasswordAria": "Visa lösenord",
+      "hidePasswordAria": "Dölj lösenord",
+      "mismatchToast": "Se till att lösenorden matchar.",
+      "loadingToast": "Uppdaterar lösenord...",
+      "successToast": "Lösenordet har uppdaterats!"
+    },
+    "strengthIndicator": {
+      "title": "Styrka",
+      "levels": [
+        "Mycket Svagt",
+        "Svagt",
+        "Acceptabelt",
+        "Bra",
+        "Starkt",
+        "Mycket Starkt"
+      ]
+    },
+    "successScreen": {
+      "title": "Lyckades!",
+      "description": "Ditt lösenord har uppdaterats. Du kan nu logga in säkert med dina nya uppgifter.",
+      "backToLoginButton": "Tillbaka till Inloggning"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Inställningar - SyriaGPT",
+      "description": "Anpassa din SyriaGPT-upplevelse, hantera utseende, språk, aviseringar och data."
+    },
+    "header": {
+      "title": "SyriaGPT Inställningar",
+      "description": "Anpassa din personliga upplevelse",
+      "unsavedChanges": "Osparade ändringar"
+    },
+    "appearance": {
+      "title": "Utseende & Visning",
+      "description": "Anpassa applikationens utseende och känsla för att passa dina preferenser",
+      "theme": "Temastil",
+      "themes": {
+        "light": { "label": "Ljust", "description": "Idealisk för användning dagtid" },
+        "dark": {
+          "label": "Mörkt",
+          "description": "Skonsamt för ögonen på natten"
+        },
+        "system": {
+          "label": "System",
+          "description": "Följer dina enhetsinställningar"
+        }
+      },
+      "preview": {
+        "title": "Förhandsgranska Ändringar",
+        "description": "Visa en liveförhandsgranskning av ändringar innan du sparar",
+        "new": "NY"
+      }
+    },
+    "language": {
+      "title": "Språk & Region",
+      "description": "Ställ in språk och regionala inställningar",
+      "interfaceLanguage": {
+        "title": "Gränssnittsspråk",
+        "description": "Språket som används i menyer och interaktiva element",
+        "badge": "Auto"
+      },
+      "languages": {
+        "ar": "العربية (Syrien)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Aviseringar & Ljud",
+      "description": "Kontrollera varningar och ljudeffekter",
+      "enableNotifications": {
+        "title": "Aktivera Aviseringar",
+        "description": "Få varningar för meddelanden och viktiga uppdateringar"
+      },
+      "sounds": {
+        "title": "Ljud",
+        "description": "Spela upp ljud när du skickar och tar emot meddelanden"
+      }
+    },
+    "dataManagement": {
+      "title": "Datahantering",
+      "description": "Kontrollera sparande och delning av dina data",
+      "autoSave": {
+        "title": "Autospara",
+        "description": "Spara dina konversationer automatiskt för att kunna återkomma till dem senare"
+      },
+      "exportData": "Exportera Data",
+      "clearHistory": "Rensa Konversationer"
+    },
+    "advanced": {
+      "title": "Avancerade Inställningar",
+      "description": "Avancerade alternativ för professionella användare",
+      "developerMode": {
+        "title": "Utvecklarläge",
+        "description": "Visa ytterligare teknisk information och utvecklingsalternativ",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Analys",
+        "description": "Hjälp till att förbättra tjänsten genom att skicka anonyma användningsdata"
+      }
+    },
+    "saveBar": {
+      "title": "Vill du spara ändringarna?",
+      "description": "De nya inställningarna kommer att tillämpas omedelbart",
+      "reset": "Återställ",
+      "save": "Spara Ändringar",
+      "saving": "Sparar...",
+      "success": "Inställningarna har sparats!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Bekräfta Radering av Historik",
+        "message": "Är du säker? Alla dina tidigare konversationer kommer att raderas permanent. Denna åtgärd kan inte ångras.",
+        "confirm": "Ja, radera",
+        "success": "Konversationshistoriken har rensats."
+      },
+      "exportData": {
+        "title": "Exportera Data",
+        "message": "En kopia av all din data kommer att genereras och skickas till din e-post. Vill du fortsätta?",
+        "confirm": "Ja, fortsätt",
+        "success": "Exporterar din data..."
+      },
+      "cancel": "Avbryt"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Användarvillkor - SyriaGPT",
+      "description": "Läs villkoren för att använda SyriaGPT-tjänster."
+    },
+    "header": {
+      "switchLanguage": "Byt till Arabiska",
+      "print": "Skriv ut"
+    },
+    "title": "Användarvillkor",
+    "subtitle": "Senast uppdaterad: 24 augusti 2025",
+    "intro": "Välkommen till SyriaGPT. Genom att använda våra tjänster godkänner du dessa villkor. Läs dem noggrant.",
+    "sectionsTitle": "Avsnitt",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Godkännande av Villkor",
+        "content": "Genom att komma åt och använda SyriaGPT godkänner du att vara bunden av dessa Användarvillkor. Om du inte samtycker till någon del av dessa villkor, bör du inte använda våra tjänster."
+      },
+      {
+        "id": "services",
+        "title": "2. Beskrivning av Tjänster",
+        "content": "SyriaGPT är en AI-assistent utformad för att ge hjälp inom olika områden relaterade till den syriska kontexten."
+      },
+      {
+        "id": "usage",
+        "title": "3. Godtagbar Användning",
+        "content": "Du måste använda våra tjänster lagligt och etiskt. Du är förbjuden att använda tjänsten för olagliga eller skadliga ändamål."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Integritet och Data",
+        "content": "Vi respekterar din integritet och är engagerade i att skydda dina data. Vi samlar endast in nödvändiga data för att tillhandahålla tjänsten och kommer inte att dela dem utan ditt samtycke."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Immateriella Rättigheter",
+        "content": "Alla rättigheter förbehålls SyriaGPT. Innehållet, designen och logotyperna är vår egendom. Innehållet du skapar med tjänsten förblir ditt."
+      },
+      {
+        "id": "liability",
+        "title": "6. Ansvarsfriskrivning",
+        "content": "Tjänsten tillhandahålls \"i befintligt skick\" utan några garantier. Vi garanterar inte riktigheten eller fullständigheten av den information som tillhandahålls och är inte ansvariga för några skador som uppstår från dess användning."
+      },
+      {
+        "id": "termination",
+        "title": "7. Uppsägning av Tjänst",
+        "content": "Vi förbehåller oss rätten att avsluta eller stänga av ditt konto vid brott mot dessa villkor eller vid skadligt eller olagligt beteende."
+      },
+      {
+        "id": "contact",
+        "title": "8. Kontakta Oss",
+        "content": "För eventuella frågor om dessa villkor, vänligen kontakta oss via e-post: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Jag har läst och godkänner villkoren",
+    "continueButton": "Fortsätt",
+    "backToTop": "Tillbaka till Toppen",
+    "expandAll": "Expandera Alla",
+    "collapseAll": "Fäll ihop Alla",
+    "readingProgress": "Läsframsteg",
+    "copyright": "© {year} SyriaGPT. Alla rättigheter förbehållna."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Uppgradera till Pro - SyriaGPT",
+      "description": "Njut av obegränsade möjligheter, överlägsen hastighet och prioriterad tillgång till nya funktioner med SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Uppgradera till Pro",
+      "description": "Njut av obegränsade möjligheter, överlägsen hastighet och prioriterad tillgång till nya funktioner"
+    },
+    "stats": [
+      { "value": "10x", "label": "Snabbare Svar" },
+      { "value": "∞", "label": "Obegränsade Meddelanden" },
+      { "value": "24/7", "label": "Kontinuerlig Support" }
+    ],
+    "billingToggle": {
+      "monthly": "Månadsvis",
+      "yearly": "Årsvis",
+      "saving": "Spara 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Gratis Plan",
+        "subtitle": "Nuvarande Plan",
+        "price": "$0",
+        "period": "Livstid",
+        "features": [
+          "Tillgång till grundmodellen",
+          "20 meddelanden per dag",
+          "Standard svarshastighet",
+          "Grundläggande funktioner"
+        ],
+        "buttonText": "Din Nuvarande Plan"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "För yrkesverksamma och företag",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "per månad",
+        "periodYearly": "per år",
+        "popular": "Mest Populär",
+        "features": [
+          "Avancerad GPT-4-modell",
+          "Obegränsade meddelanden",
+          "Överlägsen svarshastighet",
+          "Prioriterad tillgång till nya funktioner",
+          "Specialiserad teknisk support",
+          "Förbättrat gränssnitt utan annonser"
+        ],
+        "buttonText": "Uppgradera Nu"
+      }
+    },
+    "comparison": {
+      "title": "Jämför Planer",
+      "featureHeader": "Funktioner",
+      "freeHeader": "Gratis",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Tillgång till grundmodellen", "free": true, "pro": true },
+        { "text": "Begränsade dagliga meddelanden (20)", "free": true, "pro": false },
+        { "text": "Obegränsade meddelanden", "free": false, "pro": true },
+        {
+          "text": "Tillgång till den avancerade GPT-4-modellen",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Standard svarshastighet", "free": true, "pro": false },
+        {
+          "text": "Överlägsen svarshastighet (10x snabbare)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Prioriterad tillgång till nya funktioner",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Specialiserad teknisk support",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Gränssnitt utan annonser", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Vanliga Frågor",
+      "toggleOpen": "Läs Mer",
+      "toggleClose": "Stäng",
+      "items": [
+        {
+          "question": "Kan jag avbryta min prenumeration när som helst?",
+          "answer": "Ja, självklart. Du kan avbryta din Pro-planprenumeration när som helst från sidan \"Kontohantering\". Du kommer att fortsätta ha tillgång till Pro-funktioner till slutet av den aktuella faktureringsperioden, och inga ytterligare avgifter kommer att debiteras."
+        },
+        {
+          "question": "Vilka betalningsmetoder accepteras?",
+          "answer": "Vi accepterar alla större kredit- och betalkort (Visa, MasterCard, American Express) samt Sham Cash och lokala e-plånböcker. Alla betalningar behandlas säkert och krypterat via vår partner, Stripe."
+        },
+        {
+          "question": "Vad händer i slutet av den årliga faktureringsperioden?",
+          "answer": "Din årliga prenumeration förnyas automatiskt om du inte avbryter den från dina kontoinställningar. Vi skickar ett påminnelsemejl en vecka före förnyelsedatumet med detaljer om det förfallna beloppet."
+        },
+        {
+          "question": "Kan jag få en återbetalning?",
+          "answer": "Ja, vi erbjuder en fullständig 30-dagars pengarna-tillbaka-garanti från prenumerationsdatumet om du av någon anledning inte är nöjd med tjänsten. Kontakta bara vårt supportteam, så behandlar vi din återbetalningsbegäran omedelbart."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Redo att Komma Igång?",
+      "description": "Gå med tusentals användare som har valt SyriaGPT Pro för en överlägsen AI-upplevelse",
+      "buttonText": "Börja Nu för {price}",
+      "guarantee": "30-dagars full pengarna-tillbaka-garanti"
+    },
+    "alert": "Du kommer att omdirigeras till betalningssidan..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Verifiera E-post - SyriaGPT",
+      "description": "Ange verifieringskoden som skickats till din e-post för att bekräfta ditt SyriaGPT-konto."
+    },
+    "header": {
+      "title": "Verifiera Din E-post",
+      "description": "Ange verifieringskoden som skickats till"
+    },
+    "form": {
+      "label": "6-siffrig verifieringskod",
+      "verifyButton": "Verifiera Kod",
+      "verifyingButton": "Verifierar...",
+      "resend": {
+        "question": "Fick du inte koden?",
+        "resendButton": "Skicka Kod Igen",
+        "resendingButton": "Skickar igen...",
+        "cooldown": "Skicka igen om {seconds} sekunder"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Verifiering Lyckades!",
+        "description": "Din e-post har bekräftats",
+        "redirecting": "Omdirigerar till instrumentpanelen..."
+      },
+      "error": {
+        "title": "Verifiering Misslyckades",
+        "tryAgainButton": "Försök Igen"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Ange den 6-siffriga verifieringskoden",
+      "invalidCode": "Ogiltig verifieringskod. Försök igen.",
+      "generic": "Ett fel uppstod under verifieringen. Försök igen.",
+      "resendFailed": "Det gick inte att skicka verifieringskoden. Försök igen."
+    },
+    "backToLogin": "Tillbaka till Inloggning",
+    "securityNote": {
+      "title": "Säkerhetsanmärkning:",
+      "points": [
+        "Dela inte verifieringskoden med någon",
+        "Verifieringskoden är endast giltig i 10 minuter",
+        "Kontrollera avsändarens e-postadress"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "En ny verifieringskod har skickats till din e-post"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Ett Fel Uppstod - SyriaGPT",
+      "description": "Anpassad felsida för SyriaGPT-projektet."
+    },
+    "offlineMessage": "Du är för närvarande offline",
+    "errorCode": "Fel {statusCode}",
+    "title": "Ett Oväntat Fel Uppstod",
+    "description": "Vi ber uppriktigt om ursäkt för besväret. Vårt tekniska team har meddelats och arbetar för att lösa problemet så snabbt som möjligt.",
+    "retryButton": "Försök Igen",
+    "retryingButton": "Försöker igen...",
+    "homeButton": "Hem",
+    "backButton": "Tillbaka",
+    "suggestionsTitle": "Vad du kan prova nu:",
+    "suggestion1": "Att uppdatera sidan kan lösa problemet.",
+    "suggestion2": "Kontrollera din internetanslutning.",
+    "suggestion3": "Om problemet kvarstår, tveka inte att kontakta oss.",
+    "accordion": {
+      "title": "Tekniska Detaljer för Utvecklare",
+      "copy": "Kopiera",
+      "copied": "Kopierad",
+      "code": "Kod:",
+      "message": "Meddelande:",
+      "digest": "Digest:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Sidan Hittades Inte - SyriaGPT",
+      "description": "Sidan du letar efter finns inte eller har flyttats."
+    },
+    "title": "Det verkar som att du har gått vilse bland sidorna!",
+    "description": "Sidan du letar efter finns inte eller har flyttats",
+    "currentLocation": "Nuvarande Plats: Okänd",
+    "search": {
+      "placeholder": "Sök efter sidan du vill ha...",
+      "button": "Sök",
+      "searching": "Söker..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Föregående Sida",
+        "description": "Gå tillbaka dit du kom ifrån"
+      },
+      "homePage": {
+        "title": "Hemsida",
+        "description": "Börja om"
+      }
+    },
+    "suggestions": {
+      "title": "Sidor du kanske är intresserad av",
+      "items": [
+        { "title": "Hemsida", "description": "Återgå till början" },
+        { "title": "Chatt", "description": "Starta en ny konversation" },
+        { "title": "Hjälp", "description": "Få hjälp" },
+        { "title": "Om Syrien", "description": "Upptäck mer" }
+      ]
+    },
+    "history": {
+      "title": "Nyligen Besökta Sidor"
+    },
+    "funFact": {
+      "title": "Medan du hittar din väg...",
+      "facts": [
+        "Visste du att? Damaskus är den äldsta kontinuerligt bebodda huvudstaden i världen!",
+        "Visste du att? Det första alfabetet i historien uppfanns i Ugarit, Syrien!",
+        "Visste du att? Aleppopistageträdet kan leva i över 300 år!",
+        "Visste du att? Krak des Chevaliers i Syrien är en av de bäst bevarade borgarna i världen!",
+        "Visste du att? Damaskusrosen anses vara en av de finaste rossorterna i världen!"
+      ]
+    },
+    "support": {
+      "message": "Om du tror att detta är ett fel, vänligen kontakta oss",
+      "helpCenter": "Hjälpcenter",
+      "technicalSupport": "Teknisk Support"
+    }
+  },
+  "loader": {
+    "title": "laddar...",
+    "loading": "Vänligen vänta en stund..."
+  }
+}

@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "A Szíriai Mesterséges Intelligencia",
+    "newChat": "Új csevegés",
+    "pastConversations": "Múltbeli beszélgetések",
+    "lightMode": "Világos mód",
+    "darkMode": "Sötét mód",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Szíriai felhasználó",
+    "userEmail": "user@syriagpt.com",
+    "profile": "Profil",
+    "settings": "Beállítások",
+    "upgradeToPro": "Frissítés Pro verzióra",
+    "newBadge": "ÚJ",
+    "helpCenter": "Segítségközpont",
+    "aboutApp": "Az alkalmazásról",
+    "logout": "Kijelentkezés",
+    "logoutModal": {
+      "title": "Kijelentkezés megerősítése",
+      "description": "Biztosan ki szeretne jelentkezni a fiókjából?",
+      "cancel": "Mégse",
+      "confirm": "Igen, kijelentkezés"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Az Ön intelligens asszisztense, hogy minden kérdésére válaszoljon",
+      "examples": "Példák",
+      "capabilities": "Képességek",
+      "limitations": "Korlátozások",
+      "suggestions": {
+        "examples": [
+          "Magyarázza el, hogyan lehet egyszerűen személyi igazolványt szerezni",
+          "Adja meg a Damaszkuszi Egyetemen jóváhagyott kurzusokat",
+          "Melyek a Mahshi hozzávalói?"
+        ],
+        "capabilities": [
+          "Hogyan készítsünk okrát és mi a történelmi kapcsolata?",
+          "Milyen rendelkezések vonatkoznak a szíriai útlevélre?",
+          "Információra van szükségem a befektetésekről"
+        ],
+        "limitations": [
+          "Hogyan oldjunk meg egy számítógépes problémát?",
+          "Melyek a beiratkozási feltételek az Aleppói Egyetemen?",
+          "Adjon egy összefoglalót a mai szíriai hírekről"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Gépel..."
+    },
+    "regenerate": "Válasz újragenerálása",
+    "input": {
+      "placeholder": "Írja ide az üzenetét, vagy húzzon ide egy fájlt a csatoláshoz...",
+      "attachFile": "Fájl csatolása",
+      "startRecording": "Felvétel indítása",
+      "stopRecording": "Felvétel leállítása",
+      "removeFile": "Fájl eltávolítása"
+    },
+    "dragDrop": {
+      "title": "Húzza ide a fájlokat",
+      "subtitle": "PDF, Word, Szöveg (Max. 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "A beszédfelismerés nem támogatott ebben a böngészőben. Kérjük, használja a Chrome-ot vagy az Edge-et.",
+      "permissionDenied": "Kérjük, engedélyezze a mikrofonhoz való hozzáférést a böngésző beállításaiban.",
+      "startFailed": "A felvétel indítása sikertelen. Ellenőrizze a böngésző beállításait.",
+      "generalError": "Hiba történt a felvétel indításakor. Kérjük, próbálja újra.",
+      "no-speech": "Nem észlelt beszédet. Győződjön meg róla, hogy a hangja tiszta és a mikrofon közel van.",
+      "audio-capture": "Nem lehet hozzáférni a mikrofonhoz. Győződjön meg róla, hogy csatlakoztatva van és az engedély meg van adva.",
+      "not-allowed": "Az engedélyt megtagadták. Kérjük, engedélyezze a mikrofon használatát a böngésző beállításaiban.",
+      "network": "Hálózati hiba. Kérjük, ellenőrizze az internetkapcsolatát.",
+      "service-not-allowed": "A beszédfelismerő szolgáltatás jelenleg nem elérhető.",
+      "language-not-supported": "A nyelv nem támogatott. Próbálja meg a Chrome böngészőt."
+    },
+    "footer": "Célunk, hogy az MI-rendszerekkel való interakciót természetesebbé és biztonságosabbá tegyük"
+  },
+  "chat": {
+    "fileAnalysisError": "Sajnáljuk, hiba történt a fájl elemzése közben: {error}",
+    "responseProcessingError": "Sajnáljuk, hiba történt a válasz feldolgozása közben.",
+    "networkError": "Sajnáljuk, csatlakozási hiba történt. Kérjük, ellenőrizze az internetkapcsolatát."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "A SyriaGPT projektről",
+      "description": "Ismerje meg a SyriaGPT projekt céljait és jövőképét, a szíriai kontextusra szakosodott intelligens asszisztenst."
+    },
+    "header": {
+      "title": "Szíriai Arab Köztársaság",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "Szíria... a Szív"
+    },
+    "main": {
+      "p1": "Ez egy úttörő nemzeti projekt, amelyet a szíriai kormány fogadott el, és célja egy fejlett arab nyelvi modell kifejlesztése, különös tekintettel a szíriai dialektusra. A projekt célja, hogy egy tudás- és szolgáltatási platform legyen, amely segíti a polgárokat a kormányzati szolgáltatásokkal, valamint az állami és a magánszektorral való egyszerű és biztonságos interakcióban, pontos és megbízható válaszokat adva nekik az eljárásokról, törvényekről és általános információkról.",
+      "p2": "Különlegessége a helyi nyelvre való összpontosítás és a dialektusok megértésének képessége a standard arab mellett, ami közelebb hozza a felhasználóhoz a mindennapi életében. A projekt a nemzeti adatközpontokban való tárolással biztosítja az adatvédelmet is, és magas biztonsági és semlegességi normák szerint működik, hogy a kimenetek pontosak és elfogulatlanok legyenek. Úgy tervezték, hogy integrálható legyen az e-kormányzati portálokkal, hivatalos alkalmazásokkal és call centerekkel, így alapvető lépést jelent a digitális átalakulás fokozása felé Szíriában.",
+      "p3": "A projekt több területet kíván szolgálni, mint például a kormányzati eljárások megkönnyítése, az oktatás támogatása, az egészségügyi iránymutatások egyszerűsítése, a kisvállalkozások segítése és a sürgősségi üzenetek gyors és egyértelmű terjesztése. Így minőségi ugrást jelent abban, ahogyan a polgárok hozzáférnek az információkhoz, ahol a természetes nyelvi interakció elsődleges eszközzé válik a tranzakciók egyszerűsítésére és a polgárok és az állami intézmények közötti távolság csökkentésére."
+    },
+    "footer": {
+      "backButton": "Vissza a csevegéshez",
+      "disclaimer": "Célunk, hogy az MI-rendszerekkel való interakciót természetesebbé és biztonságosabbá tegyük, összhangban a szíriai kontextussal és a felhasználók igényeivel. Visszajelzései és javaslatai segítenek nekünk a szolgáltatás javításában és fejlesztésében, hogy jobban szolgálhassuk Önt."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Elfelejtett jelszó",
+      "description": "Szerezze vissza hozzáférését SyriaGPT-fiókjához egyszerű és biztonságos lépésekkel."
+    },
+    "infoPanel": {
+      "title": "Állítsa helyre fiókját biztonságosan",
+      "description": "Azért vagyunk itt, hogy segítsünk Önnek egyszerű és biztonságos lépésekkel visszaszerezni a hozzáférését a fiókjához.",
+      "steps": {
+        "step1": {
+          "title": "Adja meg az e-mail címét",
+          "description": "A SyriaGPT-fiókjához regisztrált e-mail cím"
+        },
+        "step2": {
+          "title": "Ellenőrizze az e-mailjeit",
+          "description": "Küldünk Önnek egy biztonságos linket a jelszó visszaállításához"
+        },
+        "step3": {
+          "title": "Hozzon létre egy új jelszót",
+          "description": "Válasszon egy erős és biztonságos jelszót a fiókjához"
+        }
+      },
+      "securityTip": {
+        "title": "Biztonsági tipp",
+        "description": "A link csak 15 percig érvényes a fiókja biztonságának garantálása érdekében. Ha nem találja az e-mailt, ellenőrizze a spam mappáját."
+      }
+    },
+    "form": {
+      "title": "Elfelejtett jelszó",
+      "description": "Adja meg az e-mail címét a helyreállítási link fogadásához",
+      "emailLabel": "E-mail cím",
+      "emailPlaceholder": "Adja meg az e-mail címét...",
+      "emailRequiredAlert": "Kérjük, adja meg az e-mail címét.",
+      "submitButton": "Helyreállítási link küldése",
+      "loadingButton": "Küldés...",
+      "rememberedPassword": "Eszébe jutott a jelszava?",
+      "backToLogin": "Vissza a bejelentkezéshez"
+    },
+    "successScreen": {
+      "title": "Utasítások elküldve",
+      "checkEmailTitle": "Ellenőrizze az e-mailjeit",
+      "description": "Jelszó-helyreállítási linket küldtünk a következő címre:",
+      "tip1": "Ellenőrizze a beérkező leveleit",
+      "tip2": "Ne felejtse el ellenőrizni a spam mappáját",
+      "tip3": "A link csak 15 percig érvényes",
+      "backToLoginButton": "Vissza a bejelentkezéshez"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Segítségközpont - SyriaGPT",
+      "description": "Találjon válaszokat kérdéseire, felhasználói útmutatókat, és lépjen kapcsolatba a SyriaGPT támogatási csapatával."
+    },
+    "header": {
+      "title": "Segítségközpont",
+      "description": "Üdvözöljük a SyriaGPT támogatási központjában! Azért vagyunk itt, hogy segítsünk Önnek a lehető legjobb élmény elérésében."
+    },
+    "search": {
+      "placeholder": "Keressen válaszokat, felhasználói útmutatókat, vagy tegyen fel egy kérdést..."
+    },
+    "categories": {
+      "title": "Böngészés kategória szerint",
+      "items": [
+        {
+          "title": "Első lépések",
+          "description": "Ismerje meg a platform használatának alapjait, és használja ki az összes rendelkezésre álló funkciót."
+        },
+        {
+          "title": "Fiókkezelés",
+          "description": "Szerkessze profilját, kezelje az előfizetéseket és a biztonsági beállításokat."
+        },
+        {
+          "title": "Haladó funkciók",
+          "description": "Használja ki a fájlcsatolmányokat, a hangalapú keresést és a fejlett mesterséges intelligenciát."
+        },
+        {
+          "title": "Biztonság és adatvédelem",
+          "description": "Ismerje meg, hogyan védheti meg adatait és személyes információit a legmagasabb biztonsági szabványokkal."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Gyakran Ismételt Kérdések",
+      "toggleOpen": "Tovább olvasom",
+      "toggleClose": "Bezárás",
+      "items": [
+        {
+          "question": "Hogyan indíthatok új csevegést?",
+          "answer": "Új csevegés indításához egyszerűen kattintson az oldalsáv tetején található „+ Új csevegés” gombra. A gyors indításhoz használhatja a Ctrl+N billentyűkombinációt is."
+        },
+        {
+          "question": "Milyen típusú fájlokat csatolhatok?",
+          "answer": "Csatolhat PDF-fájlokat, Word-dokumentumokat (doc, docx), PowerPoint-fájlokat, szöveges fájlokat (txt) és képeket (jpg, png, gif). Egyetlen fájl maximális mérete 10 MB, és beszélgetésenként legfeljebb 5 fájlt csatolhat."
+        },
+        {
+          "question": "Elmentődnek a múltbeli beszélgetéseim?",
+          "answer": "Igen, a múltbeli beszélgetései automatikusan és biztonságosan elmentődnek a fiókjába. Az oldalsáv „Múltbeli beszélgetések” listájából érheti el őket, dátum vagy téma szerint rendezve."
+        },
+        {
+          "question": "Hogyan működik a világos és a sötét mód?",
+          "answer": "Az oldalsávban található dedikált gombbal válthat a világos és a sötét mód között. A rendszer automatikusan elmenti a preferenciáját, és minden jövőbeli munkamenetben alkalmazza."
+        },
+        {
+          "question": "Mi a hang-szöveg funkció?",
+          "answer": "Használhatja a mikrofonját arab vagy angol nyelvű hangdiktáláshoz. Kattintson a beviteli sávban lévő mikrofon ikonra, és kezdjen el beszélni. A rendszer automatikusan szöveggé alakítja a beszédét."
+        },
+        {
+          "question": "Használhatom a SyriaGPT-t a mobiltelefonomon?",
+          "answer": "Igen, a SyriaGPT minden okoseszközön elérhető webböngészőn keresztül. A felület teljesen reszponzív, és tökéletesen működik telefonokon és táblagépeken."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Nem találta, amit keresett?",
+      "description": "Elkötelezett támogatói csapatunk éjjel-nappal rendelkezésre áll, hogy segítsen Önnek. Lépjen kapcsolatba velünk, és perceken belül válaszolunk!",
+      "emailButton": "Kapcsolatfelvétel e-mailben",
+      "chatButton": "Élő csevegés",
+      "phoneButton": "Telefonhívás",
+      "availability": "Elérhető 24/7",
+      "responseTime": "Válasz 5 percen belül",
+      "languageSupport": "Arab nyelvű támogatás"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Bejelentkezés - SyriaGPT",
+      "description": "Jelentkezzen be SyriaGPT-fiókjába a beszélgetések és a haladó funkciók eléréséhez."
+    },
+    "infoPanel": {
+      "title": "Üdvözöljük újra",
+      "description": "Folytassa a szíriai mesterséges intelligencia világának felfedezését a",
+      "securityTitle": "Miért biztonságos a SyriaGPT?",
+      "features": [
+        {
+          "title": "Fejlett adatvédelem",
+          "description": "Fejlett titkosítási technológiákat használunk személyes adatainak védelmére"
+        },
+        {
+          "title": "Kétfaktoros hitelesítés",
+          "description": "Extra védelmi réteg a fiókja biztonságának garantálásához"
+        },
+        {
+          "title": "Helyi mesterséges intelligencia",
+          "description": "Fejlett szíriai technológia, amely megérti az arab kultúrát és kontextust"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Aktív felhasználók" },
+        { "value": "99.9%", "label": "Üzemidő" },
+        { "value": "24/7", "label": "Támogatás" }
+      ]
+    },
+    "form": {
+      "title": "Bejelentkezés",
+      "description": "Adja meg a hitelesítő adatait a fiókjához való hozzáféréshez",
+      "emailLabel": "E-mail cím",
+      "emailPlaceholder": "Adja meg az e-mail címét...",
+      "passwordLabel": "Jelszó",
+      "passwordPlaceholder": "Adja meg a jelszavát...",
+      "forgotPassword": "Elfelejtette a jelszavát?",
+      "showPassword": "Jelszó megjelenítése",
+      "hidePassword": "Jelszó elrejtése",
+      "loginButton": "Bejelentkezés",
+      "loadingButton": "Ellenőrzés...",
+      "loginSuccessAlert": "Sikeres bejelentkezés!",
+      "orSeparator": "vagy",
+      "noAccount": "Nincs fiókja?",
+      "createAccount": "Új fiók létrehozása"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Adatvédelmi irányelvek - SyriaGPT",
+      "description": "Ismerje meg, hogyan gyűjtik, használják és védik személyes adatait a SyriaGPT szolgáltatások használata során."
+    },
+    "header": {
+      "title": "Adatvédelmi irányelvek",
+      "lastUpdated": "Utolsó frissítés: 2025. augusztus 25.",
+      "effectiveDate": "Azonnal hatályba lép"
+    },
+    "infoCards": [
+      {
+        "title": "Teljes védelem",
+        "description": "Adatait a legújabb titkosítási és biztonsági technológiák védik."
+      },
+      {
+        "title": "Teljes kontroll",
+        "description": "Ön irányítja az adatait, és bármikor törölheti őket."
+      },
+      {
+        "title": "Teljes átláthatóság",
+        "description": "Világosan elmagyarázzuk, mit gyűjtünk és hogyan használjuk fel."
+      },
+      {
+        "title": "Nincs adatértékesítés",
+        "description": "Nem adjuk el és nem osztjuk meg adatait harmadik felekkel."
+      }
+    ],
+    "toc": {
+      "title": "Tartalomjegyzék"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Bevezetés",
+        "content": "Üdvözöljük a SyriaGPT-nél. Komolyan vesszük az Ön adatvédelmét. Ez az irányelv leírja azokat az információtípusokat, amelyeket gyűjthetünk Öntől, vagy amelyeket Ön megadhat, amikor meglátogatja vagy használja az alkalmazásunkat, valamint a gyakorlatainkat az információk gyűjtésére, felhasználására, karbantartására, védelmére és közzétételére."
+      },
+      {
+        "id": "data-collection",
+        "title": "Az általunk gyűjtött információk",
+        "intro": "Szolgáltatásunk felhasználóitól és róluk többféle információt gyűjthetünk, többek között:",
+        "points": [
+          "Közvetlenül Ön által megadott információk: például a neve, e-mail címe és jelszava, amikor fiókot hoz létre.",
+          "Felhasználói tartalom: Az üzenetek, kérdések és fájlok, amelyeket elemzés céljából feltölt a szolgáltatásunkba.",
+          "Használati információk: A szolgáltatásunk használatának részletei, beleértve a forgalmi adatokat és a használati naplókat.",
+          "Eszközinformációk: A böngésző típusa, az operációs rendszer és az IP-cím."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Hogyan használjuk fel az Ön adatait",
+        "intro": "Az Önről gyűjtött vagy Ön által megadott információkat a következő célokra használjuk fel:",
+        "points": [
+          "Hogy a lehető legjobb minőségben nyújtsuk Önnek a szolgáltatásunkat és annak tartalmát.",
+          "Hogy javítsuk és személyre szabjuk az Ön élményét az Ön igényeinek megfelelően.",
+          "Hogy kommunikáljunk Önnel a fiókjáról vagy a szolgáltatásunkról és a fontos értesítésekről.",
+          "Elemzési és kutatási célokra termékeink és szolgáltatásaink javítása érdekében.",
+          "A platform biztonságának garantálása és a jogosulatlan használat megakadályozása érdekében."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Az Ön adatainak közzététele",
+        "commitmentTitle": "Alapvető kötelezettségvállalásunk",
+        "commitmentText": "Személyes adatait nem adjuk el és nem adjuk bérbe harmadik feleknek. Ez az alapvető kötelezettségvállalásunk Ön felé.",
+        "content": "Személyes adatokat csak a következő esetekben tehetünk közzé: bírósági végzésnek vagy törvénynek való megfelelés érdekében, vagy a SyriaGPT és ügyfeleink jogainak és biztonságának védelme érdekében súlyos biztonsági fenyegetésekkel szemben."
+      },
+      {
+        "id": "data-security",
+        "title": "Adatbiztonság",
+        "protectionTitle": "Fejlett védelmi intézkedések:",
+        "points": [
+          "Végpontok közötti titkosítás minden érzékeny adathoz",
+          "Fejlett tűzfalakkal védett biztonságos szerverek",
+          "24/7 biztonsági felügyelet a fenyegetések észlelésére",
+          "Rendszeres és titkosított biztonsági mentések a szolgáltatás folytonosságának biztosítása érdekében",
+          "Független szakértők által végzett időszakos biztonsági tesztek"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Az Ön jogai",
+        "intro": "Szolgáltatásunk felhasználójaként a következő jogokkal rendelkezik személyes adataival kapcsolatban:",
+        "rights": [
+          {
+            "title": "Hozzáférés és felülvizsgálat",
+            "description": "Kérjen másolatot az összes nálunk tárolt adatáról"
+          },
+          {
+            "title": "Helyesbítés és frissítés",
+            "description": "Módosítson vagy javítson ki minden pontatlan információt"
+          },
+          {
+            "title": "Teljes törlés",
+            "description": "Véglegesen törölje fiókját és minden adatát"
+          },
+          {
+            "title": "Hordozhatóság és exportálás",
+            "description": "Exportálja adatait olvasható formátumban"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Az irányelvek módosítása",
+        "content": "Irányelvünk, hogy minden jelentős változásról 30 nappal a hatálybalépésük előtt értesítjük Önt. Minden változást ezen az oldalon teszünk közzé frissített felülvizsgálati dátummal. Javasoljuk, hogy rendszeresen tekintse át ezt az irányelvet, hogy tájékozott maradjon arról, hogyan védjük az Ön adatait."
+      },
+      {
+        "id": "contact",
+        "title": "Lépjen kapcsolatba velünk",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "availability": "Az adatvédelmi csapat vasárnaptól csütörtökig, 9 és 18 óra között áll rendelkezésre kérdései megválaszolására"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profil - SyriaGPT",
+      "description": "Kezelje személyes adatait, biztonsági beállításait és előfizetési tervét a SyriaGPT-ben."
+    },
+    "header": {
+      "title": "Profil",
+      "description": "Kezelje személyes adatait és fiókbeállításait a SyriaGPT-ben"
+    },
+    "sidebar": {
+      "avatarAlt": "Profilkép",
+      "changeAvatar": "Profilkép módosítása",
+      "joinDate": "Csatlakozás dátuma",
+      "currentPlan": "Jelenlegi terv",
+      "freePlan": "Ingyenes",
+      "conversations": "Beszélgetések",
+      "activeDays": "Aktív napok"
+    },
+    "personalInfo": {
+      "title": "Személyes adatok",
+      "description": "Frissítse nevét, e-mail címét és alapvető beállításait",
+      "fullName": "Teljes név",
+      "email": "E-mail cím",
+      "editButton": "Adatok szerkesztése",
+      "cancelButton": "Mégse",
+      "saveButton": "Változtatások mentése",
+      "updateSuccess": "Profil sikeresen frissítve!"
+    },
+    "security": {
+      "title": "Biztonság és jelszó",
+      "description": "Tartsa biztonságban fiókját a jelszó rendszeres frissítésével",
+      "currentPassword": "Jelenlegi jelszó",
+      "currentPasswordPlaceholder": "Adja meg a jelenlegi jelszót...",
+      "newPassword": "Új jelszó",
+      "newPasswordPlaceholder": "Adja meg az új jelszót...",
+      "confirmNewPassword": "Új jelszó megerősítése",
+      "confirmNewPasswordPlaceholder": "Erősítse meg az új jelszót...",
+      "updateButton": "Jelszó frissítése",
+      "passwordMismatch": "Az új jelszavak nem egyeznek.",
+      "updateSuccess": "Jelszó sikeresen megváltoztatva!"
+    },
+    "subscription": {
+      "title": "Előfizetési terv",
+      "description": "Jelenleg az ingyenes tervet használja - szerezzen több funkciót",
+      "upgradeTitle": "Frissítés Pro verzióra",
+      "upgradeDescription": "Szerezzen további funkciókat és elsőbbségi válaszokat",
+      "upgradeButton": "Frissítés most"
+    },
+    "dangerZone": {
+      "title": "Veszélyzóna",
+      "description": "Ezek a műveletek visszafordíthatatlanok - óvatosan járjon el",
+      "deleteTitle": "Fiók végleges törlése",
+      "deleteDescription": "Minden adata és beszélgetése véglegesen törlődik",
+      "deleteButton": "Fiók törlése"
+    },
+    "deleteModal": {
+      "title": "Fiók törlésének megerősítése",
+      "message": "Teljesen biztos benne? A fiókja és minden adata véglegesen törlődik. Ez a művelet nem vonható vissza.",
+      "cancelButton": "Mégse",
+      "confirmButton": "Törlés megerősítése",
+      "deleteSuccess": "Fiókja sikeresen törölve."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Új fiók létrehozása - SyriaGPT",
+      "description": "Csatlakozzon a SyriaGPT közösséghez, és kezdje el felfedezni a szíriai kontextusra tervezett MI erejét."
+    },
+    "infoPanel": {
+      "title": "Csatlakozzon a SyriaGPT közösséghez",
+      "description": "Fedezze fel a kifejezetten a szíriai kultúrára és kontextusra tervezett mesterséges intelligencia erejét",
+      "features": [
+        {
+          "title": "Fejlett MI",
+          "description": "Arab és szíriai tartalomra képzett modern technológiák"
+        },
+        {
+          "title": "Garantált biztonság és adatvédelem",
+          "description": "Fejlett védelem az adatai számára világszínvonalú titkosítással"
+        },
+        {
+          "title": "Aktív közösség",
+          "description": "Csatlakozzon több ezer technológia iránt szenvedélyes szíriai felhasználóhoz"
+        },
+        {
+          "title": "Exkluzív funkciók",
+          "description": "Egyedi eszközök szíriai és arab tartalomhoz"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"A SyriaGPT teljesen megváltoztatta a munkamódszeremet. Mélyen megérti a szíriai nyelvet és kultúrát.\"",
+        "author": "- Ahmed Al-Shami, fejlesztő"
+      }
+    },
+    "form": {
+      "title": "Új fiók létrehozása",
+      "description": "Töltse ki a következő adatokat a fiók létrehozásához",
+      "firstName": "Keresztnév",
+      "lastName": "Vezetéknév",
+      "email": "E-mail cím",
+      "password": "Jelszó",
+      "confirmPassword": "Jelszó megerősítése",
+      "placeholder": "Adja meg a(z) {field}...",
+      "emailPlaceholder": "pelda@email.com",
+      "passwordStrength": "Jelszó erőssége",
+      "strengthLevels": [
+        "Nagyon gyenge",
+        "Gyenge",
+        "Közepes",
+        "Erős",
+        "Nagyon erős"
+      ],
+      "submitButton": "Új fiók létrehozása",
+      "loadingButton": "Fiók létrehozása...",
+      "googleButton": "Regisztráció Google-fiókkal",
+      "orSeparator": "vagy",
+      "hasAccount": "Már van fiókja?",
+      "loginLink": "Bejelentkezés",
+      "termsAgreement": "A fiók létrehozásával elfogadja a",
+      "termsLink": "Felhasználási feltételeket",
+      "and": "és",
+      "privacyLink": "Adatvédelmi irányelveket",
+      "successAlert": "Fiókja sikeresen létrehozva! Üdvözöljük a SyriaGPT-nél"
+    },
+    "validation": {
+      "minLength": "Legalább 2 karakter hosszúnak kell lennie",
+      "maxLength": "Túl hosszú",
+      "emailRequired": "Az e-mail cím kötelező",
+      "emailInvalid": "Érvénytelen e-mail cím",
+      "passwordLength": "A jelszónak legalább 8 karakter hosszúnak kell lennie",
+      "passwordComplexity": "Tartalmaznia kell egy nagybetűt, egy kisbetűt és egy számot",
+      "passwordMismatch": "A jelszavak nem egyeznek"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Jelszó visszaállítása - SyriaGPT",
+      "description": "Állítson be egy új, erős jelszót a SyriaGPT-fiókjához."
+    },
+    "form": {
+      "title": "Új jelszó beállítása",
+      "description": "Válasszon egy erős jelszót a fiókja védelméhez.",
+      "newPasswordLabel": "Új jelszó",
+      "confirmPasswordLabel": "Jelszó megerősítése",
+      "passwordMismatchError": "A jelszavak nem egyeznek.",
+      "submitButton": "Jelszó frissítése",
+      "loadingButton": "Frissítés...",
+      "showPasswordAria": "Jelszó megjelenítése",
+      "hidePasswordAria": "Jelszó elrejtése",
+      "mismatchToast": "Kérjük, győződjön meg róla, hogy a jelszavak egyeznek.",
+      "loadingToast": "Jelszó frissítése...",
+      "successToast": "Jelszó sikeresen frissítve!"
+    },
+    "strengthIndicator": {
+      "title": "Erősség",
+      "levels": [
+        "Nagyon gyenge",
+        "Gyenge",
+        "Elfogadható",
+        "Jó",
+        "Erős",
+        "Nagyon erős"
+      ]
+    },
+    "successScreen": {
+      "title": "Siker!",
+      "description": "A jelszava frissítve lett. Most már biztonságosan bejelentkezhet az új hitelesítő adataival.",
+      "backToLoginButton": "Vissza a bejelentkezéshez"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Beállítások - SyriaGPT",
+      "description": "Személyre szabhatja a SyriaGPT-élményt, kezelheti a megjelenést, a nyelvet, az értesítéseket és az adatokat."
+    },
+    "header": {
+      "title": "SyriaGPT Beállítások",
+      "description": "Személyre szabhatja a személyes élményt",
+      "unsavedChanges": "Mentetlen változtatások"
+    },
+    "appearance": {
+      "title": "Megjelenés és kijelző",
+      "description": "Személyre szabhatja az alkalmazás kinézetét és hangulatát az Ön preferenciáinak megfelelően",
+      "theme": "Téma stílusa",
+      "themes": {
+        "light": { "label": "Világos", "description": "Ideális nappali használatra" },
+        "dark": {
+          "label": "Sötét",
+          "description": "Kíméli a szemet éjszaka"
+        },
+        "system": {
+          "label": "Rendszer",
+          "description": "Követi az eszköz beállításait"
+        }
+      },
+      "preview": {
+        "title": "Változtatások előnézete",
+        "description": "Tekintse meg a változtatások élő előnézetét mentés előtt",
+        "new": "ÚJ"
+      }
+    },
+    "language": {
+      "title": "Nyelv és régió",
+      "description": "Állítsa be a nyelvi és regionális beállításokat",
+      "interfaceLanguage": {
+        "title": "Felület nyelve",
+        "description": "A menükben és interaktív elemekben használt nyelv",
+        "badge": "Automatikus"
+      },
+      "languages": {
+        "ar": "العربية (Szíria)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Értesítések és hangok",
+      "description": "Irányítsa a riasztásokat és a hangeffektusokat",
+      "enableNotifications": {
+        "title": "Értesítések engedélyezése",
+        "description": "Riasztások fogadása üzenetekről és fontos frissítésekről"
+      },
+      "sounds": {
+        "title": "Hangok",
+        "description": "Hangok lejátszása üzenetek küldésekor és fogadásakor"
+      }
+    },
+    "dataManagement": {
+      "title": "Adatkezelés",
+      "description": "Irányítsa az adatai mentését és megosztását",
+      "autoSave": {
+        "title": "Automatikus mentés",
+        "description": "Automatikusan mentse a beszélgetéseit, hogy később visszanézhesse őket"
+      },
+      "exportData": "Adatok exportálása",
+      "clearHistory": "Beszélgetések törlése"
+    },
+    "advanced": {
+      "title": "Haladó beállítások",
+      "description": "Haladó opciók professzionális felhasználók számára",
+      "developerMode": {
+        "title": "Fejlesztői mód",
+        "description": "További technikai információk és fejlesztési opciók megjelenítése",
+        "badge": "Béta"
+      },
+      "analytics": {
+        "title": "Analitika",
+        "description": "Segítsen a szolgáltatás javításában névtelen használati adatok küldésével"
+      }
+    },
+    "saveBar": {
+      "title": "Szeretné menteni a változtatásokat?",
+      "description": "Az új beállítások azonnal érvénybe lépnek",
+      "reset": "Visszaállítás",
+      "save": "Változtatások mentése",
+      "saving": "Mentés...",
+      "success": "Beállítások sikeresen mentve!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Előzmények törlésének megerősítése",
+        "message": "Biztos benne? Minden múltbeli beszélgetése véglegesen törlődik. Ez a művelet nem vonható vissza.",
+        "confirm": "Igen, törlés",
+        "success": "Beszélgetési előzmények sikeresen törölve."
+      },
+      "exportData": {
+        "title": "Adatok exportálása",
+        "message": "Minden adatáról másolat készül, és elküldjük az e-mail címére. Szeretné folytatni?",
+        "confirm": "Igen, folytatás",
+        "success": "Adatok exportálása..."
+      },
+      "cancel": "Mégse"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Szolgáltatási feltételek - SyriaGPT",
+      "description": "Olvassa el a SyriaGPT szolgáltatások használatának feltételeit."
+    },
+    "header": {
+      "switchLanguage": "Váltás arabra",
+      "print": "Nyomtatás"
+    },
+    "title": "Szolgáltatási feltételek",
+    "subtitle": "Utolsó frissítés: 2025. augusztus 24.",
+    "intro": "Üdvözöljük a SyriaGPT-nél. Szolgáltatásaink használatával elfogadja ezeket a feltételeket. Kérjük, olvassa el őket figyelmesen.",
+    "sectionsTitle": "Szakaszok",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. A feltételek elfogadása",
+        "content": "A SyriaGPT elérésével és használatával Ön elfogadja, hogy kötelező érvényűek Önre nézve ezek a Felhasználási Feltételek. Ha nem ért egyet ezen feltételek bármely részével, ne használja szolgáltatásainkat."
+      },
+      {
+        "id": "services",
+        "title": "2. A szolgáltatások leírása",
+        "content": "A SyriaGPT egy MI-asszisztens, amelyet arra terveztek, hogy segítséget nyújtson a szíriai kontextussal kapcsolatos különböző területeken."
+      },
+      {
+        "id": "usage",
+        "title": "3. Elfogadható használat",
+        "content": "Szolgáltatásainkat törvényesen és etikusan kell használnia. Tilos a szolgáltatást illegális vagy káros célokra használni."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Adatvédelem és adatok",
+        "content": "Tiszteletben tartjuk az Ön adatait, és elkötelezettek vagyunk az adatai védelme mellett. Csak a szolgáltatás nyújtásához szükséges adatokat gyűjtjük, és az Ön hozzájárulása nélkül nem osztjuk meg őket."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Szellemi tulajdon",
+        "content": "Minden jog fenntartva a SyriaGPT számára. A tartalom, a design és a logók a mi tulajdonunkat képezik. A szolgáltatás használatával létrehozott tartalom az Öné marad."
+      },
+      {
+        "id": "liability",
+        "title": "6. Jogi nyilatkozat",
+        "content": "A szolgáltatást „ahogy van” alapon nyújtjuk, mindenféle garancia nélkül. Nem garantáljuk a megadott információk pontosságát vagy teljességét, és nem vállalunk felelősséget a használatukból eredő károkért."
+      },
+      {
+        "id": "termination",
+        "title": "7. A szolgáltatás megszüntetése",
+        "content": "Fenntartjuk a jogot, hogy megszüntessük vagy felfüggesszük a fiókját ezen feltételek megsértése vagy káros vagy illegális viselkedés esetén."
+      },
+      {
+        "id": "contact",
+        "title": "8. Lépjen kapcsolatba velünk",
+        "content": "Ezen feltételekkel kapcsolatos bármilyen kérdés esetén kérjük, lépjen kapcsolatba velünk e-mailben: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Elolvastam és elfogadom a feltételeket",
+    "continueButton": "Folytatás",
+    "backToTop": "Vissza a tetejére",
+    "expandAll": "Összes kibontása",
+    "collapseAll": "Összes összecsukása",
+    "readingProgress": "Olvasási folyamat",
+    "copyright": "© {year} SyriaGPT. Minden jog fenntartva."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Frissítés Pro verzióra - SyriaGPT",
+      "description": "Élvezze a korlátlan képességeket, a kiváló sebességet és az új funkciókhoz való elsőbbségi hozzáférést a SyriaGPT Pro segítségével."
+    },
+    "header": {
+      "title": "Frissítés Pro verzióra",
+      "description": "Élvezze a korlátlan képességeket, a kiváló sebességet és az új funkciókhoz való elsőbbségi hozzáférést"
+    },
+    "stats": [
+      { "value": "10x", "label": "Gyorsabb válasz" },
+      { "value": "∞", "label": "Korlátlan üzenetek" },
+      { "value": "24/7", "label": "Folyamatos támogatás" }
+    ],
+    "billingToggle": {
+      "monthly": "Havi",
+      "yearly": "Éves",
+      "saving": "20% megtakarítás"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Ingyenes terv",
+        "subtitle": "Jelenlegi terv",
+        "price": "0 USD",
+        "period": "Életre szóló",
+        "features": [
+          "Hozzáférés az alapmodellhez",
+          "20 üzenet naponta",
+          "Standard válaszsebesség",
+          "Alapvető funkciók"
+        ],
+        "buttonText": "Az Ön jelenlegi terve"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Szakembereknek és vállalkozásoknak",
+        "priceMonthly": "10 USD",
+        "priceYearly": "96 USD",
+        "periodMonthly": "havonta",
+        "periodYearly": "évente",
+        "popular": "Legnépszerűbb",
+        "features": [
+          "Fejlett GPT-4 modell",
+          "Korlátlan üzenetek",
+          "Kiváló válaszsebesség",
+          "Elsőbbségi hozzáférés az új funkciókhoz",
+          "Szakosodott technikai támogatás",
+          "Reklámmentes, továbbfejlesztett felület"
+        ],
+        "buttonText": "Frissítés most"
+      }
+    },
+    "comparison": {
+      "title": "Tervek összehasonlítása",
+      "featureHeader": "Funkciók",
+      "freeHeader": "Ingyenes",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Hozzáférés az alapmodellhez", "free": true, "pro": true },
+        { "text": "Korlátozott napi üzenetek (20)", "free": true, "pro": false },
+        { "text": "Korlátlan üzenetek", "free": false, "pro": true },
+        {
+          "text": "Hozzáférés a fejlett GPT-4 modellhez",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Standard válaszsebesség", "free": true, "pro": false },
+        {
+          "text": "Kiváló válaszsebesség (10x gyorsabb)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Elsőbbségi hozzáférés az új funkciókhoz",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Szakosodott technikai támogatás",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Reklámmentes felület", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Gyakran Ismételt Kérdések",
+      "toggleOpen": "Tovább olvasom",
+      "toggleClose": "Bezárás",
+      "items": [
+        {
+          "question": "Bármikor lemondhatom az előfizetésemet?",
+          "answer": "Igen, természetesen. A Pro terv előfizetését bármikor lemondhatja a „Fiókkezelés” oldalon. A Pro funkciókhoz a jelenlegi számlázási időszak végéig továbbra is hozzáférhet, és további díjakat nem számítunk fel."
+        },
+        {
+          "question": "Milyen fizetési módokat fogadnak el?",
+          "answer": "Elfogadjuk az összes főbb hitel- és betéti kártyát (Visa, MasterCard, American Express), valamint a Sham Cash-t és a helyi e-pénztárcákat. Minden fizetés biztonságosan és titkosítva történik a partnerünkön, a Stripe-on keresztül."
+        },
+        {
+          "question": "Mi történik az éves számlázási időszak végén?",
+          "answer": "Az éves előfizetése automatikusan megújul, hacsak nem mondja le a fiókbeállításaiban. Egy héttel a megújítási dátum előtt emlékeztető e-mailt küldünk Önnek a esedékes összeg részleteivel."
+        },
+        {
+          "question": "Kaphatok visszatérítést?",
+          "answer": "Igen, teljes 30 napos pénz-visszafizetési garanciát kínálunk az előfizetés dátumától számítva, ha bármilyen okból nem elégedett a szolgáltatással. Csak lépjen kapcsolatba a támogatói csapatunkkal, és azonnal feldolgozzuk a visszatérítési kérelmét."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Készen áll a kezdésre?",
+      "description": "Csatlakozzon több ezer felhasználóhoz, akik a SyriaGPT Pro-t választották a kiváló MI-élményért",
+      "buttonText": "Kezdje el most {price} áron",
+      "guarantee": "30 napos teljes pénz-visszafizetési garancia"
+    },
+    "alert": "Átirányítjuk a fizetési oldalra..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "E-mail ellenőrzése - SyriaGPT",
+      "description": "Adja meg az e-mail címére küldött ellenőrző kódot a SyriaGPT-fiók megerősítéséhez."
+    },
+    "header": {
+      "title": "Ellenőrizze az e-mail címét",
+      "description": "Adja meg a következő címre küldött ellenőrző kódot"
+    },
+    "form": {
+      "label": "6 számjegyű ellenőrző kód",
+      "verifyButton": "Kód ellenőrzése",
+      "verifyingButton": "Ellenőrzés...",
+      "resend": {
+        "question": "Nem kapta meg a kódot?",
+        "resendButton": "Kód újraküldése",
+        "resendingButton": "Újraküldés...",
+        "cooldown": "Újraküldés {seconds} másodperc múlva"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Sikeres ellenőrzés!",
+        "description": "Az e-mail címe sikeresen megerősítve",
+        "redirecting": "Átirányítás a műszerfalra..."
+      },
+      "error": {
+        "title": "Sikertelen ellenőrzés",
+        "tryAgainButton": "Próbálja újra"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Kérjük, adja meg a 6 számjegyű ellenőrző kódot",
+      "invalidCode": "Érvénytelen ellenőrző kód. Kérjük, próbálja újra.",
+      "generic": "Hiba történt az ellenőrzés során. Kérjük, próbálja újra.",
+      "resendFailed": "Az ellenőrző kód küldése sikertelen. Kérjük, próbálja újra."
+    },
+    "backToLogin": "Vissza a bejelentkezéshez",
+    "securityNote": {
+      "title": "Biztonsági megjegyzés:",
+      "points": [
+        "Ne ossza meg senkivel az ellenőrző kódot",
+        "Az ellenőrző kód csak 10 percig érvényes",
+        "Ellenőrizze a feladó e-mail címét"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Új ellenőrző kódot küldtünk az e-mail címére"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Hiba történt - SyriaGPT",
+      "description": "Egyedi hibaoldal a SyriaGPT projekthez."
+    },
+    "offlineMessage": "Jelenleg offline állapotban van",
+    "errorCode": "Hiba {statusCode}",
+    "title": "Váratlan hiba történt",
+    "description": "Őszintén elnézést kérünk a kellemetlenségért. Technikai csapatunkat értesítettük, és dolgoznak a probléma mielőbbi megoldásán.",
+    "retryButton": "Újrapróbálkozás",
+    "retryingButton": "Újrapróbálkozás...",
+    "homeButton": "Kezdőlap",
+    "backButton": "Vissza",
+    "suggestionsTitle": "Amit most megpróbálhat:",
+    "suggestion1": "Az oldal frissítése megoldhatja a problémát.",
+    "suggestion2": "Kérjük, ellenőrizze az internetkapcsolatát.",
+    "suggestion3": "Ha a probléma továbbra is fennáll, bátran lépjen kapcsolatba velünk.",
+    "accordion": {
+      "title": "Technikai részletek fejlesztőknek",
+      "copy": "Másolás",
+      "copied": "Másolva",
+      "code": "Kód:",
+      "message": "Üzenet:",
+      "digest": "Kivonat:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Az oldal nem található - SyriaGPT",
+      "description": "A keresett oldal nem létezik vagy áthelyezték."
+    },
+    "title": "Úgy tűnik, eltévedt az oldalak között!",
+    "description": "A keresett oldal nem létezik vagy áthelyezték",
+    "currentLocation": "Jelenlegi hely: Ismeretlen",
+    "search": {
+      "placeholder": "Keresse meg a kívánt oldalt...",
+      "button": "Keresés",
+      "searching": "Keresés..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Előző oldal",
+        "description": "Menjen vissza, ahonnan jött"
+      },
+      "homePage": {
+        "title": "Kezdőlap",
+        "description": "Kezdje elölről"
+      }
+    },
+    "suggestions": {
+      "title": "Oldalak, amelyek érdekelhetik",
+      "items": [
+        { "title": "Kezdőlap", "description": "Vissza a kezdetekhez" },
+        { "title": "Csevegés", "description": "Új beszélgetés indítása" },
+        { "title": "Segítség", "description": "Segítség kérése" },
+        { "title": "Szíriáról", "description": "Tudjon meg többet" }
+      ]
+    },
+    "history": {
+      "title": "Nemrég meglátogatott oldalak"
+    },
+    "funFact": {
+      "title": "Amíg megtalálja az utat...",
+      "facts": [
+        "Tudta? Damaszkusz a világ legrégebbi, folyamatosan lakott fővárosa!",
+        "Tudta? A történelem első ábécéjét Ugaritban, Szíriában találták fel!",
+        "Tudta? Az aleppói pisztáciafa több mint 300 évig is élhet!",
+        "Tudta? A Krak des Chevaliers Szíriában a világ egyik legjobban megőrzött vára!",
+        "Tudta? A damaszkuszi rózsa a világ egyik legkiválóbb rózsafajtájának számít!"
+      ]
+    },
+    "support": {
+      "message": "Ha úgy gondolja, hogy ez egy hiba, kérjük, lépjen kapcsolatba velünk",
+      "helpCenter": "Segítségközpont",
+      "technicalSupport": "Technikai támogatás"
+    }
+  },
+  "loader": {
+    "title": "betöltés...",
+    "loading": "Kérjük, várjon egy percet..."
+  }
+}

@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Trí tuệ nhân tạo Syria",
+    "newChat": "Trò chuyện mới",
+    "pastConversations": "Các cuộc trò chuyện trước đây",
+    "lightMode": "Chế độ sáng",
+    "darkMode": "Chế độ tối",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Người dùng Syria",
+    "userEmail": "user@syriagpt.com",
+    "profile": "Hồ sơ",
+    "settings": "Cài đặt",
+    "upgradeToPro": "Nâng cấp lên Pro",
+    "newBadge": "MỚI",
+    "helpCenter": "Trung tâm trợ giúp",
+    "aboutApp": "Về ứng dụng",
+    "logout": "Đăng xuất",
+    "logoutModal": {
+      "title": "Xác nhận đăng xuất",
+      "description": "Bạn có chắc chắn muốn đăng xuất khỏi tài khoản của mình không?",
+      "cancel": "Hủy",
+      "confirm": "Có, đăng xuất"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Trợ lý thông minh của bạn để trả lời mọi thắc mắc",
+      "examples": "Ví dụ",
+      "capabilities": "Khả năng",
+      "limitations": "Hạn chế",
+      "suggestions": {
+        "examples": [
+          "Giải thích cách lấy thẻ căn cước một cách đơn giản",
+          "Cho tôi biết các khóa học được phê duyệt tại Đại học Damascus",
+          "Nguyên liệu làm món Mahshi là gì?"
+        ],
+        "capabilities": [
+          "Cách làm món đậu bắp và mối quan hệ lịch sử của nó?",
+          "Các thủ tục làm hộ chiếu Syria là gì?",
+          "Tôi cần thông tin về đầu tư"
+        ],
+        "limitations": [
+          "Làm thế nào để giải quyết một vấn đề máy tính?",
+          "Điều kiện đăng ký tại Đại học Aleppo là gì?",
+          "Cho tôi một bản tóm tắt tin tức hôm nay ở Syria"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Đang nhập..."
+    },
+    "regenerate": "Tạo lại phản hồi",
+    "input": {
+      "placeholder": "Nhập tin nhắn của bạn ở đây, hoặc kéo và thả tệp để đính kèm...",
+      "attachFile": "Đính kèm tệp",
+      "startRecording": "Bắt đầu ghi âm",
+      "stopRecording": "Dừng ghi âm",
+      "removeFile": "Xóa tệp"
+    },
+    "dragDrop": {
+      "title": "Thả tệp vào đây",
+      "subtitle": "PDF, Word, Văn bản (Tối đa 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Nhận dạng giọng nói không được hỗ trợ trên trình duyệt này. Vui lòng sử dụng Chrome hoặc Edge.",
+      "permissionDenied": "Vui lòng cho phép truy cập micrô trong cài đặt trình duyệt của bạn.",
+      "startFailed": "Không thể bắt đầu ghi âm. Vui lòng kiểm tra cài đặt trình duyệt của bạn.",
+      "generalError": "Đã xảy ra lỗi khi bắt đầu ghi âm. Vui lòng thử lại.",
+      "no-speech": "Không phát hiện thấy giọng nói. Hãy chắc chắn rằng giọng nói của bạn rõ ràng và micrô ở gần.",
+      "audio-capture": "Không thể truy cập micrô. Đảm bảo rằng nó đã được kết nối và đã được cấp quyền.",
+      "not-allowed": "Quyền đã bị từ chối. Vui lòng cho phép sử dụng micrô từ cài đặt trình duyệt.",
+      "network": "Lỗi mạng. Vui lòng kiểm tra kết nối internet của bạn.",
+      "service-not-allowed": "Dịch vụ nhận dạng giọng nói hiện không khả dụng.",
+      "language-not-supported": "Ngôn ngữ không được hỗ trợ. Hãy thử trình duyệt Chrome."
+    },
+    "footer": "Mục tiêu của chúng tôi là làm cho các hệ thống AI trở nên tự nhiên và an toàn hơn để tương tác"
+  },
+  "chat": {
+    "fileAnalysisError": "Xin lỗi, đã xảy ra lỗi khi phân tích tệp: {error}",
+    "responseProcessingError": "Xin lỗi, đã xảy ra lỗi khi xử lý phản hồi.",
+    "networkError": "Xin lỗi, đã xảy ra lỗi kết nối. Vui lòng kiểm tra kết nối internet của bạn."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Về dự án SyriaGPT",
+      "description": "Tìm hiểu về các mục tiêu và tầm nhìn của dự án SyriaGPT, trợ lý thông minh chuyên về bối cảnh Syria."
+    },
+    "header": {
+      "title": "Cộng hòa Ả Rập Syria",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "Syria... là Trái tim"
+    },
+    "main": {
+      "p1": "Đây là một dự án quốc gia tiên phong được chính phủ Syria thông qua, nhằm phát triển một mô hình ngôn ngữ Ả Rập tiên tiến với sự tập trung đặc biệt vào phương ngữ Syria. Mục tiêu của dự án này là trở thành một nền tảng kiến thức và dịch vụ giúp công dân tương tác với các dịch vụ của chính phủ và các khu vực công và tư một cách dễ dàng và an toàn, cung cấp cho họ những câu trả lời chính xác và đáng tin cậy về các thủ tục, luật pháp và thông tin chung.",
+      "p2": "Nó nổi bật bởi sự tập trung vào ngôn ngữ địa phương và khả năng hiểu các phương ngữ cùng với tiếng Ả Rập tiêu chuẩn, làm cho nó gần gũi hơn với người dùng trong cuộc sống hàng ngày của họ. Dự án cũng đảm bảo quyền riêng tư dữ liệu bằng cách được lưu trữ tại các trung tâm dữ liệu quốc gia và hoạt động theo các tiêu chuẩn cao về an toàn và trung lập để đảm bảo rằng các kết quả đầu ra là chính xác và không thiên vị. Nó được thiết kế để có thể tích hợp với các cổng chính phủ điện tử, các ứng dụng chính thức và các trung tâm cuộc gọi, do đó tạo thành một bước cơ bản hướng tới việc tăng cường chuyển đổi số ở Syria.",
+      "p3": "Dự án tìm cách phục vụ nhiều lĩnh vực như tạo điều kiện thuận lợi cho các thủ tục của chính phủ, hỗ trợ giáo dục, đơn giản hóa các hướng dẫn về sức khỏe, hỗ trợ các doanh nghiệp nhỏ và phổ biến các thông điệp khẩn cấp một cách nhanh chóng và rõ ràng. Do đó, nó đại diện cho một bước nhảy vọt về chất trong cách công dân truy cập thông tin, nơi tương tác bằng ngôn ngữ tự nhiên trở thành phương tiện chính để đơn giản hóa các giao dịch và đưa công dân đến gần hơn với các cơ quan nhà nước."
+    },
+    "footer": {
+      "backButton": "Quay lại trò chuyện",
+      "disclaimer": "Mục tiêu của chúng tôi là làm cho các hệ thống AI trở nên tự nhiên và an toàn hơn để tương tác, phù hợp với bối cảnh Syria và nhu cầu của người dùng. Phản hồi và đề xuất của bạn sẽ giúp chúng tôi cải thiện và phát triển dịch vụ để phục vụ bạn tốt hơn."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Quên mật khẩu",
+      "description": "Lấy lại quyền truy cập vào tài khoản SyriaGPT của bạn bằng các bước đơn giản và an toàn."
+    },
+    "infoPanel": {
+      "title": "Khôi phục tài khoản của bạn một cách an toàn",
+      "description": "Chúng tôi ở đây để giúp bạn lấy lại quyền truy cập vào tài khoản của mình bằng các bước đơn giản và an toàn.",
+      "steps": {
+        "step1": {
+          "title": "Nhập email của bạn",
+          "description": "Email đã đăng ký với tài khoản SyriaGPT của bạn"
+        },
+        "step2": {
+          "title": "Kiểm tra email của bạn",
+          "description": "Chúng tôi sẽ gửi cho bạn một liên kết an toàn để đặt lại mật khẩu của bạn"
+        },
+        "step3": {
+          "title": "Tạo mật khẩu mới",
+          "description": "Chọn một mật khẩu mạnh và an toàn cho tài khoản của bạn"
+        }
+      },
+      "securityTip": {
+        "title": "Mẹo bảo mật",
+        "description": "Liên kết chỉ có hiệu lực trong 15 phút để đảm bảo an toàn cho tài khoản của bạn. Nếu bạn không tìm thấy email, hãy kiểm tra thư mục thư rác của bạn."
+      }
+    },
+    "form": {
+      "title": "Quên mật khẩu",
+      "description": "Nhập email của bạn để nhận liên kết khôi phục",
+      "emailLabel": "Địa chỉ email",
+      "emailPlaceholder": "Nhập email của bạn...",
+      "emailRequiredAlert": "Vui lòng nhập địa chỉ email của bạn.",
+      "submitButton": "Gửi liên kết khôi phục",
+      "loadingButton": "Đang gửi...",
+      "rememberedPassword": "Bạn đã nhớ mật khẩu của mình?",
+      "backToLogin": "Quay lại đăng nhập"
+    },
+    "successScreen": {
+      "title": "Đã gửi hướng dẫn",
+      "checkEmailTitle": "Kiểm tra email của bạn",
+      "description": "Chúng tôi đã gửi một liên kết khôi phục mật khẩu đến:",
+      "tip1": "Kiểm tra hộp thư đến của bạn",
+      "tip2": "Đừng quên kiểm tra thư mục thư rác của bạn",
+      "tip3": "Liên kết chỉ có hiệu lực trong 15 phút",
+      "backToLoginButton": "Quay lại đăng nhập"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Trung tâm trợ giúp - SyriaGPT",
+      "description": "Tìm câu trả lời cho các câu hỏi của bạn, hướng dẫn sử dụng và liên hệ với nhóm hỗ trợ của SyriaGPT."
+    },
+    "header": {
+      "title": "Trung tâm trợ giúp",
+      "description": "Chào mừng bạn đến với trung tâm hỗ trợ của SyriaGPT! Chúng tôi ở đây để giúp bạn có được trải nghiệm tốt nhất có thể."
+    },
+    "search": {
+      "placeholder": "Tìm kiếm câu trả lời, hướng dẫn sử dụng hoặc đặt câu hỏi..."
+    },
+    "categories": {
+      "title": "Duyệt theo danh mục",
+      "items": [
+        {
+          "title": "Bắt đầu",
+          "description": "Tìm hiểu những điều cơ bản về cách sử dụng nền tảng và tận dụng tất cả các tính năng có sẵn."
+        },
+        {
+          "title": "Quản lý tài khoản",
+          "description": "Chỉnh sửa hồ sơ của bạn, quản lý đăng ký và cài đặt bảo mật của bạn."
+        },
+        {
+          "title": "Các tính năng nâng cao",
+          "description": "Sử dụng tệp đính kèm, tìm kiếm bằng giọng nói và trí tuệ nhân tạo tiên tiến."
+        },
+        {
+          "title": "Bảo mật & Quyền riêng tư",
+          "description": "Tìm hiểu cách bảo vệ dữ liệu và thông tin cá nhân của bạn với các tiêu chuẩn bảo mật cao nhất."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Các câu hỏi thường gặp",
+      "toggleOpen": "Đọc thêm",
+      "toggleClose": "Đóng",
+      "items": [
+        {
+          "question": "Làm cách nào để bắt đầu một cuộc trò chuyện mới?",
+          "answer": "Để bắt đầu một cuộc trò chuyện mới, chỉ cần nhấp vào nút \"+ Trò chuyện mới\" ở đầu thanh bên. Bạn cũng có thể sử dụng phím tắt Ctrl+N để bắt đầu nhanh."
+        },
+        {
+          "question": "Tôi có thể đính kèm những loại tệp nào?",
+          "answer": "Bạn có thể đính kèm tệp PDF, tài liệu Word (doc, docx), tệp PowerPoint, tệp văn bản (txt) và hình ảnh (jpg, png, gif). Kích thước tối đa cho một tệp là 10 MB và bạn có thể đính kèm tối đa 5 tệp cho mỗi cuộc trò chuyện."
+        },
+        {
+          "question": "Các cuộc trò chuyện trước đây của tôi có được lưu không?",
+          "answer": "Có, các cuộc trò chuyện trước đây của bạn được tự động và an toàn lưu vào tài khoản của bạn. Bạn có thể truy cập chúng từ danh sách \"Các cuộc trò chuyện trước đây\" trong thanh bên, được sắp xếp theo ngày hoặc chủ đề."
+        },
+        {
+          "question": "Chế độ sáng và tối hoạt động như thế nào?",
+          "answer": "Bạn có thể chuyển đổi giữa chế độ sáng và tối bằng nút chuyên dụng trong thanh bên. Hệ thống sẽ tự động lưu tùy chọn của bạn và áp dụng nó trong tất cả các phiên trong tương lai."
+        },
+        {
+          "question": "Tính năng chuyển giọng nói thành văn bản là gì?",
+          "answer": "Bạn có thể sử dụng micrô của mình để đọc chính tả bằng giọng nói bằng tiếng Ả Rập hoặc tiếng Anh. Nhấp vào biểu tượng micrô trong thanh nhập và bắt đầu nói. Hệ thống sẽ tự động chuyển đổi giọng nói của bạn thành văn bản."
+        },
+        {
+          "question": "Tôi có thể sử dụng SyriaGPT trên điện thoại di động của mình không?",
+          "answer": "Có, SyriaGPT có sẵn thông qua trình duyệt web trên tất cả các thiết bị thông minh. Giao diện hoàn toàn đáp ứng và hoạt động hoàn hảo trên điện thoại và máy tính bảng."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Bạn không tìm thấy những gì bạn đang tìm kiếm?",
+      "description": "Đội ngũ hỗ trợ tận tâm của chúng tôi luôn sẵn sàng 24/7 để hỗ trợ bạn. Hãy liên hệ với chúng tôi và chúng tôi sẽ trả lời bạn trong vòng vài phút!",
+      "emailButton": "Liên hệ qua email",
+      "chatButton": "Trò chuyện trực tiếp",
+      "phoneButton": "Gọi điện thoại",
+      "availability": "Có sẵn 24/7",
+      "responseTime": "Trả lời trong vòng 5 phút",
+      "languageSupport": "Hỗ trợ tiếng Ả Rập"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Đăng nhập - SyriaGPT",
+      "description": "Đăng nhập vào tài khoản SyriaGPT của bạn để truy cập các cuộc trò chuyện và các tính năng nâng cao."
+    },
+    "infoPanel": {
+      "title": "Chào mừng trở lại",
+      "description": "Tiếp tục khám phá thế giới trí tuệ nhân tạo Syria với",
+      "securityTitle": "Tại sao SyriaGPT an toàn?",
+      "features": [
+        {
+          "title": "Bảo vệ dữ liệu nâng cao",
+          "description": "Chúng tôi sử dụng các công nghệ mã hóa tiên tiến để bảo vệ thông tin cá nhân của bạn"
+        },
+        {
+          "title": "Xác thực hai yếu tố",
+          "description": "Một lớp bảo vệ bổ sung để đảm bảo an toàn cho tài khoản của bạn"
+        },
+        {
+          "title": "Trí tuệ nhân tạo địa phương",
+          "description": "Công nghệ Syria tiên tiến hiểu văn hóa và bối cảnh Ả Rập"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Người dùng đang hoạt động" },
+        { "value": "99.9%", "label": "Thời gian hoạt động" },
+        { "value": "24/7", "label": "Hỗ trợ" }
+      ]
+    },
+    "form": {
+      "title": "Đăng nhập",
+      "description": "Nhập thông tin đăng nhập của bạn để truy cập tài khoản của bạn",
+      "emailLabel": "Địa chỉ email",
+      "emailPlaceholder": "Nhập email của bạn...",
+      "passwordLabel": "Mật khẩu",
+      "passwordPlaceholder": "Nhập mật khẩu của bạn...",
+      "forgotPassword": "Quên mật khẩu?",
+      "showPassword": "Hiển thị mật khẩu",
+      "hidePassword": "Ẩn mật khẩu",
+      "loginButton": "Đăng nhập",
+      "loadingButton": "Đang xác minh...",
+      "loginSuccessAlert": "Đăng nhập thành công!",
+      "orSeparator": "hoặc",
+      "noAccount": "Bạn chưa có tài khoản?",
+      "createAccount": "Tạo tài khoản mới"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Chính sách bảo mật - SyriaGPT",
+      "description": "Tìm hiểu cách dữ liệu cá nhân của bạn được thu thập, sử dụng và bảo vệ khi bạn sử dụng các dịch vụ của SyriaGPT."
+    },
+    "header": {
+      "title": "Chính sách bảo mật",
+      "lastUpdated": "Cập nhật lần cuối: 25 tháng 8 năm 2025",
+      "effectiveDate": "Có hiệu lực ngay lập tức"
+    },
+    "infoCards": [
+      {
+        "title": "Bảo vệ toàn diện",
+        "description": "Dữ liệu của bạn được bảo vệ bằng các công nghệ mã hóa và bảo mật mới nhất."
+      },
+      {
+        "title": "Kiểm soát hoàn toàn",
+        "description": "Bạn kiểm soát dữ liệu của mình và có thể xóa nó bất cứ lúc nào."
+      },
+      {
+        "title": "Minh bạch hoàn toàn",
+        "description": "Chúng tôi giải thích rõ ràng những gì chúng tôi thu thập và cách chúng tôi sử dụng nó."
+      },
+      {
+        "title": "Không bán dữ liệu",
+        "description": "Chúng tôi không bán hoặc chia sẻ dữ liệu của bạn với bên thứ ba."
+      }
+    ],
+    "toc": {
+      "title": "Nội dung"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Giới thiệu",
+        "content": "Chào mừng bạn đến với SyriaGPT. Chúng tôi rất coi trọng quyền riêng tư của bạn. Chính sách này mô tả các loại thông tin chúng tôi có thể thu thập từ bạn hoặc bạn có thể cung cấp khi bạn truy cập hoặc sử dụng ứng dụng của chúng tôi, và các thông lệ của chúng tôi để thu thập, sử dụng, duy trì, bảo vệ và tiết lộ thông tin đó."
+      },
+      {
+        "id": "data-collection",
+        "title": "Thông tin chúng tôi thu thập",
+        "intro": "Chúng tôi có thể thu thập một số loại thông tin từ và về người dùng dịch vụ của chúng tôi, bao gồm:",
+        "points": [
+          "Thông tin bạn cung cấp trực tiếp: chẳng hạn như tên, email và mật khẩu của bạn khi bạn tạo tài khoản.",
+          "Nội dung người dùng: Các tin nhắn, câu hỏi và tệp bạn tải lên dịch vụ của chúng tôi để phân tích.",
+          "Thông tin sử dụng: Chi tiết về việc bạn sử dụng dịch vụ của chúng tôi, bao gồm dữ liệu lưu lượng truy cập và nhật ký sử dụng.",
+          "Thông tin thiết bị: Loại trình duyệt, hệ điều hành và địa chỉ IP của bạn."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Cách chúng tôi sử dụng thông tin của bạn",
+        "intro": "Chúng tôi sử dụng thông tin chúng tôi thu thập về bạn hoặc bạn cung cấp cho chúng tôi cho các mục đích sau:",
+        "points": [
+          "Để cung cấp dịch vụ và nội dung của chúng tôi cho bạn với chất lượng tốt nhất có thể.",
+          "Để cải thiện và cá nhân hóa trải nghiệm của bạn theo nhu cầu của bạn.",
+          "Để liên lạc với bạn về tài khoản hoặc dịch vụ của chúng tôi và các thông báo quan trọng.",
+          "Cho mục đích phân tích và nghiên cứu để cải thiện sản phẩm và dịch vụ của chúng tôi.",
+          "Để đảm bảo an ninh của nền tảng và ngăn chặn việc sử dụng trái phép."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Tiết lộ thông tin của bạn",
+        "commitmentTitle": "Cam kết cốt lõi của chúng tôi",
+        "commitmentText": "Chúng tôi không bán hoặc cho thuê thông tin cá nhân của bạn cho bên thứ ba. Đây là cam kết cơ bản của chúng tôi với bạn.",
+        "content": "Chúng tôi chỉ có thể tiết lộ thông tin cá nhân trong các trường hợp sau: để tuân thủ bất kỳ lệnh của tòa án hoặc luật pháp nào, hoặc để bảo vệ quyền và sự an toàn của SyriaGPT và khách hàng của chúng tôi khỏi các mối đe dọa an ninh nghiêm trọng."
+      },
+      {
+        "id": "data-security",
+        "title": "Bảo mật dữ liệu",
+        "protectionTitle": "Các biện pháp bảo vệ nâng cao:",
+        "points": [
+          "Mã hóa đầu cuối cho tất cả dữ liệu nhạy cảm",
+          "Máy chủ an toàn được bảo vệ bởi các tường lửa tiên tiến",
+          "Giám sát an ninh 24/7 để phát hiện các mối đe dọa",
+          "Sao lưu thường xuyên và được mã hóa để đảm bảo tính liên tục của dịch vụ",
+          "Kiểm tra bảo mật định kỳ bởi các chuyên gia độc lập"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Quyền của bạn",
+        "intro": "Là người dùng dịch vụ của chúng tôi, bạn có các quyền sau đối với dữ liệu cá nhân của mình:",
+        "rights": [
+          {
+            "title": "Truy cập và xem xét",
+            "description": "Yêu cầu một bản sao của tất cả dữ liệu của bạn được lưu trữ với chúng tôi"
+          },
+          {
+            "title": "Sửa chữa và cập nhật",
+            "description": "Sửa đổi hoặc sửa chữa bất kỳ thông tin không chính xác nào"
+          },
+          {
+            "title": "Xóa hoàn toàn",
+            "description": "Xóa vĩnh viễn tài khoản của bạn và tất cả dữ liệu của bạn"
+          },
+          {
+            "title": "Tính di động và xuất",
+            "description": "Xuất dữ liệu của bạn ở định dạng có thể đọc được"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Thay đổi chính sách",
+        "content": "Chính sách của chúng tôi là thông báo cho bạn về bất kỳ thay đổi quan trọng nào 30 ngày trước khi chúng có hiệu lực. Mọi thay đổi sẽ được đăng trên trang này với ngày sửa đổi được cập nhật. Chúng tôi khuyến khích bạn thường xuyên xem lại chính sách này để được thông báo về cách chúng tôi bảo vệ thông tin của bạn."
+      },
+      {
+        "id": "contact",
+        "title": "Liên hệ với chúng tôi",
+        "email": "Email",
+        "phone": "Điện thoại",
+        "availability": "Nhóm bảo mật sẵn sàng trả lời các câu hỏi của bạn từ Chủ nhật đến Thứ năm, 9 giờ sáng - 6 giờ chiều"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Hồ sơ - SyriaGPT",
+      "description": "Quản lý thông tin cá nhân, cài đặt bảo mật và gói đăng ký của bạn trong SyriaGPT."
+    },
+    "header": {
+      "title": "Hồ sơ",
+      "description": "Quản lý thông tin cá nhân và cài đặt tài khoản của bạn trong SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Ảnh hồ sơ",
+      "changeAvatar": "Thay đổi ảnh hồ sơ",
+      "joinDate": "Ngày tham gia",
+      "currentPlan": "Gói hiện tại",
+      "freePlan": "Miễn phí",
+      "conversations": "Cuộc trò chuyện",
+      "activeDays": "Ngày hoạt động"
+    },
+    "personalInfo": {
+      "title": "Thông tin cá nhân",
+      "description": "Cập nhật tên, email và cài đặt cơ bản của bạn",
+      "fullName": "Họ và tên",
+      "email": "Địa chỉ email",
+      "editButton": "Chỉnh sửa thông tin",
+      "cancelButton": "Hủy",
+      "saveButton": "Lưu thay đổi",
+      "updateSuccess": "Hồ sơ được cập nhật thành công!"
+    },
+    "security": {
+      "title": "Bảo mật & Mật khẩu",
+      "description": "Giữ tài khoản của bạn an toàn bằng cách thường xuyên cập nhật mật khẩu của bạn",
+      "currentPassword": "Mật khẩu hiện tại",
+      "currentPasswordPlaceholder": "Nhập mật khẩu hiện tại...",
+      "newPassword": "Mật khẩu mới",
+      "newPasswordPlaceholder": "Nhập mật khẩu mới...",
+      "confirmNewPassword": "Xác nhận mật khẩu mới",
+      "confirmNewPasswordPlaceholder": "Xác nhận mật khẩu mới...",
+      "updateButton": "Cập nhật mật khẩu",
+      "passwordMismatch": "Mật khẩu mới không khớp.",
+      "updateSuccess": "Mật khẩu đã được thay đổi thành công!"
+    },
+    "subscription": {
+      "title": "Gói đăng ký",
+      "description": "Bạn hiện đang sử dụng gói Miễn phí - nhận thêm nhiều tính năng hơn",
+      "upgradeTitle": "Nâng cấp lên Pro",
+      "upgradeDescription": "Nhận thêm các tính năng bổ sung và phản hồi ưu tiên",
+      "upgradeButton": "Nâng cấp ngay"
+    },
+    "dangerZone": {
+      "title": "Vùng nguy hiểm",
+      "description": "Những hành động này không thể hoàn tác - hãy tiến hành một cách thận trọng",
+      "deleteTitle": "Xóa tài khoản vĩnh viễn",
+      "deleteDescription": "Tất cả dữ liệu và cuộc trò chuyện của bạn sẽ bị xóa vĩnh viễn",
+      "deleteButton": "Xóa tài khoản"
+    },
+    "deleteModal": {
+      "title": "Xác nhận xóa tài khoản",
+      "message": "Bạn có hoàn toàn chắc chắn không? Tài khoản của bạn và tất cả dữ liệu của bạn sẽ bị xóa vĩnh viễn. Hành động này không thể hoàn tác.",
+      "cancelButton": "Hủy",
+      "confirmButton": "Xác nhận xóa",
+      "deleteSuccess": "Tài khoản của bạn đã được xóa thành công."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Tạo tài khoản mới - SyriaGPT",
+      "description": "Tham gia cộng đồng SyriaGPT và bắt đầu khám phá sức mạnh của AI được thiết kế cho bối cảnh Syria."
+    },
+    "infoPanel": {
+      "title": "Tham gia cộng đồng SyriaGPT",
+      "description": "Khám phá sức mạnh của trí tuệ nhân tạo được thiết kế đặc biệt cho văn hóa và bối cảnh Syria",
+      "features": [
+        {
+          "title": "AI tiên tiến",
+          "description": "Các công nghệ hiện đại được đào tạo trên nội dung tiếng Ả Rập và Syria"
+        },
+        {
+          "title": "Bảo mật & Quyền riêng tư được đảm bảo",
+          "description": "Bảo vệ nâng cao cho dữ liệu của bạn với mã hóa đẳng cấp thế giới"
+        },
+        {
+          "title": "Cộng đồng năng động",
+          "description": "Tham gia cùng hàng nghìn người dùng Syria đam mê công nghệ"
+        },
+        {
+          "title": "Các tính năng độc quyền",
+          "description": "Các công cụ tùy chỉnh cho nội dung Syria và Ả Rập"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT đã thay đổi hoàn toàn cách tôi làm việc. Một sự hiểu biết sâu sắc về ngôn ngữ và văn hóa Syria.\"",
+        "author": "- Ahmed Al-Shami, Nhà phát triển"
+      }
+    },
+    "form": {
+      "title": "Tạo tài khoản mới",
+      "description": "Điền vào các chi tiết sau để tạo tài khoản của bạn",
+      "firstName": "Tên",
+      "lastName": "Họ",
+      "email": "Địa chỉ email",
+      "password": "Mật khẩu",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "placeholder": "Nhập {field}...",
+      "emailPlaceholder": "example@email.com",
+      "passwordStrength": "Độ mạnh của mật khẩu",
+      "strengthLevels": [
+        "Rất yếu",
+        "Yếu",
+        "Trung bình",
+        "Mạnh",
+        "Rất mạnh"
+      ],
+      "submitButton": "Tạo tài khoản mới",
+      "loadingButton": "Đang tạo tài khoản...",
+      "googleButton": "Đăng ký bằng Google",
+      "orSeparator": "hoặc",
+      "hasAccount": "Bạn đã có tài khoản?",
+      "loginLink": "Đăng nhập",
+      "termsAgreement": "Bằng cách tạo tài khoản, bạn đồng ý với",
+      "termsLink": "Điều khoản sử dụng",
+      "and": "và",
+      "privacyLink": "Chính sách bảo mật",
+      "successAlert": "Tài khoản của bạn đã được tạo thành công! Chào mừng bạn đến với SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Phải có ít nhất 2 ký tự",
+      "maxLength": "Quá dài",
+      "emailRequired": "Email là bắt buộc",
+      "emailInvalid": "Địa chỉ email không hợp lệ",
+      "passwordLength": "Mật khẩu phải có ít nhất 8 ký tự",
+      "passwordComplexity": "Phải chứa một chữ hoa, một chữ thường và một số",
+      "passwordMismatch": "Mật khẩu không khớp"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Đặt lại mật khẩu - SyriaGPT",
+      "description": "Đặt một mật khẩu mới, mạnh cho tài khoản SyriaGPT của bạn."
+    },
+    "form": {
+      "title": "Đặt mật khẩu mới",
+      "description": "Chọn một mật khẩu mạnh để bảo vệ tài khoản của bạn.",
+      "newPasswordLabel": "Mật khẩu mới",
+      "confirmPasswordLabel": "Xác nhận mật khẩu",
+      "passwordMismatchError": "Mật khẩu không khớp.",
+      "submitButton": "Cập nhật mật khẩu",
+      "loadingButton": "Đang cập nhật...",
+      "showPasswordAria": "Hiển thị mật khẩu",
+      "hidePasswordAria": "Ẩn mật khẩu",
+      "mismatchToast": "Vui lòng đảm bảo mật khẩu khớp.",
+      "loadingToast": "Đang cập nhật mật khẩu...",
+      "successToast": "Mật khẩu được cập nhật thành công!"
+    },
+    "strengthIndicator": {
+      "title": "Độ mạnh",
+      "levels": [
+        "Rất yếu",
+        "Yếu",
+        "Chấp nhận được",
+        "Tốt",
+        "Mạnh",
+        "Rất mạnh"
+      ]
+    },
+    "successScreen": {
+      "title": "Thành công!",
+      "description": "Mật khẩu của bạn đã được cập nhật. Bây giờ bạn có thể đăng nhập an toàn bằng thông tin đăng nhập mới của mình.",
+      "backToLoginButton": "Quay lại đăng nhập"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Cài đặt - SyriaGPT",
+      "description": "Tùy chỉnh trải nghiệm SyriaGPT của bạn, quản lý giao diện, ngôn ngữ, thông báo và dữ liệu."
+    },
+    "header": {
+      "title": "Cài đặt SyriaGPT",
+      "description": "Tùy chỉnh trải nghiệm cá nhân của bạn",
+      "unsavedChanges": "Các thay đổi chưa được lưu"
+    },
+    "appearance": {
+      "title": "Giao diện & Hiển thị",
+      "description": "Tùy chỉnh giao diện và cảm nhận của ứng dụng cho phù hợp với sở thích của bạn",
+      "theme": "Kiểu chủ đề",
+      "themes": {
+        "light": { "label": "Sáng", "description": "Lý tưởng để sử dụng vào ban ngày" },
+        "dark": {
+          "label": "Tối",
+          "description": "Dễ chịu cho mắt vào ban đêm"
+        },
+        "system": {
+          "label": "Hệ thống",
+          "description": "Theo cài đặt thiết bị của bạn"
+        }
+      },
+      "preview": {
+        "title": "Xem trước các thay đổi",
+        "description": "Xem bản xem trước trực tiếp các thay đổi trước khi lưu",
+        "new": "MỚI"
+      }
+    },
+    "language": {
+      "title": "Ngôn ngữ & Khu vực",
+      "description": "Đặt cài đặt ngôn ngữ và khu vực",
+      "interfaceLanguage": {
+        "title": "Ngôn ngữ giao diện",
+        "description": "Ngôn ngữ được sử dụng trong các menu và các yếu tố tương tác",
+        "badge": "Tự động"
+      },
+      "languages": {
+        "ar": "العربية (Syria)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Thông báo & Âm thanh",
+      "description": "Kiểm soát các cảnh báo và hiệu ứng âm thanh",
+      "enableNotifications": {
+        "title": "Bật thông báo",
+        "description": "Nhận thông báo về tin nhắn và các cập nhật quan trọng"
+      },
+      "sounds": {
+        "title": "Âm thanh",
+        "description": "Phát âm thanh khi gửi và nhận tin nhắn"
+      }
+    },
+    "dataManagement": {
+      "title": "Quản lý dữ liệu",
+      "description": "Kiểm soát việc lưu và chia sẻ dữ liệu của bạn",
+      "autoSave": {
+        "title": "Tự động lưu",
+        "description": "Tự động lưu các cuộc trò chuyện của bạn để tham khảo lại sau"
+      },
+      "exportData": "Xuất dữ liệu",
+      "clearHistory": "Xóa các cuộc trò chuyện"
+    },
+    "advanced": {
+      "title": "Cài đặt nâng cao",
+      "description": "Các tùy chọn nâng cao cho người dùng chuyên nghiệp",
+      "developerMode": {
+        "title": "Chế độ nhà phát triển",
+        "description": "Hiển thị thông tin kỹ thuật bổ sung và các tùy chọn phát triển",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Phân tích",
+        "description": "Giúp cải thiện dịch vụ bằng cách gửi dữ liệu sử dụng ẩn danh"
+      }
+    },
+    "saveBar": {
+      "title": "Bạn có muốn lưu các thay đổi không?",
+      "description": "Các cài đặt mới sẽ được áp dụng ngay lập tức",
+      "reset": "Đặt lại",
+      "save": "Lưu thay đổi",
+      "saving": "Đang lưu...",
+      "success": "Cài đặt đã được lưu thành công!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Xác nhận xóa lịch sử",
+        "message": "Bạn có chắc không? Tất cả các cuộc trò chuyện trước đây của bạn sẽ bị xóa vĩnh viễn. Hành động này không thể hoàn tác.",
+        "confirm": "Có, xóa",
+        "success": "Lịch sử trò chuyện đã được xóa thành công."
+      },
+      "exportData": {
+        "title": "Xuất dữ liệu",
+        "message": "Một bản sao của tất cả dữ liệu của bạn sẽ được tạo và gửi đến email của bạn. Bạn có muốn tiếp tục không?",
+        "confirm": "Có, tiếp tục",
+        "success": "Đang xuất dữ liệu của bạn..."
+      },
+      "cancel": "Hủy"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Điều khoản dịch vụ - SyriaGPT",
+      "description": "Đọc các điều khoản và điều kiện để sử dụng các dịch vụ của SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Chuyển sang tiếng Ả Rập",
+      "print": "In"
+    },
+    "title": "Điều khoản dịch vụ",
+    "subtitle": "Cập nhật lần cuối: 24 tháng 8 năm 2025",
+    "intro": "Chào mừng bạn đến với SyriaGPT. Bằng cách sử dụng các dịch vụ của chúng tôi, bạn đồng ý với các điều khoản này. Vui lòng đọc kỹ chúng.",
+    "sectionsTitle": "Các phần",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Chấp nhận các điều khoản",
+        "content": "Bằng cách truy cập và sử dụng SyriaGPT, bạn đồng ý bị ràng buộc bởi các Điều khoản và Điều kiện này. Nếu bạn không đồng ý với bất kỳ phần nào của các điều khoản này, bạn không nên sử dụng các dịch vụ của chúng tôi."
+      },
+      {
+        "id": "services",
+        "title": "2. Mô tả các dịch vụ",
+        "content": "SyriaGPT là một trợ lý AI được thiết kế để cung cấp hỗ trợ trong các lĩnh vực khác nhau liên quan đến bối cảnh Syria."
+      },
+      {
+        "id": "usage",
+        "title": "3. Sử dụng được chấp nhận",
+        "content": "Bạn phải sử dụng các dịch vụ của chúng tôi một cách hợp pháp và có đạo đức. Bạn bị cấm sử dụng dịch vụ cho các mục đích bất hợp pháp hoặc có hại."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Quyền riêng tư và dữ liệu",
+        "content": "Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ dữ liệu của bạn. Chúng tôi chỉ thu thập dữ liệu cần thiết để cung cấp dịch vụ và sẽ không chia sẻ nó mà không có sự đồng ý của bạn."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Sở hữu trí tuệ",
+        "content": "Mọi quyền được bảo lưu cho SyriaGPT. Nội dung, thiết kế và logo là tài sản của chúng tôi. Nội dung bạn tạo bằng dịch vụ vẫn là của bạn."
+      },
+      {
+        "id": "liability",
+        "title": "6. Tuyên bố từ chối trách nhiệm",
+        "content": "Dịch vụ được cung cấp \"nguyên trạng\" mà không có bất kỳ bảo đảm nào. Chúng tôi không đảm bảo tính chính xác hoặc đầy đủ của thông tin được cung cấp và không chịu trách nhiệm cho bất kỳ thiệt hại nào phát sinh từ việc sử dụng nó."
+      },
+      {
+        "id": "termination",
+        "title": "7. Chấm dứt dịch vụ",
+        "content": "Chúng tôi có quyền chấm dứt hoặc đình chỉ tài khoản của bạn trong trường hợp vi phạm các điều khoản này hoặc trong trường hợp có hành vi gây hại hoặc bất hợp pháp."
+      },
+      {
+        "id": "contact",
+        "title": "8. Liên hệ với chúng tôi",
+        "content": "Đối với bất kỳ câu hỏi nào về các điều khoản này, vui lòng liên hệ với chúng tôi qua email: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Tôi đã đọc và đồng ý với các điều khoản",
+    "continueButton": "Tiếp tục",
+    "backToTop": "Quay lại đầu trang",
+    "expandAll": "Mở rộng tất cả",
+    "collapseAll": "Thu gọn tất cả",
+    "readingProgress": "Tiến trình đọc",
+    "copyright": "© {year} SyriaGPT. Mọi quyền được bảo lưu."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Nâng cấp lên Pro - SyriaGPT",
+      "description": "Tận hưởng các khả năng không giới hạn, tốc độ vượt trội và quyền truy cập ưu tiên vào các tính năng mới với SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Nâng cấp lên Pro",
+      "description": "Tận hưởng các khả năng không giới hạn, tốc độ vượt trội và quyền truy cập ưu tiên vào các tính năng mới"
+    },
+    "stats": [
+      { "value": "10x", "label": "Phản hồi nhanh hơn" },
+      { "value": "∞", "label": "Tin nhắn không giới hạn" },
+      { "value": "24/7", "label": "Hỗ trợ liên tục" }
+    ],
+    "billingToggle": {
+      "monthly": "Hàng tháng",
+      "yearly": "Hàng năm",
+      "saving": "Tiết kiệm 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Gói miễn phí",
+        "subtitle": "Gói hiện tại",
+        "price": "$0",
+        "period": "Trọn đời",
+        "features": [
+          "Truy cập vào mô hình cơ bản",
+          "20 tin nhắn mỗi ngày",
+          "Tốc độ phản hồi tiêu chuẩn",
+          "Các tính năng cơ bản"
+        ],
+        "buttonText": "Gói hiện tại của bạn"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Dành cho các chuyên gia và doanh nghiệp",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "mỗi tháng",
+        "periodYearly": "mỗi năm",
+        "popular": "Phổ biến nhất",
+        "features": [
+          "Mô hình GPT-4 nâng cao",
+          "Tin nhắn không giới hạn",
+          "Tốc độ phản hồi vượt trội",
+          "Quyền truy cập ưu tiên vào các tính năng mới",
+          "Hỗ trợ kỹ thuật chuyên biệt",
+          "Giao diện nâng cao không có quảng cáo"
+        ],
+        "buttonText": "Nâng cấp ngay"
+      }
+    },
+    "comparison": {
+      "title": "So sánh các gói",
+      "featureHeader": "Các tính năng",
+      "freeHeader": "Miễn phí",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Truy cập vào mô hình cơ bản", "free": true, "pro": true },
+        { "text": "Tin nhắn hàng ngày có giới hạn (20)", "free": true, "pro": false },
+        { "text": "Tin nhắn không giới hạn", "free": false, "pro": true },
+        {
+          "text": "Truy cập vào mô hình GPT-4 nâng cao",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Tốc độ phản hồi tiêu chuẩn", "free": true, "pro": false },
+        {
+          "text": "Tốc độ phản hồi vượt trội (nhanh hơn 10 lần)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Quyền truy cập ưu tiên vào các tính năng mới",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Hỗ trợ kỹ thuật chuyên biệt",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Giao diện không có quảng cáo", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Các câu hỏi thường gặp",
+      "toggleOpen": "Đọc thêm",
+      "toggleClose": "Đóng",
+      "items": [
+        {
+          "question": "Tôi có thể hủy đăng ký của mình bất cứ lúc nào không?",
+          "answer": "Có, tất nhiên. Bạn có thể hủy đăng ký gói Pro của mình bất cứ lúc nào từ trang \"Quản lý tài khoản\". Bạn sẽ tiếp tục có quyền truy cập vào các tính năng Pro cho đến cuối kỳ thanh toán hiện tại và sẽ không bị tính thêm phí."
+        },
+        {
+          "question": "Những phương thức thanh toán nào được chấp nhận?",
+          "answer": "Chúng tôi chấp nhận tất cả các thẻ tín dụng và thẻ ghi nợ chính (Visa, MasterCard, American Express) cũng như Sham Cash và các ví điện tử địa phương. Tất cả các khoản thanh toán được xử lý an toàn và được mã hóa thông qua đối tác của chúng tôi, Stripe."
+        },
+        {
+          "question": "Điều gì xảy ra vào cuối kỳ thanh toán hàng năm?",
+          "answer": "Đăng ký hàng năm của bạn sẽ tự động gia hạn trừ khi bạn hủy nó từ cài đặt tài khoản của mình. Chúng tôi sẽ gửi cho bạn một email nhắc nhở một tuần trước ngày gia hạn với các chi tiết về số tiền đến hạn."
+        },
+        {
+          "question": "Tôi có thể được hoàn lại tiền không?",
+          "answer": "Có, chúng tôi cung cấp bảo đảm hoàn tiền đầy đủ trong 30 ngày kể từ ngày đăng ký nếu bạn không hài lòng với dịch vụ vì bất kỳ lý do gì. Chỉ cần liên hệ với nhóm hỗ trợ của chúng tôi và chúng tôi sẽ xử lý yêu cầu hoàn tiền của bạn ngay lập tức."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Sẵn sàng để bắt đầu?",
+      "description": "Tham gia cùng hàng nghìn người dùng đã chọn SyriaGPT Pro để có trải nghiệm AI vượt trội",
+      "buttonText": "Bắt đầu ngay với giá {price}",
+      "guarantee": "Bảo đảm hoàn tiền đầy đủ trong 30 ngày"
+    },
+    "alert": "Bạn sẽ được chuyển hướng đến trang thanh toán..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Xác minh email - SyriaGPT",
+      "description": "Nhập mã xác minh được gửi đến email của bạn để xác nhận tài khoản SyriaGPT của bạn."
+    },
+    "header": {
+      "title": "Xác minh email của bạn",
+      "description": "Nhập mã xác minh được gửi đến"
+    },
+    "form": {
+      "label": "Mã xác minh 6 chữ số",
+      "verifyButton": "Xác minh mã",
+      "verifyingButton": "Đang xác minh...",
+      "resend": {
+        "question": "Bạn không nhận được mã?",
+        "resendButton": "Gửi lại mã",
+        "resendingButton": "Đang gửi lại...",
+        "cooldown": "Gửi lại sau {seconds} giây"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Xác minh thành công!",
+        "description": "Email của bạn đã được xác nhận thành công",
+        "redirecting": "Đang chuyển hướng đến bảng điều khiển..."
+      },
+      "error": {
+        "title": "Xác minh không thành công",
+        "tryAgainButton": "Thử lại"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Vui lòng nhập mã xác minh 6 chữ số",
+      "invalidCode": "Mã xác minh không hợp lệ. Vui lòng thử lại.",
+      "generic": "Đã xảy ra lỗi trong quá trình xác minh. Vui lòng thử lại.",
+      "resendFailed": "Không thể gửi mã xác minh. Vui lòng thử lại."
+    },
+    "backToLogin": "Quay lại đăng nhập",
+    "securityNote": {
+      "title": "Lưu ý bảo mật:",
+      "points": [
+        "Không chia sẻ mã xác minh với bất kỳ ai",
+        "Mã xác minh chỉ có hiệu lực trong 10 phút",
+        "Kiểm tra địa chỉ email của người gửi"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Một mã xác minh mới đã được gửi đến email của bạn"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Đã xảy ra lỗi - SyriaGPT",
+      "description": "Trang lỗi tùy chỉnh cho dự án SyriaGPT."
+    },
+    "offlineMessage": "Bạn hiện đang ngoại tuyến",
+    "errorCode": "Lỗi {statusCode}",
+    "title": "Đã xảy ra lỗi không mong muốn",
+    "description": "Chúng tôi thành thật xin lỗi vì sự bất tiện này. Nhóm kỹ thuật của chúng tôi đã được thông báo và đang làm việc để giải quyết vấn đề nhanh nhất có thể.",
+    "retryButton": "Thử lại",
+    "retryingButton": "Đang thử lại...",
+    "homeButton": "Trang chủ",
+    "backButton": "Quay lại",
+    "suggestionsTitle": "Những gì bạn có thể thử ngay bây giờ:",
+    "suggestion1": "Làm mới trang có thể giải quyết được vấn đề.",
+    "suggestion2": "Vui lòng kiểm tra kết nối internet của bạn.",
+    "suggestion3": "Nếu sự cố vẫn tiếp diễn, vui lòng liên hệ với chúng tôi.",
+    "accordion": {
+      "title": "Chi tiết kỹ thuật cho nhà phát triển",
+      "copy": "Sao chép",
+      "copied": "Đã sao chép",
+      "code": "Mã:",
+      "message": "Tin nhắn:",
+      "digest": "Bản tóm tắt:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Không tìm thấy trang - SyriaGPT",
+      "description": "Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển."
+    },
+    "title": "Có vẻ như bạn đã bị lạc trong các trang!",
+    "description": "Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển",
+    "currentLocation": "Vị trí hiện tại: Không xác định",
+    "search": {
+      "placeholder": "Tìm kiếm trang bạn muốn...",
+      "button": "Tìm kiếm",
+      "searching": "Đang tìm kiếm..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Trang trước",
+        "description": "Quay lại nơi bạn đã đến"
+      },
+      "homePage": {
+        "title": "Trang chủ",
+        "description": "Bắt đầu lại"
+      }
+    },
+    "suggestions": {
+      "title": "Các trang bạn có thể quan tâm",
+      "items": [
+        { "title": "Trang chủ", "description": "Quay lại từ đầu" },
+        { "title": "Trò chuyện", "description": "Bắt đầu một cuộc trò chuyện mới" },
+        { "title": "Trợ giúp", "description": "Nhận trợ giúp" },
+        { "title": "Về Syria", "description": "Khám phá thêm" }
+      ]
+    },
+    "history": {
+      "title": "Các trang đã truy cập gần đây"
+    },
+    "funFact": {
+      "title": "Trong khi bạn đang tìm đường...",
+      "facts": [
+        "Bạn có biết không? Damascus là thủ đô có người ở liên tục lâu đời nhất trên thế giới!",
+        "Bạn có biết không? Bảng chữ cái đầu tiên trong lịch sử được phát minh ở Ugarit, Syria!",
+        "Bạn có biết không? Cây hồ trăn Aleppo có thể sống hơn 300 năm!",
+        "Bạn có biết không? Krak des Chevaliers ở Syria là một trong những lâu đài được bảo tồn tốt nhất trên thế giới!",
+        "Bạn có biết không? Hoa hồng Damask được coi là một trong những loại hoa hồng tốt nhất trên thế giới!"
+      ]
+    },
+    "support": {
+      "message": "Nếu bạn tin rằng đây là một lỗi, vui lòng liên hệ với chúng tôi",
+      "helpCenter": "Trung tâm trợ giúp",
+      "technicalSupport": "Hỗ trợ kỹ thuật"
+    }
+  },
+  "loader": {
+    "title": "đang tải...",
+    "loading": "Vui lòng đợi một phút..."
+  }
+}

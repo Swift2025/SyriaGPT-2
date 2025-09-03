@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "シリアの人工知能",
+    "newChat": "新しいチャット",
+    "pastConversations": "過去の会話",
+    "lightMode": "ライトモード",
+    "darkMode": "ダークモード",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "シリアのユーザー",
+    "userEmail": "user@syriagpt.com",
+    "profile": "プロフィール",
+    "settings": "設定",
+    "upgradeToPro": "Proにアップグレード",
+    "newBadge": "NEW",
+    "helpCenter": "ヘルプセンター",
+    "aboutApp": "アプリについて",
+    "logout": "ログアウト",
+    "logoutModal": {
+      "title": "ログアウトの確認",
+      "description": "アカウントからログアウトしてもよろしいですか？",
+      "cancel": "キャンセル",
+      "confirm": "はい、ログアウトします"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "すべてのお問い合わせにお答えするスマートアシスタント",
+      "examples": "例",
+      "capabilities": "機能",
+      "limitations": "制限事項",
+      "suggestions": {
+        "examples": [
+          "IDカードを簡単に取得する方法を説明してください",
+          "ダマスカス大学で承認されているコースを教えてください",
+          "マフシーの材料は何ですか？"
+        ],
+        "capabilities": [
+          "オクラの作り方とその歴史的関係は？",
+          "シリアのパスポートの手配はどうなっていますか？",
+          "投資に関する情報が必要です"
+        ],
+        "limitations": [
+          "コンピューターの問題を解決するにはどうすればよいですか？",
+          "アレッポ大学の登録条件は何ですか？",
+          "今日のシリアのニュースの概要を教えてください"
+        ]
+      }
+    },
+    "message": {
+      "typing": "入力中..."
+    },
+    "regenerate": "応答を再生成",
+    "input": {
+      "placeholder": "ここにメッセージを入力するか、ファイルをドラッグして添付してください...",
+      "attachFile": "ファイルを添付",
+      "startRecording": "録音開始",
+      "stopRecording": "録音停止",
+      "removeFile": "ファイルを削除"
+    },
+    "dragDrop": {
+      "title": "ここにファイルをドロップしてください",
+      "subtitle": "PDF、Word、テキスト（最大10MB）"
+    },
+    "speechErrors": {
+      "unsupported": "このブラウザでは音声認識がサポートされていません。ChromeまたはEdgeを使用してください。",
+      "permissionDenied": "ブラウザの設定でマイクへのアクセスを許可してください。",
+      "startFailed": "録音を開始できませんでした。ブラウザの設定を確認してください。",
+      "generalError": "録音の開始中にエラーが発生しました。もう一度お試しください。",
+      "no-speech": "音声が検出されませんでした。声がはっきりしていること、マイクが近くにあることを確認してください。",
+      "audio-capture": "マイクにアクセスできません。接続されており、権限が付与されていることを確認してください。",
+      "not-allowed": "権限が拒否されました。ブラウザの設定からマイクの使用を許可してください。",
+      "network": "ネットワークエラーです。インターネット接続を確認してください。",
+      "service-not-allowed": "音声認識サービスは現在利用できません。",
+      "language-not-supported": "この言語はサポートされていません。Chromeブラウザをお試しください。"
+    },
+    "footer": "私たちの目標は、AIシステムとの対話をより自然で安全なものにすることです"
+  },
+  "chat": {
+    "fileAnalysisError": "申し訳ありませんが、ファイルの分析中にエラーが発生しました：{error}",
+    "responseProcessingError": "申し訳ありませんが、応答の処理中にエラーが発生しました。",
+    "networkError": "申し訳ありませんが、接続エラーが発生しました。インターネット接続を確認してください。"
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "SyriaGPTプロジェクトについて",
+      "description": "シリアの文脈に特化したスマートアシスタント、SyriaGPTプロジェクトの目標とビジョンについて学びます。"
+    },
+    "header": {
+      "title": "シリア・アラブ共和国",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "シリアは...心臓です"
+    },
+    "main": {
+      "p1": "これはシリア政府が採択した先駆的な国家プロジェクトであり、シリア方言に特に焦点を当てた高度なアラビア語言語モデルの開発を目指しています。このプロジェクトの目標は、市民が政府サービスや公共・民間セクターと簡単かつ安全に対話できる知識・サービスプラットフォームとなり、手続き、法律、一般情報に関する正確で信頼性の高い回答を提供することです。",
+      "p2": "現地の言語に焦点を当て、標準アラビア語と並行して方言を理解する能力が特徴で、ユーザーの日常生活に寄り添います。また、このプロジェクトは国内のデータセンターでホストされることでデータプライバシーを確保し、出力が正確で偏りのないものであることを保証するために、高い安全性と中立性の基準に従って運営されています。電子政府ポータル、公式アプリケーション、コールセンターと統合できるように設計されており、シリアにおけるデジタルトランスフォーメーションを強化するための基本的な一歩となります。",
+      "p3": "このプロジェクトは、政府手続きの円滑化、教育支援、健康ガイドラインの簡素化、中小企業支援、緊急メッセージの迅速かつ明確な配信など、複数の分野での貢献を目指しています。これにより、市民が情報にアクセスする方法において質的な飛躍を遂げ、自然言語での対話が取引を簡素化し、市民と国家機関との距離を縮める主要な手段となります。"
+    },
+    "footer": {
+      "backButton": "チャットに戻る",
+      "disclaimer": "私たちの目標は、シリアの文脈とそのユーザーのニーズに合わせて、AIシステムとの対話をより自然で安全なものにすることです。皆様からのフィードバックやご提案は、より良いサービスを提供するためにサービスを改善・発展させるのに役立ちます。"
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "パスワードをお忘れですか",
+      "description": "簡単で安全な手順でSyriaGPTアカウントへのアクセスを回復します。"
+    },
+    "infoPanel": {
+      "title": "アカウントを安全に回復",
+      "description": "簡単で安全な手順でアカウントへのアクセスを回復するお手伝いをします。",
+      "steps": {
+        "step1": {
+          "title": "メールアドレスを入力",
+          "description": "SyriaGPTアカウントに登録されているメールアドレス"
+        },
+        "step2": {
+          "title": "メールを確認",
+          "description": "パスワードをリセットするための安全なリンクを送信します"
+        },
+        "step3": {
+          "title": "新しいパスワードを作成",
+          "description": "アカウント用に強力で安全なパスワードを選択してください"
+        }
+      },
+      "securityTip": {
+        "title": "セキュリティのヒント",
+        "description": "アカウントのセキュリティを確保するため、リンクは15分間のみ有効です。メールが見つからない場合は、迷惑メールフォルダを確認してください。"
+      }
+    },
+    "form": {
+      "title": "パスワードをお忘れですか",
+      "description": "回復リンクを受け取るためにメールアドレスを入力してください",
+      "emailLabel": "メールアドレス",
+      "emailPlaceholder": "メールアドレスを入力...",
+      "emailRequiredAlert": "メールアドレスを入力してください。",
+      "submitButton": "回復リンクを送信",
+      "loadingButton": "送信中...",
+      "rememberedPassword": "パスワードを思い出しましたか？",
+      "backToLogin": "ログインに戻る"
+    },
+    "successScreen": {
+      "title": "手順を送信しました",
+      "checkEmailTitle": "メールを確認してください",
+      "description": "パスワード回復リンクを以下に送信しました：",
+      "tip1": "受信トレイを確認してください",
+      "tip2": "迷惑メールフォルダも確認することをお忘れなく",
+      "tip3": "リンクは15分間のみ有効です",
+      "backToLoginButton": "ログインに戻る"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "ヘルプセンター - SyriaGPT",
+      "description": "質問への回答、ユーザーガイドを見つけ、SyriaGPTサポートチームに連絡します。"
+    },
+    "header": {
+      "title": "ヘルプセンター",
+      "description": "SyriaGPTサポートセンターへようこそ！最高の体験を得るためのお手伝いをします。"
+    },
+    "search": {
+      "placeholder": "回答、ユーザーガイドを検索するか、質問してください..."
+    },
+    "categories": {
+      "title": "カテゴリ別に閲覧",
+      "items": [
+        {
+          "title": "はじめに",
+          "description": "プラットフォームの基本的な使い方を学び、利用可能なすべての機能を活用しましょう。"
+        },
+        {
+          "title": "アカウント管理",
+          "description": "プロフィールを編集し、サブスクリプションとセキュリティ設定を管理します。"
+        },
+        {
+          "title": "高度な機能",
+          "description": "ファイル添付、音声検索、高度な人工知能を活用します。"
+        },
+        {
+          "title": "セキュリティとプライバシー",
+          "description": "最高のセキュリティ基準でデータと個人情報を保護する方法を学びます。"
+        }
+      ]
+    },
+    "faq": {
+      "title": "よくある質問",
+      "toggleOpen": "続きを読む",
+      "toggleClose": "閉じる",
+      "items": [
+        {
+          "question": "新しいチャットを開始するにはどうすればよいですか？",
+          "answer": "新しいチャットを開始するには、サイドバーの上部にある「+ 新しいチャット」ボタンをクリックするだけです。キーボードショートカットのCtrl+Nを使っても素早く開始できます。"
+        },
+        {
+          "question": "どのような種類のファイルを添付できますか？",
+          "answer": "PDFファイル、Word文書（doc、docx）、PowerPointファイル、テキストファイル（txt）、画像（jpg、png、gif）を添付できます。1ファイルの最大サイズは10MBで、1回の会話につき最大5つのファイルを添付できます。"
+        },
+        {
+          "question": "過去の会話は保存されますか？",
+          "answer": "はい、過去の会話は自動的かつ安全にアカウントに保存されます。サイドバーの「過去の会話」リストから、日付やトピック別に整理してアクセスできます。"
+        },
+        {
+          "question": "ライトモードとダークモードはどのように機能しますか？",
+          "answer": "サイドバーの専用ボタンを使用して、ライトモードとダークモードを切り替えることができます。システムは自動的に設定を保存し、今後のすべてのセッションで適用します。"
+        },
+        {
+          "question": "音声テキスト変換機能とは何ですか？",
+          "answer": "マイクを使用してアラビア語または英語で音声入力ができます。入力バーのマイクアイコンをクリックして話し始めてください。システムが自動的に音声をテキストに変換します。"
+        },
+        {
+          "question": "携帯電話でSyriaGPTを使用できますか？",
+          "answer": "はい、SyriaGPTはすべてのスマートデバイスのウェブブラウザで利用できます。インターフェースは完全にレスポンシブで、携帯電話やタブレットで完璧に動作します。"
+        }
+      ]
+    },
+    "contact": {
+      "title": "お探しのものが見つかりませんか？",
+      "description": "専任のサポートチームが24時間体制でお手伝いします。お問い合わせいただければ、数分以内に返信いたします！",
+      "emailButton": "メールでのお問い合わせ",
+      "chatButton": "ライブチャット",
+      "phoneButton": "電話",
+      "availability": "24時間365日対応",
+      "responseTime": "5分以内に返信",
+      "languageSupport": "アラビア語対応"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "ログイン - SyriaGPT",
+      "description": "SyriaGPTアカウントにログインして、会話や高度な機能にアクセスします。"
+    },
+    "infoPanel": {
+      "title": "おかえりなさい",
+      "description": "シリアの人工知能の世界を引き続き探求しましょう",
+      "securityTitle": "SyriaGPTはなぜ安全なのですか？",
+      "features": [
+        {
+          "title": "高度なデータ保護",
+          "description": "高度な暗号化技術を使用して個人情報を保護します"
+        },
+        {
+          "title": "二要素認証",
+          "description": "アカウントのセキュリティを確保するための追加の保護層"
+        },
+        {
+          "title": "ローカルな人工知能",
+          "description": "アラブの文化と文脈を理解する高度なシリアの技術"
+        }
+      ],
+      "stats": [
+        { "value": "5万+", "label": "アクティブユーザー" },
+        { "value": "99.9%", "label": "稼働率" },
+        { "value": "24/7", "label": "サポート" }
+      ]
+    },
+    "form": {
+      "title": "ログイン",
+      "description": "アカウントにアクセスするために資格情報を入力してください",
+      "emailLabel": "メールアドレス",
+      "emailPlaceholder": "メールアドレスを入力...",
+      "passwordLabel": "パスワード",
+      "passwordPlaceholder": "パスワードを入力...",
+      "forgotPassword": "パスワードをお忘れですか？",
+      "showPassword": "パスワードを表示",
+      "hidePassword": "パスワードを非表示",
+      "loginButton": "ログイン",
+      "loadingButton": "確認中...",
+      "loginSuccessAlert": "ログインに成功しました！",
+      "orSeparator": "または",
+      "noAccount": "アカウントをお持ちでないですか？",
+      "createAccount": "新しいアカウントを作成"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "プライバシーポリシー - SyriaGPT",
+      "description": "SyriaGPTサービスを使用する際に、個人データがどのように収集、使用、保護されるかについて学びます。"
+    },
+    "header": {
+      "title": "プライバシーポリシー",
+      "lastUpdated": "最終更新日：2025年8月25日",
+      "effectiveDate": "即日発効"
+    },
+    "infoCards": [
+      {
+        "title": "完全な保護",
+        "description": "あなたのデータは最新の暗号化およびセキュリティ技術で保護されています。"
+      },
+      {
+        "title": "完全な管理",
+        "description": "あなたは自分のデータを管理し、いつでも削除できます。"
+      },
+      {
+        "title": "完全な透明性",
+        "description": "何を収集し、どのように使用するかを明確に説明します。"
+      },
+      {
+        "title": "データの販売なし",
+        "description": "第三者にデータを販売または共有することはありません。"
+      }
+    ],
+    "toc": {
+      "title": "目次"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "はじめに",
+        "content": "SyriaGPTへようこそ。私たちはあなたのプライバシーを真剣に受け止めています。このポリシーは、あなたが私たちのアプリケーションを訪問または使用する際に、私たちがあなたから収集する可能性のある情報、またはあなたが提供する可能性のある情報の種類、およびその情報を収集、使用、維持、保護、開示するための私たちの慣行について説明します。"
+      },
+      {
+        "id": "data-collection",
+        "title": "収集する情報",
+        "intro": "私たちは、当社のサービスのユーザーから、およびユーザーに関するいくつかの種類の情報を収集することがあります。これには以下が含まれます：",
+        "points": [
+          "あなたが直接提供する情報：アカウント作成時の名前、メールアドレス、パスワードなど。",
+          "ユーザーコンテンツ：分析のために当社のサービスにアップロードするメッセージ、質問、ファイル。",
+          "利用情報：トラフィックデータや利用ログを含む、当社のサービスの利用に関する詳細。",
+          "デバイス情報：ブラウザの種類、オペレーティングシステム、IPアドレス。"
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "情報の使用方法",
+        "intro": "私たちは、あなたについて収集した情報、またはあなたが私たちに提供した情報を以下の目的で使用します：",
+        "points": [
+          "最高の品質で当社のサービスとそのコンテンツを提供するため。",
+          "あなたのニーズに応じて体験を改善し、パーソナライズするため。",
+          "あなたのアカウントや当社のサービス、重要なお知らせについて連絡するため。",
+          "製品やサービスを改善するための分析および研究目的のため。",
+          "プラットフォームのセキュリティを確保し、不正利用を防ぐため。"
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "情報の開示",
+        "commitmentTitle": "私たちの核となる約束",
+        "commitmentText": "私たちはあなたの個人情報を第三者に販売または貸与しません。これはあなたに対する私たちの基本的な約束です。",
+        "content": "私たちは、裁判所の命令や法律を遵守するため、またはSyriaGPTおよびお客様の権利と安全を重大なセキュリティ上の脅威から保護するためにのみ、個人情報を開示することがあります。"
+      },
+      {
+        "id": "data-security",
+        "title": "データセキュリティ",
+        "protectionTitle": "高度な保護措置：",
+        "points": [
+          "すべての機密データに対するエンドツーエンド暗号化",
+          "高度なファイアウォールで保護された安全なサーバー",
+          "脅威を検出するための24時間365日のセキュリティ監視",
+          "サービスの継続性を確保するための定期的かつ暗号化されたバックアップ",
+          "独立した専門家による定期的なセキュリティテスト"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "あなたの権利",
+        "intro": "当社のサービスのユーザーとして、あなたは自分の個人データに関して以下の権利を有します：",
+        "rights": [
+          {
+            "title": "アクセスとレビュー",
+            "description": "当社に保存されているすべてのデータのコピーを要求する"
+          },
+          {
+            "title": "修正と更新",
+            "description": "不正確な情報を修正または訂正する"
+          },
+          {
+            "title": "完全な削除",
+            "description": "アカウントとすべてのデータを永久に削除する"
+          },
+          {
+            "title": "ポータビリティとエクスポート",
+            "description": "読み取り可能な形式でデータをエクスポートする"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "ポリシーの変更",
+        "content": "当社のポリシーは、重大な変更が発効する30日前に通知することです。変更はこのページに更新された改訂日とともに掲載されます。情報の保護方法について常に把握できるよう、このポリシーを定期的に確認することをお勧めします。"
+      },
+      {
+        "id": "contact",
+        "title": "お問い合わせ",
+        "email": "メール",
+        "phone": "電話",
+        "availability": "プライバシーチームは、日曜日から木曜日の午前9時から午後6時までお問い合わせに対応しています"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "プロフィール - SyriaGPT",
+      "description": "SyriaGPTで個人情報、セキュリティ設定、サブスクリプションプランを管理します。"
+    },
+    "header": {
+      "title": "プロフィール",
+      "description": "SyriaGPTで個人情報とアカウント設定を管理します"
+    },
+    "sidebar": {
+      "avatarAlt": "プロフィール写真",
+      "changeAvatar": "プロフィール写真を変更",
+      "joinDate": "参加日",
+      "currentPlan": "現在のプラン",
+      "freePlan": "無料",
+      "conversations": "会話",
+      "activeDays": "アクティブ日数"
+    },
+    "personalInfo": {
+      "title": "個人情報",
+      "description": "名前、メールアドレス、基本設定を更新します",
+      "fullName": "氏名",
+      "email": "メールアドレス",
+      "editButton": "情報を編集",
+      "cancelButton": "キャンセル",
+      "saveButton": "変更を保存",
+      "updateSuccess": "プロフィールが正常に更新されました！"
+    },
+    "security": {
+      "title": "セキュリティとパスワード",
+      "description": "定期的にパスワードを更新してアカウントを安全に保ちます",
+      "currentPassword": "現在のパスワード",
+      "currentPasswordPlaceholder": "現在のパスワードを入力...",
+      "newPassword": "新しいパスワード",
+      "newPasswordPlaceholder": "新しいパスワードを入力...",
+      "confirmNewPassword": "新しいパスワードを確認",
+      "confirmNewPasswordPlaceholder": "新しいパスワードを確認...",
+      "updateButton": "パスワードを更新",
+      "passwordMismatch": "新しいパスワードが一致しません。",
+      "updateSuccess": "パスワードが正常に変更されました！"
+    },
+    "subscription": {
+      "title": "サブスクリプションプラン",
+      "description": "現在無料プランをご利用中です - より多くの機能をご利用いただけます",
+      "upgradeTitle": "Proにアップグレード",
+      "upgradeDescription": "追加機能と優先応答をご利用いただけます",
+      "upgradeButton": "今すぐアップグレード"
+    },
+    "dangerZone": {
+      "title": "危険ゾーン",
+      "description": "これらの操作は元に戻せません - 注意して進めてください",
+      "deleteTitle": "アカウントを永久に削除",
+      "deleteDescription": "すべてのデータと会話が永久に削除されます",
+      "deleteButton": "アカウントを削除"
+    },
+    "deleteModal": {
+      "title": "アカウント削除の確認",
+      "message": "本当に実行しますか？アカウントとすべてのデータが永久に削除されます。この操作は元に戻せません。",
+      "cancelButton": "キャンセル",
+      "confirmButton": "削除を確定",
+      "deleteSuccess": "アカウントが正常に削除されました。"
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "新しいアカウントを作成 - SyriaGPT",
+      "description": "SyriaGPTコミュニティに参加し、シリアの文脈に合わせて設計されたAIの力を探求し始めましょう。"
+    },
+    "infoPanel": {
+      "title": "SyriaGPTコミュニティに参加",
+      "description": "シリアの文化と文脈に合わせて特別に設計された人工知能の力を発見してください",
+      "features": [
+        {
+          "title": "高度なAI",
+          "description": "アラビア語とシリアのコンテンツでトレーニングされた最新技術"
+        },
+        {
+          "title": "保証されたセキュリティとプライバシー",
+          "description": "世界クラスの暗号化によるデータの高度な保護"
+        },
+        {
+          "title": "活発なコミュニティ",
+          "description": "テクノロジーに情熱を燃やす何千人ものシリアのユーザーに参加しましょう"
+        },
+        {
+          "title": "限定機能",
+          "description": "シリアとアラビアのコンテンツ向けのカスタムツール"
+        }
+      ],
+      "testimonial": {
+        "quote": "「SyriaGPTは私の仕事のやり方を完全に変えました。シリアの言語と文化に対する深い理解があります。」",
+        "author": "- アフマド・アル＝シャミ、開発者"
+      }
+    },
+    "form": {
+      "title": "新しいアカウントを作成",
+      "description": "アカウントを作成するために以下の詳細を入力してください",
+      "firstName": "名",
+      "lastName": "姓",
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "confirmPassword": "パスワードを確認",
+      "placeholder": "{field}を入力...",
+      "emailPlaceholder": "example@email.com",
+      "passwordStrength": "パスワードの強度",
+      "strengthLevels": [
+        "非常に弱い",
+        "弱い",
+        "中程度",
+        "強い",
+        "非常に強い"
+      ],
+      "submitButton": "新しいアカウントを作成",
+      "loadingButton": "アカウント作成中...",
+      "googleButton": "Googleで登録",
+      "orSeparator": "または",
+      "hasAccount": "すでにアカウントをお持ちですか？",
+      "loginLink": "ログイン",
+      "termsAgreement": "アカウントを作成することにより、当社の",
+      "termsLink": "利用規約",
+      "and": "および",
+      "privacyLink": "プライバシーポリシー",
+      "successAlert": "アカウントが正常に作成されました！SyriaGPTへようこそ"
+    },
+    "validation": {
+      "minLength": "2文字以上である必要があります",
+      "maxLength": "長すぎます",
+      "emailRequired": "メールアドレスは必須です",
+      "emailInvalid": "無効なメールアドレスです",
+      "passwordLength": "パスワードは8文字以上である必要があります",
+      "passwordComplexity": "大文字、小文字、数字をそれぞれ1つ以上含める必要があります",
+      "passwordMismatch": "パスワードが一致しません"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "パスワードをリセット - SyriaGPT",
+      "description": "SyriaGPTアカウント用に新しく強力なパスワードを設定します。"
+    },
+    "form": {
+      "title": "新しいパスワードを設定",
+      "description": "アカウントを保護するために強力なパスワードを選択してください。",
+      "newPasswordLabel": "新しいパスワード",
+      "confirmPasswordLabel": "パスワードを確認",
+      "passwordMismatchError": "パスワードが一致しません。",
+      "submitButton": "パスワードを更新",
+      "loadingButton": "更新中...",
+      "showPasswordAria": "パスワードを表示",
+      "hidePasswordAria": "パスワードを非表示",
+      "mismatchToast": "パスワードが一致することを確認してください。",
+      "loadingToast": "パスワードを更新中...",
+      "successToast": "パスワードが正常に更新されました！"
+    },
+    "strengthIndicator": {
+      "title": "強度",
+      "levels": [
+        "非常に弱い",
+        "弱い",
+        "許容範囲",
+        "良い",
+        "強い",
+        "非常に強い"
+      ]
+    },
+    "successScreen": {
+      "title": "成功！",
+      "description": "パスワードが更新されました。新しい資格情報で安全にログインできます。",
+      "backToLoginButton": "ログインに戻る"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "設定 - SyriaGPT",
+      "description": "SyriaGPTの体験をカスタマイズし、外観、言語、通知、データを管理します。"
+    },
+    "header": {
+      "title": "SyriaGPT 設定",
+      "description": "個人の体験をカスタマイズ",
+      "unsavedChanges": "未保存の変更"
+    },
+    "appearance": {
+      "title": "外観と表示",
+      "description": "好みに合わせてアプリケーションの外観をカスタマイズします",
+      "theme": "テーマスタイル",
+      "themes": {
+        "light": { "label": "ライト", "description": "昼間の使用に最適" },
+        "dark": {
+          "label": "ダーク",
+          "description": "夜間に目に優しい"
+        },
+        "system": {
+          "label": "システム",
+          "description": "デバイスの設定に従う"
+        }
+      },
+      "preview": {
+        "title": "変更をプレビュー",
+        "description": "保存前に変更のライブプレビューを表示",
+        "new": "NEW"
+      }
+    },
+    "language": {
+      "title": "言語と地域",
+      "description": "言語と地域の設定を行います",
+      "interfaceLanguage": {
+        "title": "インターフェース言語",
+        "description": "メニューやインタラクティブ要素で使用される言語",
+        "badge": "自動"
+      },
+      "languages": {
+        "ar": "العربية (シリア)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "通知とサウンド",
+      "description": "アラートとサウンドエフェクトを制御します",
+      "enableNotifications": {
+        "title": "通知を有効にする",
+        "description": "メッセージや重要なお知らせのアラートを受信します"
+      },
+      "sounds": {
+        "title": "サウンド",
+        "description": "メッセージの送受信時にサウンドを再生します"
+      }
+    },
+    "dataManagement": {
+      "title": "データ管理",
+      "description": "データの保存と共有を制御します",
+      "autoSave": {
+        "title": "自動保存",
+        "description": "後で参照できるように会話を自動的に保存します"
+      },
+      "exportData": "データをエクスポート",
+      "clearHistory": "会話をクリア"
+    },
+    "advanced": {
+      "title": "詳細設定",
+      "description": "プロフェッショナルユーザー向けの高度なオプション",
+      "developerMode": {
+        "title": "開発者モード",
+        "description": "追加の技術情報と開発オプションを表示します",
+        "badge": "ベータ"
+      },
+      "analytics": {
+        "title": "分析",
+        "description": "匿名の利用データを送信してサービスの改善にご協力ください"
+      }
+    },
+    "saveBar": {
+      "title": "変更を保存しますか？",
+      "description": "新しい設定はすぐに適用されます",
+      "reset": "リセット",
+      "save": "変更を保存",
+      "saving": "保存中...",
+      "success": "設定が正常に保存されました！"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "履歴削除の確認",
+        "message": "よろしいですか？過去のすべての会話が永久に削除されます。この操作は元に戻せません。",
+        "confirm": "はい、削除します",
+        "success": "会話履歴が正常にクリアされました。"
+      },
+      "exportData": {
+        "title": "データをエクスポート",
+        "message": "すべてのデータのコピーが生成され、メールに送信されます。続行しますか？",
+        "confirm": "はい、続行します",
+        "success": "データをエクスポートしています..."
+      },
+      "cancel": "キャンセル"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "利用規約 - SyriaGPT",
+      "description": "SyriaGPTサービスを利用するための利用規約をお読みください。"
+    },
+    "header": {
+      "switchLanguage": "アラビア語に切り替える",
+      "print": "印刷"
+    },
+    "title": "利用規約",
+    "subtitle": "最終更新日：2025年8月24日",
+    "intro": "SyriaGPTへようこそ。当社のサービスを利用することにより、これらの規約に同意したことになります。よくお読みください。",
+    "sectionsTitle": "セクション",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. 規約への同意",
+        "content": "SyriaGPTにアクセスし、利用することにより、これらの利用規約に拘束されることに同意したことになります。これらの規約の一部に同意しない場合は、当社のサービスを利用しないでください。"
+      },
+      {
+        "id": "services",
+        "title": "2. サービスの説明",
+        "content": "SyriaGPTは、シリアの文脈に関連するさまざまな分野で支援を提供するために設計されたAIアシスタントです。"
+      },
+      {
+        "id": "usage",
+        "title": "3. 許容される使用",
+        "content": "当社のサービスは合法的かつ倫理的に使用しなければなりません。違法または有害な目的でサービスを使用することは禁止されています。"
+      },
+      {
+        "id": "privacy",
+        "title": "4. プライバシーとデータ",
+        "content": "私たちはあなたのプライバシーを尊重し、データの保護に努めています。サービスを提供するために必要なデータのみを収集し、あなたの同意なしに共有することはありません。"
+      },
+      {
+        "id": "intellectual",
+        "title": "5. 知的財産",
+        "content": "すべての権利はSyriaGPTに帰属します。コンテンツ、デザイン、ロゴは当社の財産です。サービスを使用して作成したコンテンツはあなたのものです。"
+      },
+      {
+        "id": "liability",
+        "title": "6. 免責事項",
+        "content": "サービスは「現状有姿」で提供され、いかなる保証もありません。提供される情報の正確性や完全性を保証するものではなく、その使用から生じるいかなる損害についても責任を負いません。"
+      },
+      {
+        "id": "termination",
+        "title": "7. サービスの終了",
+        "content": "これらの規約に違反した場合、または有害もしくは違法な行為があった場合、当社はあなたのアカウントを終了または停止する権利を留保します。"
+      },
+      {
+        "id": "contact",
+        "title": "8. お問い合わせ",
+        "content": "これらの規約に関するお問い合わせは、メールでお問い合わせください：support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "規約を読み、同意しました",
+    "continueButton": "続行",
+    "backToTop": "トップに戻る",
+    "expandAll": "すべて展開",
+    "collapseAll": "すべて折りたたむ",
+    "readingProgress": "読書進捗",
+    "copyright": "© {year} SyriaGPT. All rights reserved."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Proにアップグレード - SyriaGPT",
+      "description": "SyriaGPT Proで、無制限の機能、優れた速度、新機能への優先アクセスをお楽しみください。"
+    },
+    "header": {
+      "title": "Proにアップグレード",
+      "description": "無制限の機能、優れた速度、新機能への優先アクセスをお楽しみください"
+    },
+    "stats": [
+      { "value": "10倍", "label": "高速な応答" },
+      { "value": "∞", "label": "無制限のメッセージ" },
+      { "value": "24/7", "label": "継続的なサポート" }
+    ],
+    "billingToggle": {
+      "monthly": "月払い",
+      "yearly": "年払い",
+      "saving": "20%割引"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "無料プラン",
+        "subtitle": "現在のプラン",
+        "price": "$0",
+        "period": "永久",
+        "features": [
+          "基本モデルへのアクセス",
+          "1日20メッセージ",
+          "標準の応答速度",
+          "基本機能"
+        ],
+        "buttonText": "現在のプラン"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "プロフェッショナルおよびビジネス向け",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "月額",
+        "periodYearly": "年額",
+        "popular": "一番人気",
+        "features": [
+          "高度なGPT-4モデル",
+          "無制限のメッセージ",
+          "優れた応答速度",
+          "新機能への優先アクセス",
+          "専門の技術サポート",
+          "広告なしの強化されたインターフェース"
+        ],
+        "buttonText": "今すぐアップグレード"
+      }
+    },
+    "comparison": {
+      "title": "プランを比較",
+      "featureHeader": "機能",
+      "freeHeader": "無料",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "基本モデルへのアクセス", "free": true, "pro": true },
+        { "text": "1日のメッセージ制限（20）", "free": true, "pro": false },
+        { "text": "無制限のメッセージ", "free": false, "pro": true },
+        {
+          "text": "高度なGPT-4モデルへのアクセス",
+          "free": false,
+          "pro": true
+        },
+        { "text": "標準の応答速度", "free": true, "pro": false },
+        {
+          "text": "優れた応答速度（10倍高速）",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "新機能への優先アクセス",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "専門の技術サポート",
+          "free": false,
+          "pro": true
+        },
+        { "text": "広告なしのインターフェース", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "よくある質問",
+      "toggleOpen": "続きを読む",
+      "toggleClose": "閉じる",
+      "items": [
+        {
+          "question": "いつでもサブスクリプションをキャンセルできますか？",
+          "answer": "はい、もちろんです。「アカウント管理」ページからいつでもProプランのサブスクリプションをキャンセルできます。現在の請求期間が終了するまでPro機能へのアクセスは継続され、それ以降の請求は行われません。"
+        },
+        {
+          "question": "どのような支払い方法が利用できますか？",
+          "answer": "主要なクレジットカードおよびデビットカード（Visa、MasterCard、American Express）のほか、Sham Cashや現地の電子ウォレットもご利用いただけます。すべての支払いは、パートナーであるStripeを通じて安全に暗号化されて処理されます。"
+        },
+        {
+          "question": "年間請求期間の終了時にはどうなりますか？",
+          "answer": "アカウント設定からキャンセルしない限り、年間サブスクリプションは自動的に更新されます。更新日の1週間前に、請求額の詳細を記載したリマインダーメールをお送りします。"
+        },
+        {
+          "question": "返金は可能ですか？",
+          "answer": "はい、何らかの理由でサービスにご満足いただけない場合、サブスクリプション日から30日間の全額返金保証を提供しています。サポートチームにご連絡いただければ、すぐに返金手続きを処理いたします。"
+        }
+      ]
+    },
+    "cta": {
+      "title": "始める準備はできましたか？",
+      "description": "優れたAI体験のためにSyriaGPT Proを選んだ何千人ものユーザーに加わりましょう",
+      "buttonText": "{price}で今すぐ始める",
+      "guarantee": "30日間全額返金保証"
+    },
+    "alert": "支払いページにリダイレクトされます..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "メールアドレスの確認 - SyriaGPT",
+      "description": "メールに送信された確認コードを入力して、SyriaGPTアカウントを確認してください。"
+    },
+    "header": {
+      "title": "メールアドレスを確認",
+      "description": "に送信された確認コードを入力してください"
+    },
+    "form": {
+      "label": "6桁の確認コード",
+      "verifyButton": "コードを確認",
+      "verifyingButton": "確認中...",
+      "resend": {
+        "question": "コードが届きませんか？",
+        "resendButton": "コードを再送信",
+        "resendingButton": "再送信中...",
+        "cooldown": "{seconds}秒後に再送信"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "確認に成功しました！",
+        "description": "メールアドレスが正常に確認されました",
+        "redirecting": "ダッシュボードにリダイレクト中..."
+      },
+      "error": {
+        "title": "確認に失敗しました",
+        "tryAgainButton": "再試行"
+      }
+    },
+    "errors": {
+      "incompleteCode": "6桁の確認コードを入力してください",
+      "invalidCode": "無効な確認コードです。もう一度お試しください。",
+      "generic": "確認中にエラーが発生しました。もう一度お試しください。",
+      "resendFailed": "確認コードの送信に失敗しました。もう一度お試しください。"
+    },
+    "backToLogin": "ログインに戻る",
+    "securityNote": {
+      "title": "セキュリティに関する注意：",
+      "points": [
+        "確認コードを誰とも共有しないでください",
+        "確認コードは10分間のみ有効です",
+        "送信者のメールアドレスを確認してください"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "新しい確認コードがメールに送信されました"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "エラーが発生しました - SyriaGPT",
+      "description": "SyriaGPTプロジェクトのカスタムエラーページ。"
+    },
+    "offlineMessage": "現在オフラインです",
+    "errorCode": "エラー {statusCode}",
+    "title": "予期せぬエラーが発生しました",
+    "description": "ご不便をおかけして誠に申し訳ございません。技術チームに通知され、できるだけ早く問題を解決するために作業しています。",
+    "retryButton": "再試行",
+    "retryingButton": "再試行中...",
+    "homeButton": "ホーム",
+    "backButton": "戻る",
+    "suggestionsTitle": "今すぐ試せること：",
+    "suggestion1": "ページを更新すると問題が解決する場合があります。",
+    "suggestion2": "インターネット接続を確認してください。",
+    "suggestion3": "問題が解決しない場合は、お気軽にお問い合わせください。",
+    "accordion": {
+      "title": "開発者向けの技術詳細",
+      "copy": "コピー",
+      "copied": "コピーしました",
+      "code": "コード：",
+      "message": "メッセージ：",
+      "digest": "ダイジェスト："
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "ページが見つかりません - SyriaGPT",
+      "description": "お探しのページは存在しないか、移動されました。"
+    },
+    "title": "ページの中で迷子になったようです！",
+    "description": "お探しのページは存在しないか、移動されました",
+    "currentLocation": "現在地：不明",
+    "search": {
+      "placeholder": "探しているページを検索...",
+      "button": "検索",
+      "searching": "検索中..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "前のページ",
+        "description": "来た場所に戻る"
+      },
+      "homePage": {
+        "title": "ホームページ",
+        "description": "最初からやり直す"
+      }
+    },
+    "suggestions": {
+      "title": "興味があるかもしれないページ",
+      "items": [
+        { "title": "ホームページ", "description": "最初に戻る" },
+        { "title": "チャット", "description": "新しい会話を始める" },
+        { "title": "ヘルプ", "description": "助けを得る" },
+        { "title": "シリアについて", "description": "もっと知る" }
+      ]
+    },
+    "history": {
+      "title": "最近訪れたページ"
+    },
+    "funFact": {
+      "title": "道を探している間に...",
+      "facts": [
+        "知っていましたか？ダマスカスは世界で最も古くから継続して人が住んでいる首都です！",
+        "知っていましたか？歴史上最初のアルファベットはシリアのウガリットで発明されました！",
+        "知っていましたか？アレッポのピスタチオの木は300年以上生きることができます！",
+        "知っていましたか？シリアのクラック・デ・シュヴァリエは世界で最も保存状態の良い城の一つです！",
+        "知っていましたか？ダマスクローズは世界で最も優れたバラの一種とされています！"
+      ]
+    },
+    "support": {
+      "message": "これがエラーだと思われる場合は、お問い合わせください",
+      "helpCenter": "ヘルプセンター",
+      "technicalSupport": "技術サポート"
+    }
+  },
+  "loader": {
+    "title": "読み込み中...",
+    "loading": "少々お待ちください..."
+  }
+}

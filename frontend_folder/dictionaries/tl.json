@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Ang Artipisyal na Katalinuhan ng Syria",
+    "newChat": "Bagong Chat",
+    "pastConversations": "Mga Nakaraang Usapan",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Gumagamit na Syrian",
+    "userEmail": "user@syriagpt.com",
+    "profile": "Profile",
+    "settings": "Mga Setting",
+    "upgradeToPro": "Mag-upgrade sa Pro",
+    "newBadge": "BAGO",
+    "helpCenter": "Help Center",
+    "aboutApp": "Tungkol sa App",
+    "logout": "Mag-logout",
+    "logoutModal": {
+      "title": "Kumpirmahin ang Pag-logout",
+      "description": "Sigurado ka bang gusto mong mag-logout sa iyong account?",
+      "cancel": "Kanselahin",
+      "confirm": "Oo, Mag-logout"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Ang iyong matalinong katulong upang sagutin ang lahat ng iyong mga katanungan",
+      "examples": "Mga Halimbawa",
+      "capabilities": "Mga Kakayahan",
+      "limitations": "Mga Limitasyon",
+      "suggestions": {
+        "examples": [
+          "Ipaliwanag kung paano kumuha ng ID card nang simple",
+          "Ibigay sa akin ang mga aprubadong kurso sa Damascus University",
+          "Ano ang mga sangkap para sa Mahshi?"
+        ],
+        "capabilities": [
+          "Paano gumawa ng okra at ang kaugnayan nito sa kasaysayan?",
+          "Ano ang mga kaayusan para sa pasaporte ng Syria?",
+          "Kailangan ko ng impormasyon tungkol sa pamumuhunan"
+        ],
+        "limitations": [
+          "Paano lutasin ang isang problema sa computer?",
+          "Ano ang mga kondisyon sa pagpaparehistro sa Aleppo University?",
+          "Bigyan mo ako ng buod ng mga balita ngayon sa Syria"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Nagta-type..."
+    },
+    "regenerate": "Muling Bumuo ng Tugon",
+    "input": {
+      "placeholder": "I-type ang iyong mensahe dito, o i-drag ang isang file para ilakip...",
+      "attachFile": "Ilakip ang File",
+      "startRecording": "Simulan ang Pagre-record",
+      "stopRecording": "Itigil ang Pagre-record",
+      "removeFile": "Alisin ang File"
+    },
+    "dragDrop": {
+      "title": "I-drop ang mga file dito",
+      "subtitle": "PDF, Word, Text (Max 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Hindi suportado ang speech recognition sa browser na ito. Mangyaring gumamit ng Chrome o Edge.",
+      "permissionDenied": "Mangyaring payagan ang access sa mikropono sa mga setting ng iyong browser.",
+      "startFailed": "Nabigong simulan ang pagre-record. Suriin ang mga setting ng iyong browser.",
+      "generalError": "May naganap na error habang sinisimulan ang pagre-record. Mangyaring subukang muli.",
+      "no-speech": "Walang natukoy na pagsasalita. Tiyaking malinaw ang iyong boses at malapit ang mikropono.",
+      "audio-capture": "Hindi ma-access ang mikropono. Tiyaking nakakonekta ito at may pahintulot.",
+      "not-allowed": "Tinanggihan ang pahintulot. Mangyaring payagan ang paggamit ng mikropono mula sa mga setting ng browser.",
+      "network": "Error sa network. Pakisuri ang iyong koneksyon sa internet.",
+      "service-not-allowed": "Ang serbisyo ng speech recognition ay kasalukuyang hindi magagamit.",
+      "language-not-supported": "Hindi suportado ang wika. Subukan ang Chrome browser."
+    },
+    "footer": "Ang aming layunin ay gawing mas natural at ligtas ang pakikipag-ugnayan sa mga sistema ng AI"
+  },
+  "chat": {
+    "fileAnalysisError": "Paumanhin, nagkaroon ng error habang sinusuri ang file: {error}",
+    "responseProcessingError": "Paumanhin, nagkaroon ng error habang pinoproseso ang tugon.",
+    "networkError": "Paumanhin, nagkaroon ng error sa koneksyon. Pakisuri ang iyong koneksyon sa internet."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Tungkol sa Proyekto ng SyriaGPT",
+      "description": "Alamin ang tungkol sa mga layunin at pananaw ng proyekto ng SyriaGPT, ang matalinong katulong na dalubhasa sa konteksto ng Syria."
+    },
+    "header": {
+      "title": "Republika ng Arabong Syria",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "Syria.. ay ang Puso"
+    },
+    "main": {
+      "p1": "Ito ay isang nangungunang pambansang proyekto na pinagtibay ng gobyerno ng Syria, na naglalayong bumuo ng isang advanced na modelo ng wikang Arabe na may espesyal na pagtuon sa diyalektong Syrian. Ang layunin ng proyektong ito ay maging isang platform ng kaalaman at serbisyo na tumutulong sa mga mamamayan na makipag-ugnayan sa mga serbisyo ng gobyerno at sa pampubliko at pribadong sektor nang madali at ligtas, na nagbibigay sa kanila ng tumpak at maaasahang mga sagot tungkol sa mga pamamaraan, batas, at pangkalahatang impormasyon.",
+      "p2": "Ito ay natatangi sa pagtuon nito sa lokal na wika at sa kakayahang umunawa ng mga diyalekto kasama ng standard na Arabe, na ginagawa itong malapit sa gumagamit sa kanilang pang-araw-araw na buhay. Tinitiyak din ng proyekto ang privacy ng data sa pamamagitan ng pagho-host sa mga pambansang data center at gumagana ayon sa mataas na pamantayan ng kaligtasan at neutralidad upang matiyak na ang mga output ay tumpak at walang kinikilingan. Ito ay idinisenyo upang maisama sa mga portal ng e-government, opisyal na aplikasyon, at mga call center, kaya't bumubuo ng isang pangunahing hakbang tungo sa pagpapahusay ng digital transformation sa Syria.",
+      "p3": "Ang proyekto ay naglalayong maglingkod sa maraming lugar tulad ng pagpapadali sa mga pamamaraan ng gobyerno, pagsuporta sa edukasyon, pagpapasimple ng mga alituntunin sa kalusugan, pagtulong sa maliliit na negosyo, at pagpapalaganap ng mga mensahe ng emergency nang mabilis at malinaw. Kaya't ito ay kumakatawan sa isang husay na paglukso sa kung paano nakakakuha ng impormasyon ang mga mamamayan, kung saan ang pakikipag-ugnayan sa natural na wika ay nagiging pangunahing paraan ng pagpapasimple ng mga transaksyon at paglalapit ng mga mamamayan sa mga institusyon ng estado."
+    },
+    "footer": {
+      "backButton": "Bumalik sa Chat",
+      "disclaimer": "Ang aming layunin ay gawing mas natural at ligtas ang pakikipag-ugnayan sa mga sistema ng AI, alinsunod sa konteksto ng Syria at sa mga pangangailangan ng mga gumagamit nito. Ang iyong feedback at mga mungkahi ay makakatulong sa amin na mapabuti at mapaunlad ang serbisyo upang mas mahusay kang mapaglingkuran."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Nakalimutan ang Password",
+      "description": "Muling makuha ang access sa iyong SyriaGPT account sa pamamagitan ng simple at ligtas na mga hakbang."
+    },
+    "infoPanel": {
+      "title": "I-recover ang Iyong Account nang Ligtas",
+      "description": "Narito kami upang tulungan kang muling makuha ang access sa iyong account sa pamamagitan ng simple at ligtas na mga hakbang.",
+      "steps": {
+        "step1": {
+          "title": "Ilagay ang iyong email",
+          "description": "Ang email na nakarehistro sa iyong SyriaGPT account"
+        },
+        "step2": {
+          "title": "Suriin ang iyong email",
+          "description": "Magpapadala kami sa iyo ng isang secure na link upang i-reset ang iyong password"
+        },
+        "step3": {
+          "title": "Gumawa ng bagong password",
+          "description": "Pumili ng isang malakas at secure na password para sa iyong account"
+        }
+      },
+      "securityTip": {
+        "title": "Tip sa Seguridad",
+        "description": "Ang link ay may bisa lamang sa loob ng 15 minuto upang matiyak ang seguridad ng iyong account. Kung hindi mo mahanap ang email, suriin ang iyong spam folder."
+      }
+    },
+    "form": {
+      "title": "Nakalimutan ang Password",
+      "description": "Ilagay ang iyong email upang makatanggap ng recovery link",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "Ilagay ang iyong email...",
+      "emailRequiredAlert": "Mangyaring ilagay ang iyong email address.",
+      "submitButton": "Ipadala ang Recovery Link",
+      "loadingButton": "Nagpapadala...",
+      "rememberedPassword": "Naalala mo na ang iyong password?",
+      "backToLogin": "Bumalik sa Pag-login"
+    },
+    "successScreen": {
+      "title": "Naipadala na ang mga Tagubilin",
+      "checkEmailTitle": "Suriin ang Iyong Email",
+      "description": "Nagpadala kami ng link para sa pag-recover ng password sa:",
+      "tip1": "Suriin ang iyong inbox",
+      "tip2": "Huwag kalimutang suriin ang iyong spam folder",
+      "tip3": "Ang link ay may bisa lamang sa loob ng 15 minuto",
+      "backToLoginButton": "Bumalik sa Pag-login"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Help Center - SyriaGPT",
+      "description": "Maghanap ng mga sagot sa iyong mga tanong, mga gabay sa gumagamit, at makipag-ugnayan sa support team ng SyriaGPT."
+    },
+    "header": {
+      "title": "Help Center",
+      "description": "Maligayang pagdating sa support center ng SyriaGPT! Narito kami upang tulungan kang makuha ang pinakamahusay na posibleng karanasan."
+    },
+    "search": {
+      "placeholder": "Maghanap ng mga sagot, mga gabay sa gumagamit, o magtanong..."
+    },
+    "categories": {
+      "title": "Mag-browse ayon sa Kategorya",
+      "items": [
+        {
+          "title": "Pagsisimula",
+          "description": "Alamin ang mga pangunahing kaalaman sa paggamit ng platform at samantalahin ang lahat ng magagamit na feature."
+        },
+        {
+          "title": "Pamamahala ng Account",
+          "description": "I-edit ang iyong profile, pamahalaan ang mga subscription, at ang iyong mga setting ng seguridad."
+        },
+        {
+          "title": "Mga Advanced na Feature",
+          "description": "Gamitin ang mga file attachment, voice search, at advanced na artificial intelligence."
+        },
+        {
+          "title": "Seguridad at Privacy",
+          "description": "Alamin kung paano protektahan ang iyong data at personal na impormasyon gamit ang pinakamataas na pamantayan sa seguridad."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Mga Madalas Itanong",
+      "toggleOpen": "Magbasa pa",
+      "toggleClose": "Isara",
+      "items": [
+        {
+          "question": "Paano ako magsisimula ng bagong chat?",
+          "answer": "Upang magsimula ng bagong chat, i-click lamang ang \"+ Bagong Chat\" na button sa itaas ng sidebar. Maaari mo ring gamitin ang keyboard shortcut na Ctrl+N para sa mabilis na pagsisimula."
+        },
+        {
+          "question": "Anong mga uri ng file ang maaari kong ilakip?",
+          "answer": "Maaari kang maglakip ng mga PDF file, Word documents (doc, docx), PowerPoint files, text files (txt), at mga imahe (jpg, png, gif). Ang maximum na sukat para sa isang file ay 10 MB, at maaari kang maglakip ng hanggang 5 file bawat pag-uusap."
+        },
+        {
+          "question": "Nai-save ba ang aking mga nakaraang usapan?",
+          "answer": "Oo, ang iyong mga nakaraang usapan ay awtomatiko at ligtas na nai-save sa iyong account. Maaari mong i-access ang mga ito mula sa listahan ng \"Mga Nakaraang Usapan\" sa sidebar, na nakaayos ayon sa petsa o paksa."
+        },
+        {
+          "question": "Paano gumagana ang light at dark modes?",
+          "answer": "Maaari kang magpalipat-lipat sa pagitan ng light at dark modes gamit ang dedikadong button sa sidebar. Awtomatikong sine-save ng system ang iyong preference at inilalapat ito sa lahat ng mga susunod na session."
+        },
+        {
+          "question": "Ano ang feature na voice-to-text?",
+          "answer": "Maaari mong gamitin ang iyong mikropono para sa voice dictation sa Arabic o English. I-click ang icon ng mikropono sa input bar at magsimulang magsalita. Awtomatikong iko-convert ng system ang iyong pagsasalita sa text."
+        },
+        {
+          "question": "Maaari ko bang gamitin ang SyriaGPT sa aking mobile phone?",
+          "answer": "Oo, ang SyriaGPT ay magagamit sa pamamagitan ng web browser sa lahat ng smart devices. Ang interface ay fully responsive at gumagana nang perpekto sa mga telepono at tablet."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Hindi mo nahanap ang iyong hinahanap?",
+      "description": "Ang aming dedikadong support team ay magagamit sa buong orasan upang tulungan ka. Makipag-ugnayan sa amin at babalikan ka namin sa loob ng ilang minuto!",
+      "emailButton": "Makipag-ugnayan sa pamamagitan ng Email",
+      "chatButton": "Live Chat",
+      "phoneButton": "Tawag sa Telepono",
+      "availability": "Magagamit 24/7",
+      "responseTime": "Tugon sa loob ng 5 minuto",
+      "languageSupport": "Suporta sa Wikang Arabe"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Mag-login - SyriaGPT",
+      "description": "Mag-login sa iyong SyriaGPT account upang ma-access ang iyong mga usapan at advanced na feature."
+    },
+    "infoPanel": {
+      "title": "Maligayang Pagbabalik",
+      "description": "Ipagpatuloy ang pagtuklas sa mundo ng Syrian artificial intelligence kasama ang",
+      "securityTitle": "Bakit Ligtas ang SyriaGPT?",
+      "features": [
+        {
+          "title": "Advanced na Proteksyon ng Data",
+          "description": "Gumagamit kami ng mga advanced na teknolohiya sa pag-encrypt upang protektahan ang iyong personal na impormasyon"
+        },
+        {
+          "title": "Two-Factor Authentication",
+          "description": "Isang karagdagang layer ng proteksyon upang matiyak ang seguridad ng iyong account"
+        },
+        {
+          "title": "Lokal na Artipisyal na Katalinuhan",
+          "description": "Advanced na teknolohiyang Syrian na nakakaunawa sa kultura at konteksto ng Arabo"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Mga Aktibong Gumagamit" },
+        { "value": "99.9%", "label": "Uptime" },
+        { "value": "24/7", "label": "Suporta" }
+      ]
+    },
+    "form": {
+      "title": "Mag-login",
+      "description": "Ilagay ang iyong mga kredensyal upang ma-access ang iyong account",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "Ilagay ang iyong email...",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Ilagay ang iyong password...",
+      "forgotPassword": "Nakalimutan ang password?",
+      "showPassword": "Ipakita ang password",
+      "hidePassword": "Itago ang password",
+      "loginButton": "Mag-login",
+      "loadingButton": "Nagbe-verify...",
+      "loginSuccessAlert": "Matagumpay ang pag-login!",
+      "orSeparator": "o",
+      "noAccount": "Wala ka pang account?",
+      "createAccount": "Gumawa ng bagong account"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Patakaran sa Privacy - SyriaGPT",
+      "description": "Alamin kung paano kinokolekta, ginagamit, at pinoprotektahan ang iyong personal na data kapag ginagamit mo ang mga serbisyo ng SyriaGPT."
+    },
+    "header": {
+      "title": "Patakaran sa Privacy",
+      "lastUpdated": "Huling Na-update: Agosto 25, 2025",
+      "effectiveDate": "Epektibo Agad"
+    },
+    "infoCards": [
+      {
+        "title": "Buong Proteksyon",
+        "description": "Ang iyong data ay protektado ng pinakabagong mga teknolohiya sa pag-encrypt at seguridad."
+      },
+      {
+        "title": "Buong Kontrol",
+        "description": "Kinokontrol mo ang iyong data at maaaring tanggalin ito anumang oras."
+      },
+      {
+        "title": "Buong Transparency",
+        "description": "Malinaw naming ipinapaliwanag kung ano ang aming kinokolekta at kung paano namin ito ginagamit."
+      },
+      {
+        "title": "Walang Pagbebenta ng Data",
+        "description": "Hindi namin ibinebenta o ibinabahagi ang iyong data sa mga third party."
+      }
+    ],
+    "toc": {
+      "title": "Mga Nilalaman"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Panimula",
+        "content": "Maligayang pagdating sa SyriaGPT. Sineseryoso namin ang iyong privacy. Inilalarawan ng patakarang ito ang mga uri ng impormasyon na maaari naming kolektahin mula sa iyo o na maaari mong ibigay kapag binisita o ginamit mo ang aming aplikasyon, at ang aming mga kasanayan sa pagkolekta, paggamit, pagpapanatili, pagprotekta, at pagbubunyag ng impormasyong iyon."
+      },
+      {
+        "id": "data-collection",
+        "title": "Impormasyong Kinokolekta Namin",
+        "intro": "Maaari kaming mangolekta ng ilang uri ng impormasyon mula sa at tungkol sa mga gumagamit ng aming serbisyo, kabilang ang:",
+        "points": [
+          "Impormasyong direktang ibinibigay mo: tulad ng iyong pangalan, email, at password kapag gumawa ka ng account.",
+          "Nilalaman ng gumagamit: Ang mga mensahe, tanong, at file na ina-upload mo sa aming serbisyo para sa pagsusuri.",
+          "Impormasyon sa paggamit: Mga detalye ng iyong paggamit sa aming serbisyo, kabilang ang data ng trapiko at mga log ng paggamit.",
+          "Impormasyon ng device: Ang iyong uri ng browser, operating system, at IP address."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Paano Namin Ginagamit ang Iyong Impormasyon",
+        "intro": "Ginagamit namin ang impormasyong kinokolekta namin tungkol sa iyo o na ibinibigay mo sa amin para sa mga sumusunod na layunin:",
+        "points": [
+          "Upang maibigay ang aming serbisyo at ang mga nilalaman nito sa iyo sa pinakamahusay na posibleng kalidad.",
+          "Upang mapabuti at i-personalize ang iyong karanasan ayon sa iyong mga pangangailangan.",
+          "Upang makipag-ugnayan sa iyo tungkol sa iyong account o sa aming serbisyo at mahahalagang paunawa.",
+          "Para sa mga layunin ng pagsusuri at pananaliksik upang mapabuti ang aming mga produkto at serbisyo.",
+          "Upang matiyak ang seguridad ng platform at maiwasan ang hindi awtorisadong paggamit."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Pagbubunyag ng Iyong Impormasyon",
+        "commitmentTitle": "Ang Aming Pangunahing Pangako",
+        "commitmentText": "Hindi namin ibinebenta o inuupahan ang iyong personal na impormasyon sa mga third party. Ito ang aming pangunahing pangako sa iyo.",
+        "content": "Maaari lamang naming ibunyag ang personal na impormasyon sa mga sumusunod na kaso: upang sumunod sa anumang utos ng korte o batas, o upang protektahan ang mga karapatan at kaligtasan ng SyriaGPT at ng aming mga customer mula sa malubhang banta sa seguridad."
+      },
+      {
+        "id": "data-security",
+        "title": "Seguridad ng Data",
+        "protectionTitle": "Mga Advanced na Panukalang Proteksyon:",
+        "points": [
+          "End-to-end encryption para sa lahat ng sensitibong data",
+          "Mga secure na server na protektado ng mga advanced na firewall",
+          "24/7 na pagsubaybay sa seguridad upang matukoy ang mga banta",
+          "Regular at naka-encrypt na mga backup upang matiyak ang pagpapatuloy ng serbisyo",
+          "Panaka-nakang pagsusuri sa seguridad ng mga independiyenteng eksperto"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Ang Iyong mga Karapatan",
+        "intro": "Bilang isang gumagamit ng aming serbisyo, mayroon kang mga sumusunod na karapatan tungkol sa iyong personal na data:",
+        "rights": [
+          {
+            "title": "Pag-access at Pagsusuri",
+            "description": "Humiling ng kopya ng lahat ng iyong data na nakaimbak sa amin"
+          },
+          {
+            "title": "Pagwawasto at Pag-update",
+            "description": "Baguhin o iwasto ang anumang hindi tumpak na impormasyon"
+          },
+          {
+            "title": "Kumpletong Pagtanggal",
+            "description": "Permanenteng tanggalin ang iyong account at lahat ng iyong data"
+          },
+          {
+            "title": "Portability at Pag-export",
+            "description": "I-export ang iyong data sa isang nababasang format"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Mga Pagbabago sa Patakaran",
+        "content": "Ang aming patakaran ay ipaalam sa iyo ang anumang makabuluhang pagbabago 30 araw bago ito magkabisa. Anumang mga pagbabago ay ipo-post sa pahinang ito na may na-update na petsa ng rebisyon. Hinihikayat ka naming regular na suriin ang patakarang ito upang manatiling may kaalaman tungkol sa kung paano namin pinoprotektahan ang iyong impormasyon."
+      },
+      {
+        "id": "contact",
+        "title": "Makipag-ugnayan sa Amin",
+        "email": "Email",
+        "phone": "Telepono",
+        "availability": "Ang privacy team ay magagamit upang sagutin ang iyong mga katanungan mula Linggo hanggang Huwebes, 9 AM - 6 PM"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profile - SyriaGPT",
+      "description": "Pamahalaan ang iyong personal na impormasyon, mga setting ng seguridad, at plano ng subscription sa SyriaGPT."
+    },
+    "header": {
+      "title": "Profile",
+      "description": "Pamahalaan ang iyong personal na impormasyon at mga setting ng account sa SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Larawan sa Profile",
+      "changeAvatar": "Baguhin ang larawan sa profile",
+      "joinDate": "Petsa ng Pagsali",
+      "currentPlan": "Kasalukuyang Plano",
+      "freePlan": "Libre",
+      "conversations": "Mga Usapan",
+      "activeDays": "Mga Aktibong Araw"
+    },
+    "personalInfo": {
+      "title": "Personal na Impormasyon",
+      "description": "I-update ang iyong pangalan, email, at mga pangunahing setting",
+      "fullName": "Buong Pangalan",
+      "email": "Email Address",
+      "editButton": "I-edit ang Impormasyon",
+      "cancelButton": "Kanselahin",
+      "saveButton": "I-save ang mga Pagbabago",
+      "updateSuccess": "Matagumpay na na-update ang profile!"
+    },
+    "security": {
+      "title": "Seguridad at Password",
+      "description": "Panatilihing ligtas ang iyong account sa pamamagitan ng regular na pag-update ng iyong password",
+      "currentPassword": "Kasalukuyang Password",
+      "currentPasswordPlaceholder": "Ilagay ang kasalukuyang password...",
+      "newPassword": "Bagong Password",
+      "newPasswordPlaceholder": "Ilagay ang bagong password...",
+      "confirmNewPassword": "Kumpirmahin ang Bagong Password",
+      "confirmNewPasswordPlaceholder": "Kumpirmahin ang bagong password...",
+      "updateButton": "I-update ang Password",
+      "passwordMismatch": "Hindi magkatugma ang mga bagong password.",
+      "updateSuccess": "Matagumpay na nabago ang password!"
+    },
+    "subscription": {
+      "title": "Plano ng Subscription",
+      "description": "Kasalukuyan kang nasa Libreng plano - kumuha ng mas maraming feature",
+      "upgradeTitle": "Mag-upgrade sa Pro",
+      "upgradeDescription": "Kumuha ng mga karagdagang feature at priyoridad na mga tugon",
+      "upgradeButton": "Mag-upgrade Ngayon"
+    },
+    "dangerZone": {
+      "title": "Danger Zone",
+      "description": "Ang mga pagkilos na ito ay hindi maibabalik - magpatuloy nang may pag-iingat",
+      "deleteTitle": "Permanenteng Tanggalin ang Account",
+      "deleteDescription": "Ang lahat ng iyong data at mga usapan ay permanenteng tatanggalin",
+      "deleteButton": "Tanggalin ang Account"
+    },
+    "deleteModal": {
+      "title": "Kumpirmahin ang Pagtanggal ng Account",
+      "message": "Sigurado ka ba? Ang iyong account at lahat ng iyong data ay permanenteng tatanggalin. Ang pagkilos na ito ay hindi maaaring bawiin.",
+      "cancelButton": "Kanselahin",
+      "confirmButton": "Kumpirmahin ang Pagtanggal",
+      "deleteSuccess": "Matagumpay na natanggal ang iyong account."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Gumawa ng Bagong Account - SyriaGPT",
+      "description": "Sumali sa komunidad ng SyriaGPT at simulang tuklasin ang kapangyarihan ng AI na idinisenyo para sa konteksto ng Syria."
+    },
+    "infoPanel": {
+      "title": "Sumali sa Komunidad ng SyriaGPT",
+      "description": "Tuklasin ang kapangyarihan ng artificial intelligence na partikular na idinisenyo para sa kultura at konteksto ng Syria",
+      "features": [
+        {
+          "title": "Advanced na AI",
+          "description": "Mga modernong teknolohiya na sinanay sa nilalamang Arabe at Syrian"
+        },
+        {
+          "title": "Garantisadong Seguridad at Privacy",
+          "description": "Advanced na proteksyon para sa iyong data na may world-class na encryption"
+        },
+        {
+          "title": "Aktibong Komunidad",
+          "description": "Sumali sa libu-libong gumagamit na Syrian na mahilig sa teknolohiya"
+        },
+        {
+          "title": "Mga Eksklusibong Feature",
+          "description": "Mga custom na tool para sa nilalamang Syrian at Arabe"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"Ganap na binago ng SyriaGPT ang paraan ng aking pagtatrabaho. Isang malalim na pag-unawa sa wika at kultura ng Syria.\"",
+        "author": "- Ahmed Al-Shami, Developer"
+      }
+    },
+    "form": {
+      "title": "Gumawa ng Bagong Account",
+      "description": "Punan ang mga sumusunod na detalye upang gawin ang iyong account",
+      "firstName": "Pangalan",
+      "lastName": "Apelyido",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Kumpirmahin ang Password",
+      "placeholder": "Ilagay ang {field}...",
+      "emailPlaceholder": "example@email.com",
+      "passwordStrength": "Lakas ng password",
+      "strengthLevels": [
+        "Napakalambot",
+        "Mahina",
+        "Katamtaman",
+        "Malakas",
+        "Napakalakas"
+      ],
+      "submitButton": "Gumawa ng Bagong Account",
+      "loadingButton": "Gumagawa ng account...",
+      "googleButton": "Mag-sign up gamit ang Google",
+      "orSeparator": "o",
+      "hasAccount": "Mayroon ka nang account?",
+      "loginLink": "Mag-login",
+      "termsAgreement": "Sa paggawa ng account, sumasang-ayon ka sa aming",
+      "termsLink": "Mga Tuntunin ng Paggamit",
+      "and": "at",
+      "privacyLink": "Patakaran sa Privacy",
+      "successAlert": "Matagumpay na nagawa ang iyong account! Maligayang pagdating sa SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Dapat ay hindi bababa sa 2 character",
+      "maxLength": "Masyadong mahaba",
+      "emailRequired": "Kinakailangan ang email",
+      "emailInvalid": "Hindi wastong email address",
+      "passwordLength": "Ang password ay dapat na hindi bababa sa 8 character",
+      "passwordComplexity": "Dapat maglaman ng isang malaking titik, isang maliit na titik, at isang numero",
+      "passwordMismatch": "Hindi magkatugma ang mga password"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "I-reset ang Password - SyriaGPT",
+      "description": "Magtakda ng bago at malakas na password para sa iyong SyriaGPT account."
+    },
+    "form": {
+      "title": "Magtakda ng Bagong Password",
+      "description": "Pumili ng isang malakas na password upang protektahan ang iyong account.",
+      "newPasswordLabel": "Bagong Password",
+      "confirmPasswordLabel": "Kumpirmahin ang Password",
+      "passwordMismatchError": "Hindi magkatugma ang mga password.",
+      "submitButton": "I-update ang Password",
+      "loadingButton": "Nag-a-update...",
+      "showPasswordAria": "Ipakita ang password",
+      "hidePasswordAria": "Itago ang password",
+      "mismatchToast": "Pakitiyak na magkatugma ang mga password.",
+      "loadingToast": "Nag-a-update ng password...",
+      "successToast": "Matagumpay na na-update ang password!"
+    },
+    "strengthIndicator": {
+      "title": "Lakas",
+      "levels": [
+        "Napakalambot",
+        "Mahina",
+        "Katanggap-tanggap",
+        "Maganda",
+        "Malakas",
+        "Napakalakas"
+      ]
+    },
+    "successScreen": {
+      "title": "Tagumpay!",
+      "description": "Na-update na ang iyong password. Maaari ka nang mag-login nang ligtas gamit ang iyong mga bagong kredensyal.",
+      "backToLoginButton": "Bumalik sa Pag-login"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Mga Setting - SyriaGPT",
+      "description": "I-customize ang iyong karanasan sa SyriaGPT, pamahalaan ang hitsura, wika, mga notification, at data."
+    },
+    "header": {
+      "title": "Mga Setting ng SyriaGPT",
+      "description": "I-customize ang iyong personal na karanasan",
+      "unsavedChanges": "Mga hindi na-save na pagbabago"
+    },
+    "appearance": {
+      "title": "Hitsura at Display",
+      "description": "I-customize ang hitsura at pakiramdam ng aplikasyon upang umangkop sa iyong mga kagustuhan",
+      "theme": "Estilo ng Tema",
+      "themes": {
+        "light": { "label": "Maliwanag", "description": "Ideal para sa paggamit sa araw" },
+        "dark": {
+          "label": "Madilim",
+          "description": "Madali sa mata sa gabi"
+        },
+        "system": {
+          "label": "System",
+          "description": "Sumusunod sa mga setting ng iyong device"
+        }
+      },
+      "preview": {
+        "title": "I-preview ang mga Pagbabago",
+        "description": "Tingnan ang isang live na preview ng mga pagbabago bago i-save",
+        "new": "BAGO"
+      }
+    },
+    "language": {
+      "title": "Wika at Rehiyon",
+      "description": "Itakda ang wika at mga setting ng rehiyon",
+      "interfaceLanguage": {
+        "title": "Wika ng Interface",
+        "description": "Ang wikang ginagamit sa mga menu at interactive na elemento",
+        "badge": "Auto"
+      },
+      "languages": {
+        "ar": "العربية (Syria)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Mga Notification at Tunog",
+      "description": "Kontrolin ang mga alerto at sound effect",
+      "enableNotifications": {
+        "title": "Paganahin ang mga Notification",
+        "description": "Makatanggap ng mga alerto para sa mga mensahe at mahahalagang update"
+      },
+      "sounds": {
+        "title": "Mga Tunog",
+        "description": "Magpatugtog ng mga tunog kapag nagpapadala at tumatanggap ng mga mensahe"
+      }
+    },
+    "dataManagement": {
+      "title": "Pamamahala ng Data",
+      "description": "Kontrolin ang pag-save at pagbabahagi ng iyong data",
+      "autoSave": {
+        "title": "Auto-Save",
+        "description": "Awtomatikong i-save ang iyong mga usapan upang balikan sa ibang pagkakataon"
+      },
+      "exportData": "I-export ang Data",
+      "clearHistory": "I-clear ang mga Usapan"
+    },
+    "advanced": {
+      "title": "Mga Advanced na Setting",
+      "description": "Mga advanced na opsyon para sa mga propesyonal na gumagamit",
+      "developerMode": {
+        "title": "Developer Mode",
+        "description": "Magpakita ng karagdagang teknikal na impormasyon at mga opsyon sa pag-unlad",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Tulungan mapabuti ang serbisyo sa pamamagitan ng pagpapadala ng anonymous na data ng paggamit"
+      }
+    },
+    "saveBar": {
+      "title": "Gusto mo bang i-save ang mga pagbabago?",
+      "description": "Ang mga bagong setting ay agad na ilalapat",
+      "reset": "I-reset",
+      "save": "I-save ang mga Pagbabago",
+      "saving": "Nagse-save...",
+      "success": "Matagumpay na na-save ang mga setting!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Kumpirmahin ang Pagtanggal ng History",
+        "message": "Sigurado ka ba? Ang lahat ng iyong mga nakaraang usapan ay permanenteng tatanggalin. Ang pagkilos na ito ay hindi maaaring bawiin.",
+        "confirm": "Oo, tanggalin",
+        "success": "Matagumpay na na-clear ang history ng usapan."
+      },
+      "exportData": {
+        "title": "I-export ang Data",
+        "message": "Isang kopya ng lahat ng iyong data ay bubuuin at ipapadala sa iyong email. Gusto mo bang magpatuloy?",
+        "confirm": "Oo, magpatuloy",
+        "success": "Nag-e-export ng iyong data..."
+      },
+      "cancel": "Kanselahin"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Mga Tuntunin ng Serbisyo - SyriaGPT",
+      "description": "Basahin ang mga tuntunin at kundisyon para sa paggamit ng mga serbisyo ng SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Lumipat sa Arabe",
+      "print": "I-print"
+    },
+    "title": "Mga Tuntunin ng Serbisyo",
+    "subtitle": "Huling Na-update: Agosto 24, 2025",
+    "intro": "Maligayang pagdating sa SyriaGPT. Sa paggamit ng aming mga serbisyo, sumasang-ayon ka sa mga tuntuning ito. Mangyaring basahin itong mabuti.",
+    "sectionsTitle": "Mga Seksyon",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Pagtanggap ng mga Tuntunin",
+        "content": "Sa pag-access at paggamit ng SyriaGPT, sumasang-ayon kang sumunod sa mga Tuntunin at Kundisyon na ito. Kung hindi ka sumasang-ayon sa anumang bahagi ng mga tuntuning ito, hindi mo dapat gamitin ang aming mga serbisyo."
+      },
+      {
+        "id": "services",
+        "title": "2. Paglalarawan ng mga Serbisyo",
+        "content": "Ang SyriaGPT ay isang AI assistant na idinisenyo upang magbigay ng tulong sa iba't ibang larangan na may kaugnayan sa konteksto ng Syria."
+      },
+      {
+        "id": "usage",
+        "title": "3. Katanggap-tanggap na Paggamit",
+        "content": "Dapat mong gamitin ang aming mga serbisyo nang legal at etikal. Ipinagbabawal kang gamitin ang serbisyo para sa mga ilegal o mapaminsalang layunin."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Privacy at Data",
+        "content": "Iginagalang namin ang iyong privacy at nakatuon kami sa pagprotekta sa iyong data. Kinokolekta lamang namin ang kinakailangang data upang maibigay ang serbisyo at hindi ito ibabahagi nang walang iyong pahintulot."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Intelektwal na Ari-arian",
+        "content": "Lahat ng karapatan ay nakalaan sa SyriaGPT. Ang nilalaman, disenyo, at mga logo ay aming pag-aari. Ang nilalaman na iyong nilikha gamit ang serbisyo ay nananatiling sa iyo."
+      },
+      {
+        "id": "liability",
+        "title": "6. Disclaimer",
+        "content": "Ang serbisyo ay ibinibigay \"as is\" nang walang anumang mga warranty. Hindi namin ginagarantiyahan ang katumpakan o pagkakumpleto ng impormasyong ibinigay at hindi kami mananagot para sa anumang mga pinsala na nagreresulta mula sa paggamit nito."
+      },
+      {
+        "id": "termination",
+        "title": "7. Pagwawakas ng Serbisyo",
+        "content": "Inilalaan namin ang karapatang wakasan o suspindihin ang iyong account sa kaso ng paglabag sa mga tuntuning ito o sa kaso ng mapaminsala o ilegal na pag-uugali."
+      },
+      {
+        "id": "contact",
+        "title": "8. Makipag-ugnayan sa Amin",
+        "content": "Para sa anumang mga katanungan tungkol sa mga tuntuning ito, mangyaring makipag-ugnayan sa amin sa pamamagitan ng email: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Nabasa ko at sumasang-ayon ako sa mga tuntunin",
+    "continueButton": "Magpatuloy",
+    "backToTop": "Bumalik sa Itaas",
+    "expandAll": "Palawakin Lahat",
+    "collapseAll": "I-collapse Lahat",
+    "readingProgress": "Progreso sa Pagbasa",
+    "copyright": "© {year} SyriaGPT. Lahat ng karapatan ay nakalaan."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Mag-upgrade sa Pro - SyriaGPT",
+      "description": "Masiyahan sa walang limitasyong mga kakayahan, superyor na bilis, at priyoridad na access sa mga bagong feature gamit ang SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Mag-upgrade sa Pro",
+      "description": "Masiyahan sa walang limitasyong mga kakayahan, superyor na bilis, at priyoridad na access sa mga bagong feature"
+    },
+    "stats": [
+      { "value": "10x", "label": "Mas Mabilis na Tugon" },
+      { "value": "∞", "label": "Walang Limitasyong mga Mensahe" },
+      { "value": "24/7", "label": "Patuloy na Suporta" }
+    ],
+    "billingToggle": {
+      "monthly": "Buwanan",
+      "yearly": "Taunan",
+      "saving": "Makatipid ng 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Libreng Plano",
+        "subtitle": "Kasalukuyang Plano",
+        "price": "$0",
+        "period": "Habambuhay",
+        "features": [
+          "Access sa pangunahing modelo",
+          "20 mensahe bawat araw",
+          "Standard na bilis ng tugon",
+          "Mga pangunahing feature"
+        ],
+        "buttonText": "Ang Iyong Kasalukuyang Plano"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Para sa mga propesyonal at negosyo",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "bawat buwan",
+        "periodYearly": "bawat taon",
+        "popular": "Pinakasikat",
+        "features": [
+          "Advanced na modelo ng GPT-4",
+          "Walang limitasyong mga mensahe",
+          "Superyor na bilis ng tugon",
+          "Priyoridad na access sa mga bagong feature",
+          "Espesyal na teknikal na suporta",
+          "Pinahusay na interface na walang ad"
+        ],
+        "buttonText": "Mag-upgrade Ngayon"
+      }
+    },
+    "comparison": {
+      "title": "Paghambingin ang mga Plano",
+      "featureHeader": "Mga Feature",
+      "freeHeader": "Libre",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Access sa pangunahing modelo", "free": true, "pro": true },
+        { "text": "Limitadong pang-araw-araw na mensahe (20)", "free": true, "pro": false },
+        { "text": "Walang limitasyong mga mensahe", "free": false, "pro": true },
+        {
+          "text": "Access sa advanced na modelo ng GPT-4",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Standard na bilis ng tugon", "free": true, "pro": false },
+        {
+          "text": "Superyor na bilis ng tugon (10x mas mabilis)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Priyoridad na access sa mga bagong feature",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Espesyal na teknikal na suporta",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Interface na walang ad", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Mga Madalas Itanong",
+      "toggleOpen": "Magbasa pa",
+      "toggleClose": "Isara",
+      "items": [
+        {
+          "question": "Maaari ko bang kanselahin ang aking subscription anumang oras?",
+          "answer": "Oo, siyempre. Maaari mong kanselahin ang iyong Pro plan subscription anumang oras mula sa pahina ng \"Pamamahala ng Account\". Patuloy kang magkakaroon ng access sa mga feature ng Pro hanggang sa katapusan ng kasalukuyang panahon ng pagsingil, at walang karagdagang singil na gagawin."
+        },
+        {
+          "question": "Anong mga paraan ng pagbabayad ang tinatanggap?",
+          "answer": "Tumatanggap kami ng lahat ng pangunahing credit at debit card (Visa, MasterCard, American Express) pati na rin ang Sham Cash at mga lokal na e-wallet. Lahat ng mga pagbabayad ay ligtas na pinoproseso at naka-encrypt sa pamamagitan ng aming partner, ang Stripe."
+        },
+        {
+          "question": "Ano ang mangyayari sa katapusan ng taunang panahon ng pagsingil?",
+          "answer": "Awtomatikong magre-renew ang iyong taunang subscription maliban kung kanselahin mo ito mula sa mga setting ng iyong account. Magpapadala kami sa iyo ng isang paalala sa email isang linggo bago ang petsa ng pag-renew na may mga detalye ng halagang dapat bayaran."
+        },
+        {
+          "question": "Maaari ba akong makakuha ng refund?",
+          "answer": "Oo, nag-aalok kami ng isang buong 30-araw na garantiyang ibabalik ang pera mula sa petsa ng subscription kung hindi ka nasisiyahan sa serbisyo sa anumang dahilan. Makipag-ugnayan lamang sa aming support team, at agad naming ipoproseso ang iyong kahilingan sa refund."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Handa nang Magsimula?",
+      "description": "Sumali sa libu-libong gumagamit na pumili ng SyriaGPT Pro para sa isang superyor na karanasan sa AI",
+      "buttonText": "Magsimula Ngayon sa halagang {price}",
+      "guarantee": "30-araw na garantiyang ibabalik ang buong pera"
+    },
+    "alert": "Ire-redirect ka sa pahina ng pagbabayad..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "I-verify ang Email - SyriaGPT",
+      "description": "Ilagay ang verification code na ipinadala sa iyong email upang kumpirmahin ang iyong SyriaGPT account."
+    },
+    "header": {
+      "title": "I-verify ang Iyong Email",
+      "description": "Ilagay ang verification code na ipinadala sa"
+    },
+    "form": {
+      "label": "6-digit na verification code",
+      "verifyButton": "I-verify ang Code",
+      "verifyingButton": "Nagbe-verify...",
+      "resend": {
+        "question": "Hindi natanggap ang code?",
+        "resendButton": "Ipadala Ulit ang Code",
+        "resendingButton": "Nagpapadala ulit...",
+        "cooldown": "Ipadala ulit sa loob ng {seconds} segundo"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Matagumpay ang Pag-verify!",
+        "description": "Matagumpay na nakumpirma ang iyong email",
+        "redirecting": "Nagre-redirect sa dashboard..."
+      },
+      "error": {
+        "title": "Nabigo ang Pag-verify",
+        "tryAgainButton": "Subukang Muli"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Mangyaring ilagay ang 6-digit na verification code",
+      "invalidCode": "Hindi wastong verification code. Mangyaring subukang muli.",
+      "generic": "Nagkaroon ng error sa panahon ng pag-verify. Mangyaring subukang muli.",
+      "resendFailed": "Nabigong ipadala ang verification code. Mangyaring subukang muli."
+    },
+    "backToLogin": "Bumalik sa Pag-login",
+    "securityNote": {
+      "title": "Tala sa Seguridad:",
+      "points": [
+        "Huwag ibahagi ang verification code sa sinuman",
+        "Ang verification code ay may bisa lamang sa loob ng 10 minuto",
+        "Suriin ang email address ng nagpadala"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Isang bagong verification code ang ipinadala sa iyong email"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "May Naganap na Error - SyriaGPT",
+      "description": "Custom na pahina ng error para sa proyekto ng SyriaGPT."
+    },
+    "offlineMessage": "Kasalukuyan kang offline",
+    "errorCode": "Error {statusCode}",
+    "title": "May Naganap na Hindi Inaasahang Error",
+    "description": "Taos-puso kaming humihingi ng paumanhin para sa abala. Naabisuhan na ang aming technical team at nagsusumikap na lutasin ang isyu sa lalong madaling panahon.",
+    "retryButton": "Subukang Muli",
+    "retryingButton": "Sumusubok muli...",
+    "homeButton": "Home",
+    "backButton": "Bumalik",
+    "suggestionsTitle": "Ano ang maaari mong subukan ngayon:",
+    "suggestion1": "Ang pag-refresh ng pahina ay maaaring malutas ang problema.",
+    "suggestion2": "Pakisuri ang iyong koneksyon sa internet.",
+    "suggestion3": "Kung magpapatuloy ang problema, huwag mag-atubiling makipag-ugnayan sa amin.",
+    "accordion": {
+      "title": "Mga Teknikal na Detalye para sa mga Developer",
+      "copy": "Kopyahin",
+      "copied": "Kinopya",
+      "code": "Code:",
+      "message": "Mensahe:",
+      "digest": "Digest:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Hindi Nahanap ang Pahina - SyriaGPT",
+      "description": "Ang pahinang iyong hinahanap ay hindi umiiral o inilipat na."
+    },
+    "title": "Mukhang naligaw ka sa mga pahina!",
+    "description": "Ang pahinang iyong hinahanap ay hindi umiiral o inilipat na",
+    "currentLocation": "Kasalukuyang Lokasyon: Hindi Alam",
+    "search": {
+      "placeholder": "Hanapin ang pahinang gusto mo...",
+      "button": "Hanapin",
+      "searching": "Naghahanap..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Nakaraang Pahina",
+        "description": "Bumalik kung saan ka nanggaling"
+      },
+      "homePage": {
+        "title": "Home Page",
+        "description": "Magsimula ulit"
+      }
+    },
+    "suggestions": {
+      "title": "Mga pahinang maaaring interesado ka",
+      "items": [
+        { "title": "Home Page", "description": "Bumalik sa simula" },
+        { "title": "Chat", "description": "Magsimula ng bagong usapan" },
+        { "title": "Tulong", "description": "Kumuha ng tulong" },
+        { "title": "Tungkol sa Syria", "description": "Tuklasin pa" }
+      ]
+    },
+    "history": {
+      "title": "Mga Kamakailang Binisitang Pahina"
+    },
+    "funFact": {
+      "title": "Habang hinahanap mo ang iyong daan...",
+      "facts": [
+        "Alam mo ba? Ang Damascus ang pinakamatandang patuloy na tinitirhang kabisera sa mundo!",
+        "Alam mo ba? Ang unang alpabeto sa kasaysayan ay naimbento sa Ugarit, Syria!",
+        "Alam mo ba? Ang puno ng Aleppo pistachio ay maaaring mabuhay nang higit sa 300 taon!",
+        "Alam mo ba? Ang Krak des Chevaliers sa Syria ay isa sa mga pinakamahusay na napreserbang kastilyo sa mundo!",
+        "Alam mo ba? Ang Damask rose ay itinuturing na isa sa mga pinakamahusay na uri ng rosas sa mundo!"
+      ]
+    },
+    "support": {
+      "message": "Kung naniniwala kang ito ay isang error, mangyaring makipag-ugnayan sa amin",
+      "helpCenter": "Help Center",
+      "technicalSupport": "Teknikal na Suporta"
+    }
+  },
+  "loader": {
+    "title": "naglo-load...",
+    "loading": "Mangyaring maghintay ng isang minuto..."
+  }
+}

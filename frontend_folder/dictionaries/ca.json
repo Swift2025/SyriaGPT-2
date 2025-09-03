@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "La Intel·ligència Artificial Siriana",
+    "newChat": "Nou Xat",
+    "pastConversations": "Converses Anteriors",
+    "lightMode": "Mode Clar",
+    "darkMode": "Mode Fosc",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Usuari Sirià",
+    "userEmail": "usuari@syriagpt.com",
+    "profile": "Perfil",
+    "settings": "Configuració",
+    "upgradeToPro": "Actualitza a Pro",
+    "newBadge": "NOU",
+    "helpCenter": "Centre d'Ajuda",
+    "aboutApp": "Sobre l'App",
+    "logout": "Tanca la sessió",
+    "logoutModal": {
+      "title": "Confirma el tancament de sessió",
+      "description": "Estàs segur que vols tancar la sessió del teu compte?",
+      "cancel": "Cancel·la",
+      "confirm": "Sí, tanca la sessió"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "El teu assistent intel·ligent per respondre a totes les teves consultes",
+      "examples": "Exemples",
+      "capabilities": "Capacitats",
+      "limitations": "Limitacions",
+      "suggestions": {
+        "examples": [
+          "Explica com obtenir un DNI de manera senzilla",
+          "Dóna'm els cursos aprovats a la Universitat de Damasc",
+          "Quins són els ingredients per al Mahshi?"
+        ],
+        "capabilities": [
+          "Com es fa l'ocra i quina és la seva relació històrica?",
+          "Quins són els tràmits per al passaport sirià?",
+          "Necessito informació sobre inversions"
+        ],
+        "limitations": [
+          "Com resoldre un problema informàtic?",
+          "Quines són les condicions d'inscripció a la Universitat d'Alep?",
+          "Dóna'm un resum de les notícies d'avui a Síria"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Escribint..."
+    },
+    "regenerate": "Torna a generar la resposta",
+    "input": {
+      "placeholder": "Escriu el teu missatge aquí, o arrossega un fitxer per adjuntar-lo...",
+      "attachFile": "Adjunta un fitxer",
+      "startRecording": "Inicia la gravació",
+      "stopRecording": "Atura la gravació",
+      "removeFile": "Elimina el fitxer"
+    },
+    "dragDrop": {
+      "title": "Deixa anar els fitxers aquí",
+      "subtitle": "PDF, Word, Text (Màx. 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "El reconeixement de veu no és compatible amb aquest navegador. Si us plau, utilitza Chrome o Edge.",
+      "permissionDenied": "Si us plau, permet l'accés al micròfon a la configuració del teu navegador.",
+      "startFailed": "No s'ha pogut iniciar la gravació. Comprova la configuració del teu navegador.",
+      "generalError": "S'ha produït un error en iniciar la gravació. Si us plau, torna-ho a provar.",
+      "no-speech": "No s'ha detectat cap veu. Assegura't que la teva veu sigui clara i que el micròfon estigui a prop.",
+      "audio-capture": "No es pot accedir al micròfon. Assegura't que estigui connectat i que s'hagi concedit el permís.",
+      "not-allowed": "S'ha denegat el permís. Si us plau, permet l'ús del micròfon des de la configuració del navegador.",
+      "network": "Error de xarxa. Si us plau, comprova la teva connexió a Internet.",
+      "service-not-allowed": "El servei de reconeixement de veu no està disponible actualment.",
+      "language-not-supported": "L'idioma no és compatible. Prova el navegador Chrome."
+    },
+    "footer": "El nostre objectiu és fer que els sistemes d'IA siguin més naturals i segurs per interactuar"
+  },
+  "chat": {
+    "fileAnalysisError": "Ho sentim, s'ha produït un error en analitzar el fitxer: {error}",
+    "responseProcessingError": "Ho sentim, s'ha produït un error en processar la resposta.",
+    "networkError": "Ho sentim, s'ha produït un error de connexió. Si us plau, comprova la teva connexió a Internet."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Sobre el Projecte SyriaGPT",
+      "description": "Coneix els objectius i la visió del projecte SyriaGPT, l'assistent intel·ligent especialitzat en el context sirià."
+    },
+    "header": {
+      "title": "República Àrab Siriana",
+      "subtitle": "REPÚBLICA ÀRAB SIRIANA",
+      "mapText": "Síria... és el Cor"
+    },
+    "main": {
+      "p1": "Aquest és un projecte nacional pioner adoptat pel govern sirià, amb l'objectiu de desenvolupar un model de llenguatge àrab avançat amb un enfocament especial en el dialecte sirià. L'objectiu d'aquest projecte és ser una plataforma de coneixement i servei que ajudi els ciutadans a interactuar amb els serveis governamentals i els sectors públic i privat de manera fàcil i segura, proporcionant-los respostes precises i fiables sobre procediments, lleis i informació general.",
+      "p2": "Es distingeix pel seu enfocament en l'idioma local i la capacitat d'entendre dialectes juntament amb l'àrab estàndard, cosa que l'apropa a l'usuari en la seva vida diària. El projecte també garanteix la privadesa de les dades en estar allotjat en centres de dades nacionals i opera d'acord amb alts estàndards de seguretat i neutralitat per garantir que els resultats siguin precisos i imparcials. Està dissenyat per ser integrable amb portals de govern electrònic, aplicacions oficials i centres de trucades, constituint així un pas fonamental cap a la millora de la transformació digital a Síria.",
+      "p3": "El projecte busca servir múltiples àrees com la facilitació de tràmits governamentals, el suport a l'educació, la simplificació de les directrius de salut, l'assistència a les petites empreses i la difusió de missatges d'emergència de forma ràpida i clara. Representa així un salt qualitatiu en la forma en què els ciutadans accedeixen a la informació, on la interacció en llenguatge natural es converteix en un mitjà principal per simplificar les transaccions i apropar els ciutadans a les institucions de l'estat."
+    },
+    "footer": {
+      "backButton": "Torna al Xat",
+      "disclaimer": "El nostre objectiu és fer que els sistemes d'IA siguin més naturals i segurs per interactuar, en línia amb el context sirià i les necessitats dels seus usuaris. Els teus comentaris i suggeriments ens ajudaran a millorar i desenvolupar el servei per servir-te millor."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Heu oblidat la contrasenya",
+      "description": "Recupera l'accés al teu compte de SyriaGPT amb passos senzills i segurs."
+    },
+    "infoPanel": {
+      "title": "Recupera el teu compte de forma segura",
+      "description": "Estem aquí per ajudar-te a recuperar l'accés al teu compte amb passos senzills i segurs.",
+      "steps": {
+        "step1": {
+          "title": "Introdueix el teu correu electrònic",
+          "description": "El correu electrònic registrat al teu compte de SyriaGPT"
+        },
+        "step2": {
+          "title": "Comprova el teu correu electrònic",
+          "description": "T'enviarem un enllaç segur per restablir la teva contrasenya"
+        },
+        "step3": {
+          "title": "Crea una nova contrasenya",
+          "description": "Tria una contrasenya forta i segura per al teu compte"
+        }
+      },
+      "securityTip": {
+        "title": "Consell de seguretat",
+        "description": "L'enllaç només és vàlid durant 15 minuts per garantir la seguretat del teu compte. Si no trobes el correu electrònic, comprova la teva carpeta de correu brossa."
+      }
+    },
+    "form": {
+      "title": "Heu oblidat la contrasenya",
+      "description": "Introdueix el teu correu electrònic per rebre un enllaç de recuperació",
+      "emailLabel": "Adreça de correu electrònic",
+      "emailPlaceholder": "Introdueix el teu correu electrònic...",
+      "emailRequiredAlert": "Si us plau, introdueix la teva adreça de correu electrònic.",
+      "submitButton": "Envia l'enllaç de recuperació",
+      "loadingButton": "S'està enviant...",
+      "rememberedPassword": "Recordes la teva contrasenya?",
+      "backToLogin": "Torna a l'inici de sessió"
+    },
+    "successScreen": {
+      "title": "Instruccions enviades",
+      "checkEmailTitle": "Comprova el teu correu electrònic",
+      "description": "Hem enviat un enllaç de recuperació de contrasenya a:",
+      "tip1": "Comprova la teva bústia d'entrada",
+      "tip2": "No oblidis comprovar la teva carpeta de correu brossa",
+      "tip3": "L'enllaç només és vàlid durant 15 minuts",
+      "backToLoginButton": "Torna a l'inici de sessió"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Centre d'Ajuda - SyriaGPT",
+      "description": "Troba respostes a les teves preguntes, guies d'usuari i contacta amb l'equip de suport de SyriaGPT."
+    },
+    "header": {
+      "title": "Centre d'Ajuda",
+      "description": "Benvingut al centre de suport de SyriaGPT! Estem aquí per ajudar-te a obtenir la millor experiència possible."
+    },
+    "search": {
+      "placeholder": "Busca respostes, guies d'usuari o fes una pregunta..."
+    },
+    "categories": {
+      "title": "Navega per Categoria",
+      "items": [
+        {
+          "title": "Primers Passos",
+          "description": "Aprèn els conceptes bàsics d'ús de la plataforma i aprofita totes les funcions disponibles."
+        },
+        {
+          "title": "Gestió del Compte",
+          "description": "Edita el teu perfil, gestiona subscripcions i la teva configuració de seguretat."
+        },
+        {
+          "title": "Funcions Avançades",
+          "description": "Utilitza fitxers adjunts, cerca per veu i intel·ligència artificial avançada."
+        },
+        {
+          "title": "Seguretat i Privadesa",
+          "description": "Aprèn com protegir les teves dades i informació personal amb els més alts estàndards de seguretat."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntes Freqüents",
+      "toggleOpen": "Llegeix Més",
+      "toggleClose": "Tanca",
+      "items": [
+        {
+          "question": "Com puc iniciar un nou xat?",
+          "answer": "Per iniciar un nou xat, simplement fes clic al botó \"+ Nou Xat\" a la part superior de la barra lateral. També pots utilitzar la drecera de teclat Ctrl+N per un inici ràpid."
+        },
+        {
+          "question": "Quins tipus de fitxers puc adjuntar?",
+          "answer": "Pots adjuntar fitxers PDF, documents de Word (doc, docx), fitxers de PowerPoint, fitxers de text (txt) i imatges (jpg, png, gif). La mida màxima per a un sol fitxer és de 10 MB, i pots adjuntar fins a 5 fitxers per conversa."
+        },
+        {
+          "question": "Es guarden les meves converses passades?",
+          "answer": "Sí, les teves converses passades es guarden de forma automàtica i segura al teu compte. Pots accedir-hi des de la llista de \"Converses Anteriors\" a la barra lateral, organitzades per data o tema."
+        },
+        {
+          "question": "Com funcionen els modes clar i fosc?",
+          "answer": "Pots canviar entre els modes clar i fosc usant el botó dedicat a la barra lateral. El sistema guarda automàticament la teva preferència i l'aplica en totes les sessions futures."
+        },
+        {
+          "question": "Què és la funció de veu a text?",
+          "answer": "Pots usar el teu micròfon per al dictat per veu en àrab o anglès. Fes clic a la icona del micròfon a la barra d'entrada i comença a parlar. El sistema convertirà automàticament la teva veu en text."
+        },
+        {
+          "question": "Puc usar SyriaGPT al meu telèfon mòbil?",
+          "answer": "Sí, SyriaGPT està disponible a través del navegador web en tots els dispositius intel·ligents. La interfície és totalment receptiva i funciona perfectament en telèfons i tauletes."
+        }
+      ]
+    },
+    "contact": {
+      "title": "No has trobat el que buscaves?",
+      "description": "El nostre equip de suport dedicat està disponible les 24 hores per ajudar-te. Contacta'ns i et respondrem en minuts!",
+      "emailButton": "Contactar per Correu Electrònic",
+      "chatButton": "Xat en Viu",
+      "phoneButton": "Trucada Telefònica",
+      "availability": "Disponible 24/7",
+      "responseTime": "Resposta en 5 minuts",
+      "languageSupport": "Suport en Idioma Àrab"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Inici de sessió - SyriaGPT",
+      "description": "Inicia sessió al teu compte de SyriaGPT per accedir a les teves converses i funcions avançades."
+    },
+    "infoPanel": {
+      "title": "Benvingut de Nou",
+      "description": "Continua explorant el món de la intel·ligència artificial siriana amb",
+      "securityTitle": "Per què SyriaGPT és Segur?",
+      "features": [
+        {
+          "title": "Protecció de Dades Avançada",
+          "description": "Utilitzem tecnologies d'encriptació avançades per protegir la teva informació personal"
+        },
+        {
+          "title": "Autenticació de Dos Factors",
+          "description": "Una capa extra de protecció per garantir la seguretat del teu compte"
+        },
+        {
+          "title": "Intel·ligència Artificial Local",
+          "description": "Tecnologia siriana avançada que entén la cultura i el context àrab"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Usuaris Actius" },
+        { "value": "99.9%", "label": "Temps d'Activitat" },
+        { "value": "24/7", "label": "Suport" }
+      ]
+    },
+    "form": {
+      "title": "Inici de sessió",
+      "description": "Introdueix les teves credencials per accedir al teu compte",
+      "emailLabel": "Adreça de correu electrònic",
+      "emailPlaceholder": "Introdueix el teu correu electrònic...",
+      "passwordLabel": "Contrasenya",
+      "passwordPlaceholder": "Introdueix la teva contrasenya...",
+      "forgotPassword": "Has oblidat la contrasenya?",
+      "showPassword": "Mostra la contrasenya",
+      "hidePassword": "Amaga la contrasenya",
+      "loginButton": "Inici de sessió",
+      "loadingButton": "S'està verificant...",
+      "loginSuccessAlert": "Inici de sessió correcte!",
+      "orSeparator": "o",
+      "noAccount": "No tens un compte?",
+      "createAccount": "Crea un nou compte"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Política de Privadesa - SyriaGPT",
+      "description": "Aprèn com es recullen, utilitzen i protegeixen les teves dades personals quan utilitzes els serveis de SyriaGPT."
+    },
+    "header": {
+      "title": "Política de Privadesa",
+      "lastUpdated": "Última Actualització: 25 d'agost de 2025",
+      "effectiveDate": "Efectiva Immediatament"
+    },
+    "infoCards": [
+      {
+        "title": "Protecció Total",
+        "description": "Les teves dades estan protegides amb les últimes tecnologies d'encriptació i seguretat."
+      },
+      {
+        "title": "Control Total",
+        "description": "Tu controles les teves dades i pots eliminar-les en qualsevol moment."
+      },
+      {
+        "title": "Transparència Total",
+        "description": "Expliquem clarament què recollim i com ho usem."
+      },
+      {
+        "title": "No Venem Dades",
+        "description": "No venem ni compartim les teves dades amb tercers."
+      }
+    ],
+    "toc": {
+      "title": "Continguts"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introducció",
+        "content": "Benvingut a SyriaGPT. Ens prenem la teva privadesa molt seriosament. Aquesta política descriu els tipus d'informació que podem recollir de tu o que pots proporcionar quan visites o uses la nostra aplicació, i les nostres pràctiques per recollir, usar, mantenir, protegir i divulgar aquesta informació."
+      },
+      {
+        "id": "data-collection",
+        "title": "Informació que Recollim",
+        "intro": "Podem recollir diversos tipus d'informació de i sobre els usuaris del nostre servei, incloent:",
+        "points": [
+          "Informació que proporciones directament: com el teu nom, correu electrònic i contrasenya quan crees un compte.",
+          "Contingut de l'usuari: Els missatges, preguntes i fitxers que puges al nostre servei per a la seva anàlisi.",
+          "Informació d'ús: Detalls del teu ús del nostre servei, incloent dades de trànsit i registres d'ús.",
+          "Informació del dispositiu: El teu tipus de navegador, sistema operatiu i adreça IP."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Com Usem la teva Informació",
+        "intro": "Usem la informació que recollim sobre tu o que ens proporciones per als següents propòsits:",
+        "points": [
+          "Per proporcionar-te el nostre servei i els seus continguts amb la millor qualitat possible.",
+          "Per millorar i personalitzar la teva experiència segons les teves necessitats.",
+          "Per comunicar-nos amb tu sobre el teu compte o el nostre servei i avisos importants.",
+          "Per a fins d'anàlisi i investigació per millorar els nostres productes i serveis.",
+          "Per garantir la seguretat de la plataforma i prevenir l'ús no autoritzat."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Divulgació de la teva Informació",
+        "commitmentTitle": "El Nostre Compromís Principal",
+        "commitmentText": "No venem ni lloguem la teva informació personal a tercers. Aquest és el nostre compromís fonamental amb tu.",
+        "content": "Podem divulgar informació personal només en els següents casos: per complir amb qualsevol ordre judicial o llei, o per protegir els drets i la seguretat de SyriaGPT i els nostres clients de amenaces de seguretat greus."
+      },
+      {
+        "id": "data-security",
+        "title": "Seguretat de les Dades",
+        "protectionTitle": "Mesures de Protecció Avançades:",
+        "points": [
+          "Cifrat d'extrem a extrem per a totes les dades sensibles",
+          "Servidors segurs protegits per tallafocs avançats",
+          "Monitorització de seguretat 24/7 per detectar amenaces",
+          "Còpies de seguretat regulars i xifrades per garantir la continuïtat del servei",
+          "Proves de seguretat periòdiques per experts independents"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Els Teus Drets",
+        "intro": "Com a usuari del nostre servei, tens els següents drets respecte a les teves dades personals:",
+        "rights": [
+          {
+            "title": "Accés i Revisió",
+            "description": "Sol·licitar una còpia de totes les teves dades emmagatzemades amb nosaltres"
+          },
+          {
+            "title": "Correcció i Actualització",
+            "description": "Modificar o corregir qualsevol informació inexacta"
+          },
+          {
+            "title": "Eliminació Completa",
+            "description": "Eliminar permanentment el teu compte i totes les teves dades"
+          },
+          {
+            "title": "Portabilitat i Exportació",
+            "description": "Exportar les teves dades en un format llegible"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Canvis en la Política",
+        "content": "La nostra política és notificar-te qualsevol canvi significatiu 30 dies abans que entri en vigor. Qualsevol canvi es publicarà en aquesta pàgina amb una data de revisió actualitzada. T'animem a revisar aquesta política regularment per mantenir-te informat sobre com protegim la teva informació."
+      },
+      {
+        "id": "contact",
+        "title": "Contacta'ns",
+        "email": "Correu Electrònic",
+        "phone": "Telèfon",
+        "availability": "L'equip de privadesa està disponible per respondre a les teves consultes de diumenge a dijous, de 9 a.m. a 6 p.m."
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Perfil - SyriaGPT",
+      "description": "Gestiona la teva informació personal, configuració de seguretat i pla de subscripció a SyriaGPT."
+    },
+    "header": {
+      "title": "Perfil",
+      "description": "Gestiona la teva informació personal i la configuració del teu compte a SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Foto de Perfil",
+      "changeAvatar": "Canvia la foto de perfil",
+      "joinDate": "Data d'Ingrés",
+      "currentPlan": "Pla Actual",
+      "freePlan": "Gratuït",
+      "conversations": "Converses",
+      "activeDays": "Dies Actius"
+    },
+    "personalInfo": {
+      "title": "Informació Personal",
+      "description": "Actualitza el teu nom, correu electrònic i configuració bàsica",
+      "fullName": "Nom Complet",
+      "email": "Adreça de Correu Electrònic",
+      "editButton": "Edita la Informació",
+      "cancelButton": "Cancel·la",
+      "saveButton": "Guarda els Canvis",
+      "updateSuccess": "Perfil actualitzat amb èxit!"
+    },
+    "security": {
+      "title": "Seguretat i Contrasenya",
+      "description": "Mantingues el teu compte segur actualitzant la teva contrasenya regularment",
+      "currentPassword": "Contrasenya Actual",
+      "currentPasswordPlaceholder": "Introdueix la contrasenya actual...",
+      "newPassword": "Nova Contrasenya",
+      "newPasswordPlaceholder": "Introdueix la nova contrasenya...",
+      "confirmNewPassword": "Confirma la Nova Contrasenya",
+      "confirmNewPasswordPlaceholder": "Confirma la nova contrasenya...",
+      "updateButton": "Actualitza la Contrasenya",
+      "passwordMismatch": "Les noves contrasenyes no coincideixen.",
+      "updateSuccess": "Contrasenya canviada amb èxit!"
+    },
+    "subscription": {
+      "title": "Pla de Subscripció",
+      "description": "Actualment estàs al pla Gratuït - obtén més funcions",
+      "upgradeTitle": "Actualitza a Pro",
+      "upgradeDescription": "Obtén funcions addicionals i respostes prioritàries",
+      "upgradeButton": "Actualitza Ara"
+    },
+    "dangerZone": {
+      "title": "Zona de Perill",
+      "description": "Aquestes accions són irreversibles - procedeix amb precaució",
+      "deleteTitle": "Elimina el Compte Permanentment",
+      "deleteDescription": "Totes les teves dades i converses seran eliminades permanentment",
+      "deleteButton": "Elimina el Compte"
+    },
+    "deleteModal": {
+      "title": "Confirma l'Eliminació del Compte",
+      "message": "Estàs absolutament segur? El teu compte i totes les teves dades seran eliminades permanentment. Aquesta acció no es pot desfer.",
+      "cancelButton": "Cancel·la",
+      "confirmButton": "Confirma l'Eliminació",
+      "deleteSuccess": "El teu compte ha estat eliminat amb èxit."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Crea un Nou Compte - SyriaGPT",
+      "description": "Uneix-te a la comunitat de SyriaGPT i comença a explorar el poder de la IA dissenyada per al context sirià."
+    },
+    "infoPanel": {
+      "title": "Uneix-te a la Comunitat de SyriaGPT",
+      "description": "Descobreix el poder de la intel·ligència artificial dissenyada específicament per a la cultura i el context sirià",
+      "features": [
+        {
+          "title": "IA Avançada",
+          "description": "Tecnologies modernes entrenades en contingut àrab i sirià"
+        },
+        {
+          "title": "Seguretat i Privadesa Garantides",
+          "description": "Protecció avançada per a les teves dades amb encriptació de classe mundial"
+        },
+        {
+          "title": "Comunitat Activa",
+          "description": "Uneix-te a milers d'usuaris sirians apassionats per la tecnologia"
+        },
+        {
+          "title": "Funcions Exclusives",
+          "description": "Eines personalitzades per a contingut sirià i àrab"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT ha canviat per complet la meva manera de treballar. Un profund enteniment de l'idioma i la cultura siriana.\"",
+        "author": "- Ahmed Al-Shami, Desenvolupador"
+      }
+    },
+    "form": {
+      "title": "Crea un Nou Compte",
+      "description": "Omple les següents dades per crear el teu compte",
+      "firstName": "Nom",
+      "lastName": "Cognom",
+      "email": "Adreça de Correu Electrònic",
+      "password": "Contrasenya",
+      "confirmPassword": "Confirma la Contrasenya",
+      "placeholder": "Introdueix {field}...",
+      "emailPlaceholder": "exemple@email.com",
+      "passwordStrength": "Fortalesa de la contrasenya",
+      "strengthLevels": [
+        "Molt Dèbil",
+        "Dèbil",
+        "Mitjana",
+        "Forta",
+        "Molt Forta"
+      ],
+      "submitButton": "Crea un Nou Compte",
+      "loadingButton": "S'està creant el compte...",
+      "googleButton": "Registra't amb Google",
+      "orSeparator": "o",
+      "hasAccount": "Ja tens un compte?",
+      "loginLink": "Inici de sessió",
+      "termsAgreement": "En crear un compte, acceptes els nostres",
+      "termsLink": "Termes d'Ús",
+      "and": "i",
+      "privacyLink": "Política de Privadesa",
+      "successAlert": "El teu compte ha estat creat amb èxit! Benvingut a SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Ha de tenir almenys 2 caràcters",
+      "maxLength": "Massa llarg",
+      "emailRequired": "El correu electrònic és obligatori",
+      "emailInvalid": "Adreça de correu electrònic no vàlida",
+      "passwordLength": "La contrasenya ha de tenir almenys 8 caràcters",
+      "passwordComplexity": "Ha de contenir una lletra majúscula, una lletra minúscula i un número",
+      "passwordMismatch": "Les contrasenyes no coincideixen"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Restableix la Contrasenya - SyriaGPT",
+      "description": "Estableix una nova contrasenya segura per al teu compte de SyriaGPT."
+    },
+    "form": {
+      "title": "Estableix una Nova Contrasenya",
+      "description": "Tria una contrasenya segura per protegir el teu compte.",
+      "newPasswordLabel": "Nova Contrasenya",
+      "confirmPasswordLabel": "Confirma la Contrasenya",
+      "passwordMismatchError": "Les contrasenyes no coincideixen.",
+      "submitButton": "Actualitza la Contrasenya",
+      "loadingButton": "S'està actualitzant...",
+      "showPasswordAria": "Mostra la contrasenya",
+      "hidePasswordAria": "Amaga la contrasenya",
+      "mismatchToast": "Si us plau, assegura't que les contrasenyes coincideixin.",
+      "loadingToast": "S'està actualitzant la contrasenya...",
+      "successToast": "Contrasenya actualitzada amb èxit!"
+    },
+    "strengthIndicator": {
+      "title": "Fortalesa",
+      "levels": [
+        "Molt Dèbil",
+        "Dèbil",
+        "Acceptable",
+        "Bona",
+        "Forta",
+        "Molt Forta"
+      ]
+    },
+    "successScreen": {
+      "title": "Èxit!",
+      "description": "La teva contrasenya ha estat actualitzada. Ara pots iniciar sessió de forma segura amb les teves noves credencials.",
+      "backToLoginButton": "Torna a l'Inici de Sessió"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Configuració - SyriaGPT",
+      "description": "Personalitza la teva experiència a SyriaGPT, gestiona l'aparença, l'idioma, les notificacions i les dades."
+    },
+    "header": {
+      "title": "Configuració de SyriaGPT",
+      "description": "Personalitza la teva experiència personal",
+      "unsavedChanges": "Canvis no guardats"
+    },
+    "appearance": {
+      "title": "Aparença i Visualització",
+      "description": "Personalitza l'aspecte de l'aplicació per adaptar-lo a les teves preferències",
+      "theme": "Estil del Tema",
+      "themes": {
+        "light": { "label": "Clar", "description": "Ideal per a ús diürn" },
+        "dark": {
+          "label": "Fosc",
+          "description": "Agradable a la vista a la nit"
+        },
+        "system": {
+          "label": "Sistema",
+          "description": "Segueix la configuració del teu dispositiu"
+        }
+      },
+      "preview": {
+        "title": "Vista Prèvia de Canvis",
+        "description": "Vegeu una vista prèvia en viu dels canvis abans de guardar",
+        "new": "NOU"
+      }
+    },
+    "language": {
+      "title": "Idioma i Regió",
+      "description": "Estableix la configuració d'idioma i regional",
+      "interfaceLanguage": {
+        "title": "Idioma de la Interfície",
+        "description": "L'idioma utilitzat als menús i elements interactius",
+        "badge": "Auto"
+      },
+      "languages": {
+        "ar": "العربية (Síria)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Notificacions i Sons",
+      "description": "Controla les alertes i els efectes de so",
+      "enableNotifications": {
+        "title": "Habilita les Notificacions",
+        "description": "Rep alertes de missatges i actualitzacions importants"
+      },
+      "sounds": {
+        "title": "Sons",
+        "description": "Reprodueix sons en enviar i rebre missatges"
+      }
+    },
+    "dataManagement": {
+      "title": "Gestió de Dades",
+      "description": "Controla el guardat i l'intercanvi de les teves dades",
+      "autoSave": {
+        "title": "Autoguardat",
+        "description": "Guarda automàticament les teves converses per consultar-les més tard"
+      },
+      "exportData": "Exporta les Dades",
+      "clearHistory": "Esborra les Converses"
+    },
+    "advanced": {
+      "title": "Configuració Avançada",
+      "description": "Opcions avançades per a usuaris professionals",
+      "developerMode": {
+        "title": "Mode Desenvolupador",
+        "description": "Mostra informació tècnica addicional i opcions de desenvolupament",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Analítiques",
+        "description": "Ajuda a millorar el servei enviant dades d'ús anònimes"
+      }
+    },
+    "saveBar": {
+      "title": "Vols guardar els canvis?",
+      "description": "La nova configuració s'aplicarà immediatament",
+      "reset": "Restableix",
+      "save": "Guarda els Canvis",
+      "saving": "S'està guardant...",
+      "success": "Configuració guardada amb èxit!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Confirma l'Eliminació de l'Historial",
+        "message": "Estàs segur? Totes les teves converses passades seran eliminades permanentment. Aquesta acció no es pot desfer.",
+        "confirm": "Sí, elimina",
+        "success": "Historial de converses esborrat amb èxit."
+      },
+      "exportData": {
+        "title": "Exporta les Dades",
+        "message": "Es generarà una còpia de totes les teves dades i s'enviarà al teu correu electrònic. Vols continuar?",
+        "confirm": "Sí, continua",
+        "success": "S'estan exportant les teves dades..."
+      },
+      "cancel": "Cancel·la"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Termes de Servei - SyriaGPT",
+      "description": "Llegeix els termes i condicions per usar els serveis de SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Canvia a l'Àrab",
+      "print": "Imprimeix"
+    },
+    "title": "Termes de Servei",
+    "subtitle": "Última Actualització: 24 d'agost de 2025",
+    "intro": "Benvingut a SyriaGPT. En utilitzar els nostres serveis, acceptes aquests termes. Si us plau, llegeix-los atentament.",
+    "sectionsTitle": "Seccions",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Acceptació dels Termes",
+        "content": "En accedir i utilitzar SyriaGPT, acceptes estar subjecte a aquests Termes i Condicions. Si no estàs d'acord amb alguna part d'aquests termes, no has d'utilitzar els nostres serveis."
+      },
+      {
+        "id": "services",
+        "title": "2. Descripció dels Serveis",
+        "content": "SyriaGPT és un assistent d'IA dissenyat per proporcionar assistència en diversos camps relacionats amb el context sirià."
+      },
+      {
+        "id": "usage",
+        "title": "3. Ús Acceptable",
+        "content": "Has d'utilitzar els nostres serveis de manera legal i ètica. Es prohibeix l'ús del servei per a fins il·legals o nocius."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Privadesa i Dades",
+        "content": "Respectem la teva privadesa i ens comprometem a protegir les teves dades. Només recollim les dades necessàries per proporcionar el servei i no les compartirem sense el teu consentiment."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Propietat Intel·lectual",
+        "content": "Tots els drets reservats a SyriaGPT. El contingut, el disseny i els logotips són propietat nostra. El contingut que crees utilitzant el servei continua sent teu."
+      },
+      {
+        "id": "liability",
+        "title": "6. Exempció de Responsabilitat",
+        "content": "El servei es proporciona \"tal qual\" sense cap garantia. No garantim l'exactitud o la integritat de la informació proporcionada i no som responsables de cap dany resultant del seu ús."
+      },
+      {
+        "id": "termination",
+        "title": "7. Terminació del Servei",
+        "content": "Ens reservem el dret de terminar o suspendre el teu compte en cas de violació d'aquests termes o en cas de comportament nociu o il·legal."
+      },
+      {
+        "id": "contact",
+        "title": "8. Contacta'ns",
+        "content": "Per a qualsevol consulta sobre aquests termes, si us plau contacta'ns per correu electrònic: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "He llegit i accepto els termes",
+    "continueButton": "Continua",
+    "backToTop": "Torna a Dalt",
+    "expandAll": "Expandeix Tot",
+    "collapseAll": "Contreu Tot",
+    "readingProgress": "Progrés de Lectura",
+    "copyright": "© {year} SyriaGPT. Tots els drets reservats."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Actualitza a Pro - SyriaGPT",
+      "description": "Gaudeix de capacitats il·limitades, velocitat superior i accés prioritari a noves funcions amb SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Actualitza a Pro",
+      "description": "Gaudeix de capacitats il·limitades, velocitat superior i accés prioritari a noves funcions"
+    },
+    "stats": [
+      { "value": "10x", "label": "Resposta Més Ràpida" },
+      { "value": "∞", "label": "Missatges Il·limitats" },
+      { "value": "24/7", "label": "Suport Continu" }
+    ],
+    "billingToggle": {
+      "monthly": "Mensual",
+      "yearly": "Anual",
+      "saving": "Estalvia 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Pla Gratuït",
+        "subtitle": "Pla Actual",
+        "price": "0 €",
+        "period": "De per vida",
+        "features": [
+          "Accés al model bàsic",
+          "20 missatges al dia",
+          "Velocitat de resposta estàndard",
+          "Funcions bàsiques"
+        ],
+        "buttonText": "El Teu Pla Actual"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Per a professionals i empreses",
+        "priceMonthly": "10 €",
+        "priceYearly": "96 €",
+        "periodMonthly": "al mes",
+        "periodYearly": "a l'any",
+        "popular": "Més Popular",
+        "features": [
+          "Model GPT-4 avançat",
+          "Missatges il·limitats",
+          "Velocitat de resposta superior",
+          "Accés prioritari a noves funcions",
+          "Suport tècnic especialitzat",
+          "Interfície millorada sense anuncis"
+        ],
+        "buttonText": "Actualitza Ara"
+      }
+    },
+    "comparison": {
+      "title": "Compara Plans",
+      "featureHeader": "Característiques",
+      "freeHeader": "Gratuït",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Accés al model bàsic", "free": true, "pro": true },
+        { "text": "Missatges diaris limitats (20)", "free": true, "pro": false },
+        { "text": "Missatges il·limitats", "free": false, "pro": true },
+        {
+          "text": "Accés al model GPT-4 avançat",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Velocitat de resposta estàndard", "free": true, "pro": false },
+        {
+          "text": "Velocitat de resposta superior (10x més ràpida)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Accés prioritari a noves funcions",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Suport tècnic especialitzat",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Interfície sense anuncis", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Preguntes Freqüents",
+      "toggleOpen": "Llegeix Més",
+      "toggleClose": "Tanca",
+      "items": [
+        {
+          "question": "Puc cancel·lar la meva subscripció en qualsevol moment?",
+          "answer": "Sí, per descomptat. Pots cancel·lar la teva subscripció al pla Pro en qualsevol moment des de la pàgina de \"Gestió del Compte\". Continuaràs tenint accés a les funcions Pro fins al final del període de facturació actual, i no es faran més càrrecs."
+        },
+        {
+          "question": "Quins mètodes de pagament s'accepten?",
+          "answer": "Acceptem totes les principals targetes de crèdit i dèbit (Visa, MasterCard, American Express), així com Sham Cash i carteres electròniques locals. Tots els pagaments es processen de forma segura i encriptada a través del nostre soci, Stripe."
+        },
+        {
+          "question": "Què passa al final del període de facturació anual?",
+          "answer": "La teva subscripció anual es renovarà automàticament a menys que la cancel·lis des de la configuració del teu compte. T'enviarem un correu electrònic de recordatori una setmana abans de la data de renovació amb els detalls de l'import a pagar."
+        },
+        {
+          "question": "Puc obtenir un reemborsament?",
+          "answer": "Sí, oferim una garantia de devolució total dels diners de 30 dies des de la data de subscripció si no estàs satisfet amb el servei per qualsevol motiu. Simplement contacta amb el nostre equip de suport i processarem la teva sol·licitud de reemborsament immediatament."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Preparat per Començar?",
+      "description": "Uneix-te a milers d'usuaris que han triat SyriaGPT Pro per a una experiència d'IA superior",
+      "buttonText": "Comença Ara per {price}",
+      "guarantee": "Garantia de devolució total dels diners de 30 dies"
+    },
+    "alert": "Seràs redirigit a la pàgina de pagament..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Verifica el Correu Electrònic - SyriaGPT",
+      "description": "Introdueix el codi de verificació enviat al teu correu electrònic per confirmar el teu compte de SyriaGPT."
+    },
+    "header": {
+      "title": "Verifica el Teu Correu Electrònic",
+      "description": "Introdueix el codi de verificació enviat a"
+    },
+    "form": {
+      "label": "codi de verificació de 6 dígits",
+      "verifyButton": "Verifica el Codi",
+      "verifyingButton": "S'està verificant...",
+      "resend": {
+        "question": "No has rebut el codi?",
+        "resendButton": "Reenvia el Codi",
+        "resendingButton": "S'està reenviant...",
+        "cooldown": "Reenvia en {seconds} segons"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Verificació Correcta!",
+        "description": "El teu correu electrònic ha estat confirmat amb èxit",
+        "redirecting": "S'està redirigint al tauler de control..."
+      },
+      "error": {
+        "title": "Verificació Fallida",
+        "tryAgainButton": "Torna-ho a provar"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Si us plau, introdueix el codi de verificació de 6 dígits",
+      "invalidCode": "Codi de verificació no vàlid. Si us plau, torna-ho a provar.",
+      "generic": "S'ha produït un error durant la verificació. Si us plau, torna-ho a provar.",
+      "resendFailed": "No s'ha pogut enviar el codi de verificació. Si us plau, torna-ho a provar."
+    },
+    "backToLogin": "Torna a l'Inici de Sessió",
+    "securityNote": {
+      "title": "Nota de Seguretat:",
+      "points": [
+        "No comparteixis el codi de verificació amb ningú",
+        "El codi de verificació només és vàlid durant 10 minuts",
+        "Comprova l'adreça de correu electrònic del remitent"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "S'ha enviat un nou codi de verificació al teu correu electrònic"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "S'ha Produït un Error - SyriaGPT",
+      "description": "Pàgina d'error personalitzada per al projecte SyriaGPT."
+    },
+    "offlineMessage": "Actualment estàs fora de línia",
+    "errorCode": "Error {statusCode}",
+    "title": "S'ha Produït un Error Inesperat",
+    "description": "Demanem disculpes sinceres per les molèsties. El nostre equip tècnic ha estat notificat i està treballant per resoldre el problema el més aviat possible.",
+    "retryButton": "Torna-ho a provar",
+    "retryingButton": "S'està tornant a provar...",
+    "homeButton": "Inici",
+    "backButton": "Enrere",
+    "suggestionsTitle": "Què pots provar ara:",
+    "suggestion1": "Actualitzar la pàgina podria resoldre el problema.",
+    "suggestion2": "Si us plau, comprova la teva connexió a Internet.",
+    "suggestion3": "Si el problema persisteix, no dubtis a contactar-nos.",
+    "accordion": {
+      "title": "Detalls Tècnics per a Desenvolupadors",
+      "copy": "Copia",
+      "copied": "Copiat",
+      "code": "Codi:",
+      "message": "Missatge:",
+      "digest": "Resum:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Pàgina no Trobada - SyriaGPT",
+      "description": "La pàgina que busques no existeix o ha estat moguda."
+    },
+    "title": "Sembla que t'has perdut a les pàgines!",
+    "description": "La pàgina que busques no existeix o ha estat moguda",
+    "currentLocation": "Ubicació Actual: Desconeguda",
+    "search": {
+      "placeholder": "Busca la pàgina que vols...",
+      "button": "Busca",
+      "searching": "S'està buscant..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Pàgina Anterior",
+        "description": "Torna d'on has vingut"
+      },
+      "homePage": {
+        "title": "Pàgina d'Inici",
+        "description": "Comença de nou"
+      }
+    },
+    "suggestions": {
+      "title": "Pàgines que et podrien interessar",
+      "items": [
+        { "title": "Pàgina d'Inici", "description": "Torna al principi" },
+        { "title": "Xat", "description": "Inicia una nova conversa" },
+        { "title": "Ajuda", "description": "Obtén ajuda" },
+        { "title": "Sobre Síria", "description": "Descobreix més" }
+      ]
+    },
+    "history": {
+      "title": "Pàgines Visitades Recentment"
+    },
+    "funFact": {
+      "title": "Mentre trobes el teu camí...",
+      "facts": [
+        "Sabies que? Damasc és la capital habitada contínuament més antiga del món!",
+        "Sabies que? El primer alfabet de la història es va inventar a Ugarit, Síria!",
+        "Sabies que? El pistatxer d'Alep pot viure més de 300 anys!",
+        "Sabies que? El Krak dels Cavallers a Síria és un dels castells més ben conservats del món!",
+        "Sabies que? La rosa de Damasc es considera un dels millors tipus de roses del món!"
+      ]
+    },
+    "support": {
+      "message": "Si creus que això és un error, si us plau contacta'ns",
+      "helpCenter": "Centre d'Ajuda",
+      "technicalSupport": "Suport Tècnic"
+    }
+  },
+  "loader": {
+    "title": "s'està carregant...",
+    "loading": "Si us plau, espera un minut..."
+  }
+}

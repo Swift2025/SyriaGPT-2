@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Imọ-ẹrọ Atọwọda ti Siria",
+    "newChat": "Ibaraẹnisọrọ Tuntun",
+    "pastConversations": "Awọn Ibaraẹnisọrọ Atijọ",
+    "lightMode": "Ipo Imọlẹ",
+    "darkMode": "Ipo Dudu",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Olumulo Siria",
+    "userEmail": "olumulo@syriagpt.com",
+    "profile": "Profaili",
+    "settings": "Ètò",
+    "upgradeToPro": "Igbesoke si Pro",
+    "newBadge": "TITUN",
+    "helpCenter": "Ile-iṣẹ Iranlọwọ",
+    "aboutApp": "Nipa App",
+    "logout": "Jade",
+    "logoutModal": {
+      "title": "Jẹrisi Jade",
+      "description": "Ṣe o da ọ loju pe o fẹ jade kuro ninu akọọlẹ rẹ?",
+      "cancel": "Fagilee",
+      "confirm": "Bẹẹni, Jade"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Oluranlọwọ ọlọgbọn rẹ lati dahun gbogbo awọn ibeere rẹ",
+      "examples": "Awọn apẹẹrẹ",
+      "capabilities": "Awọn agbara",
+      "limitations": "Awọn idiwọn",
+      "suggestions": {
+        "examples": [
+          "Ṣe alaye bi a ṣe le gba kaadi idanimọ ni irọrun",
+          "Fun mi ni awọn iṣẹ-ẹkọ ti a fọwọsi ni Yunifasiti ti Damasku",
+          "Kini awọn eroja fun Mahshi?"
+        ],
+        "capabilities": [
+          "Bawo ni a ṣe le ṣe okra ati ibatan itan rẹ?",
+          "Kini awọn eto iwe irinna Siria?",
+          "Mo nilo alaye nipa idoko-owo"
+        ],
+        "limitations": [
+          "Bawo ni a ṣe le yanju iṣoro kọnputa kan?",
+          "Kini awọn ipo iforukọsilẹ ni Yunifasiti ti Aleppo?",
+          "Fun mi ni akopọ ti awọn iroyin oni ni Siria"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Nkọwe..."
+    },
+    "regenerate": "Tun Idahun ṣe",
+    "input": {
+      "placeholder": "Tẹ ifiranṣẹ rẹ sii nibi, tabi fa faili kan lati so mọ...",
+      "attachFile": "So Faili mọ",
+      "startRecording": "Bẹrẹ Gbigbasilẹ",
+      "stopRecording": "Duro Gbigbasilẹ",
+      "removeFile": "Yọ Faili kuro"
+    },
+    "dragDrop": {
+      "title": "Ju awọn faili silẹ nibi",
+      "subtitle": "PDF, Word, Text (Max 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "A ko ṣe atilẹyin idanimọ ọrọ ninu ẹrọ aṣawakiri yii. Jọwọ lo Chrome tabi Edge.",
+      "permissionDenied": "Jọwọ gba aaye si gbohungbohun ninu awọn eto ẹrọ aṣawakiri rẹ.",
+      "startFailed": "Gbigbasilẹ kuna lati bẹrẹ. Ṣayẹwo awọn eto ẹrọ aṣawakiri rẹ.",
+      "generalError": "Aṣiṣe kan ṣẹlẹ lakoko ti o bẹrẹ gbigbasilẹ. Jọwọ gbiyanju lẹẹkansi.",
+      "no-speech": "Ko si ọrọ ti a rii. Rii daju pe ohun rẹ jẹ ko o ati pe gbohungbohun wa nitosi.",
+      "audio-capture": "Ko le wọle si gbohungbohun. Rii daju pe o ti sopọ ati pe a ti fun ni igbanilaaye.",
+      "not-allowed": "A kọ igbanilaaye. Jọwọ gba lilo gbohungbohun lati awọn eto ẹrọ aṣawakiri.",
+      "network": "Aṣiṣe nẹtiwọọki. Jọwọ ṣayẹwo asopọ intanẹẹti rẹ.",
+      "service-not-allowed": "Iṣẹ idanimọ ọrọ ko si lọwọlọwọ.",
+      "language-not-supported": "Ede ko ni atilẹyin. Gbiyanju ẹrọ aṣawakiri Chrome."
+    },
+    "footer": "Ibi-afẹde wa ni lati jẹ ki awọn eto AI jẹ adayeba ati ailewu lati ṣe ajọṣepọ pẹlu"
+  },
+  "chat": {
+    "fileAnalysisError": "Ma binu, aṣiṣe kan ṣẹlẹ lakoko ti o n ṣe itupalẹ faili naa: {error}",
+    "responseProcessingError": "Ma binu, aṣiṣe kan ṣẹlẹ lakoko ti o n ṣe ilana idahun naa.",
+    "networkError": "Ma binu, aṣiṣe asopọ kan ṣẹlẹ. Jọwọ ṣayẹwo asopọ intanẹẹti rẹ."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Nipa Ise agbese SyriaGPT",
+      "description": "Kọ ẹkọ nipa awọn ibi-afẹde ati iran ti iṣẹ akanṣe SyriaGPT, oluranlọwọ ọlọgbọn ti o ṣe amọja ni agbegbe Siria."
+    },
+    "header": {
+      "title": "Orilẹ-ede Arabu Siria",
+      "subtitle": "ORILẸ-EDE ARABU SIRIA",
+      "mapText": "Siria.. ni Okan"
+    },
+    "main": {
+      "p1": "Eyi jẹ iṣẹ akanṣe orilẹ-ede aṣáájú-ọnà ti ijọba Siria gba, ti o ni ero lati ṣe agbekalẹ awoṣe ede Larubawa ti ilọsiwaju pẹlu idojukọ pataki lori ede Siria. Ibi-afẹde ti iṣẹ akanṣe yii ni lati jẹ pẹpẹ imọ ati iṣẹ ti o ṣe iranlọwọ fun awọn ara ilu lati ṣe ajọṣepọ pẹlu awọn iṣẹ ijọba ati awọn apa gbangba ati aladani ni irọrun ati ni aabo, n pese wọn pẹlu awọn idahun deede ati igbẹkẹle nipa awọn ilana, awọn ofin, ati alaye gbogbogbo.",
+      "p2": "O jẹ iyatọ nipasẹ idojukọ rẹ lori ede agbegbe ati agbara lati loye awọn ede lẹgbẹẹ Larubawa boṣewa, ti o jẹ ki o sunmọ olumulo ni igbesi aye ojoojumọ wọn. Ise agbese na tun ṣe idaniloju aṣiri data nipa gbigbalejo ni awọn ile-iṣẹ data ti orilẹ-ede ati ṣiṣẹ ni ibamu si awọn ipele giga ti ailewu ati didoju lati rii daju pe awọn abajade jẹ deede ati aibikita. O jẹ apẹrẹ lati jẹ iṣọpọ pẹlu awọn ọna abawọle e-ijọba, awọn ohun elo osise, ati awọn ile-iṣẹ ipe, nitorinaa o jẹ igbesẹ ipilẹ si imudara iyipada oni-nọmba ni Siria.",
+      "p3": "Ise agbese na n wa lati sin ọpọlọpọ awọn agbegbe gẹgẹbi irọrun awọn ilana ijọba, atilẹyin eto-ẹkọ, irọrun awọn itọnisọna ilera, iranlọwọ awọn iṣowo kekere, ati itankale awọn ifiranṣẹ pajawiri ni iyara ati ni kedere. Nitorinaa o duro fun fifo didara ni bii awọn ara ilu ṣe wọle si alaye, nibiti ibaraenisepo ni ede adayeba di ọna akọkọ ti irọrun awọn iṣowo ati mimu awọn ara ilu sunmọ awọn ile-iṣẹ ipinlẹ."
+    },
+    "footer": {
+      "backButton": "Pada si Ibaraẹnisọrọ",
+      "disclaimer": "Ibi-afẹde wa ni lati jẹ ki awọn eto AI jẹ adayeba ati ailewu lati ṣe ajọṣepọ pẹlu, ni ila pẹlu agbegbe Siria ati awọn iwulo ti awọn olumulo rẹ. Awọn esi ati awọn imọran rẹ yoo ṣe iranlọwọ fun wa lati mu ilọsiwaju ati idagbasoke iṣẹ naa lati sin ọ dara julọ."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Gbagbe Ọrọigbaniwọle",
+      "description": "Gba iraye si akọọlẹ SyriaGPT rẹ pada pẹlu awọn igbesẹ ti o rọrun ati aabo."
+    },
+    "infoPanel": {
+      "title": "Gba Akọọlẹ Rẹ pada ni Ailewu",
+      "description": "A wa nibi lati ṣe iranlọwọ fun ọ lati gba iraye si akọọlẹ rẹ pada pẹlu awọn igbesẹ ti o rọrun ati aabo.",
+      "steps": {
+        "step1": {
+          "title": "Tẹ imeeli rẹ sii",
+          "description": "Imeeli ti o forukọsilẹ pẹlu akọọlẹ SyriaGPT rẹ"
+        },
+        "step2": {
+          "title": "Ṣayẹwo imeeli rẹ",
+          "description": "A yoo fi ọna asopọ to ni aabo ranṣẹ si ọ lati tun ọrọ igbaniwọle rẹ to"
+        },
+        "step3": {
+          "title": "Ṣẹda ọrọ igbaniwọle tuntun",
+          "description": "Yan ọrọ igbaniwọle to lagbara ati aabo fun akọọlẹ rẹ"
+        }
+      },
+      "securityTip": {
+        "title": "Italolobo Aabo",
+        "description": "Ọna asopọ naa wulo fun iṣẹju 15 nikan lati rii daju aabo akọọlẹ rẹ. Ti o ko ba ri imeeli naa, ṣayẹwo folda àwúrúju rẹ."
+      }
+    },
+    "form": {
+      "title": "Gbagbe Ọrọigbaniwọle",
+      "description": "Tẹ imeeli rẹ sii lati gba ọna asopọ imularada",
+      "emailLabel": "Adirẹsi imeeli",
+      "emailPlaceholder": "Tẹ imeeli rẹ sii...",
+      "emailRequiredAlert": "Jọwọ tẹ adirẹsi imeeli rẹ sii.",
+      "submitButton": "Fi Ọna asopọ Imularada ranṣẹ",
+      "loadingButton": "Nfi ranṣẹ...",
+      "rememberedPassword": "Ranti ọrọ igbaniwọle rẹ?",
+      "backToLogin": "Pada si Wọle"
+    },
+    "successScreen": {
+      "title": "Awọn ilana Ti a Firanṣẹ",
+      "checkEmailTitle": "Ṣayẹwo Imeeli Rẹ",
+      "description": "A ti fi ọna asopọ imularada ọrọ igbaniwọle ranṣẹ si:",
+      "tip1": "Ṣayẹwo apo-iwọle rẹ",
+      "tip2": "Maṣe gbagbe lati ṣayẹwo folda àwúrúju rẹ",
+      "tip3": "Ọna asopọ naa wulo fun iṣẹju 15 nikan",
+      "backToLoginButton": "Pada si Wọle"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Ile-iṣẹ Iranlọwọ - SyriaGPT",
+      "description": "Wa awọn idahun si awọn ibeere rẹ, awọn itọsọna olumulo, ki o kan si ẹgbẹ atilẹyin SyriaGPT."
+    },
+    "header": {
+      "title": "Ile-iṣẹ Iranlọwọ",
+      "description": "Kaabọ si ile-iṣẹ atilẹyin SyriaGPT! A wa nibi lati ṣe iranlọwọ fun ọ lati gba iriri ti o dara julọ ti o ṣeeṣe."
+    },
+    "search": {
+      "placeholder": "Wa awọn idahun, awọn itọsọna olumulo, tabi beere ibeere kan..."
+    },
+    "categories": {
+      "title": "Ṣawari nipasẹ Ẹka",
+      "items": [
+        {
+          "title": "Bibẹrẹ",
+          "description": "Kọ ẹkọ awọn ipilẹ ti lilo pẹpẹ ati lo anfani gbogbo awọn ẹya ti o wa."
+        },
+        {
+          "title": "Isakoso Akọọlẹ",
+          "description": "Ṣatunkọ profaili rẹ, ṣakoso awọn ṣiṣe alabapin, ati awọn eto aabo rẹ."
+        },
+        {
+          "title": "Awọn ẹya ara ẹrọ To ti ni ilọsiwaju",
+          "description": "Lo awọn asomọ faili, wiwa ohun, ati oye atọwọda ti ilọsiwaju."
+        },
+        {
+          "title": "Aabo & Asiri",
+          "description": "Kọ ẹkọ bi o ṣe le daabobo data rẹ ati alaye ti ara ẹni pẹlu awọn iṣedede aabo ti o ga julọ."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Awọn ibeere Nigbagbogbo",
+      "toggleOpen": "Ka siwaju",
+      "toggleClose": "Pade",
+      "items": [
+        {
+          "question": "Bawo ni MO ṣe le bẹrẹ iwiregbe tuntun kan?",
+          "answer": "Lati bẹrẹ iwiregbe tuntun kan, tẹ bọtini \"+ Ibaraẹnisọrọ Tuntun\" ni oke pẹpẹ ẹgbẹ. O tun le lo ọna abuja keyboard Ctrl+N fun ibẹrẹ iyara."
+        },
+        {
+          "question": "Iru awọn faili wo ni MO le so mọ?",
+          "answer": "O le so awọn faili PDF, awọn iwe aṣẹ Ọrọ (doc, docx), awọn faili PowerPoint, awọn faili ọrọ (txt), ati awọn aworan (jpg, png, gif). Iwọn ti o pọ julọ fun faili kan jẹ 10 MB, ati pe o le so awọn faili 5 pọ fun ibaraẹnisọrọ kan."
+        },
+        {
+          "question": "Ṣe awọn ibaraẹnisọrọ mi ti o kọja ti wa ni fipamọ?",
+          "answer": "Bẹẹni, awọn ibaraẹnisọrọ rẹ ti o kọja ti wa ni fipamọ laifọwọyi ati ni aabo si akọọlẹ rẹ. O le wọle si wọn lati atokọ \"Awọn Ibaraẹnisọrọ Atijọ\" ninu pẹpẹ ẹgbẹ, ti a ṣeto nipasẹ ọjọ tabi koko-ọrọ."
+        },
+        {
+          "question": "Bawo ni awọn ipo ina ati dudu ṣe n ṣiṣẹ?",
+          "answer": "O le yipada laarin awọn ipo ina ati dudu nipa lilo bọtini ifiṣootọ ninu pẹpẹ ẹgbẹ. Eto naa n fipamọ ayanfẹ rẹ laifọwọyi ati lo o ni gbogbo awọn akoko iwaju."
+        },
+        {
+          "question": "Kini ẹya ohun-si-ọrọ?",
+          "answer": "O le lo gbohungbohun rẹ fun aṣẹ ohun ni Larubawa tabi Gẹẹsi. Tẹ aami gbohungbohun ninu ọpa titẹ sii ki o bẹrẹ sisọ. Eto naa yoo yi ọrọ rẹ pada si ọrọ laifọwọyi."
+        },
+        {
+          "question": "Ṣe MO le lo SyriaGPT lori foonu alagbeka mi?",
+          "answer": "Bẹẹni, SyriaGPT wa nipasẹ ẹrọ aṣawakiri wẹẹbu lori gbogbo awọn ẹrọ smati. Ni wiwo jẹ idahun ni kikun ati ṣiṣẹ ni pipe lori awọn foonu ati awọn tabulẹti."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Ko ri ohun ti o n wa?",
+      "description": "Ẹgbẹ atilẹyin iyasọtọ wa wa ni ayika aago lati ṣe iranlọwọ fun ọ. Kan si wa ati pe a yoo pada si ọdọ rẹ laarin awọn iṣẹju!",
+      "emailButton": "Kan si nipasẹ Imeeli",
+      "chatButton": "Ibaraẹnisọrọ Live",
+      "phoneButton": "Ipe foonu",
+      "availability": "Wa 24/7",
+      "responseTime": "Fesi laarin iṣẹju 5",
+      "languageSupport": "Atilẹyin Ede Larubawa"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Wọle - SyriaGPT",
+      "description": "Wọle si akọọlẹ SyriaGPT rẹ lati wọle si awọn ibaraẹnisọrọ rẹ ati awọn ẹya ilọsiwaju."
+    },
+    "infoPanel": {
+      "title": "Kaabo Pada",
+      "description": "Tẹsiwaju ṣawari agbaye ti oye atọwọda Siria pẹlu",
+      "securityTitle": "Kini idi ti SyriaGPT jẹ Ailewu?",
+      "features": [
+        {
+          "title": "Idaabobo Data To ti ni ilọsiwaju",
+          "description": "A lo awọn imọ-ẹrọ fifi ẹnọ kọ nkan ti ilọsiwaju lati daabobo alaye ti ara ẹni rẹ"
+        },
+        {
+          "title": "Ijeri-ifosiwewe Meji",
+          "description": "Afikun aabo lati rii daju aabo akọọlẹ rẹ"
+        },
+        {
+          "title": "Oye Atọwọda Agbegbe",
+          "description": "Imọ-ẹrọ Siria ti ilọsiwaju ti o loye aṣa ati agbegbe Arabu"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Awọn olumulo ti nṣiṣe lọwọ" },
+        { "value": "99.9%", "label": "Akoko iṣẹ" },
+        { "value": "24/7", "label": "Atilẹyin" }
+      ]
+    },
+    "form": {
+      "title": "Wọle",
+      "description": "Tẹ awọn iwe-ẹri rẹ sii lati wọle si akọọlẹ rẹ",
+      "emailLabel": "Adirẹsi imeeli",
+      "emailPlaceholder": "Tẹ imeeli rẹ sii...",
+      "passwordLabel": "Ọrọigbaniwọle",
+      "passwordPlaceholder": "Tẹ ọrọ igbaniwọle rẹ sii...",
+      "forgotPassword": "Gbagbe ọrọ igbaniwọle?",
+      "showPassword": "Fi ọrọ igbaniwọle han",
+      "hidePassword": "Tọju ọrọ igbaniwọle",
+      "loginButton": "Wọle",
+      "loadingButton": "Ijẹrisi...",
+      "loginSuccessAlert": "Wọle ni aṣeyọri!",
+      "orSeparator": "tabi",
+      "noAccount": "Ko ni akọọlẹ kan?",
+      "createAccount": "Ṣẹda akọọlẹ tuntun kan"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Ilana Asiri - SyriaGPT",
+      "description": "Kọ ẹkọ bi a ṣe n gba data ti ara ẹni rẹ, lo, ati aabo nigba ti o lo awọn iṣẹ SyriaGPT."
+    },
+    "header": {
+      "title": "Ilana Asiri",
+      "lastUpdated": "Imudojuiwọn Kẹhin: Oṣu Kẹjọ Ọjọ 25, Ọdun 2025",
+      "effectiveDate": "Munadoko Lẹsẹkẹsẹ"
+    },
+    "infoCards": [
+      {
+        "title": "Idaabobo ni kikun",
+        "description": "Data rẹ ni aabo pẹlu fifi ẹnọ kọ nkan tuntun ati awọn imọ-ẹrọ aabo."
+      },
+      {
+        "title": "Iṣakoso ni kikun",
+        "description": "O ṣakoso data rẹ ati pe o le paarẹ nigbakugba."
+      },
+      {
+        "title": "Akoyawo ni kikun",
+        "description": "A ṣe alaye ni kedere ohun ti a gba ati bi a ṣe lo."
+      },
+      {
+        "title": "Ko si Tita Data",
+        "description": "A ko ta tabi pin data rẹ pẹlu awọn ẹgbẹ kẹta."
+      }
+    ],
+    "toc": {
+      "title": "Awọn akoonu"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Ifihan",
+        "content": "Kaabọ si SyriaGPT. A gba asiri rẹ ni pataki. Ilana yii ṣe apejuwe awọn iru alaye ti a le gba lati ọdọ rẹ tabi ti o le pese nigbati o ba ṣabẹwo tabi lo ohun elo wa, ati awọn iṣe wa fun gbigba, lilo, mimu, aabo, ati ṣiṣafihan alaye yẹn."
+      },
+      {
+        "id": "data-collection",
+        "title": "Alaye ti A Gba",
+        "intro": "A le gba ọpọlọpọ awọn iru alaye lati ati nipa awọn olumulo ti iṣẹ wa, pẹlu:",
+        "points": [
+          "Alaye ti o pese taara: gẹgẹbi orukọ rẹ, imeeli, ati ọrọ igbaniwọle nigbati o ṣẹda akọọlẹ kan.",
+          "Akoonu olumulo: Awọn ifiranṣẹ, awọn ibeere, ati awọn faili ti o gbejade si iṣẹ wa fun itupalẹ.",
+          "Alaye lilo: Awọn alaye ti lilo iṣẹ wa, pẹlu data ijabọ ati awọn akọọlẹ lilo.",
+          "Alaye ẹrọ: Iru ẹrọ aṣawakiri rẹ, ẹrọ ṣiṣe, ati adirẹsi IP."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Bawo ni A Ṣe Lo Alaye Rẹ",
+        "intro": "A lo alaye ti a gba nipa rẹ tabi ti o pese fun wa fun awọn idi wọnyi:",
+        "points": [
+          "Lati pese iṣẹ wa ati awọn akoonu rẹ fun ọ ni didara ti o dara julọ ti o ṣeeṣe.",
+          "Lati mu ilọsiwaju ati ṣe akanṣe iriri rẹ ni ibamu si awọn iwulo rẹ.",
+          "Lati ba ọ sọrọ nipa akọọlẹ rẹ tabi iṣẹ wa ati awọn akiyesi pataki.",
+          "Fun itupalẹ ati awọn idi iwadii lati mu awọn ọja ati iṣẹ wa dara si.",
+          "Lati rii daju aabo ti pẹpẹ ati ṣe idiwọ lilo laigba aṣẹ."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Ifihan Alaye Rẹ",
+        "commitmentTitle": "Ifaramo mojuto wa",
+        "commitmentText": "A ko ta tabi yalo alaye ti ara ẹni rẹ si awọn ẹgbẹ kẹta. Eyi ni ifaramo ipilẹ wa si ọ.",
+        "content": "A le ṣafihan alaye ti ara ẹni nikan ni awọn ọran wọnyi: lati ni ibamu pẹlu aṣẹ ile-ẹjọ tabi ofin eyikeyi, tabi lati daabobo awọn ẹtọ ati aabo ti SyriaGPT ati awọn alabara wa lati awọn irokeke aabo to ṣe pataki."
+      },
+      {
+        "id": "data-security",
+        "title": "Aabo Data",
+        "protectionTitle": "Awọn Iwọn Idaabobo To ti ni ilọsiwaju:",
+        "points": [
+          "Fifi ẹnọ kọ nkan ipari-si-opin fun gbogbo data ifura",
+          "Awọn olupin to ni aabo ti o ni aabo nipasẹ awọn ogiriina ilọsiwaju",
+          "Abojuto aabo 24/7 lati rii awọn irokeke",
+          "Awọn afẹyinti deede ati ti paroko lati rii daju ilosiwaju iṣẹ",
+          "Idanwo aabo igbakọọkan nipasẹ awọn amoye ominira"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Awọn ẹtọ Rẹ",
+        "intro": "Gẹgẹbi olumulo ti iṣẹ wa, o ni awọn ẹtọ wọnyi nipa data ti ara ẹni rẹ:",
+        "rights": [
+          {
+            "title": "Wiwọle ati Atunwo",
+            "description": "Beere ẹda ti gbogbo data rẹ ti o fipamọ pẹlu wa"
+          },
+          {
+            "title": "Atunse ati Imudojuiwọn",
+            "description": "Yipada tabi ṣatunṣe alaye eyikeyi ti ko pe"
+          },
+          {
+            "title": "Paarẹ patapata",
+            "description": "Pa akọọlẹ rẹ ati gbogbo data rẹ rẹ patapata"
+          },
+          {
+            "title": "Gbigbe ati Si ilẹ okeere",
+            "description": "Gbe data rẹ jade ni ọna kika kika"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Awọn iyipada si Ilana",
+        "content": "Ilana wa ni lati fi to ọ leti nipa eyikeyi awọn ayipada pataki ni ọjọ 30 ṣaaju ki wọn to munadoko. Eyikeyi awọn ayipada yoo wa ni Pipa lori oju-iwe yii pẹlu ọjọ atunyẹwo imudojuiwọn. A gba ọ niyanju lati ṣe atunyẹwo ilana yii nigbagbogbo lati wa ni alaye nipa bi a ṣe daabobo alaye rẹ."
+      },
+      {
+        "id": "contact",
+        "title": "Pe wa",
+        "email": "Imeeli",
+        "phone": "Foonu",
+        "availability": "Ẹgbẹ aṣiri wa lati dahun awọn ibeere rẹ lati ọjọ Sundee si Ọjọbọ, 9 AM - 6 PM"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profaili - SyriaGPT",
+      "description": "Ṣakoso alaye ti ara ẹni rẹ, awọn eto aabo, ati ero ṣiṣe alabapin ni SyriaGPT."
+    },
+    "header": {
+      "title": "Profaili",
+      "description": "Ṣakoso alaye ti ara ẹni rẹ ati awọn eto akọọlẹ ni SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Aworan profaili",
+      "changeAvatar": "Yi aworan profaili pada",
+      "joinDate": "Ọjọ Ìdarapọ̀",
+      "currentPlan": "Ètò Lọ́wọ́lọ́wọ́",
+      "freePlan": "Ọ̀fẹ́",
+      "conversations": "Àwọn Ìbánisọ̀rọ̀",
+      "activeDays": "Àwọn Ọjọ́ Tí ó Ṣiṣẹ́"
+    },
+    "personalInfo": {
+      "title": "Alaye ti ara ẹni",
+      "description": "Ṣe imudojuiwọn orukọ rẹ, imeeli, ati awọn eto ipilẹ",
+      "fullName": "Orukọ kikun",
+      "email": "Adirẹsi imeeli",
+      "editButton": "Ṣatunkọ Alaye",
+      "cancelButton": "Fagilee",
+      "saveButton": "Fipamọ Awọn ayipada",
+      "updateSuccess": "Profaili ti ni imudojuiwọn ni aṣeyọri!"
+    },
+    "security": {
+      "title": "Aabo & Ọrọigbaniwọle",
+      "description": "Jeki akọọlẹ rẹ ni aabo nipa mimu ọrọ igbaniwọle rẹ dojuiwọn nigbagbogbo",
+      "currentPassword": "Ọrọigbaniwọle Lọwọlọwọ",
+      "currentPasswordPlaceholder": "Tẹ ọrọ igbaniwọle lọwọlọwọ sii...",
+      "newPassword": "Ọrọigbaniwọle Tuntun",
+      "newPasswordPlaceholder": "Tẹ ọrọ igbaniwọle tuntun sii...",
+      "confirmNewPassword": "Jẹrisi Ọrọigbaniwọle Tuntun",
+      "confirmNewPasswordPlaceholder": "Jẹrisi ọrọ igbaniwọle tuntun...",
+      "updateButton": "Ṣe imudojuiwọn Ọrọigbaniwọle",
+      "passwordMismatch": "Awọn ọrọ igbaniwọle tuntun ko baamu.",
+      "updateSuccess": "Ọrọigbaniwọle yipada ni aṣeyọri!"
+    },
+    "subscription": {
+      "title": "Eto ṣiṣe alabapin",
+      "description": "O wa lọwọlọwọ lori ero Ọfẹ - gba awọn ẹya diẹ sii",
+      "upgradeTitle": "Igbesoke si Pro",
+      "upgradeDescription": "Gba awọn ẹya afikun ati awọn idahun pataki",
+      "upgradeButton": "Igbesoke Bayi"
+    },
+    "dangerZone": {
+      "title": "Agbegbe Ewu",
+      "description": "Awọn iṣe wọnyi jẹ eyiti a ko le yipada - tẹsiwaju pẹlu iṣọra",
+      "deleteTitle": "Pa Akọọlẹ rẹ patapata",
+      "deleteDescription": "Gbogbo data rẹ ati awọn ibaraẹnisọrọ yoo paarẹ patapata",
+      "deleteButton": "Pa Akọọlẹ rẹ"
+    },
+    "deleteModal": {
+      "title": "Jẹrisi Piparẹ Akọọlẹ",
+      "message": "Ṣe o da ọ loju patapata? Akọọlẹ rẹ ati gbogbo data rẹ yoo paarẹ patapata. Iṣe yii ko le ṣe atunṣe.",
+      "cancelButton": "Fagilee",
+      "confirmButton": "Jẹrisi Piparẹ",
+      "deleteSuccess": "Akọọlẹ rẹ ti paarẹ ni aṣeyọri."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Ṣẹda Akọọlẹ Tuntun - SyriaGPT",
+      "description": "Darapọ mọ agbegbe SyriaGPT ki o bẹrẹ ṣawari agbara ti AI ti a ṣe apẹrẹ fun agbegbe Siria."
+    },
+    "infoPanel": {
+      "title": "Darapọ mọ Agbegbe SyriaGPT",
+      "description": "Ṣe afẹri agbara ti oye atọwọda ti a ṣe apẹrẹ pataki fun aṣa ati agbegbe Siria",
+      "features": [
+        {
+          "title": "AI To ti ni ilọsiwaju",
+          "description": "Awọn imọ-ẹrọ ode oni ti a kọ lori akoonu Larubawa ati Siria"
+        },
+        {
+          "title": "Aabo & Asiri ti o ni idaniloju",
+          "description": "Idaabobo ilọsiwaju fun data rẹ pẹlu fifi ẹnọ kọ nkan agbaye"
+        },
+        {
+          "title": "Agbegbe ti nṣiṣe lọwọ",
+          "description": "Darapọ mọ ẹgbẹẹgbẹrun awọn olumulo Siria ti o ni itara nipa imọ-ẹrọ"
+        },
+        {
+          "title": "Awọn ẹya ara ẹrọ Iyasoto",
+          "description": "Awọn irinṣẹ aṣa fun akoonu Siria ati Larubawa"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT ti yi ọna ti mo ṣiṣẹ pada patapata. Oye ti o jinlẹ ti ede ati aṣa Siria.\"",
+        "author": "- Ahmed Al-Shami, Olùgbéejáde"
+      }
+    },
+    "form": {
+      "title": "Ṣẹda Akọọlẹ Tuntun",
+      "description": "Fọwọsi awọn alaye wọnyi lati ṣẹda akọọlẹ rẹ",
+      "firstName": "Orukọ akọkọ",
+      "lastName": "Orukọ idile",
+      "email": "Adirẹsi imeeli",
+      "password": "Ọrọigbaniwọle",
+      "confirmPassword": "Jẹrisi Ọrọigbaniwọle",
+      "placeholder": "Tẹ {field} sii...",
+      "emailPlaceholder": "apẹẹrẹ@imeeli.com",
+      "passwordStrength": "Agbara ọrọigbaniwọle",
+      "strengthLevels": [
+        "Alailagbara pupọ",
+        "Alailagbara",
+        "Alabọde",
+        "Alagbara",
+        "Alagbara pupọ"
+      ],
+      "submitButton": "Ṣẹda Akọọlẹ Tuntun",
+      "loadingButton": "Ṣiṣẹda akọọlẹ...",
+      "googleButton": "Forukọsilẹ pẹlu Google",
+      "orSeparator": "tabi",
+      "hasAccount": "Ti ni akọọlẹ tẹlẹ?",
+      "loginLink": "Wọle",
+      "termsAgreement": "Nipa ṣiṣẹda akọọlẹ kan, o gba si wa",
+      "termsLink": "Awọn ofin lilo",
+      "and": "ati",
+      "privacyLink": "Ilana Asiri",
+      "successAlert": "Akọọlẹ rẹ ti ṣẹda ni aṣeyọri! Kaabọ si SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Gbọdọ jẹ o kere ju awọn ohun kikọ 2",
+      "maxLength": "Gigun ju",
+      "emailRequired": "Imeeli nilo",
+      "emailInvalid": "Adirẹsi imeeli ti ko wulo",
+      "passwordLength": "Ọrọigbaniwọle gbọdọ jẹ o kere ju awọn ohun kikọ 8",
+      "passwordComplexity": "Gbọdọ ni lẹta nla kan, lẹta kekere kan, ati nọmba kan",
+      "passwordMismatch": "Awọn ọrọigbaniwọle ko baamu"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Tun Ọrọigbaniwọle to - SyriaGPT",
+      "description": "Ṣeto ọrọ igbaniwọle tuntun, to lagbara fun akọọlẹ SyriaGPT rẹ."
+    },
+    "form": {
+      "title": "Ṣeto Ọrọigbaniwọle Tuntun",
+      "description": "Yan ọrọ igbaniwọle to lagbara lati daabobo akọọlẹ rẹ.",
+      "newPasswordLabel": "Ọrọigbaniwọle Tuntun",
+      "confirmPasswordLabel": "Jẹrisi Ọrọigbaniwọle",
+      "passwordMismatchError": "Awọn ọrọigbaniwọle ko baamu.",
+      "submitButton": "Ṣe imudojuiwọn Ọrọigbaniwọle",
+      "loadingButton": "Imudojuiwọn...",
+      "showPasswordAria": "Fi ọrọ igbaniwọle han",
+      "hidePasswordAria": "Tọju ọrọ igbaniwọle",
+      "mismatchToast": "Jọwọ rii daju pe awọn ọrọ igbaniwọle baamu.",
+      "loadingToast": "Imudojuiwọn ọrọ igbaniwọle...",
+      "successToast": "Ọrọigbaniwọle ti ni imudojuiwọn ni aṣeyọri!"
+    },
+    "strengthIndicator": {
+      "title": "Agbara",
+      "levels": [
+        "Alailagbara pupọ",
+        "Alailagbara",
+        "Itẹwọgba",
+        "O dara",
+        "Alagbara",
+        "Alagbara pupọ"
+      ]
+    },
+    "successScreen": {
+      "title": "Aṣeyọri!",
+      "description": "Ọrọigbaniwọle rẹ ti ni imudojuiwọn. O le wọle ni aabo bayi pẹlu awọn iwe-ẹri tuntun rẹ.",
+      "backToLoginButton": "Pada si Wọle"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Ètò - SyriaGPT",
+      "description": "Ṣe akanṣe iriri SyriaGPT rẹ, ṣakoso irisi, ede, awọn iwifunni, ati data."
+    },
+    "header": {
+      "title": "Ètò SyriaGPT",
+      "description": "Ṣe akanṣe iriri ti ara ẹni rẹ",
+      "unsavedChanges": "Awọn ayipada ti a ko fipamọ"
+    },
+    "appearance": {
+      "title": "Irisi & Ifihan",
+      "description": "Ṣe akanṣe iwo ati rilara ti ohun elo lati baamu awọn ayanfẹ rẹ",
+      "theme": "Ara Akori",
+      "themes": {
+        "light": { "label": "Imọlẹ", "description": "Apẹrẹ fun lilo ọsan" },
+        "dark": {
+          "label": "Dudu",
+          "description": "Rọrun lori awọn oju ni alẹ"
+        },
+        "system": {
+          "label": "Eto",
+          "description": "Tẹle awọn eto ẹrọ rẹ"
+        }
+      },
+      "preview": {
+        "title": "Awotẹlẹ Awọn ayipada",
+        "description": "Wo awotẹlẹ laaye ti awọn ayipada ṣaaju fifipamọ",
+        "new": "TITUN"
+      }
+    },
+    "language": {
+      "title": "Ede & Ekun",
+      "description": "Ṣeto ede ati awọn eto agbegbe",
+      "interfaceLanguage": {
+        "title": "Ede Ni wiwo",
+        "description": "Ede ti a lo ninu awọn akojọ aṣayan ati awọn eroja ibaraenisepo",
+        "badge": "Aifọwọyi"
+      },
+      "languages": {
+        "ar": "العربية (Siria)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Awọn iwifunni & Awọn ohun",
+      "description": "Ṣakoso awọn itaniji ati awọn ipa didun ohun",
+      "enableNotifications": {
+        "title": "Mu Awọn iwifunni ṣiṣẹ",
+        "description": "Gba awọn itaniji fun awọn ifiranṣẹ ati awọn imudojuiwọn pataki"
+      },
+      "sounds": {
+        "title": "Awọn ohun",
+        "description": "Mu awọn ohun ṣiṣẹ nigbati o nfi ati gbigba awọn ifiranṣẹ"
+      }
+    },
+    "dataManagement": {
+      "title": "Isakoso Data",
+      "description": "Ṣakoso fifipamọ ati pinpin data rẹ",
+      "autoSave": {
+        "title": "Fipamọ Aifọwọyi",
+        "description": "Fipamọ awọn ibaraẹnisọrọ rẹ laifọwọyi lati tọka si pada nigbamii"
+      },
+      "exportData": "Gbe Data jade",
+      "clearHistory": "Pa Awọn ibaraẹnisọrọ rẹ"
+    },
+    "advanced": {
+      "title": "Ètò To ti ni ilọsiwaju",
+      "description": "Awọn aṣayan ilọsiwaju fun awọn olumulo ọjọgbọn",
+      "developerMode": {
+        "title": "Ipo Olùgbéejáde",
+        "description": "Ṣe afihan alaye imọ-ẹrọ afikun ati awọn aṣayan idagbasoke",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Awọn atupale",
+        "description": "Ṣe iranlọwọ lati mu iṣẹ naa dara si nipa fifiranṣẹ data lilo ailorukọ"
+      }
+    },
+    "saveBar": {
+      "title": "Ṣe o fẹ fi awọn ayipada pamọ?",
+      "description": "Awọn eto tuntun yoo lo lẹsẹkẹsẹ",
+      "reset": "Tun",
+      "save": "Fipamọ Awọn ayipada",
+      "saving": "Nfipamọ...",
+      "success": "Awọn eto ti o fipamọ ni aṣeyọri!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Jẹrisi Piparẹ Itan",
+        "message": "Ṣe o da ọ loju? Gbogbo awọn ibaraẹnisọrọ rẹ ti o kọja yoo paarẹ patapata. Iṣe yii ko le ṣe atunṣe.",
+        "confirm": "Bẹẹni, pa rẹ",
+        "success": "Itan ibaraẹnisọrọ ti parẹ ni aṣeyọri."
+      },
+      "exportData": {
+        "title": "Gbe Data jade",
+        "message": "Ẹda ti gbogbo data rẹ yoo jẹ ipilẹṣẹ ati firanṣẹ si imeeli rẹ. Ṣe o fẹ tẹsiwaju?",
+        "confirm": "Bẹẹni, tẹsiwaju",
+        "success": "Gbigbe data rẹ jade..."
+      },
+      "cancel": "Fagilee"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Awọn ofin Iṣẹ - SyriaGPT",
+      "description": "Ka awọn ofin ati ipo fun lilo awọn iṣẹ SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Yipada si Larubawa",
+      "print": "Tẹjade"
+    },
+    "title": "Awọn ofin Iṣẹ",
+    "subtitle": "Imudojuiwọn Kẹhin: Oṣu Kẹjọ Ọjọ 24, Ọdun 2025",
+    "intro": "Kaabọ si SyriaGPT. Nipa lilo awọn iṣẹ wa, o gba si awọn ofin wọnyi. Jọwọ ka wọn daradara.",
+    "sectionsTitle": "Awọn apakan",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Gbigba Awọn ofin",
+        "content": "Nipa iraye si ati lilo SyriaGPT, o gba lati di adehun nipasẹ Awọn ofin ati Awọn ipo wọnyi. Ti o ko ba gba pẹlu apakan eyikeyi ti awọn ofin wọnyi, o ko yẹ ki o lo awọn iṣẹ wa."
+      },
+      {
+        "id": "services",
+        "title": "2. Apejuwe Awọn Iṣẹ",
+        "content": "SyriaGPT jẹ oluranlọwọ AI ti a ṣe apẹrẹ lati pese iranlọwọ ni ọpọlọpọ awọn aaye ti o jọmọ agbegbe Siria."
+      },
+      {
+        "id": "usage",
+        "title": "3. Lilo Itẹwọgba",
+        "content": "O gbọdọ lo awọn iṣẹ wa ni ofin ati ni iwa. O jẹ ewọ lati lo iṣẹ naa fun awọn idi arufin tabi ipalara."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Asiri ati Data",
+        "content": "A bọwọ fun aṣiri rẹ ati pe a pinnu lati daabobo data rẹ. A gba data pataki nikan lati pese iṣẹ naa ati pe a kii yoo pin laisi aṣẹ rẹ."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Ohun-ini Imọye",
+        "content": "Gbogbo awọn ẹtọ wa ni ipamọ si SyriaGPT. Akoonu, apẹrẹ, ati awọn aami jẹ ohun-ini wa. Akoonu ti o ṣẹda nipa lilo iṣẹ naa wa tirẹ."
+      },
+      {
+        "id": "liability",
+        "title": "6. AlAIgBA",
+        "content": "Iṣẹ naa ti pese \"gẹgẹbi o ti ri\" laisi awọn iṣeduro eyikeyi. A ko ṣe iṣeduro deede tabi pipe ti alaye ti a pese ati pe a ko ṣe oniduro fun eyikeyi awọn bibajẹ ti o waye lati lilo rẹ."
+      },
+      {
+        "id": "termination",
+        "title": "7. Ipari Iṣẹ",
+        "content": "A ni ẹtọ lati fopin si tabi daduro akọọlẹ rẹ ni ọran ti irufin awọn ofin wọnyi tabi ni ọran ti ihuwasi ipalara tabi arufin."
+      },
+      {
+        "id": "contact",
+        "title": "8. Pe wa",
+        "content": "Fun eyikeyi awọn ibeere nipa awọn ofin wọnyi, jọwọ kan si wa nipasẹ imeeli: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Mo ti ka ati gba si awọn ofin",
+    "continueButton": "Tẹsiwaju",
+    "backToTop": "Pada si Oke",
+    "expandAll": "Faagun Gbogbo",
+    "collapseAll": "Pa Gbogbo rẹ",
+    "readingProgress": "Ilọsiwaju Kika",
+    "copyright": "© {year} SyriaGPT. Gbogbo awọn ẹtọ wa ni ipamọ."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Igbesoke si Pro - SyriaGPT",
+      "description": "Gbadun awọn agbara ailopin, iyara ti o ga julọ, ati iraye si pataki si awọn ẹya tuntun pẹlu SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Igbesoke si Pro",
+      "description": "Gbadun awọn agbara ailopin, iyara ti o ga julọ, ati iraye si pataki si awọn ẹya tuntun"
+    },
+    "stats": [
+      { "value": "10x", "label": "Idahun Yara" },
+      { "value": "∞", "label": "Awọn ifiranṣẹ Ailopin" },
+      { "value": "24/7", "label": "Atilẹyin Tesiwaju" }
+    ],
+    "billingToggle": {
+      "monthly": "Oṣooṣu",
+      "yearly": "Lododun",
+      "saving": "Fipamọ 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Eto Ọfẹ",
+        "subtitle": "Ètò Lọ́wọ́lọ́wọ́",
+        "price": "$0",
+        "period": "Igbesi aye",
+        "features": [
+          "Wiwọle si awoṣe ipilẹ",
+          "Awọn ifiranṣẹ 20 fun ọjọ kan",
+          "Iyara idahun boṣewa",
+          "Awọn ẹya ara ẹrọ ipilẹ"
+        ],
+        "buttonText": "Ètò Lọ́wọ́lọ́wọ́ Rẹ"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Fun awọn akosemose ati awọn iṣowo",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "fun osu kan",
+        "periodYearly": "fun odun kan",
+        "popular": "Gbajumo Julọ",
+        "features": [
+          "Awoṣe GPT-4 ti ilọsiwaju",
+          "Awọn ifiranṣẹ ailopin",
+          "Iyara idahun ti o ga julọ",
+          "Wiwọle pataki si awọn ẹya tuntun",
+          "Atilẹyin imọ-ẹrọ amọja",
+          "Ni wiwo imudara laisi ipolowo"
+        ],
+        "buttonText": "Igbesoke Bayi"
+      }
+    },
+    "comparison": {
+      "title": "Ṣe afiwe Awọn Eto",
+      "featureHeader": "Awọn ẹya ara ẹrọ",
+      "freeHeader": "Ọ̀fẹ́",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Wiwọle si awoṣe ipilẹ", "free": true, "pro": true },
+        { "text": "Awọn ifiranṣẹ ojoojumọ ti o lopin (20)", "free": true, "pro": false },
+        { "text": "Awọn ifiranṣẹ ailopin", "free": false, "pro": true },
+        {
+          "text": "Wiwọle si awoṣe GPT-4 ti ilọsiwaju",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Iyara idahun boṣewa", "free": true, "pro": false },
+        {
+          "text": "Iyara idahun ti o ga julọ (10x yiyara)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Wiwọle pataki si awọn ẹya tuntun",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Atilẹyin imọ-ẹrọ amọja",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Ni wiwo laisi ipolowo", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Awọn ibeere Nigbagbogbo",
+      "toggleOpen": "Ka siwaju",
+      "toggleClose": "Pade",
+      "items": [
+        {
+          "question": "Ṣe MO le fagilee ṣiṣe alabapin mi nigbakugba?",
+          "answer": "Bẹẹni, dajudaju. O le fagilee ṣiṣe alabapin ero Pro rẹ nigbakugba lati oju-iwe \"Isakoso Akọọlẹ\". Iwọ yoo tẹsiwaju lati ni iraye si awọn ẹya Pro titi di opin akoko ìdíyelé lọwọlọwọ, ati pe ko si awọn idiyele siwaju sii ti yoo ṣe."
+        },
+        {
+          "question": "Awọn ọna isanwo wo ni a gba?",
+          "answer": "A gba gbogbo awọn kaadi kirẹditi pataki ati awọn kaadi debiti (Visa, MasterCard, American Express) ati Sham Cash ati awọn apamọwọ e-agbegbe. Gbogbo awọn sisanwo ni a ṣe ni aabo ati ti paroko nipasẹ alabaṣepọ wa, Stripe."
+        },
+        {
+          "question": "Kini yoo ṣẹlẹ ni opin akoko ìdíyelé ọdọọdun?",
+          "answer": "Ṣiṣe alabapin ọdọọdun rẹ yoo tunse laifọwọyi ayafi ti o ba fagilee lati awọn eto akọọlẹ rẹ. A yoo fi imeeli olurannileti ranṣẹ si ọ ni ọsẹ kan ṣaaju ọjọ isọdọtun pẹlu awọn alaye ti iye ti o jẹ."
+        },
+        {
+          "question": "Ṣe MO le gba agbapada?",
+          "answer": "Bẹẹni, a nfunni ni iṣeduro owo-pada ni kikun fun ọjọ 30 lati ọjọ ṣiṣe alabapin ti o ko ba ni itẹlọrun pẹlu iṣẹ naa fun idi eyikeyi. Kan kan si ẹgbẹ atilẹyin wa, ati pe a yoo ṣe ilana ibeere agbapada rẹ lẹsẹkẹsẹ."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ṣetan lati Bẹrẹ?",
+      "description": "Darapọ mọ ẹgbẹẹgbẹrun awọn olumulo ti o ti yan SyriaGPT Pro fun iriri AI ti o ga julọ",
+      "buttonText": "Bẹrẹ Bayi fun {price}",
+      "guarantee": "30-ọjọ ni kikun owo-pada lopolopo"
+    },
+    "alert": "Iwọ yoo darí si oju-iwe isanwo..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Daju Imeeli - SyriaGPT",
+      "description": "Tẹ koodu ijẹrisi ti a fi ranṣẹ si imeeli rẹ lati jẹrisi akọọlẹ SyriaGPT rẹ."
+    },
+    "header": {
+      "title": "Daju Imeeli Rẹ",
+      "description": "Tẹ koodu ijẹrisi ti a fi ranṣẹ si"
+    },
+    "form": {
+      "label": "koodu ijẹrisi oni-nọmba 6",
+      "verifyButton": "Daju Koodu",
+      "verifyingButton": "Ijẹrisi...",
+      "resend": {
+        "question": "Ko gba koodu naa?",
+        "resendButton": "Tun Koodu ranṣẹ",
+        "resendingButton": "Atunse...",
+        "cooldown": "Tun ranṣẹ ni {seconds} aaya"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Ijeri ni aṣeyọri!",
+        "description": "Imeeli rẹ ti jẹrisi ni aṣeyọri",
+        "redirecting": "Ndarí si dasibodu..."
+      },
+      "error": {
+        "title": "Ijeri Kuna",
+        "tryAgainButton": "Gbiyanju Lẹẹkansi"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Jọwọ tẹ koodu ijẹrisi oni-nọmba 6 sii",
+      "invalidCode": "Koodu ijẹrisi ti ko wulo. Jọwọ gbiyanju lẹẹkansi.",
+      "generic": "Aṣiṣe kan ṣẹlẹ lakoko ijẹrisi. Jọwọ gbiyanju lẹẹkansi.",
+      "resendFailed": "Kuna lati fi koodu ijẹrisi ranṣẹ. Jọwọ gbiyanju lẹẹkansi."
+    },
+    "backToLogin": "Pada si Wọle",
+    "securityNote": {
+      "title": "Akiyesi Aabo:",
+      "points": [
+        "Maṣe pin koodu ijẹrisi pẹlu ẹnikẹni",
+        "Koodu ijẹrisi wulo fun iṣẹju 10 nikan",
+        "Ṣayẹwo adirẹsi imeeli ti olufiranṣẹ"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "A ti fi koodu ijẹrisi tuntun ranṣẹ si imeeli rẹ"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Aṣiṣe kan ṣẹlẹ - SyriaGPT",
+      "description": "Oju-iwe aṣiṣe aṣa fun iṣẹ akanṣe SyriaGPT."
+    },
+    "offlineMessage": "O wa ni aisinipo lọwọlọwọ",
+    "errorCode": "Aṣiṣe {statusCode}",
+    "title": "Aṣiṣe Airotẹlẹ kan ṣẹlẹ",
+    "description": "A tọrọ gafara tọkàntọkàn fun aibalẹ naa. A ti fi to ẹgbẹ imọ-ẹrọ wa leti ati pe o n ṣiṣẹ lati yanju ọran naa ni kete bi o ti ṣee.",
+    "retryButton": "Gbiyanju Lẹẹkansi",
+    "retryingButton": "Atunse...",
+    "homeButton": "Ile",
+    "backButton": "Pada",
+    "suggestionsTitle": "Ohun ti o le gbiyanju bayi:",
+    "suggestion1": "Sọ oju-iwe naa sọtun le yanju iṣoro naa.",
+    "suggestion2": "Jọwọ ṣayẹwo asopọ intanẹẹti rẹ.",
+    "suggestion3": "Ti iṣoro naa ba tẹsiwaju, lero ọfẹ lati kan si wa.",
+    "accordion": {
+      "title": "Awọn alaye Imọ-ẹrọ fun Awọn Difelopa",
+      "copy": "Daakọ",
+      "copied": "Ti dakọ",
+      "code": "Koodu:",
+      "message": "Ifiranṣẹ:",
+      "digest": "Akopọ:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Oju-iwe Ko Ri - SyriaGPT",
+      "description": "Oju-iwe ti o n wa ko si tabi ti gbe."
+    },
+    "title": "O dabi pe o sọnu ninu awọn oju-iwe!",
+    "description": "Oju-iwe ti o n wa ko si tabi ti gbe",
+    "currentLocation": "Ipo Lọwọlọwọ: Aimọ",
+    "search": {
+      "placeholder": "Wa oju-iwe ti o fẹ...",
+      "button": "Wa",
+      "searching": "Wiwa..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Oju-iwe iṣaaju",
+        "description": "Pada si ibi ti o ti wa"
+      },
+      "homePage": {
+        "title": "Oju-iwe akọọkan",
+        "description": "Bẹrẹ lẹẹkansi"
+      }
+    },
+    "suggestions": {
+      "title": "Awọn oju-iwe ti o le nifẹ si",
+      "items": [
+        { "title": "Oju-iwe akọọkan", "description": "Pada si ibẹrẹ" },
+        { "title": "Ibaraẹnisọrọ", "description": "Bẹrẹ ibaraẹnisọrọ tuntun kan" },
+        { "title": "Iranlọwọ", "description": "Gba iranlọwọ" },
+        { "title": "Nipa Siria", "description": "Ṣe afẹri diẹ sii" }
+      ]
+    },
+    "history": {
+      "title": "Awọn oju-iwe Ti a Ṣabẹwo Laipẹ"
+    },
+    "funFact": {
+      "title": "Lakoko ti o n wa ọna rẹ...",
+      "facts": [
+        "Ṣe o mọ? Damasku ni olu-ilu ti o ti gbe nigbagbogbo julọ ni agbaye!",
+        "Ṣe o mọ? A kọkọ ṣe alfabeti akọkọ ninu itan-akọọlẹ ni Ugarit, Siria!",
+        "Ṣe o mọ? Igi pistachio Aleppo le gbe fun ọdun 300 ju!",
+        "Ṣe o mọ? Krak des Chevaliers ni Siria jẹ ọkan ninu awọn kasulu ti o dara julọ ti o tọju ni agbaye!",
+        "Ṣe o mọ? A ka Damask dide si ọkan ninu awọn iru Roses ti o dara julọ ni agbaye!"
+      ]
+    },
+    "support": {
+      "message": "Ti o ba gbagbọ pe eyi jẹ aṣiṣe, jọwọ kan si wa",
+      "helpCenter": "Ile-iṣẹ Iranlọwọ",
+      "technicalSupport": "Atilẹyin Imọ-ẹrọ"
+    }
+  },
+  "loader": {
+    "title": "ikojọpọ...",
+    "loading": "Jọwọ duro fun iṣẹju kan..."
+  }
+}

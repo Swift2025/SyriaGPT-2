@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Inteligența Artificială Siriană",
+    "newChat": "Chat nou",
+    "pastConversations": "Conversații anterioare",
+    "lightMode": "Mod luminos",
+    "darkMode": "Mod întunecat",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Utilizator sirian",
+    "userEmail": "user@syriagpt.com",
+    "profile": "Profil",
+    "settings": "Setări",
+    "upgradeToPro": "Treceți la Pro",
+    "newBadge": "NOU",
+    "helpCenter": "Centru de ajutor",
+    "aboutApp": "Despre aplicație",
+    "logout": "Deconectare",
+    "logoutModal": {
+      "title": "Confirmați deconectarea",
+      "description": "Sunteți sigur că doriți să vă deconectați de la contul dvs.?",
+      "cancel": "Anulare",
+      "confirm": "Da, deconectare"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Asistentul tău inteligent pentru a răspunde la toate întrebările tale",
+      "examples": "Exemple",
+      "capabilities": "Capabilități",
+      "limitations": "Limitări",
+      "suggestions": {
+        "examples": [
+          "Explicați cum să obțineți un card de identitate simplu",
+          "Dați-mi cursurile aprobate la Universitatea din Damasc",
+          "Care sunt ingredientele pentru Mahshi?"
+        ],
+        "capabilities": [
+          "Cum se face bamele și care este relația sa istorică?",
+          "Care sunt aranjamentele pentru pașaportul sirian?",
+          "Am nevoie de informații despre investiții"
+        ],
+        "limitations": [
+          "Cum se rezolvă o problemă de calculator?",
+          "Care sunt condițiile de înregistrare la Universitatea din Alep?",
+          "Dați-mi un rezumat al știrilor de astăzi din Siria"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Scrie..."
+    },
+    "regenerate": "Regenerați răspunsul",
+    "input": {
+      "placeholder": "Scrieți mesajul aici sau trageți un fișier pentru a-l atașa...",
+      "attachFile": "Atașați fișier",
+      "startRecording": "Începeți înregistrarea",
+      "stopRecording": "Opriți înregistrarea",
+      "removeFile": "Eliminați fișierul"
+    },
+    "dragDrop": {
+      "title": "Plasați fișierele aici",
+      "subtitle": "PDF, Word, Text (Max 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Recunoașterea vocală nu este acceptată în acest browser. Vă rugăm să utilizați Chrome sau Edge.",
+      "permissionDenied": "Vă rugăm să permiteți accesul la microfon în setările browserului.",
+      "startFailed": "Nu s-a putut începe înregistrarea. Verificați setările browserului.",
+      "generalError": "A apărut o eroare la pornirea înregistrării. Vă rugăm să încercați din nou.",
+      "no-speech": "Nu a fost detectată nicio vorbire. Asigurați-vă că vocea dvs. este clară și microfonul este aproape.",
+      "audio-capture": "Nu se poate accesa microfonul. Asigurați-vă că este conectat și că permisiunea este acordată.",
+      "not-allowed": "Permisiunea a fost refuzată. Vă rugăm să permiteți utilizarea microfonului din setările browserului.",
+      "network": "Eroare de rețea. Vă rugăm să verificați conexiunea la internet.",
+      "service-not-allowed": "Serviciul de recunoaștere vocală este momentan indisponibil.",
+      "language-not-supported": "Limba nu este acceptată. Încercați browserul Chrome."
+    },
+    "footer": "Scopul nostru este de a face sistemele AI mai naturale și mai sigure pentru a interacționa"
+  },
+  "chat": {
+    "fileAnalysisError": "Ne pare rău, a apărut o eroare la analizarea fișierului: {error}",
+    "responseProcessingError": "Ne pare rău, a apărut o eroare la procesarea răspunsului.",
+    "networkError": "Ne pare rău, a apărut o eroare de conexiune. Vă rugăm să verificați conexiunea la internet."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Despre proiectul SyriaGPT",
+      "description": "Aflați despre obiectivele și viziunea proiectului SyriaGPT, asistentul inteligent specializat în contextul sirian."
+    },
+    "header": {
+      "title": "Republica Arabă Siriană",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "Siria... este Inima"
+    },
+    "main": {
+      "p1": "Acesta este un proiect național de pionierat adoptat de guvernul sirian, care vizează dezvoltarea unui model avansat de limbă arabă, cu un accent special pe dialectul sirian. Scopul acestui proiect este de a fi o platformă de cunoștințe și servicii care ajută cetățenii să interacționeze cu serviciile guvernamentale și cu sectoarele public și privat ușor și în siguranță, oferindu-le răspunsuri exacte și fiabile despre proceduri, legi și informații generale.",
+      "p2": "Se distinge prin accentul pus pe limba locală și prin capacitatea de a înțelege dialectele alături de araba standard, ceea ce îl apropie de utilizator în viața de zi cu zi. Proiectul asigură, de asemenea, confidențialitatea datelor prin găzduirea în centre de date naționale și funcționează conform unor standarde înalte de siguranță și neutralitate pentru a se asigura că rezultatele sunt exacte și nepărtinitoare. Este conceput pentru a fi integrabil cu portalurile de e-guvernare, aplicațiile oficiale și centrele de apeluri, constituind astfel un pas fundamental către consolidarea transformării digitale în Siria.",
+      "p3": "Proiectul urmărește să deservească mai multe domenii, cum ar fi facilitarea procedurilor guvernamentale, sprijinirea educației, simplificarea ghidurilor de sănătate, asistarea întreprinderilor mici și diseminarea rapidă și clară a mesajelor de urgență. Astfel, reprezintă un salt calitativ în modul în care cetățenii accesează informațiile, unde interacțiunea în limbaj natural devine un mijloc principal de simplificare a tranzacțiilor și de apropiere a cetățenilor de instituțiile statului."
+    },
+    "footer": {
+      "backButton": "Înapoi la chat",
+      "disclaimer": "Scopul nostru este de a face sistemele AI mai naturale și mai sigure pentru a interacționa, în conformitate cu contextul sirian și cu nevoile utilizatorilor săi. Feedback-ul și sugestiile dvs. ne vor ajuta să îmbunătățim și să dezvoltăm serviciul pentru a vă servi mai bine."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Ați uitat parola",
+      "description": "Recuperați accesul la contul dvs. SyriaGPT cu pași simpli și siguri."
+    },
+    "infoPanel": {
+      "title": "Recuperați-vă contul în siguranță",
+      "description": "Suntem aici pentru a vă ajuta să recuperați accesul la contul dvs. cu pași simpli și siguri.",
+      "steps": {
+        "step1": {
+          "title": "Introduceți adresa de e-mail",
+          "description": "Adresa de e-mail înregistrată în contul dvs. SyriaGPT"
+        },
+        "step2": {
+          "title": "Verificați-vă e-mailul",
+          "description": "Vă vom trimite un link securizat pentru a vă reseta parola"
+        },
+        "step3": {
+          "title": "Creați o parolă nouă",
+          "description": "Alegeți o parolă puternică și sigură pentru contul dvs."
+        }
+      },
+      "securityTip": {
+        "title": "Sfat de securitate",
+        "description": "Linkul este valabil doar 15 minute pentru a asigura securitatea contului dvs. Dacă nu găsiți e-mailul, verificați folderul de spam."
+      }
+    },
+    "form": {
+      "title": "Ați uitat parola",
+      "description": "Introduceți adresa de e-mail pentru a primi un link de recuperare",
+      "emailLabel": "Adresă de e-mail",
+      "emailPlaceholder": "Introduceți adresa de e-mail...",
+      "emailRequiredAlert": "Vă rugăm să introduceți adresa de e-mail.",
+      "submitButton": "Trimiteți linkul de recuperare",
+      "loadingButton": "Se trimite...",
+      "rememberedPassword": "V-ați amintit parola?",
+      "backToLogin": "Înapoi la autentificare"
+    },
+    "successScreen": {
+      "title": "Instrucțiuni trimise",
+      "checkEmailTitle": "Verificați-vă e-mailul",
+      "description": "Am trimis un link de recuperare a parolei la:",
+      "tip1": "Verificați-vă căsuța de e-mail",
+      "tip2": "Nu uitați să verificați folderul de spam",
+      "tip3": "Linkul este valabil doar 15 minute",
+      "backToLoginButton": "Înapoi la autentificare"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Centru de ajutor - SyriaGPT",
+      "description": "Găsiți răspunsuri la întrebările dvs., ghiduri de utilizare și contactați echipa de asistență SyriaGPT."
+    },
+    "header": {
+      "title": "Centru de ajutor",
+      "description": "Bun venit la centrul de asistență SyriaGPT! Suntem aici pentru a vă ajuta să aveți cea mai bună experiență posibilă."
+    },
+    "search": {
+      "placeholder": "Căutați răspunsuri, ghiduri de utilizare sau puneți o întrebare..."
+    },
+    "categories": {
+      "title": "Răsfoiți după categorie",
+      "items": [
+        {
+          "title": "Noțiuni de bază",
+          "description": "Învățați elementele de bază ale utilizării platformei și profitați de toate funcțiile disponibile."
+        },
+        {
+          "title": "Gestionarea contului",
+          "description": "Editați-vă profilul, gestionați abonamentele și setările de securitate."
+        },
+        {
+          "title": "Funcții avansate",
+          "description": "Utilizați atașamente de fișiere, căutare vocală și inteligență artificială avansată."
+        },
+        {
+          "title": "Securitate și confidențialitate",
+          "description": "Aflați cum să vă protejați datele și informațiile personale cu cele mai înalte standarde de securitate."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Întrebări frecvente",
+      "toggleOpen": "Citiți mai mult",
+      "toggleClose": "Închideți",
+      "items": [
+        {
+          "question": "Cum pot începe un chat nou?",
+          "answer": "Pentru a începe un chat nou, pur și simplu faceți clic pe butonul „+ Chat nou” din partea de sus a barei laterale. Puteți utiliza și comanda rapidă de la tastatură Ctrl+N pentru o pornire rapidă."
+        },
+        {
+          "question": "Ce tipuri de fișiere pot atașa?",
+          "answer": "Puteți atașa fișiere PDF, documente Word (doc, docx), fișiere PowerPoint, fișiere text (txt) și imagini (jpg, png, gif). Dimensiunea maximă pentru un singur fișier este de 10 MB și puteți atașa până la 5 fișiere pe conversație."
+        },
+        {
+          "question": "Sunt salvate conversațiile mele anterioare?",
+          "answer": "Da, conversațiile dvs. anterioare sunt salvate automat și în siguranță în contul dvs. Le puteți accesa din lista „Conversații anterioare” din bara laterală, organizate după dată sau subiect."
+        },
+        {
+          "question": "Cum funcționează modurile luminos și întunecat?",
+          "answer": "Puteți comuta între modurile luminos și întunecat folosind butonul dedicat din bara laterală. Sistemul vă salvează automat preferința și o aplică în toate sesiunile viitoare."
+        },
+        {
+          "question": "Ce este funcția de conversie a vocii în text?",
+          "answer": "Puteți utiliza microfonul pentru dictare vocală în arabă sau engleză. Faceți clic pe pictograma microfonului din bara de introducere și începeți să vorbiți. Sistemul vă va converti automat vorbirea în text."
+        },
+        {
+          "question": "Pot folosi SyriaGPT pe telefonul meu mobil?",
+          "answer": "Da, SyriaGPT este disponibil prin browserul web pe toate dispozitivele inteligente. Interfața este complet receptivă și funcționează perfect pe telefoane și tablete."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Nu ați găsit ceea ce căutați?",
+      "description": "Echipa noastră de asistență dedicată este disponibilă non-stop pentru a vă ajuta. Contactați-ne și vă vom răspunde în câteva minute!",
+      "emailButton": "Contactați prin e-mail",
+      "chatButton": "Chat live",
+      "phoneButton": "Apel telefonic",
+      "availability": "Disponibil 24/7",
+      "responseTime": "Răspuns în 5 minute",
+      "languageSupport": "Asistență în limba arabă"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Autentificare - SyriaGPT",
+      "description": "Autentificați-vă în contul dvs. SyriaGPT pentru a accesa conversațiile și funcțiile avansate."
+    },
+    "infoPanel": {
+      "title": "Bun venit înapoi",
+      "description": "Continuați să explorați lumea inteligenței artificiale siriene cu",
+      "securityTitle": "De ce este SyriaGPT sigur?",
+      "features": [
+        {
+          "title": "Protecție avansată a datelor",
+          "description": "Utilizăm tehnologii avansate de criptare pentru a vă proteja informațiile personale"
+        },
+        {
+          "title": "Autentificare cu doi factori",
+          "description": "Un strat suplimentar de protecție pentru a asigura securitatea contului dvs."
+        },
+        {
+          "title": "Inteligență artificială locală",
+          "description": "Tehnologie siriană avansată care înțelege cultura și contextul arab"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Utilizatori activi" },
+        { "value": "99.9%", "label": "Timp de funcționare" },
+        { "value": "24/7", "label": "Asistență" }
+      ]
+    },
+    "form": {
+      "title": "Autentificare",
+      "description": "Introduceți datele de autentificare pentru a accesa contul dvs.",
+      "emailLabel": "Adresă de e-mail",
+      "emailPlaceholder": "Introduceți adresa de e-mail...",
+      "passwordLabel": "Parolă",
+      "passwordPlaceholder": "Introduceți parola...",
+      "forgotPassword": "Ați uitat parola?",
+      "showPassword": "Afișați parola",
+      "hidePassword": "Ascundeți parola",
+      "loginButton": "Autentificare",
+      "loadingButton": "Se verifică...",
+      "loginSuccessAlert": "Autentificare reușită!",
+      "orSeparator": "sau",
+      "noAccount": "Nu aveți un cont?",
+      "createAccount": "Creați un cont nou"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Politica de confidențialitate - SyriaGPT",
+      "description": "Aflați cum sunt colectate, utilizate și protejate datele dvs. personale atunci când utilizați serviciile SyriaGPT."
+    },
+    "header": {
+      "title": "Politica de confidențialitate",
+      "lastUpdated": "Ultima actualizare: 25 august 2025",
+      "effectiveDate": "Intră în vigoare imediat"
+    },
+    "infoCards": [
+      {
+        "title": "Protecție completă",
+        "description": "Datele dvs. sunt protejate cu cele mai recente tehnologii de criptare și securitate."
+      },
+      {
+        "title": "Control complet",
+        "description": "Vă controlați datele și le puteți șterge oricând."
+      },
+      {
+        "title": "Transparență completă",
+        "description": "Explicăm clar ce colectăm și cum folosim."
+      },
+      {
+        "title": "Fără vânzare de date",
+        "description": "Nu vindem și nu partajăm datele dvs. cu terți."
+      }
+    ],
+    "toc": {
+      "title": "Cuprins"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introducere",
+        "content": "Bun venit la SyriaGPT. Vă luăm în serios confidențialitatea. Această politică descrie tipurile de informații pe care le putem colecta de la dvs. sau pe care le puteți furniza atunci când vizitați sau utilizați aplicația noastră, precum și practicile noastre de colectare, utilizare, întreținere, protejare și divulgare a acestor informații."
+      },
+      {
+        "id": "data-collection",
+        "title": "Informațiile pe care le colectăm",
+        "intro": "Putem colecta mai multe tipuri de informații de la și despre utilizatorii serviciului nostru, inclusiv:",
+        "points": [
+          "Informații pe care le furnizați direct: cum ar fi numele, adresa de e-mail și parola atunci când creați un cont.",
+          "Conținutul utilizatorului: Mesajele, întrebările și fișierele pe care le încărcați în serviciul nostru pentru analiză.",
+          "Informații de utilizare: Detalii despre utilizarea serviciului nostru, inclusiv date de trafic și jurnale de utilizare.",
+          "Informații despre dispozitiv: Tipul browserului, sistemul de operare și adresa IP."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Cum folosim informațiile dvs.",
+        "intro": "Folosim informațiile pe care le colectăm despre dvs. sau pe care ni le furnizați în următoarele scopuri:",
+        "points": [
+          "Pentru a vă oferi serviciul și conținutul acestuia la cea mai bună calitate posibilă.",
+          "Pentru a vă îmbunătăți și personaliza experiența în funcție de nevoile dvs.",
+          "Pentru a comunica cu dvs. despre contul sau serviciul nostru și despre notificări importante.",
+          "În scopuri de analiză și cercetare pentru a ne îmbunătăți produsele și serviciile.",
+          "Pentru a asigura securitatea platformei și a preveni utilizarea neautorizată."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Divulgarea informațiilor dvs.",
+        "commitmentTitle": "Angajamentul nostru de bază",
+        "commitmentText": "Nu vindem și nu închiriem informațiile dvs. personale unor terți. Acesta este angajamentul nostru fundamental față de dvs.",
+        "content": "Putem divulga informații personale numai în următoarele cazuri: pentru a respecta orice ordin judecătoresc sau lege, sau pentru a proteja drepturile și siguranța SyriaGPT și a clienților noștri împotriva amenințărilor grave de securitate."
+      },
+      {
+        "id": "data-security",
+        "title": "Securitatea datelor",
+        "protectionTitle": "Măsuri avansate de protecție:",
+        "points": [
+          "Criptare end-to-end pentru toate datele sensibile",
+          "Servere securizate protejate de firewall-uri avansate",
+          "Monitorizare de securitate 24/7 pentru a detecta amenințările",
+          "Copii de rezervă regulate și criptate pentru a asigura continuitatea serviciului",
+          "Teste de securitate periodice efectuate de experți independenți"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Drepturile dvs.",
+        "intro": "În calitate de utilizator al serviciului nostru, aveți următoarele drepturi cu privire la datele dvs. personale:",
+        "rights": [
+          {
+            "title": "Acces și revizuire",
+            "description": "Solicitați o copie a tuturor datelor dvs. stocate la noi"
+          },
+          {
+            "title": "Corectare și actualizare",
+            "description": "Modificați sau corectați orice informație inexactă"
+          },
+          {
+            "title": "Ștergere completă",
+            "description": "Ștergeți definitiv contul și toate datele dvs."
+          },
+          {
+            "title": "Portabilitate și export",
+            "description": "Exportați datele dvs. într-un format lizibil"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Modificări ale politicii",
+        "content": "Politica noastră este de a vă notifica cu privire la orice modificare semnificativă cu 30 de zile înainte de intrarea în vigoare. Orice modificare va fi postată pe această pagină cu o dată de revizuire actualizată. Vă încurajăm să revizuiți periodic această politică pentru a fi informat despre modul în care vă protejăm informațiile."
+      },
+      {
+        "id": "contact",
+        "title": "Contactați-ne",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "availability": "Echipa de confidențialitate este disponibilă pentru a vă răspunde la întrebări de duminică până joi, între orele 9:00 și 18:00"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profil - SyriaGPT",
+      "description": "Gestionați-vă informațiile personale, setările de securitate și planul de abonament în SyriaGPT."
+    },
+    "header": {
+      "title": "Profil",
+      "description": "Gestionați-vă informațiile personale și setările contului în SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Poză de profil",
+      "changeAvatar": "Schimbați poza de profil",
+      "joinDate": "Data înscrierii",
+      "currentPlan": "Planul curent",
+      "freePlan": "Gratuit",
+      "conversations": "Conversații",
+      "activeDays": "Zile active"
+    },
+    "personalInfo": {
+      "title": "Informații personale",
+      "description": "Actualizați-vă numele, adresa de e-mail și setările de bază",
+      "fullName": "Nume complet",
+      "email": "Adresă de e-mail",
+      "editButton": "Editați informațiile",
+      "cancelButton": "Anulare",
+      "saveButton": "Salvați modificările",
+      "updateSuccess": "Profil actualizat cu succes!"
+    },
+    "security": {
+      "title": "Securitate și parolă",
+      "description": "Păstrați-vă contul în siguranță actualizându-vă parola în mod regulat",
+      "currentPassword": "Parola curentă",
+      "currentPasswordPlaceholder": "Introduceți parola curentă...",
+      "newPassword": "Parola nouă",
+      "newPasswordPlaceholder": "Introduceți parola nouă...",
+      "confirmNewPassword": "Confirmați parola nouă",
+      "confirmNewPasswordPlaceholder": "Confirmați parola nouă...",
+      "updateButton": "Actualizați parola",
+      "passwordMismatch": "Parolele noi nu se potrivesc.",
+      "updateSuccess": "Parola a fost schimbată cu succes!"
+    },
+    "subscription": {
+      "title": "Plan de abonament",
+      "description": "În prezent sunteți pe planul gratuit - obțineți mai multe funcții",
+      "upgradeTitle": "Treceți la Pro",
+      "upgradeDescription": "Obțineți funcții suplimentare și răspunsuri prioritare",
+      "upgradeButton": "Treceți acum"
+    },
+    "dangerZone": {
+      "title": "Zonă de pericol",
+      "description": "Aceste acțiuni sunt ireversibile - procedați cu prudență",
+      "deleteTitle": "Ștergeți contul definitiv",
+      "deleteDescription": "Toate datele și conversațiile dvs. vor fi șterse definitiv",
+      "deleteButton": "Ștergeți contul"
+    },
+    "deleteModal": {
+      "title": "Confirmați ștergerea contului",
+      "message": "Sunteți absolut sigur? Contul dvs. și toate datele dvs. vor fi șterse definitiv. Această acțiune nu poate fi anulată.",
+      "cancelButton": "Anulare",
+      "confirmButton": "Confirmați ștergerea",
+      "deleteSuccess": "Contul dvs. a fost șters cu succes."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Creați un cont nou - SyriaGPT",
+      "description": "Alăturați-vă comunității SyriaGPT și începeți să explorați puterea AI concepută pentru contextul sirian."
+    },
+    "infoPanel": {
+      "title": "Alăturați-vă comunității SyriaGPT",
+      "description": "Descoperiți puterea inteligenței artificiale concepute special pentru cultura și contextul sirian",
+      "features": [
+        {
+          "title": "AI avansat",
+          "description": "Tehnologii moderne antrenate pe conținut arab și sirian"
+        },
+        {
+          "title": "Securitate și confidențialitate garantate",
+          "description": "Protecție avansată pentru datele dvs. cu criptare de clasă mondială"
+        },
+        {
+          "title": "Comunitate activă",
+          "description": "Alăturați-vă miilor de utilizatori sirieni pasionați de tehnologie"
+        },
+        {
+          "title": "Funcții exclusive",
+          "description": "Instrumente personalizate pentru conținut sirian și arab"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT mi-a schimbat complet modul de lucru. O înțelegere profundă a limbii și culturii siriene.\"",
+        "author": "- Ahmed Al-Shami, Dezvoltator"
+      }
+    },
+    "form": {
+      "title": "Creați un cont nou",
+      "description": "Completați următoarele detalii pentru a vă crea contul",
+      "firstName": "Prenume",
+      "lastName": "Nume de familie",
+      "email": "Adresă de e-mail",
+      "password": "Parolă",
+      "confirmPassword": "Confirmați parola",
+      "placeholder": "Introduceți {field}...",
+      "emailPlaceholder": "exemplu@email.com",
+      "passwordStrength": "Puterea parolei",
+      "strengthLevels": [
+        "Foarte slabă",
+        "Slabă",
+        "Medie",
+        "Puternică",
+        "Foarte puternică"
+      ],
+      "submitButton": "Creați un cont nou",
+      "loadingButton": "Se creează contul...",
+      "googleButton": "Înregistrați-vă cu Google",
+      "orSeparator": "sau",
+      "hasAccount": "Aveți deja un cont?",
+      "loginLink": "Autentificare",
+      "termsAgreement": "Prin crearea unui cont, sunteți de acord cu",
+      "termsLink": "Termenii de utilizare",
+      "and": "și",
+      "privacyLink": "Politica de confidențialitate",
+      "successAlert": "Contul dvs. a fost creat cu succes! Bun venit la SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Trebuie să aibă cel puțin 2 caractere",
+      "maxLength": "Prea lung",
+      "emailRequired": "E-mailul este obligatoriu",
+      "emailInvalid": "Adresă de e-mail nevalidă",
+      "passwordLength": "Parola trebuie să aibă cel puțin 8 caractere",
+      "passwordComplexity": "Trebuie să conțină o literă mare, o literă mică și un număr",
+      "passwordMismatch": "Parolele nu se potrivesc"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Resetați parola - SyriaGPT",
+      "description": "Setați o parolă nouă și puternică pentru contul dvs. SyriaGPT."
+    },
+    "form": {
+      "title": "Setați o parolă nouă",
+      "description": "Alegeți o parolă puternică pentru a vă proteja contul.",
+      "newPasswordLabel": "Parola nouă",
+      "confirmPasswordLabel": "Confirmați parola",
+      "passwordMismatchError": "Parolele nu se potrivesc.",
+      "submitButton": "Actualizați parola",
+      "loadingButton": "Se actualizează...",
+      "showPasswordAria": "Afișați parola",
+      "hidePasswordAria": "Ascundeți parola",
+      "mismatchToast": "Vă rugăm să vă asigurați că parolele se potrivesc.",
+      "loadingToast": "Se actualizează parola...",
+      "successToast": "Parola a fost actualizată cu succes!"
+    },
+    "strengthIndicator": {
+      "title": "Putere",
+      "levels": [
+        "Foarte slabă",
+        "Slabă",
+        "Acceptabilă",
+        "Bună",
+        "Puternică",
+        "Foarte puternică"
+      ]
+    },
+    "successScreen": {
+      "title": "Succes!",
+      "description": "Parola dvs. a fost actualizată. Acum vă puteți autentifica în siguranță cu noile dvs. date de autentificare.",
+      "backToLoginButton": "Înapoi la autentificare"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Setări - SyriaGPT",
+      "description": "Personalizați-vă experiența SyriaGPT, gestionați aspectul, limba, notificările și datele."
+    },
+    "header": {
+      "title": "Setări SyriaGPT",
+      "description": "Personalizați-vă experiența personală",
+      "unsavedChanges": "Modificări nesalvate"
+    },
+    "appearance": {
+      "title": "Aspect și afișare",
+      "description": "Personalizați aspectul și senzația aplicației pentru a se potrivi preferințelor dvs.",
+      "theme": "Stilul temei",
+      "themes": {
+        "light": { "label": "Luminos", "description": "Ideal pentru utilizare în timpul zilei" },
+        "dark": {
+          "label": "Întunecat",
+          "description": "Ușor pentru ochi pe timp de noapte"
+        },
+        "system": {
+          "label": "Sistem",
+          "description": "Urmează setările dispozitivului dvs."
+        }
+      },
+      "preview": {
+        "title": "Previzualizați modificările",
+        "description": "Vizualizați o previzualizare live a modificărilor înainte de a salva",
+        "new": "NOU"
+      }
+    },
+    "language": {
+      "title": "Limbă și regiune",
+      "description": "Setați limba și setările regionale",
+      "interfaceLanguage": {
+        "title": "Limba interfeței",
+        "description": "Limba utilizată în meniuri și elemente interactive",
+        "badge": "Automat"
+      },
+      "languages": {
+        "ar": "العربية (Siria)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Notificări și sunete",
+      "description": "Controlați alertele și efectele sonore",
+      "enableNotifications": {
+        "title": "Activați notificările",
+        "description": "Primiți alerte pentru mesaje și actualizări importante"
+      },
+      "sounds": {
+        "title": "Sunete",
+        "description": "Redați sunete la trimiterea și primirea mesajelor"
+      }
+    },
+    "dataManagement": {
+      "title": "Gestionarea datelor",
+      "description": "Controlați salvarea și partajarea datelor dvs.",
+      "autoSave": {
+        "title": "Salvare automată",
+        "description": "Salvați automat conversațiile pentru a le consulta ulterior"
+      },
+      "exportData": "Exportați datele",
+      "clearHistory": "Ștergeți conversațiile"
+    },
+    "advanced": {
+      "title": "Setări avansate",
+      "description": "Opțiuni avansate pentru utilizatorii profesioniști",
+      "developerMode": {
+        "title": "Mod dezvoltator",
+        "description": "Afișați informații tehnice suplimentare și opțiuni de dezvoltare",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Analiză",
+        "description": "Ajutați la îmbunătățirea serviciului prin trimiterea de date de utilizare anonime"
+      }
+    },
+    "saveBar": {
+      "title": "Doriți să salvați modificările?",
+      "description": "Noile setări vor fi aplicate imediat",
+      "reset": "Resetare",
+      "save": "Salvați modificările",
+      "saving": "Se salvează...",
+      "success": "Setările au fost salvate cu succes!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Confirmați ștergerea istoricului",
+        "message": "Sunteți sigur? Toate conversațiile dvs. anterioare vor fi șterse definitiv. Această acțiune nu poate fi anulată.",
+        "confirm": "Da, ștergeți",
+        "success": "Istoricul conversațiilor a fost șters cu succes."
+      },
+      "exportData": {
+        "title": "Exportați datele",
+        "message": "O copie a tuturor datelor dvs. va fi generată și trimisă la adresa dvs. de e-mail. Doriți să continuați?",
+        "confirm": "Da, continuați",
+        "success": "Se exportă datele dvs...."
+      },
+      "cancel": "Anulare"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Termenii serviciului - SyriaGPT",
+      "description": "Citiți termenii și condițiile pentru utilizarea serviciilor SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Treceți la arabă",
+      "print": "Imprimare"
+    },
+    "title": "Termenii serviciului",
+    "subtitle": "Ultima actualizare: 24 august 2025",
+    "intro": "Bun venit la SyriaGPT. Prin utilizarea serviciilor noastre, sunteți de acord cu acești termeni. Vă rugăm să îi citiți cu atenție.",
+    "sectionsTitle": "Secțiuni",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Acceptarea termenilor",
+        "content": "Prin accesarea și utilizarea SyriaGPT, sunteți de acord să fiți obligat de acești Termeni și condiții. Dacă nu sunteți de acord cu nicio parte a acestor termeni, nu ar trebui să utilizați serviciile noastre."
+      },
+      {
+        "id": "services",
+        "title": "2. Descrierea serviciilor",
+        "content": "SyriaGPT este un asistent AI conceput pentru a oferi asistență în diverse domenii legate de contextul sirian."
+      },
+      {
+        "id": "usage",
+        "title": "3. Utilizare acceptabilă",
+        "content": "Trebuie să utilizați serviciile noastre în mod legal și etic. Vă este interzis să utilizați serviciul în scopuri ilegale sau dăunătoare."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Confidențialitate și date",
+        "content": "Vă respectăm confidențialitatea și ne angajăm să vă protejăm datele. Colectăm doar datele necesare pentru a furniza serviciul și nu le vom partaja fără consimțământul dvs."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Proprietate intelectuală",
+        "content": "Toate drepturile rezervate SyriaGPT. Conținutul, designul și siglele sunt proprietatea noastră. Conținutul pe care îl creați folosind serviciul rămâne al dvs."
+      },
+      {
+        "id": "liability",
+        "title": "6. Declinarea responsabilității",
+        "content": "Serviciul este furnizat „ca atare”, fără nicio garanție. Nu garantăm acuratețea sau completitudinea informațiilor furnizate și nu suntem responsabili pentru nicio daună rezultată din utilizarea acestora."
+      },
+      {
+        "id": "termination",
+        "title": "7. Încetarea serviciului",
+        "content": "Ne rezervăm dreptul de a vă închide sau suspenda contul în caz de încălcare a acestor termeni sau în caz de comportament dăunător sau ilegal."
+      },
+      {
+        "id": "contact",
+        "title": "8. Contactați-ne",
+        "content": "Pentru orice întrebări despre acești termeni, vă rugăm să ne contactați prin e-mail: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Am citit și sunt de acord cu termenii",
+    "continueButton": "Continuați",
+    "backToTop": "Înapoi sus",
+    "expandAll": "Extindeți tot",
+    "collapseAll": "Restrângeți tot",
+    "readingProgress": "Progresul citirii",
+    "copyright": "© {year} SyriaGPT. Toate drepturile rezervate."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Treceți la Pro - SyriaGPT",
+      "description": "Bucurați-vă de capabilități nelimitate, viteză superioară și acces prioritar la funcții noi cu SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Treceți la Pro",
+      "description": "Bucurați-vă de capabilități nelimitate, viteză superioară și acces prioritar la funcții noi"
+    },
+    "stats": [
+      { "value": "10x", "label": "Răspuns mai rapid" },
+      { "value": "∞", "label": "Mesaje nelimitate" },
+      { "value": "24/7", "label": "Asistență continuă" }
+    ],
+    "billingToggle": {
+      "monthly": "Lunar",
+      "yearly": "Anual",
+      "saving": "Economisiți 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Plan gratuit",
+        "subtitle": "Planul curent",
+        "price": "0 USD",
+        "period": "Pe viață",
+        "features": [
+          "Acces la modelul de bază",
+          "20 de mesaje pe zi",
+          "Viteză de răspuns standard",
+          "Funcții de bază"
+        ],
+        "buttonText": "Planul dvs. curent"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Pentru profesioniști și afaceri",
+        "priceMonthly": "10 USD",
+        "priceYearly": "96 USD",
+        "periodMonthly": "pe lună",
+        "periodYearly": "pe an",
+        "popular": "Cel mai popular",
+        "features": [
+          "Model avansat GPT-4",
+          "Mesaje nelimitate",
+          "Viteză de răspuns superioară",
+          "Acces prioritar la funcții noi",
+          "Asistență tehnică specializată",
+          "Interfață îmbunătățită fără reclame"
+        ],
+        "buttonText": "Treceți acum"
+      }
+    },
+    "comparison": {
+      "title": "Comparați planurile",
+      "featureHeader": "Funcții",
+      "freeHeader": "Gratuit",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Acces la modelul de bază", "free": true, "pro": true },
+        { "text": "Mesaje zilnice limitate (20)", "free": true, "pro": false },
+        { "text": "Mesaje nelimitate", "free": false, "pro": true },
+        {
+          "text": "Acces la modelul avansat GPT-4",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Viteză de răspuns standard", "free": true, "pro": false },
+        {
+          "text": "Viteză de răspuns superioară (de 10 ori mai rapidă)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Acces prioritar la funcții noi",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Asistență tehnică specializată",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Interfață fără reclame", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Întrebări frecvente",
+      "toggleOpen": "Citiți mai mult",
+      "toggleClose": "Închideți",
+      "items": [
+        {
+          "question": "Pot anula abonamentul în orice moment?",
+          "answer": "Da, desigur. Puteți anula abonamentul la planul Pro în orice moment din pagina „Gestionarea contului”. Veți continua să aveți acces la funcțiile Pro până la sfârșitul perioadei de facturare curente și nu se vor mai percepe alte taxe."
+        },
+        {
+          "question": "Ce metode de plată sunt acceptate?",
+          "answer": "Acceptăm toate cardurile de credit și de debit majore (Visa, MasterCard, American Express), precum și Sham Cash și portofelele electronice locale. Toate plățile sunt procesate în siguranță și criptate prin partenerul nostru, Stripe."
+        },
+        {
+          "question": "Ce se întâmplă la sfârșitul perioadei de facturare anuale?",
+          "answer": "Abonamentul dvs. anual se va reînnoi automat, cu excepția cazului în care îl anulați din setările contului. Vă vom trimite un e-mail de reamintire cu o săptămână înainte de data reînnoirii, cu detalii despre suma datorată."
+        },
+        {
+          "question": "Pot obține o rambursare?",
+          "answer": "Da, oferim o garanție completă de rambursare a banilor în 30 de zile de la data abonamentului, dacă nu sunteți mulțumit de serviciu din orice motiv. Doar contactați echipa noastră de asistență și vom procesa imediat cererea dvs. de rambursare."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Sunteți gata să începeți?",
+      "description": "Alăturați-vă miilor de utilizatori care au ales SyriaGPT Pro pentru o experiență AI superioară",
+      "buttonText": "Începeți acum pentru {price}",
+      "guarantee": "Garanție completă de rambursare a banilor în 30 de zile"
+    },
+    "alert": "Veți fi redirecționat către pagina de plată..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Verificați e-mailul - SyriaGPT",
+      "description": "Introduceți codul de verificare trimis la adresa dvs. de e-mail pentru a vă confirma contul SyriaGPT."
+    },
+    "header": {
+      "title": "Verificați-vă e-mailul",
+      "description": "Introduceți codul de verificare trimis la"
+    },
+    "form": {
+      "label": "Cod de verificare din 6 cifre",
+      "verifyButton": "Verificați codul",
+      "verifyingButton": "Se verifică...",
+      "resend": {
+        "question": "Nu ați primit codul?",
+        "resendButton": "Retrimiteți codul",
+        "resendingButton": "Se retrimite...",
+        "cooldown": "Retrimiteți în {seconds} secunde"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Verificare reușită!",
+        "description": "E-mailul dvs. a fost confirmat cu succes",
+        "redirecting": "Se redirecționează către tabloul de bord..."
+      },
+      "error": {
+        "title": "Verificare eșuată",
+        "tryAgainButton": "Încercați din nou"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Vă rugăm să introduceți codul de verificare din 6 cifre",
+      "invalidCode": "Cod de verificare nevalid. Vă rugăm să încercați din nou.",
+      "generic": "A apărut o eroare în timpul verificării. Vă rugăm să încercați din nou.",
+      "resendFailed": "Nu s-a putut trimite codul de verificare. Vă rugăm să încercați din nou."
+    },
+    "backToLogin": "Înapoi la autentificare",
+    "securityNote": {
+      "title": "Notă de securitate:",
+      "points": [
+        "Nu partajați codul de verificare cu nimeni",
+        "Codul de verificare este valabil doar 10 minute",
+        "Verificați adresa de e-mail a expeditorului"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Un nou cod de verificare a fost trimis la adresa dvs. de e-mail"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "A apărut o eroare - SyriaGPT",
+      "description": "Pagină de eroare personalizată pentru proiectul SyriaGPT."
+    },
+    "offlineMessage": "În prezent sunteți offline",
+    "errorCode": "Eroare {statusCode}",
+    "title": "A apărut o eroare neașteptată",
+    "description": "Ne cerem scuze sincer pentru neplăceri. Echipa noastră tehnică a fost notificată și lucrează pentru a rezolva problema cât mai repede posibil.",
+    "retryButton": "Reîncercați",
+    "retryingButton": "Se reîncearcă...",
+    "homeButton": "Acasă",
+    "backButton": "Înapoi",
+    "suggestionsTitle": "Ce puteți încerca acum:",
+    "suggestion1": "Reîncărcarea paginii ar putea rezolva problema.",
+    "suggestion2": "Vă rugăm să verificați conexiunea la internet.",
+    "suggestion3": "Dacă problema persistă, nu ezitați să ne contactați.",
+    "accordion": {
+      "title": "Detalii tehnice pentru dezvoltatori",
+      "copy": "Copiați",
+      "copied": "Copiat",
+      "code": "Cod:",
+      "message": "Mesaj:",
+      "digest": "Rezumat:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Pagină negăsită - SyriaGPT",
+      "description": "Pagina pe care o căutați nu există sau a fost mutată."
+    },
+    "title": "Se pare că v-ați rătăcit printre pagini!",
+    "description": "Pagina pe care o căutați nu există sau a fost mutată",
+    "currentLocation": "Locație curentă: Necunoscută",
+    "search": {
+      "placeholder": "Căutați pagina dorită...",
+      "button": "Căutare",
+      "searching": "Se caută..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Pagina anterioară",
+        "description": "Întoarceți-vă de unde ați venit"
+      },
+      "homePage": {
+        "title": "Pagina de pornire",
+        "description": "Începeți de la capăt"
+      }
+    },
+    "suggestions": {
+      "title": "Pagini care v-ar putea interesa",
+      "items": [
+        { "title": "Pagina de pornire", "description": "Întoarceți-vă la început" },
+        { "title": "Chat", "description": "Începeți o nouă conversație" },
+        { "title": "Ajutor", "description": "Obțineți ajutor" },
+        { "title": "Despre Siria", "description": "Descoperiți mai mult" }
+      ]
+    },
+    "history": {
+      "title": "Pagini vizitate recent"
+    },
+    "funFact": {
+      "title": "În timp ce vă găsiți drumul...",
+      "facts": [
+        "Știați că? Damascul este cea mai veche capitală locuită continuu din lume!",
+        "Știați că? Primul alfabet din istorie a fost inventat în Ugarit, Siria!",
+        "Știați că? Fisticul de Alep poate trăi peste 300 de ani!",
+        "Știați că? Krak des Chevaliers din Siria este unul dintre cele mai bine conservate castele din lume!",
+        "Știați că? Trandafirul de Damasc este considerat unul dintre cele mai bune tipuri de trandafiri din lume!"
+      ]
+    },
+    "support": {
+      "message": "Dacă credeți că aceasta este o eroare, vă rugăm să ne contactați",
+      "helpCenter": "Centru de ajutor",
+      "technicalSupport": "Asistență tehnică"
+    }
+  },
+  "loader": {
+    "title": "se încarcă...",
+    "loading": "Vă rugăm să așteptați un minut..."
+  }
+}

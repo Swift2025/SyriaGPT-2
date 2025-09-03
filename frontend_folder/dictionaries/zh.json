@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "叙利亚人工智能",
+    "newChat": "新建聊天",
+    "pastConversations": "历史对话",
+    "lightMode": "浅色模式",
+    "darkMode": "深色模式",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "叙利亚用户",
+    "userEmail": "user@syriagpt.com",
+    "profile": "个人资料",
+    "settings": "设置",
+    "upgradeToPro": "升级到专业版",
+    "newBadge": "新",
+    "helpCenter": "帮助中心",
+    "aboutApp": "关于应用",
+    "logout": "退出登录",
+    "logoutModal": {
+      "title": "确认退出",
+      "description": "您确定要退出您的账户吗？",
+      "cancel": "取消",
+      "confirm": "是的，退出"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "您的智能助手，回答您的所有疑问",
+      "examples": "示例",
+      "capabilities": "功能",
+      "limitations": "限制",
+      "suggestions": {
+        "examples": [
+          "简单解释如何获取身份证",
+          "告诉我大马士革大学批准的课程",
+          "Mahshi的配料是什么？"
+        ],
+        "capabilities": [
+          "如何制作秋葵及其历史渊源？",
+          "叙利亚护照的办理流程是什么？",
+          "我需要关于投资的信息"
+        ],
+        "limitations": [
+          "如何解决电脑问题？",
+          "阿勒颇大学的注册条件是什么？",
+          "给我总结一下今天叙利亚的新闻"
+        ]
+      }
+    },
+    "message": {
+      "typing": "正在输入..."
+    },
+    "regenerate": "重新生成回答",
+    "input": {
+      "placeholder": "在此输入您的消息，或拖放文件...",
+      "attachFile": "附加文件",
+      "startRecording": "开始录音",
+      "stopRecording": "停止录音",
+      "removeFile": "移除文件"
+    },
+    "dragDrop": {
+      "title": "将文件拖放到此处",
+      "subtitle": "PDF, Word, 文本 (最大 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "此浏览器不支持语音识别。请使用 Chrome 或 Edge。",
+      "permissionDenied": "请在浏览器设置中允许麦克风访问。",
+      "startFailed": "无法开始录音。请检查您的浏览器设置。",
+      "generalError": "开始录音时发生错误。请重试。",
+      "no-speech": "未检测到语音。请确保您的声音清晰且麦克风靠近。",
+      "audio-capture": "无法访问麦克风。请确保已连接并授予权限。",
+      "not-allowed": "权限被拒绝。请在浏览器设置中允许使用麦克风。",
+      "network": "网络错误。请检查您的互联网连接。",
+      "service-not-allowed": "语音识别服务当前不可用。",
+      "language-not-supported": "不支持该语言。请尝试使用 Chrome 浏览器。"
+    },
+    "footer": "我们的目标是使人工智能系统的交互更自然、更安全"
+  },
+  "chat": {
+    "fileAnalysisError": "抱歉，分析文件时发生错误：{error}",
+    "responseProcessingError": "抱歉，处理回答时发生错误。",
+    "networkError": "抱歉，发生连接错误。请检查您的互联网连接。"
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "关于 SyriaGPT 项目",
+      "description": "了解 SyriaGPT 项目的目标和愿景，这是一个专注于叙利亚背景的智能助手。"
+    },
+    "header": {
+      "title": "阿拉伯叙利亚共和国",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "叙利亚..是心脏"
+    },
+    "main": {
+      "p1": "这是一个由叙利亚政府采纳的开创性国家项目，旨在开发一个专注于叙利亚方言的先进阿拉伯语语言模型。该项目的目标是成为一个知识和服务平台，帮助公民轻松、安全地与政府服务以及公共和私营部门互动，为他们提供关于程序、法律和一般信息的准确可靠的答案。",
+      "p2": "它的特点是专注于本地语言，并能够理解方言和标准阿拉伯语，使其在日常生活中更贴近用户。该项目还通过托管在国家数据中心来确保数据隐私，并按照高标准的安全性和中立性运作，以确保输出的准确性和无偏见。它被设计为可与电子政务门户、官方应用程序和呼叫中心集成，从而构成叙利亚加强数字化转型的根本一步。",
+      "p3": "该项目旨在服务于多个领域，如简化政府程序、支持教育、简化健康指南、协助小企业以及快速清晰地传播紧急信息。因此，它代表了公民获取信息方式的质的飞跃，自然语言交互成为简化交易和拉近公民与国家机构距离的主要手段。"
+    },
+    "footer": {
+      "backButton": "返回聊天",
+      "disclaimer": "我们的目标是使人工智能系统的交互更自然、更安全，符合叙利亚的背景和用户的需求。您的反馈和建议将帮助我们改进和发展服务，以便更好地为您服务。"
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "忘记密码",
+      "description": "通过简单安全的步骤重新获取对您 SyriaGPT 账户的访问权限。"
+    },
+    "infoPanel": {
+      "title": "安全地恢复您的账户",
+      "description": "我们在这里帮助您通过简单安全的步骤重新获取对您账户的访问权限。",
+      "steps": {
+        "step1": {
+          "title": "输入您的电子邮件",
+          "description": "您在 SyriaGPT 账户中注册的电子邮件"
+        },
+        "step2": {
+          "title": "检查您的电子邮件",
+          "description": "我们将向您发送一个安全的链接以重置您的密码"
+        },
+        "step3": {
+          "title": "创建一个新密码",
+          "description": "为您的账户选择一个强大且安全的密码"
+        }
+      },
+      "securityTip": {
+        "title": "安全提示",
+        "description": "为确保您的账户安全，该链接仅在15分钟内有效。如果您没有找到邮件，请检查您的垃圾邮件文件夹。"
+      }
+    },
+    "form": {
+      "title": "忘记密码",
+      "description": "输入您的电子邮件以接收恢复链接",
+      "emailLabel": "电子邮件地址",
+      "emailPlaceholder": "输入您的电子邮件...",
+      "emailRequiredAlert": "请输入您的电子邮件地址。",
+      "submitButton": "发送恢复链接",
+      "loadingButton": "正在发送...",
+      "rememberedPassword": "记起密码了？",
+      "backToLogin": "返回登录"
+    },
+    "successScreen": {
+      "title": "指令已发送",
+      "checkEmailTitle": "检查您的电子邮件",
+      "description": "我们已向以下地址发送了密码恢复链接：",
+      "tip1": "检查您的收件箱",
+      "tip2": "别忘了检查您的垃圾邮件文件夹",
+      "tip3": "链接仅在15分钟内有效",
+      "backToLoginButton": "返回登录"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "帮助中心 - SyriaGPT",
+      "description": "查找您问题的答案、用户指南，并联系 SyriaGPT 支持团队。"
+    },
+    "header": {
+      "title": "帮助中心",
+      "description": "欢迎来到 SyriaGPT 支持中心！我们在这里帮助您获得最佳体验。"
+    },
+    "search": {
+      "placeholder": "搜索答案、用户指南或提问..."
+    },
+    "categories": {
+      "title": "按类别浏览",
+      "items": [
+        {
+          "title": "入门指南",
+          "description": "学习平台使用的基础知识，并利用所有可用功能。"
+        },
+        {
+          "title": "账户管理",
+          "description": "编辑您的个人资料、管理订阅和安全设置。"
+        },
+        {
+          "title": "高级功能",
+          "description": "利用文件附件、语音搜索和先进的人工智能。"
+        },
+        {
+          "title": "安全与隐私",
+          "description": "了解如何以最高的安全标准保护您的数据和个人信息。"
+        }
+      ]
+    },
+    "faq": {
+      "title": "常见问题",
+      "toggleOpen": "阅读更多",
+      "toggleClose": "关闭",
+      "items": [
+        {
+          "question": "如何开始新的聊天？",
+          "answer": "要开始新的聊天，只需点击侧边栏顶部的“+ 新建聊天”按钮。您也可以使用键盘快捷键 Ctrl+N 快速开始。"
+        },
+        {
+          "question": "我可以附加哪些类型的文件？",
+          "answer": "您可以附加 PDF 文件、Word 文档（doc, docx）、PowerPoint 文件、文本文件（txt）和图片（jpg, png, gif）。单个文件的最大大小为 10 MB，每次对话最多可附加 5 个文件。"
+        },
+        {
+          "question": "我过去的对话会被保存吗？",
+          "answer": "是的，您过去的对话会自动并安全地保存到您的账户中。您可以从侧边栏的“历史对话”列表中访问它们，按日期或主题组织。"
+        },
+        {
+          "question": "浅色和深色模式如何工作？",
+          "answer": "您可以使用侧边栏中的专用按钮在浅色和深色模式之间切换。系统会自动保存您的偏好，并在所有未来的会话中应用它。"
+        },
+        {
+          "question": "什么是语音转文本功能？",
+          "answer": "您可以使用麦克风进行阿拉伯语或英语的语音输入。点击输入栏中的麦克风图标并开始说话。系统会自动将您的语音转换为文本。"
+        },
+        {
+          "question": "我可以在手机上使用 SyriaGPT 吗？",
+          "answer": "是的，SyriaGPT 可通过所有智能设备上的网络浏览器使用。界面完全响应式，在手机和平板电脑上完美运行。"
+        }
+      ]
+    },
+    "contact": {
+      "title": "没有找到您要找的内容？",
+      "description": "我们专门的支持团队全天候为您提供帮助。联系我们，我们将在几分钟内回复您！",
+      "emailButton": "通过电子邮件联系",
+      "chatButton": "在线聊天",
+      "phoneButton": "电话",
+      "availability": "全天候可用",
+      "responseTime": "5分钟内回复",
+      "languageSupport": "支持阿拉伯语"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "登录 - SyriaGPT",
+      "description": "登录您的 SyriaGPT 账户以访问您的对话和高级功能。"
+    },
+    "infoPanel": {
+      "title": "欢迎回来",
+      "description": "继续探索叙利亚人工智能的世界",
+      "securityTitle": "为什么 SyriaGPT 是安全的？",
+      "features": [
+        {
+          "title": "高级数据保护",
+          "description": "我们使用先进的加密技术来保护您的个人信息"
+        },
+        {
+          "title": "双因素认证",
+          "description": "额外的保护层，确保您的账户安全"
+        },
+        {
+          "title": "本地人工智能",
+          "description": "理解阿拉伯文化和背景的先进叙利亚技术"
+        }
+      ],
+      "stats": [
+        { "value": "5万+", "label": "活跃用户" },
+        { "value": "99.9%", "label": "正常运行时间" },
+        { "value": "24/7", "label": "支持" }
+      ]
+    },
+    "form": {
+      "title": "登录",
+      "description": "输入您的凭据以访问您的账户",
+      "emailLabel": "电子邮件地址",
+      "emailPlaceholder": "输入您的电子邮件...",
+      "passwordLabel": "密码",
+      "passwordPlaceholder": "输入您的密码...",
+      "forgotPassword": "忘记密码？",
+      "showPassword": "显示密码",
+      "hidePassword": "隐藏密码",
+      "loginButton": "登录",
+      "loadingButton": "验证中...",
+      "loginSuccessAlert": "登录成功！",
+      "orSeparator": "或",
+      "noAccount": "没有账户？",
+      "createAccount": "创建一个新账户"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "隐私政策 - SyriaGPT",
+      "description": "了解在使用 SyriaGPT 服务时，您的个人数据是如何被收集、使用和保护的。"
+    },
+    "header": {
+      "title": "隐私政策",
+      "lastUpdated": "最后更新：2025年8月25日",
+      "effectiveDate": "立即生效"
+    },
+    "infoCards": [
+      {
+        "title": "全面保护",
+        "description": "您的数据受到最新的加密和安全技术保护。"
+      },
+      {
+        "title": "完全控制",
+        "description": "您控制您的数据，并可以随时删除。"
+      },
+      {
+        "title": "完全透明",
+        "description": "我们清楚地解释我们收集什么以及如何使用它。"
+      },
+      {
+        "title": "不出售数据",
+        "description": "我们不会向第三方出售或分享您的数据。"
+      }
+    ],
+    "toc": {
+      "title": "目录"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "引言",
+        "content": "欢迎来到 SyriaGPT。我们非常重视您的隐私。本政策描述了当您访问或使用我们的应用程序时，我们可能从您那里收集或您可能提供的信息类型，以及我们收集、使用、维护、保护和披露这些信息的做法。"
+      },
+      {
+        "id": "data-collection",
+        "title": "我们收集的信息",
+        "intro": "我们可能会从我们服务的用户那里收集几种类型的信息，包括：",
+        "points": [
+          "您直接提供的信息：例如您在创建账户时提供的姓名、电子邮件和密码。",
+          "用户内容：您上传到我们服务进行分析的消息、问题和文件。",
+          "使用信息：您使用我们服务的详细信息，包括流量数据和使用日志。",
+          "设备信息：您的浏览器类型、操作系统和 IP 地址。"
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "我们如何使用您的信息",
+        "intro": "我们将收集到的关于您的信息或您提供给我们的信息用于以下目的：",
+        "points": [
+          "以最佳质量向您提供我们的服务及其内容。",
+          "根据您的需求改进和个性化您的体验。",
+          "就您的账户或我们的服务以及重要通知与您沟通。",
+          "用于分析和研究目的，以改进我们的产品和服务。",
+          "确保平台的安全并防止未经授权的使用。"
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "您的信息披露",
+        "commitmentTitle": "我们的核心承诺",
+        "commitmentText": "我们不会向第三方出售或出租您的个人信息。这是我们对您的基本承诺。",
+        "content": "我们仅在以下情况下可能披露个人信息：遵守任何法院命令或法律，或保护 SyriaGPT 和我们客户的权利和安全免受严重安全威胁。"
+      },
+      {
+        "id": "data-security",
+        "title": "数据安全",
+        "protectionTitle": "高级保护措施：",
+        "points": [
+          "所有敏感数据的端到端加密",
+          "受高级防火墙保护的安全服务器",
+          "全天候安全监控以检测威胁",
+          "定期和加密的备份以确保服务连续性",
+          "由独立专家进行的定期安全测试"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "您的权利",
+        "intro": "作为我们服务的用户，您对您的个人数据拥有以下权利：",
+        "rights": [
+          {
+            "title": "访问和审查",
+            "description": "请求一份我们存储的所有您的数据的副本"
+          },
+          {
+            "title": "更正和更新",
+            "description": "修改或更正任何不准确的信息"
+          },
+          {
+            "title": "完全删除",
+            "description": "永久删除您的账户和所有数据"
+          },
+          {
+            "title": "可移植性和导出",
+            "description": "以可读格式导出您的数据"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "政策变更",
+        "content": "我们的政策是在任何重大变更生效前30天通知您。任何变更都将在此页面上发布，并附有更新的修订日期。我们鼓励您定期查看本政策，以了解我们如何保护您的信息。"
+      },
+      {
+        "id": "contact",
+        "title": "联系我们",
+        "email": "电子邮件",
+        "phone": "电话",
+        "availability": "隐私团队在周日至周四上午9点至下午6点回答您的询问"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "个人资料 - SyriaGPT",
+      "description": "在 SyriaGPT 中管理您的个人信息、安全设置和订阅计划。"
+    },
+    "header": {
+      "title": "个人资料",
+      "description": "在 SyriaGPT 中管理您的个人信息和账户设置"
+    },
+    "sidebar": {
+      "avatarAlt": "头像",
+      "changeAvatar": "更改头像",
+      "joinDate": "加入日期",
+      "currentPlan": "当前计划",
+      "freePlan": "免费",
+      "conversations": "对话",
+      "activeDays": "活跃天数"
+    },
+    "personalInfo": {
+      "title": "个人信息",
+      "description": "更新您的姓名、电子邮件和基本设置",
+      "fullName": "全名",
+      "email": "电子邮件地址",
+      "editButton": "编辑信息",
+      "cancelButton": "取消",
+      "saveButton": "保存更改",
+      "updateSuccess": "个人资料更新成功！"
+    },
+    "security": {
+      "title": "安全与密码",
+      "description": "通过定期更新密码来保护您的账户安全",
+      "currentPassword": "当前密码",
+      "currentPasswordPlaceholder": "输入当前密码...",
+      "newPassword": "新密码",
+      "newPasswordPlaceholder": "输入新密码...",
+      "confirmNewPassword": "确认新密码",
+      "confirmNewPasswordPlaceholder": "确认新密码...",
+      "updateButton": "更新密码",
+      "passwordMismatch": "新密码不匹配。",
+      "updateSuccess": "密码更改成功！"
+    },
+    "subscription": {
+      "title": "订阅计划",
+      "description": "您当前使用的是免费计划 - 获取更多功能",
+      "upgradeTitle": "升级到专业版",
+      "upgradeDescription": "获取额外功能和优先响应",
+      "upgradeButton": "立即升级"
+    },
+    "dangerZone": {
+      "title": "危险区域",
+      "description": "这些操作是不可逆的 - 请谨慎操作",
+      "deleteTitle": "永久删除账户",
+      "deleteDescription": "您的所有数据和对话将被永久删除",
+      "deleteButton": "删除账户"
+    },
+    "deleteModal": {
+      "title": "确认删除账户",
+      "message": "您确定吗？您的账户和所有数据将被永久删除。此操作无法撤销。",
+      "cancelButton": "取消",
+      "confirmButton": "确认删除",
+      "deleteSuccess": "您的账户已成功删除。"
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "创建新账户 - SyriaGPT",
+      "description": "加入 SyriaGPT 社区，开始探索专为叙利亚背景设计的人工智能的力量。"
+    },
+    "infoPanel": {
+      "title": "加入 SyriaGPT 社区",
+      "description": "发现专为叙利亚文化和背景设计的人工智能的力量",
+      "features": [
+        {
+          "title": "先进的人工智能",
+          "description": "基于阿拉伯和叙利亚内容训练的现代技术"
+        },
+        {
+          "title": "保证安全与隐私",
+          "description": "通过世界一流的加密技术为您的数据提供高级保护"
+        },
+        {
+          "title": "活跃的社区",
+          "description": "加入成千上万热爱技术的叙利亚用户"
+        },
+        {
+          "title": "独家功能",
+          "description": "为叙利亚和阿拉伯内容定制的工具"
+        }
+      ],
+      "testimonial": {
+        "quote": "“SyriaGPT 彻底改变了我的工作方式。对叙利亚语言和文化的深刻理解。”",
+        "author": "- Ahmed Al-Shami, 开发者"
+      }
+    },
+    "form": {
+      "title": "创建新账户",
+      "description": "填写以下详细信息以创建您的账户",
+      "firstName": "名",
+      "lastName": "姓",
+      "email": "电子邮件地址",
+      "password": "密码",
+      "confirmPassword": "确认密码",
+      "placeholder": "输入{field}...",
+      "emailPlaceholder": "example@email.com",
+      "passwordStrength": "密码强度",
+      "strengthLevels": [
+        "非常弱",
+        "弱",
+        "中等",
+        "强",
+        "非常强"
+      ],
+      "submitButton": "创建新账户",
+      "loadingButton": "正在创建账户...",
+      "googleButton": "使用 Google 注册",
+      "orSeparator": "或",
+      "hasAccount": "已经有账户了？",
+      "loginLink": "登录",
+      "termsAgreement": "创建账户即表示您同意我们的",
+      "termsLink": "使用条款",
+      "and": "和",
+      "privacyLink": "隐私政策",
+      "successAlert": "您的账户已成功创建！欢迎来到 SyriaGPT"
+    },
+    "validation": {
+      "minLength": "必须至少为2个字符",
+      "maxLength": "太长",
+      "emailRequired": "需要电子邮件",
+      "emailInvalid": "无效的电子邮件地址",
+      "passwordLength": "密码必须至少为8个字符",
+      "passwordComplexity": "必须包含一个大写字母、一个小写字母和一个数字",
+      "passwordMismatch": "密码不匹配"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "重置密码 - SyriaGPT",
+      "description": "为您的 SyriaGPT 账户设置一个新的、强大的密码。"
+    },
+    "form": {
+      "title": "设置新密码",
+      "description": "选择一个强大的密码来保护您的账户。",
+      "newPasswordLabel": "新密码",
+      "confirmPasswordLabel": "确认密码",
+      "passwordMismatchError": "密码不匹配。",
+      "submitButton": "更新密码",
+      "loadingButton": "更新中...",
+      "showPasswordAria": "显示密码",
+      "hidePasswordAria": "隐藏密码",
+      "mismatchToast": "请确保密码匹配。",
+      "loadingToast": "正在更新密码...",
+      "successToast": "密码更新成功！"
+    },
+    "strengthIndicator": {
+      "title": "强度",
+      "levels": [
+        "非常弱",
+        "弱",
+        "可接受",
+        "良好",
+        "强",
+        "非常强"
+      ]
+    },
+    "successScreen": {
+      "title": "成功！",
+      "description": "您的密码已更新。您现在可以使用新凭据安全登录。",
+      "backToLoginButton": "返回登录"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "设置 - SyriaGPT",
+      "description": "自定义您的 SyriaGPT 体验，管理外观、语言、通知和数据。"
+    },
+    "header": {
+      "title": "SyriaGPT 设置",
+      "description": "自定义您的个人体验",
+      "unsavedChanges": "未保存的更改"
+    },
+    "appearance": {
+      "title": "外观与显示",
+      "description": "自定义应用程序的外观以适应您的偏好",
+      "theme": "主题样式",
+      "themes": {
+        "light": { "label": "浅色", "description": "适合白天使用" },
+        "dark": {
+          "label": "深色",
+          "description": "夜间对眼睛友好"
+        },
+        "system": {
+          "label": "系统",
+          "description": "跟随您的设备设置"
+        }
+      },
+      "preview": {
+        "title": "预览更改",
+        "description": "在保存前实时预览更改",
+        "new": "新"
+      }
+    },
+    "language": {
+      "title": "语言与地区",
+      "description": "设置语言和地区设置",
+      "interfaceLanguage": {
+        "title": "界面语言",
+        "description": "菜单和交互元素中使用的语言",
+        "badge": "自动"
+      },
+      "languages": {
+        "ar": "العربية (叙利亚)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "通知与声音",
+      "description": "控制警报和声音效果",
+      "enableNotifications": {
+        "title": "启用通知",
+        "description": "接收消息和重要更新的警报"
+      },
+      "sounds": {
+        "title": "声音",
+        "description": "发送和接收消息时播放声音"
+      }
+    },
+    "dataManagement": {
+      "title": "数据管理",
+      "description": "控制您的数据的保存和共享",
+      "autoSave": {
+        "title": "自动保存",
+        "description": "自动保存您的对话以便以后参考"
+      },
+      "exportData": "导出数据",
+      "clearHistory": "清除对话"
+    },
+    "advanced": {
+      "title": "高级设置",
+      "description": "专业用户的高级选项",
+      "developerMode": {
+        "title": "开发者模式",
+        "description": "显示额外的技术信息和开发选项",
+        "badge": "测试版"
+      },
+      "analytics": {
+        "title": "分析",
+        "description": "通过发送匿名使用数据帮助改进服务"
+      }
+    },
+    "saveBar": {
+      "title": "您要保存更改吗？",
+      "description": "新设置将立即应用",
+      "reset": "重置",
+      "save": "保存更改",
+      "saving": "正在保存...",
+      "success": "设置保存成功！"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "确认删除历史记录",
+        "message": "您确定吗？您过去的所有对话将被永久删除。此操作无法撤销。",
+        "confirm": "是的，删除",
+        "success": "对话历史记录已成功清除。"
+      },
+      "exportData": {
+        "title": "导出数据",
+        "message": "将生成您所有数据的副本并发送到您的电子邮件。您要继续吗？",
+        "confirm": "是的，继续",
+        "success": "正在导出您的数据..."
+      },
+      "cancel": "取消"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "服务条款 - SyriaGPT",
+      "description": "阅读使用 SyriaGPT 服务的条款和条件。"
+    },
+    "header": {
+      "switchLanguage": "切换到阿拉伯语",
+      "print": "打印"
+    },
+    "title": "服务条款",
+    "subtitle": "最后更新：2025年8月24日",
+    "intro": "欢迎来到 SyriaGPT。使用我们的服务即表示您同意这些条款。请仔细阅读。",
+    "sectionsTitle": "章节",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. 接受条款",
+        "content": "通过访问和使用 SyriaGPT，您同意受这些条款和条件的约束。如果您不同意这些条款的任何部分，则不应使用我们的服务。"
+      },
+      {
+        "id": "services",
+        "title": "2. 服务描述",
+        "content": "SyriaGPT 是一个旨在提供与叙利亚背景相关的各个领域援助的人工智能助手。"
+      },
+      {
+        "id": "usage",
+        "title": "3. 可接受的使用",
+        "content": "您必须合法和道德地使用我们的服务。禁止将服务用于非法或有害的目的。"
+      },
+      {
+        "id": "privacy",
+        "title": "4. 隐私和数据",
+        "content": "我们尊重您的隐私并致力于保护您的数据。我们只收集提供服务所必需的数据，未经您的同意不会分享。"
+      },
+      {
+        "id": "intellectual",
+        "title": "5. 知识产权",
+        "content": "SyriaGPT 保留所有权利。内容、设计和徽标是我们的财产。您使用服务创建的内容仍然属于您。"
+      },
+      {
+        "id": "liability",
+        "title": "6. 免责声明",
+        "content": "服务按“原样”提供，不作任何保证。我们不保证所提供信息的准确性或完整性，也不对因使用该信息而造成的任何损害负责。"
+      },
+      {
+        "id": "termination",
+        "title": "7. 服务终止",
+        "content": "如果违反这些条款或出现有害或非法行为，我们保留终止或暂停您账户的权利。"
+      },
+      {
+        "id": "contact",
+        "title": "8. 联系我们",
+        "content": "有关这些条款的任何疑问，请通过电子邮件联系我们：support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "我已阅读并同意这些条款",
+    "continueButton": "继续",
+    "backToTop": "返回顶部",
+    "expandAll": "全部展开",
+    "collapseAll": "全部折叠",
+    "readingProgress": "阅读进度",
+    "copyright": "© {year} SyriaGPT. 版权所有。"
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "升级到专业版 - SyriaGPT",
+      "description": "通过 SyriaGPT Pro 享受无限功能、卓越速度和优先访问新功能的权限。"
+    },
+    "header": {
+      "title": "升级到专业版",
+      "description": "享受无限功能、卓越速度和优先访问新功能的权限"
+    },
+    "stats": [
+      { "value": "10倍", "label": "更快的响应" },
+      { "value": "∞", "label": "无限消息" },
+      { "value": "24/7", "label": "持续支持" }
+    ],
+    "billingToggle": {
+      "monthly": "按月",
+      "yearly": "按年",
+      "saving": "节省20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "免费计划",
+        "subtitle": "当前计划",
+        "price": "0美元",
+        "period": "终身",
+        "features": [
+          "访问基本模型",
+          "每天20条消息",
+          "标准响应速度",
+          "基本功能"
+        ],
+        "buttonText": "您的当前计划"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "适用于专业人士和企业",
+        "priceMonthly": "10美元",
+        "priceYearly": "96美元",
+        "periodMonthly": "每月",
+        "periodYearly": "每年",
+        "popular": "最受欢迎",
+        "features": [
+          "高级 GPT-4 模型",
+          "无限消息",
+          "卓越的响应速度",
+          "优先访问新功能",
+          "专业技术支持",
+          "无广告增强界面"
+        ],
+        "buttonText": "立即升级"
+      }
+    },
+    "comparison": {
+      "title": "比较计划",
+      "featureHeader": "功能",
+      "freeHeader": "免费",
+      "proHeader": "专业版",
+      "features": [
+        { "text": "访问基本模型", "free": true, "pro": true },
+        { "text": "每日消息限制 (20)", "free": true, "pro": false },
+        { "text": "无限消息", "free": false, "pro": true },
+        {
+          "text": "访问高级 GPT-4 模型",
+          "free": false,
+          "pro": true
+        },
+        { "text": "标准响应速度", "free": true, "pro": false },
+        {
+          "text": "卓越的响应速度 (快10倍)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "优先访问新功能",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "专业技术支持",
+          "free": false,
+          "pro": true
+        },
+        { "text": "无广告界面", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "常见问题",
+      "toggleOpen": "阅读更多",
+      "toggleClose": "关闭",
+      "items": [
+        {
+          "question": "我可以随时取消订阅吗？",
+          "answer": "是的，当然可以。您可以随时从“账户管理”页面取消您的专业版计划订阅。在当前计费周期结束前，您将继续拥有专业版功能的访问权限，并且不会再收取任何费用。"
+        },
+        {
+          "question": "接受哪些付款方式？",
+          "answer": "我们接受所有主要的信用卡和借记卡（Visa, MasterCard, American Express）以及 Sham Cash 和本地电子钱包。所有付款都通过我们的合作伙伴 Stripe 安全加密处理。"
+        },
+        {
+          "question": "年度计费周期结束时会发生什么？",
+          "answer": "您的年度订阅将自动续订，除非您从账户设置中取消。我们将在续订日期前一周向您发送一封提醒邮件，其中包含应付金额的详细信息。"
+        },
+        {
+          "question": "我可以获得退款吗？",
+          "answer": "是的，如果您因任何原因对服务不满意，我们提供自订阅之日起30天内全额退款保证。只需联系我们的支持团队，我们将立即处理您的退款请求。"
+        }
+      ]
+    },
+    "cta": {
+      "title": "准备好开始了吗？",
+      "description": "加入成千上万选择 SyriaGPT Pro 以获得卓越 AI 体验的用户",
+      "buttonText": "立即开始，仅需{price}",
+      "guarantee": "30天全额退款保证"
+    },
+    "alert": "您将被重定向到付款页面..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "验证电子邮件 - SyriaGPT",
+      "description": "输入发送到您电子邮件的验证码以确认您的 SyriaGPT 账户。"
+    },
+    "header": {
+      "title": "验证您的电子邮件",
+      "description": "输入发送到以下地址的验证码"
+    },
+    "form": {
+      "label": "6位验证码",
+      "verifyButton": "验证代码",
+      "verifyingButton": "验证中...",
+      "resend": {
+        "question": "没有收到代码？",
+        "resendButton": "重新发送代码",
+        "resendingButton": "重新发送中...",
+        "cooldown": "在 {seconds} 秒后重新发送"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "验证成功！",
+        "description": "您的电子邮件已成功确认",
+        "redirecting": "正在重定向到仪表板..."
+      },
+      "error": {
+        "title": "验证失败",
+        "tryAgainButton": "重试"
+      }
+    },
+    "errors": {
+      "incompleteCode": "请输入6位验证码",
+      "invalidCode": "验证码无效。请重试。",
+      "generic": "验证过程中发生错误。请重试。",
+      "resendFailed": "发送验证码失败。请重试。"
+    },
+    "backToLogin": "返回登录",
+    "securityNote": {
+      "title": "安全提示：",
+      "points": [
+        "不要与任何人分享验证码",
+        "验证码仅在10分钟内有效",
+        "检查发件人的电子邮件地址"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "新的验证码已发送到您的电子邮件"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "发生错误 - SyriaGPT",
+      "description": "SyriaGPT 项目的自定义错误页面。"
+    },
+    "offlineMessage": "您当前处于离线状态",
+    "errorCode": "错误 {statusCode}",
+    "title": "发生意外错误",
+    "description": "我们对给您带来的不便深表歉意。我们的技术团队已收到通知，并正在尽快解决问题。",
+    "retryButton": "重试",
+    "retryingButton": "重试中...",
+    "homeButton": "主页",
+    "backButton": "返回",
+    "suggestionsTitle": "您现在可以尝试：",
+    "suggestion1": "刷新页面可能会解决问题。",
+    "suggestion2": "请检查您的互联网连接。",
+    "suggestion3": "如果问题仍然存在，请随时与我们联系。",
+    "accordion": {
+      "title": "给开发者的技术细节",
+      "copy": "复制",
+      "copied": "已复制",
+      "code": "代码：",
+      "message": "消息：",
+      "digest": "摘要："
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "页面未找到 - SyriaGPT",
+      "description": "您正在寻找的页面不存在或已被移动。"
+    },
+    "title": "您似乎在页面中迷路了！",
+    "description": "您正在寻找的页面不存在或已被移动",
+    "currentLocation": "当前位置：未知",
+    "search": {
+      "placeholder": "搜索您想要的页面...",
+      "button": "搜索",
+      "searching": "搜索中..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "上一页",
+        "description": "返回您来的地方"
+      },
+      "homePage": {
+        "title": "主页",
+        "description": "重新开始"
+      }
+    },
+    "suggestions": {
+      "title": "您可能感兴趣的页面",
+      "items": [
+        { "title": "主页", "description": "返回起点" },
+        { "title": "聊天", "description": "开始新的对话" },
+        { "title": "帮助", "description": "获取帮助" },
+        { "title": "关于叙利亚", "description": "发现更多" }
+      ]
+    },
+    "history": {
+      "title": "最近访问的页面"
+    },
+    "funFact": {
+      "title": "在您寻找方向时...",
+      "facts": [
+        "您知道吗？大马士革是世界上最古老的持续有人居住的首都！",
+        "您知道吗？历史上第一个字母表是在叙利亚的乌加里特发明的！",
+        "您知道吗？阿勒颇开心果树可以活过300年！",
+        "您知道吗？叙利亚的骑士堡是世界上保存最完好的城堡之一！",
+        "您知道吗？大马士革玫瑰被认为是世界上最优良的玫瑰品种之一！"
+      ]
+    },
+    "support": {
+      "message": "如果您认为这是一个错误，请联系我们",
+      "helpCenter": "帮助中心",
+      "technicalSupport": "技术支持"
+    }
+  },
+  "loader": {
+    "title": "加载中...",
+    "loading": "请稍候..."
+  }
+}

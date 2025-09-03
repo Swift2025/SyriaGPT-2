@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Syrská umělá inteligence",
+    "newChat": "Nový chat",
+    "pastConversations": "Minulé konverzace",
+    "lightMode": "Světlý režim",
+    "darkMode": "Tmavý režim",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Syrský uživatel",
+    "userEmail": "uzivatel@syriagpt.com",
+    "profile": "Profil",
+    "settings": "Nastavení",
+    "upgradeToPro": "Upgradovat na Pro",
+    "newBadge": "NOVÉ",
+    "helpCenter": "Centrum nápovědy",
+    "aboutApp": "O aplikaci",
+    "logout": "Odhlásit se",
+    "logoutModal": {
+      "title": "Potvrdit odhlášení",
+      "description": "Opravdu se chcete odhlásit ze svého účtu?",
+      "cancel": "Zrušit",
+      "confirm": "Ano, odhlásit se"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Váš chytrý asistent pro zodpovězení všech vašich dotazů",
+      "examples": "Příklady",
+      "capabilities": "Schopnosti",
+      "limitations": "Omezení",
+      "suggestions": {
+        "examples": [
+          "Jednoduše vysvětlete, jak získat občanský průkaz",
+          "Dejte mi schválené kurzy na Damašské univerzitě",
+          "Jaké jsou ingredience pro Mahshi?"
+        ],
+        "capabilities": [
+          "Jak se dělá okra a jaký je její historický vztah?",
+          "Jaké jsou postupy pro syrský pas?",
+          "Potřebuji informace o investicích"
+        ],
+        "limitations": [
+          "Jak vyřešit problém s počítačem?",
+          "Jaké jsou podmínky pro registraci na Aleppské univerzitě?",
+          "Dejte mi shrnutí dnešních zpráv v Sýrii"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Píše..."
+    },
+    "regenerate": "Znovu vygenerovat odpověď",
+    "input": {
+      "placeholder": "Napište svou zprávu zde, nebo přetáhněte soubor pro připojení...",
+      "attachFile": "Připojit soubor",
+      "startRecording": "Spustit nahrávání",
+      "stopRecording": "Zastavit nahrávání",
+      "removeFile": "Odebrat soubor"
+    },
+    "dragDrop": {
+      "title": "Přetáhněte soubory sem",
+      "subtitle": "PDF, Word, Text (Max 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Rozpoznávání řeči není v tomto prohlížeči podporováno. Použijte prosím Chrome nebo Edge.",
+      "permissionDenied": "Povolte prosím přístup k mikrofonu v nastavení vašeho prohlížeče.",
+      "startFailed": "Nepodařilo se spustit nahrávání. Zkontrolujte nastavení vašeho prohlížeče.",
+      "generalError": "Při spouštění nahrávání došlo k chybě. Zkuste to prosím znovu.",
+      "no-speech": "Nebyla detekována žádná řeč. Ujistěte se, že váš hlas je zřetelný a mikrofon je blízko.",
+      "audio-capture": "Nelze získat přístup k mikrofonu. Ujistěte se, že je připojen a že bylo uděleno povolení.",
+      "not-allowed": "Povolení bylo odepřeno. Povolte prosím použití mikrofonu v nastavení prohlížeče.",
+      "network": "Chyba sítě. Zkontrolujte prosím své internetové připojení.",
+      "service-not-allowed": "Služba rozpoznávání řeči je momentálně nedostupná.",
+      "language-not-supported": "Jazyk není podporován. Zkuste prohlížeč Chrome."
+    },
+    "footer": "Naším cílem je učinit systémy AI přirozenějšími a bezpečnějšími pro interakci"
+  },
+  "chat": {
+    "fileAnalysisError": "Omlouváme se, při analýze souboru došlo k chybě: {error}",
+    "responseProcessingError": "Omlouváme se, při zpracování odpovědi došlo k chybě.",
+    "networkError": "Omlouváme se, došlo k chybě připojení. Zkontrolujte prosím své internetové připojení."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "O projektu SyriaGPT",
+      "description": "Seznamte se s cíli a vizí projektu SyriaGPT, chytrého asistenta specializovaného na syrský kontext."
+    },
+    "header": {
+      "title": "Syrská arabská republika",
+      "subtitle": "SYRIAN ARAB REPUBLIC",
+      "mapText": "Sýrie... je Srdce"
+    },
+    "main": {
+      "p1": "Jedná se o průkopnický národní projekt přijatý syrskou vládou, jehož cílem je vyvinout pokročilý model arabského jazyka se zvláštním zaměřením na syrský dialekt. Cílem tohoto projektu je být znalostní a servisní platformou, která pomáhá občanům snadno a bezpečně komunikovat s vládními službami a veřejným i soukromým sektorem a poskytuje jim přesné a spolehlivé odpovědi na postupy, zákony a obecné informace.",
+      "p2": "Vyznačuje se zaměřením na místní jazyk a schopností rozumět dialektům vedle standardní arabštiny, což jej přibližuje uživateli v jeho každodenním životě. Projekt také zajišťuje ochranu osobních údajů tím, že je hostován v národních datových centrech a funguje podle vysokých standardů bezpečnosti a neutrality, aby bylo zajištěno, že výstupy jsou přesné a nezaujaté. Je navržen tak, aby byl integrovatelný s portály e-governmentu, oficiálními aplikacemi a call centry, a představuje tak zásadní krok k posílení digitální transformace v Sýrii.",
+      "p3": "Projekt se snaží sloužit v mnoha oblastech, jako je usnadňování vládních postupů, podpora vzdělávání, zjednodušování zdravotních pokynů, pomoc malým podnikům a rychlé a jasné šíření nouzových zpráv. Představuje tak kvalitativní skok v tom, jak občané přistupují k informacím, kde se interakce v přirozeném jazyce stává primárním prostředkem pro zjednodušení transakcí a přiblížení občanů státním institucím."
+    },
+    "footer": {
+      "backButton": "Zpět do chatu",
+      "disclaimer": "Naším cílem je učinit systémy AI přirozenějšími a bezpečnějšími pro interakci, v souladu se syrským kontextem a potřebami jeho uživatelů. Vaše zpětná vazba a návrhy nám pomohou zlepšit a rozvíjet službu, abychom vám mohli lépe sloužit."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Zapomenuté heslo",
+      "description": "Získejte zpět přístup ke svému účtu SyriaGPT pomocí jednoduchých a bezpečných kroků."
+    },
+    "infoPanel": {
+      "title": "Obnovte svůj účet bezpečně",
+      "description": "Jsme tu, abychom vám pomohli získat zpět přístup k vašemu účtu pomocí jednoduchých a bezpečných kroků.",
+      "steps": {
+        "step1": {
+          "title": "Zadejte svůj e-mail",
+          "description": "E-mail registrovaný u vašeho účtu SyriaGPT"
+        },
+        "step2": {
+          "title": "Zkontrolujte svůj e-mail",
+          "description": "Zašleme vám bezpečný odkaz pro obnovení hesla"
+        },
+        "step3": {
+          "title": "Vytvořte nové heslo",
+          "description": "Zvolte si silné a bezpečné heslo pro svůj účet"
+        }
+      },
+      "securityTip": {
+        "title": "Bezpečnostní tip",
+        "description": "Odkaz je platný pouze 15 minut, aby byla zajištěna bezpečnost vašeho účtu. Pokud e-mail nenajdete, zkontrolujte složku se spamem."
+      }
+    },
+    "form": {
+      "title": "Zapomenuté heslo",
+      "description": "Zadejte svůj e-mail pro obdržení odkazu na obnovení",
+      "emailLabel": "E-mailová adresa",
+      "emailPlaceholder": "Zadejte svůj e-mail...",
+      "emailRequiredAlert": "Zadejte prosím svou e-mailovou adresu.",
+      "submitButton": "Odeslat odkaz na obnovení",
+      "loadingButton": "Odesílání...",
+      "rememberedPassword": "Vzpomněli jste si na heslo?",
+      "backToLogin": "Zpět na přihlášení"
+    },
+    "successScreen": {
+      "title": "Pokyny odeslány",
+      "checkEmailTitle": "Zkontrolujte svůj e-mail",
+      "description": "Odeslali jsme odkaz na obnovení hesla na:",
+      "tip1": "Zkontrolujte svou doručenou poštu",
+      "tip2": "Nezapomeňte zkontrolovat složku se spamem",
+      "tip3": "Odkaz je platný pouze 15 minut",
+      "backToLoginButton": "Zpět na přihlášení"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Centrum nápovědy - SyriaGPT",
+      "description": "Najděte odpovědi na své otázky, uživatelské příručky a kontaktujte tým podpory SyriaGPT."
+    },
+    "header": {
+      "title": "Centrum nápovědy",
+      "description": "Vítejte v centru podpory SyriaGPT! Jsme tu, abychom vám pomohli získat co nejlepší zážitek."
+    },
+    "search": {
+      "placeholder": "Hledejte odpovědi, uživatelské příručky nebo položte otázku..."
+    },
+    "categories": {
+      "title": "Procházet podle kategorie",
+      "items": [
+        {
+          "title": "Začínáme",
+          "description": "Naučte se základy používání platformy a využijte všechny dostupné funkce."
+        },
+        {
+          "title": "Správa účtu",
+          "description": "Upravte svůj profil, spravujte předplatné a nastavení zabezpečení."
+        },
+        {
+          "title": "Pokročilé funkce",
+          "description": "Využijte přílohy souborů, hlasové vyhledávání a pokročilou umělou inteligenci."
+        },
+        {
+          "title": "Bezpečnost a soukromí",
+          "description": "Naučte se, jak chránit svá data a osobní údaje pomocí nejvyšších bezpečnostních standardů."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Často kladené otázky",
+      "toggleOpen": "Číst více",
+      "toggleClose": "Zavřít",
+      "items": [
+        {
+          "question": "Jak mohu zahájit nový chat?",
+          "answer": "Chcete-li zahájit nový chat, jednoduše klikněte na tlačítko „+ Nový chat“ v horní části postranního panelu. Pro rychlý start můžete také použít klávesovou zkratku Ctrl+N."
+        },
+        {
+          "question": "Jaké typy souborů mohu připojit?",
+          "answer": "Můžete připojit soubory PDF, dokumenty Word (doc, docx), soubory PowerPoint, textové soubory (txt) a obrázky (jpg, png, gif). Maximální velikost jednoho souboru je 10 MB a můžete připojit až 5 souborů na konverzaci."
+        },
+        {
+          "question": "Jsou mé minulé konverzace uloženy?",
+          "answer": "Ano, vaše minulé konverzace jsou automaticky a bezpečně uloženy ve vašem účtu. Můžete k nim přistupovat ze seznamu „Minulé konverzace“ v postranním panelu, uspořádané podle data nebo tématu."
+        },
+        {
+          "question": "Jak fungují světlý a tmavý režim?",
+          "answer": "Mezi světlým a tmavým režimem můžete přepínat pomocí vyhrazeného tlačítka v postranním panelu. Systém automaticky uloží vaše preference a použije je ve všech budoucích relacích."
+        },
+        {
+          "question": "Co je funkce převodu hlasu na text?",
+          "answer": "Můžete použít svůj mikrofon pro hlasové diktování v arabštině nebo angličtině. Klikněte na ikonu mikrofonu ve vstupním poli a začněte mluvit. Systém automaticky převede vaši řeč na text."
+        },
+        {
+          "question": "Mohu používat SyriaGPT na svém mobilním telefonu?",
+          "answer": "Ano, SyriaGPT je k dispozici prostřednictvím webového prohlížeče na všech chytrých zařízeních. Rozhraní je plně responzivní a funguje perfektně na telefonech a tabletech."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Nenašli jste, co hledáte?",
+      "description": "Náš specializovaný tým podpory je k dispozici nepřetržitě, aby vám pomohl. Kontaktujte nás a my se vám ozveme během několika minut!",
+      "emailButton": "Kontaktovat e-mailem",
+      "chatButton": "Živý chat",
+      "phoneButton": "Telefonní hovor",
+      "availability": "K dispozici 24/7",
+      "responseTime": "Odpověď do 5 minut",
+      "languageSupport": "Podpora v arabštině"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Přihlášení - SyriaGPT",
+      "description": "Přihlaste se ke svému účtu SyriaGPT pro přístup ke svým konverzacím a pokročilým funkcím."
+    },
+    "infoPanel": {
+      "title": "Vítejte zpět",
+      "description": "Pokračujte v objevování světa syrské umělé inteligence s",
+      "securityTitle": "Proč je SyriaGPT bezpečný?",
+      "features": [
+        {
+          "title": "Pokročilá ochrana dat",
+          "description": "Používáme pokročilé šifrovací technologie k ochraně vašich osobních údajů"
+        },
+        {
+          "title": "Dvoufaktorové ověření",
+          "description": "Další vrstva ochrany pro zajištění bezpečnosti vašeho účtu"
+        },
+        {
+          "title": "Místní umělá inteligence",
+          "description": "Pokročilá syrská technologie, která rozumí arabské kultuře a kontextu"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Aktivní uživatelé" },
+        { "value": "99.9%", "label": "Dostupnost" },
+        { "value": "24/7", "label": "Podpora" }
+      ]
+    },
+    "form": {
+      "title": "Přihlášení",
+      "description": "Zadejte své přihlašovací údaje pro přístup ke svému účtu",
+      "emailLabel": "E-mailová adresa",
+      "emailPlaceholder": "Zadejte svůj e-mail...",
+      "passwordLabel": "Heslo",
+      "passwordPlaceholder": "Zadejte své heslo...",
+      "forgotPassword": "Zapomenuté heslo?",
+      "showPassword": "Zobrazit heslo",
+      "hidePassword": "Skrýt heslo",
+      "loginButton": "Přihlásit se",
+      "loadingButton": "Ověřování...",
+      "loginSuccessAlert": "Přihlášení úspěšné!",
+      "orSeparator": "nebo",
+      "noAccount": "Nemáte účet?",
+      "createAccount": "Vytvořit nový účet"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Zásady ochrany osobních údajů - SyriaGPT",
+      "description": "Zjistěte, jak jsou vaše osobní údaje shromažďovány, používány a chráněny při používání služeb SyriaGPT."
+    },
+    "header": {
+      "title": "Zásady ochrany osobních údajů",
+      "lastUpdated": "Poslední aktualizace: 25. srpna 2025",
+      "effectiveDate": "Platné okamžitě"
+    },
+    "infoCards": [
+      {
+        "title": "Plná ochrana",
+        "description": "Vaše data jsou chráněna nejnovějšími šifrovacími a bezpečnostními technologiemi."
+      },
+      {
+        "title": "Plná kontrola",
+        "description": "Máte kontrolu nad svými daty a můžete je kdykoli smazat."
+      },
+      {
+        "title": "Plná transparentnost",
+        "description": "Jasně vysvětlujeme, co shromažďujeme a jak to používáme."
+      },
+      {
+        "title": "Žádný prodej dat",
+        "description": "Vaše data neprodáváme ani nesdílíme s třetími stranami."
+      }
+    ],
+    "toc": {
+      "title": "Obsah"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Úvod",
+        "content": "Vítejte v SyriaGPT. Vaše soukromí bereme vážně. Tyto zásady popisují typy informací, které od vás můžeme shromažďovat nebo které můžete poskytnout při návštěvě nebo používání naší aplikace, a naše postupy pro shromažďování, používání, údržbu, ochranu a zveřejňování těchto informací."
+      },
+      {
+        "id": "data-collection",
+        "title": "Informace, které shromažďujeme",
+        "intro": "Můžeme shromažďovat několik typů informací od a o uživatelích naší služby, včetně:",
+        "points": [
+          "Informace, které poskytujete přímo: jako je vaše jméno, e-mail a heslo při vytváření účtu.",
+          "Uživatelský obsah: Zprávy, otázky a soubory, které nahráváte do naší služby k analýze.",
+          "Informace o používání: Podrobnosti o vašem používání naší služby, včetně údajů o provozu a protokolů o používání.",
+          "Informace o zařízení: Typ vašeho prohlížeče, operační systém a IP adresa."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Jak používáme vaše informace",
+        "intro": "Informace, které o vás shromažďujeme nebo které nám poskytnete, používáme pro následující účely:",
+        "points": [
+          "K poskytování naší služby a jejího obsahu v nejlepší možné kvalitě.",
+          "K vylepšení a personalizaci vašeho zážitku podle vašich potřeb.",
+          "Ke komunikaci s vámi ohledně vašeho účtu nebo naší služby a důležitých upozornění.",
+          "Pro účely analýzy a výzkumu za účelem zlepšení našich produktů a služeb.",
+          "K zajištění bezpečnosti platformy a prevenci neoprávněného použití."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Zveřejnění vašich informací",
+        "commitmentTitle": "Náš hlavní závazek",
+        "commitmentText": "Vaše osobní údaje neprodáváme ani nepronajímáme třetím stranám. To je náš základní závazek vůči vám.",
+        "content": "Osobní údaje můžeme zveřejnit pouze v následujících případech: pro splnění jakéhokoli soudního příkazu nebo zákona, nebo pro ochranu práv a bezpečnosti SyriaGPT a našich zákazníků před vážnými bezpečnostními hrozbami."
+      },
+      {
+        "id": "data-security",
+        "title": "Bezpečnost dat",
+        "protectionTitle": "Pokročilá ochranná opatření:",
+        "points": [
+          "End-to-end šifrování pro všechna citlivá data",
+          "Zabezpečené servery chráněné pokročilými firewally",
+          "24/7 bezpečnostní monitorování pro detekci hrozeb",
+          "Pravidelné a šifrované zálohy pro zajištění kontinuity služby",
+          "Periodické bezpečnostní testování nezávislými odborníky"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Vaše práva",
+        "intro": "Jako uživatel naší služby máte následující práva týkající se vašich osobních údajů:",
+        "rights": [
+          {
+            "title": "Přístup a kontrola",
+            "description": "Požádat o kopii všech vašich dat uložených u nás"
+          },
+          {
+            "title": "Oprava a aktualizace",
+            "description": "Upravit nebo opravit jakékoli nepřesné informace"
+          },
+          {
+            "title": "Úplné smazání",
+            "description": "Trvale smazat váš účet a všechna vaše data"
+          },
+          {
+            "title": "Přenositelnost a export",
+            "description": "Exportovat vaše data v čitelném formátu"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Změny zásad",
+        "content": "Naší zásadou je informovat vás o jakýchkoli významných změnách 30 dní před jejich vstupem v platnost. Jakékoli změny budou zveřejněny na této stránce s aktualizovaným datem revize. Doporučujeme vám pravidelně kontrolovat tyto zásady, abyste byli informováni o tom, jak chráníme vaše informace."
+      },
+      {
+        "id": "contact",
+        "title": "Kontaktujte nás",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "availability": "Tým pro ochranu osobních údajů je k dispozici pro zodpovězení vašich dotazů od neděle do čtvrtka, od 9:00 do 18:00"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profil - SyriaGPT",
+      "description": "Spravujte své osobní údaje, nastavení zabezpečení a plán předplatného v SyriaGPT."
+    },
+    "header": {
+      "title": "Profil",
+      "description": "Spravujte své osobní údaje a nastavení účtu v SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Profilový obrázek",
+      "changeAvatar": "Změnit profilový obrázek",
+      "joinDate": "Datum připojení",
+      "currentPlan": "Aktuální plán",
+      "freePlan": "Zdarma",
+      "conversations": "Konverzace",
+      "activeDays": "Aktivní dny"
+    },
+    "personalInfo": {
+      "title": "Osobní údaje",
+      "description": "Aktualizujte své jméno, e-mail a základní nastavení",
+      "fullName": "Celé jméno",
+      "email": "E-mailová adresa",
+      "editButton": "Upravit údaje",
+      "cancelButton": "Zrušit",
+      "saveButton": "Uložit změny",
+      "updateSuccess": "Profil úspěšně aktualizován!"
+    },
+    "security": {
+      "title": "Zabezpečení a heslo",
+      "description": "Udržujte svůj účet v bezpečí pravidelnou aktualizací hesla",
+      "currentPassword": "Současné heslo",
+      "currentPasswordPlaceholder": "Zadejte současné heslo...",
+      "newPassword": "Nové heslo",
+      "newPasswordPlaceholder": "Zadejte nové heslo...",
+      "confirmNewPassword": "Potvrdit nové heslo",
+      "confirmNewPasswordPlaceholder": "Potvrďte nové heslo...",
+      "updateButton": "Aktualizovat heslo",
+      "passwordMismatch": "Nová hesla se neshodují.",
+      "updateSuccess": "Heslo úspěšně změněno!"
+    },
+    "subscription": {
+      "title": "Plán předplatného",
+      "description": "Momentálně jste na bezplatném plánu - získejte více funkcí",
+      "upgradeTitle": "Upgradovat na Pro",
+      "upgradeDescription": "Získejte další funkce a prioritní odpovědi",
+      "upgradeButton": "Upgradovat nyní"
+    },
+    "dangerZone": {
+      "title": "Nebezpečná zóna",
+      "description": "Tyto akce jsou nevratné - postupujte opatrně",
+      "deleteTitle": "Trvale smazat účet",
+      "deleteDescription": "Všechna vaše data a konverzace budou trvale smazány",
+      "deleteButton": "Smazat účet"
+    },
+    "deleteModal": {
+      "title": "Potvrdit smazání účtu",
+      "message": "Jste si naprosto jisti? Váš účet a všechna vaše data budou trvale smazány. Tuto akci nelze vrátit zpět.",
+      "cancelButton": "Zrušit",
+      "confirmButton": "Potvrdit smazání",
+      "deleteSuccess": "Váš účet byl úspěšně smazán."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Vytvořit nový účet - SyriaGPT",
+      "description": "Připojte se ke komunitě SyriaGPT a začněte objevovat sílu AI navržené pro syrský kontext."
+    },
+    "infoPanel": {
+      "title": "Připojte se ke komunitě SyriaGPT",
+      "description": "Objevte sílu umělé inteligence navržené speciálně pro syrskou kulturu a kontext",
+      "features": [
+        {
+          "title": "Pokročilá AI",
+          "description": "Moderní technologie trénované na arabském a syrském obsahu"
+        },
+        {
+          "title": "Zaručená bezpečnost a soukromí",
+          "description": "Pokročilá ochrana vašich dat s šifrováním světové třídy"
+        },
+        {
+          "title": "Aktivní komunita",
+          "description": "Připojte se k tisícům syrských uživatelů nadšených pro technologii"
+        },
+        {
+          "title": "Exkluzivní funkce",
+          "description": "Vlastní nástroje pro syrský a arabský obsah"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT zcela změnil způsob, jakým pracuji. Hluboké porozumění syrskému jazyku a kultuře.\"",
+        "author": "- Ahmed Al-Shami, vývojář"
+      }
+    },
+    "form": {
+      "title": "Vytvořit nový účet",
+      "description": "Vyplňte následující údaje pro vytvoření účtu",
+      "firstName": "Jméno",
+      "lastName": "Příjmení",
+      "email": "E-mailová adresa",
+      "password": "Heslo",
+      "confirmPassword": "Potvrdit heslo",
+      "placeholder": "Zadejte {field}...",
+      "emailPlaceholder": "priklad@email.com",
+      "passwordStrength": "Síla hesla",
+      "strengthLevels": [
+        "Velmi slabé",
+        "Slabé",
+        "Střední",
+        "Silné",
+        "Velmi silné"
+      ],
+      "submitButton": "Vytvořit nový účet",
+      "loadingButton": "Vytváření účtu...",
+      "googleButton": "Zaregistrovat se pomocí Google",
+      "orSeparator": "nebo",
+      "hasAccount": "Už máte účet?",
+      "loginLink": "Přihlásit se",
+      "termsAgreement": "Vytvořením účtu souhlasíte s našimi",
+      "termsLink": "Podmínkami použití",
+      "and": "a",
+      "privacyLink": "Zásadami ochrany osobních údajů",
+      "successAlert": "Váš účet byl úspěšně vytvořen! Vítejte v SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Musí mít alespoň 2 znaky",
+      "maxLength": "Příliš dlouhé",
+      "emailRequired": "E-mail je povinný",
+      "emailInvalid": "Neplatná e-mailová adresa",
+      "passwordLength": "Heslo musí mít alespoň 8 znaků",
+      "passwordComplexity": "Musí obsahovat velké písmeno, malé písmeno a číslo",
+      "passwordMismatch": "Hesla se neshodují"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Obnovit heslo - SyriaGPT",
+      "description": "Nastavte si nové, silné heslo pro svůj účet SyriaGPT."
+    },
+    "form": {
+      "title": "Nastavit nové heslo",
+      "description": "Zvolte si silné heslo pro ochranu svého účtu.",
+      "newPasswordLabel": "Nové heslo",
+      "confirmPasswordLabel": "Potvrdit heslo",
+      "passwordMismatchError": "Hesla se neshodují.",
+      "submitButton": "Aktualizovat heslo",
+      "loadingButton": "Aktualizace...",
+      "showPasswordAria": "Zobrazit heslo",
+      "hidePasswordAria": "Skrýt heslo",
+      "mismatchToast": "Ujistěte se, že se hesla shodují.",
+      "loadingToast": "Aktualizace hesla...",
+      "successToast": "Heslo úspěšně aktualizováno!"
+    },
+    "strengthIndicator": {
+      "title": "Síla",
+      "levels": [
+        "Velmi slabé",
+        "Slabé",
+        "Přijatelné",
+        "Dobré",
+        "Silné",
+        "Velmi silné"
+      ]
+    },
+    "successScreen": {
+      "title": "Úspěch!",
+      "description": "Vaše heslo bylo aktualizováno. Nyní se můžete bezpečně přihlásit pomocí svých nových přihlašovacích údajů.",
+      "backToLoginButton": "Zpět na přihlášení"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Nastavení - SyriaGPT",
+      "description": "Přizpůsobte si svůj zážitek se SyriaGPT, spravujte vzhled, jazyk, oznámení a data."
+    },
+    "header": {
+      "title": "Nastavení SyriaGPT",
+      "description": "Přizpůsobte si svůj osobní zážitek",
+      "unsavedChanges": "Neuložené změny"
+    },
+    "appearance": {
+      "title": "Vzhled a zobrazení",
+      "description": "Přizpůsobte si vzhled a dojem z aplikace podle svých preferencí",
+      "theme": "Styl motivu",
+      "themes": {
+        "light": { "label": "Světlý", "description": "Ideální pro denní použití" },
+        "dark": {
+          "label": "Tmavý",
+          "description": "Šetrný k očím v noci"
+        },
+        "system": {
+          "label": "Systém",
+          "description": "Řídí se nastavením vašeho zařízení"
+        }
+      },
+      "preview": {
+        "title": "Náhled změn",
+        "description": "Zobrazte si živý náhled změn před uložením",
+        "new": "NOVÉ"
+      }
+    },
+    "language": {
+      "title": "Jazyk a region",
+      "description": "Nastavte jazyk a regionální nastavení",
+      "interfaceLanguage": {
+        "title": "Jazyk rozhraní",
+        "description": "Jazyk používaný v nabídkách a interaktivních prvcích",
+        "badge": "Auto"
+      },
+      "languages": {
+        "ar": "العربية (Sýrie)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Oznámení a zvuky",
+      "description": "Ovládejte upozornění a zvukové efekty",
+      "enableNotifications": {
+        "title": "Povolit oznámení",
+        "description": "Dostávejte upozornění na zprávy a důležité aktualizace"
+      },
+      "sounds": {
+        "title": "Zvuky",
+        "description": "Přehrávat zvuky při odesílání a přijímání zpráv"
+      }
+    },
+    "dataManagement": {
+      "title": "Správa dat",
+      "description": "Ovládejte ukládání a sdílení svých dat",
+      "autoSave": {
+        "title": "Automatické ukládání",
+        "description": "Automaticky ukládejte své konverzace, abyste se k nim mohli později vrátit"
+      },
+      "exportData": "Exportovat data",
+      "clearHistory": "Vymazat konverzace"
+    },
+    "advanced": {
+      "title": "Pokročilá nastavení",
+      "description": "Pokročilé možnosti pro profesionální uživatele",
+      "developerMode": {
+        "title": "Vývojářský režim",
+        "description": "Zobrazit další technické informace a možnosti vývoje",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Analytika",
+        "description": "Pomozte vylepšit službu zasíláním anonymních údajů o používání"
+      }
+    },
+    "saveBar": {
+      "title": "Chcete uložit změny?",
+      "description": "Nová nastavení budou okamžitě použita",
+      "reset": "Resetovat",
+      "save": "Uložit změny",
+      "saving": "Ukládání...",
+      "success": "Nastavení úspěšně uloženo!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Potvrdit smazání historie",
+        "message": "Jste si jisti? Všechny vaše minulé konverzace budou trvale smazány. Tuto akci nelze vrátit zpět.",
+        "confirm": "Ano, smazat",
+        "success": "Historie konverzací úspěšně vymazána."
+      },
+      "exportData": {
+        "title": "Exportovat data",
+        "message": "Kopie všech vašich dat bude vygenerována a odeslána na váš e-mail. Chcete pokračovat?",
+        "confirm": "Ano, pokračovat",
+        "success": "Exportování vašich dat..."
+      },
+      "cancel": "Zrušit"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Podmínky služby - SyriaGPT",
+      "description": "Přečtěte si podmínky a ujednání pro používání služeb SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Přepnout na arabštinu",
+      "print": "Tisk"
+    },
+    "title": "Podmínky služby",
+    "subtitle": "Poslední aktualizace: 24. srpna 2025",
+    "intro": "Vítejte v SyriaGPT. Používáním našich služeb souhlasíte s těmito podmínkami. Přečtěte si je prosím pozorně.",
+    "sectionsTitle": "Sekce",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Přijetí podmínek",
+        "content": "Přístupem a používáním SyriaGPT souhlasíte s tím, že budete vázáni těmito Podmínkami a ujednáními. Pokud nesouhlasíte s jakoukoli částí těchto podmínek, neměli byste naše služby používat."
+      },
+      {
+        "id": "services",
+        "title": "2. Popis služeb",
+        "content": "SyriaGPT je asistent AI navržený k poskytování pomoci v různých oblastech souvisejících se syrským kontextem."
+      },
+      {
+        "id": "usage",
+        "title": "3. Přijatelné použití",
+        "content": "Naše služby musíte používat legálně a eticky. Je vám zakázáno používat službu pro nezákonné nebo škodlivé účely."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Soukromí a data",
+        "content": "Respektujeme vaše soukromí a jsme odhodláni chránit vaše data. Shromažďujeme pouze nezbytná data pro poskytování služby a nebudeme je sdílet bez vašeho souhlasu."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Duševní vlastnictví",
+        "content": "Všechna práva vyhrazena SyriaGPT. Obsah, design a loga jsou naším majetkem. Obsah, který vytvoříte pomocí služby, zůstává váš."
+      },
+      {
+        "id": "liability",
+        "title": "6. Vyloučení odpovědnosti",
+        "content": "Služba je poskytována „tak, jak je“ bez jakýchkoli záruk. Nezaručujeme přesnost ani úplnost poskytovaných informací a neneseme odpovědnost za žádné škody vyplývající z jejich použití."
+      },
+      {
+        "id": "termination",
+        "title": "7. Ukončení služby",
+        "content": "Vyhrazujeme si právo ukončit nebo pozastavit váš účet v případě porušení těchto podmínek nebo v případě škodlivého či nezákonného chování."
+      },
+      {
+        "id": "contact",
+        "title": "8. Kontaktujte nás",
+        "content": "V případě jakýchkoli dotazů ohledně těchto podmínek nás prosím kontaktujte e-mailem: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Přečetl/a jsem si a souhlasím s podmínkami",
+    "continueButton": "Pokračovat",
+    "backToTop": "Zpět nahoru",
+    "expandAll": "Rozbalit vše",
+    "collapseAll": "Sbalit vše",
+    "readingProgress": "Průběh čtení",
+    "copyright": "© {year} SyriaGPT. Všechna práva vyhrazena."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Upgradovat na Pro - SyriaGPT",
+      "description": "Užijte si neomezené možnosti, vyšší rychlost a prioritní přístup k novým funkcím s SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Upgradovat na Pro",
+      "description": "Užijte si neomezené možnosti, vyšší rychlost a prioritní přístup k novým funkcím"
+    },
+    "stats": [
+      { "value": "10x", "label": "Rychlejší odpověď" },
+      { "value": "∞", "label": "Neomezené zprávy" },
+      { "value": "24/7", "label": "Nepřetržitá podpora" }
+    ],
+    "billingToggle": {
+      "monthly": "Měsíčně",
+      "yearly": "Ročně",
+      "saving": "Ušetřete 20 %"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Bezplatný plán",
+        "subtitle": "Aktuální plán",
+        "price": "0 $",
+        "period": "Doživotně",
+        "features": [
+          "Přístup k základnímu modelu",
+          "20 zpráv denně",
+          "Standardní rychlost odpovědi",
+          "Základní funkce"
+        ],
+        "buttonText": "Váš aktuální plán"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Pro profesionály a firmy",
+        "priceMonthly": "10 $",
+        "priceYearly": "96 $",
+        "periodMonthly": "měsíčně",
+        "periodYearly": "ročně",
+        "popular": "Nejoblíbenější",
+        "features": [
+          "Pokročilý model GPT-4",
+          "Neomezené zprávy",
+          "Vyšší rychlost odpovědi",
+          "Prioritní přístup k novým funkcím",
+          "Specializovaná technická podpora",
+          "Vylepšené rozhraní bez reklam"
+        ],
+        "buttonText": "Upgradovat nyní"
+      }
+    },
+    "comparison": {
+      "title": "Porovnat plány",
+      "featureHeader": "Funkce",
+      "freeHeader": "Zdarma",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Přístup k základnímu modelu", "free": true, "pro": true },
+        { "text": "Omezené denní zprávy (20)", "free": true, "pro": false },
+        { "text": "Neomezené zprávy", "free": false, "pro": true },
+        {
+          "text": "Přístup k pokročilému modelu GPT-4",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Standardní rychlost odpovědi", "free": true, "pro": false },
+        {
+          "text": "Vyšší rychlost odpovědi (10x rychlejší)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Prioritní přístup k novým funkcím",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Specializovaná technická podpora",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Rozhraní bez reklam", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Často kladené otázky",
+      "toggleOpen": "Číst více",
+      "toggleClose": "Zavřít",
+      "items": [
+        {
+          "question": "Mohu své předplatné kdykoli zrušit?",
+          "answer": "Ano, samozřejmě. Své předplatné plánu Pro můžete kdykoli zrušit na stránce „Správa účtu“. Budete mít i nadále přístup k funkcím Pro až do konce aktuálního fakturačního období a nebudou vám účtovány žádné další poplatky."
+        },
+        {
+          "question": "Jaké platební metody jsou přijímány?",
+          "answer": "Přijímáme všechny hlavní kreditní a debetní karty (Visa, MasterCard, American Express) a také Sham Cash a místní elektronické peněženky. Všechny platby jsou zpracovávány bezpečně a šifrovaně prostřednictvím našeho partnera, společnosti Stripe."
+        },
+        {
+          "question": "Co se stane na konci ročního fakturačního období?",
+          "answer": "Vaše roční předplatné se automaticky obnoví, pokud jej nezrušíte v nastavení svého účtu. Týden před datem obnovení vám zašleme e-mail s připomenutím a podrobnostmi o dlužné částce."
+        },
+        {
+          "question": "Mohu získat náhradu?",
+          "answer": "Ano, nabízíme plnou 30denní záruku vrácení peněz od data předplatného, pokud nejste se službou z jakéhokoli důvodu spokojeni. Stačí kontaktovat náš tým podpory a my vaši žádost o vrácení peněz okamžitě zpracujeme."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Jste připraveni začít?",
+      "description": "Připojte se k tisícům uživatelů, kteří si vybrali SyriaGPT Pro pro vynikající zážitek s AI",
+      "buttonText": "Začněte nyní za {price}",
+      "guarantee": "30denní plná záruka vrácení peněz"
+    },
+    "alert": "Budete přesměrováni na platební stránku..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Ověřit e-mail - SyriaGPT",
+      "description": "Zadejte ověřovací kód zaslaný na váš e-mail pro potvrzení vašeho účtu SyriaGPT."
+    },
+    "header": {
+      "title": "Ověřte svůj e-mail",
+      "description": "Zadejte ověřovací kód zaslaný na"
+    },
+    "form": {
+      "label": "6místný ověřovací kód",
+      "verifyButton": "Ověřit kód",
+      "verifyingButton": "Ověřování...",
+      "resend": {
+        "question": "Neobdrželi jste kód?",
+        "resendButton": "Znovu odeslat kód",
+        "resendingButton": "Znovu odesílání...",
+        "cooldown": "Znovu odeslat za {seconds} sekund"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Ověření úspěšné!",
+        "description": "Váš e-mail byl úspěšně potvrzen",
+        "redirecting": "Přesměrování na řídicí panel..."
+      },
+      "error": {
+        "title": "Ověření se nezdařilo",
+        "tryAgainButton": "Zkusit znovu"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Zadejte prosím 6místný ověřovací kód",
+      "invalidCode": "Neplatný ověřovací kód. Zkuste to prosím znovu.",
+      "generic": "Během ověřování došlo k chybě. Zkuste to prosím znovu.",
+      "resendFailed": "Nepodařilo se odeslat ověřovací kód. Zkuste to prosím znovu."
+    },
+    "backToLogin": "Zpět na přihlášení",
+    "securityNote": {
+      "title": "Bezpečnostní poznámka:",
+      "points": [
+        "Nesdílejte ověřovací kód s nikým",
+        "Ověřovací kód je platný pouze 10 minut",
+        "Zkontrolujte e-mailovou adresu odesílatele"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Nový ověřovací kód byl odeslán na váš e-mail"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Došlo k chybě - SyriaGPT",
+      "description": "Vlastní chybová stránka pro projekt SyriaGPT."
+    },
+    "offlineMessage": "Jste momentálně offline",
+    "errorCode": "Chyba {statusCode}",
+    "title": "Došlo k neočekávané chybě",
+    "description": "Upřímně se omlouváme za nepříjemnosti. Náš technický tým byl informován a pracuje na co nejrychlejším vyřešení problému.",
+    "retryButton": "Zkusit znovu",
+    "retryingButton": "Opakování...",
+    "homeButton": "Domů",
+    "backButton": "Zpět",
+    "suggestionsTitle": "Co můžete nyní zkusit:",
+    "suggestion1": "Obnovení stránky může problém vyřešit.",
+    "suggestion2": "Zkontrolujte prosím své internetové připojení.",
+    "suggestion3": "Pokud problém přetrvává, neváhejte nás kontaktovat.",
+    "accordion": {
+      "title": "Technické podrobnosti pro vývojáře",
+      "copy": "Kopírovat",
+      "copied": "Zkopírováno",
+      "code": "Kód:",
+      "message": "Zpráva:",
+      "digest": "Digest:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Stránka nenalezena - SyriaGPT",
+      "description": "Stránka, kterou hledáte, neexistuje nebo byla přesunuta."
+    },
+    "title": "Zdá se, že jste se ztratili na stránkách!",
+    "description": "Stránka, kterou hledáte, neexistuje nebo byla přesunuta",
+    "currentLocation": "Aktuální poloha: Neznámá",
+    "search": {
+      "placeholder": "Hledejte stránku, kterou chcete...",
+      "button": "Hledat",
+      "searching": "Hledání..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Předchozí stránka",
+        "description": "Vraťte se, odkud jste přišli"
+      },
+      "homePage": {
+        "title": "Domovská stránka",
+        "description": "Začít znovu"
+      }
+    },
+    "suggestions": {
+      "title": "Stránky, které by vás mohly zajímat",
+      "items": [
+        { "title": "Domovská stránka", "description": "Vrátit se na začátek" },
+        { "title": "Chat", "description": "Zahájit novou konverzaci" },
+        { "title": "Nápověda", "description": "Získat pomoc" },
+        { "title": "O Sýrii", "description": "Objevit více" }
+      ]
+    },
+    "history": {
+      "title": "Nedávno navštívené stránky"
+    },
+    "funFact": {
+      "title": "Zatímco hledáte cestu...",
+      "facts": [
+        "Věděli jste? Damašek je nejstarší nepřetržitě obydlené hlavní město na světě!",
+        "Věděli jste? První abeceda v historii byla vynalezena v Ugaritu v Sýrii!",
+        "Věděli jste? Pistáciovník z Aleppa může žít více než 300 let!",
+        "Věděli jste? Krak des Chevaliers v Sýrii je jedním z nejlépe zachovaných hradů na světě!",
+        "Věděli jste? Damašská růže je považována za jeden z nejlepších druhů růží na světě!"
+      ]
+    },
+    "support": {
+      "message": "Pokud se domníváte, že se jedná o chybu, kontaktujte nás",
+      "helpCenter": "Centrum nápovědy",
+      "technicalSupport": "Technická podpora"
+    }
+  },
+  "loader": {
+    "title": "načítání...",
+    "loading": "Počkejte prosím chvilku..."
+  }
+}

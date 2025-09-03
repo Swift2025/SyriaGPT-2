@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Syyrialainen tekoäly",
+    "newChat": "Uusi keskustelu",
+    "pastConversations": "Aiemmat keskustelut",
+    "lightMode": "Vaalea tila",
+    "darkMode": "Tumma tila",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Syyrialainen käyttäjä",
+    "userEmail": "kayttaja@syriagpt.com",
+    "profile": "Profiili",
+    "settings": "Asetukset",
+    "upgradeToPro": "Päivitä Pro-versioon",
+    "newBadge": "UUSI",
+    "helpCenter": "Ohjekeskus",
+    "aboutApp": "Tietoja sovelluksesta",
+    "logout": "Kirjaudu ulos",
+    "logoutModal": {
+      "title": "Vahvista uloskirjautuminen",
+      "description": "Haluatko varmasti kirjautua ulos tililtäsi?",
+      "cancel": "Peruuta",
+      "confirm": "Kyllä, kirjaudu ulos"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Älykäs avustajasi vastaamaan kaikkiin kysymyksiisi",
+      "examples": "Esimerkkejä",
+      "capabilities": "Kyvykkyydet",
+      "limitations": "Rajoitukset",
+      "suggestions": {
+        "examples": [
+          "Selitä, miten henkilökortti hankitaan yksinkertaisesti",
+          "Anna minulle Damaskoksen yliopiston hyväksytyt kurssit",
+          "Mitä ainesosia Mahshiin tarvitaan?"
+        ],
+        "capabilities": [
+          "Miten okra valmistetaan ja mikä on sen historiallinen yhteys?",
+          "Mitkä ovat Syyrian passijärjestelyt?",
+          "Tarvitsen tietoa sijoittamisesta"
+        ],
+        "limitations": [
+          "Miten ratkaistaan tietokoneongelma?",
+          "Mitkä ovat ilmoittautumisehdot Aleppon yliopistoon?",
+          "Anna minulle yhteenveto tämän päivän uutisista Syyriassa"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Kirjoittaa..."
+    },
+    "regenerate": "Luo vastaus uudelleen",
+    "input": {
+      "placeholder": "Kirjoita viestisi tähän, tai vedä tiedosto liitteeksi...",
+      "attachFile": "Liitä tiedosto",
+      "startRecording": "Aloita nauhoitus",
+      "stopRecording": "Lopeta nauhoitus",
+      "removeFile": "Poista tiedosto"
+    },
+    "dragDrop": {
+      "title": "Pudota tiedostot tähän",
+      "subtitle": "PDF, Word, Teksti (Enint. 10 Mt)"
+    },
+    "speechErrors": {
+      "unsupported": "Puheentunnistusta ei tueta tässä selaimessa. Käytä Chromea tai Edgeä.",
+      "permissionDenied": "Salli mikrofonin käyttö selaimen asetuksista.",
+      "startFailed": "Nauhoituksen aloittaminen epäonnistui. Tarkista selaimen asetukset.",
+      "generalError": "Nauhoitusta aloitettaessa tapahtui virhe. Yritä uudelleen.",
+      "no-speech": "Puhetta ei havaittu. Varmista, että äänesi on selkeä ja mikrofoni on lähellä.",
+      "audio-capture": "Mikrofoniin ei päästä käsiksi. Varmista, että se on kytketty ja lupa on myönnetty.",
+      "not-allowed": "Lupa evättiin. Salli mikrofonin käyttö selaimen asetuksista.",
+      "network": "Verkkovirhe. Tarkista internet-yhteytesi.",
+      "service-not-allowed": "Puheentunnistuspalvelu ei ole tällä hetkellä käytettävissä.",
+      "language-not-supported": "Kieltä ei tueta. Kokeile Chrome-selainta."
+    },
+    "footer": "Tavoitteenamme on tehdä tekoälyjärjestelmistä luonnollisempia ja turvallisempia käyttää"
+  },
+  "chat": {
+    "fileAnalysisError": "Valitettavasti tiedoston analysoinnissa tapahtui virhe: {error}",
+    "responseProcessingError": "Valitettavasti vastauksen käsittelyssä tapahtui virhe.",
+    "networkError": "Valitettavasti yhteysvirhe tapahtui. Tarkista internet-yhteytesi."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Tietoja SyriaGPT-projektista",
+      "description": "Tutustu SyriaGPT-projektin tavoitteisiin ja visioon, älykkääseen avustajaan, joka on erikoistunut Syyrian kontekstiin."
+    },
+    "header": {
+      "title": "Syyrian arabitasavalta",
+      "subtitle": "SYYRIAN ARABITASAVALTA",
+      "mapText": "Syyria... on Sydän"
+    },
+    "main": {
+      "p1": "Tämä on Syyrian hallituksen hyväksymä uraauurtava kansallinen hanke, jonka tavoitteena on kehittää edistynyt arabian kielen malli, jossa keskitytään erityisesti Syyrian murteeseen. Tämän hankkeen tavoitteena on olla tieto- ja palvelualusta, joka auttaa kansalaisia ​​olemaan vuorovaikutuksessa valtion palvelujen sekä julkisen ja yksityisen sektorin kanssa helposti ja turvallisesti ja tarjoaa heille tarkkoja ja luotettavia vastauksia menettelyistä, laeista ja yleisistä tiedoista.",
+      "p2": "Se erottuu keskittymisestään paikalliseen kieleen ja kykyyn ymmärtää murteita standardiarabian rinnalla, mikä tekee siitä lähellä käyttäjää heidän jokapäiväisessä elämässään. Hanke takaa myös tietosuojan, koska se on isännöity kansallisissa datakeskuksissa ja toimii korkeiden turvallisuus- ja neutraalisuusstandardien mukaisesti varmistaakseen, että tulokset ovat tarkkoja ja puolueettomia. Se on suunniteltu integroitavaksi sähköisen hallinnon portaaleihin, virallisiin sovelluksiin ja puhelinpalvelukeskuksiin, mikä on perustavanlaatuinen askel kohti digitaalisen muutoksen tehostamista Syyriassa.",
+      "p3": "Hanke pyrkii palvelemaan useita aloja, kuten helpottamaan hallituksen menettelyjä, tukemaan koulutusta, yksinkertaistamaan terveysohjeita, auttamaan pienyrityksiä ja levittämään hätäviestejä nopeasti ja selkeästi. Se edustaa siten laadullista harppausta siinä, miten kansalaiset pääsevät käsiksi tietoon, missä vuorovaikutus luonnollisella kielellä tulee ensisijaiseksi keinoksi yksinkertaistaa liiketoimia ja tuoda kansalaiset lähemmäksi valtion instituutioita."
+    },
+    "footer": {
+      "backButton": "Takaisin keskusteluun",
+      "disclaimer": "Tavoitteenamme on tehdä tekoälyjärjestelmistä luonnollisempia ja turvallisempia käyttää, Syyrian kontekstin ja sen käyttäjien tarpeiden mukaisesti. Palautteesi ja ehdotuksesi auttavat meitä parantamaan ja kehittämään palvelua palvellaksemme sinua paremmin."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Unohtuiko salasana",
+      "description": "Palauta pääsy SyriaGPT-tilillesi yksinkertaisilla ja turvallisilla vaiheilla."
+    },
+    "infoPanel": {
+      "title": "Palauta tilisi turvallisesti",
+      "description": "Olemme täällä auttaaksemme sinua palauttamaan pääsyn tiliisi yksinkertaisilla ja turvallisilla vaiheilla.",
+      "steps": {
+        "step1": {
+          "title": "Syötä sähköpostiosoitteesi",
+          "description": "SyriaGPT-tilillesi rekisteröity sähköpostiosoite"
+        },
+        "step2": {
+          "title": "Tarkista sähköpostisi",
+          "description": "Lähetämme sinulle turvallisen linkin salasanasi nollaamiseksi"
+        },
+        "step3": {
+          "title": "Luo uusi salasana",
+          "description": "Valitse vahva ja turvallinen salasana tilillesi"
+        }
+      },
+      "securityTip": {
+        "title": "Turvallisuusvinkki",
+        "description": "Linkki on voimassa vain 15 minuuttia tilisi turvallisuuden varmistamiseksi. Jos et löydä sähköpostia, tarkista roskapostikansiosi."
+      }
+    },
+    "form": {
+      "title": "Unohtuiko salasana",
+      "description": "Syötä sähköpostiosoitteesi saadaksesi palautuslinkin",
+      "emailLabel": "Sähköpostiosoite",
+      "emailPlaceholder": "Syötä sähköpostiosoitteesi...",
+      "emailRequiredAlert": "Syötä sähköpostiosoitteesi.",
+      "submitButton": "Lähetä palautuslinkki",
+      "loadingButton": "Lähetetään...",
+      "rememberedPassword": "Muistitko salasanasi?",
+      "backToLogin": "Takaisin sisäänkirjautumiseen"
+    },
+    "successScreen": {
+      "title": "Ohjeet lähetetty",
+      "checkEmailTitle": "Tarkista sähköpostisi",
+      "description": "Olemme lähettäneet salasanan palautuslinkin osoitteeseen:",
+      "tip1": "Tarkista postilaatikkosi",
+      "tip2": "Älä unohda tarkistaa roskapostikansiotasi",
+      "tip3": "Linkki on voimassa vain 15 minuuttia",
+      "backToLoginButton": "Takaisin sisäänkirjautumiseen"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Ohjekeskus - SyriaGPT",
+      "description": "Löydä vastauksia kysymyksiisi, käyttöoppaita ja ota yhteyttä SyriaGPT-tukitiimiin."
+    },
+    "header": {
+      "title": "Ohjekeskus",
+      "description": "Tervetuloa SyriaGPT-tukikeskukseen! Olemme täällä auttaaksemme sinua saamaan parhaan mahdollisen kokemuksen."
+    },
+    "search": {
+      "placeholder": "Etsi vastauksia, käyttöoppaita tai esitä kysymys..."
+    },
+    "categories": {
+      "title": "Selaa luokittain",
+      "items": [
+        {
+          "title": "Aloittaminen",
+          "description": "Opi alustan käytön perusteet ja hyödynnä kaikkia saatavilla olevia ominaisuuksia."
+        },
+        {
+          "title": "Tilin hallinta",
+          "description": "Muokkaa profiiliasi, hallinnoi tilauksia ja turvallisuusasetuksiasi."
+        },
+        {
+          "title": "Edistyneet ominaisuudet",
+          "description": "Hyödynnä tiedostoliitteitä, äänihakua ja edistynyttä tekoälyä."
+        },
+        {
+          "title": "Turvallisuus ja yksityisyys",
+          "description": "Opi suojaamaan tietojasi ja henkilökohtaisia ​​tietojasi korkeimmilla turvallisuusstandardeilla."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Usein kysytyt kysymykset",
+      "toggleOpen": "Lue lisää",
+      "toggleClose": "Sulje",
+      "items": [
+        {
+          "question": "Miten voin aloittaa uuden keskustelun?",
+          "answer": "Aloittaaksesi uuden keskustelun, napsauta vain \"+ Uusi keskustelu\" -painiketta sivupalkin yläosassa. Voit myös käyttää pikanäppäintä Ctrl+N nopeaan aloitukseen."
+        },
+        {
+          "question": "Minkä tyyppisiä tiedostoja voin liittää?",
+          "answer": "Voit liittää PDF-tiedostoja, Word-asiakirjoja (doc, docx), PowerPoint-tiedostoja, tekstitiedostoja (txt) ja kuvia (jpg, png, gif). Yhden tiedoston enimmäiskoko on 10 Mt, ja voit liittää enintään 5 tiedostoa keskustelua kohti."
+        },
+        {
+          "question": "Tallennetaanko aiemmat keskusteluni?",
+          "answer": "Kyllä, aiemmat keskustelusi tallennetaan automaattisesti ja turvallisesti tilillesi. Voit käyttää niitä sivupalkin \"Aiemmat keskustelut\" -luettelosta, järjestettynä päivämäärän tai aiheen mukaan."
+        },
+        {
+          "question": "Miten vaalea ja tumma tila toimivat?",
+          "answer": "Voit vaihtaa vaalean ja tumman tilan välillä sivupalkin erillisellä painikkeella. Järjestelmä tallentaa automaattisesti valintasi ja soveltaa sitä kaikissa tulevissa istunnoissa."
+        },
+        {
+          "question": "Mikä on puheesta tekstiksi -ominaisuus?",
+          "answer": "Voit käyttää mikrofonia puhesaneluun arabiaksi tai englanniksi. Napsauta mikrofonikuvaketta syöttöpalkissa ja aloita puhuminen. Järjestelmä muuntaa puheesi automaattisesti tekstiksi."
+        },
+        {
+          "question": "Voinko käyttää SyriaGPT:tä matkapuhelimellani?",
+          "answer": "Kyllä, SyriaGPT on saatavilla verkkoselaimen kautta kaikilla älylaitteilla. Käyttöliittymä on täysin responsiivinen ja toimii täydellisesti puhelimissa ja tableteissa."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Etkö löytänyt etsimääsi?",
+      "description": "Omistautunut tukitiimimme on käytettävissä ympäri vuorokauden auttaakseen sinua. Ota meihin yhteyttä, niin palaamme asiaan muutamassa minuutissa!",
+      "emailButton": "Ota yhteyttä sähköpostitse",
+      "chatButton": "Live-chat",
+      "phoneButton": "Puhelinsoitto",
+      "availability": "Saatavilla 24/7",
+      "responseTime": "Vastaus 5 minuutin kuluessa",
+      "languageSupport": "Tuki arabian kielellä"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Kirjaudu sisään - SyriaGPT",
+      "description": "Kirjaudu sisään SyriaGPT-tilillesi päästäksesi käsiksi keskusteluihisi ja edistyneisiin ominaisuuksiin."
+    },
+    "infoPanel": {
+      "title": "Tervetuloa takaisin",
+      "description": "Jatka Syyrian tekoälyn maailman tutkimista",
+      "securityTitle": "Miksi SyriaGPT on turvallinen?",
+      "features": [
+        {
+          "title": "Edistynyt tietosuoja",
+          "description": "Käytämme edistyneitä salaustekniikoita henkilökohtaisten tietojesi suojaamiseen"
+        },
+        {
+          "title": "Kaksivaiheinen todennus",
+          "description": "Lisäsuojakerros tilisi turvallisuuden varmistamiseksi"
+        },
+        {
+          "title": "Paikallinen tekoäly",
+          "description": "Edistynyt syyrialainen tekniikka, joka ymmärtää arabialaista kulttuuria ja kontekstia"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Aktiiviset käyttäjät" },
+        { "value": "99.9%", "label": "Käyttöaika" },
+        { "value": "24/7", "label": "Tuki" }
+      ]
+    },
+    "form": {
+      "title": "Kirjaudu sisään",
+      "description": "Syötä tunnistetietosi päästäksesi tilillesi",
+      "emailLabel": "Sähköpostiosoite",
+      "emailPlaceholder": "Syötä sähköpostiosoitteesi...",
+      "passwordLabel": "Salasana",
+      "passwordPlaceholder": "Syötä salasanasi...",
+      "forgotPassword": "Unohtuiko salasana?",
+      "showPassword": "Näytä salasana",
+      "hidePassword": "Piilota salasana",
+      "loginButton": "Kirjaudu sisään",
+      "loadingButton": "Vahvistetaan...",
+      "loginSuccessAlert": "Sisäänkirjautuminen onnistui!",
+      "orSeparator": "tai",
+      "noAccount": "Eikö sinulla ole tiliä?",
+      "createAccount": "Luo uusi tili"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Tietosuojakäytäntö - SyriaGPT",
+      "description": "Opi, miten henkilötietojasi kerätään, käytetään ja suojataan, kun käytät SyriaGPT-palveluita."
+    },
+    "header": {
+      "title": "Tietosuojakäytäntö",
+      "lastUpdated": "Viimeksi päivitetty: 25. elokuuta 2025",
+      "effectiveDate": "Voimassa heti"
+    },
+    "infoCards": [
+      {
+        "title": "Täydellinen suojaus",
+        "description": "Tietosi on suojattu uusimmilla salaus- ja tietoturvatekniikoilla."
+      },
+      {
+        "title": "Täydellinen hallinta",
+        "description": "Hallitset tietojasi ja voit poistaa ne milloin tahansa."
+      },
+      {
+        "title": "Täydellinen läpinäkyvyys",
+        "description": "Selitämme selkeästi, mitä keräämme ja miten käytämme sitä."
+      },
+      {
+        "title": "Ei tietojen myyntiä",
+        "description": "Emme myy tai jaa tietojasi kolmansille osapuolille."
+      }
+    ],
+    "toc": {
+      "title": "Sisällysluettelo"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Johdanto",
+        "content": "Tervetuloa SyriaGPT:hen. Otamme yksityisyytesi vakavasti. Tämä käytäntö kuvaa, minkä tyyppisiä tietoja voimme kerätä sinulta tai joita voit antaa, kun vierailet tai käytät sovellustamme, sekä käytäntöjämme tietojen keräämiseksi, käyttämiseksi, ylläpitämiseksi, suojaamiseksi ja paljastamiseksi."
+      },
+      {
+        "id": "data-collection",
+        "title": "Keräämämme tiedot",
+        "intro": "Voimme kerätä useita erityyppisiä tietoja palvelumme käyttäjiltä ja heistä, mukaan lukien:",
+        "points": [
+          "Tiedot, jotka annat suoraan: kuten nimesi, sähköpostiosoitteesi ja salasanasi, kun luot tilin.",
+          "Käyttäjäsisältö: Viestit, kysymykset ja tiedostot, jotka lataat palveluumme analysoitavaksi.",
+          "Käyttötiedot: Yksityiskohdat palvelumme käytöstäsi, mukaan lukien liikennetiedot ja käyttölokit.",
+          "Laitetiedot: Selaimesi tyyppi, käyttöjärjestelmä ja IP-osoite."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Miten käytämme tietojasi",
+        "intro": "Käytämme sinusta keräämiämme tietoja tai antamiasi tietoja seuraaviin tarkoituksiin:",
+        "points": [
+          "Tarjotaksemme sinulle palvelumme ja sen sisällön parhaalla mahdollisella laadulla.",
+          "Parantaaksemme ja mukauttaaksemme kokemustasi tarpeidesi mukaan.",
+          "Kommunikoidaksemme kanssasi tilistäsi tai palvelustamme ja tärkeistä ilmoituksista.",
+          "Analyysi- ja tutkimustarkoituksiin tuotteidemme ja palveluidemme parantamiseksi.",
+          "Varmistaaksemme alustan turvallisuuden ja estääksemme luvattoman käytön."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Tietojesi paljastaminen",
+        "commitmentTitle": "Ydinsitoumuksemme",
+        "commitmentText": "Emme myy tai vuokraa henkilötietojasi kolmansille osapuolille. Tämä on perustavanlaatuinen sitoumuksemme sinulle.",
+        "content": "Voimme paljastaa henkilötietoja vain seuraavissa tapauksissa: noudattaaksemme tuomioistuimen määräystä tai lakia tai suojellaksemme SyriaGPT:n ja asiakkaidemme oikeuksia ja turvallisuutta vakavilta turvallisuusuhilta."
+      },
+      {
+        "id": "data-security",
+        "title": "Tietoturva",
+        "protectionTitle": "Edistyneet suojatoimenpiteet:",
+        "points": [
+          "Päästä päähän -salaus kaikille arkaluonteisille tiedoille",
+          "Turvalliset palvelimet, jotka on suojattu edistyneillä palomuureilla",
+          "24/7 turvallisuusvalvonta uhkien havaitsemiseksi",
+          "Säännölliset ja salatut varmuuskopiot palvelun jatkuvuuden varmistamiseksi",
+          "Säännölliset turvallisuustestit riippumattomien asiantuntijoiden toimesta"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Oikeutesi",
+        "intro": "Palvelumme käyttäjänä sinulla on seuraavat oikeudet henkilötietoihisi liittyen:",
+        "rights": [
+          {
+            "title": "Pääsy ja tarkastelu",
+            "description": "Pyydä kopio kaikista meillä tallennetuista tiedoistasi"
+          },
+          {
+            "title": "Korjaus ja päivitys",
+            "description": "Muokkaa tai korjaa virheellisiä tietoja"
+          },
+          {
+            "title": "Täydellinen poisto",
+            "description": "Poista tilisi ja kaikki tietosi pysyvästi"
+          },
+          {
+            "title": "Siirrettävyys ja vienti",
+            "description": "Vie tietosi luettavassa muodossa"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Käytännön muutokset",
+        "content": "Käytäntömme on ilmoittaa sinulle kaikista merkittävistä muutoksista 30 päivää ennen niiden voimaantuloa. Kaikki muutokset julkaistaan ​​tällä sivulla päivitetyllä tarkistuspäivämäärällä. Kehotamme sinua tarkistamaan tämän käytännön säännöllisesti pysyäksesi ajan tasalla siitä, miten suojaamme tietojasi."
+      },
+      {
+        "id": "contact",
+        "title": "Ota yhteyttä",
+        "email": "Sähköposti",
+        "phone": "Puhelin",
+        "availability": "Tietosuojatiimi on käytettävissä vastaamaan kysymyksiisi sunnuntaista torstaihin klo 9–18"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Profiili - SyriaGPT",
+      "description": "Hallinnoi henkilötietojasi, turvallisuusasetuksiasi ja tilaussuunnitelmaasi SyriaGPT:ssä."
+    },
+    "header": {
+      "title": "Profiili",
+      "description": "Hallinnoi henkilötietojasi ja tilisi asetuksia SyriaGPT:ssä"
+    },
+    "sidebar": {
+      "avatarAlt": "Profiilikuva",
+      "changeAvatar": "Vaihda profiilikuva",
+      "joinDate": "Liittymispäivä",
+      "currentPlan": "Nykyinen suunnitelma",
+      "freePlan": "Ilmainen",
+      "conversations": "Keskustelut",
+      "activeDays": "Aktiiviset päivät"
+    },
+    "personalInfo": {
+      "title": "Henkilökohtaiset tiedot",
+      "description": "Päivitä nimesi, sähköpostiosoitteesi ja perusasetukset",
+      "fullName": "Koko nimi",
+      "email": "Sähköpostiosoite",
+      "editButton": "Muokkaa tietoja",
+      "cancelButton": "Peruuta",
+      "saveButton": "Tallenna muutokset",
+      "updateSuccess": "Profiili päivitetty onnistuneesti!"
+    },
+    "security": {
+      "title": "Turvallisuus ja salasana",
+      "description": "Pidä tilisi turvassa päivittämällä salasanasi säännöllisesti",
+      "currentPassword": "Nykyinen salasana",
+      "currentPasswordPlaceholder": "Syötä nykyinen salasana...",
+      "newPassword": "Uusi salasana",
+      "newPasswordPlaceholder": "Syötä uusi salasana...",
+      "confirmNewPassword": "Vahvista uusi salasana",
+      "confirmNewPasswordPlaceholder": "Vahvista uusi salasana...",
+      "updateButton": "Päivitä salasana",
+      "passwordMismatch": "Uudet salasanat eivät täsmää.",
+      "updateSuccess": "Salasana vaihdettu onnistuneesti!"
+    },
+    "subscription": {
+      "title": "Tilaussuunnitelma",
+      "description": "Olet tällä hetkellä ilmaisessa suunnitelmassa - hanki lisää ominaisuuksia",
+      "upgradeTitle": "Päivitä Pro-versioon",
+      "upgradeDescription": "Hanki lisäominaisuuksia ja ensisijaisia ​​vastauksia",
+      "upgradeButton": "Päivitä nyt"
+    },
+    "dangerZone": {
+      "title": "Vaara-alue",
+      "description": "Nämä toimet ovat peruuttamattomia - etene varoen",
+      "deleteTitle": "Poista tili pysyvästi",
+      "deleteDescription": "Kaikki tietosi ja keskustelusi poistetaan pysyvästi",
+      "deleteButton": "Poista tili"
+    },
+    "deleteModal": {
+      "title": "Vahvista tilin poisto",
+      "message": "Oletko aivan varma? Tilisi ja kaikki tietosi poistetaan pysyvästi. Tätä toimenpidettä ei voi peruuttaa.",
+      "cancelButton": "Peruuta",
+      "confirmButton": "Vahvista poisto",
+      "deleteSuccess": "Tilisi on poistettu onnistuneesti."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Luo uusi tili - SyriaGPT",
+      "description": "Liity SyriaGPT-yhteisöön ja ala tutkia Syyrian kontekstiin suunnitellun tekoälyn voimaa."
+    },
+    "infoPanel": {
+      "title": "Liity SyriaGPT-yhteisöön",
+      "description": "Löydä erityisesti Syyrian kulttuuria ja kontekstia varten suunnitellun tekoälyn voima",
+      "features": [
+        {
+          "title": "Edistynyt tekoäly",
+          "description": "Nykyaikaiset tekniikat, jotka on koulutettu arabian- ja syyriankielisellä sisällöllä"
+        },
+        {
+          "title": "Taattu turvallisuus ja yksityisyys",
+          "description": "Edistynyt suojaus tiedoillesi maailmanluokan salauksella"
+        },
+        {
+          "title": "Aktiivinen yhteisö",
+          "description": "Liity tuhansien tekniikasta intohimoisten syyrialaisten käyttäjien joukkoon"
+        },
+        {
+          "title": "Yksinoikeudelliset ominaisuudet",
+          "description": "Mukautetut työkalut syyrialaiselle ja arabialaiselle sisällölle"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT on muuttanut täysin työskentelytapani. Syvällinen ymmärrys syyrialaisesta kielestä ja kulttuurista.\"",
+        "author": "- Ahmed Al-Shami, kehittäjä"
+      }
+    },
+    "form": {
+      "title": "Luo uusi tili",
+      "description": "Täytä seuraavat tiedot luodaksesi tilisi",
+      "firstName": "Etunimi",
+      "lastName": "Sukunimi",
+      "email": "Sähköpostiosoite",
+      "password": "Salasana",
+      "confirmPassword": "Vahvista salasana",
+      "placeholder": "Syötä {field}...",
+      "emailPlaceholder": "esimerkki@email.com",
+      "passwordStrength": "Salasanan vahvuus",
+      "strengthLevels": [
+        "Erittäin heikko",
+        "Heikko",
+        "Keskivahva",
+        "Vahva",
+        "Erittäin vahva"
+      ],
+      "submitButton": "Luo uusi tili",
+      "loadingButton": "Luodaan tiliä...",
+      "googleButton": "Rekisteröidy Googlella",
+      "orSeparator": "tai",
+      "hasAccount": "Onko sinulla jo tili?",
+      "loginLink": "Kirjaudu sisään",
+      "termsAgreement": "Luomalla tilin hyväksyt",
+      "termsLink": "Käyttöehdot",
+      "and": "ja",
+      "privacyLink": "Tietosuojakäytännön",
+      "successAlert": "Tilisi on luotu onnistuneesti! Tervetuloa SyriaGPT:hen"
+    },
+    "validation": {
+      "minLength": "On oltava vähintään 2 merkkiä",
+      "maxLength": "Liian pitkä",
+      "emailRequired": "Sähköposti vaaditaan",
+      "emailInvalid": "Virheellinen sähköpostiosoite",
+      "passwordLength": "Salasanan on oltava vähintään 8 merkkiä",
+      "passwordComplexity": "On sisällettävä iso kirjain, pieni kirjain ja numero",
+      "passwordMismatch": "Salasanat eivät täsmää"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Nollaa salasana - SyriaGPT",
+      "description": "Aseta uusi, vahva salasana SyriaGPT-tilillesi."
+    },
+    "form": {
+      "title": "Aseta uusi salasana",
+      "description": "Valitse vahva salasana suojataksesi tiliäsi.",
+      "newPasswordLabel": "Uusi salasana",
+      "confirmPasswordLabel": "Vahvista salasana",
+      "passwordMismatchError": "Salasanat eivät täsmää.",
+      "submitButton": "Päivitä salasana",
+      "loadingButton": "Päivitetään...",
+      "showPasswordAria": "Näytä salasana",
+      "hidePasswordAria": "Piilota salasana",
+      "mismatchToast": "Varmista, että salasanat täsmäävät.",
+      "loadingToast": "Päivitetään salasanaa...",
+      "successToast": "Salasana päivitetty onnistuneesti!"
+    },
+    "strengthIndicator": {
+      "title": "Vahvuus",
+      "levels": [
+        "Erittäin heikko",
+        "Heikko",
+        "Hyväksyttävä",
+        "Hyvä",
+        "Vahva",
+        "Erittäin vahva"
+      ]
+    },
+    "successScreen": {
+      "title": "Onnistui!",
+      "description": "Salasanasi on päivitetty. Voit nyt kirjautua sisään turvallisesti uusilla tunnuksillasi.",
+      "backToLoginButton": "Takaisin sisäänkirjautumiseen"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Asetukset - SyriaGPT",
+      "description": "Mukauta SyriaGPT-kokemustasi, hallinnoi ulkoasua, kieltä, ilmoituksia ja tietoja."
+    },
+    "header": {
+      "title": "SyriaGPT-asetukset",
+      "description": "Mukauta henkilökohtaista kokemustasi",
+      "unsavedChanges": "Tallentamattomat muutokset"
+    },
+    "appearance": {
+      "title": "Ulkoasu ja näyttö",
+      "description": "Mukauta sovelluksen ulkoasua ja tuntumaa mieltymystesi mukaan",
+      "theme": "Teeman tyyli",
+      "themes": {
+        "light": { "label": "Vaalea", "description": "Ihanteellinen päiväkäyttöön" },
+        "dark": {
+          "label": "Tumma",
+          "description": "Helppo silmille yöllä"
+        },
+        "system": {
+          "label": "Järjestelmä",
+          "description": "Noudattaa laitteen asetuksia"
+        }
+      },
+      "preview": {
+        "title": "Esikatsele muutoksia",
+        "description": "Katso muutosten live-esikatselu ennen tallentamista",
+        "new": "UUSI"
+      }
+    },
+    "language": {
+      "title": "Kieli ja alue",
+      "description": "Aseta kieli- ja alueasetukset",
+      "interfaceLanguage": {
+        "title": "Käyttöliittymän kieli",
+        "description": "Valikoissa ja interaktiivisissa elementeissä käytetty kieli",
+        "badge": "Auto"
+      },
+      "languages": {
+        "ar": "العربية (Syyria)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Ilmoitukset ja äänet",
+      "description": "Hallitse hälytyksiä ja äänitehosteita",
+      "enableNotifications": {
+        "title": "Ota ilmoitukset käyttöön",
+        "description": "Vastaanota hälytyksiä viesteistä ja tärkeistä päivityksistä"
+      },
+      "sounds": {
+        "title": "Äänet",
+        "description": "Toista ääniä viestejä lähetettäessä ja vastaanotettaessa"
+      }
+    },
+    "dataManagement": {
+      "title": "Tietojen hallinta",
+      "description": "Hallitse tietojesi tallentamista ja jakamista",
+      "autoSave": {
+        "title": "Automaattinen tallennus",
+        "description": "Tallenna keskustelusi automaattisesti, jotta voit palata niihin myöhemmin"
+      },
+      "exportData": "Vie tiedot",
+      "clearHistory": "Tyhjennä keskustelut"
+    },
+    "advanced": {
+      "title": "Lisäasetukset",
+      "description": "Lisäasetukset ammattikäyttäjille",
+      "developerMode": {
+        "title": "Kehittäjätila",
+        "description": "Näytä lisätietoja ja kehitysasetuksia",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Analytiikka",
+        "description": "Auta parantamaan palvelua lähettämällä anonyymejä käyttötietoja"
+      }
+    },
+    "saveBar": {
+      "title": "Haluatko tallentaa muutokset?",
+      "description": "Uudet asetukset otetaan käyttöön välittömästi",
+      "reset": "Nollaa",
+      "save": "Tallenna muutokset",
+      "saving": "Tallennetaan...",
+      "success": "Asetukset tallennettu onnistuneesti!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Vahvista historian poisto",
+        "message": "Oletko varma? Kaikki aiemmat keskustelusi poistetaan pysyvästi. Tätä toimenpidettä ei voi peruuttaa.",
+        "confirm": "Kyllä, poista",
+        "success": "Keskusteluhistoria tyhjennetty onnistuneesti."
+      },
+      "exportData": {
+        "title": "Vie tiedot",
+        "message": "Kopio kaikista tiedoistasi luodaan ja lähetetään sähköpostiisi. Haluatko jatkaa?",
+        "confirm": "Kyllä, jatka",
+        "success": "Viedään tietojasi..."
+      },
+      "cancel": "Peruuta"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Käyttöehdot - SyriaGPT",
+      "description": "Lue SyriaGPT-palveluiden käyttöehdot."
+    },
+    "header": {
+      "switchLanguage": "Vaihda arabiaksi",
+      "print": "Tulosta"
+    },
+    "title": "Käyttöehdot",
+    "subtitle": "Viimeksi päivitetty: 24. elokuuta 2025",
+    "intro": "Tervetuloa SyriaGPT:hen. Käyttämällä palveluitamme hyväksyt nämä ehdot. Lue ne huolellisesti.",
+    "sectionsTitle": "Osat",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Ehtojen hyväksyminen",
+        "content": "Käyttämällä SyriaGPT:tä sitoudut noudattamaan näitä käyttöehtoja. Jos et hyväksy jotakin näiden ehtojen osaa, sinun ei tule käyttää palveluitamme."
+      },
+      {
+        "id": "services",
+        "title": "2. Palveluiden kuvaus",
+        "content": "SyriaGPT on tekoälyavustaja, joka on suunniteltu tarjoamaan apua eri aloilla, jotka liittyvät Syyrian kontekstiin."
+      },
+      {
+        "id": "usage",
+        "title": "3. Hyväksyttävä käyttö",
+        "content": "Sinun on käytettävä palveluitamme laillisesti ja eettisesti. Palvelun käyttö laittomiin tai haitallisiin tarkoituksiin on kielletty."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Yksityisyys ja tiedot",
+        "content": "Kunnioitamme yksityisyyttäsi ja olemme sitoutuneet suojaamaan tietojasi. Keräämme vain palvelun tarjoamiseen tarvittavia tietoja emmekä jaa niitä ilman suostumustasi."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Immateriaalioikeudet",
+        "content": "Kaikki oikeudet pidätetään SyriaGPT:lle. Sisältö, suunnittelu ja logot ovat omaisuuttamme. Palvelun avulla luomasi sisältö pysyy sinun."
+      },
+      {
+        "id": "liability",
+        "title": "6. Vastuuvapauslauseke",
+        "content": "Palvelu tarjotaan \"sellaisenaan\" ilman mitään takuita. Emme takaa annettujen tietojen tarkkuutta tai täydellisyyttä emmekä ole vastuussa mistään vahingoista, jotka johtuvat sen käytöstä."
+      },
+      {
+        "id": "termination",
+        "title": "7. Palvelun päättäminen",
+        "content": "Pidätämme oikeuden päättää tai keskeyttää tilisi näiden ehtojen rikkomisen tai haitallisen tai laittoman käytöksen sattuessa."
+      },
+      {
+        "id": "contact",
+        "title": "8. Ota yhteyttä",
+        "content": "Jos sinulla on kysyttävää näistä ehdoista, ota meihin yhteyttä sähköpostitse: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Olen lukenut ja hyväksyn ehdot",
+    "continueButton": "Jatka",
+    "backToTop": "Takaisin ylös",
+    "expandAll": "Laajenna kaikki",
+    "collapseAll": "Pienennä kaikki",
+    "readingProgress": "Lukemisen edistyminen",
+    "copyright": "© {year} SyriaGPT. Kaikki oikeudet pidätetään."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Päivitä Pro-versioon - SyriaGPT",
+      "description": "Nauti rajattomista ominaisuuksista, ylivoimaisesta nopeudesta ja ensisijaisesta pääsystä uusiin ominaisuuksiin SyriaGPT Pro:lla."
+    },
+    "header": {
+      "title": "Päivitä Pro-versioon",
+      "description": "Nauti rajattomista ominaisuuksista, ylivoimaisesta nopeudesta ja ensisijaisesta pääsystä uusiin ominaisuuksiin"
+    },
+    "stats": [
+      { "value": "10x", "label": "Nopeampi vastaus" },
+      { "value": "∞", "label": "Rajattomat viestit" },
+      { "value": "24/7", "label": "Jatkuva tuki" }
+    ],
+    "billingToggle": {
+      "monthly": "Kuukausittain",
+      "yearly": "Vuosittain",
+      "saving": "Säästä 20 %"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Ilmainen suunnitelma",
+        "subtitle": "Nykyinen suunnitelma",
+        "price": "0 $",
+        "period": "Elinikäinen",
+        "features": [
+          "Pääsy perusmalliin",
+          "20 viestiä päivässä",
+          "Vakionopeus",
+          "Perusominaisuudet"
+        ],
+        "buttonText": "Nykyinen suunnitelmasi"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Ammattilaisille ja yrityksille",
+        "priceMonthly": "10 $",
+        "priceYearly": "96 $",
+        "periodMonthly": "kuukaudessa",
+        "periodYearly": "vuodessa",
+        "popular": "Suosituin",
+        "features": [
+          "Edistynyt GPT-4-malli",
+          "Rajattomat viestit",
+          "Ylivoimainen vastausnopeus",
+          "Ensisijainen pääsy uusiin ominaisuuksiin",
+          "Erikoistunut tekninen tuki",
+          "Parannettu käyttöliittymä ilman mainoksia"
+        ],
+        "buttonText": "Päivitä nyt"
+      }
+    },
+    "comparison": {
+      "title": "Vertaa suunnitelmia",
+      "featureHeader": "Ominaisuudet",
+      "freeHeader": "Ilmainen",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Pääsy perusmalliin", "free": true, "pro": true },
+        { "text": "Rajoitetut päivittäiset viestit (20)", "free": true, "pro": false },
+        { "text": "Rajattomat viestit", "free": false, "pro": true },
+        {
+          "text": "Pääsy edistyneeseen GPT-4-malliin",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Vakionopeus", "free": true, "pro": false },
+        {
+          "text": "Ylivoimainen vastausnopeus (10x nopeampi)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Ensisijainen pääsy uusiin ominaisuuksiin",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Erikoistunut tekninen tuki",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Käyttöliittymä ilman mainoksia", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Usein kysytyt kysymykset",
+      "toggleOpen": "Lue lisää",
+      "toggleClose": "Sulje",
+      "items": [
+        {
+          "question": "Voinko peruuttaa tilaukseni milloin tahansa?",
+          "answer": "Kyllä, tietysti. Voit peruuttaa Pro-suunnitelman tilauksesi milloin tahansa \"Tilin hallinta\" -sivulta. Sinulla on edelleen pääsy Pro-ominaisuuksiin nykyisen laskutuskauden loppuun asti, eikä uusia maksuja veloiteta."
+        },
+        {
+          "question": "Mitä maksutapoja hyväksytään?",
+          "answer": "Hyväksymme kaikki yleisimmät luotto- ja pankkikortit (Visa, MasterCard, American Express) sekä Sham Cashin ja paikalliset e-lompakot. Kaikki maksut käsitellään turvallisesti ja salatusti kumppanimme Stripen kautta."
+        },
+        {
+          "question": "Mitä tapahtuu vuosittaisen laskutuskauden lopussa?",
+          "answer": "Vuosittainen tilauksesi uusitaan automaattisesti, ellet peruuta sitä tilisi asetuksista. Lähetämme sinulle muistutussähköpostin viikkoa ennen uusimispäivää, jossa on tiedot erääntyvästä summasta."
+        },
+        {
+          "question": "Voinko saada hyvityksen?",
+          "answer": "Kyllä, tarjoamme täyden 30 päivän rahat takaisin -takuun tilauspäivästä, jos et ole tyytyväinen palveluun mistä tahansa syystä. Ota vain yhteyttä tukitiimiimme, niin käsittelemme hyvityspyyntösi välittömästi."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Oletko valmis aloittamaan?",
+      "description": "Liity tuhansien käyttäjien joukkoon, jotka ovat valinneet SyriaGPT Pron ylivoimaiseen tekoälykokemukseen",
+      "buttonText": "Aloita nyt hintaan {price}",
+      "guarantee": "30 päivän täysi rahat takaisin -takuu"
+    },
+    "alert": "Sinut ohjataan maksusivulle..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Vahvista sähköposti - SyriaGPT",
+      "description": "Syötä sähköpostiisi lähetetty vahvistuskoodi vahvistaaksesi SyriaGPT-tilisi."
+    },
+    "header": {
+      "title": "Vahvista sähköpostisi",
+      "description": "Syötä vahvistuskoodi, joka on lähetetty osoitteeseen"
+    },
+    "form": {
+      "label": "6-numeroinen vahvistuskoodi",
+      "verifyButton": "Vahvista koodi",
+      "verifyingButton": "Vahvistetaan...",
+      "resend": {
+        "question": "Etkö saanut koodia?",
+        "resendButton": "Lähetä koodi uudelleen",
+        "resendingButton": "Lähetetään uudelleen...",
+        "cooldown": "Lähetä uudelleen {seconds} sekunnin kuluttua"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Vahvistus onnistui!",
+        "description": "Sähköpostisi on vahvistettu onnistuneesti",
+        "redirecting": "Ohjataan hallintapaneeliin..."
+      },
+      "error": {
+        "title": "Vahvistus epäonnistui",
+        "tryAgainButton": "Yritä uudelleen"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Syötä 6-numeroinen vahvistuskoodi",
+      "invalidCode": "Virheellinen vahvistuskoodi. Yritä uudelleen.",
+      "generic": "Vahvistuksen aikana tapahtui virhe. Yritä uudelleen.",
+      "resendFailed": "Vahvistuskoodin lähettäminen epäonnistui. Yritä uudelleen."
+    },
+    "backToLogin": "Takaisin sisäänkirjautumiseen",
+    "securityNote": {
+      "title": "Turvallisuushuomautus:",
+      "points": [
+        "Älä jaa vahvistuskoodia kenenkään kanssa",
+        "Vahvistuskoodi on voimassa vain 10 minuuttia",
+        "Tarkista lähettäjän sähköpostiosoite"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Uusi vahvistuskoodi on lähetetty sähköpostiisi"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Tapahtui virhe - SyriaGPT",
+      "description": "Mukautettu virhesivu SyriaGPT-projektille."
+    },
+    "offlineMessage": "Olet tällä hetkellä offline-tilassa",
+    "errorCode": "Virhe {statusCode}",
+    "title": "Tapahtui odottamaton virhe",
+    "description": "Pahoittelemme vilpittömästi häiriötä. Tekninen tiimimme on saanut ilmoituksen ja työskentelee ongelman ratkaisemiseksi mahdollisimman nopeasti.",
+    "retryButton": "Yritä uudelleen",
+    "retryingButton": "Yritetään uudelleen...",
+    "homeButton": "Koti",
+    "backButton": "Takaisin",
+    "suggestionsTitle": "Mitä voit kokeilla nyt:",
+    "suggestion1": "Sivun päivittäminen saattaa ratkaista ongelman.",
+    "suggestion2": "Tarkista internet-yhteytesi.",
+    "suggestion3": "Jos ongelma jatkuu, ota rohkeasti yhteyttä meihin.",
+    "accordion": {
+      "title": "Tekniset tiedot kehittäjille",
+      "copy": "Kopioi",
+      "copied": "Kopioitu",
+      "code": "Koodi:",
+      "message": "Viesti:",
+      "digest": "Tiiviste:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Sivua ei löytynyt - SyriaGPT",
+      "description": "Etsimääsi sivua ei ole olemassa tai se on siirretty."
+    },
+    "title": "Näyttää siltä, että olet eksynyt sivuille!",
+    "description": "Etsimääsi sivua ei ole olemassa tai se on siirretty",
+    "currentLocation": "Nykyinen sijainti: Tuntematon",
+    "search": {
+      "placeholder": "Etsi haluamaasi sivua...",
+      "button": "Hae",
+      "searching": "Haetaan..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Edellinen sivu",
+        "description": "Palaa takaisin, mistä tulit"
+      },
+      "homePage": {
+        "title": "Etusivu",
+        "description": "Aloita alusta"
+      }
+    },
+    "suggestions": {
+      "title": "Sivut, jotka saattavat kiinnostaa sinua",
+      "items": [
+        { "title": "Etusivu", "description": "Palaa alkuun" },
+        { "title": "Keskustelu", "description": "Aloita uusi keskustelu" },
+        { "title": "Ohje", "description": "Hanki apua" },
+        { "title": "Tietoja Syyriasta", "description": "Löydä lisää" }
+      ]
+    },
+    "history": {
+      "title": "Äskettäin vieraillut sivut"
+    },
+    "funFact": {
+      "title": "Kun etsit tietäsi...",
+      "facts": [
+        "Tiesitkö? Damaskos on maailman vanhin jatkuvasti asuttu pääkaupunki!",
+        "Tiesitkö? Historian ensimmäinen aakkosto keksittiin Ugaritissa, Syyriassa!",
+        "Tiesitkö? Aleppon pistaasipuu voi elää yli 300 vuotta!",
+        "Tiesitkö? Krak des Chevaliers Syyriassa on yksi maailman parhaiten säilyneistä linnoista!",
+        "Tiesitkö? Damaskonruusua pidetään yhtenä maailman hienoimmista ruusulajeista!"
+      ]
+    },
+    "support": {
+      "message": "Jos uskot tämän olevan virhe, ota meihin yhteyttä",
+      "helpCenter": "Ohjekeskus",
+      "technicalSupport": "Tekninen tuki"
+    }
+  },
+  "loader": {
+    "title": "ladataan...",
+    "loading": "Odota hetki..."
+  }
+}

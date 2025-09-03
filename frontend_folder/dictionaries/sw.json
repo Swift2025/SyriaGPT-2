@@ -1,0 +1,1031 @@
+{
+  "sidebar": {
+    "tagline": "Akili Bandia ya Syria",
+    "newChat": "Soga Mpya",
+    "pastConversations": "Mazungumzo Yaliyopita",
+    "lightMode": "Hali ya Mwangaza",
+    "darkMode": "Hali ya Giza",
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "userName": "Mtumiaji wa Syria",
+    "userEmail": "mtumiaji@syriagpt.com",
+    "profile": "Wasifu",
+    "settings": "Mipangilio",
+    "upgradeToPro": "Boresha hadi Pro",
+    "newBadge": "MPYA",
+    "helpCenter": "Kituo cha Msaada",
+    "aboutApp": "Kuhusu Programu",
+    "logout": "Ondoka",
+    "logoutModal": {
+      "title": "Thibitisha Kuondoka",
+      "description": "Una uhakika unataka kuondoka kwenye akaunti yako?",
+      "cancel": "Ghairi",
+      "confirm": "Ndio, Ondoka"
+    },
+    "languageSelector": {
+  "title": "Language",
+  "languages": {
+    "am": { "name": "አማርኛ", "country": "ET" },
+    "ar": { "name": "العربية", "country": "SA" },
+    "az": { "name": "Azərbaycanca", "country": "AZ" },
+    "bg": { "name": "Български", "country": "BG" },
+    "bn": { "name": "বাংলা", "country": "BD" },
+    "ca": { "name": "Català", "country": "ES-CT" },
+    "cs": { "name": "Čeština", "country": "CZ" },
+    "da": { "name": "Dansk", "country": "DK" },
+    "de": { "name": "Deutsch", "country": "DE" },
+    "el": { "name": "Ελληνικά", "country": "GR" },
+    "en": { "name": "English", "country": "GB" },
+    "es": { "name": "Español", "country": "ES" },
+    "fa": { "name": "فارسی", "country": "IR" },
+    "fi": { "name": "Suomi", "country": "FI" },
+    "fr": { "name": "Français", "country": "FR" },
+    "gu": { "name": "ગુજરાતી", "country": "IN" },
+    "ha": { "name": "Hausa", "country": "NG" },
+    "he": { "name": "עברית", "country": "IL" },
+    "hi": { "name": "हिन्दी", "country": "IN" },
+    "hu": { "name": "Magyar", "country": "HU" },
+    "hy": { "name": "Հայերեն", "country": "AM" },
+    "id": { "name": "Bahasa Indonesia", "country": "ID" },
+    "it": { "name": "Italiano", "country": "IT" },
+    "ja": { "name": "日本語", "country": "JP" },
+    "ka": { "name": "ქართული", "country": "GE" },
+    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+    "ko": { "name": "한국어", "country": "KR" },
+    "mr": { "name": "मराठी", "country": "IN" },
+    "ms": { "name": "Bahasa Melayu", "country": "MY" },
+    "nl": { "name": "Nederlands", "country": "NL" },
+    "no": { "name": "Norsk", "country": "NO" },
+    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+    "pl": { "name": "Polski", "country": "PL" },
+    "pt": { "name": "Português", "country": "PT" },
+    "ro": { "name": "Română", "country": "RO" },
+    "ru": { "name": "Русский", "country": "RU" },
+    "sq": { "name": "Shqip", "country": "AL" },
+    "sr": { "name": "Српски", "country": "RS" },
+    "sv": { "name": "Svenska", "country": "SE" },
+    "sw": { "name": "Kiswahili", "country": "KE" },
+    "ta": { "name": "தமிழ்", "country": "IN" },
+    "te": { "name": "తెలుగు", "country": "IN" },
+    "th": { "name": "ไทย", "country": "TH" },
+    "tl": { "name": "Tagalog", "country": "PH" },
+    "tr": { "name": "Türkçe", "country": "TR" },
+    "uk": { "name": "Українська", "country": "UA" },
+    "ur": { "name": "اردو", "country": "PK" },
+    "vi": { "name": "Tiếng Việt", "country": "VN" },
+    "yo": { "name": "Yorùbá", "country": "NG" },
+    "zh": { "name": "简体中文", "country": "CN" }
+  }
+}
+  },
+  "mainContent": {
+    "welcome": {
+      "title": "SyriaGPT",
+      "tagline": "Msaidizi wako mwerevu kujibu maswali yako yote",
+      "examples": "Mifano",
+      "capabilities": "Uwezo",
+      "limitations": "Mapungufu",
+      "suggestions": {
+        "examples": [
+          "Eleza jinsi ya kupata kitambulisho kwa urahisi",
+          "Nipe kozi zilizoidhinishwa katika Chuo Kikuu cha Dameski",
+          "Viungo vya Mahshi ni vipi?"
+        ],
+        "capabilities": [
+          "Jinsi ya kutengeneza bamia na uhusiano wake wa kihistoria?",
+          "Mipango ya pasipoti ya Syria ni ipi?",
+          "Nahitaji habari kuhusu uwekezaji"
+        ],
+        "limitations": [
+          "Jinsi ya kutatua tatizo la kompyuta?",
+          "Masharti ya usajili katika Chuo Kikuu cha Aleppo ni yapi?",
+          "Nipe muhtasari wa habari za leo nchini Syria"
+        ]
+      }
+    },
+    "message": {
+      "typing": "Inaandika..."
+    },
+    "regenerate": "Tengeneza Jibu Upya",
+    "input": {
+      "placeholder": "Andika ujumbe wako hapa, au buruta faili ili kuambatisha...",
+      "attachFile": "Ambatisha Faili",
+      "startRecording": "Anza Kurekodi",
+      "stopRecording": "Acha Kurekodi",
+      "removeFile": "Ondoa Faili"
+    },
+    "dragDrop": {
+      "title": "Achia faili hapa",
+      "subtitle": "PDF, Word, Nakala (Upeo 10MB)"
+    },
+    "speechErrors": {
+      "unsupported": "Utambuzi wa sauti hauhimiliwi katika kivinjari hiki. Tafadhali tumia Chrome au Edge.",
+      "permissionDenied": "Tafadhali ruhusu ufikiaji wa maikrofoni katika mipangilio ya kivinjari chako.",
+      "startFailed": "Imeshindwa kuanza kurekodi. Angalia mipangilio ya kivinjari chako.",
+      "generalError": "Hitilafu ilitokea wakati wa kuanza kurekodi. Tafadhali jaribu tena.",
+      "no-speech": "Hakuna sauti iliyogunduliwa. Hakikisha sauti yako iko wazi na maikrofoni iko karibu.",
+      "audio-capture": "Haiwezi kufikia maikrofoni. Hakikisha imeunganishwa na ruhusa imetolewa.",
+      "not-allowed": "Ruhusa ilikataliwa. Tafadhali ruhusu matumizi ya maikrofoni kutoka kwa mipangilio ya kivinjari.",
+      "network": "Hitilafu ya mtandao. Tafadhali angalia muunganisho wako wa intaneti.",
+      "service-not-allowed": "Huduma ya utambuzi wa sauti haipatikani kwa sasa.",
+      "language-not-supported": "Lugha haihimiliwi. Jaribu kivinjari cha Chrome."
+    },
+    "footer": "Lengo letu ni kufanya mifumo ya AI iwe ya asili na salama zaidi kuingiliana nayo"
+  },
+  "chat": {
+    "fileAnalysisError": "Samahani, hitilafu ilitokea wakati wa kuchambua faili: {error}",
+    "responseProcessingError": "Samahani, hitilafu ilitokea wakati wa kushughulikia jibu.",
+    "networkError": "Samahani, hitilafu ya muunganisho ilitokea. Tafadhali angalia muunganisho wako wa intaneti."
+  },
+  "aboutPage": {
+    "metadata": {
+      "title": "Kuhusu Mradi wa SyriaGPT",
+      "description": "Jifunze kuhusu malengo na maono ya mradi wa SyriaGPT, msaidizi mwerevu aliyebobea katika muktadha wa Syria."
+    },
+    "header": {
+      "title": "Jamhuri ya Kiarabu ya Syria",
+      "subtitle": "JAMHURI YA KIARABU YA SYRIA",
+      "mapText": "Syria.. ni Moyo"
+    },
+    "main": {
+      "p1": "Huu ni mradi wa kitaifa waanzilishi uliochukuliwa na serikali ya Syria, unaolenga kuendeleza mfumo wa lugha ya Kiarabu wa hali ya juu wenye mwelekeo maalum katika lahaja ya Syria. Lengo la mradi huu ni kuwa jukwaa la maarifa na huduma linalosaidia raia kuingiliana na huduma za serikali na sekta za umma na binafsi kwa urahisi na usalama, ukiwapa majibu sahihi na ya kuaminika kuhusu taratibu, sheria, na habari za jumla.",
+      "p2": "Unatofautishwa na mwelekeo wake katika lugha ya ndani na uwezo wa kuelewa lahaja pamoja na Kiarabu sanifu, na kuufanya uwe karibu na mtumiaji katika maisha yake ya kila siku. Mradi huu pia unahakikisha usiri wa data kwa kuhifadhiwa katika vituo vya data vya kitaifa na unafanya kazi kulingana na viwango vya juu vya usalama na kutopendelea upande wowote ili kuhakikisha matokeo ni sahihi na hayana upendeleo. Umeundwa ili uweze kuunganishwa na milango ya serikali ya kielektroniki, programu rasmi, na vituo vya simu, hivyo basi kuwa hatua ya msingi kuelekea kuimarisha mabadiliko ya kidijitali nchini Syria.",
+      "p3": "Mradi unalenga kutumikia maeneo mengi kama vile kurahisisha taratibu za serikali, kusaidia elimu, kurahisisha miongozo ya afya, kusaidia biashara ndogo ndogo, na kusambaza ujumbe wa dharura haraka na kwa uwazi. Hivyo basi, unawakilisha hatua kubwa ya ubora katika jinsi raia wanavyopata habari, ambapo mwingiliano katika lugha ya asili unakuwa njia kuu ya kurahisisha miamala na kuwaleta raia karibu na taasisi za serikali."
+    },
+    "footer": {
+      "backButton": "Rudi kwenye Soga",
+      "disclaimer": "Lengo letu ni kufanya mifumo ya AI iwe ya asili na salama zaidi kuingiliana nayo, kulingana na muktadha wa Syria na mahitaji ya watumiaji wake. Maoni na mapendekezo yako yatatusaidia kuboresha na kuendeleza huduma ili kukuhudumia vizuri zaidi."
+    }
+  },
+  "forgotPasswordPage": {
+    "metadata": {
+      "title": "Umesahau Nenosiri",
+      "description": "Pata tena ufikiaji wa akaunti yako ya SyriaGPT kwa hatua rahisi na salama."
+    },
+    "infoPanel": {
+      "title": "Rejesha Akaunti Yako kwa Usalama",
+      "description": "Tuko hapa kukusaidia kupata tena ufikiaji wa akaunti yako kwa hatua rahisi na salama.",
+      "steps": {
+        "step1": {
+          "title": "Weka barua pepe yako",
+          "description": "Barua pepe iliyosajiliwa na akaunti yako ya SyriaGPT"
+        },
+        "step2": {
+          "title": "Angalia barua pepe yako",
+          "description": "Tutakutumia kiungo salama ili kuweka upya nenosiri lako"
+        },
+        "step3": {
+          "title": "Unda nenosiri jipya",
+          "description": "Chagua nenosiri dhabiti na salama kwa akaunti yako"
+        }
+      },
+      "securityTip": {
+        "title": "Dokezo la Usalama",
+        "description": "Kiungo ni halali kwa dakika 15 tu ili kuhakikisha usalama wa akaunti yako. Ikiwa huoni barua pepe, angalia folda yako ya taka."
+      }
+    },
+    "form": {
+      "title": "Umesahau Nenosiri",
+      "description": "Weka barua pepe yako ili kupokea kiungo cha urejeshaji",
+      "emailLabel": "Anwani ya Barua Pepe",
+      "emailPlaceholder": "Weka barua pepe yako...",
+      "emailRequiredAlert": "Tafadhali weka anwani yako ya barua pepe.",
+      "submitButton": "Tuma Kiungo cha Urejeshaji",
+      "loadingButton": "Inatuma...",
+      "rememberedPassword": "Umekumbuka nenosiri lako?",
+      "backToLogin": "Rudi Kuingia"
+    },
+    "successScreen": {
+      "title": "Maelekezo Yametumwa",
+      "checkEmailTitle": "Angalia Barua Pepe Yako",
+      "description": "Tumetuma kiungo cha kurejesha nenosiri kwa:",
+      "tip1": "Angalia kikasha chako",
+      "tip2": "Usisahau kuangalia folda yako ya taka",
+      "tip3": "Kiungo ni halali kwa dakika 15 tu",
+      "backToLoginButton": "Rudi Kuingia"
+    }
+  },
+  "helpPage": {
+    "metadata": {
+      "title": "Kituo cha Msaada - SyriaGPT",
+      "description": "Pata majibu ya maswali yako, miongozo ya watumiaji, na wasiliana na timu ya usaidizi ya SyriaGPT."
+    },
+    "header": {
+      "title": "Kituo cha Msaada",
+      "description": "Karibu kwenye kituo cha usaidizi cha SyriaGPT! Tuko hapa kukusaidia kupata uzoefu bora zaidi."
+    },
+    "search": {
+      "placeholder": "Tafuta majibu, miongozo ya watumiaji, au uliza swali..."
+    },
+    "categories": {
+      "title": "Vinjari kwa Kategoria",
+      "items": [
+        {
+          "title": "Kuanza",
+          "description": "Jifunze misingi ya kutumia jukwaa na unufaike na vipengele vyote vinavyopatikana."
+        },
+        {
+          "title": "Usimamizi wa Akaunti",
+          "description": "Hariri wasifu wako, simamia usajili, na mipangilio yako ya usalama."
+        },
+        {
+          "title": "Vipengele vya Hali ya Juu",
+          "description": "Tumia viambatisho vya faili, utafutaji wa sauti, na akili bandia ya hali ya juu."
+        },
+        {
+          "title": "Usalama na Faragha",
+          "description": "Jifunze jinsi ya kulinda data na taarifa zako za kibinafsi kwa viwango vya juu zaidi vya usalama."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Maswali Yanayoulizwa Mara kwa Mara",
+      "toggleOpen": "Soma Zaidi",
+      "toggleClose": "Funga",
+      "items": [
+        {
+          "question": "Ninawezaje kuanzisha soga mpya?",
+          "answer": "Ili kuanzisha soga mpya, bofya tu kitufe cha \"+ Soga Mpya\" juu ya upau wa kando. Unaweza pia kutumia njia ya mkato ya kibodi Ctrl+N kwa kuanza haraka."
+        },
+        {
+          "question": "Ni aina gani za faili ninaweza kuambatisha?",
+          "answer": "Unaweza kuambatisha faili za PDF, hati za Word (doc, docx), faili za PowerPoint, faili za maandishi (txt), na picha (jpg, png, gif). Ukubwa wa juu kwa faili moja ni MB 10, na unaweza kuambatisha hadi faili 5 kwa kila mazungumzo."
+        },
+        {
+          "question": "Je, mazungumzo yangu ya zamani yanahifadhiwa?",
+          "answer": "Ndio, mazungumzo yako ya zamani yanahifadhiwa kiotomatiki na kwa usalama kwenye akaunti yako. Unaweza kuyafikia kutoka kwenye orodha ya \"Mazungumzo Yaliyopita\" kwenye upau wa kando, yaliyopangwa kwa tarehe au mada."
+        },
+        {
+          "question": "Hali ya mwangaza na giza hufanyaje kazi?",
+          "answer": "Unaweza kubadilisha kati ya hali ya mwangaza na giza kwa kutumia kitufe maalum kwenye upau wa kando. Mfumo huhifadhi upendeleo wako kiotomatiki na kuutumia katika vipindi vyote vijavyo."
+        },
+        {
+          "question": "Kipengele cha sauti-kwa-maandishi ni nini?",
+          "answer": "Unaweza kutumia maikrofoni yako kwa imla ya sauti kwa Kiarabu au Kiingereza. Bofya ikoni ya maikrofoni kwenye upau wa kuingiza na anza kuongea. Mfumo utabadilisha hotuba yako kuwa maandishi kiotomatiki."
+        },
+        {
+          "question": "Ninaweza kutumia SyriaGPT kwenye simu yangu ya mkononi?",
+          "answer": "Ndio, SyriaGPT inapatikana kupitia kivinjari cha wavuti kwenye vifaa vyote mahiri. Kiolesura kinajibika kikamilifu na hufanya kazi kikamilifu kwenye simu na kompyuta kibao."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Hujapata unachotafuta?",
+      "description": "Timu yetu ya usaidizi iliyojitolea inapatikana saa zote kukusaidia. Wasiliana nasi na tutakujibu ndani ya dakika chache!",
+      "emailButton": "Wasiliana kupitia Barua Pepe",
+      "chatButton": "Soga ya Moja kwa Moja",
+      "phoneButton": "Simu",
+      "availability": "Inapatikana 24/7",
+      "responseTime": "Jibu ndani ya dakika 5",
+      "languageSupport": "Usaidizi wa Lugha ya Kiarabu"
+    }
+  },
+  "loginPage": {
+    "metadata": {
+      "title": "Ingia - SyriaGPT",
+      "description": "Ingia kwenye akaunti yako ya SyriaGPT ili kufikia mazungumzo yako na vipengele vya hali ya juu."
+    },
+    "infoPanel": {
+      "title": "Karibu Tena",
+      "description": "Endelea kuchunguza ulimwengu wa akili bandia ya Syria na",
+      "securityTitle": "Kwa nini SyriaGPT ni Salama?",
+      "features": [
+        {
+          "title": "Ulinzi wa Data wa Hali ya Juu",
+          "description": "Tunatumia teknolojia za hali ya juu za usimbaji fiche kulinda taarifa zako za kibinafsi"
+        },
+        {
+          "title": "Uthibitishaji wa Vipengele Viwili",
+          "description": "Safu ya ziada ya ulinzi ili kuhakikisha usalama wa akaunti yako"
+        },
+        {
+          "title": "Akili Bandia ya Ndani",
+          "description": "Teknolojia ya hali ya juu ya Syria inayoelewa utamaduni na muktadha wa Kiarabu"
+        }
+      ],
+      "stats": [
+        { "value": "50K+", "label": "Watumiaji Wanaofanya Kazi" },
+        { "value": "99.9%", "label": "Muda wa Upatikanaji" },
+        { "value": "24/7", "label": "Usaidizi" }
+      ]
+    },
+    "form": {
+      "title": "Ingia",
+      "description": "Weka vitambulisho vyako ili kufikia akaunti yako",
+      "emailLabel": "Anwani ya Barua Pepe",
+      "emailPlaceholder": "Weka barua pepe yako...",
+      "passwordLabel": "Nenosiri",
+      "passwordPlaceholder": "Weka nenosiri lako...",
+      "forgotPassword": "Umesahau nenosiri?",
+      "showPassword": "Onyesha nenosiri",
+      "hidePassword": "Ficha nenosiri",
+      "loginButton": "Ingia",
+      "loadingButton": "Inathibitisha...",
+      "loginSuccessAlert": "Umefanikiwa kuingia!",
+      "orSeparator": "au",
+      "noAccount": "Huna akaunti?",
+      "createAccount": "Fungua akaunti mpya"
+    }
+  },
+  "privacyPolicyPage": {
+    "metadata": {
+      "title": "Sera ya Faragha - SyriaGPT",
+      "description": "Jifunze jinsi data yako ya kibinafsi inavyokusanywa, kutumiwa, na kulindwa unapotumia huduma za SyriaGPT."
+    },
+    "header": {
+      "title": "Sera ya Faragha",
+      "lastUpdated": "Ilisasishwa Mwisho: Agosti 25, 2025",
+      "effectiveDate": "Inaanza Kutumika Mara Moja"
+    },
+    "infoCards": [
+      {
+        "title": "Ulinzi Kamili",
+        "description": "Data yako inalindwa na teknolojia za hivi karibuni za usimbaji fiche na usalama."
+      },
+      {
+        "title": "Udhibiti Kamili",
+        "description": "Unadhibiti data yako na unaweza kuifuta wakati wowote."
+      },
+      {
+        "title": "Uwazi Kamili",
+        "description": "Tunaeleza wazi tunachokusanya na jinsi tunavyokitumia."
+      },
+      {
+        "title": "Hakuna Uuzaji wa Data",
+        "description": "Hatuuzi au kushiriki data yako na wahusika wengine."
+      }
+    ],
+    "toc": {
+      "title": "Yaliyomo"
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Utangulizi",
+        "content": "Karibu SyriaGPT. Tunachukulia faragha yako kwa uzito. Sera hii inaelezea aina za taarifa tunazoweza kukusanya kutoka kwako au unazoweza kutoa unapotembelea au kutumia programu yetu, na desturi zetu za kukusanya, kutumia, kudumisha, kulinda, na kufichua taarifa hizo."
+      },
+      {
+        "id": "data-collection",
+        "title": "Taarifa Tunazokusanya",
+        "intro": "Tunaweza kukusanya aina kadhaa za taarifa kutoka na kuhusu watumiaji wa huduma yetu, ikiwa ni pamoja na:",
+        "points": [
+          "Taarifa unazotoa moja kwa moja: kama vile jina lako, barua pepe, na nenosiri unapofungua akaunti.",
+          "Maudhui ya mtumiaji: Ujumbe, maswali, na faili unazopakia kwenye huduma yetu kwa uchambuzi.",
+          "Taarifa za matumizi: Maelezo ya matumizi yako ya huduma yetu, ikiwa ni pamoja na data ya trafiki na kumbukumbu za matumizi.",
+          "Taarifa za kifaa: Aina ya kivinjari chako, mfumo wa uendeshaji, na anwani ya IP."
+        ]
+      },
+      {
+        "id": "data-usage",
+        "title": "Jinsi Tunavyotumia Taarifa Zako",
+        "intro": "Tunatumia taarifa tunazokusanya kukuhusu au unazotupatia kwa madhumuni yafuatayo:",
+        "points": [
+          "Kukupa huduma yetu na maudhui yake katika ubora bora zaidi.",
+          "Kuboresha na kubinafsisha uzoefu wako kulingana na mahitaji yako.",
+          "Kuwasiliana nawe kuhusu akaunti yako au huduma yetu na arifa muhimu.",
+          "Kwa madhumuni ya uchambuzi na utafiti ili kuboresha bidhaa na huduma zetu.",
+          "Kuhakikisha usalama wa jukwaa na kuzuia matumizi yasiyoidhinishwa."
+        ]
+      },
+      {
+        "id": "data-disclosure",
+        "title": "Ufichuaji wa Taarifa Zako",
+        "commitmentTitle": "Ahadi Yetu Kuu",
+        "commitmentText": "Hatuuzi au kukodisha taarifa zako za kibinafsi kwa wahusika wengine. Hii ni ahadi yetu ya msingi kwako.",
+        "content": "Tunaweza kufichua taarifa za kibinafsi tu katika kesi zifuatazo: kutii amri yoyote ya mahakama au sheria, au kulinda haki na usalama wa SyriaGPT na wateja wetu kutokana na vitisho vikubwa vya usalama."
+      },
+      {
+        "id": "data-security",
+        "title": "Usalama wa Data",
+        "protectionTitle": "Hatua za Ulinzi za Hali ya Juu:",
+        "points": [
+          "Usimbaji fiche wa mwisho-hadi-mwisho kwa data zote nyeti",
+          "Seva salama zilizolindwa na ngome za hali ya juu",
+          "Ufuatiliaji wa usalama 24/7 ili kugundua vitisho",
+          "Hifadhi rudufu za mara kwa mara na zilizosimbwa fiche ili kuhakikisha mwendelezo wa huduma",
+          "Upimaji wa usalama wa mara kwa mara na wataalam huru"
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "Haki Zako",
+        "intro": "Kama mtumiaji wa huduma yetu, una haki zifuatazo kuhusu data yako ya kibinafsi:",
+        "rights": [
+          {
+            "title": "Ufikiaji na Mapitio",
+            "description": "Omba nakala ya data yako yote iliyohifadhiwa nasi"
+          },
+          {
+            "title": "Marekebisho na Usasishaji",
+            "description": "Rekebisha au sahihisha taarifa yoyote isiyo sahihi"
+          },
+          {
+            "title": "Ufutaji Kamili",
+            "description": "Futa kabisa akaunti yako na data yako yote"
+          },
+          {
+            "title": "Uhamishaji na Usafirishaji",
+            "description": "Hamisha data yako katika umbizo linalosomeka"
+          }
+        ]
+      },
+      {
+        "id": "policy-changes",
+        "title": "Mabadiliko kwenye Sera",
+        "content": "Sera yetu ni kukuarifu kuhusu mabadiliko yoyote muhimu siku 30 kabla ya kuanza kutumika. Mabadiliko yoyote yatachapishwa kwenye ukurasa huu na tarehe ya marekebisho iliyosasishwa. Tunakuhimiza upitie sera hii mara kwa mara ili uendelee kufahamishwa jinsi tunavyolinda taarifa zako."
+      },
+      {
+        "id": "contact",
+        "title": "Wasiliana Nasi",
+        "email": "Barua Pepe",
+        "phone": "Simu",
+        "availability": "Timu ya faragha inapatikana kujibu maswali yako kutoka Jumapili hadi Alhamisi, saa 3 asubuhi - 12 jioni"
+      }
+    ]
+  },
+  "profilePage": {
+    "metadata": {
+      "title": "Wasifu - SyriaGPT",
+      "description": "Simamia taarifa zako za kibinafsi, mipangilio ya usalama, na mpango wa usajili katika SyriaGPT."
+    },
+    "header": {
+      "title": "Wasifu",
+      "description": "Simamia taarifa zako za kibinafsi na mipangilio ya akaunti katika SyriaGPT"
+    },
+    "sidebar": {
+      "avatarAlt": "Picha ya Wasifu",
+      "changeAvatar": "Badilisha picha ya wasifu",
+      "joinDate": "Tarehe ya Kujiunga",
+      "currentPlan": "Mpango wa Sasa",
+      "freePlan": "Bure",
+      "conversations": "Mazungumzo",
+      "activeDays": "Siku za Utendaji"
+    },
+    "personalInfo": {
+      "title": "Taarifa za Kibinafsi",
+      "description": "Sasisha jina lako, barua pepe, na mipangilio ya msingi",
+      "fullName": "Jina Kamili",
+      "email": "Anwani ya Barua Pepe",
+      "editButton": "Hariri Taarifa",
+      "cancelButton": "Ghairi",
+      "saveButton": "Hifadhi Mabadiliko",
+      "updateSuccess": "Wasifu umesasishwa kwa mafanikio!"
+    },
+    "security": {
+      "title": "Usalama na Nenosiri",
+      "description": "Weka akaunti yako salama kwa kusasisha nenosiri lako mara kwa mara",
+      "currentPassword": "Nenosiri la Sasa",
+      "currentPasswordPlaceholder": "Weka nenosiri la sasa...",
+      "newPassword": "Nenosiri Jipya",
+      "newPasswordPlaceholder": "Weka nenosiri jipya...",
+      "confirmNewPassword": "Thibitisha Nenosiri Jipya",
+      "confirmNewPasswordPlaceholder": "Thibitisha nenosiri jipya...",
+      "updateButton": "Sasisha Nenosiri",
+      "passwordMismatch": "Manenosiri mapya hayalingani.",
+      "updateSuccess": "Nenosiri limebadilishwa kwa mafanikio!"
+    },
+    "subscription": {
+      "title": "Mpango wa Usajili",
+      "description": "Kwa sasa uko kwenye mpango wa Bure - pata vipengele zaidi",
+      "upgradeTitle": "Boresha hadi Pro",
+      "upgradeDescription": "Pata vipengele vya ziada na majibu ya kipaumbele",
+      "upgradeButton": "Boresha Sasa"
+    },
+    "dangerZone": {
+      "title": "Eneo la Hatari",
+      "description": "Vitendo hivi haviwezi kutenduliwa - endelea kwa tahadhari",
+      "deleteTitle": "Futa Akaunti Kabisa",
+      "deleteDescription": "Data na mazungumzo yako yote yatafutwa kabisa",
+      "deleteButton": "Futa Akaunti"
+    },
+    "deleteModal": {
+      "title": "Thibitisha Ufutaji wa Akaunti",
+      "message": "Una uhakika kabisa? Akaunti yako na data yako yote itafutwa kabisa. Kitendo hiki hakiwezi kutenduliwa.",
+      "cancelButton": "Ghairi",
+      "confirmButton": "Thibitisha Ufutaji",
+      "deleteSuccess": "Akaunti yako imefutwa kwa mafanikio."
+    }
+  },
+  "registerPage": {
+    "metadata": {
+      "title": "Fungua Akaunti Mpya - SyriaGPT",
+      "description": "Jiunge na jumuiya ya SyriaGPT na anza kuchunguza nguvu ya AI iliyoundwa kwa ajili ya muktadha wa Syria."
+    },
+    "infoPanel": {
+      "title": "Jiunge na Jumuiya ya SyriaGPT",
+      "description": "Gundua nguvu ya akili bandia iliyoundwa mahsusi kwa utamaduni na muktadha wa Syria",
+      "features": [
+        {
+          "title": "AI ya Hali ya Juu",
+          "description": "Teknolojia za kisasa zilizofunzwa kwenye maudhui ya Kiarabu na Syria"
+        },
+        {
+          "title": "Usalama na Faragha Zilizohakikishwa",
+          "description": "Ulinzi wa hali ya juu kwa data yako na usimbaji fiche wa kiwango cha kimataifa"
+        },
+        {
+          "title": "Jumuiya Hai",
+          "description": "Jiunge na maelfu ya watumiaji wa Syria wenye shauku ya teknolojia"
+        },
+        {
+          "title": "Vipengele vya Kipekee",
+          "description": "Zana maalum kwa maudhui ya Syria na Kiarabu"
+        }
+      ],
+      "testimonial": {
+        "quote": "\"SyriaGPT imebadilisha kabisa jinsi ninavyofanya kazi. Uelewa wa kina wa lugha na utamaduni wa Syria.\"",
+        "author": "- Ahmed Al-Shami, Msanidi Programu"
+      }
+    },
+    "form": {
+      "title": "Fungua Akaunti Mpya",
+      "description": "Jaza maelezo yafuatayo ili kufungua akaunti yako",
+      "firstName": "Jina la Kwanza",
+      "lastName": "Jina la Ukoo",
+      "email": "Anwani ya Barua Pepe",
+      "password": "Nenosiri",
+      "confirmPassword": "Thibitisha Nenosiri",
+      "placeholder": "Weka {field}...",
+      "emailPlaceholder": "mfano@baruapepe.com",
+      "passwordStrength": "Nguvu ya nenosiri",
+      "strengthLevels": [
+        "Dhaifu Sana",
+        "Dhaifu",
+        "Wastani",
+        "Imara",
+        "Imara Sana"
+      ],
+      "submitButton": "Fungua Akaunti Mpya",
+      "loadingButton": "Inafungua akaunti...",
+      "googleButton": "Jisajili na Google",
+      "orSeparator": "au",
+      "hasAccount": "Tayari una akaunti?",
+      "loginLink": "Ingia",
+      "termsAgreement": "Kwa kufungua akaunti, unakubali",
+      "termsLink": "Masharti ya Matumizi",
+      "and": "na",
+      "privacyLink": "Sera ya Faragha",
+      "successAlert": "Akaunti yako imefunguliwa kwa mafanikio! Karibu SyriaGPT"
+    },
+    "validation": {
+      "minLength": "Lazima iwe na angalau herufi 2",
+      "maxLength": "Ndefu sana",
+      "emailRequired": "Barua pepe inahitajika",
+      "emailInvalid": "Anwani ya barua pepe si sahihi",
+      "passwordLength": "Nenosiri lazima liwe na angalau herufi 8",
+      "passwordComplexity": "Lazima iwe na herufi kubwa, herufi ndogo, na nambari",
+      "passwordMismatch": "Manenosiri hayalingani"
+    }
+  },
+  "resetPasswordPage": {
+    "metadata": {
+      "title": "Weka Upya Nenosiri - SyriaGPT",
+      "description": "Weka nenosiri jipya, dhabiti kwa akaunti yako ya SyriaGPT."
+    },
+    "form": {
+      "title": "Weka Nenosiri Jipya",
+      "description": "Chagua nenosiri dhabiti ili kulinda akaunti yako.",
+      "newPasswordLabel": "Nenosiri Jipya",
+      "confirmPasswordLabel": "Thibitisha Nenosiri",
+      "passwordMismatchError": "Manenosiri hayalingani.",
+      "submitButton": "Sasisha Nenosiri",
+      "loadingButton": "Inasasisha...",
+      "showPasswordAria": "Onyesha nenosiri",
+      "hidePasswordAria": "Ficha nenosiri",
+      "mismatchToast": "Tafadhali hakikisha manenosiri yanalingana.",
+      "loadingToast": "Inasasisha nenosiri...",
+      "successToast": "Nenosiri limesasishwa kwa mafanikio!"
+    },
+    "strengthIndicator": {
+      "title": "Nguvu",
+      "levels": [
+        "Dhaifu Sana",
+        "Dhaifu",
+        "Inakubalika",
+        "Nzuri",
+        "Imara",
+        "Imara Sana"
+      ]
+    },
+    "successScreen": {
+      "title": "Mafanikio!",
+      "description": "Nenosiri lako limesasishwa. Sasa unaweza kuingia kwa usalama na vitambulisho vyako vipya.",
+      "backToLoginButton": "Rudi Kuingia"
+    }
+  },
+  "settingsPage": {
+    "metadata": {
+      "title": "Mipangilio - SyriaGPT",
+      "description": "Binafsisha uzoefu wako wa SyriaGPT, simamia mwonekano, lugha, arifa, na data."
+    },
+    "header": {
+      "title": "Mipangilio ya SyriaGPT",
+      "description": "Binafsisha uzoefu wako wa kibinafsi",
+      "unsavedChanges": "Mabadiliko hayajahifadhiwa"
+    },
+    "appearance": {
+      "title": "Mwonekano na Onyesho",
+      "description": "Binafsisha mwonekano na hisia za programu ili zilingane na mapendeleo yako",
+      "theme": "Mtindo wa Mandhari",
+      "themes": {
+        "light": { "label": "Mwangaza", "description": "Inafaa kwa matumizi ya mchana" },
+        "dark": {
+          "label": "Giza",
+          "description": "Rahisi machoni usiku"
+        },
+        "system": {
+          "label": "Mfumo",
+          "description": "Hufuata mipangilio ya kifaa chako"
+        }
+      },
+      "preview": {
+        "title": "Onyesho la Mabadiliko",
+        "description": "Tazama onyesho la moja kwa moja la mabadiliko kabla ya kuhifadhi",
+        "new": "MPYA"
+      }
+    },
+    "language": {
+      "title": "Lugha na Eneo",
+      "description": "Weka mipangilio ya lugha na eneo",
+      "interfaceLanguage": {
+        "title": "Lugha ya Kiolesura",
+        "description": "Lugha inayotumika katika menyu na vipengele vya mwingiliano",
+        "badge": "Otomatiki"
+      },
+      "languages": {
+        "ar": "العربية (Syria)",
+        "en": "English (US)",
+        "fr": "Français",
+        "de": "Deutsch"
+      }
+    },
+    "notifications": {
+      "title": "Arifa na Sauti",
+      "description": "Dhibiti arifa na athari za sauti",
+      "enableNotifications": {
+        "title": "Washa Arifa",
+        "description": "Pokea arifa za ujumbe na masasisho muhimu"
+      },
+      "sounds": {
+        "title": "Sauti",
+        "description": "Cheza sauti unapotuma na kupokea ujumbe"
+      }
+    },
+    "dataManagement": {
+      "title": "Usimamizi wa Data",
+      "description": "Dhibiti uhifadhi na ushiriki wa data yako",
+      "autoSave": {
+        "title": "Hifadhi Kiotomatiki",
+        "description": "Hifadhi mazungumzo yako kiotomatiki ili kuyarejelea baadaye"
+      },
+      "exportData": "Hamisha Data",
+      "clearHistory": "Futa Mazungumzo"
+    },
+    "advanced": {
+      "title": "Mipangilio ya Hali ya Juu",
+      "description": "Chaguo za hali ya juu kwa watumiaji wa kitaalamu",
+      "developerMode": {
+        "title": "Hali ya Msanidi Programu",
+        "description": "Onyesha taarifa za ziada za kiufundi na chaguo za usanidi",
+        "badge": "Beta"
+      },
+      "analytics": {
+        "title": "Uchanganuzi",
+        "description": "Saidia kuboresha huduma kwa kutuma data ya matumizi isiyojulikana"
+      }
+    },
+    "saveBar": {
+      "title": "Unataka kuhifadhi mabadiliko?",
+      "description": "Mipangilio mipya itatumika mara moja",
+      "reset": "Weka Upya",
+      "save": "Hifadhi Mabadiliko",
+      "saving": "Inahifadhi...",
+      "success": "Mipangilio imehifadhiwa kwa mafanikio!"
+    },
+    "modals": {
+      "clearHistory": {
+        "title": "Thibitisha Ufutaji wa Historia",
+        "message": "Una uhakika? Mazungumzo yako yote ya zamani yatafutwa kabisa. Kitendo hiki hakiwezi kutenduliwa.",
+        "confirm": "Ndio, futa",
+        "success": "Historia ya mazungumzo imefutwa kwa mafanikio."
+      },
+      "exportData": {
+        "title": "Hamisha Data",
+        "message": "Nakala ya data yako yote itatengenezwa na kutumwa kwa barua pepe yako. Unataka kuendelea?",
+        "confirm": "Ndio, endelea",
+        "success": "Inahamisha data yako..."
+      },
+      "cancel": "Ghairi"
+    }
+  },
+  "termsPage": {
+    "metadata": {
+      "title": "Masharti ya Huduma - SyriaGPT",
+      "description": "Soma masharti na masharti ya kutumia huduma za SyriaGPT."
+    },
+    "header": {
+      "switchLanguage": "Badilisha hadi Kiarabu",
+      "print": "Chapisha"
+    },
+    "title": "Masharti ya Huduma",
+    "subtitle": "Ilisasishwa Mwisho: Agosti 24, 2025",
+    "intro": "Karibu SyriaGPT. Kwa kutumia huduma zetu, unakubali masharti haya. Tafadhali yasome kwa makini.",
+    "sectionsTitle": "Sehemu",
+    "sections": [
+      {
+        "id": "acceptance",
+        "title": "1. Kukubali Masharti",
+        "content": "Kwa kufikia na kutumia SyriaGPT, unakubali kufungwa na Masharti na Masharti haya. Ikiwa hukubaliani na sehemu yoyote ya masharti haya, hupaswi kutumia huduma zetu."
+      },
+      {
+        "id": "services",
+        "title": "2. Maelezo ya Huduma",
+        "content": "SyriaGPT ni msaidizi wa AI aliyebuniwa kutoa usaidizi katika nyanja mbalimbali zinazohusiana na muktadha wa Syria."
+      },
+      {
+        "id": "usage",
+        "title": "3. Matumizi Yanayokubalika",
+        "content": "Lazima utumie huduma zetu kisheria na kimaadili. Umekatazwa kutumia huduma kwa madhumuni haramu au ya kudhuru."
+      },
+      {
+        "id": "privacy",
+        "title": "4. Faragha na Data",
+        "content": "Tunaheshimu faragha yako na tumejitolea kulinda data yako. Tunakusanya tu data muhimu ili kutoa huduma na hatutaishiriki bila idhini yako."
+      },
+      {
+        "id": "intellectual",
+        "title": "5. Miliki Ubunifu",
+        "content": "Haki zote zimehifadhiwa kwa SyriaGPT. Maudhui, muundo, na nembo ni mali yetu. Maudhui unayounda kwa kutumia huduma yanabaki kuwa yako."
+      },
+      {
+        "id": "liability",
+        "title": "6. Kanusho",
+        "content": "Huduma inatolewa \"kama ilivyo\" bila dhamana yoyote. Hatuhakikishi usahihi au ukamilifu wa taarifa iliyotolewa na hatuwajibiki kwa uharibifu wowote unaotokana na matumizi yake."
+      },
+      {
+        "id": "termination",
+        "title": "7. Kukomesha Huduma",
+        "content": "Tunahifadhi haki ya kukomesha au kusimamisha akaunti yako endapo utakiuka masharti haya au endapo utafanya tabia ya kudhuru au haramu."
+      },
+      {
+        "id": "contact",
+        "title": "8. Wasiliana Nasi",
+        "content": "Kwa maswali yoyote kuhusu masharti haya, tafadhali wasiliana nasi kupitia barua pepe: support@syriagpt.com"
+      }
+    ],
+    "acceptButton": "Nimesoma na ninakubali masharti",
+    "continueButton": "Endelea",
+    "backToTop": "Rudi Juu",
+    "expandAll": "Panua Yote",
+    "collapseAll": "Kunja Yote",
+    "readingProgress": "Maendeleo ya Kusoma",
+    "copyright": "© {year} SyriaGPT. Haki zote zimehifadhiwa."
+  },
+  "upgradePage": {
+    "metadata": {
+      "title": "Boresha hadi Pro - SyriaGPT",
+      "description": "Furahia uwezo usio na kikomo, kasi ya juu, na ufikiaji wa kipaumbele kwa vipengele vipya na SyriaGPT Pro."
+    },
+    "header": {
+      "title": "Boresha hadi Pro",
+      "description": "Furahia uwezo usio na kikomo, kasi ya juu, na ufikiaji wa kipaumbele kwa vipengele vipya"
+    },
+    "stats": [
+      { "value": "10x", "label": "Jibu la Haraka Zaidi" },
+      { "value": "∞", "label": "Ujumbe Usio na Kikomo" },
+      { "value": "24/7", "label": "Usaidizi Endelevu" }
+    ],
+    "billingToggle": {
+      "monthly": "Kila Mwezi",
+      "yearly": "Kila Mwaka",
+      "saving": "Okoa 20%"
+    },
+    "pricingCards": {
+      "free": {
+        "title": "Mpango wa Bure",
+        "subtitle": "Mpango wa Sasa",
+        "price": "$0",
+        "period": "Maisha Yote",
+        "features": [
+          "Ufikiaji wa mfumo wa msingi",
+          "Ujumbe 20 kwa siku",
+          "Kasi ya kawaida ya majibu",
+          "Vipengele vya msingi"
+        ],
+        "buttonText": "Mpango Wako wa Sasa"
+      },
+      "pro": {
+        "title": "SyriaGPT Pro",
+        "subtitle": "Kwa wataalamu na biashara",
+        "priceMonthly": "$10",
+        "priceYearly": "$96",
+        "periodMonthly": "kwa mwezi",
+        "periodYearly": "kwa mwaka",
+        "popular": "Maarufu Zaidi",
+        "features": [
+          "Mfumo wa hali ya juu wa GPT-4",
+          "Ujumbe usio na kikomo",
+          "Kasi ya juu ya majibu",
+          "Ufikiaji wa kipaumbele kwa vipengele vipya",
+          "Usaidizi maalum wa kiufundi",
+          "Kiolesura kilichoboreshwa kisicho na matangazo"
+        ],
+        "buttonText": "Boresha Sasa"
+      }
+    },
+    "comparison": {
+      "title": "Linganisha Mipango",
+      "featureHeader": "Vipengele",
+      "freeHeader": "Bure",
+      "proHeader": "Pro",
+      "features": [
+        { "text": "Ufikiaji wa mfumo wa msingi", "free": true, "pro": true },
+        { "text": "Ujumbe mdogo wa kila siku (20)", "free": true, "pro": false },
+        { "text": "Ujumbe usio na kikomo", "free": false, "pro": true },
+        {
+          "text": "Ufikiaji wa mfumo wa hali ya juu wa GPT-4",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Kasi ya kawaida ya majibu", "free": true, "pro": false },
+        {
+          "text": "Kasi ya juu ya majibu (haraka mara 10)",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Ufikiaji wa kipaumbele kwa vipengele vipya",
+          "free": false,
+          "pro": true
+        },
+        {
+          "text": "Usaidizi maalum wa kiufundi",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Kiolesura kisicho na matangazo", "free": false, "pro": true }
+      ]
+    },
+    "faq": {
+      "title": "Maswali Yanayoulizwa Mara kwa Mara",
+      "toggleOpen": "Soma Zaidi",
+      "toggleClose": "Funga",
+      "items": [
+        {
+          "question": "Ninaweza kughairi usajili wangu wakati wowote?",
+          "answer": "Ndio, bila shaka. Unaweza kughairi usajili wako wa mpango wa Pro wakati wowote kutoka kwenye ukurasa wa \"Usimamizi wa Akaunti\". Utaendelea kuwa na ufikiaji wa vipengele vya Pro hadi mwisho wa kipindi cha sasa cha malipo, na hakuna malipo zaidi yatakayofanywa."
+        },
+        {
+          "question": "Njia gani za malipo zinakubaliwa?",
+          "answer": "Tunakubali kadi zote kuu za mkopo na malipo (Visa, MasterCard, American Express) pamoja na Sham Cash na pochi za kielektroniki za ndani. Malipo yote yanashughulikiwa kwa usalama na kusimbwa fiche kupitia mshirika wetu, Stripe."
+        },
+        {
+          "question": "Nini kinatokea mwishoni mwa kipindi cha malipo cha mwaka?",
+          "answer": "Usajili wako wa mwaka utasasishwa kiotomatiki isipokuwa ukiughairi kutoka kwa mipangilio ya akaunti yako. Tutakutumia barua pepe ya ukumbusho wiki moja kabla ya tarehe ya kusasishwa na maelezo ya kiasi kinachodaiwa."
+        },
+        {
+          "question": "Ninaweza kupata marejesho?",
+          "answer": "Ndio, tunatoa dhamana kamili ya kurejeshewa pesa ndani ya siku 30 tangu tarehe ya usajili ikiwa haujaridhika na huduma kwa sababu yoyote. Wasiliana tu na timu yetu ya usaidizi, na tutashughulikia ombi lako la marejesho mara moja."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Uko Tayari Kuanza?",
+      "description": "Jiunge na maelfu ya watumiaji waliochagua SyriaGPT Pro kwa uzoefu bora wa AI",
+      "buttonText": "Anza Sasa kwa {price}",
+      "guarantee": "Dhamana kamili ya kurejeshewa pesa ndani ya siku 30"
+    },
+    "alert": "Utaelekezwa kwenye ukurasa wa malipo..."
+  },
+  "verifyEmailPage": {
+    "metadata": {
+      "title": "Thibitisha Barua Pepe - SyriaGPT",
+      "description": "Weka nambari ya uthibitishaji iliyotumwa kwa barua pepe yako ili kuthibitisha akaunti yako ya SyriaGPT."
+    },
+    "header": {
+      "title": "Thibitisha Barua Pepe Yako",
+      "description": "Weka nambari ya uthibitishaji iliyotumwa kwa"
+    },
+    "form": {
+      "label": "nambari ya uthibitishaji ya tarakimu 6",
+      "verifyButton": "Thibitisha Nambari",
+      "verifyingButton": "Inathibitisha...",
+      "resend": {
+        "question": "Hujapokea nambari?",
+        "resendButton": "Tuma Nambari Tena",
+        "resendingButton": "Inatuma tena...",
+        "cooldown": "Tuma tena baada ya sekunde {seconds}"
+      }
+    },
+    "status": {
+      "success": {
+        "title": "Uthibitishaji Umefanikiwa!",
+        "description": "Barua pepe yako imethibitishwa kwa mafanikio",
+        "redirecting": "Inaelekeza kwenye dashibodi..."
+      },
+      "error": {
+        "title": "Uthibitishaji Umeshindwa",
+        "tryAgainButton": "Jaribu Tena"
+      }
+    },
+    "errors": {
+      "incompleteCode": "Tafadhali weka nambari ya uthibitishaji ya tarakimu 6",
+      "invalidCode": "Nambari ya uthibitishaji si sahihi. Tafadhali jaribu tena.",
+      "generic": "Hitilafu ilitokea wakati wa uthibitishaji. Tafadhali jaribu tena.",
+      "resendFailed": "Imeshindwa kutuma nambari ya uthibitishaji. Tafadhali jaribu tena."
+    },
+    "backToLogin": "Rudi Kuingia",
+    "securityNote": {
+      "title": "Dokezo la Usalama:",
+      "points": [
+        "Usimshirikishe mtu yeyote nambari ya uthibitishaji",
+        "Nambari ya uthibitishaji ni halali kwa dakika 10 tu",
+        "Angalia anwani ya barua pepe ya mtumaji"
+      ]
+    },
+    "alerts": {
+      "resendSuccess": "Nambari mpya ya uthibitishaji imetumwa kwa barua pepe yako"
+    }
+  },
+  "errorPage": {
+    "metadata": {
+      "title": "Hitilafu Imetokea - SyriaGPT",
+      "description": "Ukurasa maalum wa hitilafu kwa mradi wa SyriaGPT."
+    },
+    "offlineMessage": "Kwa sasa uko nje ya mtandao",
+    "errorCode": "Hitilafu {statusCode}",
+    "title": "Hitilafu Isiyotarajiwa Imetokea",
+    "description": "Tunaomba radhi kwa dhati kwa usumbufu. Timu yetu ya kiufundi imearifiwa na inafanya kazi kutatua suala hilo haraka iwezekanavyo.",
+    "retryButton": "Jaribu Tena",
+    "retryingButton": "Inajaribu tena...",
+    "homeButton": "Mwanzo",
+    "backButton": "Rudi",
+    "suggestionsTitle": "Unachoweza kujaribu sasa:",
+    "suggestion1": "Kuonyesha upya ukurasa kunaweza kutatua tatizo.",
+    "suggestion2": "Tafadhali angalia muunganisho wako wa intaneti.",
+    "suggestion3": "Ikiwa tatizo litaendelea, jisikie huru kuwasiliana nasi.",
+    "accordion": {
+      "title": "Maelezo ya Kiufundi kwa Wasanidi Programu",
+      "copy": "Nakili",
+      "copied": "Imenakiliwa",
+      "code": "Nambari:",
+      "message": "Ujumbe:",
+      "digest": "Muhtasari:"
+    }
+  },
+  "notFoundPage": {
+    "metadata": {
+      "title": "Ukurasa Haupatikani - SyriaGPT",
+      "description": "Ukurasa unaotafuta haupo au umehamishwa."
+    },
+    "title": "Inaonekana umepotea kwenye kurasa!",
+    "description": "Ukurasa unaotafuta haupo au umehamishwa",
+    "currentLocation": "Mahali pa Sasa: Haijulikani",
+    "search": {
+      "placeholder": "Tafuta ukurasa unaotaka...",
+      "button": "Tafuta",
+      "searching": "Inatafuta..."
+    },
+    "actions": {
+      "previousPage": {
+        "title": "Ukurasa Uliopita",
+        "description": "Rudi ulikotoka"
+      },
+      "homePage": {
+        "title": "Ukurasa wa Mwanzo",
+        "description": "Anza upya"
+      }
+    },
+    "suggestions": {
+      "title": "Kurasa ambazo zinaweza kukuvutia",
+      "items": [
+        { "title": "Ukurasa wa Mwanzo", "description": "Rudi mwanzo" },
+        { "title": "Soga", "description": "Anzisha mazungumzo mapya" },
+        { "title": "Msaada", "description": "Pata msaada" },
+        { "title": "Kuhusu Syria", "description": "Gundua zaidi" }
+      ]
+    },
+    "history": {
+      "title": "Kurasa Zilizotembelewa Hivi Karibuni"
+    },
+    "funFact": {
+      "title": "Wakati unatafuta njia yako...",
+      "facts": [
+        "Je, wajua? Dameski ndio mji mkuu wa zamani zaidi duniani unaokaliwa mfululizo!",
+        "Je, wajua? Alfabeti ya kwanza katika historia ilivumbuliwa Ugarit, Syria!",
+        "Je, wajua? Mti wa pistachio wa Aleppo unaweza kuishi kwa zaidi ya miaka 300!",
+        "Je, wajua? Krak des Chevaliers nchini Syria ni moja ya majumba yaliyohifadhiwa vizuri zaidi duniani!",
+        "Je, wajua? Ua la waridi la Dameski linachukuliwa kuwa moja ya aina bora zaidi za waridi duniani!"
+      ]
+    },
+    "support": {
+      "message": "Ikiwa unaamini hii ni hitilafu, tafadhali wasiliana nasi",
+      "helpCenter": "Kituo cha Msaada",
+      "technicalSupport": "Usaidizi wa Kiufundi"
+    }
+  },
+  "loader": {
+    "title": "inapakia...",
+    "loading": "Tafadhali subiri dakika moja..."
+  }
+}
