@@ -15,7 +15,7 @@ services:
       db:
         condition: service_healthy
       qdrant:
-        condition: start_period
+        condition: service_started
     restart: unless-stopped
 
   db:
