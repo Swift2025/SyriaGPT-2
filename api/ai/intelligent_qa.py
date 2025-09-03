@@ -21,24 +21,34 @@ async def ask_intelligent_question(
     user_id: Optional[str] = Query(None, description="Optional user ID"),
     context: Optional[str] = Query(None, description="Optional additional context"),
     language: str = Query("auto", description="Preferred response language (en, ar, auto)"),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(get_current_user),
 ):
-    log_function_entry(logger, "ask_intelligent_question", 
-                      question_length=len(question), 
-                      user_email=current_user.email, 
-                      user_id=str(current_user.id),
-                      has_context=bool(context), 
-                      language=language)
+    log_function_entry(
+        logger,
+        "ask_intelligent_question",
+        question_length=len(question),
+        user_email=current_user.email,
+        user_id=str(current_user.id),
+    )
     start_time = time.time()
-    
+
     try:
         result = await intelligent_qa_service.process_question(
             question=question,
-            user_id=str(current_user.id)
+            user_id=str(current_user.id),
         )
+
+        duration = time.time() - start_time
+        log_function_exit(logger, "ask_intelligent_question", duration=duration)
         return result
+
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        duration = time.time() - start_time
+        log_error_with_context(logger, e, "ask_intelligent_question", duration=duration)
+        logger.error(f" Error in ask_intelligent_question: {e}")
+        log_function_exit(logger, "ask_intelligent_question", duration=duration)
+        raise HTTPException(status_code=500, detail="Internal server error")
+
 
 
 @router.post("/augment-variants")

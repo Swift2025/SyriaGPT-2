@@ -17,6 +17,7 @@ from services.dependencies import get_current_user, limiter
 from config.config_loader import config_loader
 from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
 from services.database.database import get_db
+from services.auth import get_auth_service
 
 logger = get_logger(__name__)
 
@@ -64,7 +65,7 @@ async def login_user(login_data: UserLoginRequest, db: Session = Depends(get_db)
 
 @router.post("/register", response_model=UserRegistrationResponse, status_code=status.HTTP_201_CREATED)
 async def register_user(registration_data: UserRegistrationRequest, db: Session = Depends(get_db)):
-    log_function_entry(logger, "register_user", user_email=registration_data.email, full_name=registration_data.full_name)
+    log_function_entry(logger, "register_user", user_email=registration_data.email, first_name=registration_data.first_name, last_name=registration_data.last_name)
     start_time = time.time()
     
     try:

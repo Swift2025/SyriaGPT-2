@@ -11,25 +11,32 @@ from models.schemas.response_models import SessionResponse, SessionListResponse,
 from services.database import SessionLocal
 from services.auth import get_auth_service
 from config.config_loader import config_loader
+from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
+import time
+import logging
 
+logger = get_logger(__name__)
 
 class SessionManager:
     def __init__(self):
         self.default_session_duration = timedelta(hours=24)
         self.remember_me_duration = timedelta(days=30)
-    
     @property
     def auth_service(self):
-log_function_entry(logger, "auth_service")
-start_time = time.time()
-try:
-except Exception as e:
-    duration = time.time() - start_time
-    log_error_with_context(logger, e, "auth_service", duration=duration)
-    logger.error(f"❌ Error in auth_service: {e}")
-    log_function_exit(logger, "auth_service", duration=duration)
-    raise
-        return get_auth_service()
+        log_function_entry(logger, "auth_service")
+        start_time = time.time()
+        try:
+            service = get_auth_service()
+            duration = time.time() - start_time
+            log_function_exit(logger, "auth_service", duration=duration)
+            return service
+        except Exception as e:
+            duration = time.time() - start_time
+            log_error_with_context(logger, e, "auth_service", duration=duration)
+            logger.error(f"❌ Error in auth_service: {e}")
+            log_function_exit(logger, "auth_service", duration=duration)
+            raise
+
 
     def _get_db(self) -> Session:
         return SessionLocal()
@@ -273,34 +280,38 @@ except Exception as e:
             db.close()
 
     def cleanup_expired_sessions(self):
-log_function_entry(logger, "cleanup_expired_sessions")
-start_time = time.time()
-try:
-        """Clean up expired sessions (can be called by a cron job)"""
-        db = self._get_db()
+        log_function_entry(logger, "cleanup_expired_sessions")
+        start_time = time.time()
         try:
-            expired_count = db.query(SessionModel).filter(
-                SessionModel.expires_at <= datetime.now(timezone.utc)
-            ).update({"is_active": False})
-            
-            db.commit()
-    duration = time.time() - start_time
-    log_performance(logger, "cleanup_expired_sessions", duration)
-    log_function_exit(logger, "cleanup_expired_sessions", duration=duration)
+            """Clean up expired sessions (can be called by a cron job)"""
+            db = self._get_db()
+            try:
+                expired_count = (
+                    db.query(SessionModel)
+                    .filter(SessionModel.expires_at <= datetime.now(timezone.utc))
+                    .update({"is_active": False})
+                )
+                db.commit()
 
-            return expired_count
-            
+                duration = time.time() - start_time
+                log_performance(logger, "cleanup_expired_sessions", duration)
+                log_function_exit(logger, "cleanup_expired_sessions", duration=duration)
+
+                return expired_count
+
+            except Exception as e:
+                db.rollback()
+                raise Exception(f"Failed to cleanup sessions: {str(e)}")
+            finally:
+                db.close()
+
         except Exception as e:
-            db.rollback()
-            raise Exception(f"Failed to cleanup sessions: {str(e)}")
-        finally:
-            db.close()
-except Exception as e:
-    duration = time.time() - start_time
-    log_error_with_context(logger, e, "cleanup_expired_sessions", duration=duration)
-    logger.error(f"❌ Error in cleanup_expired_sessions: {e}")
-    log_function_exit(logger, "cleanup_expired_sessions", duration=duration)
-    raise
+            duration = time.time() - start_time
+            log_error_with_context(logger, e, "cleanup_expired_sessions", duration=duration)
+            logger.error(f"❌ Error in cleanup_expired_sessions: {e}")
+            log_function_exit(logger, "cleanup_expired_sessions", duration=duration)
+            raise
+
 
     def _is_mobile_device(self, user_agent: Optional[str]) -> bool:
         """Check if the request is from a mobile device"""

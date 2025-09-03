@@ -6,12 +6,12 @@ from typing import Optional
 from models.domain.user import User
 from models.schemas.request_models import LogoutRequest, RefreshTokenRequest, SessionInfoRequest
 from models.schemas.response_models import SessionListResponse, LogoutResponse, RefreshTokenResponse
-from requests.session.session_management import session_manager
+from api.session.session_management import session_manager
 from services.dependencies import get_current_user
 from config.config_loader import config_loader
 import logging
 import time
-from config.logging_config import get_logger
+from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
 
 logger = get_logger(__name__)
 router = APIRouter(prefix="/sessions", tags=["session_management"])
@@ -37,22 +37,23 @@ async def logout_session(
 
 
 @router.post("/refresh", response_model=RefreshTokenResponse)
-async def refresh_token(refresh_data:
-log_function_entry(logger, "refresh_token")
-start_time = time.time()
-try: RefreshTokenRequest):
-    """Refresh access token using refresh token"""
-    duration = time.time() - start_time
-    log_performance(logger, "refresh_token", duration)
-    log_function_exit(logger, "refresh_token", duration=duration)
+async def refresh_token(refresh_data: RefreshTokenRequest):
+    log_function_entry(logger, "refresh_token")
+    start_time = time.time()
+    try:
+        """Refresh access token using refresh token"""
+        duration = time.time() - start_time
+        log_performance(logger, "refresh_token", duration)
+        log_function_exit(logger, "refresh_token", duration=duration)
 
-    return session_manager.refresh_access_token(refresh_data.refresh_token)
-except Exception as e:
-    duration = time.time() - start_time
-    log_error_with_context(logger, e, "refresh_token", duration=duration)
-    logger.error(f"❌ Error in refresh_token: {e}")
-    log_function_exit(logger, "refresh_token", duration=duration)
-    raise
+        return session_manager.refresh_access_token(refresh_data.refresh_token)
+    except Exception as e:
+        duration = time.time() - start_time
+        log_error_with_context(logger, e, "refresh_token", duration=duration)
+        logger.error(f"❌ Error in refresh_token: {e}")
+        log_function_exit(logger, "refresh_token", duration=duration)
+        raise
+
 
 
 @router.delete("/cleanup")
