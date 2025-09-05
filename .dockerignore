@@ -1,37 +1,47 @@
 # Git
 .git
 .gitignore
+.gitattributes
 
 # Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
+*.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
 env/
 venv/
 .venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-.git
-.mypy_cache
-.pytest_cache
-.hypothesis
+ENV/
+env.bak/
+venv.bak/
+syriaenv/
 
 # Environment files
+.env
 .env.local
 .env.*.local
-syriaenv
-frontend/.next/
-frontend/node_modules/
+.env.development
+.env.test
+.env.production
 
 # IDE
 .vscode/
@@ -39,6 +49,8 @@ frontend/node_modules/
 *.swp
 *.swo
 *~
+.project
+.pydevproject
 
 # OS
 .DS_Store
@@ -48,11 +60,14 @@ frontend/node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
 # Documentation
 README.md
 *.md
 docs/
+API_Documentation_Update1.txt
+setup.md
 
 # Docker
 Dockerfile*
@@ -62,7 +77,81 @@ docker-compose*
 # Logs
 logs/
 *.log
+*.log.*
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+.mypy_cache/
+.pytest_cache/
+
+# Frontend (if building separately)
+frontend/
+frontend_folder/
+node_modules/
+.next/
+.nuxt/
+dist/
+build/
 
 # Temporary files
 *.tmp
 *.temp
+*.bak
+*.swp
+*.swo
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Render specific
+render.yaml
