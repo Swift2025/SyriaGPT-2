@@ -355,7 +355,7 @@ logger.debug("[CONFIG] Configuring CORS middleware...")
 # Get CORS origins from environment or use defaults
 CORS_ORIGINS = os.getenv(
     "CORS_ORIGINS", 
-    "https://syria-gpt-2.vercel.app/"
+    "https://syria-gpt-2.vercel.app,https://syria-gpt-2-git-main-swift2025.vercel.app,https://syria-gpt-2-git-develop-swift2025.vercel.app"
 ).split(",")
 
 # Add wildcard for development if specified
@@ -369,7 +369,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allow_headers=["*"],
     expose_headers=["*"],
 )
@@ -1080,3 +1080,10 @@ def run_database_migration():
         log_error_with_context(logger, e, "run_database_migration", duration=duration)
         log_function_exit(logger, "run_database_migration", duration=duration)
         raise
+
+# Add explicit CORS preflight handler
+@app.options("/{path:path}")
+async def options_handler(path: str):
+    """Handle CORS preflight requests"""
+    logger.debug(f"[CORS] Handling OPTIONS request for path: {path}")
+    return {"message": "CORS preflight handled"}
