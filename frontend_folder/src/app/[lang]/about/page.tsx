@@ -7,8 +7,7 @@ import { getDictionary } from '../../../../get-dictionary';
 import { Locale } from '../../../../i18n-config';
 
 // دالة ديناميكية لإنشاء بيانات الميتا (العنوان والوصف) المترجمة
-export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
-  const { lang } = await params;
+export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
   const dictionary = await getDictionary(lang);
   const t = dictionary.aboutPage.metadata;
   return {
@@ -20,9 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 // =======================
 // المكون الرئيسي لصفحة "عن المشروع" (أصبح مكون خادم)
 // =======================
-export default async function AboutPage({ params }: { params: Promise<{ lang: Locale }> }) {
+export default async function AboutPage({ params: { lang } }: { params: { lang: Locale } }) {
   // جلب القاموس بناءً على اللغة من الرابط
-  const { lang } = await params;
   const dictionary = await getDictionary(lang);
   const t = dictionary.aboutPage;
 

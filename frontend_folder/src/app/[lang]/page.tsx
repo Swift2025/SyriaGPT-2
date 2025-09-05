@@ -2,16 +2,18 @@
 import { getDictionary } from '../../../get-dictionary';
 import { Locale } from '../../../i18n-config';
 import ChatPageClient from './components/ChatPageClient';
-
-interface PageProps {
-  params: Promise<{ lang: Locale }>;
-}
+import HomePageClient from './components/HomePageClient';
 
 export default async function HomePage({
-  params,
-}: PageProps) {
-  const { lang } = await params;
+  params: awaitedParams, // <-- تغيير اسم المتغير
+}: {
+  params: { lang: Locale };
+}) {
+  // --- الحل الجديد والمؤكد هنا ---
+  const params = await awaitedParams; // <-- انتظر الـ props
+  const lang = params.lang;           // <-- ثم استخرج اللغة
+
   const dictionary = await getDictionary(lang);
 
-  return <ChatPageClient dictionary={dictionary} />;
+  return <HomePageClient dictionary={dictionary} />;
 }

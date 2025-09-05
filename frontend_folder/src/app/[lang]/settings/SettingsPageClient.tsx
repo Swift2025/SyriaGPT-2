@@ -165,12 +165,7 @@ export default function SettingsPageClient({ dictionary }: { dictionary: any }) 
     email_notifications: true,
     sms_notifications: false,
   });
-  const [initialSettings, setInitialSettings] = useState({
-    theme: 'system',
-    language: 'ar',
-    email_notifications: true,
-    sms_notifications: false,
-  });
+  const [initialSettings, setInitialSettings] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isClearHistoryModalOpen, setIsClearHistoryModalOpen] = useState(false);

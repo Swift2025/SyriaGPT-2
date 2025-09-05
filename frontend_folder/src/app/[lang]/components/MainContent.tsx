@@ -1,8 +1,8 @@
-// src/app/[lang]/components/MainContent.tsx
+// src/app/[lang]/chat/[chatId]/MainContent.tsx
 'use client';
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { Send, Sun, Zap, AlertTriangle, User, Menu, ThumbsUp, ThumbsDown, RefreshCw, Mic, Paperclip, X, FileText, File, Upload, Download, Share2, Archive, Trash2 } from 'lucide-react';
+import { Send, Sun, Zap, AlertTriangle, User, Menu, ThumbsUp, ThumbsDown, RefreshCw, Mic, Paperclip, X, FileText, File, Upload } from 'lucide-react';
 import { speechService, requestMicrophonePermission } from '../utils/speechService';
 import { addFeedbackToMessage } from '../../../../services/api';
 import toast from 'react-hot-toast';
@@ -11,7 +11,7 @@ import { Message, FileAttachment } from '../types';
 // مكون شعار النسر السوري
 const SyrianEagle: React.FC<{ className?: string }> = ({ className = "w-12 h-12" }) => (
   <div className={`${className} flex items-center justify-center`}>
-    <img src="/logo.ai.svg" alt="Syrian Eagle Logo" className="w-full h-full" />
+    <img src="/images/logo.ai.svg" alt="Syrian Eagle Logo" className="w-full h-full" />
   </div>
 );
 
@@ -196,12 +196,7 @@ const ChatInputArea: React.FC<{
       const success = speechService.startListening({
         language: 'ar-SA',
         onStart: () => setIsRecording(true),
-        onResult: (text: string, isFinal?: boolean) => { 
-          if (isFinal && text.trim()) {
-            const newText = inputMessage ? `${inputMessage} ${text}` : text;
-            setInputMessage(newText.trim()); 
-          }
-        },
+        onResult: (text: string, isFinal?: boolean) => { if (isFinal && text.trim()) setInputMessage(prev => (prev ? `${prev} ${text}` : text).trim()); },
         onError: (error: string) => { const message = t.speechErrors[error] || `Unknown error: ${error}`; alert(message); },
         onEnd: () => setIsRecording(false),
       });

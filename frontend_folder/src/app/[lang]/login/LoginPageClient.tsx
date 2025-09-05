@@ -1,4 +1,4 @@
-// src/app/[lang]/login/LoginPageClient.tsx
+// src/app/[lang]/login/LoginPageClient.tsx (الكود الكامل والنهائي)
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -64,19 +64,17 @@ export default function LoginPageClient({ dictionary }: { dictionary: any }) {
     toast.dismiss();
 
     try {
-    const data = await loginUser(email, password);
-    
-    // api.ts يقوم الآن بحفظ التوكنات تلقائياً، لكن يمكن التأكيد هنا
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('accessToken', data.access_token);
-      if (data.refresh_token) { // تحقق من وجوده
-        localStorage.setItem('refreshToken', data.refresh_token);
-      }
-    }
-    
-    login(data.user);
-    toast.success(data.message || t.form.loginSuccessAlert);
-    router.push(`/${lang}`);
+      // data الآن تحتوي على user, access_token, refresh_token
+      const data = await loginUser(email, password);
+      
+      // --- هذا هو السطر الذي تم تصحيحه ---
+      // قم بتمرير كائن 'data' الكامل إلى دالة login
+      login(data);
+      // ------------------------------------
+      
+      toast.success(t.form.loginSuccessAlert || "Login successful!");
+      
+      router.push(`/${lang}`);
 
     } catch (error: any) {
       toast.error(error.message || 'An unexpected error occurred');

@@ -1,1031 +1,1031 @@
 {
   "sidebar": {
-    "tagline": "הבינה המלאכותית הסורית",
-    "newChat": "צ'אט חדש",
-    "pastConversations": "שיחות קודמות",
-    "lightMode": "מצב בהיר",
-    "darkMode": "מצב כהה",
+    "tagline": "An Intleacht Shaorga Shíreach",
+    "newChat": "Comhrá Nua",
+    "pastConversations": "Comhráite a Chuaigh Thart",
+    "lightMode": "Mód Geal",
+    "darkMode": "Mód Dorcha",
     "switchToEnglish": "English",
     "switchToArabic": "العربية",
-    "userName": "משתמש סורי",
+    "userName": "Úsáideoir Síreach",
     "userEmail": "user@syriagpt.com",
-    "profile": "פרופיל",
-    "settings": "הגדרות",
-    "upgradeToPro": "שדרג לפרו",
-    "newBadge": "חדש",
-    "helpCenter": "מרכז עזרה",
-    "aboutApp": "אודות האפליקציה",
-    "logout": "התנתק",
+    "profile": "Próifíl",
+    "settings": "Socruithe",
+    "upgradeToPro": "Uasghrádaigh go Pro",
+    "newBadge": "NUA",
+    "helpCenter": "Ionad Cabhrach",
+    "aboutApp": "Maidir leis an Aip",
+    "logout": "Logáil Amach",
     "logoutModal": {
-      "title": "אישור התנתקות",
-      "description": "האם אתה בטוח שברצונך להתנתק מחשבונך?",
-      "cancel": "ביטול",
-      "confirm": "כן, התנתק"
+      "title": "Deimhnigh Logáil Amach",
+      "description": "An bhfuil tú cinnte gur mhaith leat logáil amach as do chuntas?",
+      "cancel": "Cealaigh",
+      "confirm": "Tá, Logáil Amach"
     },
     "languageSelector": {
-  "title": "Language",
-  "languages": {
-    "am": { "name": "አማርኛ", "country": "ET" },
-    "ar": { "name": "العربية", "country": "SA" },
-    "az": { "name": "Azərbaycanca", "country": "AZ" },
-    "bg": { "name": "Български", "country": "BG" },
-    "bn": { "name": "বাংলা", "country": "BD" },
-    "ca": { "name": "Català", "country": "ES-CT" },
-    "cs": { "name": "Čeština", "country": "CZ" },
-    "da": { "name": "Dansk", "country": "DK" },
-    "de": { "name": "Deutsch", "country": "DE" },
-    "el": { "name": "Ελληνικά", "country": "GR" },
-    "en": { "name": "English", "country": "GB" },
-    "es": { "name": "Español", "country": "ES" },
-    "fa": { "name": "فارسی", "country": "IR" },
-    "fi": { "name": "Suomi", "country": "FI" },
-    "fr": { "name": "Français", "country": "FR" },
-    "gu": { "name": "ગુજરાતી", "country": "IN" },
-    "ha": { "name": "Hausa", "country": "NG" },
-    "he": { "name": "עברית", "country": "IL" },
-    "hi": { "name": "हिन्दी", "country": "IN" },
-    "hu": { "name": "Magyar", "country": "HU" },
-    "hy": { "name": "Հայերեն", "country": "AM" },
-    "id": { "name": "Bahasa Indonesia", "country": "ID" },
-    "it": { "name": "Italiano", "country": "IT" },
-    "ja": { "name": "日本語", "country": "JP" },
-    "ka": { "name": "ქართული", "country": "GE" },
-    "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
-    "ko": { "name": "한국어", "country": "KR" },
-    "mr": { "name": "मराठी", "country": "IN" },
-    "ms": { "name": "Bahasa Melayu", "country": "MY" },
-    "nl": { "name": "Nederlands", "country": "NL" },
-    "no": { "name": "Norsk", "country": "NO" },
-    "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
-    "pl": { "name": "Polski", "country": "PL" },
-    "pt": { "name": "Português", "country": "PT" },
-    "ro": { "name": "Română", "country": "RO" },
-    "ru": { "name": "Русский", "country": "RU" },
-    "sq": { "name": "Shqip", "country": "AL" },
-    "sr": { "name": "Српски", "country": "RS" },
-    "sv": { "name": "Svenska", "country": "SE" },
-    "sw": { "name": "Kiswahili", "country": "KE" },
-    "ta": { "name": "தமிழ்", "country": "IN" },
-    "te": { "name": "తెలుగు", "country": "IN" },
-    "th": { "name": "ไทย", "country": "TH" },
-    "tl": { "name": "Tagalog", "country": "PH" },
-    "tr": { "name": "Türkçe", "country": "TR" },
-    "uk": { "name": "Українська", "country": "UA" },
-    "ur": { "name": "اردو", "country": "PK" },
-    "vi": { "name": "Tiếng Việt", "country": "VN" },
-    "yo": { "name": "Yorùbá", "country": "NG" },
-    "zh": { "name": "简体中文", "country": "CN" }
-  }
-}
+      "title": "Teanga",
+      "languages": {
+        "am": { "name": "አማርኛ", "country": "ET" },
+        "ar": { "name": "العربية", "country": "SA" },
+        "az": { "name": "Azərbaycanca", "country": "AZ" },
+        "bg": { "name": "Български", "country": "BG" },
+        "bn": { "name": "বাংলা", "country": "BD" },
+        "ca": { "name": "Català", "country": "ES-CT" },
+        "cs": { "name": "Čeština", "country": "CZ" },
+        "da": { "name": "Dansk", "country": "DK" },
+        "de": { "name": "Deutsch", "country": "DE" },
+        "el": { "name": "Ελληνικά", "country": "GR" },
+        "en": { "name": "English", "country": "GB" },
+        "es": { "name": "Español", "country": "ES" },
+        "fa": { "name": "فارسی", "country": "IR" },
+        "fi": { "name": "Suomi", "country": "FI" },
+        "fr": { "name": "Français", "country": "FR" },
+        "gu": { "name": "ગુજરાતી", "country": "IN" },
+        "ha": { "name": "Hausa", "country": "NG" },
+        "he": { "name": "Gaeilge", "country": "IE" },
+        "hi": { "name": "हिन्दी", "country": "IN" },
+        "hu": { "name": "Magyar", "country": "HU" },
+        "hy": { "name": "Հայերեն", "country": "AM" },
+        "id": { "name": "Bahasa Indonesia", "country": "ID" },
+        "it": { "name": "Italiano", "country": "IT" },
+        "ja": { "name": "日本語", "country": "JP" },
+        "ka": { "name": "ქართული", "country": "GE" },
+        "kn": { "name": "ಕನ್ನಡ", "country": "IN" },
+        "ko": { "name": "한국어", "country": "KR" },
+        "mr": { "name": "मराठी", "country": "IN" },
+        "ms": { "name": "Bahasa Melayu", "country": "MY" },
+        "nl": { "name": "Nederlands", "country": "NL" },
+        "no": { "name": "Norsk", "country": "NO" },
+        "pa": { "name": "ਪੰਜਾਬੀ", "country": "IN" },
+        "pl": { "name": "Polski", "country": "PL" },
+        "pt": { "name": "Português", "country": "PT" },
+        "ro": { "name": "Română", "country": "RO" },
+        "ru": { "name": "Русский", "country": "RU" },
+        "sq": { "name": "Shqip", "country": "AL" },
+        "sr": { "name": "Српски", "country": "RS" },
+        "sv": { "name": "Svenska", "country": "SE" },
+        "sw": { "name": "Kiswahili", "country": "KE" },
+        "ta": { "name": "தமிழ்", "country": "IN" },
+        "te": { "name": "తెలుగు", "country": "IN" },
+        "th": { "name": "ไทย", "country": "TH" },
+        "tl": { "name": "Tagalog", "country": "PH" },
+        "tr": { "name": "Türkçe", "country": "TR" },
+        "uk": { "name": "Українська", "country": "UA" },
+        "ur": { "name": "اردو", "country": "PK" },
+        "vi": { "name": "Tiếng Việt", "country": "VN" },
+        "yo": { "name": "Yorùbá", "country": "NG" },
+        "zh": { "name": "简体中文", "country": "CN" }
+      }
+    }
   },
   "mainContent": {
     "welcome": {
       "title": "SyriaGPT",
-      "tagline": "העוזר החכם שלך לענות על כל שאלותיך",
-      "examples": "דוגמאות",
-      "capabilities": "יכולות",
-      "limitations": "מגבלות",
+      "tagline": "Do chúntóir cliste chun do cheisteanna go léir a fhreagairt",
+      "examples": "Samplaí",
+      "capabilities": "Cumais",
+      "limitations": "Teorainneacha",
       "suggestions": {
         "examples": [
-          "הסבר כיצד להוציא תעודת זהות בפשטות",
-          "תן לי את הקורסים המאושרים באוניברסיטת דמשק",
-          "מהם המרכיבים למחשי?"
+          "Mínigh conas cárta aitheantais a eisiúint go simplí",
+          "Tabhair dom na cúrsaí ceadaithe in Ollscoil na Damaisce",
+          "Cad iad na comhábhair do Mahshi?"
         ],
         "capabilities": [
-          "איך מכינים במיה ומה הקשר ההיסטורי שלה?",
-          "מהם הסדרי הדרכון הסורי?",
-          "אני צריך מידע על השקעות"
+          "Conas a dhéantar Bamia agus cad é a nasc stairiúil?",
+          "Cad iad na socruithe do phas na Siria?",
+          "Tá faisnéis uaim faoi infheistíochtaí"
         ],
         "limitations": [
-          "איך פותרים בעיית מחשב?",
-          "מהם תנאי ההרשמה באוניברסיטת חלב?",
-          "תן לי סיכום של חדשות היום בסוריה"
+          "Conas fadhb ríomhaire a réiteach?",
+          "Cad iad na coinníollacha clárúcháin in Ollscoil Aleppo?",
+          "Tabhair achoimre dom ar nuacht an lae inniu sa tSiria"
         ]
       }
     },
     "message": {
-      "typing": "מקליד..."
+      "typing": "Ag clóscríobh..."
     },
-    "regenerate": "צור תגובה מחדש",
+    "regenerate": "Athghin freagra",
     "input": {
-      "placeholder": "הקלד את הודעתך כאן, או גרור קובץ כדי לצרף...",
-      "attachFile": "צרף קובץ",
-      "startRecording": "התחל הקלטה",
-      "stopRecording": "הפסק הקלטה",
-      "removeFile": "הסר קובץ"
+      "placeholder": "Clóscríobh do theachtaireacht anseo, nó tarraing comhad chun é a cheangal...",
+      "attachFile": "Ceangail comhad",
+      "startRecording": "Tosaigh ag taifeadadh",
+      "stopRecording": "Stop ag taifeadadh",
+      "removeFile": "Bain comhad"
     },
     "dragDrop": {
-      "title": "גרור קבצים לכאן",
-      "subtitle": "PDF, Word, טקסט (מקסימום 10MB)"
+      "title": "Tarraing comhaid anseo",
+      "subtitle": "PDF, Word, Téacs (uasmhéid 10MB)"
     },
     "speechErrors": {
-      "unsupported": "זיהוי דיבור אינו נתמך בדפדפן זה. אנא השתמש בכרום או אדג'.",
-      "permissionDenied": "אנא אפשר גישה למיקרופון בהגדרות הדפדפן שלך.",
-      "startFailed": "לא ניתן היה להתחיל את ההקלטה. בדוק את הגדרות הדפדפן שלך.",
-      "generalError": "אירעה שגיאה בעת התחלת ההקלטה. אנא נסה שוב.",
-      "no-speech": "לא זוהה דיבור. ודא שקולך ברור והמיקרופון קרוב.",
-      "audio-capture": "לא ניתן לגשת למיקרופון. ודא שהוא מחובר וההרשאה ניתנה.",
-      "not-allowed": "ההרשאה נדחתה. אנא אפשר שימוש במיקרופון מהגדרות הדפדפן.",
-      "network": "שגיאת רשת. אנא בדוק את חיבור האינטרנט שלך.",
-      "service-not-allowed": "שירות זיהוי הדיבור אינו זמין כעת.",
-      "language-not-supported": "השפה אינה נתמכת. נסה את דפדפן כרום."
+      "unsupported": "Ní thacaítear le haithint cainte sa bhrabhsálaí seo. Bain úsáid as Chrome nó Edge le do thoil.",
+      "permissionDenied": "Ceadaigh rochtain ar an micreafón i socruithe do bhrabhsálaí le do thoil.",
+      "startFailed": "Níorbh fhéidir an taifeadadh a thosú. Seiceáil socruithe do bhrabhsálaí.",
+      "generalError": "Tharla earráid agus an taifeadadh á thosú. Bain triail eile as le do thoil.",
+      "no-speech": "Níor braitheadh aon chaint. Cinntigh go bhfuil do ghuth soiléir agus go bhfuil an micreafón gar.",
+      "audio-capture": "Ní féidir rochtain a fháil ar an micreafón. Cinntigh go bhfuil sé ceangailte agus go bhfuil cead tugtha.",
+      "not-allowed": "Diúltaíodh don chead. Ceadaigh úsáid an mhicreafóin ó shocruithe an bhrabhsálaí le do thoil.",
+      "network": "Earráid líonra. Seiceáil do nasc idirlín le do thoil.",
+      "service-not-allowed": "Níl an tseirbhís aithint cainte ar fáil faoi láthair.",
+      "language-not-supported": "Ní thacaítear leis an teanga. Bain triail as brabhsálaí Chrome."
     },
-    "footer": "מטרתנו היא להפוך את האינטראקציה עם מערכות AI לטבעית ובטוחה יותר"
+    "footer": "Is é an sprioc atá againn ná idirghníomhaíocht le córais IS a dhéanamh níos nádúrtha agus níos sábháilte"
   },
   "chat": {
-    "fileAnalysisError": "מצטערים, אירעה שגיאה בניתוח הקובץ: {error}",
-    "responseProcessingError": "מצטערים, אירעה שגיאה בעיבוד התגובה.",
-    "networkError": "מצטערים, אירעה שגיאת חיבור. אנא בדוק את חיבור האינטרנט שלך."
+    "fileAnalysisError": "Tá brón orainn, tharla earráid agus an comhad á anailísiú: {error}",
+    "responseProcessingError": "Tá brón orainn, tharla earráid agus an freagra á phróiseáil.",
+    "networkError": "Tá brón orainn, tharla earráid cheangail. Seiceáil do nasc idirlín le do thoil."
   },
   "aboutPage": {
     "metadata": {
-      "title": "אודות פרויקט SyriaGPT",
-      "description": "למד על המטרות והחזון של פרויקט SyriaGPT, העוזר החכם המתמחה בהקשר הסורי."
+      "title": "Maidir le Tionscadal SyriaGPT",
+      "description": "Foghlaim faoi spriocanna agus fís thionscadal SyriaGPT, an cúntóir cliste a dhíríonn ar chomhthéacs na Siria."
     },
     "header": {
-      "title": "הרפובליקה הערבית הסורית",
+      "title": "Poblacht Arabach na Siria",
       "subtitle": "SYRIAN ARAB REPUBLIC",
-      "mapText": "סוריה.. היא הלב"
+      "mapText": "An tSiria.. is í an croí í"
     },
     "main": {
-      "p1": "זהו פרויקט לאומי חלוצי שאומץ על ידי ממשלת סוריה, שמטרתו לפתח מודל שפה ערבית מתקדם עם התמקדות מיוחדת בניב הסורי. מטרת פרויקט זה היא להיות פלטפורמת ידע ושירות המסייעת לאזרחים לתקשר עם שירותי הממשלה והמגזר הציבורי והפרטי בקלות ובבטחה, ומספקת להם תשובות מדויקות ואמינות לגבי נהלים, חוקים ומידע כללי.",
-      "p2": "הוא נבדל בהתמקדותו בשפה המקומית וביכולת להבין ניבים לצד ערבית סטנדרטית, מה שהופך אותו קרוב למשתמש בחיי היומיום שלו. הפרויקט מבטיח גם פרטיות נתונים על ידי אירוח במרכזי נתונים לאומיים ופועל על פי סטנדרטים גבוהים של בטיחות וניטרליות כדי להבטיח שהתוצאות יהיו מדויקות וחסרות פניות. הוא נועד להיות משולב עם פורטלי ממשל אלקטרוני, יישומים רשמיים ומוקדי שירות, ובכך מהווה צעד יסודי לקראת שיפור הטרנספורמציה הדיגיטלית בסוריה.",
-      "p3": "הפרויקט שואף לשרת תחומים מרובים כגון הקלת נהלים ממשלתיים, תמיכה בחינוך, פישוט הנחיות בריאות, סיוע לעסקים קטנים והפצת הודעות חירום במהירות ובבהירות. בכך הוא מייצג קפיצת מדרגה איכותית באופן שבו אזרחים ניגשים למידע, כאשר אינטראקציה בשפה טבעית הופכת לאמצעי עיקרי לפישוט עסקאות ולקירוב אזרחים למוסדות המדינה."
+      "p1": "Is tionscadal náisiúnta ceannródaíoch é seo a ghlac rialtas na Siria air féin, a bhfuil sé mar aidhm aige múnla teanga Araibise chun cinn a fhorbairt le fócas speisialta ar chanúint na Siria. Is é an sprioc atá ag an tionscadal seo ná a bheith ina ardán eolais agus seirbhíse a chuidíonn le saoránaigh cumarsáid a dhéanamh le seirbhísí rialtais agus leis na hearnálacha poiblí agus príobháideacha go héasca agus go sábháilte, ag soláthar freagraí cruinne agus iontaofa dóibh maidir le nósanna imeachta, dlíthe, agus faisnéis ghinearálta.",
+      "p2": "Déantar idirdhealú air mar gheall ar a fhócas ar an teanga áitiúil agus a chumas canúintí a thuiscint in éineacht le hAraibis Chaighdeánach, rud a fhágann go bhfuil sé níos gaire don úsáideoir ina saol laethúil. Cinntíonn an tionscadal príobháideacht sonraí freisin trína óstáil in ionaid sonraí náisiúnta agus oibríonn sé de réir ardchaighdeáin sábháilteachta agus neodrachta chun a chinntiú go bhfuil na torthaí cruinn agus neamhchlaonta. Tá sé beartaithe é a chomhtháthú le tairseacha ríomh-rialtais, feidhmchláir oifigiúla, agus ionaid seirbhíse, rud a fhágann gur céim bhunúsach é i dtreo an chlaochlaithe dhigitigh sa tSiria a fheabhsú.",
+      "p3": "Tá sé mar aidhm ag an tionscadal freastal ar réimsí éagsúla ar nós nósanna imeachta rialtais a éascú, tacú le hoideachas, treoirlínte sláinte a shimpliú, cabhrú le gnólachtaí beaga, agus fógraí éigeandála a scaipeadh go tapa agus go soiléir. Dá bhrí sin, is léim chainníochtúil é sa chaoi a bhfaigheann saoránaigh rochtain ar fhaisnéis, áit a dtagann idirghníomhaíocht i dteanga nádúrtha chun bheith ina phríomhbhealach chun idirbhearta a shimpliú agus saoránaigh a thabhairt níos gaire d'institiúidí an stáit."
     },
     "footer": {
-      "backButton": "חזור לצ'אט",
-      "disclaimer": "מטרתנו היא להפוך את האינטראקציה עם מערכות AI לטבעית ובטוחה יותר, בהתאם להקשר הסורי ולצרכי משתמשיו. המשוב וההצעות שלך יעזרו לנו לשפר ולפתח את השירות כדי לשרת אותך טוב יותר."
+      "backButton": "Ar ais go dtí an Comhrá",
+      "disclaimer": "Is é an sprioc atá againn ná idirghníomhaíocht le córais IS a dhéanamh níos nádúrtha agus níos sábháilte, i gcomhréir le comhthéacs na Siria agus riachtanais a húsáideoirí. Cabhróidh d'aiseolas agus do mholtaí linn an tseirbhís a fheabhsú agus a fhorbairt chun freastal níos fearr ort."
     }
   },
   "forgotPasswordPage": {
     "metadata": {
-      "title": "שכחתי סיסמה",
-      "description": "שחזר גישה לחשבון SyriaGPT שלך בצעדים פשוטים ומאובטחים."
+      "title": "Pasfhocal Dearmadta",
+      "description": "Faigh rochtain ar do chuntas SyriaGPT ar ais le céimeanna simplí agus slána."
     },
     "infoPanel": {
-      "title": "שחזר את חשבונך בבטחה",
-      "description": "אנחנו כאן כדי לעזור לך לשחזר את הגישה לחשבונך בצעדים פשוטים ומאובטחים.",
+      "title": "Faigh do chuntas ar ais go slán",
+      "description": "Táimid anseo chun cabhrú leat rochtain ar do chuntas a fháil ar ais le céimeanna simplí agus slána.",
       "steps": {
         "step1": {
-          "title": "הזן את האימייל שלך",
-          "description": "האימייל הרשום בחשבון SyriaGPT שלך"
+          "title": "Cuir isteach do ríomhphost",
+          "description": "An ríomhphost atá cláraithe le do chuntas SyriaGPT"
         },
         "step2": {
-          "title": "בדוק את האימייל שלך",
-          "description": "אנו נשלח לך קישור מאובטח לאיפוס הסיסמה שלך"
+          "title": "Seiceáil do ríomhphost",
+          "description": "Seolfaimid nasc slán chugat chun do phasfhocal a athshocrú"
         },
         "step3": {
-          "title": "צור סיסמה חדשה",
-          "description": "בחר סיסמה חזקה ומאובטחת לחשבונך"
+          "title": "Cruthaigh pasfhocal nua",
+          "description": "Roghnaigh pasfhocal láidir agus slán do do chuntas"
         }
       },
       "securityTip": {
-        "title": "טיפ אבטחה",
-        "description": "הקישור תקף ל-15 דקות בלבד כדי להבטיח את אבטחת חשבונך. אם אינך מוצא את האימייל, בדוק את תיקיית הספאם שלך."
+        "title": "Leid Slándála",
+        "description": "Níl an nasc bailí ach ar feadh 15 nóiméad chun slándáil do chuntais a chinntiú. Mura féidir leat an ríomhphost a aimsiú, seiceáil d'fhillteán turscair."
       }
     },
     "form": {
-      "title": "שכחתי סיסמה",
-      "description": "הזן את האימייל שלך כדי לקבל קישור שחזור",
-      "emailLabel": "כתובת אימייל",
-      "emailPlaceholder": "הזן את האימייל שלך...",
-      "emailRequiredAlert": "אנא הזן את כתובת האימייל שלך.",
-      "submitButton": "שלח קישור שחזור",
-      "loadingButton": "שולח...",
-      "rememberedPassword": "נזכרת בסיסמה שלך?",
-      "backToLogin": "חזור להתחברות"
+      "title": "Pasfhocal Dearmadta",
+      "description": "Cuir isteach do ríomhphost chun nasc aisghabhála a fháil",
+      "emailLabel": "Seoladh Ríomhphoist",
+      "emailPlaceholder": "Cuir isteach do ríomhphost...",
+      "emailRequiredAlert": "Cuir isteach do sheoladh ríomhphoist le do thoil.",
+      "submitButton": "Seol Nasc Aisghabhála",
+      "loadingButton": "Ag seoladh...",
+      "rememberedPassword": "An cuimhin leat do phasfhocal?",
+      "backToLogin": "Ar ais go dtí an Logáil Isteach"
     },
     "successScreen": {
-      "title": "הוראות נשלחו",
-      "checkEmailTitle": "בדוק את האימייל שלך",
-      "description": "שלחנו קישור לשחזור סיסמה ל:",
-      "tip1": "בדוק את תיבת הדואר הנכנס שלך",
-      "tip2": "אל תשכח לבדוק את תיקיית הספאם שלך",
-      "tip3": "הקישור תקף ל-15 דקות בלבד",
-      "backToLoginButton": "חזור להתחברות"
+      "title": "Treoracha Seolta",
+      "checkEmailTitle": "Seiceáil do Ríomhphost",
+      "description": "Tá nasc athshocraithe pasfhocail seolta againn chuig:",
+      "tip1": "Seiceáil do bhosca isteach",
+      "tip2": "Ná déan dearmad d'fhillteán turscair a sheiceáil",
+      "tip3": "Níl an nasc bailí ach ar feadh 15 nóiméad",
+      "backToLoginButton": "Ar ais go dtí an Logáil Isteach"
     }
   },
   "helpPage": {
     "metadata": {
-      "title": "מרכז עזרה - SyriaGPT",
-      "description": "מצא תשובות לשאלותיך, מדריכי משתמש, וצור קשר עם צוות התמיכה של SyriaGPT."
+      "title": "Ionad Cabhrach - SyriaGPT",
+      "description": "Faigh freagraí ar do cheisteanna, treoracha úsáideora, agus déan teagmháil le foireann tacaíochta SyriaGPT."
     },
     "header": {
-      "title": "מרכז עזרה",
-      "description": "ברוכים הבאים למרכז התמיכה של SyriaGPT! אנחנו כאן כדי לעזור לך לקבל את החוויה הטובה ביותר האפשרית."
+      "title": "Ionad Cabhrach",
+      "description": "Fáilte go dtí ionad tacaíochta SyriaGPT! Táimid anseo chun cabhrú leat an taithí is fearr is féidir a fháil."
     },
     "search": {
-      "placeholder": "חפש תשובות, מדריכי משתמש, או שאל שאלה..."
+      "placeholder": "Cuardaigh freagraí, treoracha úsáideora, nó cuir ceist..."
     },
     "categories": {
-      "title": "עיין לפי קטגוריה",
+      "title": "Brabhsáil de réir Catagóire",
       "items": [
         {
-          "title": "תחילת העבודה",
-          "description": "למד את יסודות השימוש בפלטפורמה ונצל את כל התכונות הזמינות."
+          "title": "Ag Tosú",
+          "description": "Foghlaim bunúsacha úsáid an ardáin agus bain leas as na gnéithe go léir atá ar fáil."
         },
         {
-          "title": "ניהול חשבון",
-          "description": "ערוך את הפרופיל שלך, נהל מנויים, ואת הגדרות האבטחה שלך."
+          "title": "Bainistíocht Cuntais",
+          "description": "Cuir do phróifíl in eagar, bainistigh síntiúis, agus do shocruithe slándála."
         },
         {
-          "title": "תכונות מתקדמות",
-          "description": "השתמש בקבצים מצורפים, חיפוש קולי, ובינה מלאכותית מתקדמת."
+          "title": "Gnéithe Casta",
+          "description": "Bain úsáid as ceangaltáin, cuardach gutha, agus intleacht shaorga chun cinn."
         },
         {
-          "title": "אבטחה ופרטיות",
-          "description": "למד כיצד להגן על הנתונים והמידע האישי שלך עם תקני האבטחה הגבוהים ביותר."
+          "title": "Slándáil agus Príobháideacht",
+          "description": "Foghlaim conas do shonraí agus d'fhaisnéis phearsanta a chosaint leis na caighdeáin slándála is airde."
         }
       ]
     },
     "faq": {
-      "title": "שאלות נפוצות",
-      "toggleOpen": "קרא עוד",
-      "toggleClose": "סגור",
+      "title": "Ceisteanna Coitianta",
+      "toggleOpen": "Léigh níos mó",
+      "toggleClose": "Dún",
       "items": [
         {
-          "question": "כיצד אוכל להתחיל צ'אט חדש?",
-          "answer": "כדי להתחיל צ'אט חדש, פשוט לחץ על כפתור \"+ צ'אט חדש\" בראש סרגל הצד. תוכל גם להשתמש בקיצור המקשים Ctrl+N להתחלה מהירה."
+          "question": "Conas is féidir liom comhrá nua a thosú?",
+          "answer": "Chun comhrá nua a thosú, níl le déanamh ach cliceáil ar an gcnaipe \"+ Comhrá Nua\" ag barr an taobh-bharra. Is féidir leat an aicearra méarchláir Ctrl+N a úsáid freisin le haghaidh tús tapa."
         },
         {
-          "question": "אילו סוגי קבצים אוכל לצרף?",
-          "answer": "תוכל לצרף קבצי PDF, מסמכי Word (doc, docx), קבצי PowerPoint, קבצי טקסט (txt), ותמונות (jpg, png, gif). הגודל המרבי לקובץ בודד הוא 10 מגה-בייט, ותוכל לצרף עד 5 קבצים לשיחה."
+          "question": "Cén cineál comhad is féidir liom a cheangal?",
+          "answer": "Is féidir leat comhaid PDF, doiciméid Word (doc, docx), comhaid PowerPoint, comhaid téacs (txt), agus íomhánna (jpg, png, gif) a cheangal. Is é 10 MB an t-uasmhéid do chomhad aonair, agus is féidir leat suas le 5 chomhad a cheangal in aghaidh an chomhrá."
         },
         {
-          "question": "האם השיחות הקודמות שלי נשמרות?",
-          "answer": "כן, השיחות הקודמות שלך נשמרות באופן אוטומטי ומאובטח בחשבונך. תוכל לגשת אליהן מרשימת \"שיחות קודמות\" בסרגל הצד, מאורגנות לפי תאריך או נושא."
+          "question": "An sábháltar mo chomhráite roimhe seo?",
+          "answer": "Sea, sábháltar do chomhráite roimhe seo go huathoibríoch agus go slán i do chuntas. Is féidir leat rochtain a fháil orthu ón liosta \"Comhráite a Chuaigh Thart\" sa taobh-bharra, eagraithe de réir dáta nó ábhair."
         },
         {
-          "question": "כיצד פועלים מצבי האור והחושך?",
-          "answer": "תוכל לעבור בין מצבי אור וחושך באמצעות הכפתור הייעודי בסרגל הצד. המערכת שומרת באופן אוטומטי את העדפתך ומיישמת אותה בכל הפעלות עתידיות."
+          "question": "Conas a oibríonn na modhanna geala agus dorcha?",
+          "answer": "Is féidir leat aistriú idir modhanna geala agus dorcha ag baint úsáide as an gcnaipe tiomnaithe sa taobh-bharra. Sábhálann an córas do rogha go huathoibríoch agus cuireann sé i bhfeidhm é i ngach seisiún amach anseo."
         },
         {
-          "question": "מהי תכונת הדיבור לטקסט?",
-          "answer": "תוכל להשתמש במיקרופון שלך להכתבה קולית בערבית או באנגלית. לחץ על סמל המיקרופון בסרגל הקלט והתחל לדבר. המערכת תמיר את דיבורך לטקסט באופן אוטומטי."
+          "question": "Cad é an ghné cainte-go-téacs?",
+          "answer": "Is féidir leat do mhicreafón a úsáid le haghaidh deachtú gutha in Araibis nó i mBéarla. Cliceáil ar an deilbhín micreafóin sa bharra ionchuir agus tosaigh ag labhairt. Déanfaidh an córas do chaint a thiontú go téacs go huathoibríoch."
         },
         {
-          "question": "האם אוכל להשתמש ב-SyriaGPT בטלפון הנייד שלי?",
-          "answer": "כן, SyriaGPT זמין דרך דפדפן אינטרנט בכל המכשירים החכמים. הממשק מגיב באופן מלא ועובד בצורה מושלמת בטלפונים ובטאבלטים."
+          "question": "An féidir liom SyriaGPT a úsáid ar mo ghuthán póca?",
+          "answer": "Sea, tá SyriaGPT ar fáil trí bhrabhsálaí gréasáin ar gach gléas cliste. Tá an comhéadan lánfhreagrúil agus oibríonn sé go foirfe ar fhóin agus ar tháibléid."
         }
       ]
     },
     "contact": {
-      "title": "לא מצאת את מה שחיפשת?",
-      "description": "צוות התמיכה המסור שלנו זמין מסביב לשעון כדי לסייע לך. צור איתנו קשר ואנו נחזור אליך תוך דקות!",
-      "emailButton": "צור קשר באמצעות דוא\"ל",
-      "chatButton": "צ'אט חי",
-      "phoneButton": "שיחת טלפון",
-      "availability": "זמין 24/7",
-      "responseTime": "תגובה תוך 5 דקות",
-      "languageSupport": "תמיכה בשפה הערבית"
+      "title": "Nár aimsigh tú an méid a bhí uait?",
+      "description": "Tá ár bhfoireann tacaíochta tiomnaithe ar fáil timpeall an chloig chun cabhrú leat. Déan teagmháil linn agus tiocfaimid ar ais chugat laistigh de nóiméid!",
+      "emailButton": "Déan Teagmháil trí Ríomhphost",
+      "chatButton": "Comhrá Beo",
+      "phoneButton": "Glao Teileafóin",
+      "availability": "Ar fáil 24/7",
+      "responseTime": "Freagra laistigh de 5 nóiméad",
+      "languageSupport": "Tacaíocht i dteanga na hAraibise"
     }
   },
   "loginPage": {
     "metadata": {
-      "title": "התחברות - SyriaGPT",
-      "description": "התחבר לחשבון SyriaGPT שלך כדי לגשת לשיחות ולתכונות המתקדמות שלך."
+      "title": "Logáil Isteach - SyriaGPT",
+      "description": "Logáil isteach i do chuntas SyriaGPT chun rochtain a fháil ar do chomhráite agus ar ghnéithe casta."
     },
     "infoPanel": {
-      "title": "ברוך שובך",
-      "description": "המשך לחקור את עולם הבינה המלאכותית הסורית עם",
-      "securityTitle": "מדוע SyriaGPT מאובטח?",
+      "title": "Fáilte ar ais",
+      "description": "Lean ort ag fiosrú domhan na hintleachta saorga Síreach le",
+      "securityTitle": "Cén fáth a bhfuil SyriaGPT slán?",
       "features": [
         {
-          "title": "הגנת נתונים מתקדמת",
-          "description": "אנו משתמשים בטכנולוגיות הצפנה מתקדמות כדי להגן על המידע האישי שלך"
+          "title": "Cosaint Sonraí Casta",
+          "description": "Bainimid úsáid as teicneolaíochtaí criptithe chun cinn chun d'fhaisnéis phearsanta a chosaint"
         },
         {
-          "title": "אימות דו-שלבי",
-          "description": "שכבת הגנה נוספת כדי להבטיח את אבטחת חשבונך"
+          "title": "Fíordheimhniú Dhá Fhachtóir",
+          "description": "Sraith bhreise cosanta chun slándáil do chuntais a chinntiú"
         },
         {
-          "title": "בינה מלאכותית מקומית",
-          "description": "טכנולוגיה סורית מתקדמת המבינה את התרבות וההקשר הערבי"
+          "title": "Intleacht Shaorga Áitiúil",
+          "description": "Teicneolaíocht Shíreach chun cinn a thuigeann an cultúr agus an comhthéacs Arabach"
         }
       ],
       "stats": [
-        { "value": "50K+", "label": "משתמשים פעילים" },
-        { "value": "99.9%", "label": "זמן פעולה" },
-        { "value": "24/7", "label": "תמיכה" }
+        { "value": "50K+", "label": "Úsáideoirí Gníomhacha" },
+        { "value": "99.9%", "label": "Aga Fónaimh" },
+        { "value": "24/7", "label": "Tacaíocht" }
       ]
     },
     "form": {
-      "title": "התחברות",
-      "description": "הזן את פרטיך כדי לגשת לחשבונך",
-      "emailLabel": "כתובת אימייל",
-      "emailPlaceholder": "הזן את האימייל שלך...",
-      "passwordLabel": "סיסמה",
-      "passwordPlaceholder": "הזן את הסיסמה שלך...",
-      "forgotPassword": "שכחת סיסמה?",
-      "showPassword": "הצג סיסמה",
-      "hidePassword": "הסתר סיסמה",
-      "loginButton": "התחבר",
-      "loadingButton": "מאמת...",
-      "loginSuccessAlert": "התחברות הצליחה!",
-      "orSeparator": "או",
-      "noAccount": "אין לך חשבון?",
-      "createAccount": "צור חשבון חדש"
+      "title": "Logáil Isteach",
+      "description": "Cuir isteach do shonraí chun rochtain a fháil ar do chuntas",
+      "emailLabel": "Seoladh Ríomhphoist",
+      "emailPlaceholder": "Cuir isteach do ríomhphost...",
+      "passwordLabel": "Pasfhocal",
+      "passwordPlaceholder": "Cuir isteach do phasfhocal...",
+      "forgotPassword": "Pasfhocal dearmadta?",
+      "showPassword": "Taispeáin pasfhocal",
+      "hidePassword": "Folaigh pasfhocal",
+      "loginButton": "Logáil Isteach",
+      "loadingButton": "Ag fíordheimhniú...",
+      "loginSuccessAlert": "Logáil isteach rathúil!",
+      "orSeparator": "nó",
+      "noAccount": "Nach bhfuil cuntas agat?",
+      "createAccount": "Cruthaigh cuntas nua"
     }
   },
   "privacyPolicyPage": {
     "metadata": {
-      "title": "מדיניות פרטיות - SyriaGPT",
-      "description": "למד כיצד הנתונים האישיים שלך נאספים, משמשים ומוגנים בעת שימוש בשירותי SyriaGPT."
+      "title": "Beartas Príobháideachta - SyriaGPT",
+      "description": "Foghlaim conas a bhailítear, a úsáidtear, agus a chosnaítear do shonraí pearsanta agus tú ag úsáid seirbhísí SyriaGPT."
     },
     "header": {
-      "title": "מדיניות פרטיות",
-      "lastUpdated": "עודכן לאחרונה: 25 באוגוסט 2025",
-      "effectiveDate": "בתוקף מיידי"
+      "title": "Beartas Príobháideachta",
+      "lastUpdated": "Nuashonraithe go deireanach: 25 Lúnasa, 2025",
+      "effectiveDate": "I bhfeidhm láithreach"
     },
     "infoCards": [
       {
-        "title": "הגנה מלאה",
-        "description": "הנתונים שלך מוגנים בטכנולוגיות ההצפנה והאבטחה העדכניות ביותר."
+        "title": "Cosaint Iomlán",
+        "description": "Tá do shonraí cosanta leis na teicneolaíochtaí criptithe agus slándála is déanaí."
       },
       {
-        "title": "שליטה מלאה",
-        "description": "אתה שולט בנתונים שלך ויכול למחוק אותם בכל עת."
+        "title": "Smacht Iomlán",
+        "description": "Tá smacht agat ar do shonraí agus is féidir leat iad a scriosadh am ar bith."
       },
       {
-        "title": "שקיפות מלאה",
-        "description": "אנו מסבירים בבירור מה אנו אוספים וכיצד אנו משתמשים בו."
+        "title": "Trédhearcacht Iomlán",
+        "description": "Mínímid go soiléir cad a bhailímid agus conas a úsáidimid é."
       },
       {
-        "title": "אין מכירת נתונים",
-        "description": "אנו לא מוכרים או משתפים את הנתונים שלך עם צדדים שלישיים."
+        "title": "Gan Sonraí a Dhíol",
+        "description": "Ní dhíolaimid ná ní roinnimid do shonraí le tríú páirtithe."
       }
     ],
     "toc": {
-      "title": "תוכן עניינים"
+      "title": "Clár na nÁbhar"
     },
     "sections": [
       {
         "id": "introduction",
-        "title": "מבוא",
-        "content": "ברוכים הבאים ל-SyriaGPT. אנו מתייחסים לפרטיותך ברצינות. מדיניות זו מתארת את סוגי המידע שאנו עשויים לאסוף ממך או שאתה עשוי לספק בעת ביקור או שימוש באפליקציה שלנו, ואת נוהלינו לאיסוף, שימוש, תחזוקה, הגנה וחשיפה של מידע זה."
+        "title": "Réamhrá",
+        "content": "Fáilte go SyriaGPT. Glacaimid do phríobháideacht dáiríre. Déanann an beartas seo cur síos ar na cineálacha faisnéise a d'fhéadfaimis a bhailiú uait nó a d'fhéadfá a sholáthar agus tú ag tabhairt cuairte ar ár n-aip nó á húsáid, agus ár gcleachtais chun an fhaisnéis sin a bhailiú, a úsáid, a chothabháil, a chosaint agus a nochtadh."
       },
       {
         "id": "data-collection",
-        "title": "מידע שאנו אוספים",
-        "intro": "אנו עשויים לאסוף מספר סוגי מידע ממשתמשי השירות שלנו, כולל:",
+        "title": "Faisnéis a Bhailímid",
+        "intro": "Féadfaimid roinnt cineálacha faisnéise a bhailiú ó úsáideoirí ár seirbhíse, lena n-áirítear:",
         "points": [
-          "מידע שאתה מספק ישירות: כגון שמך, האימייל והסיסמה שלך בעת יצירת חשבון.",
-          "תוכן משתמש: ההודעות, השאלות והקבצים שאתה מעלה לשירות שלנו לניתוח.",
-          "מידע שימוש: פרטי השימוש שלך בשירות שלנו, כולל נתוני תעבורה ויומני שימוש.",
-          "מידע על המכשיר: סוג הדפדפן, מערכת ההפעלה וכתובת ה-IP שלך."
+          "Faisnéis a sholáthraíonn tú go díreach: mar d'ainm, do ríomhphost, agus do phasfhocal agus cuntas á chruthú agat.",
+          "Ábhar úsáideora: Na teachtaireachtaí, na ceisteanna, agus na comhaid a uaslódálann tú chuig ár seirbhís le haghaidh anailíse.",
+          "Faisnéis úsáide: Sonraí faoi d'úsáid ar ár seirbhís, lena n-áirítear sonraí tráchta agus logaí úsáide.",
+          "Faisnéis gléis: Do chineál brabhsálaí, córas oibriúcháin, agus seoladh IP."
         ]
       },
       {
         "id": "data-usage",
-        "title": "כיצד אנו משתמשים במידע שלך",
-        "intro": "אנו משתמשים במידע שאנו אוספים עליך או שאתה מספק לנו למטרות הבאות:",
+        "title": "Conas a Úsáidimid d'Fhaisnéis",
+        "intro": "Úsáidimid an fhaisnéis a bhailímid fút nó a sholáthraíonn tú dúinn chun na críocha seo a leanas:",
         "points": [
-          "כדי לספק לך את השירות שלנו ותכניו באיכות הטובה ביותר האפשרית.",
-          "כדי לשפר ולהתאים אישית את החוויה שלך בהתאם לצרכיך.",
-          "כדי לתקשר איתך לגבי חשבונך או השירות שלנו והודעות חשובות.",
-          "למטרות ניתוח ומחקר כדי לשפר את המוצרים והשירותים שלנו.",
-          "כדי להבטיח את אבטחת הפלטפורמה ולמנוע שימוש לא מורשה."
+          "Chun ár seirbhís agus a hábhar a sholáthar duit ar an gcaighdeán is fearr is féidir.",
+          "Chun do thaithí a fheabhsú agus a phearsantú de réir do riachtanas.",
+          "Chun cumarsáid a dhéanamh leat maidir le do chuntas nó ár seirbhís agus fógraí tábhachtacha.",
+          "Chun críocha anailíse agus taighde chun ár dtáirgí agus ár seirbhísí a fheabhsú.",
+          "Chun slándáil an ardáin a chinntiú agus úsáid neamhúdaraithe a chosc."
         ]
       },
       {
         "id": "data-disclosure",
-        "title": "חשיפת המידע שלך",
-        "commitmentTitle": "ההתחייבות המרכזית שלנו",
-        "commitmentText": "אנו לא מוכרים או משכירים את המידע האישי שלך לצדדים שלישיים. זוהי ההתחייבות הבסיסית שלנו כלפיך.",
-        "content": "אנו עשויים לחשוף מידע אישי רק במקרים הבאים: כדי לציית לצו בית משפט או לחוק, או כדי להגן על הזכויות והבטיחות של SyriaGPT ולקוחותינו מפני איומי אבטחה חמורים."
+        "title": "Nochtadh d'Fhaisnéise",
+        "commitmentTitle": "Ár bPríomh-Ghealltanas",
+        "commitmentText": "Ní dhíolaimid ná ní ligimid d'fhaisnéis phearsanta ar cíos do thríú páirtithe. Is é seo ár ngealltanas bunúsach duit.",
+        "content": "Ní fhéadfaimid faisnéis phearsanta a nochtadh ach sna cásanna seo a leanas: chun ordú cúirte nó dlí a chomhlíonadh, nó chun cearta agus sábháilteacht SyriaGPT agus ár gcustaiméirí a chosaint ó bhagairtí slándála tromchúiseacha."
       },
       {
         "id": "data-security",
-        "title": "אבטחת נתונים",
-        "protectionTitle": "אמצעי הגנה מתקדמים:",
+        "title": "Slándáil Sonraí",
+        "protectionTitle": "Bearta Cosanta Casta:",
         "points": [
-          "הצפנה מקצה לקצה עבור כל הנתונים הרגישים",
-          "שרתים מאובטחים המוגנים על ידי חומות אש מתקדמות",
-          "ניטור אבטחה 24/7 לאיתור איומים",
-          "גיבויים קבועים ומוצפנים להבטחת המשכיות השירות",
-          "בדיקות אבטחה תקופתיות על ידי מומחים עצמאיים"
+          "Criptiú ó cheann go ceann do gach sonraí íogaire",
+          "Freastalaithe slána cosanta ag ballaí dóiteáin chun cinn",
+          "Monatóireacht slándála 24/7 chun bagairtí a bhrath",
+          "Cúltacaí rialta agus criptithe chun leanúnachas seirbhíse a chinntiú",
+          "Tástálacha slándála tréimhsiúla ag saineolaithe neamhspleácha"
         ]
       },
       {
         "id": "user-rights",
-        "title": "הזכויות שלך",
-        "intro": "כמשתמש בשירות שלנו, יש לך את הזכויות הבאות בנוגע לנתונים האישיים שלך:",
+        "title": "Do Chearta",
+        "intro": "Mar úsáideoir dár seirbhís, tá na cearta seo a leanas agat maidir le do shonraí pearsanta:",
         "rights": [
           {
-            "title": "גישה וסקירה",
-            "description": "בקש עותק של כל הנתונים שלך המאוחסנים אצלנו"
+            "title": "Rochtain agus Athbhreithniú",
+            "description": "Iarr cóip de do shonraí go léir atá stóráilte againn"
           },
           {
-            "title": "תיקון ועדכון",
-            "description": "שנה או תקן כל מידע לא מדויק"
+            "title": "Ceartú agus Nuashonrú",
+            "description": "Athraigh nó ceartaigh aon fhaisnéis mhíchruinn"
           },
           {
-            "title": "מחיקה מלאה",
-            "description": "מחק לצמיתות את חשבונך ואת כל הנתונים שלך"
+            "title": "Scriosadh Iomlán",
+            "description": "Scrios do chuntas agus do shonraí go léir go buan"
           },
           {
-            "title": "ניידות וייצוא",
-            "description": "ייצא את הנתונים שלך בפורמט קריא"
+            "title": "Iniomparthacht agus Easpórtáil",
+            "description": "Easpórtáil do shonraí i bhformáid inléite"
           }
         ]
       },
       {
         "id": "policy-changes",
-        "title": "שינויים במדיניות",
-        "content": "המדיניות שלנו היא להודיע לך על כל שינוי משמעותי 30 יום לפני כניסתו לתוקף. כל שינוי יפורסם בדף זה עם תאריך עדכון מעודכן. אנו ממליצים לך לעיין במדיניות זו באופן קבוע כדי להישאר מעודכן לגבי האופן שבו אנו מגנים על המידע שלך."
+        "title": "Athruithe ar an mBeartas",
+        "content": "Is é ár mbeartas fógra a thabhairt duit faoi aon athruithe suntasacha 30 lá sula dtiocfaidh siad i bhfeidhm. Foilseofar aon athruithe ar an leathanach seo le dáta nuashonraithe cothrom le dáta. Molaimid duit an beartas seo a athbhreithniú go rialta chun fanacht ar an eolas faoin gcaoi a gcosnaímid d'fhaisnéis."
       },
       {
         "id": "contact",
-        "title": "צור קשר",
-        "email": "אימייל",
-        "phone": "טלפון",
-        "availability": "צוות הפרטיות זמין לענות על שאלותיך מיום ראשון עד חמישי, 9:00 - 18:00"
+        "title": "Déan Teagmháil",
+        "email": "Ríomhphost",
+        "phone": "Teileafón",
+        "availability": "Tá an fhoireann príobháideachta ar fáil chun do cheisteanna a fhreagairt ó Dhomhnach go Déardaoin, 9:00 - 18:00"
       }
     ]
   },
   "profilePage": {
     "metadata": {
-      "title": "פרופיל - SyriaGPT",
-      "description": "נהל את המידע האישי, הגדרות האבטחה ותוכנית המנוי שלך ב-SyriaGPT."
+      "title": "Próifíl - SyriaGPT",
+      "description": "Bainistigh d'fhaisnéis phearsanta, do shocruithe slándála, agus do phlean síntiúis ar SyriaGPT."
     },
     "header": {
-      "title": "פרופיל",
-      "description": "נהל את המידע האישי והגדרות החשבון שלך ב-SyriaGPT"
+      "title": "Próifíl",
+      "description": "Bainistigh d'fhaisnéis phearsanta agus do shocruithe cuntais ar SyriaGPT"
     },
     "sidebar": {
-      "avatarAlt": "תמונת פרופיל",
-      "changeAvatar": "שנה תמונת פרופיל",
-      "joinDate": "תאריך הצטרפות",
-      "currentPlan": "תוכנית נוכחית",
-      "freePlan": "חינם",
-      "conversations": "שיחות",
-      "activeDays": "ימים פעילים"
+      "avatarAlt": "Íomhá próifíle",
+      "changeAvatar": "Athraigh íomhá próifíle",
+      "joinDate": "Dáta Cláraithe",
+      "currentPlan": "Plean Reatha",
+      "freePlan": "Saor in Aisce",
+      "conversations": "Comhráite",
+      "activeDays": "Laethanta Gníomhacha"
     },
     "personalInfo": {
-      "title": "מידע אישי",
-      "description": "עדכן את שמך, האימייל והגדרות הבסיסיות שלך",
-      "fullName": "שם מלא",
-      "email": "כתובת אימייל",
-      "editButton": "ערוך מידע",
-      "cancelButton": "ביטול",
-      "saveButton": "שמור שינויים",
-      "updateSuccess": "הפרופיל עודכן בהצלחה!"
+      "title": "Faisnéis Phearsanta",
+      "description": "Nuashonraigh d'ainm, do ríomhphost, agus do shocruithe bunúsacha",
+      "fullName": "Ainm Iomlán",
+      "email": "Seoladh Ríomhphoist",
+      "editButton": "Cuir Faisnéis in Eagar",
+      "cancelButton": "Cealaigh",
+      "saveButton": "Sábháil Athruithe",
+      "updateSuccess": "Nuashonraíodh an phróifíl go rathúil!"
     },
     "security": {
-      "title": "אבטחה וסיסמה",
-      "description": "שמור על אבטחת חשבונך על ידי עדכון קבוע של הסיסמה שלך",
-      "currentPassword": "סיסמה נוכחית",
-      "currentPasswordPlaceholder": "הזן סיסמה נוכחית...",
-      "newPassword": "סיסמה חדשה",
-      "newPasswordPlaceholder": "הזן סיסמה חדשה...",
-      "confirmNewPassword": "אשר סיסמה חדשה",
-      "confirmNewPasswordPlaceholder": "אשר סיסמה חדשה...",
-      "updateButton": "עדכן סיסמה",
-      "passwordMismatch": "הסיסמאות החדשות אינן תואמות.",
-      "updateSuccess": "הסיסמה שונתה בהצלחה!"
+      "title": "Slándáil agus Pasfhocal",
+      "description": "Coinnigh do chuntas slán trí do phasfhocal a nuashonrú go rialta",
+      "currentPassword": "Pasfhocal Reatha",
+      "currentPasswordPlaceholder": "Cuir isteach an pasfhocal reatha...",
+      "newPassword": "Pasfhocal Nua",
+      "newPasswordPlaceholder": "Cuir isteach pasfhocal nua...",
+      "confirmNewPassword": "Deimhnigh Pasfhocal Nua",
+      "confirmNewPasswordPlaceholder": "Deimhnigh pasfhocal nua...",
+      "updateButton": "Nuashonraigh Pasfhocal",
+      "passwordMismatch": "Ní hionann na pasfhocail nua.",
+      "updateSuccess": "Athraíodh an pasfhocal go rathúil!"
     },
     "subscription": {
-      "title": "תוכנית מנוי",
-      "description": "אתה נמצא כעת בתוכנית החינמית - קבל תכונות נוספות",
-      "upgradeTitle": "שדרג לפרו",
-      "upgradeDescription": "קבל תכונות נוספות ותגובות בעדיפות",
-      "upgradeButton": "שדרג עכשיו"
+      "title": "Plean Síntiúis",
+      "description": "Tá tú ar an bplean saor in aisce faoi láthair - faigh gnéithe breise",
+      "upgradeTitle": "Uasghrádaigh go Pro",
+      "upgradeDescription": "Faigh gnéithe breise agus freagraí tosaíochta",
+      "upgradeButton": "Uasghrádaigh Anois"
     },
     "dangerZone": {
-      "title": "אזור סכנה",
-      "description": "פעולות אלה אינן הפיכות - המשך בזהירות",
-      "deleteTitle": "מחק חשבון לצמיתות",
-      "deleteDescription": "כל הנתונים והשיחות שלך יימחקו לצמיתות",
-      "deleteButton": "מחק חשבון"
+      "title": "Crios Contúirte",
+      "description": "Ní féidir na gníomhartha seo a chealú - lean ar aghaidh go cúramach",
+      "deleteTitle": "Scrios an cuntas go buan",
+      "deleteDescription": "Scriosfar do shonraí agus do chomhráite go léir go buan",
+      "deleteButton": "Scrios an Cuntas"
     },
     "deleteModal": {
-      "title": "אישור מחיקת חשבון",
-      "message": "האם אתה בטוח לחלוטין? חשבונך וכל הנתונים שלך יימחקו לצמיתות. פעולה זו אינה ניתנת לביטול.",
-      "cancelButton": "ביטול",
-      "confirmButton": "אשר מחיקה",
-      "deleteSuccess": "חשבונך נמחק בהצלחה."
+      "title": "Deimhnigh Scriosadh Cuntais",
+      "message": "An bhfuil tú lánchinnte? Scriosfar do chuntas agus do shonraí go léir go buan. Ní féidir an gníomh seo a chealú.",
+      "cancelButton": "Cealaigh",
+      "confirmButton": "Deimhnigh Scriosadh",
+      "deleteSuccess": "Scriosadh do chuntas go rathúil."
     }
   },
   "registerPage": {
     "metadata": {
-      "title": "צור חשבון חדש - SyriaGPT",
-      "description": "הצטרף לקהילת SyriaGPT והתחל לחקור את כוחה של AI המיועדת להקשר הסורי."
+      "title": "Cruthaigh Cuntas Nua - SyriaGPT",
+      "description": "Bí i do bhall de phobal SyriaGPT agus tosaigh ag fiosrú cumhacht IS atá deartha do chomhthéacs na Siria."
     },
     "infoPanel": {
-      "title": "הצטרף לקהילת SyriaGPT",
-      "description": "גלה את כוחה של בינה מלאכותית שתוכננה במיוחד עבור התרבות וההקשר הסורי",
+      "title": "Bí i do bhall de Phobal SyriaGPT",
+      "description": "Faigh amach cumhacht na hintleachta saorga atá deartha go sonrach do chultúr agus do chomhthéacs na Siria",
       "features": [
         {
-          "title": "AI מתקדם",
-          "description": "טכנולוגיות מודרניות שאומנו על תוכן ערבי וסורי"
+          "title": "IS Casta",
+          "description": "Teicneolaíochtaí nua-aimseartha oilte ar ábhar Araibise agus Siria"
         },
         {
-          "title": "אבטחה ופרטיות מובטחות",
-          "description": "הגנה מתקדמת על הנתונים שלך עם הצפנה ברמה עולמית"
+          "title": "Slándáil agus Príobháideacht Ráthaithe",
+          "description": "Cosaint chun cinn do do shonraí le criptiú den scoth"
         },
         {
-          "title": "קהילה פעילה",
-          "description": "הצטרף לאלפי משתמשים סורים הנלהבים מטכנולוגיה"
+          "title": "Pobal Gníomhach",
+          "description": "Bí i dteannta na mílte úsáideoirí Siria atá paiseanta faoin teicneolaíocht"
         },
         {
-          "title": "תכונות בלעדיות",
-          "description": "כלים מותאמים אישית לתוכן סורי וערבי"
+          "title": "Gnéithe Eisiacha",
+          "description": "Uirlisí saincheaptha d'ábhar Siria agus Araibise"
         }
       ],
       "testimonial": {
-        "quote": "\"SyriaGPT שינה לחלוטין את דרך העבודה שלי. הבנה עמוקה של השפה והתרבות הסורית.\"",
-        "author": "- אחמד אל-שאמי, מפתח"
+        "quote": "\"D'athraigh SyriaGPT go hiomlán an bealach a n-oibrím. Tuiscint dhomhain ar theanga agus ar chultúr na Siria.\"",
+        "author": "- Ahmad Al-Shami, Forbróir"
       }
     },
     "form": {
-      "title": "צור חשבון חדש",
-      "description": "מלא את הפרטים הבאים כדי ליצור את חשבונך",
-      "firstName": "שם פרטי",
-      "lastName": "שם משפחה",
-      "email": "כתובת אימייל",
-      "password": "סיסמה",
-      "confirmPassword": "אשר סיסמה",
-      "placeholder": "הזן {field}...",
-      "emailPlaceholder": "example@email.com",
-      "passwordStrength": "חוזק הסיסמה",
+      "title": "Cruthaigh Cuntas Nua",
+      "description": "Líon isteach na sonraí seo a leanas chun do chuntas a chruthú",
+      "firstName": "Céadainm",
+      "lastName": "Sloinne",
+      "email": "Seoladh Ríomhphoist",
+      "password": "Pasfhocal",
+      "confirmPassword": "Deimhnigh Pasfhocal",
+      "placeholder": "Cuir isteach {field}...",
+      "emailPlaceholder": "sampla@email.com",
+      "passwordStrength": "Láidreacht an Phasfhocail",
       "strengthLevels": [
-        "חלש מאוד",
-        "חלש",
-        "בינוני",
-        "חזק",
-        "חזק מאוד"
+        "An-lag",
+        "Lag",
+        "Meánach",
+        "Láidir",
+        "An-láidir"
       ],
-      "submitButton": "צור חשבון חדש",
-      "loadingButton": "יוצר חשבון...",
-      "googleButton": "הירשם עם גוגל",
-      "orSeparator": "או",
-      "hasAccount": "כבר יש לך חשבון?",
-      "loginLink": "התחבר",
-      "termsAgreement": "על ידי יצירת חשבון, אתה מסכים ל",
-      "termsLink": "תנאי השימוש",
-      "and": "ו",
-      "privacyLink": "מדיניות הפרטיות",
-      "successAlert": "חשבונך נוצר בהצלחה! ברוכים הבאים ל-SyriaGPT"
+      "submitButton": "Cruthaigh Cuntas Nua",
+      "loadingButton": "Ag cruthú cuntais...",
+      "googleButton": "Cláraigh le Google",
+      "orSeparator": "nó",
+      "hasAccount": "An bhfuil cuntas agat cheana?",
+      "loginLink": "Logáil Isteach",
+      "termsAgreement": "Trí chuntas a chruthú, aontaíonn tú leis na",
+      "termsLink": "Téarmaí Seirbhíse",
+      "and": "agus",
+      "privacyLink": "Beartas Príobháideachta",
+      "successAlert": "Cruthaíodh do chuntas go rathúil! Fáilte go SyriaGPT"
     },
     "validation": {
-      "minLength": "חייב להיות לפחות 2 תווים",
-      "maxLength": "ארוך מדי",
-      "emailRequired": "נדרש אימייל",
-      "emailInvalid": "כתובת אימייל לא חוקית",
-      "passwordLength": "הסיסמה חייבת להיות באורך של 8 תווים לפחות",
-      "passwordComplexity": "חייב להכיל אות גדולה, אות קטנה ומספר",
-      "passwordMismatch": "הסיסמאות אינן תואמות"
+      "minLength": "Caithfidh 2 charachtar ar a laghad a bheith ann",
+      "maxLength": "Ró-fhada",
+      "emailRequired": "Ríomhphost ag teastáil",
+      "emailInvalid": "Seoladh ríomhphoist neamhbhailí",
+      "passwordLength": "Caithfidh an pasfhocal a bheith 8 gcarachtar ar a laghad",
+      "passwordComplexity": "Caithfidh ceannlitir, litir bheag, agus uimhir a bheith ann",
+      "passwordMismatch": "Ní hionann na pasfhocail"
     }
   },
   "resetPasswordPage": {
     "metadata": {
-      "title": "איפוס סיסמה - SyriaGPT",
-      "description": "הגדר סיסמה חדשה וחזקה לחשבון SyriaGPT שלך."
+      "title": "Athshocraigh Pasfhocal - SyriaGPT",
+      "description": "Socraigh pasfhocal nua láidir do do chuntas SyriaGPT."
     },
     "form": {
-      "title": "הגדר סיסמה חדשה",
-      "description": "בחר סיסמה חזקה כדי להגן על חשבונך.",
-      "newPasswordLabel": "סיסמה חדשה",
-      "confirmPasswordLabel": "אשר סיסמה",
-      "passwordMismatchError": "הסיסמאות אינן תואמות.",
-      "submitButton": "עדכן סיסמה",
-      "loadingButton": "מעדכן...",
-      "showPasswordAria": "הצג סיסמה",
-      "hidePasswordAria": "הסתר סיסמה",
-      "mismatchToast": "אנא ודא שהסיסמאות תואמות.",
-      "loadingToast": "מעדכן סיסמה...",
-      "successToast": "הסיסמה עודכנה בהצלחה!"
+      "title": "Socraigh Pasfhocal Nua",
+      "description": "Roghnaigh pasfhocal láidir chun do chuntas a chosaint.",
+      "newPasswordLabel": "Pasfhocal Nua",
+      "confirmPasswordLabel": "Deimhnigh Pasfhocal",
+      "passwordMismatchError": "Ní hionann na pasfhocail.",
+      "submitButton": "Nuashonraigh Pasfhocal",
+      "loadingButton": "Ag nuashonrú...",
+      "showPasswordAria": "Taispeáin pasfhocal",
+      "hidePasswordAria": "Folaigh pasfhocal",
+      "mismatchToast": "Cinntigh go bhfuil na pasfhocail comhoiriúnach le do thoil.",
+      "loadingToast": "Ag nuashonrú an phasfhocail...",
+      "successToast": "Nuashonraíodh an pasfhocal go rathúil!"
     },
     "strengthIndicator": {
-      "title": "חוזק",
+      "title": "Láidreacht",
       "levels": [
-        "חלש מאוד",
-        "חלש",
-        "מקובל",
-        "טוב",
-        "חזק",
-        "חזק מאוד"
+        "An-lag",
+        "Lag",
+        "Inghlactha",
+        "Maith",
+        "Láidir",
+        "An-láidir"
       ]
     },
     "successScreen": {
-      "title": "הצלחה!",
-      "description": "הסיסמה שלך עודכנה. כעת תוכל להתחבר בבטחה עם פרטיך החדשים.",
-      "backToLoginButton": "חזור להתחברות"
+      "title": "Rath!",
+      "description": "Nuashonraíodh do phasfhocal. Is féidir leat logáil isteach go slán anois le do shonraí nua.",
+      "backToLoginButton": "Ar ais go dtí an Logáil Isteach"
     }
   },
   "settingsPage": {
     "metadata": {
-      "title": "הגדרות - SyriaGPT",
-      "description": "התאם אישית את חוויית SyriaGPT שלך, נהל מראה, שפה, התראות ונתונים."
+      "title": "Socruithe - SyriaGPT",
+      "description": "Saincheap do thaithí SyriaGPT, bainistigh cuma, teanga, fógraí, agus sonraí."
     },
     "header": {
-      "title": "הגדרות SyriaGPT",
-      "description": "התאם אישית את החוויה האישית שלך",
-      "unsavedChanges": "שינויים שלא נשמרו"
+      "title": "Socruithe SyriaGPT",
+      "description": "Saincheap do thaithí phearsanta",
+      "unsavedChanges": "Athruithe neamhshábháilte"
     },
     "appearance": {
-      "title": "מראה ותצוגה",
-      "description": "התאם אישית את המראה והתחושה של היישום כך שיתאימו להעדפותיך",
-      "theme": "סגנון ערכת נושא",
+      "title": "Cuma agus Taispeáint",
+      "description": "Saincheap cuma agus mothú an fheidhmchláir chun freastal ar do roghanna",
+      "theme": "Stíl an Téama",
       "themes": {
-        "light": { "label": "בהיר", "description": "אידיאלי לשימוש בשעות היום" },
+        "light": { "label": "Geal", "description": "An-oiriúnach le húsáid i rith an lae" },
         "dark": {
-          "label": "כהה",
-          "description": "קל לעיניים בלילה"
+          "label": "Dorcha",
+          "description": "Éasca ar na súile san oíche"
         },
         "system": {
-          "label": "מערכת",
-          "description": "עוקב אחר הגדרות המכשיר שלך"
+          "label": "Córas",
+          "description": "Leanann sé socruithe do ghléis"
         }
       },
       "preview": {
-        "title": "תצוגה מקדימה של שינויים",
-        "description": "צפה בתצוגה מקדימה חיה של שינויים לפני השמירה",
-        "new": "חדש"
+        "title": "Réamhamharc ar Athruithe",
+        "description": "Féach réamhamharc beo ar athruithe sula sábhálann tú",
+        "new": "Nua"
       }
     },
     "language": {
-      "title": "שפה ואזור",
-      "description": "הגדר שפה והגדרות אזוריות",
+      "title": "Teanga agus Réigiún",
+      "description": "Socraigh teanga agus socruithe réigiúnacha",
       "interfaceLanguage": {
-        "title": "שפת ממשק",
-        "description": "השפה המשמשת בתפריטים וברכיבים אינטראקטיביים",
-        "badge": "אוטומטי"
+        "title": "Teanga an Chomhéadain",
+        "description": "An teanga a úsáidtear i mbiachláir agus i gcomhpháirteanna idirghníomhacha",
+        "badge": "Uathoibríoch"
       },
       "languages": {
-        "ar": "العربية (סוריה)",
+        "ar": "العربية (An tSiria)",
         "en": "English (US)",
         "fr": "Français",
         "de": "Deutsch"
       }
     },
     "notifications": {
-      "title": "התראות וצלילים",
-      "description": "שלוט בהתראות ובאפקטים קוליים",
+      "title": "Fógraí agus Fuaimeanna",
+      "description": "Rialaigh fógraí agus maisíochtaí fuaime",
       "enableNotifications": {
-        "title": "אפשר התראות",
-        "description": "קבל התראות על הודעות ועדכונים חשובים"
+        "title": "Cumasaigh Fógraí",
+        "description": "Faigh fógraí faoi theachtaireachtaí agus nuashonruithe tábhachtacha"
       },
       "sounds": {
-        "title": "צלילים",
-        "description": "השמע צלילים בעת שליחה וקבלה של הודעות"
+        "title": "Fuaimeanna",
+        "description": "Seinn fuaimeanna agus teachtaireachtaí á seoladh agus á bhfáil"
       }
     },
     "dataManagement": {
-      "title": "ניהול נתונים",
-      "description": "שלוט בשמירה ובשיתוף של הנתונים שלך",
+      "title": "Bainistíocht Sonraí",
+      "description": "Rialaigh sábháil agus comhroinnt do shonraí",
       "autoSave": {
-        "title": "שמירה אוטומטית",
-        "description": "שמור אוטומטית את השיחות שלך כדי לחזור אליהן מאוחר יותר"
+        "title": "Sábháil Uathoibríoch",
+        "description": "Sábháil do chomhráite go huathoibríoch chun filleadh orthu níos déanaí"
       },
-      "exportData": "ייצא נתונים",
-      "clearHistory": "נקה שיחות"
+      "exportData": "Easpórtáil Sonraí",
+      "clearHistory": "Glan Comhráite"
     },
     "advanced": {
-      "title": "הגדרות מתקדמות",
-      "description": "אפשרויות מתקדמות למשתמשים מקצועיים",
+      "title": "Socruithe Casta",
+      "description": "Roghanna casta d'úsáideoirí gairmiúla",
       "developerMode": {
-        "title": "מצב מפתח",
-        "description": "הצג מידע טכני נוסף ואפשרויות פיתוח",
-        "badge": "בטא"
+        "title": "Mód Forbróra",
+        "description": "Taispeáin faisnéis theicniúil bhreise agus roghanna forbartha",
+        "badge": "Béite"
       },
       "analytics": {
-        "title": "ניתוח נתונים",
-        "description": "עזור לשפר את השירות על ידי שליחת נתוני שימוש אנונימיים"
+        "title": "Anailísíocht Sonraí",
+        "description": "Cabhraigh leis an tseirbhís a fheabhsú trí shonraí úsáide anaithnide a sheoladh"
       }
     },
     "saveBar": {
-      "title": "האם ברצונך לשמור את השינויים?",
-      "description": "ההגדרות החדשות ייושמו באופן מיידי",
-      "reset": "אפס",
-      "save": "שמור שינויים",
-      "saving": "שומר...",
-      "success": "ההגדרות נשמרו בהצלחה!"
+      "title": "Ar mhaith leat na hathruithe a shábháil?",
+      "description": "Cuirfear na socruithe nua i bhfeidhm láithreach",
+      "reset": "Athshocraigh",
+      "save": "Sábháil Athruithe",
+      "saving": "Ag sábháil...",
+      "success": "Sábháladh na socruithe go rathúil!"
     },
     "modals": {
       "clearHistory": {
-        "title": "אישור מחיקת היסטוריה",
-        "message": "האם אתה בטוח? כל השיחות הקודמות שלך יימחקו לצמיתות. פעולה זו אינה ניתנת לביטול.",
-        "confirm": "כן, מחק",
-        "success": "היסטוריית השיחות נוקתה בהצלחה."
+        "title": "Deimhnigh Scriosadh Staire",
+        "message": "An bhfuil tú cinnte? Scriosfar do chomhráite go léir a chuaigh thart go buan. Ní féidir an gníomh seo a chealú.",
+        "confirm": "Tá, Scrios",
+        "success": "Glanadh stair an chomhrá go rathúil."
       },
       "exportData": {
-        "title": "ייצא נתונים",
-        "message": "עותק של כל הנתונים שלך ייווצר ויישלח לאימייל שלך. האם ברצונך להמשיך?",
-        "confirm": "כן, המשך",
-        "success": "מייצא את הנתונים שלך..."
+        "title": "Easpórtáil Sonraí",
+        "message": "Cruthófar cóip de do shonraí go léir agus seolfar chuig do ríomhphost í. Ar mhaith leat leanúint ar aghaidh?",
+        "confirm": "Tá, Lean ar aghaidh",
+        "success": "Ag easpórtáil do shonraí..."
       },
-      "cancel": "ביטול"
+      "cancel": "Cealaigh"
     }
   },
   "termsPage": {
     "metadata": {
-      "title": "תנאי שירות - SyriaGPT",
-      "description": "קרא את התנאים וההגבלות לשימוש בשירותי SyriaGPT."
+      "title": "Téarmaí Seirbhíse - SyriaGPT",
+      "description": "Léigh na téarmaí agus na coinníollacha chun seirbhísí SyriaGPT a úsáid."
     },
     "header": {
-      "switchLanguage": "החלף לערבית",
-      "print": "הדפס"
+      "switchLanguage": "Aistrigh go hAraibis",
+      "print": "Priontáil"
     },
-    "title": "תנאי שירות",
-    "subtitle": "עודכן לאחרונה: 24 באוגוסט 2025",
-    "intro": "ברוכים הבאים ל-SyriaGPT. על ידי שימוש בשירותינו, אתה מסכים לתנאים אלה. אנא קרא אותם בעיון.",
-    "sectionsTitle": "סעיפים",
+    "title": "Téarmaí Seirbhíse",
+    "subtitle": "Nuashonraithe go deireanach: 24 Lúnasa, 2025",
+    "intro": "Fáilte go SyriaGPT. Trí úsáid a bhaint as ár seirbhísí, aontaíonn tú leis na téarmaí seo. Léigh go cúramach iad le do thoil.",
+    "sectionsTitle": "Ailt",
     "sections": [
       {
         "id": "acceptance",
-        "title": "1. קבלת התנאים",
-        "content": "על ידי גישה ושימוש ב-SyriaGPT, אתה מסכים להיות מחויב לתנאים ולהגבלות אלה. אם אינך מסכים לחלק כלשהו מתנאים אלה, אינך צריך להשתמש בשירותינו."
+        "title": "1. Glacadh leis na Téarmaí",
+        "content": "Trí rochtain a fháil ar SyriaGPT agus é a úsáid, aontaíonn tú a bheith faoi cheangal ag na téarmaí agus na coinníollacha seo. Mura n-aontaíonn tú le haon chuid de na téarmaí seo, níor cheart duit ár seirbhísí a úsáid."
       },
       {
         "id": "services",
-        "title": "2. תיאור השירותים",
-        "content": "SyriaGPT הוא עוזר AI שנועד לספק סיוע בתחומים שונים הקשורים להקשר הסורי."
+        "title": "2. Cur Síos ar na Seirbhísí",
+        "content": "Is cúntóir IS é SyriaGPT atá deartha chun cúnamh a sholáthar i réimsí éagsúla a bhaineann le comhthéacs na Siria."
       },
       {
         "id": "usage",
-        "title": "3. שימוש מקובל",
-        "content": "עליך להשתמש בשירותינו באופן חוקי ואתי. אסור לך להשתמש בשירות למטרות בלתי חוקיות או מזיקות."
+        "title": "3. Úsáid Inghlactha",
+        "content": "Ní mór duit ár seirbhísí a úsáid ar bhealach dleathach agus eiticiúil. Ní ceadmhach duit an tseirbhís a úsáid chun críocha neamhdhleathacha nó díobhálacha."
       },
       {
         "id": "privacy",
-        "title": "4. פרטיות ונתונים",
-        "content": "אנו מכבדים את פרטיותך ומחויבים להגן על הנתונים שלך. אנו אוספים רק נתונים נחוצים כדי לספק את השירות ולא נשתף אותם ללא הסכמתך."
+        "title": "4. Príobháideacht agus Sonraí",
+        "content": "Tugaimid urraim do do phríobháideacht agus táimid tiomanta do do shonraí a chosaint. Ní bhailímid ach na sonraí is gá chun an tseirbhís a sholáthar agus ní roinnfimid iad gan do thoiliú."
       },
       {
         "id": "intellectual",
-        "title": "5. קניין רוחני",
-        "content": "כל הזכויות שמורות ל-SyriaGPT. התוכן, העיצוב והלוגואים הם רכושנו. התוכן שאתה יוצר באמצעות השירות נשאר שלך."
+        "title": "5. Maoin Intleachtúil",
+        "content": "Gach ceart ar cosaint do SyriaGPT. Is linne an t-ábhar, an dearadh, agus na lógónna. Fanann an t-ábhar a chruthaíonn tú tríd an tseirbhís leatsa."
       },
       {
         "id": "liability",
-        "title": "6. כתב ויתור",
-        "content": "השירות מסופק \"כפי שהוא\" ללא כל אחריות. איננו מבטיחים את דיוק או שלמות המידע המסופק ואיננו אחראים לכל נזק הנובע משימושו."
+        "title": "6. Séanadh",
+        "content": "Soláthraítear an tseirbhís \"mar atá\" gan aon bharántas. Ní ráthaímid cruinneas ná iomláine na faisnéise a sholáthraítear agus nílimid freagrach as aon damáiste a eascraíonn as a húsáid."
       },
       {
         "id": "termination",
-        "title": "7. סיום השירות",
-        "content": "אנו שומרים לעצמנו את הזכות לסיים או להשעות את חשבונך במקרה של הפרת תנאים אלה או במקרה של התנהגות מזיקה או בלתי חוקית."
+        "title": "7. Foirceannadh na Seirbhíse",
+        "content": "Coimeádaimid an ceart do chuntas a fhoirceannadh nó a chur ar fionraí i gcás sárú ar na téarmaí seo nó i gcás iompar díobhálach nó neamhdhleathach."
       },
       {
         "id": "contact",
-        "title": "8. צור קשר",
-        "content": "לכל שאלה בנוגע לתנאים אלה, אנא צור איתנו קשר באמצעות דוא\"ל: support@syriagpt.com"
+        "title": "8. Déan Teagmháil",
+        "content": "I gcás aon cheisteanna maidir leis na téarmaí seo, déan teagmháil linn trí ríomhphost: support@syriagpt.com"
       }
     ],
-    "acceptButton": "קראתי ואני מסכים לתנאים",
-    "continueButton": "המשך",
-    "backToTop": "חזור למעלה",
-    "expandAll": "הרחב הכל",
-    "collapseAll": "כווץ הכל",
-    "readingProgress": "התקדמות קריאה",
-    "copyright": "© {year} SyriaGPT. כל הזכויות שמורות."
+    "acceptButton": "Léigh mé agus aontaím leis na téarmaí",
+    "continueButton": "Lean ar aghaidh",
+    "backToTop": "Ar ais go Barr",
+    "expandAll": "Leathnaigh Gach Rud",
+    "collapseAll": "Fill Gach Rud",
+    "readingProgress": "Dul Chun Cinn Léitheoireachta",
+    "copyright": "© {year} SyriaGPT. Gach ceart ar cosaint."
   },
   "upgradePage": {
     "metadata": {
-      "title": "שדרג לפרו - SyriaGPT",
-      "description": "תהנה מיכולות בלתי מוגבלות, מהירות מעולה וגישה עדיפות לתכונות חדשות עם SyriaGPT Pro."
+      "title": "Uasghrádaigh go Pro - SyriaGPT",
+      "description": "Bain sult as cumais neamhtheoranta, luas níos fearr, agus rochtain tosaíochta ar ghnéithe nua le SyriaGPT Pro."
     },
     "header": {
-      "title": "שדרג לפרו",
-      "description": "תהנה מיכולות בלתי מוגבלות, מהירות מעולה וגישה עדיפות לתכונות חדשות"
+      "title": "Uasghrádaigh go Pro",
+      "description": "Bain sult as cumais neamhtheoranta, luas níos fearr, agus rochtain tosaíochta ar ghnéithe nua"
     },
     "stats": [
-      { "value": "10x", "label": "תגובה מהירה יותר" },
-      { "value": "∞", "label": "הודעות בלתי מוגבלות" },
-      { "value": "24/7", "label": "תמיכה רציפה" }
+      { "value": "10x", "label": "Freagra Níos Tapúla" },
+      { "value": "∞", "label": "Teachtaireachtaí Neamhtheoranta" },
+      { "value": "24/7", "label": "Tacaíocht Leanúnach" }
     ],
     "billingToggle": {
-      "monthly": "חודשי",
-      "yearly": "שנתי",
-      "saving": "חסוך 20%"
+      "monthly": "Míosúil",
+      "yearly": "Bliantúil",
+      "saving": "Sábháil 20%"
     },
     "pricingCards": {
       "free": {
-        "title": "תוכנית חינמית",
-        "subtitle": "תוכנית נוכחית",
+        "title": "Plean Saor in Aisce",
+        "subtitle": "Plean Reatha",
         "price": "$0",
-        "period": "לכל החיים",
+        "period": "ar feadh an tsaoil",
         "features": [
-          "גישה למודל הבסיסי",
-          "20 הודעות ביום",
-          "מהירות תגובה סטנדרטית",
-          "תכונות בסיסיות"
+          "Rochtain ar an múnla bunúsach",
+          "20 teachtaireacht in aghaidh an lae",
+          "Luas freagartha caighdeánach",
+          "Gnéithe bunúsacha"
         ],
-        "buttonText": "התוכנית הנוכחית שלך"
+        "buttonText": "Do Phlean Reatha"
       },
       "pro": {
         "title": "SyriaGPT Pro",
-        "subtitle": "למקצוענים ועסקים",
+        "subtitle": "Do ghairmithe agus do ghnólachtaí",
         "priceMonthly": "$10",
         "priceYearly": "$96",
-        "periodMonthly": "לחודש",
-        "periodYearly": "לשנה",
-        "popular": "הפופולרי ביותר",
+        "periodMonthly": "in aghaidh na míosa",
+        "periodYearly": "in aghaidh na bliana",
+        "popular": "An ceann is mó éilimh",
         "features": [
-          "מודל GPT-4 מתקדם",
-          "הודעות בלתי מוגבלות",
-          "מהירות תגובה מעולה",
-          "גישה עדיפות לתכונות חדשות",
-          "תמיכה טכנית מיוחדת",
-          "ממשק משופר ללא פרסומות"
+          "Múnla casta GPT-4",
+          "Teachtaireachtaí neamhtheoranta",
+          "Luas freagartha níos fearr",
+          "Rochtain tosaíochta ar ghnéithe nua",
+          "Tacaíocht theicniúil speisialaithe",
+          "Comhéadan feabhsaithe gan fhógraí"
         ],
-        "buttonText": "שדרג עכשיו"
+        "buttonText": "Uasghrádaigh Anois"
       }
     },
     "comparison": {
-      "title": "השווה תוכניות",
-      "featureHeader": "תכונות",
-      "freeHeader": "חינם",
-      "proHeader": "פרו",
+      "title": "Déan Comparáid idir Pleananna",
+      "featureHeader": "Gnéithe",
+      "freeHeader": "Saor in Aisce",
+      "proHeader": "Pro",
       "features": [
-        { "text": "גישה למודל הבסיסי", "free": true, "pro": true },
-        { "text": "הודעות יומיות מוגבלות (20)", "free": true, "pro": false },
-        { "text": "הודעות בלתי מוגבלות", "free": false, "pro": true },
+        { "text": "Rochtain ar an múnla bunúsach", "free": true, "pro": true },
+        { "text": "Teachtaireachtaí laethúla teoranta (20)", "free": true, "pro": false },
+        { "text": "Teachtaireachtaí neamhtheoranta", "free": false, "pro": true },
         {
-          "text": "גישה למודל GPT-4 המתקדם",
+          "text": "Rochtain ar an múnla casta GPT-4",
           "free": false,
           "pro": true
         },
-        { "text": "מהירות תגובה סטנדרטית", "free": true, "pro": false },
+        { "text": "Luas freagartha caighdeánach", "free": true, "pro": false },
         {
-          "text": "מהירות תגובה מעולה (פי 10 מהר יותר)",
-          "free": false,
-          "pro": true
-        },
-        {
-          "text": "גישה עדיפות לתכונות חדשות",
+          "text": "Luas freagartha níos fearr (10x níos tapúla)",
           "free": false,
           "pro": true
         },
         {
-          "text": "תמיכה טכנית מיוחדת",
+          "text": "Rochtain tosaíochta ar ghnéithe nua",
           "free": false,
           "pro": true
         },
-        { "text": "ממשק ללא פרסומות", "free": false, "pro": true }
+        {
+          "text": "Tacaíocht theicniúil speisialaithe",
+          "free": false,
+          "pro": true
+        },
+        { "text": "Comhéadan gan fhógraí", "free": false, "pro": true }
       ]
     },
     "faq": {
-      "title": "שאלות נפוצות",
-      "toggleOpen": "קרא עוד",
-      "toggleClose": "סגור",
+      "title": "Ceisteanna Coitianta",
+      "toggleOpen": "Léigh níos mó",
+      "toggleClose": "Dún",
       "items": [
         {
-          "question": "האם אוכל לבטל את המנוי שלי בכל עת?",
-          "answer": "כן, כמובן. תוכל לבטל את מנוי תוכנית הפרו שלך בכל עת מדף \"ניהול חשבון\". תמשיך לקבל גישה לתכונות הפרו עד סוף תקופת החיוב הנוכחית, ולא יחויבו חיובים נוספים."
+          "question": "An féidir liom mo shíntiús a chealú am ar bith?",
+          "answer": "Sea, ar ndóigh. Is féidir leat do shíntiús Pro a chealú am ar bith ó leathanach \"Bainistigh Cuntas\". Leanfaidh tú de rochtain a bheith agat ar ghnéithe Pro go dtí deireadh na tréimhse billeála reatha, agus ní ghearrfar aon táillí breise."
         },
         {
-          "question": "אילו אמצעי תשלום מתקבלים?",
-          "answer": "אנו מקבלים את כל כרטיסי האשראי והחיוב העיקריים (ויזה, מאסטרקארד, אמריקן אקספרס) וכן את Sham Cash וארנקים אלקטרוניים מקומיים. כל התשלומים מעובדים באופן מאובטח ומוצפן באמצעות השותף שלנו, סטרייפ."
+          "question": "Cad iad na modhanna íocaíochta a nglactar leo?",
+          "answer": "Glacaimid le gach mórchárta creidmheasa agus dochair (Visa, Mastercard, American Express) chomh maith le Sham Cash agus sparán leictreonacha áitiúla. Déantar gach íocaíocht a phróiseáil go slán agus go criptithe trínár gcomhpháirtí, Stripe."
         },
         {
-          "question": "מה קורה בסוף תקופת החיוב השנתית?",
-          "answer": "המנוי השנתי שלך יתחדש באופן אוטומטי אלא אם תבטל אותו מהגדרות החשבון שלך. אנו נשלח לך אימייל תזכורת שבוע לפני תאריך החידוש עם פרטי הסכום לתשלום."
+          "question": "Cad a tharlaíonn ag deireadh na tréimhse billeála bliantúla?",
+          "answer": "Déanfar do shíntiús bliantúil a athnuachan go huathoibríoch mura gcealaíonn tú é ó shocruithe do chuntais. Seolfaimid ríomhphost meabhrúcháin chugat seachtain roimh an dáta athnuachana le sonraí an mhéid atá le híoc."
         },
         {
-          "question": "האם אוכל לקבל החזר כספי?",
-          "answer": "כן, אנו מציעים אחריות מלאה להחזר כספי תוך 30 יום מתאריך המנוי אם אינך מרוצה מהשירות מכל סיבה שהיא. פשוט צור קשר עם צוות התמיכה שלנו, ואנו נעבד את בקשת ההחזר שלך באופן מיידי."
+          "question": "An féidir liom aisíocaíocht a fháil?",
+          "answer": "Sea, cuirimid ráthaíocht iomlán airgid ar ais ar fáil laistigh de 30 lá ó dháta an tsíntiúis mura bhfuil tú sásta leis an tseirbhís ar chúis ar bith. Níl le déanamh ach teagmháil a dhéanamh lenár bhfoireann tacaíochta, agus déanfaimid d'iarratas ar aisíocaíocht a phróiseáil láithreach."
         }
       ]
     },
     "cta": {
-      "title": "מוכן להתחיל?",
-      "description": "הצטרף לאלפי משתמשים שבחרו ב-SyriaGPT Pro לחוויית AI מעולה",
-      "buttonText": "התחל עכשיו תמורת {price}",
-      "guarantee": "אחריות מלאה להחזר כספי תוך 30 יום"
+      "title": "Réidh le tosú?",
+      "description": "Bí i dteannta na mílte úsáideoirí a roghnaigh SyriaGPT Pro le haghaidh taithí IS níos fearr",
+      "buttonText": "Tosaigh Anois ar {price}",
+      "guarantee": "Ráthaíocht iomlán airgid ar ais laistigh de 30 lá"
     },
-    "alert": "תועבר לדף התשלום..."
+    "alert": "Atreorófar chuig an leathanach íocaíochta thú..."
   },
   "verifyEmailPage": {
     "metadata": {
-      "title": "אימות אימייל - SyriaGPT",
-      "description": "הזן את קוד האימות שנשלח לאימייל שלך כדי לאשר את חשבון SyriaGPT שלך."
+      "title": "Fíoraigh Ríomhphost - SyriaGPT",
+      "description": "Cuir isteach an cód fíorúcháin a seoladh chuig do ríomhphost chun do chuntas SyriaGPT a dheimhniú."
     },
     "header": {
-      "title": "אמת את האימייל שלך",
-      "description": "הזן את קוד האימות שנשלח ל"
+      "title": "Fíoraigh do Ríomhphost",
+      "description": "Cuir isteach an cód fíorúcháin a seoladh chuig"
     },
     "form": {
-      "label": "קוד אימות בן 6 ספרות",
-      "verifyButton": "אמת קוד",
-      "verifyingButton": "מאמת...",
+      "label": "Cód fíorúcháin 6 dhigit",
+      "verifyButton": "Fíoraigh Cód",
+      "verifyingButton": "Ag fíorú...",
       "resend": {
-        "question": "לא קיבלת את הקוד?",
-        "resendButton": "שלח קוד שוב",
-        "resendingButton": "שולח שוב...",
-        "cooldown": "שלח שוב בעוד {seconds} שניות"
+        "question": "Nár fhaigh tú an cód?",
+        "resendButton": "Seol an cód arís",
+        "resendingButton": "Ag seoladh arís...",
+        "cooldown": "Seol arís i gceann {seconds} soicind"
       }
     },
     "status": {
       "success": {
-        "title": "אימות הצליח!",
-        "description": "האימייל שלך אומת בהצלחה",
-        "redirecting": "מעביר ללוח המחוונים..."
+        "title": "Fíorú Rathúil!",
+        "description": "Fíoraíodh do ríomhphost go rathúil",
+        "redirecting": "Ag atreorú chuig an deais..."
       },
       "error": {
-        "title": "אימות נכשל",
-        "tryAgainButton": "נסה שוב"
+        "title": "Theip ar an bhFíorú",
+        "tryAgainButton": "Bain triail eile as"
       }
     },
     "errors": {
-      "incompleteCode": "אנא הזן את קוד האימות בן 6 הספרות",
-      "invalidCode": "קוד אימות לא חוקי. אנא נסה שוב.",
-      "generic": "אירעה שגיאה במהלך האימות. אנא נסה שוב.",
-      "resendFailed": "שליחת קוד האימות נכשלה. אנא נסה שוב."
+      "incompleteCode": "Cuir isteach an cód fíorúcháin 6 dhigit le do thoil",
+      "invalidCode": "Cód fíorúcháin neamhbhailí. Bain triail eile as le do thoil.",
+      "generic": "Tharla earráid le linn an fhíoraithe. Bain triail eile as le do thoil.",
+      "resendFailed": "Theip ar an gcód fíorúcháin a sheoladh. Bain triail eile as le do thoil."
     },
-    "backToLogin": "חזור להתחברות",
+    "backToLogin": "Ar ais go dtí an Logáil Isteach",
     "securityNote": {
-      "title": "הערת אבטחה:",
+      "title": "Nóta Slándála:",
       "points": [
-        "אל תשתף את קוד האימות עם אף אחד",
-        "קוד האימות תקף ל-10 דקות בלבד",
-        "בדוק את כתובת האימייל של השולח"
+        "Ná roinn an cód fíorúcháin le duine ar bith",
+        "Níl an cód fíorúcháin bailí ach ar feadh 10 nóiméad",
+        "Seiceáil seoladh ríomhphoist an seoltóra"
       ]
     },
     "alerts": {
-      "resendSuccess": "קוד אימות חדש נשלח לאימייל שלך"
+      "resendSuccess": "Seoladh cód fíorúcháin nua chuig do ríomhphost"
     }
   },
   "errorPage": {
     "metadata": {
-      "title": "אירעה שגיאה - SyriaGPT",
-      "description": "דף שגיאה מותאם אישית לפרויקט SyriaGPT."
+      "title": "Tharla Earráid - SyriaGPT",
+      "description": "Leathanach earráide saincheaptha do thionscadal SyriaGPT."
     },
-    "offlineMessage": "אתה כרגע לא מקוון",
-    "errorCode": "שגיאה {statusCode}",
-    "title": "אירעה שגיאה בלתי צפויה",
-    "description": "אנו מתנצלים בכנות על אי הנוחות. הצוות הטכני שלנו קיבל הודעה והוא פועל לפתרון הבעיה במהירות האפשרית.",
-    "retryButton": "נסה שוב",
-    "retryingButton": "מנסה שוב...",
-    "homeButton": "דף הבית",
-    "backButton": "חזור",
-    "suggestionsTitle": "מה שתוכל לנסות עכשיו:",
-    "suggestion1": "רענון הדף עשוי לפתור את הבעיה.",
-    "suggestion2": "אנא בדוק את חיבור האינטרנט שלך.",
-    "suggestion3": "אם הבעיה נמשכת, אל תהסס לפנות אלינו.",
+    "offlineMessage": "Tá tú as líne faoi láthair",
+    "errorCode": "Earráid {statusCode}",
+    "title": "Tharla earráid gan choinne",
+    "description": "Gabhaimid ár leithscéal ó chroí as an míchaoithiúlacht. Cuireadh ár bhfoireann theicniúil ar an eolas agus tá siad ag obair chun an fhadhb a réiteach chomh tapa agus is féidir.",
+    "retryButton": "Bain triail eile as",
+    "retryingButton": "Ag triail arís...",
+    "homeButton": "Leathanach Baile",
+    "backButton": "Ar ais",
+    "suggestionsTitle": "Cad is féidir leat a thriail anois:",
+    "suggestion1": "D'fhéadfadh athnuachan an leathanaigh an fhadhb a réiteach.",
+    "suggestion2": "Seiceáil do nasc idirlín le do thoil.",
+    "suggestion3": "Má leanann an fhadhb, ná bíodh drogall ort teagmháil a dhéanamh linn.",
     "accordion": {
-      "title": "פרטים טכניים למפתחים",
-      "copy": "העתק",
-      "copied": "הועתק",
-      "code": "קוד:",
-      "message": "הודעה:",
-      "digest": "תקציר:"
+      "title": "Sonraí Teicniúla d'Fhorbróirí",
+      "copy": "Cóipeáil",
+      "copied": "Cóipeáilte",
+      "code": "Cód:",
+      "message": "Teachtaireacht:",
+      "digest": "Coimriú:"
     }
   },
   "notFoundPage": {
     "metadata": {
-      "title": "הדף לא נמצא - SyriaGPT",
-      "description": "הדף שאתה מחפש אינו קיים או הועבר."
+      "title": "Leathanach gan Aimsiú - SyriaGPT",
+      "description": "Níl an leathanach atá á lorg agat ann nó bogadh é."
     },
-    "title": "נראה שהלכת לאיבוד בין הדפים!",
-    "description": "הדף שאתה מחפש אינו קיים או הועבר",
-    "currentLocation": "מיקום נוכחי: לא ידוע",
+    "title": "Dealraíonn sé go bhfuil tú caillte idir na leathanaigh!",
+    "description": "Níl an leathanach atá á lorg agat ann nó bogadh é",
+    "currentLocation": "Suíomh Reatha: Anaithnid",
     "search": {
-      "placeholder": "חפש את הדף שאתה רוצה...",
-      "button": "חפש",
-      "searching": "מחפש..."
+      "placeholder": "Cuardaigh an leathanach atá uait...",
+      "button": "Cuardaigh",
+      "searching": "Ag cuardach..."
     },
     "actions": {
       "previousPage": {
-        "title": "דף קודם",
-        "description": "חזור למקום שממנו באת"
+        "title": "Leathanach Roimhe Seo",
+        "description": "Téigh ar ais go dtí an áit as ar tháinig tú"
       },
       "homePage": {
-        "title": "דף הבית",
-        "description": "התחל מחדש"
+        "title": "Leathanach Baile",
+        "description": "Tosaigh arís"
       }
     },
     "suggestions": {
-      "title": "דפים שעשויים לעניין אותך",
+      "title": "Leathanaigh a bhféadfadh suim a bheith agat iontu",
       "items": [
-        { "title": "דף הבית", "description": "חזור להתחלה" },
-        { "title": "צ'אט", "description": "התחל שיחה חדשה" },
-        { "title": "עזרה", "description": "קבל עזרה" },
-        { "title": "אודות סוריה", "description": "גלה עוד" }
+        { "title": "Leathanach Baile", "description": "Ar ais go dtí an tús" },
+        { "title": "Comhrá", "description": "Tosaigh comhrá nua" },
+        { "title": "Cabhair", "description": "Faigh cabhair" },
+        { "title": "Maidir leis an tSiria", "description": "Faigh tuilleadh eolais" }
       ]
     },
     "history": {
-      "title": "דפים שנצפו לאחרונה"
+      "title": "Leathanaigh a Breathnaíodh Orthu le Déanaí"
     },
     "funFact": {
-      "title": "בזמן שאתה מוצא את דרכך...",
+      "title": "Agus tú ag aimsiú do bhealaigh...",
       "facts": [
-        "הידעת? דמשק היא הבירה המיושבת ברציפות העתיקה ביותר בעולם!",
-        "הידעת? האלפבית הראשון בהיסטוריה הומצא באוגרית, סוריה!",
-        "הידעת? עץ הפיסטוק של חלב יכול לחיות מעל 300 שנה!",
-        "הידעת? קראק דה שבלייה בסוריה הוא אחד המבצרים השמורים ביותר בעולם!",
-        "הידעת? ורד הדמשק נחשב לאחד מסוגי הוורדים המשובחים בעולם!"
+        "An raibh a fhios agat? Is í an Damaisc an phríomhchathair is sine ar domhan a bhfuil cónaí uirthi go leanúnach!",
+        "An raibh a fhios agat? Ceapadh an chéad aibítir sa stair in Ugarit, an tSiria!",
+        "An raibh a fhios agat? Is féidir le crann pistaise Aleppo maireachtáil os cionn 300 bliain!",
+        "An raibh a fhios agat? Tá Krak des Chevaliers sa tSiria ar cheann de na caisleáin is fearr a caomhnaíodh ar domhan!",
+        "An raibh a fhios agat? Meastar go bhfuil rós na Damaisce ar cheann de na cineálacha rós is fearr ar domhan!"
       ]
     },
     "support": {
-      "message": "אם אתה מאמין שזו שגיאה, אנא צור איתנו קשר",
-      "helpCenter": "מרכז עזרה",
-      "technicalSupport": "תמיכה טכנית"
+      "message": "Má chreideann tú gur earráid é seo, déan teagmháil linn le do thoil",
+      "helpCenter": "Ionad Cabhrach",
+      "technicalSupport": "Tacaíocht Theicniúil"
     }
   },
   "loader": {
-    "title": "טוען...",
-    "loading": "אנא המתן רגע..."
+    "title": "Ag lódáil...",
+    "loading": "Fan nóiméad le do thoil..."
   }
 }

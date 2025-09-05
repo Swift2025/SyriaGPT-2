@@ -1,22 +1,26 @@
-// src/context/AuthContext.tsx
+// src/context/AuthContext.tsx (الكود الكامل والنهائي)
 'use client';
 
-import React, { createContext, useState, useEffect, useContext, useCallback } from 'react';
-import { getCurrentUser, getUserProfile, getUserSettings, updateUserSettings } from '../../services/api';
-import { User, UserSettings } from '../app/[lang]/types';
-import toast from 'react-hot-toast';
+import React, { createContext, useState, useEffect, useContext } from 'react';
+import { getCurrentUser } from '../../services/api';
+
+interface LoginData {
+  user: object;
+  access: string; // <-- تم التصحيح من access_token
+  refresh?: string; // <-- تم التصحيح من refresh_token
+}
 
 interface AuthContextType {
-  user: User | null;
-  login: (userData: User) => void;
+  user: object | null;
+  login: (data: LoginData) => void;
   logout: () => void;
   isLoading: boolean;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<object | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -27,8 +31,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           const currentUser = await getCurrentUser();
           setUser(currentUser);
         } catch (error) {
-          console.error("Invalid token:", error);
+          console.error("Failed to auto-login with existing token:", error);
           localStorage.removeItem('accessToken');
+          localStorage.removeItem('refreshToken');
           setUser(null);
         }
       }
@@ -37,14 +42,24 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     checkUser();
   }, []);
 
-  const login = (userData: User) => {
-    setUser(userData);
+  const login = (loginData: LoginData) => {
+    // --- هذا هو التعديل الحاسم ---
+    // استخدم 'access' و 'refresh' لتتطابق مع استجابة الواجهة الخلفية
+    if (loginData.access) {
+      localStorage.setItem('accessToken', loginData.access);
+    }
+    if (loginData.refresh) {
+      localStorage.setItem('refreshToken', loginData.refresh);
+    }
+    // -----------------------------
+    setUser(loginData.user);
   };
 
   const logout = () => {
     localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
     setUser(null);
-    window.location.reload(); // لإعادة تعيين كل شيء
+    window.location.href = '/login'; 
   };
 
   return (
@@ -54,9 +69,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export const useAuth = () => {
+export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
-  if (context === undefined) {
+  if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;

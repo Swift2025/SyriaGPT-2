@@ -13,7 +13,7 @@ const notoArabic = Noto_Sans_Arabic({
 });
 
 export async function generateStaticParams() {
-  return i18n.locales.map((locale: string) => ({ lang: locale }));
+  return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
 export const metadata: Metadata = {
@@ -24,17 +24,17 @@ export const metadata: Metadata = {
   },
 };
 
-interface LayoutProps {
-  children: React.ReactNode;
-  params: Promise<{ lang: string }>;
-}
-
 export default async function RootLayout({
   children,
-  params,
-}: LayoutProps) {
-  const { lang } = await params;
-  const dictionary = await getDictionary(lang as Locale);
+  params: awaitedParams,
+}: {
+  children: React.ReactNode;
+  params: { lang: Locale };
+}) {
+  const params = await awaitedParams;
+  const lang = params.lang;
+
+  const dictionary = await getDictionary(lang);
 
   return (
     <html lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>

@@ -5,13 +5,8 @@ import { Locale } from '../../../../i18n-config';
 import SettingsPageClient from './SettingsPageClient'; // استيراد مكون العميل
 import ProtectedRoute from '../components/ProtectedRoute'; // <-- 1. استيراد الحارس
 
-interface PageProps {
-  params: Promise<{ lang: Locale }>;
-}
-
 // دالة ديناميكية لإنشاء بيانات الميتا المترجمة
-export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
-  const { lang } = await params;
+export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
   const dictionary = await getDictionary(lang);
   const t = dictionary.settingsPage.metadata;
   return {
@@ -22,8 +17,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 
 
 // الحارس
-export default async function SettingsPage({ params }: PageProps) {
-  const { lang } = await params;
+export default async function SettingsPage({ params: awaitedParams }) {
+  const params = await awaitedParams;
+  const { lang } = params;
   const dictionary = await getDictionary(lang);
 
   return (

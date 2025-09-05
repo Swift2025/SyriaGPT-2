@@ -134,7 +134,7 @@ export default function UpgradePageClient({ dictionary }: { dictionary: any }) {
         <section className="mb-16">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">{t.faq.title}</h2>
           <div className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-amber-200/50 dark:border-amber-700/30 max-w-4xl mx-auto">
-            <div className="space-y-2">{t.faq.items.map((faq: { question: string; answer: string }, index: number) => <FaqItem key={index} question={faq.question} dictionary={dictionary}><p className="text-base leading-relaxed">{faq.answer}</p></FaqItem>)}</div>
+            <div className="space-y-2">{t.faq.items.map((faq: { question: string; answer: string }, index: number) => <FaqItem key={index} question={faq.question} index={index} dictionary={dictionary}><p className="text-base leading-relaxed">{faq.answer}</p></FaqItem>)}</div>
           </div>
         </section>
         <section className="text-center">

@@ -5,8 +5,7 @@ import { Locale } from '../../../../i18n-config';
 import HelpPageClient from './HelpPageClient'; // استيراد مكون العميل
 
 // دالة ديناميكية لإنشاء بيانات الميتا المترجمة
-export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
-  const { lang } = await params;
+export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
   const dictionary = await getDictionary(lang);
   const t = dictionary.helpPage.metadata;
   return {
@@ -16,8 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 }
 
 // مكون الصفحة (خادم)
-export default async function HelpPage({ params }: { params: Promise<{ lang: Locale }> }) {
-  const { lang } = await params;
+export default async function HelpPage({ params: { lang } }: { params: { lang: Locale } }) {
   const dictionary = await getDictionary(lang);
   return <HelpPageClient dictionary={dictionary} />;
 }

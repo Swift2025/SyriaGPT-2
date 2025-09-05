@@ -7,7 +7,7 @@ import Sidebar from './Sidebar';
 import { AuthProvider, useAuth } from '../../../context/AuthContext';
 
 // مكون داخلي لإدارة المحتوى الرئيسي وشاشة التحميل
-const MainAppContent = ({ children, dictionary }: { children: React.ReactNode; dictionary: any }) => {
+const MainAppContent = ({ children, dictionary }) => {
   const { isLoading: isAuthLoading } = useAuth();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -62,10 +62,10 @@ const MainAppContent = ({ children, dictionary }: { children: React.ReactNode; d
       <div id="initial-loader" className="fixed inset-0 bg-brand-cream dark:bg-brand-navy-dark z-[100] flex items-center justify-center transition-opacity duration-300">
         <div className="text-center">
           <div className="w-16 h-16 mx-auto mb-4 animate-pulse">
-            <img src="/logo.ai.svg" alt="Syrian Eagle Logo" className="w-full h-full" />
+            <img src="/images/logo.ai.svg" alt="Syrian Eagle Logo" className="w-full h-full" />
           </div>
-          <h2 className="text-xl font-semibold text-brand-gold-primary mb-2">{dictionary.loader?.title || 'Welcome to SyriaGPT'}</h2>
-          <p className="text-sm text-brand-text-gray dark:text-gray-400">{dictionary.loader?.loading || 'Loading...'}</p>
+          <h2 className="text-xl font-semibold text-brand-gold-primary mb-2">{dictionary.loader.title}</h2>
+          <p className="text-sm text-brand-text-gray dark:text-gray-400">{dictionary.loader.loading}</p>
         </div>
       </div>
 
@@ -91,7 +91,7 @@ const MainAppContent = ({ children, dictionary }: { children: React.ReactNode; d
 };
 
 // المكون الرئيسي الذي يقوم بتوفير AuthContext
-export default function ClientLayout({ children, dictionary }: { children: React.ReactNode; dictionary: any }) {
+export default function ClientLayout({ children, dictionary }) {
   return (
     <AuthProvider>
       <Toaster

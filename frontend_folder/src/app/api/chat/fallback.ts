@@ -320,6 +320,5 @@ function getSmartGeneralResponse(message: string): string {
     `"${message}" موضوع شيق!\n\nبإمكاني مشاركة معرفتي حول:\n\n• التراث السوري الأصيل\n• المأكولات الشعبية\n• المدن التاريخية\n• الثقافة والفنون\n• الحياة الاجتماعية\n\nأي من هذه المواضيع تفضل أن نتحدث عنه؟`
   ];
 
-  const randomIndex = Math.floor(Math.random() * responses.length);
-  return responses[randomIndex]!;
+  return responses[Math.floor(Math.random() * responses.length)];
 }

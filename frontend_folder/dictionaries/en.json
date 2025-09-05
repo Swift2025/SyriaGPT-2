@@ -42,7 +42,7 @@
     "fr": { "name": "Français", "country": "FR" },
     "gu": { "name": "ગુજરાતી", "country": "IN" },
     "ha": { "name": "Hausa", "country": "NG" },
-    "he": { "name": "עברית", "country": "IL" },
+    "he": { "name": "Gaeilge", "country": "IE" },
     "hi": { "name": "हिन्दी", "country": "IN" },
     "hu": { "name": "Magyar", "country": "HU" },
     "hy": { "name": "Հայերեն", "country": "AM" },
@@ -1027,5 +1027,14 @@
   "loader": {
     "title": "loading...",
     "loading": "Please wait while we load the content..."
+  },
+    "checkEmailPage": {
+    "title": "Account Registered Successfully!",
+    "description": {
+      "part1": "We have sent a verification link to your email address",
+      "part2": "Please click the link to activate your account."
+    },
+    "spamTip": "If you don't see the email, please check your spam folder.",
+    "backToLoginButton": "Back to Login"
   }
 }

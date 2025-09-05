@@ -197,7 +197,7 @@ export default function HelpPageClient({ dictionary }: { dictionary: any }) {
             {t.categories.title}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {categories.map((category: any, index: number) => (
+            {categories.map((category, index) => (
               <CategoryCard key={index} {...category} />
             ))}
           </div>

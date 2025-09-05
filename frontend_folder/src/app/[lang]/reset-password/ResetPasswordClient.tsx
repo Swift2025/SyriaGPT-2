@@ -38,11 +38,7 @@ const PasswordStrengthIndicator: React.FC<{ password?: string; dictionary: any }
       { label: t.levels[5], color: 'bg-green-500' }
     ];
     
-    setStrength({ 
-      score, 
-      label: strengthLevels[score]?.label || t.levels[0], 
-      color: strengthLevels[score]?.color || 'bg-red-500' 
-    });
+    setStrength({ score, ...strengthLevels[score] });
 
   }, [password, t]);
 
@@ -180,7 +176,7 @@ export default function ResetPasswordClient({ dictionary }: { dictionary: any })
   }, [searchParams]);
 
   useEffect(() => {
-    setPasswordsDoNotMatch(Boolean(confirmPassword && password !== confirmPassword));
+    setPasswordsDoNotMatch(confirmPassword && password !== confirmPassword);
   }, [password, confirmPassword]);
 
   const handleSubmit = async (e: React.FormEvent) => {

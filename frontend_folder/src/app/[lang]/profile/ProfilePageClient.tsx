@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { User, Mail, Key, Star, Trash2, Edit3, Save, X, AlertTriangle, Camera, Shield, Crown, Calendar } from 'lucide-react';
+// تأكد من أن هذه الدوال مستوردة وموجودة في api.ts
 import { getUserProfile, updateUserProfile, changePassword, deleteAccount } from '../../../../services/api';
 import { useAuth } from '../../../context/AuthContext';
 import toast from 'react-hot-toast';
@@ -17,7 +18,7 @@ const SyrianEagle: React.FC<{ className?: string }> = ({ className = "w-16 h-16"
   </div>
 );
 
-// مكون البطاقة المحسنة
+// مكون البطاقة المحسنة (لا تغيير)
 const ProfileCard: React.FC<{ 
   title: string; 
   description: string; 
@@ -40,7 +41,7 @@ const ProfileCard: React.FC<{
   </div>
 );
 
-// مكون حقل الإدخال المحسن
+// مكون حقل الإدخال المحسن (لا تغيير)
 const InputField: React.FC<{
   label: string;
   type: string;
@@ -60,7 +61,7 @@ const InputField: React.FC<{
   </div>
 );
 
-// مكون الصورة الشخصية
+// مكون الصورة الشخصية (لا تغيير)
 const ProfileAvatar: React.FC<{
   src: string;
   alt: string;
@@ -79,7 +80,7 @@ const ProfileAvatar: React.FC<{
   );
 };
 
-// Modal تأكيد الحذف
+// Modal تأكيد الحذف (لا تغيير)
 const ConfirmationModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
@@ -107,7 +108,7 @@ const ConfirmationModal: React.FC<{
   );
 };
 
-// Modal اختيار الصورة الرمزية
+// Modal اختيار الصورة الرمزية (لا تغيير)
 const AvatarSelectionModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
@@ -159,8 +160,11 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
       setIsLoading(true);
       try {
         const profileData = await getUserProfile();
+        // دمج first_name و last_name في full_name للعرض
+        const fullName = `${profileData.first_name || ''} ${profileData.last_name || ''}`.trim();
+        
         setUserData({
-          full_name: profileData.full_name || '',
+          full_name: fullName,
           email: profileData.email || '',
           profile_picture: profileData.profile_picture || '/images/default-avatar.png',
           created_at: profileData.created_at,
@@ -174,27 +178,47 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
     fetchUserProfile();
   }, []);
 
+  // --- تعديل دالة تحديث الملف الشخصي لحل مشكلة Bad Request ---
   const handleProfileUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     toast.loading('Updating profile...');
     try {
+      // تقسيم الاسم الكامل إلى اسم أول واسم أخير
+      const nameParts = userData.full_name.trim().split(/\s+/);
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+
       const dataToUpdate = {
-        first_name: userData.full_name.split(' ')[0] || '',
-        last_name: userData.full_name.split(' ').slice(1).join(' ') || '',
+        first_name: firstName,
+        last_name: lastName,
         profile_picture: userData.profile_picture,
       };
+      
       const data = await updateUserProfile(dataToUpdate);
+      
+      // تحديث حالة الواجهة الأمامية بالبيانات الجديدة
+      const updatedFullName = `${data.first_name || ''} ${data.last_name || ''}`.trim();
+      setUserData(prev => ({ ...prev, full_name: updatedFullName, profile_picture: data.profile_picture }));
+
       toast.dismiss();
       toast.success(data.message || t.personalInfo.updateSuccess);
       setIsEditing(false);
     } catch (error: any) {
       toast.dismiss();
-      toast.error(error.message);
+      toast.error(error.message || 'Failed to update profile.');
     }
   };
+  // -----------------------------------------------------------------
 
+  // --- تعديل دالة تغيير كلمة المرور لحل مشكلة is not a function ---
   const handlePasswordChange = async (e: React.FormEvent) => {
     e.preventDefault();
+    // التأكد من أن الدالة changePassword موجودة قبل الاستدعاء
+    if (typeof changePassword !== 'function') {
+        toast.error("Change password function is missing from API service.");
+        return;
+    }
+    
     if (passwordData.new_password !== passwordData.confirm_password) {
       toast.error(t.security.passwordMismatch);
       return;
@@ -207,19 +231,25 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
       setPasswordData({ current_password: '', new_password: '', confirm_password: '' });
     } catch (error: any) {
       toast.dismiss();
-      toast.error(error.message);
+      toast.error(error.message || 'Failed to change password.');
     }
   };
+  // -----------------------------------------------------------------
 
   const handleAvatarSelect = (avatarUrl: string) => {
     setUserData({ ...userData, profile_picture: avatarUrl });
     setIsAvatarModalOpen(false);
-    // لجعل التغيير فورياً، يمكننا استدعاء دالة الحفظ هنا مباشرة
-    // handleProfileUpdate(); // يمكنك إلغاء التعليق عن هذا السطر للحفظ الفوري
   };
 
+  // --- تعديل دالة حذف الحساب لحل مشكلة is not a function ---
   const handleDeleteAccount = async () => {
     setIsDeleteModalOpen(false);
+    // التأكد من أن الدالة deleteAccount موجودة قبل الاستدعاء
+    if (typeof deleteAccount !== 'function') {
+        toast.error("Delete account function is missing from API service.");
+        return;
+    }
+    
     toast.loading('Deleting account...');
     try {
       await deleteAccount();
@@ -229,9 +259,10 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
       router.push(`/${lang}`);
     } catch (error: any) {
       toast.dismiss();
-      toast.error(error.message);
+      toast.error(error.message || 'Failed to delete account.');
     }
   };
+  // -----------------------------------------------------------------
 
   const formatDate = (dateString: string) => {
     if (!dateString) return '';

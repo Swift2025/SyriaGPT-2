@@ -141,7 +141,7 @@ export default function PrivacyPolicyClient({ dictionary }: { dictionary: any })
                 icon={[<ShieldCheck size={24}/>, <Lock size={24}/>, <Eye size={24}/>, <Users size={24}/>][index]}
                 title={card.title}
                 description={card.description}
-                bgColor={['bg-blue-50/80 dark:bg-blue-900/20', 'bg-green-50/80 dark:bg-green-900/20', 'bg-purple-50/80 dark:bg-purple-900/20', 'bg-red-50/80 dark:bg-red-900/20'][index] || 'bg-gray-50/80 dark:bg-gray-900/20'}
+                bgColor={['bg-blue-50/80 dark:bg-blue-900/20', 'bg-green-50/80 dark:bg-green-900/20', 'bg-purple-50/80 dark:bg-purple-900/20', 'bg-red-50/80 dark:bg-red-900/20'][index]}
               />
             ))}
           </div>

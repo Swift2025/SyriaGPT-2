@@ -1,22 +1,19 @@
-// src/app/[lang]/components/Sidebar.tsx
+// src/app/[lang]/components/Sidebar.tsx (الكود الكامل والنهائي)
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter, useParams } from 'next/navigation';
 import { 
   Plus, Sun, Moon, User, ChevronUp, LogOut, Star, Settings, 
   HelpCircle, Info, Languages, Menu, X, MessageSquare, 
-  Sparkles, Clock, ChevronRight, Edit3, Trash2, Archive, MoreVertical,
-  Search, Filter
+  Sparkles, Clock, ChevronRight 
 } from 'lucide-react';
 import { useAuth } from '../../../context/AuthContext';
-import { getChats, createChat, deleteChat, updateChat, exportUserData } from '../../../../services/api';
-import { Chat } from '../types';
+import { getChats, createChat } from '../../../../services/api';
 import toast from 'react-hot-toast';
 
-// واجهة لنوع بيانات المحادثة القادمة من الـ API
 interface Conversation {
   id: string;
   title: string;
@@ -31,7 +28,6 @@ interface SidebarProps {
   dictionary: any;
 }
 
-// مكون الهيكل العظمي للتحميل
 const ConversationSkeleton = () => (
   <div className="p-3 rounded-xl bg-white/10 animate-pulse">
     <div className="flex items-center justify-between">
@@ -86,7 +82,7 @@ const EnhancedSidebar: React.FC<SidebarProps> = ({
       }
     };
     fetchConversations();
-  }, [user, isAuthLoading]);
+  }, [user, isAuthLoading, pathname]); // أضف pathname ليعيد تحميل المحادثات عند التنقل
 
   const handleLanguageSelect = (newLang: string) => {
     if (newLang !== lang) {
@@ -98,14 +94,16 @@ const EnhancedSidebar: React.FC<SidebarProps> = ({
 
   const handleNewChat = async () => {
     if (!user) {
-      toast.error("Please log in to start a new chat."); // يمكنك ترجمة هذه
+      toast.error("Please log in to start a new chat.");
       router.push(`/${lang}/login`);
       return;
     }
     try {
       const newChatData = await createChat({ title: t.newChat });
-      // توجيه المستخدم إلى صفحة المحادثة الجديدة
-      router.push(`/${lang}/chat/${newChatData.chat.id}`);
+      // --- هذا هو السطر الذي تم تصحيحه ---
+      // الوصول إلى 'id' مباشرة من الاستجابة
+      router.push(`/${lang}/chat/${newChatData.id}`);
+      // ------------------------------------
     } catch (error: any) {
       toast.error(error.message || "Failed to create a new chat.");
     }
@@ -221,6 +219,14 @@ const EnhancedSidebar: React.FC<SidebarProps> = ({
                     <Link href={`/${lang}/profile`} className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors group"><User className="text-blue-400" size={18} /><span className="text-sm">{t.profile}</span></Link>
                     <Link href={`/${lang}/settings`} className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors group"><Settings className="text-gray-400" size={18} /><span className="text-sm">{t.settings}</span></Link>
                     <Link href={`/${lang}/upgrade`} className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors group"><Star className="text-yellow-400" size={18} /><span className="text-sm">{t.upgradeToPro}</span><span className="mr-auto text-xs bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">{t.newBadge}</span></Link>
+                    <Link href={`/${lang}/help`} className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors group">
+                    <HelpCircle className="text-green-400" size={18} />
+                    <span className="text-sm">{t.helpCenter}</span>
+                    </Link>
+                    <Link href={`/${lang}/about`} className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors group">
+                    <Info className="text-purple-400" size={18} />
+                    <span className="text-sm">{t.aboutApp}</span>
+                    </Link>
                     <div className="h-px bg-white/10 my-2"></div>
                     <button onClick={() => setIsLogoutModalOpen(true)} className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-red-500/10 transition-colors group text-red-400"><LogOut size={18} /><span className="text-sm">{t.logout}</span></button>
                   </div>
