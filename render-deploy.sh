@@ -7,10 +7,10 @@ echo "🚀 Starting SyriaGPT deployment to Render..."
 
 # Check if required environment variables are set
 required_vars=(
-    "GEMINI_API_KEY"
-    "JWT_SECRET_KEY"
-    "SMTP_HOST"
-    "SMTP_USERNAME"
+    "GOOGLE_API_KEY"
+    "SECRET_KEY"
+    "SMTP_SERVER"
+    "SMTP_USER"
     "SMTP_PASSWORD"
     "GOOGLE_CLIENT_ID"
     "GOOGLE_CLIENT_SECRET"
