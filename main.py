@@ -355,21 +355,8 @@ logger.debug("[CONFIG] Configuring CORS middleware...")
 # Get CORS origins from environment or use defaults
 CORS_ORIGINS = os.getenv(
     "CORS_ORIGINS", 
-    "http://localhost:3000,http://127.0.0.1:3000,http://localhost:9000,http://127.0.0.1:9000"
+    "https://syria-gpt-2.vercel.app/"
 ).split(",")
-
-# Add Docker network origins if running in Docker
-if os.getenv("DOCKER_ENV") or os.getenv("RUNNING_IN_DOCKER"):
-    logger.debug("[CONFIG] Docker environment detected, adding Docker network origins")
-    docker_origins = [
-        "http://172.18.0.1:3000",
-        "http://172.18.0.1:9000",
-        "http://172.18.0.2:3000",
-        "http://172.18.0.2:9000",
-        "http://frontend:3000",
-        "http://app:9000"
-    ]
-    CORS_ORIGINS.extend(docker_origins)
 
 # Add wildcard for development if specified
 if os.getenv("CORS_ALLOW_ALL", "false").lower() == "true":
