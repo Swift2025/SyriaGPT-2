@@ -26,6 +26,18 @@ for var in "${required_vars[@]}"; do
     fi
 done
 
+# Check if DATABASE_URL is set
+if [ -z "$DATABASE_URL" ]; then
+    echo "❌ Error: DATABASE_URL is not set"
+    exit 1
+else
+    echo "✅ DATABASE_URL is set"
+fi
+
+# Wait for database to be ready
+echo "⏳ Waiting for database to be ready..."
+sleep 5
+
 # Run database migrations
 echo "🗄️ Running database migrations..."
 alembic upgrade head

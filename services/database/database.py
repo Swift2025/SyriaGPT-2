@@ -9,12 +9,35 @@ from config.logging_config import get_logger, log_function_entry, log_function_e
 
 logger = get_logger(__name__)
 
-DATABASE_URL = str(os.getenv("DATABASE_URL", "postgresql+psycopg2://admin:admin123@localhost:5432/syriagpt"))
+# Handle DATABASE_URL for different environments
+default_db_url = "postgresql+psycopg2://admin:admin123@localhost:5432/syriagpt"
+DATABASE_URL = str(os.getenv("DATABASE_URL", default_db_url))
+
+# For Render, ensure the URL is properly formatted
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+psycopg2://", 1)
 
 logger.debug(f"🔧 Initializing database connection with URL: {DATABASE_URL.split('@')[1] if '@' in DATABASE_URL else '[REDACTED]'}")
 
 try:
-    engine = create_engine(DATABASE_URL)
+    # Configure engine with proper settings for Render
+    engine_kwargs = {
+        "pool_pre_ping": True,
+        "pool_recycle": 300,
+        "pool_size": 5,
+        "max_overflow": 10,
+        "echo": False
+    }
+    
+    # For Render, use more conservative pool settings
+    if os.getenv("RENDER"):
+        engine_kwargs.update({
+            "pool_size": 2,
+            "max_overflow": 5,
+            "pool_recycle": 180
+        })
+    
+    engine = create_engine(DATABASE_URL, **engine_kwargs)
     logger.debug("✅ Database engine created successfully")
 except Exception as e:
     logger.error(f"❌ Failed to create database engine: {e}")

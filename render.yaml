@@ -9,7 +9,7 @@ services:
     region: oregon
     branch: main
     buildCommand: echo "Using Dockerfile for build"
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1 --access-log
+    startCommand: chmod +x render-deploy.sh && ./render-deploy.sh
     healthCheckPath: /health
     envVars:
       - key: PYTHONPATH
@@ -19,7 +19,7 @@ services:
           name: syria-gpt-db
           property: connectionString
       - key: QDRANT_URL
-        value: http://syria-gpt-qdrant:6333
+        value: https://qdrant.tech
       - key: GEMINI_API_KEY
         sync: false
       - key: JWT_SECRET_KEY
@@ -42,34 +42,8 @@ services:
         value: "true"
       - key: DOCKER_ENV
         value: "true"
-
-  # PostgreSQL Database
-  - type: pserv
-    name: syria-gpt-db
-    env: docker
-    plan: starter
-    region: oregon
-    dockerfilePath: ./Dockerfile.db
-    envVars:
-      - key: POSTGRES_USER
-        value: admin
-      - key: POSTGRES_PASSWORD
-        generateValue: true
-      - key: POSTGRES_DB
-        value: syriagpt
-
-  # Qdrant Vector Database
-  - type: pserv
-    name: syria-gpt-qdrant
-    env: docker
-    plan: starter
-    region: oregon
-    dockerfilePath: ./Dockerfile.qdrant
-    envVars:
-      - key: QDRANT__SERVICE__HTTP_PORT
-        value: "6333"
-      - key: QDRANT__SERVICE__GRPC_PORT
-        value: "6334"
+      - key: RENDER
+        value: "true"
 
 databases:
   - name: syria-gpt-db

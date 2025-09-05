@@ -882,13 +882,26 @@ def get_oauth_refresh_url(email: str):
         log_function_exit(logger, "get_oauth_refresh_url", duration=duration)
         raise
 
-@app.get("/test/health", tags=["system"])
+@app.get("/health", tags=["system"])
 def health_check():
     """
-    System health check - No authentication required
+    Simple health check for Render - No authentication required
+    Returns basic service status
+    """
+    return {
+        "status": "healthy",
+        "service": "Syria GPT API",
+        "version": "1.0.0",
+        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    }
+
+@app.get("/test/health", tags=["system"])
+def detailed_health_check():
+    """
+    Detailed system health check - No authentication required
     Returns the current health status including initialization progress
     """
-    log_function_entry(logger, "health_check")
+    log_function_entry(logger, "detailed_health_check")
     start_time = time.time()
     
     try:
@@ -902,14 +915,14 @@ def health_check():
         }
         
         duration = time.time() - start_time
-        log_performance(logger, "Health check", duration)
-        log_function_exit(logger, "health_check", result=response, duration=duration)
+        log_performance(logger, "Detailed health check", duration)
+        log_function_exit(logger, "detailed_health_check", result=response, duration=duration)
         return response
         
     except Exception as e:
         duration = time.time() - start_time
-        log_error_with_context(logger, e, "health_check", duration=duration)
-        log_function_exit(logger, "health_check", duration=duration)
+        log_error_with_context(logger, e, "detailed_health_check", duration=duration)
+        log_function_exit(logger, "detailed_health_check", duration=duration)
         raise
 
 @app.get("/test/initialization", tags=["system"])
