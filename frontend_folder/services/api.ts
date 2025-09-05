@@ -3,6 +3,15 @@ import { jwtDecode } from 'jwt-decode';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
 
+// Ensure HTTPS in production
+const getApiBaseUrl = () => {
+  const url = API_BASE_URL;
+  if (typeof window !== 'undefined' && window.location.protocol === 'https:' && url.startsWith('http:')) {
+    return url.replace('http:', 'https:');
+  }
+  return url;
+};
+
 const handleResponse = async (response: Response) => {
   if (response.status === 204) return;
   const data = await response.json();
@@ -17,7 +26,7 @@ const refreshToken = async () => {
   const refreshToken = localStorage.getItem('refreshToken');
   if (!refreshToken) throw new Error("No refresh token available");
 
-  const response = await fetch(`${API_BASE_URL}/sessions/refresh`, {
+  const response = await fetch(`${getApiBaseUrl()}/sessions/refresh`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ refresh_token: refreshToken }),
@@ -66,7 +75,7 @@ const apiFetch = async (url: string, options: RequestInit = {}) => {
   if (token) {
     headers['Authorization'] = `Bearer ${token}`;
   }
-  const fullUrl = `${API_BASE_URL}${url}`;
+  const fullUrl = `${getApiBaseUrl()}${url}`;
   const response = await fetch(fullUrl, { ...options, headers });
   return handleResponse(response);
 };

@@ -8,8 +8,18 @@ import toast from 'react-hot-toast';
 
 // دالة API خاصة بهذه الصفحة فقط
 const handleGoogleCallback = async (code: string, state: string) => {
-  const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
-  const response = await fetch(`${API_BASE_URL}/auth/oauth/google/callback?code=${code}&state=${state}`);
+  const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+  
+  // Ensure HTTPS in production
+  const getApiBaseUrl = () => {
+    const url = API_BASE_URL;
+    if (typeof window !== 'undefined' && window.location.protocol === 'https:' && url.startsWith('http:')) {
+      return url.replace('http:', 'https:');
+    }
+    return url;
+  };
+  
+  const response = await fetch(`${getApiBaseUrl()}/auth/oauth/google/callback?code=${code}&state=${state}`);
   const data = await response.json();
   if (!response.ok) {
     throw new Error(data.message || 'Google callback failed.');
