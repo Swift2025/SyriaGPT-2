@@ -1,7 +1,7 @@
 // src/app/[lang]/auth/oauth/google/callback/page.tsx
 'use client';
 
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter, useParams } from 'next/navigation';
 import { useAuth } from '../../../../../../context/AuthContext';
 import toast from 'react-hot-toast';
@@ -17,7 +17,7 @@ const handleGoogleCallback = async (code: string, state: string) => {
   return data;
 };
 
-export default function GoogleCallbackPage() {
+function GoogleCallbackContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const params = useParams();
@@ -48,8 +48,8 @@ export default function GoogleCallbackPage() {
           toast.success(data.message || 'Login successful!');
           router.push(`/${lang}`);
 
-        } catch (err: any) {
-          toast.error(err.message);
+        } catch (err: unknown) {
+          toast.error(err instanceof Error ? err.message : 'Authentication failed');
           router.push(`/${lang}/login`);
         }
       };
@@ -64,5 +64,20 @@ export default function GoogleCallbackPage() {
         <p className="mt-4">Authenticating with Google...</p>
       </div>
     </div>
+  );
+}
+
+export default function GoogleCallbackPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-teal-500"></div>
+          <p className="mt-4">Loading...</p>
+        </div>
+      </div>
+    }>
+      <GoogleCallbackContent />
+    </Suspense>
   );
 }

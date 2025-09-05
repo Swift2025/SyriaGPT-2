@@ -475,3 +475,16 @@ export const getSMTPHealth = () => apiFetch('/smtp/health');
 export const getSystemHealth = () => apiFetch('/test/health');
 export const getSystemInfo = () => apiFetch('/');
 export const greetUser = (name: string) => apiFetch(`/hello/${name}`);
+
+// ========================================================================
+// MISSING EXPORTS (for backward compatibility)
+// ========================================================================
+
+export const deleteAccount = () => 
+  apiFetch('/users/me/delete/', { method: 'DELETE' });
+
+export const clearChatHistory = () => 
+  apiFetch('/chat/clear-history/', { method: 'POST' });
+
+export const exportUserData = () => 
+  apiFetch('/users/me/export/', { method: 'POST' });
