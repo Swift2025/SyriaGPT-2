@@ -170,7 +170,7 @@ export default function RegisterPageClient({ dictionary }: { dictionary: any }) 
   
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isLoading, setIsLoading] = useState(false);
-  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  // const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -238,7 +238,6 @@ export default function RegisterPageClient({ dictionary }: { dictionary: any }) 
       const userData = {
         email: formData.email,
         password: formData.password,
-        password2: formData.confirmPassword,
         first_name: formData.first_name,
         last_name: formData.last_name,
       };

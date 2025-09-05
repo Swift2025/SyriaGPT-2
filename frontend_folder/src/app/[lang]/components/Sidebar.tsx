@@ -13,6 +13,7 @@ import {
 import { useAuth } from '../../../context/AuthContext';
 import { getChats, createChat } from '../../../../services/api';
 import toast from 'react-hot-toast';
+import { ChevronsRight, ChevronsLeft } from 'lucide-react';
 
 interface Conversation {
   id: string;
@@ -26,6 +27,8 @@ interface SidebarProps {
   isSidebarOpen: boolean;
   setIsSidebarOpen: (isOpen: boolean) => void;
   dictionary: any;
+  isCollapsed: boolean; 
+  toggleCollapse: () => void;
 }
 
 const ConversationSkeleton = () => (
@@ -45,7 +48,9 @@ const EnhancedSidebar: React.FC<SidebarProps> = ({
   toggleDarkMode, 
   isSidebarOpen, 
   setIsSidebarOpen,
-  dictionary
+  dictionary,
+  isCollapsed,
+  toggleCollapse
 }) => {
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -70,7 +75,7 @@ const EnhancedSidebar: React.FC<SidebarProps> = ({
         setIsLoadingChats(true);
         try {
           const userChats = await getChats();
-          setConversations(userChats);
+          setConversations(userChats.chats || userChats);
         } catch (error) {
           console.error("Failed to fetch conversations:", error);
         } finally {
@@ -102,7 +107,7 @@ const EnhancedSidebar: React.FC<SidebarProps> = ({
       const newChatData = await createChat({ title: t.newChat });
       // --- هذا هو السطر الذي تم تصحيحه ---
       // الوصول إلى 'id' مباشرة من الاستجابة
-      router.push(`/${lang}/chat/${newChatData.id}`);
+      router.push(`/${lang}/chat/${newChatData.chat.id}`);
       // ------------------------------------
     } catch (error: any) {
       toast.error(error.message || "Failed to create a new chat.");
@@ -142,6 +147,8 @@ const EnhancedSidebar: React.FC<SidebarProps> = ({
       {isSidebarOpen && <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30 md:hidden transition-opacity duration-300" onClick={() => setIsSidebarOpen(false)} />}
       
       <aside id="sidebar" className={`fixed top-0 right-0 h-full w-80 z-40 transform transition-all duration-300 ease-in-out md:relative md:translate-x-0 md:w-64 ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} ${darkMode ? 'bg-gradient-to-b from-gray-900 to-gray-800 border-l border-gray-700' : 'bg-gradient-to-b from-teal-600 via-teal-700 to-teal-800 border-l border-teal-600'} text-white flex flex-col shadow-2xl backdrop-blur-xl`}>
+        {/* --- إضافة زر الطي والتوسيع --- */}
+        <div className="absolute top-1/2 -left-3 transform -translate-y-1/2 hidden md:block"></div>
         <div className="p-6 border-b border-white/10">
           <div className="flex items-center justify-center mb-6">
             <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-700 to-amber-600 flex items-center justify-center shadow-lg"><Sparkles size={24} className="text-white" /></div>

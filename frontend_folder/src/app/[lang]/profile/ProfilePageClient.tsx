@@ -5,7 +5,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { User, Mail, Key, Star, Trash2, Edit3, Save, X, AlertTriangle, Camera, Shield, Crown, Calendar } from 'lucide-react';
-// تأكد من أن هذه الدوال مستوردة وموجودة في api.ts
 import { getUserProfile, updateUserProfile, changePassword, deleteAccount } from '../../../../services/api';
 import { useAuth } from '../../../context/AuthContext';
 import toast from 'react-hot-toast';
@@ -18,7 +17,7 @@ const SyrianEagle: React.FC<{ className?: string }> = ({ className = "w-16 h-16"
   </div>
 );
 
-// مكون البطاقة المحسنة (لا تغيير)
+// مكون البطاقة المحسنة
 const ProfileCard: React.FC<{ 
   title: string; 
   description: string; 
@@ -41,7 +40,7 @@ const ProfileCard: React.FC<{
   </div>
 );
 
-// مكون حقل الإدخال المحسن (لا تغيير)
+// مكون حقل الإدخال المحسن
 const InputField: React.FC<{
   label: string;
   type: string;
@@ -61,7 +60,7 @@ const InputField: React.FC<{
   </div>
 );
 
-// مكون الصورة الشخصية (لا تغيير)
+// مكون الصورة الشخصية
 const ProfileAvatar: React.FC<{
   src: string;
   alt: string;
@@ -80,7 +79,7 @@ const ProfileAvatar: React.FC<{
   );
 };
 
-// Modal تأكيد الحذف (لا تغيير)
+// Modal تأكيد الحذف
 const ConfirmationModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
@@ -108,7 +107,7 @@ const ConfirmationModal: React.FC<{
   );
 };
 
-// Modal اختيار الصورة الرمزية (لا تغيير)
+// Modal اختيار الصورة الرمزية
 const AvatarSelectionModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
@@ -142,7 +141,15 @@ const AvatarSelectionModal: React.FC<{
 };
 
 export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
-  const [userData, setUserData] = useState({ full_name: '', email: '', profile_picture: '/images/default-avatar.png', created_at: '' });
+  // --- تعديل تعريف الحالة userData ---
+  const [userData, setUserData] = useState({
+    full_name: '',
+    email: '',
+    profile_picture: '/images/default-avatar.png',
+    created_at: '',
+    conversations_count: 0,
+    active_days: 0,
+  });
   const [passwordData, setPasswordData] = useState({ current_password: '', new_password: '', confirm_password: '' });
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
@@ -160,14 +167,16 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
       setIsLoading(true);
       try {
         const profileData = await getUserProfile();
-        // دمج first_name و last_name في full_name للعرض
         const fullName = `${profileData.first_name || ''} ${profileData.last_name || ''}`.trim();
         
+        // --- تحديث الحالة بالبيانات الديناميكية الجديدة ---
         setUserData({
           full_name: fullName,
           email: profileData.email || '',
           profile_picture: profileData.profile_picture || '/images/default-avatar.png',
-          created_at: profileData.created_at,
+          created_at: profileData.created_at, // تأكد من أن الواجهة الخلفية ترسل هذا
+          conversations_count: profileData.conversations_count || 0,
+          active_days: profileData.active_days || 0,
         });
       } catch (error: any) {
         toast.error(error.message || 'Failed to fetch profile data.');
@@ -178,12 +187,10 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
     fetchUserProfile();
   }, []);
 
-  // --- تعديل دالة تحديث الملف الشخصي لحل مشكلة Bad Request ---
   const handleProfileUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     toast.loading('Updating profile...');
     try {
-      // تقسيم الاسم الكامل إلى اسم أول واسم أخير
       const nameParts = userData.full_name.trim().split(/\s+/);
       const firstName = nameParts[0] || '';
       const lastName = nameParts.slice(1).join(' ') || '';
@@ -196,36 +203,35 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
       
       const data = await updateUserProfile(dataToUpdate);
       
-      // تحديث حالة الواجهة الأمامية بالبيانات الجديدة
-      const updatedFullName = `${data.first_name || ''} ${data.last_name || ''}`.trim();
-      setUserData(prev => ({ ...prev, full_name: updatedFullName, profile_picture: data.profile_picture }));
+      const updatedFullName = `${data.user?.first_name || ''} ${data.user?.last_name || ''}`.trim();
+      setUserData(prev => ({ 
+        ...prev, 
+        full_name: updatedFullName, 
+        profile_picture: data.user?.profile_picture || prev.profile_picture 
+      }));
 
       toast.dismiss();
-      toast.success(data.message || t.personalInfo.updateSuccess);
+      toast.success(t.personalInfo.updateSuccess || "Profile updated successfully!");
       setIsEditing(false);
     } catch (error: any) {
       toast.dismiss();
       toast.error(error.message || 'Failed to update profile.');
     }
   };
-  // -----------------------------------------------------------------
 
-  // --- تعديل دالة تغيير كلمة المرور لحل مشكلة is not a function ---
   const handlePasswordChange = async (e: React.FormEvent) => {
     e.preventDefault();
-    // التأكد من أن الدالة changePassword موجودة قبل الاستدعاء
-    if (typeof changePassword !== 'function') {
-        toast.error("Change password function is missing from API service.");
-        return;
-    }
-    
     if (passwordData.new_password !== passwordData.confirm_password) {
       toast.error(t.security.passwordMismatch);
       return;
     }
     toast.loading('Updating password...');
     try {
-      const data = await changePassword(passwordData);
+      const data = await changePassword({
+        current_password: passwordData.current_password,
+        new_password: passwordData.new_password,
+        confirm_password: passwordData.confirm_password,
+      });
       toast.dismiss();
       toast.success(data.message || t.security.updateSuccess);
       setPasswordData({ current_password: '', new_password: '', confirm_password: '' });
@@ -234,22 +240,14 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
       toast.error(error.message || 'Failed to change password.');
     }
   };
-  // -----------------------------------------------------------------
 
   const handleAvatarSelect = (avatarUrl: string) => {
     setUserData({ ...userData, profile_picture: avatarUrl });
     setIsAvatarModalOpen(false);
   };
 
-  // --- تعديل دالة حذف الحساب لحل مشكلة is not a function ---
   const handleDeleteAccount = async () => {
     setIsDeleteModalOpen(false);
-    // التأكد من أن الدالة deleteAccount موجودة قبل الاستدعاء
-    if (typeof deleteAccount !== 'function') {
-        toast.error("Delete account function is missing from API service.");
-        return;
-    }
-    
     toast.loading('Deleting account...');
     try {
       await deleteAccount();
@@ -262,7 +260,6 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
       toast.error(error.message || 'Failed to delete account.');
     }
   };
-  // -----------------------------------------------------------------
 
   const formatDate = (dateString: string) => {
     if (!dateString) return '';
@@ -313,10 +310,18 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
                       <p className="text-gray-600 dark:text-gray-400">{t.sidebar.freePlan}</p>
                     </div>
                   </div>
+                  {/* --- تعديل لعرض الإحصائيات الديناميكية --- */}
                   <div className="grid grid-cols-2 gap-4 mt-6">
-                    <div className="text-center"><div className="text-2xl font-bold text-amber-600 dark:text-amber-400">142</div><div className="text-xs text-gray-500 dark:text-gray-400">{t.sidebar.conversations}</div></div>
-                    <div className="text-center"><div className="text-2xl font-bold text-green-600 dark:text-green-400">28</div><div className="text-xs text-gray-500 dark:text-gray-400">{t.sidebar.activeDays}</div></div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">{userData.conversations_count}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">{t.sidebar.conversations}</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-green-600 dark:text-green-400">{userData.active_days}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">{t.sidebar.activeDays}</div>
+                    </div>
                   </div>
+                  {/* ----------------------------------------- */}
                 </div>
               </div>
             </div>

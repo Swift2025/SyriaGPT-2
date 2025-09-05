@@ -107,7 +107,12 @@ const MessageItem: React.FC<{ message: Message; dictionary: any }> = ({ message,
 
   const handleFeedback = async (rating: number, type: string) => {
     try {
-      await addFeedbackToMessage(message.id, { rating, feedback_type: type });
+      await addFeedbackToMessage(message.id, { 
+        rating, 
+        feedback_type: type,
+        comment: '',
+        category: 'accuracy'
+      });
       toast.success("Thank you for your feedback!");
     } catch (error: any) {
       toast.error(error.message);
@@ -272,8 +277,8 @@ const MainContent: React.FC<MainContentProps> = ({
   return (
     <div className="flex-1 flex flex-col h-screen bg-white dark:bg-gray-900">
       <header className="flex md:hidden items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
-        <div className="flex items-center gap-3"><SyrianEagle className="w-8 h-8" /><h1 className="font-bold text-lg text-gray-900 dark:text-gray-100">SyriaGPT</h1></div>
-        <button onClick={toggleSidebar} className="p-2 text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"><Menu size={24} /></button>
+        <div className="flex items-center gap-3"><SyrianEagle className="w-8 h-8" /><h1 className="font-bold fixed right-4 text-lg text-gray-900 dark:text-gray-100">SyriaGPT</h1></div>
+        {/* <button onClick={toggleSidebar} className="p-2 text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"><Menu size={24} /></button> */}
       </header>
       <div className="flex-1 overflow-y-auto">
         <div className="min-h-full flex flex-col">
