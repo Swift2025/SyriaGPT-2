@@ -6,7 +6,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 
 let genAI: GoogleGenerativeAI | null = null;
-let model: any = null;
+let model: any = null; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 try {
   if (GEMINI_API_KEY) {
@@ -25,8 +25,8 @@ try {
   } else {
     console.error('❌ مفتاح Gemini API غير موجود في معالج الملفات');
   }
-} catch (error: any) {
-  console.error('❌ خطأ في تهيئة Gemini للملفات:', error.message);
+} catch (error: unknown) {
+  console.error('❌ خطأ في تهيئة Gemini للملفات:', error instanceof Error ? error.message : 'Unknown error');
 }
 
 // دالة لاستخراج النص من ملف PDF
@@ -34,7 +34,7 @@ async function extractTextFromPDF(file: File): Promise<string> {
   try {
     // للمرحلة الحالية، نعيد محتوى أساسي
     // يمكن لاحقاً تطبيق مكتبة pdf-parse أو pdf2pic
-    const arrayBuffer = await file.arrayBuffer();
+    // const arrayBuffer = await file.arrayBuffer();
     const text = `تم رفع ملف PDF: ${file.name}
     
 حجم الملف: ${(file.size / 1024).toFixed(2)} كيلو بايت
@@ -44,7 +44,7 @@ async function extractTextFromPDF(file: File): Promise<string> {
 يمكنك نسخ النص ولصقه مباشرة في الرسالة للحصول على تحليل أفضل.`;
     
     return text;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('خطأ في استخراج النص من PDF:', error);
     return `فشل في قراءة ملف PDF: ${file.name}`;
   }
@@ -55,7 +55,7 @@ async function extractTextFromWord(file: File): Promise<string> {
   try {
     // للمرحلة الحالية، نعيد محتوى أساسي
     // يمكن لاحقاً تطبيق مكتبة mammoth
-    const arrayBuffer = await file.arrayBuffer();
+    // const arrayBuffer = await file.arrayBuffer();
     const text = `تم رفع ملف Word: ${file.name}
     
 حجم الملف: ${(file.size / 1024).toFixed(2)} كيلو بايت
@@ -65,7 +65,7 @@ async function extractTextFromWord(file: File): Promise<string> {
 يمكنك نسخ النص ولصقه مباشرة في الرسالة للحصول على تحليل أفضل.`;
     
     return text;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('خطأ في استخراج النص من Word:', error);
     return `فشل في قراءة ملف Word: ${file.name}`;
   }
@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
       } else {
         extractedText = `تم رفع الملف: ${file.name} بنجاح، لكن لا يمكن استخراج النص منه مباشرة.`;
       }
-    } catch (extractError: any) {
+    } catch (extractError: unknown) {
       console.error('خطأ في استخراج النص:', extractError);
       extractedText = `تم رفع الملف: ${file.name} لكن حدث خطأ في استخراج المحتوى.`;
     }
@@ -158,8 +158,8 @@ ${message ? `\nالسؤال المطروح: ${message}` : ''}
         
         console.log('✅ تم تحليل الملف بواسطة Gemini');
 
-      } catch (geminiError: any) {
-        console.error('❌ خطأ في تحليل Gemini للملف:', geminiError.message);
+      } catch (geminiError: unknown) {
+        console.error('❌ خطأ في تحليل Gemini للملف:', geminiError instanceof Error ? geminiError.message : 'Unknown error');
         
         // رد احتياطي
         analysisText = `تم رفع الملف "${file.name}" بنجاح!
@@ -209,13 +209,13 @@ ${message ? `سؤالك: ${message}\n\n` : ''}
       timestamp: new Date().toISOString()
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('💥 خطأ عام في معالجة الملف:', error);
     
     return NextResponse.json(
       { 
         error: 'حدث خطأ في معالجة الملف. يرجى المحاولة مرة أخرى.',
-        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+        details: process.env.NODE_ENV === 'development' ? (error instanceof Error ? error.message : 'Unknown error') : undefined
       },
       { status: 500 }
     );

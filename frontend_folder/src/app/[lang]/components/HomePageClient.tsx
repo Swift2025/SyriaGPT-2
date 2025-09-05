@@ -8,7 +8,7 @@ import { createChat, sendMessage } from '../../../../services/api';
 import { useAuth } from '../../../context/AuthContext';
 import toast from 'react-hot-toast';
 
-export default function HomePageClient({ dictionary }: { dictionary: any }) {
+export default function HomePageClient({ dictionary }: { dictionary: Record<string, any> }) {
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   
@@ -44,8 +44,8 @@ export default function HomePageClient({ dictionary }: { dictionary: any }) {
       // هذه الصفحة ستقوم بجلب سجل المحادثة بالكامل
       router.push(`/${lang}/chat/${chatId}`);
 
-    } catch (error: any) {
-      toast.error(error.message || "Failed to start a new chat.");
+    } catch (error: unknown) {
+      toast.error(error instanceof Error ? error.message : "Failed to start a new chat.");
       setIsLoading(false);
     }
   };

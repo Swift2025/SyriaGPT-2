@@ -40,7 +40,7 @@ const LoadingScreen = () => (
   </div>
 );
 
-export default function LoginPageClient({ dictionary }: { dictionary: any }) {
+export default function LoginPageClient({ dictionary }: { dictionary: Record<string, any> }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -76,8 +76,8 @@ export default function LoginPageClient({ dictionary }: { dictionary: any }) {
       
       router.push(`/${lang}`);
 
-    } catch (error: any) {
-      toast.error(error.message || 'An unexpected error occurred');
+    } catch (error: unknown) {
+      toast.error(error instanceof Error ? error.message : 'An unexpected error occurred');
     } finally {
       setIsLoading(false);
     }
@@ -108,7 +108,7 @@ export default function LoginPageClient({ dictionary }: { dictionary: any }) {
             <div className="space-y-4 mb-8">
               <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">{t.infoPanel.securityTitle}</h3>
               {t.infoPanel.features.map((feature: { title: string; description: string }, index: number) => (
-                <SecurityFeature key={index} icon={[<Shield size={16} />, <Lock size={16} />, <Sparkles size={16} />][index]} title={feature.title} description={feature.description} />
+                <SecurityFeature key={`feature-${index}`} icon={[<Shield key="shield" size={16} />, <Lock key="lock" size={16} />, <Sparkles key="sparkles" size={16} />][index]} title={feature.title} description={feature.description} />
               ))}
             </div>
             <div className="grid grid-cols-3 gap-4 text-center">

@@ -96,7 +96,7 @@ const InputField: React.FC<{
 };
 
 // مكون مؤشر قوة كلمة المرور
-const PasswordStrengthIndicator: React.FC<{ password: string; dictionary: any }> = ({ password, dictionary }) => {
+const PasswordStrengthIndicator: React.FC<{ password: string; dictionary: Record<string, any> }> = ({ password, dictionary }) => {
   const t = dictionary.registerPage.form;
   const getStrength = (password: string) => {
     let score = 0;
@@ -159,7 +159,7 @@ const LoadingScreen = () => (
   </div>
 );
 
-export default function RegisterPageClient({ dictionary }: { dictionary: any }) {
+export default function RegisterPageClient({ dictionary }: { dictionary: Record<string, any> }) {
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -250,8 +250,8 @@ export default function RegisterPageClient({ dictionary }: { dictionary: any }) 
         router.push(`/${lang}/login`);
       }, 2000);
 
-    } catch (error: any) {
-      toast.error(error.message || 'An unexpected error occurred');
+    } catch (error: unknown) {
+      toast.error(error instanceof Error ? error.message : 'An unexpected error occurred');
     } finally {
       setIsLoading(false);
     }
@@ -292,7 +292,7 @@ export default function RegisterPageClient({ dictionary }: { dictionary: any }) 
             </div>
             <div className="space-y-4 mb-8">
               {t.infoPanel.features.map((feature: { title: string; description: string }, index: number) => (
-                <PlatformFeature key={index} icon={[<Sparkles size={16}/>, <Shield size={16}/>, <Users size={16}/>, <Zap size={16}/>][index]} title={feature.title} description={feature.description} />
+                <PlatformFeature key={`feature-${index}`} icon={[<Sparkles key="sparkles" size={16}/>, <Shield key="shield" size={16}/>, <Users key="users" size={16}/>, <Zap key="zap" size={16}/>][index]} title={feature.title} description={feature.description} />
               ))}
             </div>
             <div className="bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 backdrop-blur-sm border border-amber-200/50 dark:border-amber-700/30">

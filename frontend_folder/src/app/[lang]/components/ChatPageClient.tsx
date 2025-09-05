@@ -10,7 +10,7 @@ import toast from 'react-hot-toast';
 
 interface ChatPageClientProps {
   toggleSidebar?: () => void;
-  dictionary: any;
+  dictionary: Record<string, any>;
   chatId: string;
 }
 
@@ -31,15 +31,15 @@ export default function ChatPageClient({ toggleSidebar, dictionary, chatId }: Ch
           // --- تعديل حاسم: الواجهة الخلفية ترجع قائمة مباشرة ---
           const messagesFromApi = await getChatMessages(chatId);
           
-          const formattedMessages = messagesFromApi.map((msg: any) => ({
+          const formattedMessages = messagesFromApi.map((msg: { id: string; content: string; is_ai_response: boolean; created_at: string }) => ({
             id: msg.id,
             content: msg.content, // <-- الواجهة الخلفية ترسل 'content'
             sender: msg.is_ai_response ? 'bot' : 'user',
             timestamp: new Date(msg.created_at),
           }));
           setMessages(formattedMessages);
-        } catch (error: any) {
-          toast.error(error.message || "Failed to load chat history.");
+        } catch (error: unknown) {
+          toast.error(error instanceof Error ? error.message : "Failed to load chat history.");
         } finally {
           setIsLoadingHistory(false);
         }
@@ -87,8 +87,8 @@ export default function ChatPageClient({ toggleSidebar, dictionary, chatId }: Ch
         return [...newMessages, finalUserMessage, aiResponse];
       });
 
-    } catch (error: any) {
-      const errorMessageContent = error.message || t.networkError;
+    } catch (error: unknown) {
+      const errorMessageContent = error instanceof Error ? error.message : t.networkError;
       const errorMessage: Message = { id: `error-${Date.now()}`, content: errorMessageContent, sender: 'bot', timestamp: new Date() };
       setMessages(prev => [...prev, errorMessage]);
       toast.error(errorMessageContent);

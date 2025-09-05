@@ -100,8 +100,8 @@ export async function getAdvancedFallback(message: string, history: Message[] = 
   const lowerMessage = message.toLowerCase().trim();
   
   // تحليل السياق من المحادثة السابقة
-  const lastBotMessage = history.slice().reverse().find(msg => msg.sender === 'bot');
-  const contextKeywords = lastBotMessage ? lastBotMessage.content.toLowerCase() : '';
+  // const lastBotMessage = history.slice().reverse().find(msg => msg.sender === 'bot');
+  // const contextKeywords = lastBotMessage ? lastBotMessage.content.toLowerCase() : '';
 
   // === المدن السورية ===
   for (const [city, info] of Object.entries(SYRIAN_CITIES)) {
@@ -266,7 +266,7 @@ function getGeographyInfo(message: string): string {
   return `جغرافية سوريا متنوعة: ساحل على المتوسط، جبال، سهول، وبادية في الشرق.`;
 }
 
-function getDialectInfo(message: string): string {
+function getDialectInfo(_message: string): string {
   const syrianWords = [
     'شو: ماذا',
     'وين: أين',
@@ -280,11 +280,11 @@ function getDialectInfo(message: string): string {
   return `اللهجة السورية متميزة وجميلة:\n\n${syrianWords.join('\n')}\n\nكل منطقة لها لكنتها الخاصة، لكن الكل يفهم بعضه البعض!\n\nهل تريد تعلم كلمات أخرى؟`;
 }
 
-function getEconomyInfo(message: string): string {
+function getEconomyInfo(_message: string): string {
   return `الاقتصاد السوري تقليدياً يعتمد على:\n\n• الزراعة (قطن، قمح، زيتون)\n• الصناعة (نسيج، غذائية، كيماوية)\n• السياحة\n• التجارة\n• الخدمات\n\nسوريا لديها موارد طبيعية وبشرية مهمة.`;
 }
 
-function getTransportInfo(message: string): string {
+function getTransportInfo(_message: string): string {
   return `وسائل النقل في سوريا:\n\n• الباصات العامة\n• المايكروباصات (السرافيس)\n• التكاسي\n• القطارات (خطوط محدودة)\n• الطيران المحلي\n\nدمشق وحلب لديهما شبكات نقل متطورة نسبياً.`;
 }
 
@@ -306,7 +306,7 @@ function getTraditionsInfo(message: string): string {
 }
 
 // دالة تنسيق الوصفات
-function formatRecipe(dishName: string, recipe: any): string {
+function formatRecipe(dishName: string, recipe: { ingredients: string[]; steps: string[]; tips: string }): string {
   return `وصفة ${dishName} الأصلية:\n\nالمكونات:\n${recipe.ingredients.map((ing: string) => `• ${ing}`).join('\n')}\n\nطريقة التحضير:\n${recipe.steps.map((step: string, index: number) => `${index + 1}. ${step}`).join('\n')}\n\nنصيحة المطبخ: ${recipe.tips}\n\nبالهناء والشفاء!`;
 }
 

@@ -9,7 +9,7 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEM
 console.log('🔑 حالة مفتاح API:', GEMINI_API_KEY ? 'موجود' : 'مفقود');
 
 let genAI: GoogleGenerativeAI | null = null;
-let model: any = null;
+let model: any = null; // eslint-disable-line @typescript-eslint/no-explicit-any
 let isGeminiAvailable = false;
 
 // تهيئة Gemini في المستوى العلوي
@@ -31,8 +31,8 @@ try {
     console.error('❌ مفتاح Gemini API غير موجود');
     isGeminiAvailable = false;
   }
-} catch (error: any) {
-  console.error('❌ خطأ في تهيئة Gemini:', error.message);
+} catch (error: unknown) {
+  console.error('❌ خطأ في تهيئة Gemini:', error instanceof Error ? error.message : 'Unknown error');
   isGeminiAvailable = false;
   model = null;
 }
@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
     if (isGeminiAvailable && model) {
       try {
         let fullContext = SYSTEM_PROMPT + '\n\n--- تاريخ المحادثة ---\n';
-        conversationHistory.slice(-8).forEach((msg: any) => {
+        conversationHistory.slice(-8).forEach((msg: { sender: string; content: string }) => {
             fullContext += `${msg.sender === 'user' ? 'المستخدم' : 'SyriaGPT'}: ${msg.content}\n`;
         });
         fullContext += `--- نهاية التاريخ ---\n\nالمستخدم الحالي: ${userMessage}\nSyriaGPT: `;
@@ -75,11 +75,11 @@ export async function POST(request: NextRequest) {
         source = 'gemini';
         console.log('✅ تم الحصول على رد من Gemini بنجاح');
 
-      } catch (geminiError: any) {
-        console.error('❌ خطأ في Gemini:', geminiError.message);
+      } catch (geminiError: unknown) {
+        console.error('❌ خطأ في Gemini:', geminiError instanceof Error ? geminiError.message : 'Unknown error');
         
         // في حالة الخطأ 403، نوضح المشكلة
-        if (geminiError.message.includes('403')) {
+        if (geminiError instanceof Error && geminiError.message.includes('403')) {
           console.error('⚠️ خطأ 403: مفتاح API غير صالح أو لا يملك الصلاحيات المطلوبة');
           console.error('💡 الحل: احصل على مفتاح API جديد من https://aistudio.google.com/apikey');
         }
@@ -107,13 +107,13 @@ export async function POST(request: NextRequest) {
       gemini_status: isGeminiAvailable ? 'متاح' : 'غير متاح'
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('💥 خطأ عام في معالج الطلب:', error);
     return NextResponse.json({
       message: 'أعتذر، حدث خطأ غير متوقع. فريقنا يعمل على إصلاحه. الرجاء المحاولة مرة أخرى بعد قليل.',
       timestamp: new Date().toISOString(),
       source: 'emergency_error',
-      error_details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      error_details: process.env.NODE_ENV === 'development' ? (error instanceof Error ? error.message : 'Unknown error') : undefined
     }, { status: 500 });
   }
 }

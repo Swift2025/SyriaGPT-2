@@ -218,7 +218,7 @@ const ChatInputArea: React.FC<{
   const removeFile = (fileId: string) => { setAttachedFiles(prev => prev.filter(f => f.id !== fileId)); };
   const handleDragOver = useCallback((e: React.DragEvent) => { e.preventDefault(); setIsDragOver(true); }, []);
   const handleDragLeave = useCallback((e: React.DragEvent) => { e.preventDefault(); setIsDragOver(false); }, []);
-  const handleDrop = useCallback((e: React.DragEvent) => { e.preventDefault(); setIsDragOver(false); if (e.dataTransfer.files) handleFiles(Array.from(e.dataTransfer.files)); }, []);
+  const handleDrop = useCallback((e: React.DragEvent) => { e.preventDefault(); setIsDragOver(false); if (e.dataTransfer.files) handleFiles(Array.from(e.dataTransfer.files)); }, [handleFiles]);
 
   return (
     <div className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4" onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
