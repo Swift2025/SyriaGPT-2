@@ -198,8 +198,8 @@ class NewsIntegrationService:
             # Generate Q&A pairs using Gemini
             response = await gemini_service.generate_content(
                 prompt=prompt,
-                max_tokens=2000,
-                temperature=0.7
+                max_tokens=1500,  # تقليل الطول
+                temperature=0.2   # تقليل العشوائية للحصول على ردود أكثر ثباتاً
             )
             
             if not response:

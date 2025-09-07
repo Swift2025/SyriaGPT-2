@@ -72,9 +72,6 @@ The frontend has been fully integrated with all backend endpoints, providing a c
 - `POST /smtp/send-test` - Send test email
 
 ### Utility Endpoints
-- `GET /health` - Health check
-- `GET /system/info` - System information
-- `GET /version` - API version
 - `POST /logs/error` - Log error
 - `GET /logs/errors` - Get error logs
 

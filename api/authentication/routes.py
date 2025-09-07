@@ -1,6 +1,7 @@
 # /api/authentication/routes.py
 
 from fastapi import APIRouter, Request, HTTPException, status, Query, Depends
+from fastapi.responses import RedirectResponse
 from sqlalchemy.orm import Session
 from typing import Optional
 import logging
@@ -106,19 +107,24 @@ async def verify_email(token: str, db: Session = Depends(get_db)):
     return response
 
 
-@router.get("/oauth/providers", response_model=OAuthProvidersResponse)
-async def get_oauth_providers():
-    return registration_service.get_oauth_providers_info()
+# Removed duplicate GET route - using POST only
 
 
 @router.post("/oauth/{provider}/authorize", response_model=OAuthAuthorizationResponse)
-async def oauth_authorize(
+async def oauth_authorize_post(
     provider: str,
-    request: Request,
-    redirect_uri: Optional[str] = Query(None)
+    request: Request
 ):
-    if redirect_uri is None:
-        redirect_uri = f"{request.base_url}auth/oauth/{provider}/callback"
+    # Get redirect_uri from request body
+    try:
+        body = await request.json()
+        redirect_uri = body.get('redirect_uri')
+    except:
+        redirect_uri = None
+    
+    # Default to frontend callback if not provided
+    if not redirect_uri:
+        redirect_uri = "http://localhost:3000/en/auth/oauth/google/callback"
     
     response, error, status_code = registration_service.get_oauth_authorization_url(provider, redirect_uri)
     
@@ -134,6 +140,7 @@ async def oauth_callback(
     code: str = Query(...),
     state: Optional[str] = Query(None),
     error: Optional[str] = Query(None),
+    redirect_uri: Optional[str] = Query(None),
     request: Request = None,
     db: Session = Depends(get_db)
 ):
@@ -147,7 +154,9 @@ async def oauth_callback(
             detail=f"OAuth error: {error}"
         )
     
-    redirect_uri = f"{request.base_url}auth/oauth/{provider}/callback"
+    # Use the redirect_uri from query params or default to frontend
+    if not redirect_uri:
+        redirect_uri = "http://localhost:3000/en/auth/oauth/google/callback"
     
     # Use social_login method which handles both registration and login
     from models.schemas.request_models import SocialLoginRequest
@@ -160,12 +169,75 @@ async def oauth_callback(
     return await authentication_service.social_login(social_request, request, db)
 
 
+@router.get("/oauth/{provider}/callback/redirect")
+async def oauth_callback_redirect(
+    provider: str,
+    code: str = Query(...),
+    state: Optional[str] = Query(None),
+    error: Optional[str] = Query(None)
+):
+    """Redirect OAuth callback to frontend"""
+    if error:
+        return RedirectResponse(f"http://localhost:3000/en/login?error={error}")
+    
+    # Redirect to frontend with code and state
+    frontend_url = f"http://localhost:3000/en/auth/oauth/{provider}/callback?code={code}"
+    if state:
+        frontend_url += f"&state={state}"
+    
+    return RedirectResponse(frontend_url)
 
 
+
+@router.get("/oauth-status")
+async def oauth_status():
+    """Check OAuth providers status"""
+    from services.auth.oauth_service import get_oauth_service
+    
+    oauth_service = get_oauth_service()
+    available_providers = oauth_service.get_available_providers()
+    
+    status_info = {}
+    for provider_name in ["google"]:
+        provider = oauth_service.get_provider(provider_name)
+        status_info[provider_name] = {
+            "configured": provider is not None,
+            "available": provider_name in available_providers
+        }
+    
+    return {
+        "status": "success",
+        "providers": status_info,
+        "available_providers": available_providers,
+        "total_configured": len(available_providers)
+    }
 
 @router.get("/health", response_model=HealthResponse)
 async def health_check(db: Session = Depends(get_db)):
     return registration_service.get_health_status(db)
+
+@router.get("/oauth/providers", response_model=OAuthProvidersResponse)
+async def get_oauth_providers():
+    """
+    Get available OAuth providers
+    """
+    try:
+        from services.auth import get_oauth_service
+        oauth_service = get_oauth_service()
+        
+        providers = []
+        configured_providers = {}
+        for provider_name, provider in oauth_service.providers.items():
+            providers.append(provider_name)
+            configured_providers[provider_name] = True
+        
+        return OAuthProvidersResponse(
+            providers=providers,
+            configured_providers=configured_providers
+        )
+    except Exception as e:
+        logger.error(f"Error getting OAuth providers: {e}")
+        raise HTTPException(status_code=500, detail="Failed to get OAuth providers")
 
 @router.post("/oauth/{provider}/refresh", response_model=LoginResponse)
 async def refresh_oauth_token(

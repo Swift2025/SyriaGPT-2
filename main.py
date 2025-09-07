@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException, status, Request
+from fastapi import FastAPI, Depends, Request
 from fastapi.security import OAuth2PasswordBearer, HTTPBearer
 from fastapi.openapi.utils import get_openapi
 from fastapi.middleware.cors import CORSMiddleware
@@ -15,10 +15,8 @@ from api.user_management.routes import router as user_management_router
 
 from models.domain.user import User
 import asyncio
-import logging
 import os
 import time
-from functools import wraps
 from contextlib import asynccontextmanager
 from typing import Dict, Any
 
@@ -315,10 +313,11 @@ app = FastAPI(
     2. **Login**: `POST /auth/login` 
     3. **Get Token**: Copy the `access_token` from response
     4. **Authorize**: Click Authorize button in Swagger UI
-    5. **Ask Questions**: `POST /intelligent-qa/ask`
-    6. **Start Chat**: `POST /chat/` to create a new chat session
-    7. **Send Messages**: `POST /chat/{chat_id}/messages` to chat with AI
-    8. **Manage Sessions**: `GET /chat/sessions/` to view active sessions
+    5. **Ask Questions**: `POST /intelligent-qa/ask` (with optional health, quota, stats, variants)
+    6. **Scrape News**: `POST /intelligent-qa/scrape-news` (with optional knowledge base update, stats, status)
+    7. **Start Chat**: `POST /chat/` to create a new chat session
+    8. **Send Messages**: `POST /chat/{chat_id}/messages` to chat with AI
+    9. **Manage Sessions**: `GET /chat/sessions/` to view active sessions
     """,
     openapi_tags=[
         {
@@ -335,7 +334,7 @@ app = FastAPI(
         },
         {
             "name": "Intelligent Q&A",
-            "description": "AI-powered intelligent Q&A operations"
+            "description": "AI-powered intelligent Q&A operations with consolidated endpoints for asking questions and news scraping"
         },
         {
             "name": "Chat Management",
@@ -355,8 +354,21 @@ logger.debug("[CONFIG] Configuring CORS middleware...")
 # Get CORS origins from environment or use defaults
 CORS_ORIGINS = os.getenv(
     "CORS_ORIGINS", 
-    "https://syria-gpt-2.vercel.app,https://syria-gpt-2-git-main-swift2025.vercel.app,https://syria-gpt-2-git-develop-swift2025.vercel.app"
+    "http://localhost:3000,http://127.0.0.1:3000,http://localhost:9000,http://127.0.0.1:9000"
 ).split(",")
+
+# Add Docker network origins if running in Docker
+if os.getenv("DOCKER_ENV") or os.getenv("RUNNING_IN_DOCKER"):
+    logger.debug("[CONFIG] Docker environment detected, adding Docker network origins")
+    docker_origins = [
+        "http://172.18.0.1:3000",
+        "http://172.18.0.1:9000",
+        "http://172.18.0.2:3000",
+        "http://172.18.0.2:9000",
+        "http://frontend:3000",
+        "http://app:9000"
+    ]
+    CORS_ORIGINS.extend(docker_origins)
 
 # Add wildcard for development if specified
 if os.getenv("CORS_ALLOW_ALL", "false").lower() == "true":
@@ -369,7 +381,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+    allow_methods=["*"],
     allow_headers=["*"],
     expose_headers=["*"],
 )
@@ -882,221 +894,3 @@ def get_oauth_refresh_url(email: str):
         log_function_exit(logger, "get_oauth_refresh_url", duration=duration)
         raise
 
-@app.get("/health", tags=["system"])
-def health_check():
-    """
-    Simple health check for Render - No authentication required
-    Returns basic service status
-    """
-    return {
-        "status": "healthy",
-        "service": "Syria GPT API",
-        "version": "1.0.0",
-        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-    }
-
-@app.get("/test/health", tags=["system"])
-def detailed_health_check():
-    """
-    Detailed system health check - No authentication required
-    Returns the current health status including initialization progress
-    """
-    log_function_entry(logger, "detailed_health_check")
-    start_time = time.time()
-    
-    try:
-        health_status = init_manager.get_health_status()
-        
-        response = {
-            "service": "Syria GPT API",
-            "version": "1.0.0",
-            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            **health_status
-        }
-        
-        duration = time.time() - start_time
-        log_performance(logger, "Detailed health check", duration)
-        log_function_exit(logger, "detailed_health_check", result=response, duration=duration)
-        return response
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "detailed_health_check", duration=duration)
-        log_function_exit(logger, "detailed_health_check", duration=duration)
-        raise
-
-@app.get("/test/initialization", tags=["system"])
-def get_initialization_status():
-    """
-    Get detailed initialization status - No authentication required
-    Returns the current status of all initialization components
-    """
-    log_function_entry(logger, "get_initialization_status")
-    start_time = time.time()
-    
-    try:
-        status = init_manager.get_status()
-        
-        response = {
-            "initialization_status": status,
-            "is_ready": init_manager.is_ready(),
-            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-        }
-        
-        duration = time.time() - start_time
-        log_performance(logger, "Initialization status check", duration)
-        log_function_exit(logger, "get_initialization_status", result=response, duration=duration)
-        return response
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "get_initialization_status", duration=duration)
-        log_function_exit(logger, "get_initialization_status", duration=duration)
-        raise
-
-@app.post("/test/initialization/restart", tags=["system"])
-async def restart_initialization():
-    """
-    Restart system initialization - No authentication required
-    Useful for administrators to restart failed initialization
-    """
-    log_function_entry(logger, "restart_initialization")
-    start_time = time.time()
-    
-    try:
-        success = await init_manager.restart_initialization()
-        
-        if success:
-            response = {
-                "status": "success",
-                "message": "Initialization restart initiated",
-                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-            }
-        else:
-            response = {
-                "status": "error",
-                "message": "Failed to restart initialization",
-                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-            }
-        
-        duration = time.time() - start_time
-        log_performance(logger, "Initialization restart", duration)
-        log_function_exit(logger, "restart_initialization", result=response, duration=duration)
-        return response
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "restart_initialization", duration=duration)
-        log_function_exit(logger, "restart_initialization", duration=duration)
-        raise
-
-@app.get("/test/database", tags=["system"])
-def check_database():
-    """
-    Database health check and migration status - No authentication required
-    Returns detailed database information and missing tables
-    """
-    log_function_entry(logger, "check_database")
-    start_time = time.time()
-    
-    try:
-        from services.database.health_check import check_database_health, get_database_info
-        from services.database.database import get_db
-        
-        db = next(get_db())
-        
-        # Check database health
-        health = check_database_health(db)
-        
-        # Get database info
-        info = get_database_info(db)
-        
-        db.close()
-        
-        response = {
-            "database_health": health,
-            "database_info": info,
-            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            "recommendations": []
-        }
-        
-        # Add recommendations based on health status
-        if health.get("missing_tables"):
-            response["recommendations"].append({
-                "action": "run_migrations",
-                "message": f"Run database migrations to create missing tables: {', '.join(health['missing_tables'])}",
-                "command": "alembic upgrade head"
-            })
-        
-        if health.get("status") == "unhealthy":
-            response["recommendations"].append({
-                "action": "check_connection",
-                "message": "Check database connection and credentials",
-                "details": "Verify DATABASE_URL environment variable and database server status"
-            })
-        
-        duration = time.time() - start_time
-        log_performance(logger, "Database check", duration)
-        log_function_exit(logger, "check_database", result=response, duration=duration)
-        return response
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "check_database", duration=duration)
-        log_function_exit(logger, "check_database", duration=duration)
-        raise
-
-@app.post("/test/database/migrate", tags=["system"])
-def run_database_migration():
-    """
-    Run database migrations - No authentication required
-    Attempts to run pending database migrations
-    """
-    log_function_entry(logger, "run_database_migration")
-    start_time = time.time()
-    
-    try:
-        import subprocess
-        import sys
-        
-        # Run alembic upgrade head
-        result = subprocess.run(
-            [sys.executable, "-m", "alembic", "upgrade", "head"],
-            capture_output=True,
-            text=True,
-            cwd="."
-        )
-        
-        if result.returncode == 0:
-            response = {
-                "status": "success",
-                "message": "Database migrations completed successfully",
-                "output": result.stdout,
-                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-            }
-        else:
-            response = {
-                "status": "error",
-                "message": "Database migrations failed",
-                "error": result.stderr,
-                "return_code": result.returncode,
-                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-            }
-        
-        duration = time.time() - start_time
-        log_performance(logger, "Database migration", duration)
-        log_function_exit(logger, "run_database_migration", result=response, duration=duration)
-        return response
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "run_database_migration", duration=duration)
-        log_function_exit(logger, "run_database_migration", duration=duration)
-        raise
-
-# Add explicit CORS preflight handler
-@app.options("/{path:path}")
-async def options_handler(path: str):
-    """Handle CORS preflight requests"""
-    logger.debug(f"[CORS] Handling OPTIONS request for path: {path}")
-    return {"message": "CORS preflight handled"}

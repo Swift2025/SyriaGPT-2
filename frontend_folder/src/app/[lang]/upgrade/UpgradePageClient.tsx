@@ -128,13 +128,13 @@ export default function UpgradePageClient({ dictionary }: { dictionary: any }) {
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">{t.comparison.title}</h2>
           <div className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-amber-200/50 dark:border-amber-700/30">
             <div className="flex justify-between items-center mb-8"><h3 className="font-bold text-2xl text-gray-800 dark:text-gray-100">{t.comparison.featureHeader}</h3><div className="flex items-center gap-12"><span className="w-20 text-center font-bold text-lg text-gray-600 dark:text-gray-400">{t.comparison.freeHeader}</span><span className="w-20 text-center font-bold text-lg text-amber-600 dark:text-amber-400">{t.comparison.proHeader}</span></div></div>
-            <div className="space-y-2">{t.comparison.features.map((feature: { text: string; free: boolean; pro: boolean }, index: number) => <FeatureRow key={`feature-${index}`} {...feature} icon={[<Zap key="zap1"/>, <Clock key="clock1"/>, <Rocket key="rocket"/>, <Crown key="crown"/>, <Clock key="clock2"/>, <Zap key="zap2"/>, <Star key="star"/>, <Shield key="shield"/>, <Heart key="heart"/>][index]} highlight={!feature.free && feature.pro} />)}</div>
+            <div className="space-y-2">{t.comparison.features.map((feature: { text: string; free: boolean; pro: boolean }, index: number) => <FeatureRow key={index} {...feature} icon={[<Zap/>, <Clock/>, <Rocket/>, <Crown/>, <Clock/>, <Zap/>, <Star/>, <Shield/>, <Heart/>][index]} highlight={!feature.free && feature.pro} />)}</div>
           </div>
         </section>
         <section className="mb-16">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">{t.faq.title}</h2>
           <div className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-amber-200/50 dark:border-amber-700/30 max-w-4xl mx-auto">
-            <div className="space-y-2">{t.faq.items.map((faq: { question: string; answer: string }, index: number) => <FaqItem key={index} question={faq.question} index={index} dictionary={dictionary}><p className="text-base leading-relaxed">{faq.answer}</p></FaqItem>)}</div>
+            <div className="space-y-2">{t.faq.items.map((faq: { question: string; answer: string }, index: number) => <FaqItem key={index} question={faq.question} dictionary={dictionary}><p className="text-base leading-relaxed">{faq.answer}</p></FaqItem>)}</div>
           </div>
         </section>
         <section className="text-center">

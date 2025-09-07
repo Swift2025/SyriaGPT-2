@@ -6,12 +6,17 @@ import { Locale } from '../../../../i18n-config';
 import ProfilePageClient from './ProfilePageClient'; // استيراد مكون العميل
 import ProtectedRoute from '../components/ProtectedRoute';
 
+interface PageProps {
+  params: Promise<{ lang: Locale }>;
+}
+
 // =======================
 // دالة ديناميكية لإنشاء بيانات الميتا (العنوان والوصف) المترجمة
 // =======================
 // هذه الدالة مهمة جداً لمحركات البحث (SEO) ولعنوان التبويب في المتصفح
-export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   // 1. جلب القاموس للغة المحددة
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
   // 2. الوصول إلى نصوص الميتا المترجمة
   const t = dictionary.profilePage.metadata;
@@ -23,9 +28,8 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
 }
 
 // الحارس
-export default async function ProfilePage({ params: awaitedParams }) {
-  const params = await awaitedParams;
-  const { lang } = params;
+export default async function ProfilePage({ params }: PageProps) {
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
   return (

@@ -33,15 +33,75 @@ class GeminiService:
         """Check if the Gemini service is available"""
         return self.model_available
 
-    async def answer_question(self, question: str) -> Optional[Dict[str, Any]]:
+    async def test_connection(self) -> bool:
+        """Test the connection to Google Gemini API"""
+        try:
+            logger.info("🔍 Testing Google Gemini API connection...")
+            
+            if not self.model_available:
+                logger.error("❌ Google Gemini API not available - no API key")
+                return False
+            
+            # Test with a simple question
+            test_result = await self.answer_question("What is 2+2?")
+            
+            if test_result and test_result.get("answer"):
+                logger.info("✅ Google Gemini API connection test successful")
+                return True
+            else:
+                logger.error("❌ Google Gemini API connection test failed")
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ Google Gemini API connection test failed: {e}")
+            return False
+
+    async def answer_question(self, question: str, context: Optional[str] = None, language: str = "auto", **kwargs) -> Optional[Dict[str, Any]]:
         """Generate an answer for a given question"""
+        logger.info(f"🔍 [GEMINI_SERVICE] معالجة السؤال: {question[:50]}...")
         if not self.model_available:
+            logger.warning("❌ [GEMINI_SERVICE] النموذج غير متاح، إرجاع رد وهمي")
             return {"answer": f"[MOCK ANSWER] {question}", "model_used": "mock"}
 
-        prompt = f"""أجب على السؤال التالي بما يتوافق مع المجتمع السوري:
-            لا تعد اي شيئ مثل (بالطبع اليك جواب يتوافق مع الشعب السوري) 
-            السؤال:
-            {question}"""
+        # بناء السياق من البيانات المحلية إذا لم يتم توفيره
+        if not context:
+            context = """
+            أنت مساعد ذكي متخصص في المعلومات السورية. استخدم المعلومات التالية كمرجع:
+            
+            - سوريا جمهورية ديمقراطية حديثة
+            - العاصمة: دمشق
+            - اللغة الرسمية: العربية
+            - العملة: الليرة السورية
+            - عدد المحافظات: 14 محافظة
+            - النظام السياسي: جمهوري ديمقراطي
+            - الدستور: دستور الجمهورية العربية السورية (2012)
+            - البرلمان: مجلس الشعب (250 عضو)
+            - الرئيس الحالي: أحمد الشرع (بعد تحرير سوريا)
+            - الحزب الحاكم: منتخب ديمقراطياً
+            """
+
+        prompt = f"""أنت SyriaGPT، مساعد ذكي متخصص في المعلومات السورية تم تدريبه من قبل وكالة نظم المعلومات السورية. أجب على السؤال التالي بدقة ووضوح:
+
+معلومات مهمة:
+- إذا سُئلت عن هويتك، قل أنك SyriaGPT من وكالة نظم المعلومات السورية
+- الرئيس الحالي لسوريا هو أحمد الشرع (بعد تحرير سوريا من نظام الأسد)
+- سوريا جمهورية ديمقراطية حديثة
+- النظام السياسي مبني على دستور الجمهورية العربية السورية
+
+السياق المرجعي:
+{context}
+
+السؤال: {question}
+
+تعليمات مهمة:
+- أجب باللغة العربية فقط
+- كن دقيقاً ومحدداً في المعلومات
+- إذا لم تكن متأكداً من معلومة، قل "لا أستطيع التأكد من هذه المعلومة"
+- لا تخترع معلومات غير موجودة أو غير مؤكدة
+- ركز على المعلومات الرسمية والموثقة
+- اجعل إجابتك مختصرة ومفيدة
+- تجنب التكرار والتفاصيل غير الضرورية
+- إذا سُئلت عن هويتك، قل أنك SyriaGPT من وكالة نظم المعلومات السورية"""
 
         try:
             # إنشاء نموذج GenerativeModel
@@ -55,9 +115,31 @@ class GeminiService:
             
             # الوصول للنص الناتج
             answer = response.text
-            return {"answer": answer, "model_used": self.model_name}
+            
+            # التحقق من جودة الإجابة
+            if not answer or len(answer.strip()) < 5:
+                logger.warning("Received empty or very short answer from Gemini")
+                return {"answer": "عذراً، لم أتمكن من توليد إجابة مناسبة. يرجى إعادة صياغة السؤال.", "model_used": self.model_name}
+            
+            # تنظيف الإجابة من النصوص غير المرغوب فيها
+            answer = answer.strip()
+            if answer.startswith("أعتذر") and len(answer) < 20:
+                logger.warning("Received apology response from Gemini")
+                return {"answer": "عذراً، لا أستطيع الإجابة على هذا السؤال بدقة. يرجى طرح سؤال أكثر تحديداً.", "model_used": self.model_name}
+            
+            logger.info(f"✅ [GEMINI_SERVICE] تم توليد إجابة بنجاح من Gemini")
+            return {
+                "answer": answer, 
+                "model_used": self.model_name,
+                "source": "gemini_service",
+                "debug_info": {
+                    "model_name": self.model_name,
+                    "answer_length": len(answer),
+                    "question_length": len(question)
+                }
+            }
         except Exception as e:
-            logger.error(f"Failed to get answer from Gemini: {e}")
+            logger.error(f"❌ [GEMINI_SERVICE] فشل في الحصول على إجابة من Gemini: {e}")
             return None
 
     async def generate_question_variants(

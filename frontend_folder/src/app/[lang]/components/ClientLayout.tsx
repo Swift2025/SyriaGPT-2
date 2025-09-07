@@ -7,31 +7,45 @@ import Sidebar from './Sidebar';
 import { AuthProvider, useAuth } from '../../../context/AuthContext';
 
 // مكون داخلي لإدارة المحتوى الرئيسي وشاشة التحميل
-const MainAppContent = ({ children, dictionary }) => {
-  const { isLoading: isAuthLoading } = useAuth();
+const MainAppContent = ({ children, dictionary }: { children: React.ReactNode; dictionary: any }) => {
+  const { user, isLoading: isAuthLoading } = useAuth();
   const [isMounted, setIsMounted] = useState(false);
+  
+  // Debug: مراقبة حالة المصادقة
+  useEffect(() => {
+    console.log('ClientLayout - Auth state:', { user, isAuthLoading });
+    if (user) {
+      console.log('ClientLayout - User details:', {
+        id: user.id,
+        email: user.email,
+        full_name: user.full_name,
+        name: user.name
+      });
+    }
+  }, [user, isAuthLoading]);
 
   // تهيئة الحالة من localStorage أو من إعدادات النظام
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window === 'undefined') {
-      return false; // القيمة الافتراضية في الخادم
-    }
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      return savedTheme === 'dark';
-    }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  });
+  const [darkMode, setDarkMode] = useState(false); // القيمة الافتراضية للخادم
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    
+    // تحميل الثيم من localStorage بعد التحميل
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        setDarkMode(savedTheme === 'dark');
+      } else {
+        setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+      }
+    }
   }, []);
 
   // تأثير مسؤول عن الانتقال السلس من شاشة التحميل إلى التطبيق
   useEffect(() => {
-    if (!isAuthLoading && isMounted) {
+    if (!isAuthLoading && isMounted && typeof window !== 'undefined') {
       const loader = document.getElementById('initial-loader');
       const content = document.getElementById('app-content');
       if (loader) {
@@ -48,29 +62,29 @@ const MainAppContent = ({ children, dictionary }) => {
 
   // تحديث localStorage و class في <html> عند تغيير الثيم
   useEffect(() => {
-    const root = window.document.documentElement;
-    const newTheme = darkMode ? 'dark' : 'light';
-    root.classList.remove('light', 'dark');
-    root.classList.add(newTheme);
-    if (isMounted) { // تأكد من أننا في المتصفح قبل الكتابة في localStorage
+    if (typeof window !== 'undefined' && isMounted) {
+      const root = window.document.documentElement;
+      const newTheme = darkMode ? 'dark' : 'light';
+      root.classList.remove('light', 'dark');
+      root.classList.add(newTheme);
       localStorage.setItem('theme', newTheme);
     }
   }, [darkMode, isMounted]);
 
   return (
     <>
-      <div id="initial-loader" className="fixed inset-0 bg-brand-cream dark:bg-brand-navy-dark z-[100] flex items-center justify-center transition-opacity duration-300">
-        <div className="text-center">
-          <div className="w-16 h-16 mx-auto mb-4 animate-pulse">
-            <img src="/images/logo.ai.svg" alt="Syrian Eagle Logo" className="w-full h-full" />
+      <div id="initial-loader" className="fixed inset-0 bg-brand-cream dark:bg-brand-navy-dark z-[100] flex items-center justify-center transition-opacity duration-300" suppressHydrationWarning={true}>
+        <div className="text-center" suppressHydrationWarning={true}>
+          <div className="w-16 h-16 mx-auto mb-4 animate-pulse" suppressHydrationWarning={true}>
+            <img src="/logo.ai.svg" alt="Syrian Eagle Logo" className="w-full h-full" />
           </div>
-          <h2 className="text-xl font-semibold text-brand-gold-primary mb-2">{dictionary.loader.title}</h2>
-          <p className="text-sm text-brand-text-gray dark:text-gray-400">{dictionary.loader.loading}</p>
+          <h2 className="text-xl font-semibold text-brand-gold-primary mb-2">{dictionary.loader?.title || 'Welcome to SyriaGPT'}</h2>
+          <p className="text-sm text-brand-text-gray dark:text-gray-400">{dictionary.loader?.loading || 'Loading...'}</p>
         </div>
       </div>
 
       <main id="app-content" className="opacity-0 transition-opacity duration-300">
-        <div className="flex h-screen bg-brand-cream dark:bg-brand-navy-dark">
+        <div className="flex h-screen bg-brand-cream dark:bg-brand-navy-dark" suppressHydrationWarning={true}>
           <Sidebar
             dictionary={dictionary}
             darkMode={darkMode}
@@ -91,7 +105,7 @@ const MainAppContent = ({ children, dictionary }) => {
 };
 
 // المكون الرئيسي الذي يقوم بتوفير AuthContext
-export default function ClientLayout({ children, dictionary }) {
+export default function ClientLayout({ children, dictionary }: { children: React.ReactNode; dictionary: any }) {
   return (
     <AuthProvider>
       <Toaster

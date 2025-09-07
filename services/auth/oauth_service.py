@@ -40,17 +40,30 @@ class OAuthProvider:
 
     async def get_user_info(self, code: str, redirect_uri: str) -> Optional[Dict[str, Any]]:
         try:
+            logger.info(f"🔍 [OAUTH_PROVIDER] Getting user info from {self.name} with code: {code[:10]}...")
+            logger.info(f"🔍 [OAUTH_PROVIDER] Redirect URI: {redirect_uri}")
+            logger.info(f"🔍 [OAUTH_PROVIDER] Access token URL: {self.access_token_url}")
+            logger.info(f"🔍 [OAUTH_PROVIDER] User info URL: {self.user_info_url}")
+            logger.info(f"🔍 [OAUTH_PROVIDER] Client ID: {self.client_id[:10]}...")
+            
+            if not self.client_id or not self.client_secret:
+                logger.error(f"❌ [OAUTH_PROVIDER] Missing client credentials for {self.name}")
+                return None
+            
             client = AsyncOAuth2Client(
                 client_id=self.client_id,
                 client_secret=self.client_secret
             )
             
+            logger.info(f"🔍 [OAUTH_PROVIDER] Fetching token from {self.access_token_url}")
             token = await client.fetch_token(
                 self.access_token_url,
                 code=code,
                 redirect_uri=redirect_uri
             )
+            logger.info(f"✅ [OAUTH_PROVIDER] Successfully got token")
             
+            logger.info(f"🔍 [OAUTH_PROVIDER] Getting user info from {self.user_info_url}")
             async with httpx.AsyncClient() as http_client:
                 response = await http_client.get(
                     self.user_info_url,
@@ -58,6 +71,7 @@ class OAuthProvider:
                 )
                 response.raise_for_status()
                 user_info = response.json()
+                logger.info(f"✅ [OAUTH_PROVIDER] Successfully got user info: {user_info}")
                 
                 # Add token information to user info
                 user_info['oauth_tokens'] = {
@@ -70,7 +84,9 @@ class OAuthProvider:
                 return user_info
                 
         except Exception as e:
-            logger.error(f"Failed to get user info from {self.name}: {str(e)}")
+            logger.error(f"❌ [OAUTH_PROVIDER] Failed to get user info from {self.name}: {str(e)}")
+            logger.error(f"❌ [OAUTH_PROVIDER] Exception type: {type(e).__name__}")
+            logger.error(f"❌ [OAUTH_PROVIDER] Exception details: {str(e)}")
             return None
 
 
@@ -81,20 +97,27 @@ class OAuthService:
 
     def _setup_providers(self):
         provider_configs = config_loader.load_oauth_providers()
+        logger.info(f"🔍 [OAUTH_SERVICE] Loaded {len(provider_configs)} provider configs: {list(provider_configs.keys())}")
         
         for provider_name, config in provider_configs.items():
             client_id = config_loader.get_config_value(f"{provider_name.upper()}_CLIENT_ID")
             client_secret = config_loader.get_config_value(f"{provider_name.upper()}_CLIENT_SECRET")
             
-            if client_id and client_secret:
+            logger.info(f"🔍 [OAUTH_SERVICE] Checking {provider_name}: client_id={'***' if client_id else 'MISSING'}, client_secret={'***' if client_secret else 'MISSING'}")
+            
+            if client_id and client_secret and client_id != "your-google-client-id-here" and client_secret != "your-google-client-secret-here":
                 self.providers[provider_name] = OAuthProvider(
                     name=provider_name,
                     client_id=client_id,
                     client_secret=client_secret,
                     config=config
                 )
+                logger.info(f"✅ [OAUTH_SERVICE] Successfully configured {provider_name}")
             else:
-                logger.warning(f"OAuth provider {provider_name} not configured - missing credentials")
+                logger.warning(f"❌ [OAUTH_SERVICE] OAuth provider {provider_name} not configured - missing or invalid credentials")
+                logger.warning(f"❌ [OAUTH_SERVICE] Please set {provider_name.upper()}_CLIENT_ID and {provider_name.upper()}_CLIENT_SECRET in your environment variables")
+        
+        logger.info(f"🔍 [OAUTH_SERVICE] Total configured providers: {list(self.providers.keys())}")
 
     def get_provider(self, provider_name: str) -> Optional[OAuthProvider]:
         return self.providers.get(provider_name.lower())
@@ -113,15 +136,25 @@ class OAuthService:
         return provider.get_authorization_url(redirect_uri, state)
 
     async def get_user_info(self, provider_name: str, code: str, redirect_uri: str) -> Optional[Dict[str, Any]]:
+        logger.info(f"🔍 [OAUTH_SERVICE] Getting user info for provider: {provider_name}")
         provider = self.get_provider(provider_name)
         if not provider:
+            logger.error(f"❌ [OAUTH_SERVICE] Provider {provider_name} not found. Available providers: {list(self.providers.keys())}")
+            logger.error(f"❌ [OAUTH_SERVICE] Please check your OAuth configuration and environment variables")
             return None
         
-        user_info = await provider.get_user_info(code, redirect_uri)
-        if not user_info:
-            return None
+        logger.info(f"✅ [OAUTH_SERVICE] Provider {provider_name} found, getting user info...")
+        try:
+            user_info = await provider.get_user_info(code, redirect_uri)
+            if not user_info:
+                logger.error(f"❌ [OAUTH_SERVICE] Failed to get user info from {provider_name}")
+                return None
 
-        return self._normalize_user_info(provider_name, user_info)
+            logger.info(f"✅ [OAUTH_SERVICE] Successfully got user info from {provider_name}")
+            return self._normalize_user_info(provider_name, user_info)
+        except Exception as e:
+            logger.error(f"❌ [OAUTH_SERVICE] Exception while getting user info from {provider_name}: {str(e)}")
+            return None
 
     def _normalize_user_info(self, provider_name: str, user_info: Dict[str, Any]) -> Dict[str, Any]:
         normalized = {

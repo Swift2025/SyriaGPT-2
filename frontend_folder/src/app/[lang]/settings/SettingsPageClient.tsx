@@ -20,6 +20,7 @@ import {
   Settings
 } from 'lucide-react';
 import { getUserSettings, updateUserSettings, clearChatHistory, exportUserData } from '../../../../services/api';
+import { useAuth } from '../../../context/AuthContext';
 import toast from 'react-hot-toast';
 
 // =======================
@@ -165,7 +166,12 @@ export default function SettingsPageClient({ dictionary }: { dictionary: any }) 
     email_notifications: true,
     sms_notifications: false,
   });
-  const [initialSettings, setInitialSettings] = useState({});
+  const [initialSettings, setInitialSettings] = useState({
+    theme: 'system',
+    language: 'ar',
+    email_notifications: true,
+    sms_notifications: false,
+  });
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isClearHistoryModalOpen, setIsClearHistoryModalOpen] = useState(false);
@@ -175,10 +181,27 @@ export default function SettingsPageClient({ dictionary }: { dictionary: any }) 
   const params = useParams();
   const lang = params.lang as string;
   const t = dictionary.settingsPage;
+  const { user, isAuthenticated } = useAuth();
 
   useEffect(() => {
     const fetchSettings = async () => {
       setIsLoading(true);
+      
+      // Check if user is authenticated
+      if (!isAuthenticated || !user) {
+        console.log('User not authenticated, using default settings');
+        const defaultData = {
+          theme: 'system',
+          language: lang,
+          email_notifications: true,
+          sms_notifications: false,
+        };
+        setSettings(defaultData);
+        setInitialSettings(defaultData);
+        setIsLoading(false);
+        return;
+      }
+      
       try {
         const data = await getUserSettings();
         const initialData = {
@@ -190,13 +213,32 @@ export default function SettingsPageClient({ dictionary }: { dictionary: any }) 
         setSettings(initialData);
         setInitialSettings(initialData);
       } catch (error: any) {
-        toast.error(error.message || "Failed to load settings.");
+        console.error('Settings fetch error:', error);
+        
+        // Handle specific error cases
+        if (error.message?.includes('You can only access your own settings')) {
+          toast.error("خطأ في الصلاحيات. يرجى تسجيل الدخول مرة أخرى.");
+        } else if (error.message?.includes('401') || error.message?.includes('Unauthorized')) {
+          toast.error("انتهت صلاحية الجلسة. يرجى تسجيل الدخول مرة أخرى.");
+        } else {
+          toast.error(error.message || "فشل في تحميل الإعدادات.");
+        }
+        
+        // Set default settings on error
+        const defaultData = {
+          theme: 'system',
+          language: lang,
+          email_notifications: true,
+          sms_notifications: false,
+        };
+        setSettings(defaultData);
+        setInitialSettings(defaultData);
       } finally {
         setIsLoading(false);
       }
     };
     fetchSettings();
-  }, [lang]);
+  }, [lang, isAuthenticated, user]);
 
   useEffect(() => {
     if (!isLoading) {
@@ -227,14 +269,46 @@ export default function SettingsPageClient({ dictionary }: { dictionary: any }) 
 
   const handleClearHistory = async () => {
     setIsClearHistoryModalOpen(false);
-    toast.loading('Deleting history...');
+    
+    // Check if user is authenticated first
+    if (!isAuthenticated || !user) {
+      toast.error("يجب تسجيل الدخول أولاً لحذف المحادثات.");
+      return;
+    }
+    
+    toast.loading('جاري حذف المحادثات...');
     try {
       const response = await clearChatHistory();
       toast.dismiss();
-      toast.success(response.message || t.modals.clearHistory.success);
+      
+      // Handle the response properly
+      let successMessage = "تم حذف جميع المحادثات بنجاح";
+      
+      if (response && typeof response === 'object') {
+        if (response.message) {
+          successMessage = response.message;
+        } else if (response.success_count !== undefined) {
+          successMessage = `تم حذف ${response.success_count} محادثة بنجاح`;
+        }
+      } else if (typeof response === 'string') {
+        successMessage = response;
+      }
+      
+      toast.success(successMessage);
     } catch (error: any) {
       toast.dismiss();
-      toast.error(error.message);
+      console.error('Clear history error:', error);
+      
+      // Handle specific error cases
+      if (error.message?.includes('غير مسجل دخول') || error.message?.includes('Not authenticated')) {
+        toast.error("غير مسجل دخول. يرجى تسجيل الدخول أولاً.");
+      } else if (error.message?.includes('انتهت صلاحية الجلسة') || error.message?.includes('401')) {
+        toast.error("انتهت صلاحية الجلسة. يرجى تسجيل الدخول مرة أخرى.");
+      } else if (error.message?.includes('403') || error.message?.includes('Forbidden')) {
+        toast.error("ليس لديك صلاحية لحذف المحادثات.");
+      } else {
+        toast.error(error.message || "فشل في حذف المحادثات.");
+      }
     }
   };
 

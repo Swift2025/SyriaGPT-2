@@ -1,0 +1,2799 @@
+{
+  "category": "cities",
+  "description": "معلومات عن المدن السورية",
+  "qa_pairs": [
+    {
+      "id": "دمشق_capital",
+      "question_variants": [
+        "ما هي عاصمة سوريا؟",
+        "شو عاصمة سوريا؟",
+        "وين عاصمة سوريا؟",
+        "ما اسم عاصمة سوريا؟",
+        "ما هي العاصمة السورية؟",
+        "ما اسم العاصمة السورية؟",
+        "What is the capital of Syria?",
+        "What is Syria's capital?"
+      ],
+      "answer": "دمشق هي عاصمة الجمهورية العربية السورية",
+      "keywords": [
+        "دمشق",
+        "عاصمة",
+        "capital",
+        "damascus"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_location",
+      "question_variants": [
+        "أين تقع دمشق؟",
+        "وين دمشق؟",
+        "ما هو موقع دمشق؟",
+        "Where is دمشق located?"
+      ],
+      "answer": "تقع في جنوب غرب سوريا في منطقة الغوطة على نهر بردى",
+      "keywords": [
+        "دمشق",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_history",
+      "question_variants": [
+        "ما هو تاريخ دمشق؟",
+        "إلى متى يعود تاريخ دمشق؟",
+        "ما هي أقدم المعلومات عن دمشق؟",
+        "What is the history of دمشق?"
+      ],
+      "answer": "واحدة من أقدم المدن المأهولة في العالم بتاريخ متصل يمتد لحوالي أحد عشر ألف عام",
+      "keywords": [
+        "دمشق",
+        "history"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_nicknames",
+      "question_variants": [
+        "بماذا تلقب دمشق؟",
+        "ما هي أسماء دمشق؟",
+        "ما هو لقب دمشق؟",
+        "What is دمشق nicknamed?"
+      ],
+      "answer": "الشام، مدينة الياسمين، الفيحاء، جلّق",
+      "keywords": [
+        "دمشق",
+        "nicknames"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_climate",
+      "question_variants": [
+        "ما هو مناخ دمشق؟",
+        "كيف هو الطقس في دمشق؟",
+        "What is the climate of دمشق?"
+      ],
+      "answer": "مناخ قاري جاف إلى شبه جاف",
+      "keywords": [
+        "دمشق",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_landmarks",
+      "question_variants": [
+        "ما هي معالم دمشق؟",
+        "بماذا تشتهر دمشق؟",
+        "ما هي أهم الأماكن في دمشق؟",
+        "What are the landmarks of دمشق?"
+      ],
+      "answer": "الجامع الأموي، سوق الحميدية، المدينة القديمة، قصر العظم",
+      "keywords": [
+        "دمشق",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_population",
+      "question_variants": [
+        "كم عدد سكان دمشق؟",
+        "ما هو تعداد سكان دمشق؟",
+        "How many people live in دمشق?"
+      ],
+      "answer": "حوالي مليوني نسمة",
+      "keywords": [
+        "دمشق",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_area",
+      "question_variants": [
+        "كم مساحة دمشق؟",
+        "ما هي مساحة مدينة دمشق؟",
+        "What is the area of دمشق?"
+      ],
+      "answer": "حوالي 105 كيلومتر مربع",
+      "keywords": [
+        "دمشق",
+        "area"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_elevation",
+      "question_variants": [
+        "بماذا تشتهر دمشق؟",
+        "معلومات عن دمشق",
+        "ما هي أهم المعلومات عن دمشق؟",
+        "أخبرني عن دمشق"
+      ],
+      "answer": "690 متر فوق سطح البحر",
+      "keywords": [
+        "دمشق",
+        "elevation"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_rivers",
+      "question_variants": [
+        "بماذا تشتهر دمشق؟",
+        "معلومات عن دمشق",
+        "ما هي أهم المعلومات عن دمشق؟",
+        "أخبرني عن دمشق"
+      ],
+      "answer": "نهر بردى وفروعه",
+      "keywords": [
+        "دمشق",
+        "rivers"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_districts",
+      "question_variants": [
+        "بماذا تشتهر دمشق؟",
+        "معلومات عن دمشق",
+        "ما هي أهم المعلومات عن دمشق؟",
+        "أخبرني عن دمشق"
+      ],
+      "answer": "القديمة، الميدان، أبو رمانة، كفر سوسة، المزة",
+      "keywords": [
+        "دمشق",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_universities",
+      "question_variants": [
+        "بماذا تشتهر دمشق؟",
+        "معلومات عن دمشق",
+        "ما هي أهم المعلومات عن دمشق؟",
+        "أخبرني عن دمشق"
+      ],
+      "answer": "جامعة دمشق، جامعة الشام الخاصة",
+      "keywords": [
+        "دمشق",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_airport",
+      "question_variants": [
+        "بماذا تشتهر دمشق؟",
+        "معلومات عن دمشق",
+        "ما هي أهم المعلومات عن دمشق؟",
+        "أخبرني عن دمشق"
+      ],
+      "answer": "مطار دمشق الدولي",
+      "keywords": [
+        "دمشق",
+        "airport"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_transport",
+      "question_variants": [
+        "بماذا تشتهر دمشق؟",
+        "معلومات عن دمشق",
+        "ما هي أهم المعلومات عن دمشق؟",
+        "أخبرني عن دمشق"
+      ],
+      "answer": "مترو دمشق، الباصات، سيارات الأجرة",
+      "keywords": [
+        "دمشق",
+        "transport"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_economic_capital",
+      "question_variants": [
+        "بماذا تشتهر حلب؟",
+        "معلومات عن حلب",
+        "ما هي أهم المعلومات عن حلب؟",
+        "أخبرني عن حلب"
+      ],
+      "answer": "العاصمة الاقتصادية لسوريا",
+      "keywords": [
+        "حلب",
+        "economic_capital"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_location",
+      "question_variants": [
+        "أين تقع حلب؟",
+        "وين حلب؟",
+        "ما هو موقع حلب؟",
+        "Where is حلب located?"
+      ],
+      "answer": "تقع في شمال سوريا",
+      "keywords": [
+        "حلب",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_history",
+      "question_variants": [
+        "ما هو تاريخ حلب؟",
+        "إلى متى يعود تاريخ حلب؟",
+        "ما هي أقدم المعلومات عن حلب؟",
+        "What is the history of حلب?"
+      ],
+      "answer": "كانت عاصمة لمملكة يمحاض الأمورية",
+      "keywords": [
+        "حلب",
+        "history"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_nicknames",
+      "question_variants": [
+        "بماذا تلقب حلب؟",
+        "ما هي أسماء حلب؟",
+        "ما هو لقب حلب؟",
+        "What is حلب nicknamed?"
+      ],
+      "answer": "الشهباء",
+      "keywords": [
+        "حلب",
+        "nicknames"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_landmarks",
+      "question_variants": [
+        "ما هي معالم حلب؟",
+        "بماذا تشتهر حلب؟",
+        "ما هي أهم الأماكن في حلب؟",
+        "What are the landmarks of حلب?"
+      ],
+      "answer": "قلعة حلب، أكبر سوق شرقي مسقوف في العالم، الجامع الأموي",
+      "keywords": [
+        "حلب",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_cuisine",
+      "question_variants": [
+        "بماذا تشتهر حلب؟",
+        "معلومات عن حلب",
+        "ما هي أهم المعلومات عن حلب؟",
+        "أخبرني عن حلب"
+      ],
+      "answer": "حلب أم المحاشي والكبب",
+      "keywords": [
+        "حلب",
+        "cuisine"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_population",
+      "question_variants": [
+        "كم عدد سكان حلب؟",
+        "ما هو تعداد سكان حلب؟",
+        "How many people live in حلب?"
+      ],
+      "answer": "أكبر مدينة سورية من حيث السكان",
+      "keywords": [
+        "حلب",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_area",
+      "question_variants": [
+        "كم مساحة حلب؟",
+        "ما هي مساحة مدينة حلب؟",
+        "What is the area of حلب?"
+      ],
+      "answer": "حوالي 190 كيلومتر مربع",
+      "keywords": [
+        "حلب",
+        "area"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_climate",
+      "question_variants": [
+        "ما هو مناخ حلب؟",
+        "كيف هو الطقس في حلب؟",
+        "What is the climate of حلب?"
+      ],
+      "answer": "مناخ قاري جاف",
+      "keywords": [
+        "حلب",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_industries",
+      "question_variants": [
+        "بماذا تشتهر حلب؟",
+        "معلومات عن حلب",
+        "ما هي أهم المعلومات عن حلب؟",
+        "أخبرني عن حلب"
+      ],
+      "answer": "صناعات نسيجية، كيماوية، غذائية",
+      "keywords": [
+        "حلب",
+        "industries"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_universities",
+      "question_variants": [
+        "بماذا تشتهر حلب؟",
+        "معلومات عن حلب",
+        "ما هي أهم المعلومات عن حلب؟",
+        "أخبرني عن حلب"
+      ],
+      "answer": "جامعة حلب، جامعة حلب الخاصة",
+      "keywords": [
+        "حلب",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_airport",
+      "question_variants": [
+        "بماذا تشتهر حلب؟",
+        "معلومات عن حلب",
+        "ما هي أهم المعلومات عن حلب؟",
+        "أخبرني عن حلب"
+      ],
+      "answer": "مطار حلب الدولي",
+      "keywords": [
+        "حلب",
+        "airport"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_districts",
+      "question_variants": [
+        "بماذا تشتهر حلب؟",
+        "معلومات عن حلب",
+        "ما هي أهم المعلومات عن حلب؟",
+        "أخبرني عن حلب"
+      ],
+      "answer": "القديمة، العزيزية، السليمانية، الشعار",
+      "keywords": [
+        "حلب",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_location",
+      "question_variants": [
+        "أين تقع حمص؟",
+        "وين حمص؟",
+        "ما هو موقع حمص؟",
+        "Where is حمص located?"
+      ],
+      "answer": "تقع في وسط سوريا",
+      "keywords": [
+        "حمص",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_nickname",
+      "question_variants": [
+        "بماذا تلقب حمص؟",
+        "ما هي أسماء حمص؟",
+        "ما هو لقب حمص؟",
+        "What is حمص nicknamed?"
+      ],
+      "answer": "عاصمة الوسط",
+      "keywords": [
+        "حمص",
+        "nickname"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_importance",
+      "question_variants": [
+        "بماذا تشتهر حمص؟",
+        "معلومات عن حمص",
+        "ما هي أهم المعلومات عن حمص؟",
+        "أخبرني عن حمص"
+      ],
+      "answer": "موقع استراتيجي وتاريخ عريق",
+      "keywords": [
+        "حمص",
+        "importance"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_landmarks",
+      "question_variants": [
+        "ما هي معالم حمص؟",
+        "بماذا تشتهر حمص؟",
+        "ما هي أهم الأماكن في حمص؟",
+        "What are the landmarks of حمص?"
+      ],
+      "answer": "معالم تاريخية مهمة، قلعة حمص",
+      "keywords": [
+        "حمص",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_population",
+      "question_variants": [
+        "كم عدد سكان حمص؟",
+        "ما هو تعداد سكان حمص؟",
+        "How many people live in حمص?"
+      ],
+      "answer": "ثالث أكبر مدينة سورية",
+      "keywords": [
+        "حمص",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_area",
+      "question_variants": [
+        "كم مساحة حمص؟",
+        "ما هي مساحة مدينة حمص؟",
+        "What is the area of حمص?"
+      ],
+      "answer": "حوالي 48 كيلومتر مربع",
+      "keywords": [
+        "حمص",
+        "area"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_climate",
+      "question_variants": [
+        "ما هو مناخ حمص؟",
+        "كيف هو الطقس في حمص؟",
+        "What is the climate of حمص?"
+      ],
+      "answer": "مناخ قاري",
+      "keywords": [
+        "حمص",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_industries",
+      "question_variants": [
+        "بماذا تشتهر حمص؟",
+        "معلومات عن حمص",
+        "ما هي أهم المعلومات عن حمص؟",
+        "أخبرني عن حمص"
+      ],
+      "answer": "صناعات بتروكيماوية، إسمنت",
+      "keywords": [
+        "حمص",
+        "industries"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_universities",
+      "question_variants": [
+        "بماذا تشتهر حمص؟",
+        "معلومات عن حمص",
+        "ما هي أهم المعلومات عن حمص؟",
+        "أخبرني عن حمص"
+      ],
+      "answer": "جامعة البعث",
+      "keywords": [
+        "حمص",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_districts",
+      "question_variants": [
+        "بماذا تشتهر حمص؟",
+        "معلومات عن حمص",
+        "ما هي أهم المعلومات عن حمص؟",
+        "أخبرني عن حمص"
+      ],
+      "answer": "القديمة، باب هود، باب السباع",
+      "keywords": [
+        "حمص",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_location",
+      "question_variants": [
+        "أين تقع حماة؟",
+        "وين حماة؟",
+        "ما هو موقع حماة؟",
+        "Where is حماة located?"
+      ],
+      "answer": "تقع في وسط سوريا على نهر العاصي",
+      "keywords": [
+        "حماة",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_famous_for",
+      "question_variants": [
+        "بماذا تشتهر حماة؟",
+        "معلومات عن حماة",
+        "ما هي أهم المعلومات عن حماة؟",
+        "أخبرني عن حماة"
+      ],
+      "answer": "النواعير (السواقي) التي تعتبر من أقدم أنظمة الري في العالم",
+      "keywords": [
+        "حماة",
+        "famous_for"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_nickname",
+      "question_variants": [
+        "بماذا تلقب حماة؟",
+        "ما هي أسماء حماة؟",
+        "ما هو لقب حماة؟",
+        "What is حماة nicknamed?"
+      ],
+      "answer": "مدينة النواعير",
+      "keywords": [
+        "حماة",
+        "nickname"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_history",
+      "question_variants": [
+        "ما هو تاريخ حماة؟",
+        "إلى متى يعود تاريخ حماة؟",
+        "ما هي أقدم المعلومات عن حماة؟",
+        "What is the history of حماة?"
+      ],
+      "answer": "تاريخ عريق يعود إلى العصور القديمة",
+      "keywords": [
+        "حماة",
+        "history"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_population",
+      "question_variants": [
+        "كم عدد سكان حماة؟",
+        "ما هو تعداد سكان حماة؟",
+        "How many people live in حماة?"
+      ],
+      "answer": "رابع أكبر مدينة سورية",
+      "keywords": [
+        "حماة",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_area",
+      "question_variants": [
+        "كم مساحة حماة؟",
+        "ما هي مساحة مدينة حماة؟",
+        "What is the area of حماة?"
+      ],
+      "answer": "حوالي 45 كيلومتر مربع",
+      "keywords": [
+        "حماة",
+        "area"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_climate",
+      "question_variants": [
+        "ما هو مناخ حماة؟",
+        "كيف هو الطقس في حماة؟",
+        "What is the climate of حماة?"
+      ],
+      "answer": "مناخ قاري معتدل",
+      "keywords": [
+        "حماة",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_landmarks",
+      "question_variants": [
+        "ما هي معالم حماة؟",
+        "بماذا تشتهر حماة؟",
+        "ما هي أهم الأماكن في حماة؟",
+        "What are the landmarks of حماة?"
+      ],
+      "answer": "النواعير، قلعة حماة، الجامع النوري",
+      "keywords": [
+        "حماة",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_universities",
+      "question_variants": [
+        "بماذا تشتهر حماة؟",
+        "معلومات عن حماة",
+        "ما هي أهم المعلومات عن حماة؟",
+        "أخبرني عن حماة"
+      ],
+      "answer": "جامعة حماة",
+      "keywords": [
+        "حماة",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_districts",
+      "question_variants": [
+        "بماذا تشتهر حماة؟",
+        "معلومات عن حماة",
+        "ما هي أهم المعلومات عن حماة؟",
+        "أخبرني عن حماة"
+      ],
+      "answer": "القديمة، باب الجسر، باب النصر",
+      "keywords": [
+        "حماة",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_location",
+      "question_variants": [
+        "أين تقع اللاذقية؟",
+        "وين اللاذقية؟",
+        "ما هو موقع اللاذقية؟",
+        "Where is اللاذقية located?"
+      ],
+      "answer": "تقع على ساحل البحر الأبيض المتوسط",
+      "keywords": [
+        "اللاذقية",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_port",
+      "question_variants": [
+        "بماذا تشتهر اللاذقية؟",
+        "معلومات عن اللاذقية",
+        "ما هي أهم المعلومات عن اللاذقية؟",
+        "أخبرني عن اللاذقية"
+      ],
+      "answer": "أهم ميناء بحري في سوريا",
+      "keywords": [
+        "اللاذقية",
+        "port"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_climate",
+      "question_variants": [
+        "ما هو مناخ اللاذقية؟",
+        "كيف هو الطقس في اللاذقية؟",
+        "What is the climate of اللاذقية?"
+      ],
+      "answer": "مناخ متوسطي معتدل",
+      "keywords": [
+        "اللاذقية",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_tourism",
+      "question_variants": [
+        "بماذا تشتهر اللاذقية؟",
+        "معلومات عن اللاذقية",
+        "ما هي أهم المعلومات عن اللاذقية؟",
+        "أخبرني عن اللاذقية"
+      ],
+      "answer": "منطقة سياحية مهمة",
+      "keywords": [
+        "اللاذقية",
+        "tourism"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_population",
+      "question_variants": [
+        "كم عدد سكان اللاذقية؟",
+        "ما هو تعداد سكان اللاذقية؟",
+        "How many people live in اللاذقية?"
+      ],
+      "answer": "خامس أكبر مدينة سورية",
+      "keywords": [
+        "اللاذقية",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_area",
+      "question_variants": [
+        "كم مساحة اللاذقية؟",
+        "ما هي مساحة مدينة اللاذقية؟",
+        "What is the area of اللاذقية?"
+      ],
+      "answer": "حوالي 58 كيلومتر مربع",
+      "keywords": [
+        "اللاذقية",
+        "area"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_landmarks",
+      "question_variants": [
+        "ما هي معالم اللاذقية؟",
+        "بماذا تشتهر اللاذقية؟",
+        "ما هي أهم الأماكن في اللاذقية؟",
+        "What are the landmarks of اللاذقية?"
+      ],
+      "answer": "شاطئ اللاذقية، قلعة صلاح الدين",
+      "keywords": [
+        "اللاذقية",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_universities",
+      "question_variants": [
+        "بماذا تشتهر اللاذقية؟",
+        "معلومات عن اللاذقية",
+        "ما هي أهم المعلومات عن اللاذقية؟",
+        "أخبرني عن اللاذقية"
+      ],
+      "answer": "جامعة تشرين",
+      "keywords": [
+        "اللاذقية",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_airport",
+      "question_variants": [
+        "بماذا تشتهر اللاذقية؟",
+        "معلومات عن اللاذقية",
+        "ما هي أهم المعلومات عن اللاذقية؟",
+        "أخبرني عن اللاذقية"
+      ],
+      "answer": "مطار باسل الأسد الدولي",
+      "keywords": [
+        "اللاذقية",
+        "airport"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_districts",
+      "question_variants": [
+        "بماذا تشتهر اللاذقية؟",
+        "معلومات عن اللاذقية",
+        "ما هي أهم المعلومات عن اللاذقية؟",
+        "أخبرني عن اللاذقية"
+      ],
+      "answer": "المركز، الرمل الجنوبي، الرمل الشمالي",
+      "keywords": [
+        "اللاذقية",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "طرطوس_location",
+      "question_variants": [
+        "أين تقع طرطوس؟",
+        "وين طرطوس؟",
+        "ما هو موقع طرطوس؟",
+        "Where is طرطوس located?"
+      ],
+      "answer": "تقع على ساحل البحر الأبيض المتوسط جنوب اللاذقية",
+      "keywords": [
+        "طرطوس",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "طرطوس_port",
+      "question_variants": [
+        "بماذا تشتهر طرطوس؟",
+        "معلومات عن طرطوس",
+        "ما هي أهم المعلومات عن طرطوس؟",
+        "أخبرني عن طرطوس"
+      ],
+      "answer": "ميناء بحري مهم",
+      "keywords": [
+        "طرطوس",
+        "port"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "طرطوس_climate",
+      "question_variants": [
+        "ما هو مناخ طرطوس؟",
+        "كيف هو الطقس في طرطوس؟",
+        "What is the climate of طرطوس?"
+      ],
+      "answer": "مناخ متوسطي",
+      "keywords": [
+        "طرطوس",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "طرطوس_tourism",
+      "question_variants": [
+        "بماذا تشتهر طرطوس؟",
+        "معلومات عن طرطوس",
+        "ما هي أهم المعلومات عن طرطوس؟",
+        "أخبرني عن طرطوس"
+      ],
+      "answer": "منطقة سياحية جميلة",
+      "keywords": [
+        "طرطوس",
+        "tourism"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "طرطوس_population",
+      "question_variants": [
+        "كم عدد سكان طرطوس؟",
+        "ما هو تعداد سكان طرطوس؟",
+        "How many people live in طرطوس?"
+      ],
+      "answer": "مدينة ساحلية متوسطة الحجم",
+      "keywords": [
+        "طرطوس",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "طرطوس_landmarks",
+      "question_variants": [
+        "ما هي معالم طرطوس؟",
+        "بماذا تشتهر طرطوس؟",
+        "ما هي أهم الأماكن في طرطوس؟",
+        "What are the landmarks of طرطوس?"
+      ],
+      "answer": "شاطئ طرطوس، جزيرة أرواد",
+      "keywords": [
+        "طرطوس",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "طرطوس_universities",
+      "question_variants": [
+        "بماذا تشتهر طرطوس؟",
+        "معلومات عن طرطوس",
+        "ما هي أهم المعلومات عن طرطوس؟",
+        "أخبرني عن طرطوس"
+      ],
+      "answer": "جامعة طرطوس",
+      "keywords": [
+        "طرطوس",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "طرطوس_districts",
+      "question_variants": [
+        "بماذا تشتهر طرطوس؟",
+        "معلومات عن طرطوس",
+        "ما هي أهم المعلومات عن طرطوس؟",
+        "أخبرني عن طرطوس"
+      ],
+      "answer": "المركز، الرملة",
+      "keywords": [
+        "طرطوس",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دير الزور_location",
+      "question_variants": [
+        "أين تقع دير الزور؟",
+        "وين دير الزور؟",
+        "ما هو موقع دير الزور؟",
+        "Where is دير الزور located?"
+      ],
+      "answer": "تقع في شرق سوريا على نهر الفرات",
+      "keywords": [
+        "دير الزور",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دير الزور_importance",
+      "question_variants": [
+        "بماذا تشتهر دير الزور؟",
+        "معلومات عن دير الزور",
+        "ما هي أهم المعلومات عن دير الزور؟",
+        "أخبرني عن دير الزور"
+      ],
+      "answer": "مركز تجاري وزراعي مهم",
+      "keywords": [
+        "دير الزور",
+        "importance"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دير الزور_climate",
+      "question_variants": [
+        "ما هو مناخ دير الزور؟",
+        "كيف هو الطقس في دير الزور؟",
+        "What is the climate of دير الزور?"
+      ],
+      "answer": "مناخ صحراوي حار",
+      "keywords": [
+        "دير الزور",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دير الزور_population",
+      "question_variants": [
+        "كم عدد سكان دير الزور؟",
+        "ما هو تعداد سكان دير الزور؟",
+        "How many people live in دير الزور?"
+      ],
+      "answer": "أكبر مدينة في شرق سوريا",
+      "keywords": [
+        "دير الزور",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دير الزور_area",
+      "question_variants": [
+        "كم مساحة دير الزور؟",
+        "ما هي مساحة مدينة دير الزور؟",
+        "What is the area of دير الزور?"
+      ],
+      "answer": "حوالي 33 كيلومتر مربع",
+      "keywords": [
+        "دير الزور",
+        "area"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دير الزور_landmarks",
+      "question_variants": [
+        "ما هي معالم دير الزور؟",
+        "بماذا تشتهر دير الزور؟",
+        "ما هي أهم الأماكن في دير الزور؟",
+        "What are the landmarks of دير الزور?"
+      ],
+      "answer": "جسر دير الزور المعلق، نهر الفرات",
+      "keywords": [
+        "دير الزور",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دير الزور_universities",
+      "question_variants": [
+        "بماذا تشتهر دير الزور؟",
+        "معلومات عن دير الزور",
+        "ما هي أهم المعلومات عن دير الزور؟",
+        "أخبرني عن دير الزور"
+      ],
+      "answer": "جامعة الفرات",
+      "keywords": [
+        "دير الزور",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دير الزور_airport",
+      "question_variants": [
+        "بماذا تشتهر دير الزور؟",
+        "معلومات عن دير الزور",
+        "ما هي أهم المعلومات عن دير الزور؟",
+        "أخبرني عن دير الزور"
+      ],
+      "answer": "مطار دير الزور",
+      "keywords": [
+        "دير الزور",
+        "airport"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دير الزور_districts",
+      "question_variants": [
+        "بماذا تشتهر دير الزور؟",
+        "معلومات عن دير الزور",
+        "ما هي أهم المعلومات عن دير الزور؟",
+        "أخبرني عن دير الزور"
+      ],
+      "answer": "المركز، الحميدية",
+      "keywords": [
+        "دير الزور",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الرقة_location",
+      "question_variants": [
+        "أين تقع الرقة؟",
+        "وين الرقة؟",
+        "ما هو موقع الرقة؟",
+        "Where is الرقة located?"
+      ],
+      "answer": "تقع في شمال شرق سوريا على نهر الفرات",
+      "keywords": [
+        "الرقة",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الرقة_importance",
+      "question_variants": [
+        "بماذا تشتهر الرقة؟",
+        "معلومات عن الرقة",
+        "ما هي أهم المعلومات عن الرقة؟",
+        "أخبرني عن الرقة"
+      ],
+      "answer": "مركز زراعي وتجاري",
+      "keywords": [
+        "الرقة",
+        "importance"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الرقة_climate",
+      "question_variants": [
+        "ما هو مناخ الرقة؟",
+        "كيف هو الطقس في الرقة؟",
+        "What is the climate of الرقة?"
+      ],
+      "answer": "مناخ صحراوي",
+      "keywords": [
+        "الرقة",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الرقة_population",
+      "question_variants": [
+        "كم عدد سكان الرقة؟",
+        "ما هو تعداد سكان الرقة؟",
+        "How many people live in الرقة?"
+      ],
+      "answer": "مدينة متوسطة الحجم",
+      "keywords": [
+        "الرقة",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الرقة_landmarks",
+      "question_variants": [
+        "ما هي معالم الرقة؟",
+        "بماذا تشتهر الرقة؟",
+        "ما هي أهم الأماكن في الرقة؟",
+        "What are the landmarks of الرقة?"
+      ],
+      "answer": "قلعة الرقة، نهر الفرات",
+      "keywords": [
+        "الرقة",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الرقة_universities",
+      "question_variants": [
+        "بماذا تشتهر الرقة؟",
+        "معلومات عن الرقة",
+        "ما هي أهم المعلومات عن الرقة؟",
+        "أخبرني عن الرقة"
+      ],
+      "answer": "جامعة الرقة",
+      "keywords": [
+        "الرقة",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الرقة_districts",
+      "question_variants": [
+        "بماذا تشتهر الرقة؟",
+        "معلومات عن الرقة",
+        "ما هي أهم المعلومات عن الرقة؟",
+        "أخبرني عن الرقة"
+      ],
+      "answer": "المركز، المنصورية",
+      "keywords": [
+        "الرقة",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الحسكة_location",
+      "question_variants": [
+        "أين تقع الحسكة؟",
+        "وين الحسكة؟",
+        "ما هو موقع الحسكة؟",
+        "Where is الحسكة located?"
+      ],
+      "answer": "تقع في شمال شرق سوريا",
+      "keywords": [
+        "الحسكة",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الحسكة_importance",
+      "question_variants": [
+        "بماذا تشتهر الحسكة؟",
+        "معلومات عن الحسكة",
+        "ما هي أهم المعلومات عن الحسكة؟",
+        "أخبرني عن الحسكة"
+      ],
+      "answer": "مركز زراعي مهم",
+      "keywords": [
+        "الحسكة",
+        "importance"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الحسكة_climate",
+      "question_variants": [
+        "ما هو مناخ الحسكة؟",
+        "كيف هو الطقس في الحسكة؟",
+        "What is the climate of الحسكة?"
+      ],
+      "answer": "مناخ قاري جاف",
+      "keywords": [
+        "الحسكة",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الحسكة_population",
+      "question_variants": [
+        "كم عدد سكان الحسكة؟",
+        "ما هو تعداد سكان الحسكة؟",
+        "How many people live in الحسكة?"
+      ],
+      "answer": "مدينة متوسطة الحجم",
+      "keywords": [
+        "الحسكة",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الحسكة_landmarks",
+      "question_variants": [
+        "ما هي معالم الحسكة؟",
+        "بماذا تشتهر الحسكة؟",
+        "ما هي أهم الأماكن في الحسكة؟",
+        "What are the landmarks of الحسكة?"
+      ],
+      "answer": "نهر الخابور",
+      "keywords": [
+        "الحسكة",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الحسكة_universities",
+      "question_variants": [
+        "بماذا تشتهر الحسكة؟",
+        "معلومات عن الحسكة",
+        "ما هي أهم المعلومات عن الحسكة؟",
+        "أخبرني عن الحسكة"
+      ],
+      "answer": "جامعة الحسكة",
+      "keywords": [
+        "الحسكة",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الحسكة_airport",
+      "question_variants": [
+        "بماذا تشتهر الحسكة؟",
+        "معلومات عن الحسكة",
+        "ما هي أهم المعلومات عن الحسكة؟",
+        "أخبرني عن الحسكة"
+      ],
+      "answer": "مطار الحسكة",
+      "keywords": [
+        "الحسكة",
+        "airport"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "الحسكة_districts",
+      "question_variants": [
+        "بماذا تشتهر الحسكة؟",
+        "معلومات عن الحسكة",
+        "ما هي أهم المعلومات عن الحسكة؟",
+        "أخبرني عن الحسكة"
+      ],
+      "answer": "المركز، الناصرة",
+      "keywords": [
+        "الحسكة",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "إدلب_location",
+      "question_variants": [
+        "أين تقع إدلب؟",
+        "وين إدلب؟",
+        "ما هو موقع إدلب؟",
+        "Where is إدلب located?"
+      ],
+      "answer": "تقع في شمال غرب سوريا",
+      "keywords": [
+        "إدلب",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "إدلب_importance",
+      "question_variants": [
+        "بماذا تشتهر إدلب؟",
+        "معلومات عن إدلب",
+        "ما هي أهم المعلومات عن إدلب؟",
+        "أخبرني عن إدلب"
+      ],
+      "answer": "مركز زراعي وتجاري",
+      "keywords": [
+        "إدلب",
+        "importance"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "إدلب_climate",
+      "question_variants": [
+        "ما هو مناخ إدلب؟",
+        "كيف هو الطقس في إدلب؟",
+        "What is the climate of إدلب?"
+      ],
+      "answer": "مناخ متوسطي",
+      "keywords": [
+        "إدلب",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "إدلب_population",
+      "question_variants": [
+        "كم عدد سكان إدلب؟",
+        "ما هو تعداد سكان إدلب؟",
+        "How many people live in إدلب?"
+      ],
+      "answer": "مدينة متوسطة الحجم",
+      "keywords": [
+        "إدلب",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "إدلب_landmarks",
+      "question_variants": [
+        "ما هي معالم إدلب؟",
+        "بماذا تشتهر إدلب؟",
+        "ما هي أهم الأماكن في إدلب؟",
+        "What are the landmarks of إدلب?"
+      ],
+      "answer": "قلعة حارم، آثار إيبلا",
+      "keywords": [
+        "إدلب",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "إدلب_universities",
+      "question_variants": [
+        "بماذا تشتهر إدلب؟",
+        "معلومات عن إدلب",
+        "ما هي أهم المعلومات عن إدلب؟",
+        "أخبرني عن إدلب"
+      ],
+      "answer": "جامعة إدلب",
+      "keywords": [
+        "إدلب",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "إدلب_districts",
+      "question_variants": [
+        "بماذا تشتهر إدلب؟",
+        "معلومات عن إدلب",
+        "ما هي أهم المعلومات عن إدلب؟",
+        "أخبرني عن إدلب"
+      ],
+      "answer": "المركز، باب الهوى",
+      "keywords": [
+        "إدلب",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "درعا_location",
+      "question_variants": [
+        "أين تقع درعا؟",
+        "وين درعا؟",
+        "ما هو موقع درعا؟",
+        "Where is درعا located?"
+      ],
+      "answer": "تقع في جنوب سوريا",
+      "keywords": [
+        "درعا",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "درعا_importance",
+      "question_variants": [
+        "بماذا تشتهر درعا؟",
+        "معلومات عن درعا",
+        "ما هي أهم المعلومات عن درعا؟",
+        "أخبرني عن درعا"
+      ],
+      "answer": "مركز زراعي مهم",
+      "keywords": [
+        "درعا",
+        "importance"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "درعا_climate",
+      "question_variants": [
+        "ما هو مناخ درعا؟",
+        "كيف هو الطقس في درعا؟",
+        "What is the climate of درعا?"
+      ],
+      "answer": "مناخ قاري جاف",
+      "keywords": [
+        "درعا",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "درعا_population",
+      "question_variants": [
+        "كم عدد سكان درعا؟",
+        "ما هو تعداد سكان درعا؟",
+        "How many people live in درعا?"
+      ],
+      "answer": "مدينة متوسطة الحجم",
+      "keywords": [
+        "درعا",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "درعا_landmarks",
+      "question_variants": [
+        "ما هي معالم درعا؟",
+        "بماذا تشتهر درعا؟",
+        "ما هي أهم الأماكن في درعا؟",
+        "What are the landmarks of درعا?"
+      ],
+      "answer": "قلعة درعا",
+      "keywords": [
+        "درعا",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "درعا_universities",
+      "question_variants": [
+        "بماذا تشتهر درعا؟",
+        "معلومات عن درعا",
+        "ما هي أهم المعلومات عن درعا؟",
+        "أخبرني عن درعا"
+      ],
+      "answer": "جامعة درعا",
+      "keywords": [
+        "درعا",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "درعا_districts",
+      "question_variants": [
+        "بماذا تشتهر درعا؟",
+        "معلومات عن درعا",
+        "ما هي أهم المعلومات عن درعا؟",
+        "أخبرني عن درعا"
+      ],
+      "answer": "المركز، المساكن",
+      "keywords": [
+        "درعا",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "القنيطرة_location",
+      "question_variants": [
+        "أين تقع القنيطرة؟",
+        "وين القنيطرة؟",
+        "ما هو موقع القنيطرة؟",
+        "Where is القنيطرة located?"
+      ],
+      "answer": "تقع في جنوب غرب سوريا",
+      "keywords": [
+        "القنيطرة",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "القنيطرة_importance",
+      "question_variants": [
+        "بماذا تشتهر القنيطرة؟",
+        "معلومات عن القنيطرة",
+        "ما هي أهم المعلومات عن القنيطرة؟",
+        "أخبرني عن القنيطرة"
+      ],
+      "answer": "مركز زراعي",
+      "keywords": [
+        "القنيطرة",
+        "importance"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "القنيطرة_climate",
+      "question_variants": [
+        "ما هو مناخ القنيطرة؟",
+        "كيف هو الطقس في القنيطرة؟",
+        "What is the climate of القنيطرة?"
+      ],
+      "answer": "مناخ متوسطي",
+      "keywords": [
+        "القنيطرة",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "القنيطرة_population",
+      "question_variants": [
+        "كم عدد سكان القنيطرة؟",
+        "ما هو تعداد سكان القنيطرة؟",
+        "How many people live in القنيطرة?"
+      ],
+      "answer": "مدينة صغيرة",
+      "keywords": [
+        "القنيطرة",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "القنيطرة_landmarks",
+      "question_variants": [
+        "ما هي معالم القنيطرة؟",
+        "بماذا تشتهر القنيطرة؟",
+        "ما هي أهم الأماكن في القنيطرة؟",
+        "What are the landmarks of القنيطرة?"
+      ],
+      "answer": "جبل الشيخ",
+      "keywords": [
+        "القنيطرة",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "القنيطرة_districts",
+      "question_variants": [
+        "بماذا تشتهر القنيطرة؟",
+        "معلومات عن القنيطرة",
+        "ما هي أهم المعلومات عن القنيطرة؟",
+        "أخبرني عن القنيطرة"
+      ],
+      "answer": "المركز",
+      "keywords": [
+        "القنيطرة",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "السويداء_location",
+      "question_variants": [
+        "أين تقع السويداء؟",
+        "وين السويداء؟",
+        "ما هو موقع السويداء؟",
+        "Where is السويداء located?"
+      ],
+      "answer": "تقع في جنوب سوريا",
+      "keywords": [
+        "السويداء",
+        "location"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "السويداء_importance",
+      "question_variants": [
+        "بماذا تشتهر السويداء؟",
+        "معلومات عن السويداء",
+        "ما هي أهم المعلومات عن السويداء؟",
+        "أخبرني عن السويداء"
+      ],
+      "answer": "مركز زراعي",
+      "keywords": [
+        "السويداء",
+        "importance"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "السويداء_climate",
+      "question_variants": [
+        "ما هو مناخ السويداء؟",
+        "كيف هو الطقس في السويداء؟",
+        "What is the climate of السويداء?"
+      ],
+      "answer": "مناخ قاري",
+      "keywords": [
+        "السويداء",
+        "climate"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "السويداء_population",
+      "question_variants": [
+        "كم عدد سكان السويداء؟",
+        "ما هو تعداد سكان السويداء؟",
+        "How many people live in السويداء?"
+      ],
+      "answer": "مدينة متوسطة الحجم",
+      "keywords": [
+        "السويداء",
+        "population"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "السويداء_landmarks",
+      "question_variants": [
+        "ما هي معالم السويداء؟",
+        "بماذا تشتهر السويداء؟",
+        "ما هي أهم الأماكن في السويداء؟",
+        "What are the landmarks of السويداء?"
+      ],
+      "answer": "جبل العرب",
+      "keywords": [
+        "السويداء",
+        "landmarks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "السويداء_universities",
+      "question_variants": [
+        "بماذا تشتهر السويداء؟",
+        "معلومات عن السويداء",
+        "ما هي أهم المعلومات عن السويداء؟",
+        "أخبرني عن السويداء"
+      ],
+      "answer": "جامعة السويداء",
+      "keywords": [
+        "السويداء",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "السويداء_districts",
+      "question_variants": [
+        "بماذا تشتهر السويداء؟",
+        "معلومات عن السويداء",
+        "ما هي أهم المعلومات عن السويداء؟",
+        "أخبرني عن السويداء"
+      ],
+      "answer": "المركز، الميدان",
+      "keywords": [
+        "السويداء",
+        "districts"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_airport_additional",
+      "question_variants": [
+        "ما هي airport في دمشق؟",
+        "بماذا تشتهر دمشق في airport؟",
+        "أخبرني عن airport في دمشق",
+        "ما هو airport في دمشق؟"
+      ],
+      "answer": "مطار دمشق الدولي هو المطار الرئيسي في سوريا",
+      "keywords": [
+        "دمشق",
+        "airport"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_universities_additional",
+      "question_variants": [
+        "ما هي universities في دمشق؟",
+        "بماذا تشتهر دمشق في universities؟",
+        "أخبرني عن universities في دمشق",
+        "ما هو universities في دمشق؟"
+      ],
+      "answer": "جامعة دمشق هي أقدم جامعة في سوريا",
+      "keywords": [
+        "دمشق",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_transport_additional",
+      "question_variants": [
+        "ما هي transport في دمشق؟",
+        "بماذا تشتهر دمشق في transport؟",
+        "أخبرني عن transport في دمشق",
+        "ما هو transport في دمشق؟"
+      ],
+      "answer": "مترو دمشق هو أول مترو في سوريا",
+      "keywords": [
+        "دمشق",
+        "transport"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_markets_additional",
+      "question_variants": [
+        "ما هي markets في دمشق؟",
+        "بماذا تشتهر دمشق في markets؟",
+        "أخبرني عن markets في دمشق",
+        "ما هو markets في دمشق؟"
+      ],
+      "answer": "سوق الحميدية من أشهر الأسواق في العالم العربي",
+      "keywords": [
+        "دمشق",
+        "markets"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_mosques_additional",
+      "question_variants": [
+        "ما هي mosques في دمشق؟",
+        "بماذا تشتهر دمشق في mosques؟",
+        "أخبرني عن mosques في دمشق",
+        "ما هو mosques في دمشق؟"
+      ],
+      "answer": "الجامع الأموي من أقدم المساجد في العالم",
+      "keywords": [
+        "دمشق",
+        "mosques"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_churches_additional",
+      "question_variants": [
+        "ما هي churches في دمشق؟",
+        "بماذا تشتهر دمشق في churches؟",
+        "أخبرني عن churches في دمشق",
+        "ما هو churches في دمشق؟"
+      ],
+      "answer": "كنيسة مريم العذراء من أقدم الكنائس في العالم",
+      "keywords": [
+        "دمشق",
+        "churches"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_hotels_additional",
+      "question_variants": [
+        "ما هي hotels في دمشق؟",
+        "بماذا تشتهر دمشق في hotels؟",
+        "أخبرني عن hotels في دمشق",
+        "ما هو hotels في دمشق؟"
+      ],
+      "answer": "فندق الشام من أشهر الفنادق في دمشق",
+      "keywords": [
+        "دمشق",
+        "hotels"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_restaurants_additional",
+      "question_variants": [
+        "ما هي restaurants في دمشق؟",
+        "بماذا تشتهر دمشق في restaurants؟",
+        "أخبرني عن restaurants في دمشق",
+        "ما هو restaurants في دمشق؟"
+      ],
+      "answer": "مطاعم دمشق تشتهر بالكباب والفلافل",
+      "keywords": [
+        "دمشق",
+        "restaurants"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_parks_additional",
+      "question_variants": [
+        "ما هي parks في دمشق؟",
+        "بماذا تشتهر دمشق في parks؟",
+        "أخبرني عن parks في دمشق",
+        "ما هو parks في دمشق؟"
+      ],
+      "answer": "حديقة تشرين من أكبر الحدائق في دمشق",
+      "keywords": [
+        "دمشق",
+        "parks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_museums_additional",
+      "question_variants": [
+        "ما هي museums في دمشق؟",
+        "بماذا تشتهر دمشق في museums؟",
+        "أخبرني عن museums في دمشق",
+        "ما هو museums في دمشق؟"
+      ],
+      "answer": "المتحف الوطني في دمشق من أهم المتاحف",
+      "keywords": [
+        "دمشق",
+        "museums"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_libraries_additional",
+      "question_variants": [
+        "ما هي libraries في دمشق؟",
+        "بماذا تشتهر دمشق في libraries؟",
+        "أخبرني عن libraries في دمشق",
+        "ما هو libraries في دمشق؟"
+      ],
+      "answer": "مكتبة الأسد الوطنية من أكبر المكتبات",
+      "keywords": [
+        "دمشق",
+        "libraries"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "دمشق_theaters_additional",
+      "question_variants": [
+        "ما هي theaters في دمشق؟",
+        "بماذا تشتهر دمشق في theaters؟",
+        "أخبرني عن theaters في دمشق",
+        "ما هو theaters في دمشق؟"
+      ],
+      "answer": "مسرح دمشق من أهم المسارح في سوريا",
+      "keywords": [
+        "دمشق",
+        "theaters"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_airport_additional",
+      "question_variants": [
+        "ما هي airport في حلب؟",
+        "بماذا تشتهر حلب في airport؟",
+        "أخبرني عن airport في حلب",
+        "ما هو airport في حلب؟"
+      ],
+      "answer": "مطار حلب الدولي من أهم المطارات في سوريا",
+      "keywords": [
+        "حلب",
+        "airport"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_universities_additional",
+      "question_variants": [
+        "ما هي universities في حلب؟",
+        "بماذا تشتهر حلب في universities؟",
+        "أخبرني عن universities في حلب",
+        "ما هو universities في حلب؟"
+      ],
+      "answer": "جامعة حلب من أكبر الجامعات السورية",
+      "keywords": [
+        "حلب",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_markets_additional",
+      "question_variants": [
+        "ما هي markets في حلب؟",
+        "بماذا تشتهر حلب في markets؟",
+        "أخبرني عن markets في حلب",
+        "ما هو markets في حلب؟"
+      ],
+      "answer": "سوق حلب المسقوف من أكبر الأسواق في العالم",
+      "keywords": [
+        "حلب",
+        "markets"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_castle_additional",
+      "question_variants": [
+        "ما هي castle في حلب؟",
+        "بماذا تشتهر حلب في castle؟",
+        "أخبرني عن castle في حلب",
+        "ما هو castle في حلب؟"
+      ],
+      "answer": "قلعة حلب من أهم القلاع التاريخية",
+      "keywords": [
+        "حلب",
+        "castle"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_mosques_additional",
+      "question_variants": [
+        "ما هي mosques في حلب؟",
+        "بماذا تشتهر حلب في mosques؟",
+        "أخبرني عن mosques في حلب",
+        "ما هو mosques في حلب؟"
+      ],
+      "answer": "الجامع الأموي في حلب من المساجد التاريخية",
+      "keywords": [
+        "حلب",
+        "mosques"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_churches_additional",
+      "question_variants": [
+        "ما هي churches في حلب؟",
+        "بماذا تشتهر حلب في churches؟",
+        "أخبرني عن churches في حلب",
+        "ما هو churches في حلب؟"
+      ],
+      "answer": "كنيسة الأربعين شهيد من الكنائس التاريخية",
+      "keywords": [
+        "حلب",
+        "churches"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_hotels_additional",
+      "question_variants": [
+        "ما هي hotels في حلب؟",
+        "بماذا تشتهر حلب في hotels؟",
+        "أخبرني عن hotels في حلب",
+        "ما هو hotels في حلب؟"
+      ],
+      "answer": "فندق الشهباء من أشهر الفنادق في حلب",
+      "keywords": [
+        "حلب",
+        "hotels"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_restaurants_additional",
+      "question_variants": [
+        "ما هي restaurants في حلب؟",
+        "بماذا تشتهر حلب في restaurants؟",
+        "أخبرني عن restaurants في حلب",
+        "ما هو restaurants في حلب؟"
+      ],
+      "answer": "مطاعم حلب تشتهر بالكبب والمحاشي",
+      "keywords": [
+        "حلب",
+        "restaurants"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_parks_additional",
+      "question_variants": [
+        "ما هي parks في حلب؟",
+        "بماذا تشتهر حلب في parks؟",
+        "أخبرني عن parks في حلب",
+        "ما هو parks في حلب؟"
+      ],
+      "answer": "حديقة الشهباء من أكبر الحدائق في حلب",
+      "keywords": [
+        "حلب",
+        "parks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_museums_additional",
+      "question_variants": [
+        "ما هي museums في حلب؟",
+        "بماذا تشتهر حلب في museums؟",
+        "أخبرني عن museums في حلب",
+        "ما هو museums في حلب؟"
+      ],
+      "answer": "متحف حلب من المتاحف المهمة",
+      "keywords": [
+        "حلب",
+        "museums"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_libraries_additional",
+      "question_variants": [
+        "ما هي libraries في حلب؟",
+        "بماذا تشتهر حلب في libraries؟",
+        "أخبرني عن libraries في حلب",
+        "ما هو libraries في حلب؟"
+      ],
+      "answer": "مكتبة حلب الوطنية من المكتبات المهمة",
+      "keywords": [
+        "حلب",
+        "libraries"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حلب_theaters_additional",
+      "question_variants": [
+        "ما هي theaters في حلب؟",
+        "بماذا تشتهر حلب في theaters؟",
+        "أخبرني عن theaters في حلب",
+        "ما هو theaters في حلب؟"
+      ],
+      "answer": "مسرح حلب من المسارح المهمة",
+      "keywords": [
+        "حلب",
+        "theaters"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_universities_additional",
+      "question_variants": [
+        "ما هي universities في حمص؟",
+        "بماذا تشتهر حمص في universities؟",
+        "أخبرني عن universities في حمص",
+        "ما هو universities في حمص؟"
+      ],
+      "answer": "جامعة البعث من الجامعات المهمة في حمص",
+      "keywords": [
+        "حمص",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_markets_additional",
+      "question_variants": [
+        "ما هي markets في حمص؟",
+        "بماذا تشتهر حمص في markets؟",
+        "أخبرني عن markets في حمص",
+        "ما هو markets في حمص؟"
+      ],
+      "answer": "سوق حمص من الأسواق التقليدية المهمة",
+      "keywords": [
+        "حمص",
+        "markets"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_castle_additional",
+      "question_variants": [
+        "ما هي castle في حمص؟",
+        "بماذا تشتهر حمص في castle؟",
+        "أخبرني عن castle في حمص",
+        "ما هو castle في حمص؟"
+      ],
+      "answer": "قلعة حمص من القلاع التاريخية",
+      "keywords": [
+        "حمص",
+        "castle"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_mosques_additional",
+      "question_variants": [
+        "ما هي mosques في حمص؟",
+        "بماذا تشتهر حمص في mosques؟",
+        "أخبرني عن mosques في حمص",
+        "ما هو mosques في حمص؟"
+      ],
+      "answer": "مسجد خالد بن الوليد من المساجد التاريخية",
+      "keywords": [
+        "حمص",
+        "mosques"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_churches_additional",
+      "question_variants": [
+        "ما هي churches في حمص؟",
+        "بماذا تشتهر حمص في churches؟",
+        "أخبرني عن churches في حمص",
+        "ما هو churches في حمص؟"
+      ],
+      "answer": "كنيسة أم الزنار من الكنائس التاريخية",
+      "keywords": [
+        "حمص",
+        "churches"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_hotels_additional",
+      "question_variants": [
+        "ما هي hotels في حمص؟",
+        "بماذا تشتهر حمص في hotels؟",
+        "أخبرني عن hotels في حمص",
+        "ما هو hotels في حمص؟"
+      ],
+      "answer": "فندق حمص من الفنادق المهمة",
+      "keywords": [
+        "حمص",
+        "hotels"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_restaurants_additional",
+      "question_variants": [
+        "ما هي restaurants في حمص؟",
+        "بماذا تشتهر حمص في restaurants؟",
+        "أخبرني عن restaurants في حمص",
+        "ما هو restaurants في حمص؟"
+      ],
+      "answer": "مطاعم حمص تشتهر بالحمص والطحينة",
+      "keywords": [
+        "حمص",
+        "restaurants"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_parks_additional",
+      "question_variants": [
+        "ما هي parks في حمص؟",
+        "بماذا تشتهر حمص في parks؟",
+        "أخبرني عن parks في حمص",
+        "ما هو parks في حمص؟"
+      ],
+      "answer": "حديقة حمص من الحدائق المهمة",
+      "keywords": [
+        "حمص",
+        "parks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_museums_additional",
+      "question_variants": [
+        "ما هي museums في حمص؟",
+        "بماذا تشتهر حمص في museums؟",
+        "أخبرني عن museums في حمص",
+        "ما هو museums في حمص؟"
+      ],
+      "answer": "متحف حمص من المتاحف المهمة",
+      "keywords": [
+        "حمص",
+        "museums"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_libraries_additional",
+      "question_variants": [
+        "ما هي libraries في حمص؟",
+        "بماذا تشتهر حمص في libraries؟",
+        "أخبرني عن libraries في حمص",
+        "ما هو libraries في حمص؟"
+      ],
+      "answer": "مكتبة حمص من المكتبات المهمة",
+      "keywords": [
+        "حمص",
+        "libraries"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_theaters_additional",
+      "question_variants": [
+        "ما هي theaters في حمص؟",
+        "بماذا تشتهر حمص في theaters؟",
+        "أخبرني عن theaters في حمص",
+        "ما هو theaters في حمص؟"
+      ],
+      "answer": "مسرح حمص من المسارح المهمة",
+      "keywords": [
+        "حمص",
+        "theaters"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حمص_industries_additional",
+      "question_variants": [
+        "ما هي industries في حمص؟",
+        "بماذا تشتهر حمص في industries؟",
+        "أخبرني عن industries في حمص",
+        "ما هو industries في حمص؟"
+      ],
+      "answer": "صناعات حمص تشمل البتروكيماويات والإسمنت",
+      "keywords": [
+        "حمص",
+        "industries"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_universities_additional",
+      "question_variants": [
+        "ما هي universities في حماة؟",
+        "بماذا تشتهر حماة في universities؟",
+        "أخبرني عن universities في حماة",
+        "ما هو universities في حماة؟"
+      ],
+      "answer": "جامعة حماة من الجامعات المهمة",
+      "keywords": [
+        "حماة",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_markets_additional",
+      "question_variants": [
+        "ما هي markets في حماة؟",
+        "بماذا تشتهر حماة في markets؟",
+        "أخبرني عن markets في حماة",
+        "ما هو markets في حماة؟"
+      ],
+      "answer": "سوق حماة من الأسواق التقليدية",
+      "keywords": [
+        "حماة",
+        "markets"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_norias_additional",
+      "question_variants": [
+        "ما هي norias في حماة؟",
+        "بماذا تشتهر حماة في norias؟",
+        "أخبرني عن norias في حماة",
+        "ما هو norias في حماة؟"
+      ],
+      "answer": "النواعير في حماة من أقدم أنظمة الري",
+      "keywords": [
+        "حماة",
+        "norias"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_castle_additional",
+      "question_variants": [
+        "ما هي castle في حماة؟",
+        "بماذا تشتهر حماة في castle؟",
+        "أخبرني عن castle في حماة",
+        "ما هو castle في حماة؟"
+      ],
+      "answer": "قلعة حماة من القلاع التاريخية",
+      "keywords": [
+        "حماة",
+        "castle"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_mosques_additional",
+      "question_variants": [
+        "ما هي mosques في حماة؟",
+        "بماذا تشتهر حماة في mosques؟",
+        "أخبرني عن mosques في حماة",
+        "ما هو mosques في حماة؟"
+      ],
+      "answer": "الجامع النوري من المساجد التاريخية",
+      "keywords": [
+        "حماة",
+        "mosques"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_churches_additional",
+      "question_variants": [
+        "ما هي churches في حماة؟",
+        "بماذا تشتهر حماة في churches؟",
+        "أخبرني عن churches في حماة",
+        "ما هو churches في حماة؟"
+      ],
+      "answer": "كنيسة حماة من الكنائس التاريخية",
+      "keywords": [
+        "حماة",
+        "churches"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_hotels_additional",
+      "question_variants": [
+        "ما هي hotels في حماة؟",
+        "بماذا تشتهر حماة في hotels؟",
+        "أخبرني عن hotels في حماة",
+        "ما هو hotels في حماة؟"
+      ],
+      "answer": "فندق حماة من الفنادق المهمة",
+      "keywords": [
+        "حماة",
+        "hotels"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_restaurants_additional",
+      "question_variants": [
+        "ما هي restaurants في حماة؟",
+        "بماذا تشتهر حماة في restaurants؟",
+        "أخبرني عن restaurants في حماة",
+        "ما هو restaurants في حماة؟"
+      ],
+      "answer": "مطاعم حماة تشتهر بالحلويات",
+      "keywords": [
+        "حماة",
+        "restaurants"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_parks_additional",
+      "question_variants": [
+        "ما هي parks في حماة؟",
+        "بماذا تشتهر حماة في parks؟",
+        "أخبرني عن parks في حماة",
+        "ما هو parks في حماة؟"
+      ],
+      "answer": "حديقة حماة من الحدائق المهمة",
+      "keywords": [
+        "حماة",
+        "parks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_museums_additional",
+      "question_variants": [
+        "ما هي museums في حماة؟",
+        "بماذا تشتهر حماة في museums؟",
+        "أخبرني عن museums في حماة",
+        "ما هو museums في حماة؟"
+      ],
+      "answer": "متحف حماة من المتاحف المهمة",
+      "keywords": [
+        "حماة",
+        "museums"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_libraries_additional",
+      "question_variants": [
+        "ما هي libraries في حماة؟",
+        "بماذا تشتهر حماة في libraries؟",
+        "أخبرني عن libraries في حماة",
+        "ما هو libraries في حماة؟"
+      ],
+      "answer": "مكتبة حماة من المكتبات المهمة",
+      "keywords": [
+        "حماة",
+        "libraries"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "حماة_theaters_additional",
+      "question_variants": [
+        "ما هي theaters في حماة؟",
+        "بماذا تشتهر حماة في theaters؟",
+        "أخبرني عن theaters في حماة",
+        "ما هو theaters في حماة؟"
+      ],
+      "answer": "مسرح حماة من المسارح المهمة",
+      "keywords": [
+        "حماة",
+        "theaters"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_airport_additional",
+      "question_variants": [
+        "ما هي airport في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في airport؟",
+        "أخبرني عن airport في اللاذقية",
+        "ما هو airport في اللاذقية؟"
+      ],
+      "answer": "مطار باسل الأسد الدولي من المطارات المهمة",
+      "keywords": [
+        "اللاذقية",
+        "airport"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_universities_additional",
+      "question_variants": [
+        "ما هي universities في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في universities؟",
+        "أخبرني عن universities في اللاذقية",
+        "ما هو universities في اللاذقية؟"
+      ],
+      "answer": "جامعة تشرين من الجامعات المهمة",
+      "keywords": [
+        "اللاذقية",
+        "universities"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_port_additional",
+      "question_variants": [
+        "ما هي port في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في port؟",
+        "أخبرني عن port في اللاذقية",
+        "ما هو port في اللاذقية؟"
+      ],
+      "answer": "ميناء اللاذقية من أهم الموانئ في سوريا",
+      "keywords": [
+        "اللاذقية",
+        "port"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_beaches_additional",
+      "question_variants": [
+        "ما هي beaches في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في beaches؟",
+        "أخبرني عن beaches في اللاذقية",
+        "ما هو beaches في اللاذقية؟"
+      ],
+      "answer": "شواطئ اللاذقية من أجمل الشواطئ",
+      "keywords": [
+        "اللاذقية",
+        "beaches"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_castle_additional",
+      "question_variants": [
+        "ما هي castle في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في castle؟",
+        "أخبرني عن castle في اللاذقية",
+        "ما هو castle في اللاذقية؟"
+      ],
+      "answer": "قلعة صلاح الدين من القلاع التاريخية",
+      "keywords": [
+        "اللاذقية",
+        "castle"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_mosques_additional",
+      "question_variants": [
+        "ما هي mosques في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في mosques؟",
+        "أخبرني عن mosques في اللاذقية",
+        "ما هو mosques في اللاذقية؟"
+      ],
+      "answer": "مسجد اللاذقية من المساجد المهمة",
+      "keywords": [
+        "اللاذقية",
+        "mosques"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_churches_additional",
+      "question_variants": [
+        "ما هي churches في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في churches؟",
+        "أخبرني عن churches في اللاذقية",
+        "ما هو churches في اللاذقية؟"
+      ],
+      "answer": "كنيسة اللاذقية من الكنائس المهمة",
+      "keywords": [
+        "اللاذقية",
+        "churches"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_hotels_additional",
+      "question_variants": [
+        "ما هي hotels في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في hotels؟",
+        "أخبرني عن hotels في اللاذقية",
+        "ما هو hotels في اللاذقية؟"
+      ],
+      "answer": "فندق اللاذقية من الفنادق المهمة",
+      "keywords": [
+        "اللاذقية",
+        "hotels"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_restaurants_additional",
+      "question_variants": [
+        "ما هي restaurants في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في restaurants؟",
+        "أخبرني عن restaurants في اللاذقية",
+        "ما هو restaurants في اللاذقية؟"
+      ],
+      "answer": "مطاعم اللاذقية تشتهر بالسمك",
+      "keywords": [
+        "اللاذقية",
+        "restaurants"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_parks_additional",
+      "question_variants": [
+        "ما هي parks في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في parks؟",
+        "أخبرني عن parks في اللاذقية",
+        "ما هو parks في اللاذقية؟"
+      ],
+      "answer": "حديقة اللاذقية من الحدائق المهمة",
+      "keywords": [
+        "اللاذقية",
+        "parks"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_museums_additional",
+      "question_variants": [
+        "ما هي museums في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في museums؟",
+        "أخبرني عن museums في اللاذقية",
+        "ما هو museums في اللاذقية؟"
+      ],
+      "answer": "متحف اللاذقية من المتاحف المهمة",
+      "keywords": [
+        "اللاذقية",
+        "museums"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    },
+    {
+      "id": "اللاذقية_libraries_additional",
+      "question_variants": [
+        "ما هي libraries في اللاذقية؟",
+        "بماذا تشتهر اللاذقية في libraries؟",
+        "أخبرني عن libraries في اللاذقية",
+        "ما هو libraries في اللاذقية؟"
+      ],
+      "answer": "مكتبة اللاذقية من المكتبات المهمة",
+      "keywords": [
+        "اللاذقية",
+        "libraries"
+      ],
+      "confidence": 1.0,
+      "source": "manual"
+    }
+  ],
+  "total_questions": 176,
+  "generated_at": "2024-01-01",
+  "version": "final_expanded"
+}

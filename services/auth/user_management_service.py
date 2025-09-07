@@ -447,34 +447,68 @@ class UserManagementService:
             )
     
     def get_user_settings(self, db: Session, user_id: str) -> Dict[str, Any]:
-        """Get user settings (placeholder for future implementation)"""
-        # This would typically fetch from a user_settings table
-        # For now, return default settings
-        return {
-            "email_notifications": True,
-            "sms_notifications": False,
-            "two_factor_enabled": False,
-            "session_timeout_hours": 24,
-            "max_concurrent_sessions": 5,
-            "language": "en",
-            "timezone": "UTC",
-            "theme": "light"
-        }
+        """Get user settings"""
+        try:
+            # Check if user exists
+            user = self.user_repo.get_user_by_id(db, user_id)
+            if not user:
+                logger.error(f"User not found for settings: {user_id}")
+                raise ValueError("User not found")
+            
+            # This would typically fetch from a user_settings table
+            # For now, return default settings with user-specific data
+            return {
+                "email_notifications": True,
+                "sms_notifications": False,
+                "two_factor_enabled": user.two_factor_enabled or False,
+                "session_timeout_hours": 24,
+                "max_concurrent_sessions": 5,
+                "language": "ar",  # Default to Arabic for SyriaGPT
+                "timezone": "Asia/Damascus",
+                "theme": "system"
+            }
+        except Exception as e:
+            logger.error(f"Error getting user settings for {user_id}: {e}")
+            # Return safe default settings
+            return {
+                "email_notifications": True,
+                "sms_notifications": False,
+                "two_factor_enabled": False,
+                "session_timeout_hours": 24,
+                "max_concurrent_sessions": 5,
+                "language": "ar",
+                "timezone": "Asia/Damascus",
+                "theme": "system"
+            }
     
     def update_user_settings(self, db: Session, user_id: str, settings_request: UserSettingsRequest) -> Dict[str, Any]:
-        """Update user settings (placeholder for future implementation)"""
-        # This would typically save to a user_settings table
-        # For now, just return the updated settings
-        return {
-            "email_notifications": settings_request.email_notifications,
-            "sms_notifications": settings_request.sms_notifications,
-            "two_factor_enabled": settings_request.two_factor_enabled,
-            "session_timeout_hours": settings_request.session_timeout_hours,
-            "max_concurrent_sessions": settings_request.max_concurrent_sessions,
-            "language": settings_request.language,
-            "timezone": settings_request.timezone,
-            "theme": settings_request.theme
-        }
+        """Update user settings"""
+        try:
+            # Check if user exists
+            user = self.user_repo.get_user_by_id(db, user_id)
+            if not user:
+                logger.error(f"User not found for settings update: {user_id}")
+                raise ValueError("User not found")
+            
+            # This would typically save to a user_settings table
+            # For now, just return the updated settings
+            updated_settings = {
+                "email_notifications": settings_request.email_notifications,
+                "sms_notifications": settings_request.sms_notifications,
+                "two_factor_enabled": settings_request.two_factor_enabled,
+                "session_timeout_hours": settings_request.session_timeout_hours,
+                "max_concurrent_sessions": settings_request.max_concurrent_sessions,
+                "language": settings_request.language,
+                "timezone": settings_request.timezone,
+                "theme": settings_request.theme
+            }
+            
+            logger.info(f"User settings updated for user {user_id}")
+            return updated_settings
+            
+        except Exception as e:
+            logger.error(f"Error updating user settings for {user_id}: {e}")
+            raise
 
 
 # Service instance

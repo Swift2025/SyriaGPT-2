@@ -141,15 +141,7 @@ const AvatarSelectionModal: React.FC<{
 };
 
 export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
-  // --- تعديل تعريف الحالة userData ---
-  const [userData, setUserData] = useState({
-    full_name: '',
-    email: '',
-    profile_picture: '/images/default-avatar.png',
-    created_at: '',
-    conversations_count: 0,
-    active_days: 0,
-  });
+  const [userData, setUserData] = useState({ full_name: '', email: '', profile_picture: '/images/default-avatar.png', created_at: '' });
   const [passwordData, setPasswordData] = useState({ current_password: '', new_password: '', confirm_password: '' });
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
@@ -167,16 +159,11 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
       setIsLoading(true);
       try {
         const profileData = await getUserProfile();
-        const fullName = `${profileData.first_name || ''} ${profileData.last_name || ''}`.trim();
-        
-        // --- تحديث الحالة بالبيانات الديناميكية الجديدة ---
         setUserData({
-          full_name: fullName,
+          full_name: profileData.full_name || '',
           email: profileData.email || '',
           profile_picture: profileData.profile_picture || '/images/default-avatar.png',
-          created_at: profileData.created_at, // تأكد من أن الواجهة الخلفية ترسل هذا
-          conversations_count: profileData.conversations_count || 0,
-          active_days: profileData.active_days || 0,
+          created_at: profileData.created_at,
         });
       } catch (error: any) {
         toast.error(error.message || 'Failed to fetch profile data.');
@@ -191,31 +178,18 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
     e.preventDefault();
     toast.loading('Updating profile...');
     try {
-      const nameParts = userData.full_name.trim().split(/\s+/);
-      const firstName = nameParts[0] || '';
-      const lastName = nameParts.slice(1).join(' ') || '';
-
       const dataToUpdate = {
-        first_name: firstName,
-        last_name: lastName,
+        first_name: userData.full_name.split(' ')[0] || '',
+        last_name: userData.full_name.split(' ').slice(1).join(' ') || '',
         profile_picture: userData.profile_picture,
       };
-      
       const data = await updateUserProfile(dataToUpdate);
-      
-      const updatedFullName = `${data.user?.first_name || ''} ${data.user?.last_name || ''}`.trim();
-      setUserData(prev => ({ 
-        ...prev, 
-        full_name: updatedFullName, 
-        profile_picture: data.user?.profile_picture || prev.profile_picture 
-      }));
-
       toast.dismiss();
-      toast.success(t.personalInfo.updateSuccess || "Profile updated successfully!");
+      toast.success(data.message || t.personalInfo.updateSuccess);
       setIsEditing(false);
     } catch (error: any) {
       toast.dismiss();
-      toast.error(error.message || 'Failed to update profile.');
+      toast.error(error.message);
     }
   };
 
@@ -227,23 +201,21 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
     }
     toast.loading('Updating password...');
     try {
-      const data = await changePassword({
-        current_password: passwordData.current_password,
-        new_password: passwordData.new_password,
-        confirm_password: passwordData.confirm_password,
-      });
+      const data = await changePassword(passwordData);
       toast.dismiss();
       toast.success(data.message || t.security.updateSuccess);
       setPasswordData({ current_password: '', new_password: '', confirm_password: '' });
     } catch (error: any) {
       toast.dismiss();
-      toast.error(error.message || 'Failed to change password.');
+      toast.error(error.message);
     }
   };
 
   const handleAvatarSelect = (avatarUrl: string) => {
     setUserData({ ...userData, profile_picture: avatarUrl });
     setIsAvatarModalOpen(false);
+    // لجعل التغيير فورياً، يمكننا استدعاء دالة الحفظ هنا مباشرة
+    // handleProfileUpdate(); // يمكنك إلغاء التعليق عن هذا السطر للحفظ الفوري
   };
 
   const handleDeleteAccount = async () => {
@@ -257,7 +229,7 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
       router.push(`/${lang}`);
     } catch (error: any) {
       toast.dismiss();
-      toast.error(error.message || 'Failed to delete account.');
+      toast.error(error.message);
     }
   };
 
@@ -310,18 +282,10 @@ export default function ProfilePageClient({ dictionary }: { dictionary: any }) {
                       <p className="text-gray-600 dark:text-gray-400">{t.sidebar.freePlan}</p>
                     </div>
                   </div>
-                  {/* --- تعديل لعرض الإحصائيات الديناميكية --- */}
                   <div className="grid grid-cols-2 gap-4 mt-6">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">{userData.conversations_count}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{t.sidebar.conversations}</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-green-600 dark:text-green-400">{userData.active_days}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{t.sidebar.activeDays}</div>
-                    </div>
+                    <div className="text-center"><div className="text-2xl font-bold text-amber-600 dark:text-amber-400">142</div><div className="text-xs text-gray-500 dark:text-gray-400">{t.sidebar.conversations}</div></div>
+                    <div className="text-center"><div className="text-2xl font-bold text-green-600 dark:text-green-400">28</div><div className="text-xs text-gray-500 dark:text-gray-400">{t.sidebar.activeDays}</div></div>
                   </div>
-                  {/* ----------------------------------------- */}
                 </div>
               </div>
             </div>

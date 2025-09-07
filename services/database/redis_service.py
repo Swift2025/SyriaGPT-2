@@ -75,7 +75,7 @@ class RedisService:
     def load_syria_knowledge_to_cache(self) -> bool:
         """Load all Syria knowledge JSON files into Redis cache"""
         if not self.is_connected():
-            logger.error("Redis not connected, cannot load Syria knowledge")
+            logger.warning("Redis not connected, skipping Syria knowledge cache loading")
             return False
             
         try:

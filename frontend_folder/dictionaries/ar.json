@@ -42,7 +42,7 @@
     "fr": { "name": "Français", "country": "FR" },
     "gu": { "name": "ગુજરાતી", "country": "IN" },
     "ha": { "name": "Hausa", "country": "NG" },
-    "he": { "name": "Gaeilge", "country": "IE" },
+    "he": { "name": "עברית", "country": "IL" },
     "hi": { "name": "हिन्दी", "country": "IN" },
     "hu": { "name": "Magyar", "country": "HU" },
     "hy": { "name": "Հայերեն", "country": "AM" },
@@ -322,6 +322,7 @@
       "loginButton": "تسجيل الدخول",
       "loadingButton": "جاري التحقق...",
       "loginSuccessAlert": "تم تسجيل الدخول بنجاح!",
+      "googleButton": "تسجيل الدخول بـ Google",
       "orSeparator": "أو",
       "noAccount": "ليس لديك حساب؟",
       "createAccount": "أنشئ حساباً جديداً"
@@ -1000,14 +1001,5 @@
   "loader": {
     "title": "جارٍ التحميل...",
     "loading": "يرجى الانتظار بينما نقوم بتحميل المحتوى"
-  },
-  "checkEmailPage": {
-    "title": "تم تسجيل حسابك بنجاح!",
-    "description": {
-      "part1": "لقد أرسلنا رابط تحقق إلى بريدك الإلكتروني",
-      "part2": "الرجاء النقر على الرابط لتفعيل حسابك."
-    },
-    "spamTip": "إذا لم تجد البريد الإلكتروني، يرجى التحقق من مجلد الرسائل غير المرغوب فيها (Spam).",
-    "backToLoginButton": "العودة إلى صفحة تسجيل الدخول"
   }
 }

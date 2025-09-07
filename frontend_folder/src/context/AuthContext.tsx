@@ -1,39 +1,47 @@
-// src/context/AuthContext.tsx (الكود الكامل والنهائي)
+// src/context/AuthContext.tsx
 'use client';
 
-import React, { createContext, useState, useEffect, useContext } from 'react';
-import { getCurrentUser } from '../../services/api';
-
-interface LoginData {
-  user: object;
-  access: string; // <-- تم التصحيح من access_token
-  refresh?: string; // <-- تم التصحيح من refresh_token
-}
+import React, { createContext, useState, useEffect, useContext, useCallback } from 'react';
+import { getCurrentUser, getUserProfile, getUserSettings, updateUserSettings } from '../../services/api';
+import { User, UserSettings } from '../app/[lang]/types';
+import toast from 'react-hot-toast';
 
 interface AuthContextType {
-  user: object | null;
-  login: (data: LoginData) => void;
+  user: User | null;
+  login: (userData: User) => void;
   logout: () => void;
   isLoading: boolean;
 }
 
-const AuthContext = createContext<AuthContextType | null>(null);
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<object | null>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  
+  // Debug: مراقبة تغييرات حالة المستخدم
+  useEffect(() => {
+    console.log('AuthContext - User state changed:', { user, isLoading });
+  }, [user, isLoading]);
 
   useEffect(() => {
     const checkUser = async () => {
+      // التحقق من أننا في المتصفح قبل استخدام localStorage
+      if (typeof window === 'undefined') {
+        setIsLoading(false);
+        return;
+      }
+      
       const token = localStorage.getItem('accessToken');
+      console.log('AuthContext - Checking user with token:', token ? 'exists' : 'none');
       if (token) {
         try {
           const currentUser = await getCurrentUser();
+          console.log('AuthContext - Current user from API:', currentUser);
           setUser(currentUser);
         } catch (error) {
-          console.error("Failed to auto-login with existing token:", error);
+          console.error("AuthContext - Invalid token:", error);
           localStorage.removeItem('accessToken');
-          localStorage.removeItem('refreshToken');
           setUser(null);
         }
       }
@@ -42,24 +50,18 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     checkUser();
   }, []);
 
-  const login = (loginData: LoginData) => {
-    // --- هذا هو التعديل الحاسم ---
-    // استخدم 'access' و 'refresh' لتتطابق مع استجابة الواجهة الخلفية
-    if (loginData.access) {
-      localStorage.setItem('accessToken', loginData.access);
-    }
-    if (loginData.refresh) {
-      localStorage.setItem('refreshToken', loginData.refresh);
-    }
-    // -----------------------------
-    setUser(loginData.user);
+  const login = (userData: User) => {
+    console.log('AuthContext - Login called with user data:', userData);
+    setUser(userData);
+    console.log('AuthContext - User state updated to:', userData);
   };
 
   const logout = () => {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    setUser(null);
-    window.location.href = '/login'; 
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('accessToken');
+      setUser(null);
+      window.location.reload(); // لإعادة تعيين كل شيء
+    }
   };
 
   return (
@@ -69,9 +71,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export const useAuth = (): AuthContextType => {
+export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (!context) {
+  if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;

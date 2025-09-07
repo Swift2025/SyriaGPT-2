@@ -147,7 +147,7 @@ class FrontendLogger {
       // Generate session ID if not exists
       let sessionId = localStorage.getItem('sessionId');
       if (!sessionId) {
-        sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        sessionId = `session_${Math.floor(Math.random() * 1000000)}_${Math.random().toString(36).substr(2, 9)}`;
         localStorage.setItem('sessionId', sessionId);
       }
       entry.sessionId = sessionId;

@@ -1,0 +1,12 @@
+clean-code.txt
+data-migration.txt
+*.pdf
+user-model.txt
+/.claude
+*.pyc
+/__pycache__
+*.pyc
+syriaenv
+/frontend/node_modules
+/frontend/.next
+/logs

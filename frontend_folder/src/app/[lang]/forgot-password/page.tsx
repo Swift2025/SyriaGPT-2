@@ -9,8 +9,9 @@ import ForgotPasswordClient from './ForgotPasswordClient'; // استيراد م�
 // دالة ديناميكية لإنشاء بيانات الميتا (العنوان والوصف) المترجمة
 // =======================
 // هذه الدالة مهمة جداً لمحركات البحث (SEO) ولعنوان التبويب في المتصفح
-export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   // 1. جلب القاموس للغة المحددة
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
   // 2. الوصول إلى نصوص الميتا المترجمة
   const t = dictionary.forgotPasswordPage.metadata;
@@ -24,8 +25,9 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
 // =======================
 // المكون الرئيسي للصفحة (مكون خادم)
 // =======================
-export default async function ForgotPasswordPage({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function ForgotPasswordPage({ params }: { params: Promise<{ lang: Locale }> }) {
   // 1. جلب القاموس الكامل للصفحة
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
   
   // 2. عرض مكون العميل وتمرير القاموس إليه كـ prop

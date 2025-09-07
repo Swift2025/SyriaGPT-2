@@ -9,6 +9,9 @@ from qdrant_client.models import (
     Distance, VectorParams, PointStruct, Filter, FieldCondition, Range, MatchValue
 )
 
+# Import embedding service for generating embeddings of variants
+from .embedding_service import embedding_service
+
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
@@ -20,7 +23,9 @@ class QdrantService:
     """
 
     def __init__(self):
-        self.host = os.getenv("QDRANT_HOST", "qdrant")
+        # Use localhost when running outside Docker, qdrant when inside Docker
+        default_host = "localhost" if not os.getenv("DOCKER_ENV") else "qdrant"
+        self.host = os.getenv("QDRANT_HOST", default_host)
         self.port = int(os.getenv("QDRANT_PORT", 6333))
         self.collection_name = os.getenv("QDRANT_COLLECTION", "syria_qa_vectors")
         self.embedding_dimension = int(os.getenv("EMBEDDING_DIM", 768))
@@ -156,7 +161,9 @@ class QdrantService:
                 query_vector=query_embedding,
                 limit=limit,
                 score_threshold=score_threshold,
-                query_filter=query_filter
+                query_filter=query_filter,
+                with_payload=True,
+                with_vectors=False
             )
 
             results = []
@@ -173,6 +180,81 @@ class QdrantService:
         except Exception as e:
             logger.error(f"Failed to search similar questions: {e}")
             return []
+
+    async def add_qa_pair(
+        self,
+        qa_id: str,
+        question_variants: List[str],
+        answer: str,
+        keywords: List[str],
+        confidence: float,
+        source: str,
+        category: str,
+        embedding: List[float]
+    ) -> bool:
+        """Add a Q&A pair to Qdrant with all variants"""
+        if not self.client or not self.is_connected():
+            logger.error("Qdrant client not connected")
+            return False
+
+        try:
+            # Store the main question (first variant)
+            main_question = question_variants[0] if question_variants else ""
+            
+            payload = {
+                "qa_id": qa_id,
+                "question": main_question,
+                "answer": answer,
+                "keywords": keywords,
+                "confidence": confidence,
+                "source": source,
+                "category": category,
+                "question_variants": question_variants
+            }
+
+            point = PointStruct(
+                id=str(uuid4()),
+                vector=embedding,
+                payload=payload
+            )
+
+            await asyncio.to_thread(
+                self.client.upsert,
+                collection_name=self.collection_name,
+                points=[point]
+            )
+            
+            # Store additional variants if they exist
+            for variant in question_variants[1:]:
+                if variant and variant != main_question:
+                    # Guard: ensure embedding_service is available
+                    if not embedding_service:
+                        logger.warning("Embedding service is not available; skipping variant embedding")
+                        continue
+                    variant_embedding = await embedding_service.generate_embedding(variant)
+                    if variant_embedding:
+                        variant_payload = payload.copy()
+                        variant_payload["question"] = variant
+                        variant_payload["is_variant"] = True
+                        
+                        variant_point = PointStruct(
+                            id=str(uuid4()),
+                            vector=variant_embedding,
+                            payload=variant_payload
+                        )
+                        
+                        await asyncio.to_thread(
+                            self.client.upsert,
+                            collection_name=self.collection_name,
+                            points=[variant_point]
+                        )
+            
+            logger.debug(f"Successfully stored Q&A pair {qa_id} with {len(question_variants)} variants")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to store Q&A pair {qa_id}: {e}")
+            return False
 
     async def batch_store_embeddings(self, qa_data: List[Dict[str, Any]]) -> int:
         """Batch store multiple Q&A embeddings"""
@@ -204,6 +286,48 @@ class QdrantService:
         except Exception as e:
             logger.error(f"Failed to batch store embeddings: {e}")
             return 0
+
+    async def get_collection_stats(self) -> Dict[str, Any]:
+        """Get collection statistics"""
+        if not self.client or not self.is_connected():
+            return {"status": "error", "message": "Qdrant not connected"}
+
+        try:
+            collection_info = await asyncio.to_thread(
+                self.client.get_collection,
+                collection_name=self.collection_name
+            )
+            
+            return {
+                "status": "success",
+                "points_count": collection_info.points_count,
+                "vectors_count": collection_info.vectors_count,
+                "indexed_vectors_count": collection_info.indexed_vectors_count,
+                "payload_schema": collection_info.payload_schema
+            }
+        except Exception as e:
+            logger.error(f"Failed to get collection stats: {e}")
+            return {"status": "error", "message": str(e)}
+
+    async def clear_collection(self) -> bool:
+        """Clear all data from the collection"""
+        if not self.client or not self.is_connected():
+            return False
+
+        try:
+            await asyncio.to_thread(
+                self.client.delete_collection,
+                collection_name=self.collection_name
+            )
+            
+            # Recreate the collection
+            await self._ensure_collection_exists()
+            
+            logger.info(f"Collection {self.collection_name} cleared and recreated")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to clear collection: {e}")
+            return False
 
 
 # Global instance

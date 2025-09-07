@@ -17,6 +17,7 @@ class ConfigLoader:
         self._oauth_providers = None
         self._email_templates = None
         self._smtp_providers = None
+        self._identity_responses = None
 
     def load_messages(self) -> Dict[str, Any]:
         logger.debug("Loading messages configuration")
@@ -81,6 +82,52 @@ class ConfigLoader:
                 logger.error(f"Invalid JSON in smtp_providers.json: {e}")
                 self._smtp_providers = {}
         return self._smtp_providers
+
+    def load_identity_responses(self) -> Dict[str, Any]:
+        """Load identity responses configuration"""
+        logger.debug("Loading identity responses configuration")
+        if self._identity_responses is None:
+            try:
+                logger.debug(f"Reading identity responses from {self.config_path / 'identity_responses.json'}")
+                with open(self.config_path / "identity_responses.json", "r", encoding="utf-8") as f:
+                    self._identity_responses = json.load(f)
+                logger.debug(f"Successfully loaded identity responses configuration")
+            except FileNotFoundError:
+                logger.warning("identity_responses.json not found, using default responses")
+                self._identity_responses = self._get_default_identity_responses()
+            except json.JSONDecodeError as e:
+                logger.error(f"Invalid JSON in identity_responses.json: {e}")
+                self._identity_responses = self._get_default_identity_responses()
+        return self._identity_responses
+
+    def _get_default_identity_responses(self) -> Dict[str, Any]:
+        """Default identity responses if file is not found"""
+        return {
+            "identity_responses": {
+                "who_are_you": {
+                    "arabic": "أنا SyriaGPT، نموذج ذكاء اصطناعي تم تدريبي من قبل وكالة نظم المعلومات السورية."
+                }
+            }
+        }
+
+    def get_identity_response(self, response_type: str, language: str = "arabic") -> str:
+        """Get identity response for specific type and language"""
+        logger.debug(f"Getting identity response for type: {response_type}, language: {language}")
+        identity_responses = self.load_identity_responses()
+        
+        responses = identity_responses.get("identity_responses", {})
+        response_data = responses.get(response_type, {})
+        
+        if response_data:
+            response = response_data.get(language, response_data.get("arabic", ""))
+            if response:
+                logger.debug(f"Found identity response: {response[:50]}...")
+                return response
+        
+        # الرد الافتراضي
+        default_response = f"أنا SyriaGPT، مساعدك الذكي من وكالة نظم المعلومات السورية."
+        logger.warning(f"No identity response found for {response_type}, using default")
+        return default_response
 
     def get_message(self, category: str, key: str, **kwargs) -> str:
         logger.debug(f"Getting message for category: {category}, key: {key}")

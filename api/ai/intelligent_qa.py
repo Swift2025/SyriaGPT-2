@@ -1,12 +1,9 @@
-from fastapi import APIRouter, Depends, HTTPException, status, Query
-from typing import Optional, List
-import logging
+from fastapi import APIRouter, Depends, HTTPException, Query
+from typing import List
 import time
 import datetime
 
 from services.ai.intelligent_qa_service import intelligent_qa_service
-from models.schemas.request_models import QuestionCreateRequest
-from models.schemas.response_models import GeneralResponse
 from services.dependencies import get_current_user
 from models.domain.user import User
 from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
@@ -18,25 +15,116 @@ router = APIRouter(prefix="/intelligent-qa", tags=["Intelligent Q&A"])
 @router.post("/ask")
 async def ask_intelligent_question(
     question: str = Query(..., description="The question to ask"),
-    user_id: Optional[str] = Query(None, description="Optional user ID"),
-    context: Optional[str] = Query(None, description="Optional additional context"),
-    language: str = Query("auto", description="Preferred response language (en, ar, auto)"),
+    include_health: bool = Query(False, description="Include system health information in response"),
+    include_quota: bool = Query(False, description="Include quota status in response"),
+    include_data_stats: bool = Query(False, description="Include knowledge base statistics in response"),
+    augment_variants: bool = Query(False, description="Generate question variants for this Q&A pair"),
     current_user: User = Depends(get_current_user),
 ):
+    """
+    🤖 Intelligent Q&A Endpoint
+    
+    Main endpoint for asking questions with optional additional functionality:
+    - Core Q&A processing
+    - System health check (if include_health=true)
+    - Quota status (if include_quota=true) 
+    - Knowledge base statistics (if include_data_stats=true)
+    - Question variant generation (if augment_variants=true)
+    """
     log_function_entry(
         logger,
         "ask_intelligent_question",
         question_length=len(question),
         user_email=current_user.email,
         user_id=str(current_user.id),
+        include_health=include_health,
+        include_quota=include_quota,
+        include_data_stats=include_data_stats,
+        augment_variants=augment_variants,
     )
     start_time = time.time()
 
     try:
+        # Process the main question
         result = await intelligent_qa_service.process_question(
             question=question,
             user_id=str(current_user.id),
         )
+
+        # Add additional information if requested
+        additional_data = {}
+        
+        if include_health:
+            try:
+                # Check if the service has the method before calling it
+                if hasattr(intelligent_qa_service, 'get_system_health'):
+                    health_status = await intelligent_qa_service.get_system_health()
+                    components = ["qdrant", "embedding", "gemini", "web_scraping"]
+                    healthy_components = sum(
+                        1 for comp in components 
+                        if health_status.get("components", {}).get(comp, {}).get("status") == "healthy"
+                    )
+                    overall_status = "healthy" if healthy_components == len(components) else "unhealthy"
+                    
+                    additional_data["health"] = {
+                        "status": overall_status,
+                        "components": health_status.get("components", {}),
+                        "healthy_components": f"{healthy_components}/{len(components)}",
+                        "initialized": health_status.get("initialized", False)
+                    }
+                else:
+                    additional_data["health"] = {"status": "not_available", "message": "Health check not implemented"}
+            except Exception as e:
+                logger.warning("Failed to get health status: %s", str(e))
+                additional_data["health"] = {"status": "error", "error": str(e)}
+        
+        if include_quota:
+            try:
+                # Check if the service has the method before calling it
+                if hasattr(intelligent_qa_service, 'check_gemini_quota'):
+                    quota_status = await intelligent_qa_service.check_gemini_quota()
+                    additional_data["quota"] = {
+                        "gemini": quota_status,
+                        "timestamp": datetime.datetime.now().isoformat()
+                    }
+                else:
+                    additional_data["quota"] = {"status": "not_available", "message": "Quota check not implemented"}
+            except Exception as e:
+                logger.warning("Failed to get quota status: %s", str(e))
+                additional_data["quota"] = {"status": "error", "error": str(e)}
+        
+        if include_data_stats:
+            try:
+                from services.ai.data_integration_service import data_integration_service
+                stats = await data_integration_service.get_knowledge_base_stats()
+                additional_data["data_stats"] = stats
+            except Exception as e:
+                logger.warning("Failed to get data stats: %s", str(e))
+                additional_data["data_stats"] = {"status": "error", "error": str(e)}
+        
+        if augment_variants and result.get("answer"):
+            try:
+                # Check if the service has the method before calling it
+                if hasattr(intelligent_qa_service, 'augment_question_variants'):
+                    variants = await intelligent_qa_service.augment_question_variants(
+                        question=question.strip(),
+                        answer=result.get("answer", "").strip(),
+                        user_id=str(current_user.id)
+                    )
+                    additional_data["variants"] = {
+                        "original_question": question,
+                        "variants": variants,
+                        "count": len(variants)
+                    }
+                else:
+                    additional_data["variants"] = {"status": "not_available", "message": "Variant generation not implemented"}
+            except Exception as e:
+                logger.warning("Failed to generate variants: %s", str(e))
+                additional_data["variants"] = {"status": "error", "error": str(e)}
+        
+        # Merge additional data into result
+        if additional_data:
+            result["additional_data"] = additional_data
 
         duration = time.time() - start_time
         log_function_exit(logger, "ask_intelligent_question", duration=duration)
@@ -45,440 +133,40 @@ async def ask_intelligent_question(
     except Exception as e:
         duration = time.time() - start_time
         log_error_with_context(logger, e, "ask_intelligent_question", duration=duration)
-        logger.error(f" Error in ask_intelligent_question: {e}")
+        logger.error("Error in ask_intelligent_question: %s", str(e))
         log_function_exit(logger, "ask_intelligent_question", duration=duration)
-        raise HTTPException(status_code=500, detail="Internal server error")
+        raise HTTPException(status_code=500, detail="Internal server error") from e
 
 
-
-@router.post("/augment-variants")
-async def augment_question_variants(
-    question: str = Query(..., description="The original question"),
-    answer: str = Query(..., description="The answer to the question"),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    🔄 Augment Question Variants
-    
-    Generate and store question variants for a validated Q&A pair.
-    Uses Gemini to generate 3-5 variants of the question and stores them in Qdrant.
-    """
-    log_function_entry(logger, "augment_question_variants", 
-                      question_length=len(question), 
-                      answer_length=len(answer),
-                      user_email=current_user.email)
-    start_time = time.time()
-    
-    try:
-        if not question or not question.strip():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Question cannot be empty"
-            )
-        
-        if not answer or not answer.strip():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Answer cannot be empty"
-            )
-        
-        logger.info(f"🔄 Augmenting question variants for: '{question[:100]}...'")
-        
-        # Generate and store question variants
-        variants = await intelligent_qa_service.augment_question_variants(
-            question=question.strip(),
-            answer=answer.strip(),
-            user_id=str(current_user.id)
-        )
-        
-        response = {
-            "status": "success",
-            "data": {
-                "original_question": question,
-                "variants": variants,
-                "count": len(variants)
-            },
-            "message": f"Generated {len(variants)} question variants"
-        }
-        
-        duration = time.time() - start_time
-        log_performance(logger, "question variants augmentation", duration, 
-                       question_length=len(question), user_email=current_user.email)
-        log_function_exit(logger, "augment_question_variants", result=response, duration=duration)
-        
-        return response
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "augment_question_variants", 
-                              question=question, user_email=current_user.email, duration=duration)
-        logger.error(f"Failed to augment question variants: {e}")
-        log_function_exit(logger, "augment_question_variants", duration=duration)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to augment question variants: {str(e)}"
-        )
-
-
-@router.get("/quota-status")
-async def get_quota_status(current_user: User = Depends(get_current_user)):
-    """
-    📊 Check API Quota Status
-    
-    Returns the current quota status for all AI services.
-    """
-    log_function_entry(logger, "get_quota_status", user_email=current_user.email)
-    start_time = time.time()
-    
-    try:
-        quota_status = await intelligent_qa_service.check_gemini_quota()
-        
-        response = {
-            "status": "success",
-            "data": {
-                "gemini": quota_status,
-                "timestamp": datetime.now().isoformat(),
-                "user_id": str(current_user.id)
-            },
-            "message": f"Quota status retrieved successfully"
-        }
-        
-        duration = time.time() - start_time
-        log_performance(logger, "quota status check", duration, user_email=current_user.email)
-        log_function_exit(logger, "get_quota_status", result=response, duration=duration)
-        
-        return response
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "get_quota_status", user_email=current_user.email, duration=duration)
-        logger.error(f"Quota status check failed: {e}")
-        
-        response = {
-            "status": "error",
-            "error": str(e),
-            "data": {
-                "gemini": {"status": "unknown", "error": str(e)},
-                "timestamp": datetime.datetime.now().isoformat()
-            }
-        }
-        
-        log_function_exit(logger, "get_quota_status", result=response, duration=duration)
-        return response
-
-
-@router.get("/health")
-async def get_ai_health(current_user: User = Depends(get_current_user)):
-    """
-    🔍 Enhanced System Health Check
-    
-    Returns the health status of all enhanced Q&A system components:
-    - Qdrant (vector database)
-    - Gemini API (AI service)
-    - Embedding service (vector generation)
-    - Web scraping service
-    """
-    log_function_entry(logger, "get_ai_health", user_email=current_user.email)
-    start_time = time.time()
-    
-    try:
-        health_status = await intelligent_qa_service.get_system_health()
-        
-        # Determine overall health
-        components = ["qdrant", "embedding", "gemini", "web_scraping"]
-        healthy_components = sum(
-            1 for comp in components 
-            if health_status.get("components", {}).get(comp, {}).get("status") == "healthy"
-        )
-        
-        overall_status = "healthy" if healthy_components == len(components) else "unhealthy"
-        
-        response = {
-            "status": overall_status,
-            "components": health_status.get("components", {}),
-            "healthy_components": f"{healthy_components}/{len(components)}",
-            "initialized": health_status.get("initialized", False),
-            "recommendations": _get_health_recommendations(health_status.get("components", {}))
-        }
-        
-        duration = time.time() - start_time
-        log_performance(logger, "Enhanced AI health check", duration, healthy_components=healthy_components)
-        log_function_exit(logger, "get_ai_health", result=response, duration=duration)
-        
-        return response
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "get_ai_health", user_email=current_user.email, duration=duration)
-        logger.error(f"Enhanced health check failed: {e}")
-        
-        response = {
-            "status": "error",
-            "error": str(e),
-            "components": {},
-            "healthy_components": "0/4"
-        }
-        
-        log_function_exit(logger, "get_ai_health", result=response, duration=duration)
-        return response
-
-
-def _get_health_recommendations(health_status: dict) -> List[str]:
-    """Generate health recommendations based on system status"""
-    recommendations = []
-    
-    if not health_status.get("qdrant", {}).get("status") == "healthy":
-        recommendations.append("Qdrant vector database is not healthy. Check Qdrant service and configuration.")
-    
-    if not health_status.get("embedding", {}).get("status") == "healthy":
-        recommendations.append("Embedding service is not healthy. Check GenAI API key and configuration.")
-    
-    if not health_status.get("gemini", {}).get("status") == "healthy":
-        recommendations.append("Gemini API is not healthy. Set GOOGLE_API_KEY environment variable.")
-    
-    if not health_status.get("web_scraping", {}).get("status") == "healthy":
-        recommendations.append("Web scraping service is not healthy. Check network connectivity.")
-    
-    if not recommendations:
-        recommendations.append("All systems are healthy and operating normally.")
-    
-    return recommendations
-
-
-@router.post("/initialize")
-async def initialize_system():
-    """
-    🚀 Initialize Enhanced Syria GPT Q&A System
-    
-    Initializes the enhanced Q&A system with web scraping integration.
-    This should be called during application startup or when the system needs to be reinitialized.
-    """
-    log_function_entry(logger, "initialize_system")
-    start_time = time.time()
-    
-    try:
-        logger.info("Initializing enhanced Syria GPT Q&A system...")
-        
-        result = await intelligent_qa_service.initialize_system()
-        
-        if result.get("status") == "success":
-            response = {
-                "status": "success",
-                "data": result,
-                "message": "Enhanced Syria GPT Q&A system initialized successfully"
-            }
-            
-            duration = time.time() - start_time
-            log_performance(logger, "Enhanced system initialization", duration)
-            log_function_exit(logger, "initialize_system", result=response, duration=duration)
-            
-            return response
-        else:
-            duration = time.time() - start_time
-            log_function_exit(logger, "initialize_system", duration=duration)
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=result.get("error", "Initialization failed")
-            )
-        
-    except HTTPException:
-        duration = time.time() - start_time
-        log_function_exit(logger, "initialize_system", duration=duration)
-        raise
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "initialize_system", duration=duration)
-        logger.error(f"Enhanced system initialization failed: {e}")
-        log_function_exit(logger, "initialize_system", duration=duration)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to initialize enhanced system: {str(e)}"
-        )
-
-
-@router.get("/web-scraping-status")
-async def get_web_scraping_status(current_user: User = Depends(get_current_user)):
-    """
-    🌐 Web Scraping Status
-    
-    Get the status of the web scraping service and recent content.
-    """
-    log_function_entry(logger, "get_web_scraping_status", user_email=current_user.email)
-    start_time = time.time()
-    
-    try:
-        from services.ai.web_scraping_service import web_scraping_service
-        
-        # Get recent content (limited to avoid performance issues)
-        recent_content = await web_scraping_service.fetch_fresh_content(max_articles=5)
-        
-        response = {
-            "status": "success",
-            "data": {
-                "service_status": "active",
-                "recent_articles_count": len(recent_content),
-                "sources": list(web_scraping_service.sources.keys()),
-                "last_fetch": "recent"
-            },
-            "message": f"Web scraping service is active with {len(recent_content)} recent articles"
-        }
-        
-        duration = time.time() - start_time
-        log_performance(logger, "web scraping status check", duration, user_email=current_user.email)
-        log_function_exit(logger, "get_web_scraping_status", result=response, duration=duration)
-        
-        return response
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "get_web_scraping_status", user_email=current_user.email, duration=duration)
-        logger.error(f"Web scraping status check failed: {e}")
-        
-        response = {
-            "status": "error",
-            "error": str(e),
-            "data": {
-                "service_status": "inactive",
-                "recent_articles_count": 0,
-                "sources": []
-            }
-        }
-        
-        log_function_exit(logger, "get_web_scraping_status", result=response, duration=duration)
-        return response
-
-
-@router.post("/update-news")
-async def update_news_knowledge(
-    force_update: bool = Query(False, description="Force update even if not due"),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    📰 Update News Knowledge Base
-    
-    Scrapes fresh news from Syrian sources and integrates them into the knowledge base.
-    This endpoint:
-    1. Scrapes news from SANA, Halab Today, Syria TV, and government websites
-    2. Converts articles to Q&A pairs using Gemini
-    3. Stores them in Qdrant for semantic search
-    4. Updates every 6 hours by default
-    """
-    log_function_entry(logger, "update_news_knowledge", 
-                      force_update=force_update, 
-                      user_email=current_user.email)
-    start_time = time.time()
-    
-    try:
-        result = await intelligent_qa_service.update_news_knowledge(force_update=force_update)
-        
-        if result.get("status") == "success":
-            response = {
-                "status": "success",
-                "data": result,
-                "message": "News knowledge updated successfully"
-            }
-        elif result.get("status") == "skipped":
-            response = {
-                "status": "skipped",
-                "data": result,
-                "message": "No update needed"
-            }
-        else:
-            response = {
-                "status": "error",
-                "error": result.get("error", "Unknown error"),
-                "data": result
-            }
-        
-        duration = time.time() - start_time
-        log_performance(logger, "news knowledge update", duration, 
-                       force_update=force_update, 
-                       user_email=current_user.email)
-        log_function_exit(logger, "update_news_knowledge", result=response, duration=duration)
-        
-        return response
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "update_news_knowledge", 
-                              force_update=force_update, 
-                              user_email=current_user.email, 
-                              duration=duration)
-        logger.error(f"News knowledge update failed: {e}")
-        log_function_exit(logger, "update_news_knowledge", duration=duration)
-        
-        return {
-            "status": "error",
-            "error": str(e),
-            "data": {}
-        }
-
-
-@router.get("/news-stats")
-async def get_news_knowledge_statistics(current_user: User = Depends(get_current_user)):
-    """
-    📊 News Knowledge Statistics
-    
-    Returns detailed statistics about the news knowledge base including:
-    - Last update time
-    - Update interval
-    - Scraping statistics
-    - Available news sources
-    - Qdrant vector database statistics
-    """
-    log_function_entry(logger, "get_news_knowledge_statistics", user_email=current_user.email)
-    start_time = time.time()
-    
-    try:
-        stats = await intelligent_qa_service.get_news_knowledge_stats()
-        
-        response = {
-            "status": "success",
-            "data": stats,
-            "message": "News knowledge statistics retrieved successfully"
-        }
-        
-        duration = time.time() - start_time
-        log_performance(logger, "news knowledge statistics retrieval", duration, 
-                       user_email=current_user.email)
-        log_function_exit(logger, "get_news_knowledge_statistics", result=response, duration=duration)
-        
-        return response
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "get_news_knowledge_statistics", 
-                              user_email=current_user.email, 
-                              duration=duration)
-        logger.error(f"Failed to get news knowledge stats: {e}")
-        
-        response = {
-            "status": "error",
-            "error": str(e),
-            "data": {}
-        }
-        
-        log_function_exit(logger, "get_news_knowledge_statistics", result=response, duration=duration)
-        return response
 
 
 @router.post("/scrape-news")
 async def scrape_news_sources(
     sources: List[str] = Query(None, description="Specific sources to scrape (sana, halab_today, syria_tv, government)"),
     max_articles: int = Query(50, description="Maximum articles per source"),
+    update_knowledge_base: bool = Query(False, description="Update knowledge base with scraped content"),
+    force_update: bool = Query(False, description="Force update even if not due"),
+    include_stats: bool = Query(False, description="Include news knowledge statistics in response"),
+    include_status: bool = Query(False, description="Include web scraping service status in response"),
     current_user: User = Depends(get_current_user)
 ):
     """
-    🔍 Scrape News Sources
+    📰 News Scraping and Management Endpoint
     
-    Directly scrape news from Syrian sources without converting to Q&A pairs.
-    This is useful for testing scraping functionality or getting raw articles.
+    Comprehensive news endpoint that can:
+    - Scrape news from Syrian sources
+    - Update knowledge base with scraped content (if update_knowledge_base=true)
+    - Include news statistics (if include_stats=true)
+    - Include service status (if include_status=true)
+    - Force update knowledge base (if force_update=true)
     """
     log_function_entry(logger, "scrape_news_sources", 
                       sources=sources, 
                       max_articles=max_articles, 
+                      update_knowledge_base=update_knowledge_base,
+                      force_update=force_update,
+                      include_stats=include_stats,
+                      include_status=include_status,
                       user_email=current_user.email)
     start_time = time.time()
     
@@ -489,14 +177,63 @@ async def scrape_news_sources(
         if not web_scraping_service.session:
             await web_scraping_service.initialize()
         
-        result = await web_scraping_service.scrape_news_sources(
+        # Scrape news sources
+        scrape_result = await web_scraping_service.scrape_news_sources(
             sources=sources,
             max_articles=max_articles
         )
         
+        response_data = {
+            "scraping": scrape_result,
+            "articles_scraped": len(scrape_result.get("articles", [])),
+            "sources_processed": len(scrape_result.get("sources", []))
+        }
+        
+        # Update knowledge base if requested
+        if update_knowledge_base:
+            try:
+                if hasattr(intelligent_qa_service, 'update_news_knowledge'):
+                    knowledge_result = await intelligent_qa_service.update_news_knowledge(force_update=force_update)
+                    response_data["knowledge_update"] = knowledge_result
+                else:
+                    response_data["knowledge_update"] = {"status": "not_available", "message": "Knowledge update not implemented"}
+            except Exception as e:
+                logger.warning("Failed to update knowledge base: %s", str(e))
+                response_data["knowledge_update"] = {"status": "error", "error": str(e)}
+        
+        # Include news statistics if requested
+        if include_stats:
+            try:
+                if hasattr(intelligent_qa_service, 'get_news_knowledge_stats'):
+                    stats = await intelligent_qa_service.get_news_knowledge_stats()
+                    response_data["news_stats"] = stats
+                else:
+                    response_data["news_stats"] = {"status": "not_available", "message": "News stats not implemented"}
+            except Exception as e:
+                logger.warning("Failed to get news stats: %s", str(e))
+                response_data["news_stats"] = {"status": "error", "error": str(e)}
+        
+        # Include service status if requested
+        if include_status:
+            try:
+                # Check if the service has the required methods
+                if hasattr(web_scraping_service, 'fetch_fresh_content') and hasattr(web_scraping_service, 'sources'):
+                    recent_content = await web_scraping_service.fetch_fresh_content(max_articles=5)
+                    response_data["service_status"] = {
+                        "status": "active",
+                        "recent_articles_count": len(recent_content),
+                        "sources": list(web_scraping_service.sources.keys()),
+                        "last_fetch": "recent"
+                    }
+                else:
+                    response_data["service_status"] = {"status": "not_available", "message": "Service status not implemented"}
+            except Exception as e:
+                logger.warning("Failed to get service status: %s", str(e))
+                response_data["service_status"] = {"status": "error", "error": str(e)}
+        
         response = {
             "status": "success",
-            "data": result,
+            "data": response_data,
             "message": "News scraping completed successfully"
         }
         
@@ -504,6 +241,7 @@ async def scrape_news_sources(
         log_performance(logger, "news sources scraping", duration, 
                        sources_count=len(sources) if sources else 0, 
                        max_articles=max_articles, 
+                       update_knowledge_base=update_knowledge_base,
                        user_email=current_user.email)
         log_function_exit(logger, "scrape_news_sources", result=response, duration=duration)
         
@@ -514,9 +252,10 @@ async def scrape_news_sources(
         log_error_with_context(logger, e, "scrape_news_sources", 
                               sources=sources, 
                               max_articles=max_articles, 
+                              update_knowledge_base=update_knowledge_base,
                               user_email=current_user.email, 
                               duration=duration)
-        logger.error(f"News scraping failed: {e}")
+        logger.error("News scraping failed: %s", str(e))
         log_function_exit(logger, "scrape_news_sources", duration=duration)
         
         return {

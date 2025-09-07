@@ -137,11 +137,11 @@ export default function PrivacyPolicyClient({ dictionary }: { dictionary: any })
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.infoCards.map((card: { title: string; description: string }, index: number) => (
               <InfoSection
-                key={`privacy-card-${index}`}
-                icon={[<ShieldCheck key="shield" size={24}/>, <Lock key="lock" size={24}/>, <Eye key="eye" size={24}/>, <Users key="users" size={24}/>][index]}
+                key={index}
+                icon={[<ShieldCheck size={24}/>, <Lock size={24}/>, <Eye size={24}/>, <Users size={24}/>][index]}
                 title={card.title}
                 description={card.description}
-                bgColor={['bg-blue-50/80 dark:bg-blue-900/20', 'bg-green-50/80 dark:bg-green-900/20', 'bg-purple-50/80 dark:bg-purple-900/20', 'bg-red-50/80 dark:bg-red-900/20'][index]}
+                bgColor={['bg-blue-50/80 dark:bg-blue-900/20', 'bg-green-50/80 dark:bg-green-900/20', 'bg-purple-50/80 dark:bg-purple-900/20', 'bg-red-50/80 dark:bg-red-900/20'][index] || 'bg-gray-50/80 dark:bg-gray-900/20'}
               />
             ))}
           </div>

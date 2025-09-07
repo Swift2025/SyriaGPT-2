@@ -1,64 +1,87 @@
-// src/services/api.ts 
+// src/services/api.ts
 import { jwtDecode } from 'jwt-decode';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+// تأكد من تثبيت المكتبة: npm install jwt-decode
 
-// Ensure HTTPS in production
-const getApiBaseUrl = () => {
-  const url = API_BASE_URL;
-  if (typeof window !== 'undefined' && window.location.protocol === 'https:' && url.startsWith('http:')) {
-    return url.replace('http:', 'https:');
-  }
-  return url;
-};
+const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:9000';
 
+// دالة مساعدة لمعالجة استجابات API بشكل موحد
 const handleResponse = async (response: Response) => {
-  if (response.status === 204) return;
-  const data = await response.json();
-  if (!response.ok) {
-    const errorMessage = data.message || data.detail || 'An unknown error occurred.';
-    throw new Error(errorMessage);
+  // حالة خاصة: إذا كان الرد ناجحاً ولكن لا يوجد محتوى (e.g., 204 No Content)
+  if (response.status === 204) {
+    return;
   }
-  return data;
+  
+  try {
+    const data = await response.json();
+    if (!response.ok) {
+      let errorMessage = data.message || data.detail || data.error || 'An unknown error occurred.';
+      
+      // إذا كان errorMessage كائن، حوله إلى نص
+      if (typeof errorMessage === 'object') {
+        errorMessage = JSON.stringify(errorMessage);
+      }
+      
+      throw new Error(errorMessage);
+    }
+    return data;
+  } catch (error) {
+    if (error instanceof Error) {
+      throw error;
+    }
+    throw new Error('Failed to parse response');
+  }
 };
 
+// دالة لتجديد التوكن
 const refreshToken = async () => {
   const refreshToken = localStorage.getItem('refreshToken');
   if (!refreshToken) throw new Error("No refresh token available");
 
-  const response = await fetch(`${getApiBaseUrl()}/sessions/refresh`, {
+  const response = await fetch(`${API_BASE_URL}/sessions/refresh`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ refresh_token: refreshToken }),
   });
 
   const data = await handleResponse(response);
-  // --- تعديل مهم: refreshToken الآن فقط يرجع التوكن الجديد ---
-  // AuthContext سيكون مسؤولاً عن حفظه
+
+  // إذا نجح التجديد، قم بتحديث التوكنات
   localStorage.setItem('accessToken', data.access_token);
+  // قد تعيد الواجهة الخلفية refresh token جديد أيضاً
   if (data.refresh_token) {
     localStorage.setItem('refreshToken', data.refresh_token);
   }
+  
   return data.access_token;
 };
 
+// دالة للتحقق من صلاحية التوكن وتجديده إذا لزم الأمر
 const getValidAccessToken = async () => {
   if (typeof window === 'undefined') return null;
+  
   let token = localStorage.getItem('accessToken');
   if (!token) return null;
 
   try {
     const decoded: { exp: number } = jwtDecode(token);
-    const isExpired = Date.now() >= decoded.exp * 1000 - 60000;
+    // التحقق قبل دقيقة واحدة من انتهاء الصلاحية
+    const isExpired = Date.now() >= decoded.exp * 1000 - 60000; 
+
     if (isExpired) {
+      console.log("Access token expired or expiring soon, refreshing...");
       token = await refreshToken();
     }
     return token;
   } catch (error) {
+    console.error("Invalid token, attempting refresh:", error);
+    // إذا كان التوكن الحالي غير صالح، حاول تجديده
     try {
       token = await refreshToken();
       return token;
     } catch (refreshError) {
+      console.error("Failed to refresh token:", refreshError);
+      // إذا فشل التجديد، قم بتسجيل الخروج
       localStorage.removeItem('accessToken');
       localStorage.removeItem('refreshToken');
       return null;
@@ -66,434 +89,307 @@ const getValidAccessToken = async () => {
   }
 };
 
-const apiFetch = async (url: string, options: RequestInit = {}) => {
+// Interceptor: دالة fetch مخصصة تقوم بالتحقق من التوكن قبل كل طلب
+export const apiFetch = async (url: string, options: RequestInit = {}) => {
   const token = await getValidAccessToken();
+  
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     ...(options.headers as Record<string, string>),
   };
+
   if (token) {
-    headers['Authorization'] = `Bearer ${token}`;
+    (headers as Record<string, string>)['Authorization'] = `Bearer ${token}`;
   }
-  const fullUrl = `${getApiBaseUrl()}${url}`;
-  const response = await fetch(fullUrl, { ...options, headers });
+
+  const response = await fetch(`${API_BASE_URL}${url}`, { ...options, headers });
   return handleResponse(response);
 };
-// ========================================================================
-// AUTHENTICATION
-// ========================================================================
-
-export const loginUser = async (email: string, password: string, remember_me: boolean = false, two_factor_code?: string) => {
-  const response = await fetch(`${API_BASE_URL}/auth/login`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password, remember_me, two_factor_code }),
-  });
-  return handleResponse(response);
-};
-
-export const registerUser = async (userData: {
-  email: string;
-  password: string;
-  phone_number?: string;
-  first_name?: string;
-  last_name?: string;
-}) => {
-  const response = await fetch(`${API_BASE_URL}/auth/register`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(userData),
-  });
-  return handleResponse(response);
-};
-
-export const verifyEmail = async (token: string) => {
-  const response = await fetch(`${API_BASE_URL}/auth/verify-email/${token}`, {
-    method: 'GET',
-  });
-  return handleResponse(response);
-};
-
-export const forgotPassword = async (email: string) => {
-  const response = await fetch(`${API_BASE_URL}/auth/forgot-password`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email }),
-  });
-  return handleResponse(response);
-};
-
-export const resetPassword = async (token: string, new_password: string, confirm_password: string) => {
-  const response = await fetch(`${API_BASE_URL}/auth/reset-password`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ token, new_password, confirm_password }),
-  });
-  return handleResponse(response);
-};
-
-export const getCurrentUser = () => apiFetch('/auth/me');
-
-// OAuth endpoints
-export const getOAuthProviders = async () => {
-  const response = await fetch(`${API_BASE_URL}/auth/oauth/providers`, {
-    method: 'GET',
-  });
-  return handleResponse(response);
-};
-
-export const getOAuthAuthUrl = async (provider: string, redirect_uri?: string) => {
-  const response = await fetch(`${API_BASE_URL}/auth/oauth/${provider}/authorize`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ provider, redirect_uri }),
-  });
-  return handleResponse(response);
-};
-
-export const refreshOAuthToken = async (email: string, provider: string) => {
-  const response = await fetch(`${API_BASE_URL}/auth/oauth/${provider}/refresh`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, provider }),
-  });
-  return handleResponse(response);
-};
-
-// Two-Factor Authentication
-export const setup2FA = () => apiFetch('/auth/2fa/setup', { method: 'POST' });
-export const verify2FA = (code: string) => apiFetch('/auth/2fa/verify', { 
-  method: 'POST', 
-  body: JSON.stringify({ code }) 
-});
-export const disable2FA = () => apiFetch('/auth/2fa/disable', { method: 'POST' });
 
 // ========================================================================
-// USER MANAGEMENT
+// AUTHENTICATION ENDPOINTS (/auth)
 // ========================================================================
 
-export const getUserProfile = () => apiFetch('/users/me/profile');
-export const updateUserProfile = (profileData: { 
-  first_name?: string; 
-  last_name?: string; 
-  phone_number?: string; 
-  profile_picture?: string;
-}) => apiFetch('/users/me/profile', { 
-  method: 'PUT', 
-  body: JSON.stringify(profileData) 
-});
+export const loginUser = async (email: string, password: string) => {
+  const response = await fetch(`${API_BASE_URL}/api/v1/auth/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password }),
+  });
+  const data = await handleResponse(response);
+  
+  if (data.data?.access_token) localStorage.setItem('accessToken', data.data.access_token);
+  if (data.data?.refresh_token) localStorage.setItem('refreshToken', data.data.refresh_token);
+  
+  return data;
+};
 
-export const getUserSettings = () => apiFetch('/users/me/settings');
-export const updateUserSettings = (settingsData: {
-  email_notifications?: boolean;
-  sms_notifications?: boolean;
-  two_factor_enabled?: boolean;
-  session_timeout_hours?: number;
-  max_concurrent_sessions?: number;
-  language?: string;
-  timezone?: string;
-  theme?: string;
-}) => apiFetch('/users/me/settings', { 
-  method: 'PUT', 
-  body: JSON.stringify(settingsData) 
-});
+export const registerUser = (userData: { email: string; password: string; first_name: string; last_name: string; phone_number?: string }) => 
+  apiFetch('/api/v1/auth/register', { method: 'POST', body: JSON.stringify(userData) });
 
-export const changePassword = (passwordData: { 
-  current_password: string; 
-  new_password: string; 
-  confirm_password: string;
-}) => apiFetch('/users/me/change-password', { 
-  method: 'POST', 
-  body: JSON.stringify(passwordData) 
-});
+export const verifyEmail = (token: string) => 
+  apiFetch(`/api/v1/auth/verify-email/${token}`);
 
-// Admin user management endpoints
-export const getUsers = (params?: {
-  email?: string;
-  phone_number?: string;
-  status?: string;
-  oauth_provider?: string;
-  is_email_verified?: boolean;
-  is_phone_verified?: boolean;
-  two_factor_enabled?: boolean;
-  created_after?: string;
-  created_before?: string;
-  page?: number;
-  page_size?: number;
-}) => {
-  const queryParams = new URLSearchParams();
-  if (params) {
-    Object.entries(params).forEach(([key, value]) => {
-      if (value !== undefined) queryParams.append(key, value.toString());
-    });
+export const forgotPassword = (email: string) => 
+  apiFetch('/api/v1/auth/forgot-password', { method: 'POST', body: JSON.stringify({ email }) });
+
+export const resetPassword = (token: string, new_password: string, confirm_password: string) => 
+  apiFetch('/api/v1/auth/reset-password', { method: 'POST', body: JSON.stringify({ token, new_password, confirm_password }) });
+
+export const getCurrentUser = () => 
+  apiFetch('/api/v1/auth/me');
+
+export const getGoogleAuthUrl = (lang: string = 'en') => {
+  const frontendCallback = `${window.location.origin}/${lang}/auth/oauth/google/callback`;
+  const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:9000';
+  
+  return fetch(`${API_BASE_URL}/api/v1/auth/oauth/google/authorize`, { 
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      redirect_uri: frontendCallback
+    })
+  }).then(response => response.json());
+};
+
+export const getOAuthProviders = () => 
+  apiFetch('/api/v1/auth/oauth/providers');
+
+export const oauthCallback = (provider: string, code: string, state?: string) => 
+  apiFetch(`/api/v1/auth/oauth/${provider}/callback`, { method: 'POST', body: JSON.stringify({ code, state }) });
+
+// ========================================================================
+// USER MANAGEMENT & SETTINGS
+// ========================================================================
+
+export const getUserProfile = () => 
+  apiFetch('/api/v1/users/me');
+
+export const updateUserProfile = (profileData: { first_name?: string; last_name?: string; phone_number?: string; profile_picture?: string }) => 
+  apiFetch('/api/v1/users/me', { method: 'PUT', body: JSON.stringify(profileData) });
+
+export const changePassword = (passwordData: { current_password: string; new_password: string; confirm_password: string }) => 
+  apiFetch('/api/v1/auth/change-password', { method: 'POST', body: JSON.stringify(passwordData) });
+
+export const deleteAccount = () => 
+  apiFetch('/api/v1/users/me', { method: 'DELETE' });
+
+export const getUserSettings = () => 
+  apiFetch('/api/v1/users/me/settings');
+
+export const updateUserSettings = (settingsData: any) => 
+  apiFetch('/api/v1/users/me/settings', { method: 'PUT', body: JSON.stringify(settingsData) });
+
+export const uploadProfilePicture = (file: File) => {
+  const formData = new FormData();
+  formData.append('profile_picture', file);
+  
+  return apiFetch('/api/v1/users/me/profile-picture', { 
+    method: 'POST', 
+    body: formData,
+    headers: {} // Remove Content-Type to let browser set it with boundary
+  });
+};
+
+// ========================================================================
+// INTELLIGENT Q&A & CHAT
+// ========================================================================
+
+export const askQuestion = (question: string, language: string = 'auto') => 
+  apiFetch(`/api/v1/chat/ask?question=${encodeURIComponent(question)}&language=${language}`, { method: 'POST' });
+
+export const getChats = async () => {
+  const data = await apiFetch('/api/v1/chat/');
+  return data.data || data;
+};
+
+export const createChat = (chatData: { title?: string; description?: string; context?: string; language?: string }) => 
+  apiFetch('/api/v1/chat/', { method: 'POST', body: JSON.stringify(chatData) });
+
+export const getChat = (chatId: string) => 
+  apiFetch(`/api/v1/chat/${chatId}`);
+
+export const updateChat = (chatId: string, chatData: { title?: string; description?: string; context?: string; language?: string }) => 
+  apiFetch(`/api/v1/chat/${chatId}`, { method: 'PUT', body: JSON.stringify(chatData) });
+
+export const deleteChat = (chatId: string) => 
+  apiFetch(`/api/v1/chat/${chatId}`, { method: 'DELETE' });
+
+export const sendMessage = (chatId: string, messageData: { message: string; message_type?: string; attachments?: any[] }) => 
+  apiFetch(`/api/v1/chat/${chatId}/messages`, { method: 'POST', body: JSON.stringify(messageData) });
+
+export const getChatMessages = (chatId: string, page: number = 1, limit: number = 50) => 
+  apiFetch(`/api/v1/chat/${chatId}/messages?page=${page}&limit=${limit}`);
+
+export const deleteMessage = (chatId: string, messageId: string) => 
+  apiFetch(`/api/v1/chat/${chatId}/messages/${messageId}`, { method: 'DELETE' });
+
+export const clearChatHistory = async (chatIds: string[] = []) => {
+  // Check if user is authenticated first
+  const token = localStorage.getItem('accessToken');
+  if (!token) {
+    throw new Error('غير مسجل دخول. يرجى تسجيل الدخول أولاً.');
   }
-  return apiFetch(`/users?${queryParams.toString()}`);
-};
-
-export const getUserById = (userId: string) => apiFetch(`/users/${userId}`);
-export const getUserDetail = (userId: string) => apiFetch(`/users/${userId}/detail`);
-export const updateUser = (userId: string, userData: any) => 
-  apiFetch(`/users/${userId}`, { method: 'PUT', body: JSON.stringify(userData) });
-export const updateUserStatus = (userId: string, status: string) => 
-  apiFetch(`/users/${userId}/status`, { method: 'PUT', body: JSON.stringify({ status }) });
-export const bulkUserAction = (userIds: string[], action: string) => 
-  apiFetch('/users/bulk-action', { method: 'POST', body: JSON.stringify({ user_ids: userIds, action }) });
-export const getUserStats = () => apiFetch('/users/stats');
-// ========================================================================
-// CHAT MANAGEMENT
-// ========================================================================
-
-export const getChats = (params?: {
-  title?: string;
-  language?: string;
-  model_preference?: string;
-  is_archived?: boolean;
-  is_pinned?: boolean;
-  created_after?: string;
-  created_before?: string;
-  updated_after?: string;
-  updated_before?: string;
-  message_count_min?: number;
-  message_count_max?: number;
-  page?: number;
-  page_size?: number;
-}) => {
-  const queryParams = new URLSearchParams();
-  if (params) {
-    Object.entries(params).forEach(([key, value]) => {
-      if (value !== undefined) queryParams.append(key, value.toString());
-    });
+  
+  // If no chat IDs provided, get all user's chats first
+  if (chatIds.length === 0) {
+    try {
+      const chatsResponse = await apiFetch('/chat/');
+      const allChats = chatsResponse.data?.chats || [];
+      chatIds = allChats.map((chat: any) => chat.id);
+    } catch (error: any) {
+      console.error('Error fetching chats for deletion:', error);
+      
+      // Handle specific authentication errors
+      if (error.message?.includes('Not authenticated') || error.message?.includes('401')) {
+        throw new Error('انتهت صلاحية الجلسة. يرجى تسجيل الدخول مرة أخرى.');
+      } else if (error.message?.includes('403') || error.message?.includes('Forbidden')) {
+        throw new Error('ليس لديك صلاحية للوصول إلى المحادثات.');
+      } else {
+        throw new Error('فشل في جلب المحادثات للحذف');
+      }
+    }
   }
-  return apiFetch(`/chat?${queryParams.toString()}`);
-};
-
-export const createChat = (chatData: {
-  title?: string;
-  description?: string;
-  context?: string;
-  language?: string;
-  model_preference?: string;
-  max_tokens?: number;
-  temperature?: number;
-}) => apiFetch('/chat', { method: 'POST', body: JSON.stringify(chatData) });
-
-export const getChat = (chatId: string, include_messages: boolean = true) => 
-  apiFetch(`/chat/${chatId}?include_messages=${include_messages}`);
-
-export const updateChat = (chatId: string, chatData: {
-  title?: string;
-  description?: string;
-  context?: string;
-  language?: string;
-  model_preference?: string;
-  max_tokens?: number;
-  temperature?: number;
-  is_archived?: boolean;
-  is_pinned?: boolean;
-}) => apiFetch(`/chat/${chatId}`, { method: 'PUT', body: JSON.stringify(chatData) });
-
-export const deleteChat = (chatId: string) => apiFetch(`/chat/${chatId}`, { method: 'DELETE' });
-
-export const sendMessage = (chatId: string, messageData: {
-  message: string;
-  message_type?: string;
-  attachments?: string[];
-  context?: string;
-  language?: string;
-  priority?: string;
-}) => apiFetch(`/chat/${chatId}/messages`, { method: 'POST', body: JSON.stringify(messageData) });
-
-export const getChatMessages = (chatId: string, limit: number = 100, offset: number = 0) => 
-  apiFetch(`/chat/${chatId}/messages?limit=${limit}&offset=${offset}`);
-
-export const addFeedbackToMessage = (messageId: string, feedbackData: {
-  rating: number;
-  feedback_type: string;
-  comment?: string;
-  category?: string;
-}) => apiFetch(`/chat/messages/${messageId}/feedback`, { method: 'POST', body: JSON.stringify(feedbackData) });
-
-export const getChatSettings = () => apiFetch('/chat/settings');
-export const updateChatSettings = (settingsData: {
-  default_language?: string;
-  default_model?: string;
-  default_max_tokens?: number;
-  default_temperature?: number;
-  auto_archive_after_days?: number;
-  max_chats_per_user?: number;
-  max_messages_per_chat?: number;
-  enable_voice_input?: boolean;
-  enable_file_upload?: boolean;
-  enable_image_analysis?: boolean;
-  enable_context_memory?: boolean;
-  enable_chat_history?: boolean;
-  enable_analytics?: boolean;
-  enable_feedback?: boolean;
-}) => apiFetch('/chat/settings', { method: 'PUT', body: JSON.stringify(settingsData) });
-
-export const getChatAnalytics = (params?: {
-  date_range_start?: string;
-  date_range_end?: string;
-  group_by?: string;
-  include_message_content?: boolean;
-  include_user_metrics?: boolean;
-  include_model_metrics?: boolean;
-}) => {
-  const queryParams = new URLSearchParams();
-  if (params) {
-    Object.entries(params).forEach(([key, value]) => {
-      if (value !== undefined) queryParams.append(key, value.toString());
-    });
+  
+  // If still no chats, return success message
+  if (chatIds.length === 0) {
+    return {
+      message: "لا توجد محادثات للحذف",
+      success_count: 0,
+      failed_count: 0
+    };
   }
-  return apiFetch(`/chat/analytics?${queryParams.toString()}`);
+  
+  return apiFetch('/chat/bulk-action', { 
+    method: 'POST', 
+    body: JSON.stringify({ chat_ids: chatIds, action: 'delete' }) 
+  });
 };
 
-export const bulkChatAction = (chatIds: string[], action: string) => 
-  apiFetch('/chat/bulk-action', { method: 'POST', body: JSON.stringify({ chat_ids: chatIds, action }) });
+export const exportChat = (chatId: string, format: string = 'json') => 
+  apiFetch(`/chat/${chatId}/export`, { method: 'POST', body: JSON.stringify({ format }) });
 
-export const exportChat = (chatId: string, exportData: {
-  format?: string;
-  include_metadata?: boolean;
-  include_context?: boolean;
-  include_attachments?: boolean;
-  date_range_start?: string;
-  date_range_end?: string;
-}) => apiFetch(`/chat/${chatId}/export`, { method: 'POST', body: JSON.stringify(exportData) });
+export const exportUserData = () => 
+  apiFetch('/users/me/export', { method: 'POST', body: JSON.stringify({ format: 'json' }) });
 
-export const getChatStats = () => apiFetch('/chat/stats');
+export const addFeedbackToMessage = async (messageId: string, feedbackData: { rating: number; feedback_type: string; comment?: string }) => {
+  return apiFetch(`/chat/messages/${messageId}/feedback`, {
+    method: 'POST',
+    body: JSON.stringify(feedbackData),
+  });
+};
+
+export const regenerateResponse = async (chatId: string, lastUserMessage: string) => {
+  return sendMessage(chatId, { message: lastUserMessage });
+};
 
 // ========================================================================
 // SESSION MANAGEMENT
 // ========================================================================
 
-export const getSessions = (params?: {
-  user_id?: string;
-  is_active?: boolean;
-  is_mobile?: boolean;
-  ip_address?: string;
-  created_after?: string;
-  created_before?: string;
-  expires_after?: string;
-  expires_before?: string;
-  page?: number;
-  page_size?: number;
-}) => {
-  const queryParams = new URLSearchParams();
-  if (params) {
-    Object.entries(params).forEach(([key, value]) => {
-      if (value !== undefined) queryParams.append(key, value.toString());
-    });
-  }
-  return apiFetch(`/sessions?${queryParams.toString()}`);
-};
+export const createSession = (sessionData: { user_id: string; expires_at?: string }) => 
+  apiFetch('/sessions/', { method: 'POST', body: JSON.stringify(sessionData) });
 
-export const getSessionStats = () => apiFetch('/sessions/stats');
-export const getSessionById = (sessionId: string) => apiFetch(`/sessions/${sessionId}`);
-export const createSession = (sessionData: {
-  device_info?: string;
-  ip_address?: string;
-  user_agent?: string;
-  location?: string;
-  is_mobile?: boolean;
-  expires_in_hours?: number;
-}) => apiFetch('/sessions', { method: 'POST', body: JSON.stringify(sessionData) });
-export const deleteSession = (sessionId: string) => apiFetch(`/sessions/${sessionId}`, { method: 'DELETE' });
-export const getActiveSessions = () => apiFetch('/sessions/me/active');
-export const logoutAllSessions = () => apiFetch('/sessions/me/all', { method: 'DELETE' });
-export const logoutSession = (sessionId?: string, logout_all: boolean = false) => 
-  apiFetch('/sessions/logout', { method: 'POST', body: JSON.stringify({ session_id: sessionId, logout_all }) });
-export const getCurrentSession = () => apiFetch('/sessions/current');
-export const cleanupExpiredSessions = () => apiFetch('/sessions/cleanup', { method: 'DELETE' });
+export const getSession = (sessionId: string) => 
+  apiFetch(`/sessions/${sessionId}`);
 
-// ========================================================================
-// INTELLIGENT Q&A
-// ========================================================================
+export const updateSession = (sessionId: string, sessionData: { expires_at?: string; is_active?: boolean }) => 
+  apiFetch(`/sessions/${sessionId}`, { method: 'PUT', body: JSON.stringify(sessionData) });
 
-export const askIntelligentQuestion = (params: {
-  question: string;
-  user_id?: string;
-  context?: string;
-  language?: string;
-}) => {
-  const queryParams = new URLSearchParams();
-  Object.entries(params).forEach(([key, value]) => {
-    if (value !== undefined) queryParams.append(key, value.toString());
-  });
-  return apiFetch(`/intelligent-qa/ask?${queryParams.toString()}`, { method: 'POST' });
-};
+export const deleteSession = (sessionId: string) => 
+  apiFetch(`/sessions/${sessionId}`, { method: 'DELETE' });
 
-export const getSimilarQuestions = (question: string, limit: number = 5) => 
-  apiFetch(`/intelligent-qa/similar-questions?question=${encodeURIComponent(question)}&limit=${limit}`);
-
-export const augmentQuestionVariants = (question: string, answer: string) => 
-  apiFetch(`/intelligent-qa/augment-variants?question=${encodeURIComponent(question)}&answer=${encodeURIComponent(answer)}`, { method: 'POST' });
-
-export const getIntelligentQAHealth = () => apiFetch('/intelligent-qa/health');
-export const initializeIntelligentQA = () => apiFetch('/intelligent-qa/initialize', { method: 'POST' });
-export const getWebScrapingStatus = () => apiFetch('/intelligent-qa/web-scraping-status');
+export const getUserSessions = () => 
+  apiFetch('/sessions/user');
 
 // ========================================================================
 // QUESTIONS & ANSWERS
 // ========================================================================
 
-export const createQuestion = (question: string) => 
-  apiFetch('/questions', { method: 'POST', body: JSON.stringify({ question }) });
+export const getQuestions = (page: number = 1, limit: number = 20, search?: string) => {
+  const params = new URLSearchParams({ page: page.toString(), limit: limit.toString() });
+  if (search) params.append('search', search);
+  return apiFetch(`/questions/?${params.toString()}`);
+};
 
-export const getQuestions = () => apiFetch('/questions');
-export const getQuestionById = (questionId: string) => apiFetch(`/questions/${questionId}`);
-export const deleteQuestion = (questionId: string) => apiFetch(`/questions/${questionId}`, { method: 'DELETE' });
+export const getQuestion = (questionId: string) => 
+  apiFetch(`/questions/${questionId}`);
 
-export const createAnswer = (answerData: {
-  answer: string;
-  question_id: string;
-  author: string;
-}) => apiFetch('/answers', { method: 'POST', body: JSON.stringify(answerData) });
+export const createQuestion = (questionData: { title: string; content: string; category?: string; tags?: string[] }) => 
+  apiFetch('/questions/', { method: 'POST', body: JSON.stringify(questionData) });
 
-export const getAnswersByQuestion = (questionId: string) => apiFetch(`/answers/question/${questionId}`);
-export const getAnswerById = (answerId: string) => apiFetch(`/answers/${answerId}`);
-export const deleteAnswer = (answerId: string) => apiFetch(`/answers/${answerId}`, { method: 'DELETE' });
+export const updateQuestion = (questionId: string, questionData: { title?: string; content?: string; category?: string; tags?: string[] }) => 
+  apiFetch(`/questions/${questionId}`, { method: 'PUT', body: JSON.stringify(questionData) });
 
-// ========================================================================
-// SMTP CONFIGURATION
-// ========================================================================
+export const deleteQuestion = (questionId: string) => 
+  apiFetch(`/questions/${questionId}`, { method: 'DELETE' });
 
-export const getSMTPProviders = () => apiFetch('/smtp/providers');
-export const getSMTPProvider = (provider: string) => apiFetch(`/smtp/providers/${provider}`);
-export const testSMTPConnection = (testData: {
-  email: string;
-  password: string;
-  provider?: string;
-}) => apiFetch('/smtp/test', { method: 'POST', body: JSON.stringify(testData) });
-export const detectSMTPProvider = (email: string) => 
-  apiFetch('/smtp/detect-provider', { method: 'POST', body: JSON.stringify({ email }) });
-export const getSupportedDomains = () => apiFetch('/smtp/supported-domains');
-export const configureSMTP = (configData: {
-  email: string;
-  password: string;
-  provider: string;
-  use_ssl?: boolean;
-  custom_host?: string;
-  custom_port?: number;
-}) => apiFetch('/smtp/configure', { method: 'POST', body: JSON.stringify(configData) });
-export const getSMTPHealth = () => apiFetch('/smtp/health');
+export const getAnswers = (questionId: string, page: number = 1, limit: number = 20) => 
+  apiFetch(`/questions/${questionId}/answers?page=${page}&limit=${limit}`);
+
+export const createAnswer = (questionId: string, answerData: { content: string; is_ai_generated?: boolean }) => 
+  apiFetch(`/questions/${questionId}/answers`, { method: 'POST', body: JSON.stringify(answerData) });
+
+export const updateAnswer = (answerId: string, answerData: { content: string }) => 
+  apiFetch(`/answers/${answerId}`, { method: 'PUT', body: JSON.stringify(answerData) });
+
+export const deleteAnswer = (answerId: string) => 
+  apiFetch(`/answers/${answerId}`, { method: 'DELETE' });
 
 // ========================================================================
-// SYSTEM ENDPOINTS
+// SMTP & EMAIL
 // ========================================================================
 
-export const getSystemHealth = () => apiFetch('/test/health');
-export const getSystemInfo = () => apiFetch('/');
-export const greetUser = (name: string) => apiFetch(`/hello/${name}`);
+export const getSmtpProviders = () => 
+  apiFetch('/smtp/providers');
+
+export const testSmtpConnection = (providerData: { provider: string; config: any }) => 
+  apiFetch('/smtp/test', { method: 'POST', body: JSON.stringify(providerData) });
+
+export const sendTestEmail = (emailData: { to: string; subject: string; body: string }) => 
+  apiFetch('/smtp/send-test', { method: 'POST', body: JSON.stringify(emailData) });
 
 // ========================================================================
-// MISSING EXPORTS (for backward compatibility)
+// FILE UPLOADS
 // ========================================================================
 
-export const deleteAccount = () => 
-  apiFetch('/users/me/delete/', { method: 'DELETE' });
+export const uploadFile = (file: File, type: string = 'general') => {
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('type', type);
+  
+  return apiFetch('/files/upload', { 
+    method: 'POST', 
+    body: formData,
+    headers: {} // Remove Content-Type to let browser set it with boundary
+  });
+};
 
-export const clearChatHistory = () => 
-  apiFetch('/chat/clear-history/', { method: 'POST' });
+export const getFiles = (type?: string, page: number = 1, limit: number = 20) => {
+  const params = new URLSearchParams({ page: page.toString(), limit: limit.toString() });
+  if (type) params.append('type', type);
+  return apiFetch(`/files/?${params.toString()}`);
+};
 
-export const exportUserData = () => 
-  apiFetch('/users/me/export/', { method: 'POST' });
+export const deleteFile = (fileId: string) => 
+  apiFetch(`/files/${fileId}`, { method: 'DELETE' });
+
+// ========================================================================
+// UTILITY FUNCTIONS
+// ========================================================================
+
+
+// ========================================================================
+// ERROR HANDLING & LOGGING
+// ========================================================================
+
+export const logError = (errorData: { level: string; message: string; context?: any }) => 
+  apiFetch('/logs/error', { method: 'POST', body: JSON.stringify(errorData) });
+
+export const getErrorLogs = (page: number = 1, limit: number = 50, level?: string) => {
+  const params = new URLSearchParams({ page: page.toString(), limit: limit.toString() });
+  if (level) params.append('level', level);
+  return apiFetch(`/logs/errors?${params.toString()}`);
+};

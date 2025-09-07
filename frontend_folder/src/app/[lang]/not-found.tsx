@@ -127,7 +127,8 @@ export default function NotFoundPage() {
   }
 
   const t = dictionary.notFoundPage;
-  const randomFact = t.funFact.facts[Math.floor(Math.random() * t.funFact.facts.length)];
+  // استخدام index ثابت لتجنب hydration mismatch
+  const randomFact = t.funFact.facts[0] || t.funFact.facts[Math.floor(t.funFact.facts.length / 2)];
   const suggestedPages = [
     { icon: <Home className="w-5 h-5" />, href: `/${lang}`, ...t.suggestions.items[0] },
     { icon: <MessageCircle className="w-5 h-5" />, href: `/${lang}`, ...t.suggestions.items[1] },

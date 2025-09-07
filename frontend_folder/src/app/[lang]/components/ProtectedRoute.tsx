@@ -7,8 +7,8 @@ import { useAuth } from '../../../context/AuthContext';
 
 // شاشة تحميل بسيطة
 const LoadingScreen = () => (
-  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-    <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-teal-500"></div>
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900" suppressHydrationWarning={true}>
+    <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-teal-500" suppressHydrationWarning={true}></div>
   </div>
 );
 
@@ -19,8 +19,18 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const lang = params.lang as string;
 
   useEffect(() => {
+    console.log('ProtectedRoute - Auth state:', { user, isLoading });
+    if (user) {
+      console.log('ProtectedRoute - User details:', {
+        id: user.id,
+        email: user.email,
+        full_name: user.full_name,
+        name: user.name
+      });
+    }
     // إذا انتهى التحميل ولم يكن هناك مستخدم، قم بالتوجيه إلى صفحة تسجيل الدخول
     if (!isLoading && !user) {
+      console.log('No user found, redirecting to login');
       router.push(`/${lang}/login`);
     }
   }, [isLoading, user, router, lang]);
