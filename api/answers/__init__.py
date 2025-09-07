@@ -1,4 +1,4 @@
 # Answer-related API endpoints
-from .answers import router as answers_router
+# Note: answers.py has been removed
 
-__all__ = ["answers_router"]
+__all__ = []

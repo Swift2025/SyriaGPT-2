@@ -1,9 +1,8 @@
 from datetime import datetime
 from typing import Optional, List
-from pydantic import BaseModel, EmailStr, Field, validator
+from pydantic import BaseModel, EmailStr, Field, field_validator
 import re
 import time
-import logging
 from config.logging_config import (
     get_logger,
     log_function_entry,
@@ -22,7 +21,8 @@ class UserRegistrationRequest(BaseModel):
     first_name: Optional[str] = Field(None, max_length=100)
     last_name: Optional[str] = Field(None, max_length=100)
     
-    @validator('password')
+    @field_validator('password')
+    @classmethod
     def validate_password(cls, v):
         log_function_entry(logger, "validate_password")
         start_time = time.time()
@@ -50,7 +50,8 @@ class UserRegistrationRequest(BaseModel):
             log_function_exit(logger, "validate_password", duration=duration)
             raise
     
-    @validator('phone_number')
+    @field_validator('phone_number')
+    @classmethod
     def validate_phone(cls, v):
         log_function_entry(logger, "validate_phone")
         start_time = time.time()
@@ -104,16 +105,6 @@ class TwoFactorVerifyRequest(BaseModel):
     code: str = Field(..., min_length=6, max_length=6)
 
 
-class QuestionCreateRequest(BaseModel):
-    question: str = Field(..., min_length=1, max_length=10000)
-
-
-class AnswerCreateRequest(BaseModel):
-    answer: str = Field(..., min_length=1, max_length=10000)
-    question_id: str = Field(..., description="UUID of the question")
-    author: str = Field(..., min_length=1, max_length=255)
-
-
 class ForgotPasswordRequest(BaseModel):
     email: EmailStr
 
@@ -123,12 +114,13 @@ class ResetPasswordRequest(BaseModel):
     new_password: str = Field(..., min_length=8)
     confirm_password: str = Field(..., min_length=8)
     
-    @validator('confirm_password')
-    def validate_passwords_match(cls, v, values):
+    @field_validator('confirm_password')
+    @classmethod
+    def validate_passwords_match(cls, v, info):
         log_function_entry(logger, "validate_passwords_match")
         start_time = time.time()
         try:
-            if 'new_password' in values and v != values['new_password']:
+            if hasattr(info, 'data') and 'new_password' in info.data and v != info.data['new_password']:
                 raise ValueError("Passwords do not match")
             
             duration = time.time() - start_time
@@ -142,7 +134,8 @@ class ResetPasswordRequest(BaseModel):
             log_function_exit(logger, "validate_passwords_match", duration=duration)
             raise
     
-    @validator('new_password')
+    @field_validator('new_password')
+    @classmethod
     def validate_password_strength(cls, v):
         log_function_entry(logger, "validate_password_strength")
         start_time = time.time()
@@ -178,7 +171,8 @@ class UserUpdateRequest(BaseModel):
     phone_number: Optional[str] = Field(None, pattern=r'^\+?[1-9]\d{1,14}$')
     profile_picture: Optional[str] = Field(None, max_length=500)
     
-    @validator('phone_number')
+    @field_validator('phone_number')
+    @classmethod
     def validate_phone(cls, v):
         log_function_entry(logger, "validate_phone")
         start_time = time.time()
@@ -203,12 +197,13 @@ class UserPasswordChangeRequest(BaseModel):
     new_password: str = Field(..., min_length=8)
     confirm_password: str = Field(..., min_length=8)
     
-    @validator('confirm_password')
-    def validate_passwords_match(cls, v, values):
+    @field_validator('confirm_password')
+    @classmethod
+    def validate_passwords_match(cls, v, info):
         log_function_entry(logger, "validate_passwords_match")
         start_time = time.time()
         try:
-            if 'new_password' in values and v != values['new_password']:
+            if hasattr(info, 'data') and 'new_password' in info.data and v != info.data['new_password']:
                 raise ValueError("Passwords do not match")
             
             duration = time.time() - start_time
@@ -222,7 +217,8 @@ class UserPasswordChangeRequest(BaseModel):
             log_function_exit(logger, "validate_passwords_match", duration=duration)
             raise
     
-    @validator('new_password')
+    @field_validator('new_password')
+    @classmethod
     def validate_password_strength(cls, v):
         log_function_entry(logger, "validate_password_strength")
         start_time = time.time()

@@ -6,8 +6,6 @@ from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from services.dependencies import limiter, get_current_user
 from api.authentication.routes import router as auth_router
-from api.questions.questions import router as questions_router
-from api.answers.answers import router as answers_router
 from api.ai.intelligent_qa import router as intelligent_qa_router
 from api.ai.chat_management import router as chat_management_router
 from api.smtp.routes import router as smtp_router
@@ -325,14 +323,6 @@ app = FastAPI(
             "description": "User authentication and authorization operations"
         },
         {
-            "name": "Questions",
-            "description": "Question management operations"
-        },
-        {
-            "name": "Answers", 
-            "description": "Answer management operations"
-        },
-        {
             "name": "Intelligent Q&A",
             "description": "AI-powered intelligent Q&A operations with consolidated endpoints for asking questions and news scraping"
         },
@@ -471,10 +461,6 @@ logger.debug("[CONFIG] Swagger UI parameters configured")
 logger.debug("[ROUTER] Including API routers...")
 app.include_router(auth_router)
 logger.debug("[ROUTER] Auth router included")
-app.include_router(questions_router)
-logger.debug("[ROUTER] Questions router included")
-app.include_router(answers_router)
-logger.debug("[ROUTER] Answers router included")
 app.include_router(intelligent_qa_router)
 logger.debug("[ROUTER] Intelligent Q&A router included")
 app.include_router(chat_management_router)
@@ -679,6 +665,11 @@ def get_current_user_info(current_user: User = Depends(get_current_user)):
 
 @app.post("/auth/debug-token", tags=["authentication"])
 def debug_token(request: dict):
+    """
+    Debug token validation - Check if a token is valid and what user it represents
+    
+    This endpoint helps troubleshoot authentication issues.
+    """
     log_function_entry(logger, "debug_token", request_keys=list(request.keys()) if request else [])
     start_time = time.time()
     
@@ -693,11 +684,6 @@ def debug_token(request: dict):
             return response
         
         logger.debug("[DEBUG] Debugging token validation...")
-        """
-        Debug token validation - Check if a token is valid and what user it represents
-        
-        This endpoint helps troubleshoot authentication issues.
-        """
         from services.auth import get_auth_service
         from services.repositories import get_user_repository
         from services.database.database import get_db
@@ -831,7 +817,7 @@ def get_oauth_refresh_url(email: str):
         from api.authentication.routes import registration_service
         
         try:
-            response, error, status_code = registration_service.get_oauth_authorization_url(
+            oauth_response, error, status_code = registration_service.get_oauth_authorization_url(
                 provider=user.oauth_provider,
                 redirect_uri=f"http://localhost:9000/auth/oauth/{user.oauth_provider}/callback"
             )
@@ -850,7 +836,7 @@ def get_oauth_refresh_url(email: str):
                 log_function_exit(logger, "get_oauth_refresh_url", result=response, duration=duration)
                 return response
             
-            auth_url = response.authorization_url
+            auth_url = oauth_response.authorization_url
             logger.info(f"[OAUTH] OAuth authorization URL generated successfully for {email}")
             
             response = {
@@ -860,7 +846,7 @@ def get_oauth_refresh_url(email: str):
                     "oauth_provider": user.oauth_provider
                 },
                 "oauth_url": auth_url,
-                "state": response.state,
+                "state": oauth_response.state,
                 "instructions": [
                     "1. Click the oauth_url above",
                     "2. Complete the OAuth flow",
