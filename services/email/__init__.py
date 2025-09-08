@@ -1,7 +1,5 @@
-# Email services
-from .email_service import get_email_service, EmailService
+"""
+Email services package for SyriaGPT.
+"""
 
-__all__ = [
-    "get_email_service",
-    "EmailService"
-]
+__version__ = "2.0.0"

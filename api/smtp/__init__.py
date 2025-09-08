@@ -1,1 +1,5 @@
-# SMTP Configuration API Module
+"""
+SMTP configuration API package for SyriaGPT.
+"""
+
+__version__ = "2.0.0"

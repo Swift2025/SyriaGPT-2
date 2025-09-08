@@ -1,100 +1,160 @@
 {
   "gmail": {
     "name": "Gmail",
-    "smtp_host": "smtp.gmail.com",
-    "smtp_port": 587,
-    "smtp_port_ssl": 465,
+    "host": "smtp.gmail.com",
+    "port": 587,
     "use_tls": true,
     "use_ssl": false,
-    "requires_auth": true,
-    "app_password_required": true,
-    "instructions": "Use App Password instead of regular password. Enable 2FA and generate App Password in Google Account settings. Prefer TLS (port 587) over SSL (port 465) for better compatibility.",
-    "setup_url": "https://support.google.com/accounts/answer/185833",
-    "preferred_port": 587,
-    "preferred_encryption": "tls"
-  },
-  "hotmail": {
-    "name": "Hotmail",
-    "smtp_host": "smtp-mail.outlook.com",
-    "smtp_port": 587,
-    "smtp_port_ssl": 465,
-    "use_tls": true,
-    "use_ssl": false,
-    "requires_auth": true,
-    "app_password_required": false,
-    "instructions": "Use your regular Hotmail password. If 2FA is enabled, use App Password.",
-    "setup_url": "https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-8361e398-8af4-4e97-b147-6c6c4ac95353"
+    "authentication": "login",
+    "enabled": true,
+    "icon": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
+    "color": "#EA4335",
+    "description": "Google Gmail SMTP server",
+    "setup_instructions": [
+      "Enable 2-factor authentication on your Google account",
+      "Generate an App Password for SyriaGPT",
+      "Use your Gmail address as username",
+      "Use the App Password as password"
+    ],
+    "limits": {
+      "daily_send_limit": 500,
+      "hourly_send_limit": 100,
+      "max_recipients_per_message": 100
+    }
   },
   "outlook": {
     "name": "Outlook",
-    "smtp_host": "smtp-mail.outlook.com",
-    "smtp_port": 587,
-    "smtp_port_ssl": 465,
+    "host": "smtp-mail.outlook.com",
+    "port": 587,
     "use_tls": true,
     "use_ssl": false,
-    "requires_auth": true,
-    "app_password_required": false,
-    "instructions": "Use your regular Outlook password. If 2FA is enabled, use App Password.",
-    "setup_url": "https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-8361e398-8af4-4e97-b147-6c6c4ac95353"
+    "authentication": "login",
+    "enabled": true,
+    "icon": "https://outlook.live.com/favicon.ico",
+    "color": "#0078D4",
+    "description": "Microsoft Outlook SMTP server",
+    "setup_instructions": [
+      "Use your Outlook/Hotmail email address",
+      "Use your regular password",
+      "Enable 'Less secure app access' if needed"
+    ],
+    "limits": {
+      "daily_send_limit": 300,
+      "hourly_send_limit": 50,
+      "max_recipients_per_message": 50
+    }
   },
   "yahoo": {
     "name": "Yahoo Mail",
-    "smtp_host": "smtp.mail.yahoo.com",
-    "smtp_port": 587,
-    "smtp_port_ssl": 465,
+    "host": "smtp.mail.yahoo.com",
+    "port": 587,
     "use_tls": true,
     "use_ssl": false,
-    "requires_auth": true,
-    "app_password_required": true,
-    "instructions": "Use App Password instead of regular password. Enable 2FA and generate App Password in Yahoo Account settings.",
-    "setup_url": "https://help.yahoo.com/kb/SLN15241.html"
-  },
-  "protonmail": {
-    "name": "ProtonMail",
-    "smtp_host": "127.0.0.1",
-    "smtp_port": 1025,
-    "smtp_port_ssl": 1025,
-    "use_tls": false,
-    "use_ssl": false,
-    "requires_auth": false,
-    "app_password_required": false,
-    "instructions": "ProtonMail requires Bridge application for SMTP access. Install ProtonMail Bridge and configure it.",
-    "setup_url": "https://protonmail.com/bridge/"
+    "authentication": "login",
+    "enabled": true,
+    "icon": "https://s.yimg.com/favicon.ico",
+    "color": "#6001D2",
+    "description": "Yahoo Mail SMTP server",
+    "setup_instructions": [
+      "Enable 2-factor authentication on your Yahoo account",
+      "Generate an App Password for SyriaGPT",
+      "Use your Yahoo email address as username",
+      "Use the App Password as password"
+    ],
+    "limits": {
+      "daily_send_limit": 500,
+      "hourly_send_limit": 100,
+      "max_recipients_per_message": 100
+    }
   },
   "icloud": {
-    "name": "iCloud Mail",
-    "smtp_host": "smtp.mail.me.com",
-    "smtp_port": 587,
-    "smtp_port_ssl": 465,
+    "name": "iCloud",
+    "host": "smtp.mail.me.com",
+    "port": 587,
     "use_tls": true,
     "use_ssl": false,
-    "requires_auth": true,
-    "app_password_required": true,
-    "instructions": "Use App Password instead of regular password. Enable 2FA and generate App Password in Apple ID settings.",
-    "setup_url": "https://support.apple.com/en-us/HT208525"
+    "authentication": "login",
+    "enabled": true,
+    "icon": "https://www.icloud.com/favicon.ico",
+    "color": "#007AFF",
+    "description": "Apple iCloud SMTP server",
+    "setup_instructions": [
+      "Enable 2-factor authentication on your Apple ID",
+      "Generate an App Password for SyriaGPT",
+      "Use your iCloud email address as username",
+      "Use the App Password as password"
+    ],
+    "limits": {
+      "daily_send_limit": 200,
+      "hourly_send_limit": 50,
+      "max_recipients_per_message": 50
+    }
   },
   "zoho": {
     "name": "Zoho Mail",
-    "smtp_host": "smtp.zoho.com",
-    "smtp_port": 587,
-    "smtp_port_ssl": 465,
+    "host": "smtp.zoho.com",
+    "port": 587,
     "use_tls": true,
     "use_ssl": false,
-    "requires_auth": true,
-    "app_password_required": false,
-    "instructions": "Use your regular Zoho password or generate an App Password for better security.",
-    "setup_url": "https://www.zoho.com/mail/help/adminconsole/email-server-settings.html"
+    "authentication": "login",
+    "enabled": true,
+    "icon": "https://www.zoho.com/favicon.ico",
+    "color": "#FF6B35",
+    "description": "Zoho Mail SMTP server",
+    "setup_instructions": [
+      "Use your Zoho email address",
+      "Use your regular password",
+      "Enable IMAP access in Zoho settings"
+    ],
+    "limits": {
+      "daily_send_limit": 200,
+      "hourly_send_limit": 50,
+      "max_recipients_per_message": 50
+    }
+  },
+  "protonmail": {
+    "name": "ProtonMail",
+    "host": "smtp.protonmail.com",
+    "port": 587,
+    "use_tls": true,
+    "use_ssl": false,
+    "authentication": "login",
+    "enabled": true,
+    "icon": "https://protonmail.com/favicon.ico",
+    "color": "#8B89CC",
+    "description": "ProtonMail SMTP server",
+    "setup_instructions": [
+      "Enable SMTP in ProtonMail settings",
+      "Use your ProtonMail email address",
+      "Use your regular password"
+    ],
+    "limits": {
+      "daily_send_limit": 150,
+      "hourly_send_limit": 30,
+      "max_recipients_per_message": 50
+    }
   },
   "custom": {
-    "name": "Custom SMTP Server",
-    "smtp_host": "",
-    "smtp_port": 587,
-    "smtp_port_ssl": 465,
+    "name": "Custom SMTP",
+    "host": "",
+    "port": 587,
     "use_tls": true,
     "use_ssl": false,
-    "requires_auth": true,
-    "app_password_required": false,
-    "instructions": "Configure your custom SMTP server settings. Contact your email provider for specific settings.",
-    "setup_url": ""
+    "authentication": "login",
+    "enabled": true,
+    "icon": "https://via.placeholder.com/32x32/666666/FFFFFF?text=SMTP",
+    "color": "#666666",
+    "description": "Custom SMTP server configuration",
+    "setup_instructions": [
+      "Enter your SMTP server hostname",
+      "Configure port (usually 587 for TLS or 465 for SSL)",
+      "Enable TLS or SSL as required by your server",
+      "Enter your email credentials"
+    ],
+    "limits": {
+      "daily_send_limit": 1000,
+      "hourly_send_limit": 200,
+      "max_recipients_per_message": 200
+    }
   }
 }

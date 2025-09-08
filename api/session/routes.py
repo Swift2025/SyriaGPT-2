@@ -1,85 +1,189 @@
-# /api/session/routes.py
+"""
+Session management API routes for SyriaGPT.
+"""
 
-from fastapi import APIRouter, Request, Depends, HTTPException, status
-from typing import Optional
-
-from models.domain.user import User
-from models.schemas.request_models import LogoutRequest, RefreshTokenRequest, SessionInfoRequest
-from models.schemas.response_models import SessionListResponse, LogoutResponse, RefreshTokenResponse
-from api.session.session_management import session_manager
-from services.dependencies import get_current_user
-from config.config_loader import config_loader
 import logging
-import time
-from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
+from typing import List
+from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from sqlalchemy.ext.asyncio import AsyncSession
 
-logger = get_logger(__name__)
-router = APIRouter(prefix="/sessions", tags=["session_management"])
+from models.schemas.response_models import SessionListResponse, SessionResponse
+from services.database.database import get_db
+from services.dependencies import get_current_user
+from services.auth.session_management_service import SessionManagementService
+from config.config_loader import ConfigLoader
+
+logger = logging.getLogger(__name__)
+
+# Initialize router
+session_router = APIRouter()
+
+# Initialize services
+config = ConfigLoader()
+session_service = SessionManagementService(config)
+
+# Security scheme
+security = HTTPBearer()
 
 
-@router.get("/", response_model=SessionListResponse)
-async def get_user_sessions(current_user: User = Depends(get_current_user)):
-    """Get all sessions for the current user"""
-    return session_manager.get_user_sessions(str(current_user.id))
-
-
-@router.post("/logout", response_model=LogoutResponse)
-async def logout_session(
-    logout_data: LogoutRequest,
-    current_user: User = Depends(get_current_user)
+@session_router.get("/", response_model=SessionListResponse, tags=["Session Management"])
+async def get_user_sessions(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
 ):
-    """Logout from specific session or all sessions"""
-    return session_manager.logout_session(
-        user_id=str(current_user.id),
-        session_id=logout_data.session_id,
-        logout_all=logout_data.logout_all
-    )
-
-
-@router.post("/refresh", response_model=RefreshTokenResponse)
-async def refresh_token(refresh_data: RefreshTokenRequest):
-    log_function_entry(logger, "refresh_token")
-    start_time = time.time()
+    """Get all active sessions for the current user."""
     try:
-        """Refresh access token using refresh token"""
-        duration = time.time() - start_time
-        log_performance(logger, "refresh_token", duration)
-        log_function_exit(logger, "refresh_token", duration=duration)
-
-        return session_manager.refresh_access_token(refresh_data.refresh_token)
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "refresh_token", duration=duration)
-        logger.error(f"❌ Error in refresh_token: {e}")
-        log_function_exit(logger, "refresh_token", duration=duration)
+        # Get current user
+        from services.auth.auth import AuthService
+        auth_service = AuthService(config)
+        token = credentials.credentials
+        user = await auth_service.get_current_user(db, token)
+        
+        # Get user sessions
+        sessions = await session_service.get_user_sessions(db, user, active_only=True)
+        
+        # Convert to response format
+        session_responses = []
+        for session in sessions:
+            session_responses.append(SessionResponse(
+                id=str(session.id),
+                session_token=session.session_token,
+                is_active=session.is_active,
+                ip_address=session.ip_address,
+                user_agent=session.user_agent,
+                device_info=session.device_info,
+                location_info=session.location_info,
+                expires_at=session.expires_at,
+                last_activity_at=session.last_activity_at,
+                created_at=session.created_at
+            ))
+        
+        return SessionListResponse(
+            status="success",
+            message="Sessions retrieved successfully",
+            sessions=session_responses,
+            total_count=len(session_responses),
+            active_count=len(session_responses)
+        )
+        
+    except HTTPException:
         raise
-
-
-
-@router.delete("/cleanup")
-async def cleanup_expired_sessions():
-    """Clean up expired sessions (admin endpoint)"""
-    try:
-        cleaned_count = session_manager.cleanup_expired_sessions()
-        return {
-            "message": f"Successfully cleaned up {cleaned_count} expired sessions",
-            "cleaned_sessions": cleaned_count
-        }
     except Exception as e:
-        logger.error(f"Session cleanup failed: {e}")
+        logger.error(f"Get user sessions error: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=config_loader.get_message("errors", "session_cleanup_failed")
+            detail="Failed to retrieve sessions"
         )
 
 
-@router.get("/current")
-async def get_current_session_info(current_user: User = Depends(get_current_user)):
-    """Get current session information"""
-    # This would typically extract session_id from JWT token
-    # For now, returning basic user session info
-    return {
-        "user_id": str(current_user.id),
-        "email": current_user.email,
-        "message": "Current session information - session tracking via JWT tokens"
-    }
+@session_router.delete("/{session_id}", tags=["Session Management"])
+async def revoke_session(
+    session_id: str,
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Revoke a specific session."""
+    try:
+        # Get current user
+        from services.auth.auth import AuthService
+        auth_service = AuthService(config)
+        token = credentials.credentials
+        user = await auth_service.get_current_user(db, token)
+        
+        # Get user sessions to verify ownership
+        sessions = await session_service.get_user_sessions(db, user, active_only=False)
+        target_session = next((s for s in sessions if str(s.id) == session_id), None)
+        
+        if not target_session:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Session not found"
+            )
+        
+        # Revoke session
+        success = await session_service.revoke_session(db, target_session)
+        
+        if success:
+            return {
+                "status": "success",
+                "message": "Session revoked successfully"
+            }
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to revoke session"
+            )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Revoke session error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to revoke session"
+        )
+
+
+@session_router.delete("/", tags=["Session Management"])
+async def revoke_all_sessions(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Revoke all sessions for the current user."""
+    try:
+        # Get current user
+        from services.auth.auth import AuthService
+        auth_service = AuthService(config)
+        token = credentials.credentials
+        user = await auth_service.get_current_user(db, token)
+        
+        # Revoke all sessions
+        revoked_count = await session_service.revoke_all_user_sessions(db, user)
+        
+        return {
+            "status": "success",
+            "message": f"Revoked {revoked_count} sessions successfully",
+            "revoked_count": revoked_count
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Revoke all sessions error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to revoke sessions"
+        )
+
+
+@session_router.get("/stats", tags=["Session Management"])
+async def get_session_stats(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Get session statistics for the current user."""
+    try:
+        # Get current user
+        from services.auth.auth import AuthService
+        auth_service = AuthService(config)
+        token = credentials.credentials
+        user = await auth_service.get_current_user(db, token)
+        
+        # Get session stats
+        stats = await session_service.get_session_stats(db, user)
+        
+        return {
+            "status": "success",
+            "message": "Session statistics retrieved successfully",
+            "stats": stats
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Get session stats error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve session statistics"
+        )

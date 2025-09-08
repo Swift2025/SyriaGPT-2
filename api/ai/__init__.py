@@ -1,5 +1,5 @@
-# AI-related API endpoints
-from .intelligent_qa import router as intelligent_qa_router
-from .chat_management import router as chat_management_router
+"""
+AI services API package for SyriaGPT.
+"""
 
-__all__ = ["intelligent_qa_router", "chat_management_router"]
+__version__ = "2.0.0"

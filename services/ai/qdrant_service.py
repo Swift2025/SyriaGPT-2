@@ -42,6 +42,10 @@ class QdrantService:
             logger.error(f"Failed to connect to Qdrant: {e}")
             self.client = None
 
+    async def initialize(self):
+        """Initialize Qdrant service and ensure collection exists"""
+        await self._ensure_collection_exists()
+
     async def _ensure_collection_exists(self):
         """Create collection if it doesn't exist"""
         if not self.client:
@@ -228,7 +232,7 @@ class QdrantService:
             for variant in question_variants[1:]:
                 if variant and variant != main_question:
                     # Guard: ensure embedding_service is available
-                    if not embedding_service:
+                    if not embedding_service.is_available():
                         logger.warning("Embedding service is not available; skipping variant embedding")
                         continue
                     variant_embedding = await embedding_service.generate_embedding(variant)

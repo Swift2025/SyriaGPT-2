@@ -1,112 +1,338 @@
+"""
+Pydantic response models for SyriaGPT API.
+"""
+
 from datetime import datetime
-from typing import Optional, Dict, Any, List, Union
-from pydantic import BaseModel
+from typing import Optional, List, Dict, Any, Union
+from pydantic import BaseModel, Field
+from enum import Enum
 
 
-class UserRegistrationResponse(BaseModel):
-    id: str
-    email: str
-    phone_number: Optional[str]
-    full_name: Optional[str]
-    profile_picture: Optional[str]
-    oauth_provider: Optional[str]
-    status: str
-    is_email_verified: bool
-    is_phone_verified: bool
-    created_at: datetime
-    registration_token: Optional[str]
+class StatusEnum(str, Enum):
+    """Status enumeration."""
+    SUCCESS = "success"
+    ERROR = "error"
+    WARNING = "warning"
+    INFO = "info"
+
+
+class MessageRoleEnum(str, Enum):
+    """Message role enumeration."""
+    USER = "user"
+    ASSISTANT = "assistant"
+    SYSTEM = "system"
+
+
+class MessageTypeEnum(str, Enum):
+    """Message type enumeration."""
+    TEXT = "text"
+    IMAGE = "image"
+    FILE = "file"
+    AUDIO = "audio"
+    VIDEO = "video"
+
+
+class FeedbackTypeEnum(str, Enum):
+    """Feedback type enumeration."""
+    POSITIVE = "positive"
+    NEGATIVE = "negative"
+    NEUTRAL = "neutral"
+
+
+# Base Response Models
+class BaseResponse(BaseModel):
+    """Base response model."""
+    status: StatusEnum
     message: str
+    timestamp: datetime = Field(default_factory=datetime.utcnow)
+    request_id: Optional[str] = None
 
 
-class EmailVerificationResponse(BaseModel):
-    message: str
-    verified: bool
-    user_id: str
-    email: str
+class ErrorResponse(BaseResponse):
+    """Error response model."""
+    status: StatusEnum = StatusEnum.ERROR
+    error_code: Optional[str] = None
+    error_details: Optional[Dict[str, Any]] = None
 
 
-class OAuthProvidersResponse(BaseModel):
-    providers: list[str]
-    configured_providers: Dict[str, bool]
+class SuccessResponse(BaseResponse):
+    """Success response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    data: Optional[Dict[str, Any]] = None
 
 
-class OAuthAuthorizationResponse(BaseModel):
-    authorization_url: str
-    redirect_uri: str
-    state: str
-    provider: str
-
-
-class HealthResponse(BaseModel):
-    status: str
-    service: str
-    email_configured: bool
-    oauth_providers: list[str]
-    database_connected: bool
-    version: str
-
-
-class ErrorResponse(BaseModel):
-    error: str
-    message: str
-    details: Optional[Dict[str, Any]] = None
-    status_code: int
-
-
-class LoginResponse(BaseModel):
-    access_token: Optional[str] = None
+# Authentication Response Models
+class TokenResponse(BaseModel):
+    """Token response model."""
+    access_token: str
+    refresh_token: str
     token_type: str = "bearer"
-    user_id: str
-    email: str
-    full_name: Optional[str] = None
-    two_factor_required: bool = False
-    message: Optional[str] = None    
-
-class TwoFactorSetupResponse(BaseModel):
-    secret_key: str
-    qr_code: str # This will be a base64 encoded image string
-
-class GeneralResponse(BaseModel):
-    status: str
-    message: str
+    expires_in: int
+    expires_at: datetime
 
 
-class SMTPProviderInfo(BaseModel):
-    name: str
-    instructions: str
-    setup_url: str
-    app_password_required: bool
-
-
-# User Management Response Models
 class UserResponse(BaseModel):
+    """User response model."""
     id: str
     email: str
-    phone_number: Optional[str]
-    first_name: Optional[str]
-    last_name: Optional[str]
-    full_name: Optional[str]
-    profile_picture: Optional[str]
-    oauth_provider: Optional[str]
-    oauth_provider_id: Optional[str]
+    username: Optional[str] = None
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+    full_name: Optional[str] = None
+    display_name: str
+    avatar_url: Optional[str] = None
+    bio: Optional[str] = None
+    location: Optional[str] = None
+    website: Optional[str] = None
+    language_preference: str
+    timezone: str
+    is_active: bool
+    is_verified: bool
+    is_oauth_user: bool
     two_factor_enabled: bool
-    is_email_verified: bool
-    is_phone_verified: bool
-    status: str
-    last_login_at: Optional[datetime]
+    last_login_at: Optional[datetime] = None
     created_at: datetime
     updated_at: datetime
 
 
-class UserDetailResponse(BaseModel):
+class LoginResponse(BaseResponse):
+    """Login response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
     user: UserResponse
-    active_sessions_count: int
-    total_sessions_count: int
-    last_activity: Optional[datetime]
-    settings: Dict[str, Any]
+    tokens: TokenResponse
+    requires_two_factor: bool = False
 
 
-class UserListResponse(BaseModel):
+class RegistrationResponse(BaseResponse):
+    """Registration response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    user: UserResponse
+    message: str = "User registered successfully. Please check your email for verification."
+
+
+class EmailVerificationResponse(BaseResponse):
+    """Email verification response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    verified: bool
+    message: str
+
+
+class PasswordResetResponse(BaseResponse):
+    """Password reset response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    message: str = "Password reset email sent successfully."
+
+
+class TwoFactorSetupResponse(BaseResponse):
+    """Two-factor setup response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    qr_code: str
+    secret_key: str
+    backup_codes: List[str]
+    message: str = "Two-factor authentication setup successfully."
+
+
+class OAuthLoginResponse(BaseResponse):
+    """OAuth login response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    auth_url: str
+    state: str
+
+
+# Chat Response Models
+class ChatMessageResponse(BaseModel):
+    """Chat message response model."""
+    id: str
+    content: str
+    role: MessageRoleEnum
+    message_type: MessageTypeEnum
+    tokens_used: int
+    processing_time_ms: Optional[int] = None
+    ai_model_used: Optional[str] = None
+    context_data: Optional[Dict[str, Any]] = None
+    attachments: Optional[List[Dict[str, Any]]] = None
+    is_edited: bool
+    edited_at: Optional[datetime] = None
+    created_at: datetime
+    updated_at: datetime
+
+
+class ChatResponse(BaseModel):
+    """Chat response model."""
+    id: str
+    title: str
+    description: Optional[str] = None
+    status: str
+    ai_model: str
+    language: str
+    max_tokens: int
+    temperature: str
+    message_count: int
+    total_tokens_used: int
+    last_message_at: Optional[datetime] = None
+    settings: Optional[Dict[str, Any]] = None
+    created_at: datetime
+    updated_at: datetime
+
+
+class ChatWithMessagesResponse(ChatResponse):
+    """Chat with messages response model."""
+    messages: List[ChatMessageResponse]
+
+
+class ChatCreateResponse(BaseResponse):
+    """Chat creation response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    chat: ChatResponse
+    message: str = "Chat created successfully."
+
+
+class MessageCreateResponse(BaseResponse):
+    """Message creation response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    message: ChatMessageResponse
+    chat: ChatResponse
+    message_text: str = "Message sent successfully."
+
+
+class ChatListResponse(BaseResponse):
+    """Chat list response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    chats: List[ChatResponse]
+    total_count: int
+    page: int
+    page_size: int
+    total_pages: int
+
+
+class ChatFeedbackResponse(BaseModel):
+    """Chat feedback response model."""
+    id: str
+    feedback_type: FeedbackTypeEnum
+    rating: Optional[int] = None
+    comment: Optional[str] = None
+    feedback_data: Optional[Dict[str, Any]] = None
+    created_at: datetime
+
+
+# Intelligent QA Response Models
+class QAAnswerResponse(BaseModel):
+    """QA answer response model."""
+    answer: str
+    confidence_score: float
+    sources: Optional[List[Dict[str, Any]]] = None
+    related_questions: Optional[List[str]] = None
+    processing_time_ms: Optional[int] = None
+    ai_model_used: Optional[str] = None
+
+
+class QuestionResponse(BaseResponse):
+    """Question response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    question: str
+    answer: QAAnswerResponse
+    language: str
+    message: str = "Question processed successfully."
+
+
+class QuestionVariantResponse(BaseResponse):
+    """Question variant response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    original_question: str
+    variants: List[str]
+    language: str
+    message: str = "Question variants generated successfully."
+
+
+class NewsArticleResponse(BaseModel):
+    """News article response model."""
+    title: str
+    content: str
+    url: str
+    source: str
+    published_at: Optional[datetime] = None
+    author: Optional[str] = None
+    image_url: Optional[str] = None
+    summary: Optional[str] = None
+
+
+class NewsScrapingResponse(BaseResponse):
+    """News scraping response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    query: str
+    articles: List[NewsArticleResponse]
+    total_found: int
+    language: str
+    message: str = "News articles scraped successfully."
+
+
+# SMTP Configuration Response Models
+class SMTPProviderResponse(BaseModel):
+    """SMTP provider response model."""
+    name: str
+    host: str
+    port: int
+    use_tls: bool
+    use_ssl: bool
+    authentication: str
+    enabled: bool
+    icon: Optional[str] = None
+    color: Optional[str] = None
+    description: Optional[str] = None
+    setup_instructions: Optional[List[str]] = None
+    limits: Optional[Dict[str, Any]] = None
+
+
+class SMTPConfigResponse(BaseResponse):
+    """SMTP configuration response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    provider: SMTPProviderResponse
+    configured: bool
+    message: str = "SMTP configuration retrieved successfully."
+
+
+class SMTPTestResponse(BaseResponse):
+    """SMTP test response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    success: bool
+    message: str
+    test_details: Optional[Dict[str, Any]] = None
+
+
+# Session Management Response Models
+class SessionResponse(BaseModel):
+    """Session response model."""
+    id: str
+    session_token: str
+    is_active: bool
+    ip_address: Optional[str] = None
+    user_agent: Optional[str] = None
+    device_info: Optional[Dict[str, Any]] = None
+    location_info: Optional[Dict[str, Any]] = None
+    expires_at: datetime
+    last_activity_at: datetime
+    created_at: datetime
+
+
+class SessionListResponse(BaseResponse):
+    """Session list response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    sessions: List[SessionResponse]
+    total_count: int
+    active_count: int
+
+
+class SessionRefreshResponse(BaseResponse):
+    """Session refresh response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    tokens: TokenResponse
+    message: str = "Session refreshed successfully."
+
+
+# User Management Response Models
+class UserListResponse(BaseResponse):
+    """User list response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
     users: List[UserResponse]
     total_count: int
     page: int
@@ -114,135 +340,103 @@ class UserListResponse(BaseModel):
     total_pages: int
 
 
-class UserStatsResponse(BaseModel):
-    total_users: int
-    active_users: int
-    suspended_users: int
-    banned_users: int
-    pending_verification: int
-    email_verified_users: int
-    phone_verified_users: int
-    oauth_users: int
-    two_factor_enabled_users: int
-    users_created_today: int
-    users_created_this_week: int
-    users_created_this_month: int
-
-
-class UserUpdateResponse(BaseModel):
+class UserUpdateResponse(BaseResponse):
+    """User update response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
     user: UserResponse
-    message: str
+    message: str = "User updated successfully."
 
 
-class UserPasswordChangeResponse(BaseModel):
-    message: str
-    password_changed_at: datetime
+class UserPreferencesResponse(BaseResponse):
+    """User preferences response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    preferences: Dict[str, Any]
+    notification_settings: Dict[str, Any]
+    message: str = "User preferences retrieved successfully."
 
 
-class UserBulkActionResponse(BaseModel):
-    success_count: int
-    failed_count: int
-    failed_users: List[Dict[str, str]]
-    message: str
+# Health Check Response Models
+class ServiceHealthResponse(BaseModel):
+    """Service health response model."""
+    service: str
+    status: str
+    response_time_ms: Optional[int] = None
+    last_check: datetime
+    details: Optional[Dict[str, Any]] = None
 
 
-# Session Management Response Models
-class SessionResponse(BaseModel):
+class HealthCheckResponse(BaseResponse):
+    """Health check response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    overall_status: str
+    services: List[ServiceHealthResponse]
+    uptime_seconds: int
+    version: str
+    environment: str
+
+
+# Analytics Response Models
+class AnalyticsResponse(BaseResponse):
+    """Analytics response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    metrics: Dict[str, Any]
+    period: Dict[str, datetime]
+    message: str = "Analytics data retrieved successfully."
+
+
+# Search Response Models
+class SearchResultResponse(BaseModel):
+    """Search result response model."""
     id: str
-    user_id: str
-    session_token: str
-    device_info: Optional[str]
-    ip_address: Optional[str]
-    user_agent: Optional[str]
-    location: Optional[str]
-    is_active: bool
-    is_mobile: bool
-    last_activity_at: datetime
-    expires_at: datetime
+    title: str
+    content: str
+    relevance_score: float
+    category: Optional[str] = None
+    tags: Optional[List[str]] = None
     created_at: datetime
     updated_at: datetime
 
 
-class SessionDetailResponse(BaseModel):
-    session: SessionResponse
-    user: Optional[UserResponse]
-    device_summary: Optional[str]
-    location_info: Optional[Dict[str, Any]]
-
-
-class SessionListResponse(BaseModel):
-    sessions: List[SessionResponse]
+class SearchResponse(BaseResponse):
+    """Search response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    query: str
+    results: List[SearchResultResponse]
     total_count: int
     page: int
     page_size: int
     total_pages: int
+    search_time_ms: int
+    message: str = "Search completed successfully."
 
 
-class SessionStatsResponse(BaseModel):
-    total_sessions: int
-    active_sessions: int
-    expired_sessions: int
-    mobile_sessions: int
-    desktop_sessions: int
-    sessions_created_today: int
-    sessions_created_this_week: int
-    average_session_duration_hours: float
+# File Upload Response Models
+class FileUploadResponse(BaseResponse):
+    """File upload response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    file_id: str
+    filename: str
+    file_size: int
+    content_type: str
+    upload_url: Optional[str] = None
+    message: str = "File uploaded successfully."
 
 
-class SessionCreateResponse(BaseModel):
-    session: SessionResponse
-    access_token: str
-    refresh_token: Optional[str]
+# Bulk Operations Response Models
+class BulkOperationResponse(BaseResponse):
+    """Bulk operation response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    operation: str
+    total_items: int
+    successful_items: int
+    failed_items: int
+    errors: Optional[List[Dict[str, Any]]] = None
     message: str
 
 
-class SessionUpdateResponse(BaseModel):
-    session: SessionResponse
-    message: str
-
-
-class SessionBulkActionResponse(BaseModel):
-    success_count: int
-    failed_count: int
-    failed_sessions: List[Dict[str, str]]
-    message: str
-
-
-# Settings Management Response Models
-class UserSettingsResponse(BaseModel):
-    user_id: str
-    email_notifications: bool
-    sms_notifications: bool
-    two_factor_enabled: bool
-    session_timeout_hours: int
-    max_concurrent_sessions: int
-    language: str
-    timezone: str
-    theme: str
-    updated_at: datetime
-
-
-class SystemSettingsResponse(BaseModel):
-    max_users: Optional[int]
-    max_sessions_per_user: int
-    session_timeout_hours: int
-    password_expiry_days: int
-    require_email_verification: bool
-    require_phone_verification: bool
-    allow_oauth_registration: bool
-    allow_oauth_login: bool
-    maintenance_mode: bool
-    maintenance_message: Optional[str]
-    updated_at: datetime
-
-
-class SettingsUpdateResponse(BaseModel):
-    settings: Union[UserSettingsResponse, SystemSettingsResponse]
-    message: str
-
-
-# Pagination and Search Response Models
+# Pagination Models
 class PaginationInfo(BaseModel):
+    """Pagination information model."""
     page: int
     page_size: int
     total_count: int
@@ -251,175 +445,28 @@ class PaginationInfo(BaseModel):
     has_previous: bool
 
 
-class SearchResponse(BaseModel):
-    items: List[Any]
+class PaginatedResponse(BaseResponse):
+    """Paginated response model."""
     pagination: PaginationInfo
-    filters_applied: Dict[str, Any]
 
 
-# SMTP Configuration Response Models
-class SMTPProvidersResponse(BaseModel):
-    providers: Dict[str, SMTPProviderInfo]
-    supported_domains: Dict[str, str]
+# API Documentation Models
+class APIEndpointResponse(BaseModel):
+    """API endpoint response model."""
+    path: str
+    method: str
+    summary: str
+    description: Optional[str] = None
+    parameters: Optional[List[Dict[str, Any]]] = None
+    responses: Optional[Dict[str, Any]] = None
+    tags: Optional[List[str]] = None
 
 
-class SMTPTestResponse(BaseModel):
-    success: bool
-    message: str
-    provider_detected: Optional[str] = None
-    provider_info: Optional[SMTPProviderInfo] = None
-
-
-class SMTPConfigResponse(BaseModel):
-    success: bool
-    message: str
-    provider: str
-    host: str
-    port: int
-    use_ssl: bool
-    use_tls: bool
-
-
-# AI Chat Management Response Models
-class ChatResponse(BaseModel):
-    id: str
-    user_id: str
-    title: Optional[str]
-    description: Optional[str]
-    context: Optional[str]
-    language: str
-    model_preference: str
-    max_tokens: int
-    temperature: float
-    message_count: int
-    is_archived: bool
-    is_pinned: bool
-    last_message_at: Optional[datetime]
-    created_at: datetime
-    updated_at: datetime
-
-
-class ChatMessageResponse(BaseModel):
-    id: str
-    chat_id: str
-    user_id: str
-    message: str
-    message_type: str
-    attachments: Optional[List[str]]
-    context: Optional[str]
-    language: str
-    priority: str
-    is_ai_response: bool
-    ai_model_used: Optional[str]
-    processing_time_ms: Optional[int]
-    confidence_score: Optional[float]
-    feedback_rating: Optional[int]
-    feedback_comment: Optional[str]
-    created_at: datetime
-
-
-class ChatDetailResponse(BaseModel):
-    chat: ChatResponse
-    messages: List[ChatMessageResponse]
-    user: Optional[UserResponse]
-    analytics: Optional[Dict[str, Any]]
-
-
-class ChatListResponse(BaseModel):
-    chats: List[ChatResponse]
-    total_count: int
-    page: int
-    page_size: int
-    total_pages: int
-
-
-class ChatCreateResponse(BaseModel):
-    chat: ChatResponse
-    message: str
-
-
-class ChatUpdateResponse(BaseModel):
-    chat: ChatResponse
-    message: str
-
-
-class ChatMessageCreateResponse(BaseModel):
-    user_message: ChatMessageResponse
-    ai_response: Optional[ChatMessageResponse]
-    processing_time_ms: int
-    message: str
-
-
-class ChatBulkActionResponse(BaseModel):
-    success_count: int
-    failed_count: int
-    failed_chats: List[Dict[str, str]]
-    message: str
-
-
-class ChatExportResponse(BaseModel):
-    export_id: str
-    format: str
-    download_url: Optional[str]
-    file_size_bytes: Optional[int]
-    expires_at: datetime
-    message: str
-
-
-class ChatAnalyticsResponse(BaseModel):
-    total_chats: int
-    total_messages: int
-    ai_responses: int
-    average_response_time_ms: float
-    user_satisfaction_score: float
-    most_used_language: str
-    most_used_model: str
-    daily_stats: List[Dict[str, Any]]
-    weekly_stats: List[Dict[str, Any]]
-    monthly_stats: List[Dict[str, Any]]
-
-
-class ChatFeedbackResponse(BaseModel):
-    message_id: str
-    rating: int
-    feedback_type: str
-    comment: Optional[str]
-    category: Optional[str]
-    created_at: datetime
-    message: str
-
-
-class ChatSettingsResponse(BaseModel):
-    user_id: str
-    default_language: str
-    default_model: str
-    default_max_tokens: int
-    default_temperature: float
-    auto_archive_after_days: int
-    max_chats_per_user: int
-    max_messages_per_chat: int
-    enable_voice_input: bool
-    enable_file_upload: bool
-    enable_image_analysis: bool
-    enable_context_memory: bool
-    enable_chat_history: bool
-    enable_analytics: bool
-    enable_feedback: bool
-    updated_at: datetime
-
-
-class ChatStatsResponse(BaseModel):
-    total_chats: int
-    active_chats: int
-    archived_chats: int
-    pinned_chats: int
-    total_messages: int
-    ai_responses: int
-    average_messages_per_chat: float
-    average_response_time_ms: float
-    chats_created_today: int
-    chats_created_this_week: int
-    chats_created_this_month: int
-    most_active_hour: int
-    most_used_language: str
-    most_used_model: str    
+class APIDocumentationResponse(BaseResponse):
+    """API documentation response model."""
+    status: StatusEnum = StatusEnum.SUCCESS
+    title: str
+    version: str
+    description: str
+    endpoints: List[APIEndpointResponse]
+    message: str = "API documentation retrieved successfully."

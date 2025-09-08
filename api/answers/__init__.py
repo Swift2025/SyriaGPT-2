@@ -1,4 +1,5 @@
-# Answer-related API endpoints
-# Note: answers.py has been removed
+"""
+Answers API package for SyriaGPT.
+"""
 
-__all__ = []
+__version__ = "2.0.0"

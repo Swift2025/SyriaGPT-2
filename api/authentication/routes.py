@@ -1,341 +1,635 @@
-# /api/authentication/routes.py
+"""
+Authentication API routes for SyriaGPT.
+"""
 
-from fastapi import APIRouter, Request, HTTPException, status, Query, Depends
-from fastapi.responses import RedirectResponse
-from sqlalchemy.orm import Session
-from typing import Optional
 import logging
-import time
+from datetime import datetime, timedelta
+from typing import Optional
+from fastapi import APIRouter, Depends, HTTPException, status, Request
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from models.domain.user import User
-from models.schemas.request_models import UserLoginRequest, SocialLoginRequest, UserRegistrationRequest, ForgotPasswordRequest, ResetPasswordRequest, TwoFactorVerifyRequest, OAuthRefreshRequest
-from models.schemas.response_models import LoginResponse, ErrorResponse, UserRegistrationResponse, EmailVerificationResponse, OAuthProvidersResponse, OAuthAuthorizationResponse, HealthResponse, TwoFactorSetupResponse, GeneralResponse
-from .authentication import AuthenticationService
-from .registration import RegistrationService
-from .two_factor import TwoFactorService
-from services.auth import get_forgot_password_service
-from services.dependencies import get_current_user, limiter
-from config.config_loader import config_loader
-from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
-from services.database.database import get_db
-from services.auth import get_auth_service
-
-logger = get_logger(__name__)
-
-authentication_service = AuthenticationService()
-registration_service = RegistrationService()
-two_factor_service = TwoFactorService()
-
-logger.debug("Authentication services initialized")
-
-router = APIRouter(prefix="/auth", tags=["authentication"])
-
-
-@router.post(
-    "/login",
-    response_model=LoginResponse,
-    responses={401: {"model": ErrorResponse}}
+from models.schemas.request_models import (
+    UserRegistrationRequest,
+    UserLoginRequest,
+    PasswordResetRequest,
+    PasswordResetConfirmRequest,
+    EmailVerificationRequest,
+    TwoFactorSetupRequest,
+    TwoFactorVerifyRequest,
+    OAuthLoginRequest,
+    OAuthCallbackRequest
 )
-async def login_user(login_data: UserLoginRequest, db: Session = Depends(get_db)):
-    log_function_entry(logger, "login_user", user_email=login_data.email)
-    start_time = time.time()
-    
-    try:
-        logger.debug(f"🔍 Login attempt for user: {login_data.email}")
-        result = await authentication_service.login_user(login_data, db)
-        
-        if 'access_token' in result:
-            duration = time.time() - start_time
-            log_performance(logger, "User login (success)", duration, user_email=login_data.email)
-            logger.debug(f"✅ Login successful for user: {login_data.email}")
-        else:
-            duration = time.time() - start_time
-            log_performance(logger, "User login (failed)", duration, user_email=login_data.email)
-            logger.debug(f"❌ Login failed for user: {login_data.email}")
-        
-        log_function_exit(logger, "login_user", result="success" if 'access_token' in result else "failed", duration=time.time() - start_time)
-        return result
-        
-    except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "login_user", user_email=login_data.email, duration=duration)
-        logger.error(f"❌ Login error for user {login_data.email}: {e}")
-        log_function_exit(logger, "login_user", duration=duration)
-        raise
+from models.schemas.response_models import (
+    LoginResponse,
+    RegistrationResponse,
+    EmailVerificationResponse,
+    PasswordResetResponse,
+    TwoFactorSetupResponse,
+    OAuthLoginResponse,
+    TokenResponse,
+    UserResponse
+)
+from services.database.database import get_db
+from services.auth.auth import AuthService
+from services.auth.oauth_service import OAuthService
+from services.auth.two_factor_auth_service import TwoFactorAuthService
+from services.auth.user_management_service import UserManagementService
+from services.auth.session_management_service import SessionManagementService
+from services.auth.forgot_password_service import ForgotPasswordService
+from services.email.email_service import EmailService
+from config.config_loader import ConfigLoader
+
+logger = logging.getLogger(__name__)
+
+# Initialize router
+auth_router = APIRouter()
+
+# Initialize services
+config = ConfigLoader()
+auth_service = AuthService(config)
+oauth_service = OAuthService(config)
+two_factor_service = TwoFactorAuthService(config)
+user_management_service = UserManagementService(config)
+session_management_service = SessionManagementService(config)
+forgot_password_service = ForgotPasswordService(config)
+email_service = EmailService(config)
+
+# Security scheme
+security = HTTPBearer()
 
 
-@router.post("/register", response_model=UserRegistrationResponse, status_code=status.HTTP_201_CREATED)
-async def register_user(registration_data: UserRegistrationRequest, db: Session = Depends(get_db)):
-    log_function_entry(logger, "register_user", user_email=registration_data.email, first_name=registration_data.first_name, last_name=registration_data.last_name)
-    start_time = time.time()
-    
+@auth_router.post("/register", response_model=RegistrationResponse, tags=["Authentication"])
+async def register_user(
+    request: UserRegistrationRequest,
+    db: AsyncSession = Depends(get_db)
+):
+    """Register a new user."""
     try:
-        logger.debug(f"🔍 Registration attempt for user: {registration_data.email}")
-        result, error, status_code = await registration_service.register_user(registration_data, db)
+        # Create user
+        user = await user_management_service.create_user(
+            db=db,
+            email=request.email,
+            password=request.password,
+            username=request.username,
+            first_name=request.first_name,
+            last_name=request.last_name,
+            language_preference=request.language_preference,
+            timezone=request.timezone
+        )
         
-        if error:
-            duration = time.time() - start_time
-            log_performance(logger, "User registration (failed)", duration, user_email=registration_data.email, error=error)
-            logger.warning(f"❌ Registration failed for {registration_data.email}: {error}")
-            log_function_exit(logger, "register_user", result="failed", duration=duration)
-            raise HTTPException(status_code=status_code, detail=error)
+        # Generate email verification token
+        verification_token = auth_service.create_access_token(
+            {"sub": str(user.id), "email": user.email, "type": "email_verification"},
+            timedelta(hours=24)
+        )
         
-        duration = time.time() - start_time
-        log_performance(logger, "User registration (success)", duration, user_email=registration_data.email)
-        logger.debug(f"✅ Registration successful for user: {registration_data.email}")
-        log_function_exit(logger, "register_user", result="success", duration=duration)
-        return result
+        # Update user with verification token
+        user.email_verification_token = verification_token
+        user.email_verification_expires = datetime.utcnow() + timedelta(hours=24)
+        await db.commit()
+        
+        # Send verification email
+        try:
+            await email_service.send_verification_email(user, verification_token)
+        except Exception as e:
+            logger.error(f"Failed to send verification email: {e}")
+        
+        # Create user response
+        user_response = UserResponse(
+            id=str(user.id),
+            email=user.email,
+            username=user.username,
+            first_name=user.first_name,
+            last_name=user.last_name,
+            full_name=user.full_name,
+            display_name=user.display_name,
+            avatar_url=user.avatar_url,
+            bio=user.bio,
+            location=user.location,
+            website=user.website,
+            language_preference=user.language_preference,
+            timezone=user.timezone,
+            is_active=user.is_active,
+            is_verified=user.is_verified,
+            is_oauth_user=user.is_oauth_user,
+            two_factor_enabled=user.two_factor_enabled,
+            last_login_at=user.last_login_at,
+            created_at=user.created_at,
+            updated_at=user.updated_at
+        )
+        
+        return RegistrationResponse(
+            status="success",
+            message="User registered successfully. Please check your email for verification.",
+            user=user_response
+        )
         
     except HTTPException:
         raise
     except Exception as e:
-        duration = time.time() - start_time
-        log_error_with_context(logger, e, "register_user", user_email=registration_data.email, duration=duration)
-        logger.error(f"❌ Registration error for user {registration_data.email}: {e}")
-        log_function_exit(logger, "register_user", duration=duration)
-        raise
-
-
-@router.get("/verify-email/{token}", response_model=EmailVerificationResponse)
-async def verify_email(token: str, db: Session = Depends(get_db)):
-    success, response, status_code = await registration_service.verify_email(token, db)
-    
-    if not success:
-        error_msg = config_loader.get_message("verification", "invalid_token")
-        raise HTTPException(status_code=status_code, detail=error_msg)
-    
-    return response
-
-
-# Removed duplicate GET route - using POST only
-
-
-@router.post("/oauth/{provider}/authorize", response_model=OAuthAuthorizationResponse)
-async def oauth_authorize_post(
-    provider: str,
-    request: Request
-):
-    # Get redirect_uri from request body
-    try:
-        body = await request.json()
-        redirect_uri = body.get('redirect_uri')
-    except:
-        redirect_uri = None
-    
-    # Default to frontend callback if not provided
-    if not redirect_uri:
-        redirect_uri = "http://localhost:3000/en/auth/oauth/google/callback"
-    
-    response, error, status_code = registration_service.get_oauth_authorization_url(provider, redirect_uri)
-    
-    if error:
-        raise HTTPException(status_code=status_code, detail=error)
-    
-    return response
-
-
-@router.get("/oauth/{provider}/callback", response_model=LoginResponse)
-async def oauth_callback(
-    provider: str,
-    code: str = Query(...),
-    state: Optional[str] = Query(None),
-    error: Optional[str] = Query(None),
-    redirect_uri: Optional[str] = Query(None),
-    request: Request = None,
-    db: Session = Depends(get_db)
-):
-    """
-    OAuth callback endpoint - handles both user registration and login.
-    If user exists, logs them in. If user doesn't exist, registers and logs them in.
-    """
-    if error:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"OAuth error: {error}"
-        )
-    
-    # Use the redirect_uri from query params or default to frontend
-    if not redirect_uri:
-        redirect_uri = "http://localhost:3000/en/auth/oauth/google/callback"
-    
-    # Use social_login method which handles both registration and login
-    from models.schemas.request_models import SocialLoginRequest
-    social_request = SocialLoginRequest(
-        provider=provider,
-        code=code,
-        redirect_uri=redirect_uri
-    )
-    
-    return await authentication_service.social_login(social_request, request, db)
-
-
-@router.get("/oauth/{provider}/callback/redirect")
-async def oauth_callback_redirect(
-    provider: str,
-    code: str = Query(...),
-    state: Optional[str] = Query(None),
-    error: Optional[str] = Query(None)
-):
-    """Redirect OAuth callback to frontend"""
-    if error:
-        return RedirectResponse(f"http://localhost:3000/en/login?error={error}")
-    
-    # Redirect to frontend with code and state
-    frontend_url = f"http://localhost:3000/en/auth/oauth/{provider}/callback?code={code}"
-    if state:
-        frontend_url += f"&state={state}"
-    
-    return RedirectResponse(frontend_url)
-
-
-
-@router.get("/oauth-status")
-async def oauth_status():
-    """Check OAuth providers status"""
-    from services.auth.oauth_service import get_oauth_service
-    
-    oauth_service = get_oauth_service()
-    available_providers = oauth_service.get_available_providers()
-    
-    status_info = {}
-    for provider_name in ["google"]:
-        provider = oauth_service.get_provider(provider_name)
-        status_info[provider_name] = {
-            "configured": provider is not None,
-            "available": provider_name in available_providers
-        }
-    
-    return {
-        "status": "success",
-        "providers": status_info,
-        "available_providers": available_providers,
-        "total_configured": len(available_providers)
-    }
-
-@router.get("/health", response_model=HealthResponse)
-async def health_check(db: Session = Depends(get_db)):
-    return registration_service.get_health_status(db)
-
-@router.get("/oauth/providers", response_model=OAuthProvidersResponse)
-async def get_oauth_providers():
-    """
-    Get available OAuth providers
-    """
-    try:
-        from services.auth import get_oauth_service
-        oauth_service = get_oauth_service()
-        
-        providers = []
-        configured_providers = {}
-        for provider_name, provider in oauth_service.providers.items():
-            providers.append(provider_name)
-            configured_providers[provider_name] = True
-        
-        return OAuthProvidersResponse(
-            providers=providers,
-            configured_providers=configured_providers
-        )
-    except Exception as e:
-        logger.error(f"Error getting OAuth providers: {e}")
-        raise HTTPException(status_code=500, detail="Failed to get OAuth providers")
-
-@router.post("/oauth/{provider}/refresh", response_model=LoginResponse)
-async def refresh_oauth_token(
-    provider: str,
-    refresh_request: OAuthRefreshRequest,
-    db: Session = Depends(get_db)
-):
-    """
-    Refresh OAuth token for a user
-    
-    This endpoint allows users to refresh their OAuth access tokens using their email
-    and the stored refresh token. The provider parameter in the URL must match the
-    user's OAuth provider.
-    """
-    from services.auth import get_oauth_service
-    from services.repositories import get_user_repository
-    
-    oauth_service = get_oauth_service()
-    user_repo = get_user_repository()
-    
-    # Validate that the provider in URL matches the request
-    if refresh_request.provider != provider:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Provider mismatch: URL provider must match request provider"
-        )
-    
-    user = user_repo.get_user_by_email(db, refresh_request.email)
-    if not user or user.oauth_provider != provider:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="OAuth user not found"
-        )
-    
-    if not user.oauth_refresh_token:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="No refresh token available for this user"
-        )
-    
-    # Refresh the OAuth token
-    new_tokens = await oauth_service.refresh_oauth_token(provider, user.oauth_refresh_token)
-    if not new_tokens:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Failed to refresh OAuth token"
-        )
-    
-    # Update user's OAuth tokens
-    success, error = user_repo.update_oauth_tokens(
-        db, 
-        str(user.id), 
-        new_tokens['access_token'],
-        new_tokens.get('refresh_token'),
-        new_tokens.get('expires_in')
-    )
-    
-    if not success:
+        logger.error(f"User registration error: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to update OAuth tokens: {error}"
+            detail="Registration failed"
         )
-    
-    # Create new JWT access token
-    auth_service = get_auth_service()
-    access_token = auth_service.create_access_token(data={"sub": user.email})
-    
-    return LoginResponse(
-        access_token=access_token,
-        user_id=str(user.id),
-        email=user.email,
-        full_name=user.full_name,
-        message="OAuth token refreshed successfully"
-    )
 
-@router.post("/forgot-password")
-async def forgot_password(request: ForgotPasswordRequest, db: Session = Depends(get_db)):
-    forgot_password_service = get_forgot_password_service(db)
-    token = forgot_password_service.create_reset_token(request.email)
-    await forgot_password_service.send_reset_email(request.email, token)
-    return {"msg": "تم إرسال رابط إعادة التعيين إلى بريدك الإلكتروني"}
 
-# Endpoint: إعادة التعيين
-@router.post("/reset-password")
-def reset_password(request: ResetPasswordRequest, db: Session = Depends(get_db)):
-    forgot_password_service = get_forgot_password_service(db)
-    forgot_password_service.reset_password(request.token, request.new_password, request.confirm_password)
-    return {"msg": "تمت إعادة تعيين كلمة المرور بنجاح، وتم تسجيل خروجك من جميع الأجهزة"}
+@auth_router.post("/login", response_model=LoginResponse, tags=["Authentication"])
+async def login_user(
+    request: UserLoginRequest,
+    db: AsyncSession = Depends(get_db)
+):
+    """Login user with email and password."""
+    try:
+        # Authenticate user
+        user = await auth_service.authenticate_user(db, request.email, request.password)
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid email or password"
+            )
+        
+        # Check if 2FA is required
+        if user.two_factor_enabled and not request.two_factor_code:
+            return LoginResponse(
+                status="success",
+                message="Two-factor authentication required",
+                user=UserResponse(
+                    id=str(user.id),
+                    email=user.email,
+                    username=user.username,
+                    first_name=user.first_name,
+                    last_name=user.last_name,
+                    full_name=user.full_name,
+                    display_name=user.display_name,
+                    avatar_url=user.avatar_url,
+                    bio=user.bio,
+                    location=user.location,
+                    website=user.website,
+                    language_preference=user.language_preference,
+                    timezone=user.timezone,
+                    is_active=user.is_active,
+                    is_verified=user.is_verified,
+                    is_oauth_user=user.is_oauth_user,
+                    two_factor_enabled=user.two_factor_enabled,
+                    last_login_at=user.last_login_at,
+                    created_at=user.created_at,
+                    updated_at=user.updated_at
+                ),
+                tokens=None,
+                requires_two_factor=True
+            )
+        
+        # Verify 2FA code if provided
+        if user.two_factor_enabled and request.two_factor_code:
+            if not await two_factor_service.verify_two_factor(db, user, request.two_factor_code):
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Invalid two-factor authentication code"
+                )
+        
+        # Create tokens
+        access_token, refresh_token = auth_service.create_token_pair(user)
+        
+        # Create session
+        session = await session_management_service.create_session(
+            db=db,
+            user=user,
+            access_token=access_token,
+            refresh_token=refresh_token,
+            remember_me=request.remember_me
+        )
+        
+        # Create token response
+        token_response = TokenResponse(
+            access_token=access_token,
+            refresh_token=refresh_token,
+            token_type="bearer",
+            expires_in=auth_service.access_token_expire_minutes * 60,
+            expires_at=datetime.utcnow() + timedelta(minutes=auth_service.access_token_expire_minutes)
+        )
+        
+        # Create user response
+        user_response = UserResponse(
+            id=str(user.id),
+            email=user.email,
+            username=user.username,
+            first_name=user.first_name,
+            last_name=user.last_name,
+            full_name=user.full_name,
+            display_name=user.display_name,
+            avatar_url=user.avatar_url,
+            bio=user.bio,
+            location=user.location,
+            website=user.website,
+            language_preference=user.language_preference,
+            timezone=user.timezone,
+            is_active=user.is_active,
+            is_verified=user.is_verified,
+            is_oauth_user=user.is_oauth_user,
+            two_factor_enabled=user.two_factor_enabled,
+            last_login_at=user.last_login_at,
+            created_at=user.created_at,
+            updated_at=user.updated_at
+        )
+        
+        return LoginResponse(
+            status="success",
+            message="Login successful",
+            user=user_response,
+            tokens=token_response,
+            requires_two_factor=False
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"User login error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Login failed"
+        )
 
-@router.post("/2fa/setup", response_model=TwoFactorSetupResponse)
-def setup_2fa_endpoint(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
-    return two_factor_service.setup_2fa(current_user, db)
 
-@router.post("/2fa/verify", response_model=GeneralResponse)
-@limiter.limit("5/minute")
-def verify_2fa_endpoint(request: Request, verify_data: TwoFactorVerifyRequest, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
-    return two_factor_service.verify_and_enable_2fa(current_user, verify_data, db)
+@auth_router.post("/logout", tags=["Authentication"])
+async def logout_user(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Logout user and revoke session."""
+    try:
+        token = credentials.credentials
+        await session_management_service.revoke_session_by_token(db, token)
+        
+        return {
+            "status": "success",
+            "message": "Logout successful"
+        }
+        
+    except Exception as e:
+        logger.error(f"User logout error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Logout failed"
+        )
 
-@router.post("/2fa/disable", response_model=GeneralResponse)
-def disable_2fa_endpoint(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
-    return two_factor_service.disable_2fa(current_user, db)
+
+@auth_router.post("/verify-email", response_model=EmailVerificationResponse, tags=["Authentication"])
+async def verify_email(
+    request: EmailVerificationRequest,
+    db: AsyncSession = Depends(get_db)
+):
+    """Verify user email address."""
+    try:
+        # Verify token
+        payload = auth_service.verify_token(request.token, "email_verification")
+        user_id = payload.get("sub")
+        
+        if not user_id:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Invalid verification token"
+            )
+        
+        # Get user
+        user = await auth_service.get_user_by_id(db, user_id)
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="User not found"
+            )
+        
+        # Check if already verified
+        if user.is_verified:
+            return EmailVerificationResponse(
+                status="success",
+                message="Email already verified",
+                verified=True
+            )
+        
+        # Verify email
+        user.is_verified = True
+        user.email_verified_at = datetime.utcnow()
+        user.email_verification_token = None
+        user.email_verification_expires = None
+        
+        await db.commit()
+        
+        return EmailVerificationResponse(
+            status="success",
+            message="Email verified successfully",
+            verified=True
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Email verification error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Email verification failed"
+        )
+
+
+@auth_router.post("/forgot-password", response_model=PasswordResetResponse, tags=["Authentication"])
+async def forgot_password(
+    request: PasswordResetRequest,
+    db: AsyncSession = Depends(get_db)
+):
+    """Send password reset email."""
+    try:
+        await forgot_password_service.send_password_reset_email(db, request.email)
+        
+        return PasswordResetResponse(
+            status="success",
+            message="Password reset email sent successfully"
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Forgot password error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to send password reset email"
+        )
+
+
+@auth_router.post("/reset-password", tags=["Authentication"])
+async def reset_password(
+    request: PasswordResetConfirmRequest,
+    db: AsyncSession = Depends(get_db)
+):
+    """Reset user password with token."""
+    try:
+        await forgot_password_service.reset_password_with_token(
+            db, request.token, request.new_password
+        )
+        
+        return {
+            "status": "success",
+            "message": "Password reset successfully"
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Password reset error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Password reset failed"
+        )
+
+
+@auth_router.post("/2fa/setup", response_model=TwoFactorSetupResponse, tags=["Two-Factor Authentication"])
+async def setup_two_factor(
+    request: TwoFactorSetupRequest,
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Setup two-factor authentication for user."""
+    try:
+        token = credentials.credentials
+        user = await auth_service.get_current_user(db, token)
+        
+        setup_info = await two_factor_service.setup_two_factor(db, user, request.password)
+        
+        return TwoFactorSetupResponse(
+            status="success",
+            message="Two-factor authentication setup successfully",
+            qr_code=setup_info["qr_code"],
+            secret_key=setup_info["secret"],
+            backup_codes=setup_info["backup_codes"]
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"2FA setup error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Two-factor authentication setup failed"
+        )
+
+
+@auth_router.post("/2fa/verify", tags=["Two-Factor Authentication"])
+async def verify_two_factor(
+    request: TwoFactorVerifyRequest,
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Verify two-factor authentication code."""
+    try:
+        token = credentials.credentials
+        user = await auth_service.get_current_user(db, token)
+        
+        if await two_factor_service.verify_two_factor(db, user, request.code):
+            return {
+                "status": "success",
+                "message": "Two-factor authentication verified successfully"
+            }
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Invalid two-factor authentication code"
+            )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"2FA verification error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Two-factor authentication verification failed"
+        )
+
+
+@auth_router.post("/2fa/disable", tags=["Two-Factor Authentication"])
+async def disable_two_factor(
+    request: TwoFactorSetupRequest,
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Disable two-factor authentication for user."""
+    try:
+        token = credentials.credentials
+        user = await auth_service.get_current_user(db, token)
+        
+        await two_factor_service.disable_two_factor(db, user, request.password)
+        
+        return {
+            "status": "success",
+            "message": "Two-factor authentication disabled successfully"
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"2FA disable error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to disable two-factor authentication"
+        )
+
+
+@auth_router.get("/oauth/{provider}", response_model=OAuthLoginResponse, tags=["OAuth"])
+async def oauth_login(provider: str, request: Request):
+    """Initiate OAuth login with provider."""
+    try:
+        auth_url, state = oauth_service.get_oauth_authorization_url(provider)
+        
+        return OAuthLoginResponse(
+            status="success",
+            message=f"OAuth login initiated with {provider}",
+            auth_url=auth_url,
+            state=state
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"OAuth login error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="OAuth login failed"
+        )
+
+
+@auth_router.post("/oauth/{provider}/callback", response_model=LoginResponse, tags=["OAuth"])
+async def oauth_callback(
+    provider: str,
+    request: OAuthCallbackRequest,
+    db: AsyncSession = Depends(get_db)
+):
+    """Handle OAuth callback."""
+    try:
+        # Exchange code for token
+        tokens = await oauth_service.exchange_code_for_token(provider, request.code, request.state)
+        
+        # Get user info
+        user_info = await oauth_service.get_user_info(provider, tokens["access_token"])
+        
+        # Normalize user info
+        normalized_info = oauth_service.normalize_user_info(provider, user_info)
+        
+        # Find or create user
+        user = await oauth_service.find_or_create_user(db, normalized_info, tokens)
+        
+        # Create tokens
+        access_token, refresh_token = auth_service.create_token_pair(user)
+        
+        # Create session
+        session = await session_management_service.create_session(
+            db=db,
+            user=user,
+            access_token=access_token,
+            refresh_token=refresh_token,
+            remember_me=True
+        )
+        
+        # Create token response
+        token_response = TokenResponse(
+            access_token=access_token,
+            refresh_token=refresh_token,
+            token_type="bearer",
+            expires_in=auth_service.access_token_expire_minutes * 60,
+            expires_at=datetime.utcnow() + timedelta(minutes=auth_service.access_token_expire_minutes)
+        )
+        
+        # Create user response
+        user_response = UserResponse(
+            id=str(user.id),
+            email=user.email,
+            username=user.username,
+            first_name=user.first_name,
+            last_name=user.last_name,
+            full_name=user.full_name,
+            display_name=user.display_name,
+            avatar_url=user.avatar_url,
+            bio=user.bio,
+            location=user.location,
+            website=user.website,
+            language_preference=user.language_preference,
+            timezone=user.timezone,
+            is_active=user.is_active,
+            is_verified=user.is_verified,
+            is_oauth_user=user.is_oauth_user,
+            two_factor_enabled=user.two_factor_enabled,
+            last_login_at=user.last_login_at,
+            created_at=user.created_at,
+            updated_at=user.updated_at
+        )
+        
+        return LoginResponse(
+            status="success",
+            message=f"OAuth login successful with {provider}",
+            user=user_response,
+            tokens=token_response,
+            requires_two_factor=False
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"OAuth callback error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="OAuth callback failed"
+        )
+
+
+@auth_router.post("/refresh", response_model=TokenResponse, tags=["Authentication"])
+async def refresh_token(
+    request: dict,
+    db: AsyncSession = Depends(get_db)
+):
+    """Refresh access token using refresh token."""
+    try:
+        refresh_token = request.get("refresh_token")
+        if not refresh_token:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Refresh token required"
+            )
+        
+        # Verify refresh token
+        payload = auth_service.verify_token(refresh_token, "refresh")
+        user_id = payload.get("sub")
+        
+        if not user_id:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid refresh token"
+            )
+        
+        # Get user
+        user = await auth_service.get_user_by_id(db, user_id)
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="User not found"
+            )
+        
+        # Create new tokens
+        access_token, new_refresh_token = auth_service.create_token_pair(user)
+        
+        # Update session
+        await session_management_service.update_session_tokens(db, refresh_token, access_token, new_refresh_token)
+        
+        return TokenResponse(
+            access_token=access_token,
+            refresh_token=new_refresh_token,
+            token_type="bearer",
+            expires_in=auth_service.access_token_expire_minutes * 60,
+            expires_at=datetime.utcnow() + timedelta(minutes=auth_service.access_token_expire_minutes)
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Token refresh error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Token refresh failed"
+        )

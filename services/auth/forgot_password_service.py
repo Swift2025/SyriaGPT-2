@@ -1,168 +1,241 @@
-from datetime import datetime, timedelta, timezone
-import smtplib
-from jose import JWTError, jwt
-import os
-from email.mime.text import MIMEText
-from sqlalchemy.orm import Session
-from models.domain.user import User
-from services.auth import get_auth_service
-from services.database import SessionLocal
-from services.email import get_email_service
-from fastapi import HTTPException, Depends
-from config.config_loader import config_loader
-import logging
-import time
-from services.database.database import get_db
-from config.logging_config import (
-    get_logger,
-    log_function_entry,
-    log_function_exit,
-    log_performance,
-    log_error_with_context
-)
+"""
+Forgot password service for SyriaGPT.
+Handles password reset functionality.
+"""
 
-logger = get_logger(__name__)
+import logging
+from datetime import datetime, timedelta
+from typing import Optional
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
+from fastapi import HTTPException, status
+
+from models.domain.user import User
+from services.auth.auth import AuthService
+from services.email.email_service import EmailService
+from config.config_loader import ConfigLoader
+
+logger = logging.getLogger(__name__)
 
 
 class ForgotPasswordService:
-    def __init__(self, db: Session):
-        self.db = db
-        self.auth_service = get_auth_service()
-        self.secret_key = os.getenv("SECRET_KEY", "your-secret-key-change-in-production")
-        self.algorithm = "HS256"
-        self.reset_token_expire_minutes = 60
+    """Forgot password service for handling password reset."""
+    
+    def __init__(self, config: ConfigLoader):
+        """Initialize forgot password service.
         
-    def create_reset_token(self, email: str) -> str:
-        log_function_entry(logger, "create_reset_token", email=email)
-        start_time = time.time()
+        Args:
+            config: Configuration loader instance
+        """
+        self.config = config
+        self.auth_service = AuthService(config)
+        self.email_service = EmailService(config)
+    
+    async def send_password_reset_email(self, db: AsyncSession, email: str) -> bool:
+        """Send password reset email to user.
+        
+        Args:
+            db: Database session
+            email: User email address
+            
+        Returns:
+            True if email sent successfully
+            
+        Raises:
+            HTTPException: If email sending fails
+        """
         try:
-            user = self.db.query(User).filter(User.email == email).first()
+            # Get user by email
+            result = await db.execute(
+                select(User).where(
+                    User.email == email,
+                    User.is_active == True,
+                    User.is_deleted == 'N'
+                )
+            )
+            user = result.scalar_one_or_none()
+            
             if not user:
-                raise HTTPException(status_code=400, detail="المستخدم غير موجود")
-
-            expire = datetime.now(timezone.utc) + timedelta(minutes=self.reset_token_expire_minutes)
-            payload = {"sub": email, "exp": expire}
-            token = jwt.encode(payload, self.secret_key, algorithm=self.algorithm)
-
-            user.reset_token = token
-            user.reset_token_expiry = expire
-            self.db.commit()
-
-            duration = time.time() - start_time
-            log_performance(logger, "create_reset_token", duration)
-            log_function_exit(logger, "create_reset_token", result=token, duration=duration)
-            return token
-        except Exception as e:
-            duration = time.time() - start_time
-            log_error_with_context(logger, e, "create_reset_token", duration=duration)
-            logger.error(f"❌ Error in create_reset_token: {e}")
-            log_function_exit(logger, "create_reset_token", duration=duration)
-            raise
-    
-    async def send_reset_email(self, email: str, token: str):
-        log_function_entry(logger, "send_reset_email", email=email)
-        start_time = time.time()
-        try:
-            """Send password reset email using the email service"""
-            reset_link = f"{config_loader.get_config_value('FRONTEND_URL', 'http://localhost:3000')}/reset-password?token={token}"
+                # Don't reveal if user exists or not for security
+                logger.warning(f"Password reset requested for non-existent email: {email}")
+                return True
             
-            # Use the email service instead of direct SMTP
-            email_service = get_email_service()
-            success, error = await email_service.send_password_reset_email(email, reset_link)
+            # Generate password reset token
+            reset_token = self.auth_service.generate_password_reset_token(user)
             
-            if not success:
-                logger.error(f"Failed to send reset email to {email}: {error}")
-                # In development mode, don't fail the request, just log the error
-                if os.getenv("ENV") == "development":
-                    logger.warning(f"Development mode: Email not sent, but reset token created for {email}")
-                    duration = time.time() - start_time
-                    log_performance(logger, "send_reset_email", duration)
-                    log_function_exit(logger, "send_reset_email", duration=duration)
-                    return
-                else:
-                    raise HTTPException(status_code=500, detail=f"Failed to send reset email: {error}")
+            # Update user with reset token
+            user.password_reset_token = reset_token
+            user.password_reset_expires = datetime.utcnow() + timedelta(hours=1)
             
-            logger.info(f"Password reset email sent successfully to {email}")
-            duration = time.time() - start_time
-            log_performance(logger, "send_reset_email", duration)
-            log_function_exit(logger, "send_reset_email", duration=duration)
-        except Exception as e:
-            duration = time.time() - start_time
-            log_error_with_context(logger, e, "send_reset_email", duration=duration)
-            logger.error(f"❌ Error in send_reset_email: {e}")
-            log_function_exit(logger, "send_reset_email", duration=duration)
-            raise
-    
-    def verify_reset_token(self, token: str):
-        log_function_entry(logger, "verify_reset_token")
-        start_time = time.time()
-        try:
-            payload = jwt.decode(token, self.secret_key, algorithms=[self.algorithm])
-            email: str = payload.get("sub")
-            if email is None:
-                duration = time.time() - start_time
-                log_function_exit(logger, "verify_reset_token", result=None, duration=duration)
-                return None
-
-            user = self.db.query(User).filter(User.email == email).first()
-            if not user or user.reset_token != token:
-                duration = time.time() - start_time
-                log_function_exit(logger, "verify_reset_token", result=None, duration=duration)
-                return None
-            if user.reset_token_expiry < datetime.now(timezone.utc):
-                duration = time.time() - start_time
-                log_function_exit(logger, "verify_reset_token", result=None, duration=duration)
-                return None
+            await db.commit()
             
-            duration = time.time() - start_time
-            log_performance(logger, "verify_reset_token", duration)
-            log_function_exit(logger, "verify_reset_token", result=user, duration=duration)
-            return user
-        except JWTError:
-            duration = time.time() - start_time
-            log_function_exit(logger, "verify_reset_token", result=None, duration=duration)
-            return None
-        except Exception as e:
-            duration = time.time() - start_time
-            log_error_with_context(logger, e, "verify_reset_token", duration=duration)
-            logger.error(f"❌ Error in verify_reset_token: {e}")
-            log_function_exit(logger, "verify_reset_token", duration=duration)
-            raise
-    
-    def reset_password(self, token: str, new_password: str, confirm_password: str):
-        log_function_entry(logger, "reset_password")
-        start_time = time.time()
-        try:
-            user = self.verify_reset_token(token)
-            if not user:
-                raise HTTPException(status_code=400, detail="رمز إعادة التعيين غير صالح أو منتهي الصلاحية")
-
-            if new_password != confirm_password:
-                raise HTTPException(status_code=400, detail="كلمتا المرور غير متطابقتين")
-
-            valid, msg = self.auth_service.validate_password_strength(new_password)
-            if not valid:
-                raise HTTPException(status_code=400, detail=msg)
-
-            user.password_hash = self.auth_service.hash_password(new_password)
-            user.reset_token = None
-            user.reset_token_expiry = None
-            user.token = None
-            user.token_expiry = None
-            user.last_password_change = datetime.now(timezone.utc)
-            self.db.commit()
+            # Send password reset email
+            try:
+                await self.email_service.send_password_reset_email(user, reset_token)
+                logger.info(f"Password reset email sent to user {user.id}")
+            except Exception as e:
+                logger.error(f"Failed to send password reset email: {e}")
+                # Don't fail the request if email sending fails
+                pass
             
-            duration = time.time() - start_time
-            log_performance(logger, "reset_password", duration)
-            log_function_exit(logger, "reset_password", result=True, duration=duration)
             return True
+            
         except Exception as e:
-            duration = time.time() - start_time
-            log_error_with_context(logger, e, "reset_password", duration=duration)
-            logger.error(f"❌ Error in reset_password: {e}")
-            log_function_exit(logger, "reset_password", duration=duration)
+            logger.error(f"Send password reset email error: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to send password reset email"
+            )
+    
+    async def reset_password_with_token(
+        self,
+        db: AsyncSession,
+        token: str,
+        new_password: str
+    ) -> bool:
+        """Reset user password with token.
+        
+        Args:
+            db: Database session
+            token: Password reset token
+            new_password: New password
+            
+        Returns:
+            True if password reset successfully
+            
+        Raises:
+            HTTPException: If password reset fails
+        """
+        try:
+            # Verify token
+            payload = self.auth_service.verify_password_reset_token(token)
+            user_id = payload.get("sub")
+            
+            if not user_id:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Invalid password reset token"
+                )
+            
+            # Get user
+            user = await self.auth_service.get_user_by_id(db, user_id)
+            if not user:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail="User not found"
+                )
+            
+            # Check if token matches and is not expired
+            if (user.password_reset_token != token or 
+                not user.password_reset_expires or 
+                datetime.utcnow() > user.password_reset_expires):
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Invalid or expired password reset token"
+                )
+            
+            # Validate new password strength
+            is_valid, error_message = self.auth_service.validate_password_strength(new_password)
+            if not is_valid:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail=error_message
+                )
+            
+            # Update password
+            user.password_hash = self.auth_service.get_password_hash(new_password)
+            user.password_reset_token = None
+            user.password_reset_expires = None
+            user.reset_failed_login_attempts()
+            
+            await db.commit()
+            
+            # Send password changed notification email
+            try:
+                await self.email_service.send_password_changed_notification(user)
+                logger.info(f"Password changed notification sent to user {user.id}")
+            except Exception as e:
+                logger.error(f"Failed to send password changed notification: {e}")
+                # Don't fail the request if email sending fails
+                pass
+            
+            logger.info(f"Password reset successfully for user {user.id}")
+            return True
+            
+        except HTTPException:
             raise
-
-# Factory function to create forgot password service with database session
-def get_forgot_password_service(db: Session):
-    return ForgotPasswordService(db)
+        except Exception as e:
+            logger.error(f"Password reset error: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Password reset failed"
+            )
+    
+    async def validate_reset_token(self, db: AsyncSession, token: str) -> bool:
+        """Validate password reset token.
+        
+        Args:
+            db: Database session
+            token: Password reset token
+            
+        Returns:
+            True if token is valid, False otherwise
+        """
+        try:
+            # Verify token
+            payload = self.auth_service.verify_password_reset_token(token)
+            user_id = payload.get("sub")
+            
+            if not user_id:
+                return False
+            
+            # Get user
+            user = await self.auth_service.get_user_by_id(db, user_id)
+            if not user:
+                return False
+            
+            # Check if token matches and is not expired
+            if (user.password_reset_token != token or 
+                not user.password_reset_expires or 
+                datetime.utcnow() > user.password_reset_expires):
+                return False
+            
+            return True
+            
+        except Exception as e:
+            logger.error(f"Validate reset token error: {e}")
+            return False
+    
+    async def cleanup_expired_tokens(self, db: AsyncSession) -> int:
+        """Clean up expired password reset tokens.
+        
+        Args:
+            db: Database session
+            
+        Returns:
+            Number of tokens cleaned up
+        """
+        try:
+            result = await db.execute(
+                select(User).where(
+                    User.password_reset_expires < datetime.utcnow()
+                )
+            )
+            users_with_expired_tokens = result.scalars().all()
+            
+            cleaned_count = 0
+            for user in users_with_expired_tokens:
+                user.password_reset_token = None
+                user.password_reset_expires = None
+                cleaned_count += 1
+            
+            await db.commit()
+            
+            if cleaned_count > 0:
+                logger.info(f"Cleaned up {cleaned_count} expired password reset tokens")
+            
+            return cleaned_count
+            
+        except Exception as e:
+            logger.error(f"Cleanup expired tokens error: {e}")
+            return 0

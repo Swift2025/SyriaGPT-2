@@ -1,5 +1,5 @@
-from .domain.base import Base
-from .domain.user import User
-from .domain.session import Session
+"""
+Database models package for SyriaGPT.
+"""
 
-__all__ = ["Base", "User", "Session"]
+__version__ = "2.0.0"

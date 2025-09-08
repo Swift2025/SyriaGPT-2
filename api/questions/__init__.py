@@ -1,4 +1,5 @@
-# Question-related API endpoints
-# Note: questions.py has been removed
+"""
+Questions API package for SyriaGPT.
+"""
 
-__all__ = []
+__version__ = "2.0.0"

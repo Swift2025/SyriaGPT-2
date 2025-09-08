@@ -1,175 +1,431 @@
-from datetime import datetime, timedelta, timezone
-from typing import Optional, Union
-from passlib.context import CryptContext
-from jose import JWTError, jwt
-import os
-import secrets
-import string
+"""
+Authentication service for SyriaGPT.
+Handles JWT token generation, validation, and user authentication.
+"""
+
 import logging
-import time
-from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
+from datetime import datetime, timedelta
+from typing import Optional, Dict, Any, Tuple
+from jose import JWTError, jwt
+from passlib.context import CryptContext
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
+from fastapi import HTTPException, status
 
-from config.config_loader import config_loader
-from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
-from services.repositories import get_user_repository
+from models.domain.user import User
+from models.domain.session import UserSession
+from config.config_loader import ConfigLoader
 
-logger = get_logger(__name__)
+logger = logging.getLogger(__name__)
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 class AuthService:
-    def __init__(self):
-        log_function_entry(logger, "__init__")
-        start_time = time.time()
+    """Authentication service for handling JWT tokens and user authentication."""
+    
+    def __init__(self, config: ConfigLoader):
+        """Initialize authentication service.
         
-        logger.debug("🔧 Initializing AuthService...")
+        Args:
+            config: Configuration loader instance
+        """
+        self.config = config
+        self.jwt_config = config.get_jwt_config()
         self.pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-        self.secret_key = os.getenv("SECRET_KEY")
-        if not self.secret_key:
-            logger.error("❌ SECRET_KEY environment variable must be set")
-            log_error_with_context(logger, ValueError("SECRET_KEY not set"), "AuthService initialization")
-            raise ValueError("SECRET_KEY environment variable must be set")
-        self.algorithm = "HS256"
-        self.access_token_expire_minutes = 30
         
-        duration = time.time() - start_time
-        log_performance(logger, "AuthService initialization", duration)
-        logger.debug(f"✅ AuthService initialized with algorithm: {self.algorithm}, token expiry: {self.access_token_expire_minutes} minutes")
-        log_function_exit(logger, "__init__", duration=duration)
-
-    def hash_password(self, password: str) -> str:
-        log_function_entry(logger, "hash_password", password_length=len(password))
-        start_time = time.time()
-        
-        logger.debug("🔧 Hashing password...")
-        try:
-            hashed_password = self.pwd_context.hash(password)
-            duration = time.time() - start_time
-            log_performance(logger, "Password hashing", duration)
-            logger.debug("✅ Password hashed successfully")
-            log_function_exit(logger, "hash_password", duration=duration)
-            return hashed_password
-        except Exception as e:
-            duration = time.time() - start_time
-            log_error_with_context(logger, e, "hash_password", password_length=len(password), duration=duration)
-            logger.error(f"❌ Password hashing failed: {e}")
-            log_function_exit(logger, "hash_password", duration=duration)
-            raise
-
+        # JWT settings
+        self.secret_key = self.jwt_config["secret_key"]
+        self.algorithm = self.jwt_config["algorithm"]
+        self.access_token_expire_minutes = self.jwt_config["access_token_expire_minutes"]
+        self.refresh_token_expire_days = self.jwt_config["refresh_token_expire_days"]
+    
     def verify_password(self, plain_password: str, hashed_password: str) -> bool:
-        log_function_entry(logger, "verify_password", plain_password_length=len(plain_password), hashed_password_length=len(hashed_password))
-        start_time = time.time()
+        """Verify a password against its hash.
         
-        logger.debug("🔧 Verifying password...")
-        try:
-            is_valid = self.pwd_context.verify(plain_password, hashed_password)
-            duration = time.time() - start_time
-            log_performance(logger, "Password verification", duration)
-            logger.debug(f"✅ Password verification result: {is_valid}")
-            log_function_exit(logger, "verify_password", result=is_valid, duration=duration)
-            return is_valid
-        except Exception as e:
-            duration = time.time() - start_time
-            log_error_with_context(logger, e, "verify_password", plain_password_length=len(plain_password), duration=duration)
-            logger.error(f"❌ Password verification failed: {e}")
-            log_function_exit(logger, "verify_password", duration=duration)
-            raise
-
-    def create_access_token(self, data: dict, expires_delta: Optional[timedelta] = None) -> str:
-        log_function_entry(logger, "create_access_token", data_keys=list(data.keys()), has_expires_delta=expires_delta is not None)
-        start_time = time.time()
-        
-        logger.debug(f"🔧 Creating access token for data: {list(data.keys())}")
-        try:
-            to_encode = data.copy()
-            if expires_delta:
-                expire = datetime.now(timezone.utc) + expires_delta
-                logger.debug(f"🔧 Token expiry set to: {expire}")
-            else:
-                # Set default expiration to 30 minutes if not provided
-                expire = datetime.now(timezone.utc) + timedelta(minutes=self.access_token_expire_minutes)
-                logger.debug(f"🔧 Token expiry set to default: {expire}")
+        Args:
+            plain_password: Plain text password
+            hashed_password: Hashed password
             
-            to_encode.update({"exp": expire})
+        Returns:
+            True if password matches, False otherwise
+        """
+        try:
+            return self.pwd_context.verify(plain_password, hashed_password)
+        except Exception as e:
+            logger.error(f"Password verification error: {e}")
+            return False
+    
+    def get_password_hash(self, password: str) -> str:
+        """Generate password hash.
+        
+        Args:
+            password: Plain text password
+            
+        Returns:
+            Hashed password
+        """
+        return self.pwd_context.hash(password)
+    
+    def create_access_token(self, data: Dict[str, Any], expires_delta: Optional[timedelta] = None) -> str:
+        """Create JWT access token.
+        
+        Args:
+            data: Token payload data
+            expires_delta: Token expiration time
+            
+        Returns:
+            JWT access token
+        """
+        to_encode = data.copy()
+        
+        if expires_delta:
+            expire = datetime.utcnow() + expires_delta
+        else:
+            expire = datetime.utcnow() + timedelta(minutes=self.access_token_expire_minutes)
+        
+        to_encode.update({"exp": expire, "type": "access"})
+        
+        try:
             encoded_jwt = jwt.encode(to_encode, self.secret_key, algorithm=self.algorithm)
-            
-            duration = time.time() - start_time
-            log_performance(logger, "Access token creation", duration)
-            logger.debug("✅ Access token created successfully")
-            log_function_exit(logger, "create_access_token", duration=duration)
             return encoded_jwt
-            
         except Exception as e:
-            duration = time.time() - start_time
-            log_error_with_context(logger, e, "create_access_token", data_keys=list(data.keys()), duration=duration)
-            logger.error(f"❌ Access token creation failed: {e}")
-            log_function_exit(logger, "create_access_token", duration=duration)
-            raise
-
-    def verify_token(self, token: str) -> Optional[dict]:
-        log_function_entry(logger, "verify_token", token_length=len(token))
-        start_time = time.time()
+            logger.error(f"Token creation error: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Token creation failed"
+            )
+    
+    def create_refresh_token(self, data: Dict[str, Any], expires_delta: Optional[timedelta] = None) -> str:
+        """Create JWT refresh token.
         
-        logger.debug("🔧 Verifying JWT token...")
+        Args:
+            data: Token payload data
+            expires_delta: Token expiration time
+            
+        Returns:
+            JWT refresh token
+        """
+        to_encode = data.copy()
+        
+        if expires_delta:
+            expire = datetime.utcnow() + expires_delta
+        else:
+            expire = datetime.utcnow() + timedelta(days=self.refresh_token_expire_days)
+        
+        to_encode.update({"exp": expire, "type": "refresh"})
+        
+        try:
+            encoded_jwt = jwt.encode(to_encode, self.secret_key, algorithm=self.algorithm)
+            return encoded_jwt
+        except Exception as e:
+            logger.error(f"Refresh token creation error: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Refresh token creation failed"
+            )
+    
+    def verify_token(self, token: str, token_type: str = "access") -> Dict[str, Any]:
+        """Verify and decode JWT token.
+        
+        Args:
+            token: JWT token to verify
+            token_type: Expected token type (access or refresh)
+            
+        Returns:
+            Decoded token payload
+            
+        Raises:
+            HTTPException: If token is invalid or expired
+        """
         try:
             payload = jwt.decode(token, self.secret_key, algorithms=[self.algorithm])
-            duration = time.time() - start_time
-            log_performance(logger, "Token verification", duration)
-            logger.debug(f"✅ Token verified successfully, payload keys: {list(payload.keys())}")
-            log_function_exit(logger, "verify_token", result="success", duration=duration)
+            
+            # Check token type
+            if payload.get("type") != token_type:
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail=f"Invalid token type. Expected {token_type}"
+                )
+            
+            # Check expiration
+            exp = payload.get("exp")
+            if exp is None or datetime.utcnow() > datetime.fromtimestamp(exp):
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Token has expired"
+                )
+            
             return payload
+            
         except JWTError as e:
-            duration = time.time() - start_time
-            log_error_with_context(logger, e, "verify_token", token_length=len(token), duration=duration)
-            logger.warning(f"❌ Token verification failed: {e}")
-            log_function_exit(logger, "verify_token", result="failed", duration=duration)
-            return None
-
-    def generate_verification_token(self, length: int = 32) -> str:
-        logger.debug(f"Generating verification token with length: {length}")
-        alphabet = string.ascii_letters + string.digits
-        token = ''.join(secrets.choice(alphabet) for _ in range(length))
-        logger.debug("Verification token generated successfully")
-        return token
-
-    def validate_password_strength(self, password: str) -> tuple[bool, str]:
-        logger.debug("Validating password strength")
+            logger.error(f"Token verification error: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid token"
+            )
+    
+    async def authenticate_user(self, db: AsyncSession, email: str, password: str) -> Optional[User]:
+        """Authenticate user with email and password.
         
+        Args:
+            db: Database session
+            email: User email
+            password: User password
+            
+        Returns:
+            User object if authentication successful, None otherwise
+        """
+        try:
+            # Get user by email
+            result = await db.execute(
+                select(User).where(
+                    User.email == email,
+                    User.is_active == True,
+                    User.is_deleted == 'N'
+                )
+            )
+            user = result.scalar_one_or_none()
+            
+            if not user:
+                logger.warning(f"Authentication failed: User not found for email {email}")
+                return None
+            
+            # Check if account is locked
+            if user.is_locked:
+                logger.warning(f"Authentication failed: Account locked for user {user.id}")
+                return None
+            
+            # Verify password
+            if not self.verify_password(password, user.password_hash):
+                # Increment failed login attempts
+                user.increment_failed_login()
+                await db.commit()
+                
+                logger.warning(f"Authentication failed: Invalid password for user {user.id}")
+                return None
+            
+            # Reset failed login attempts on successful login
+            user.reset_failed_login_attempts()
+            user.increment_login_count()
+            await db.commit()
+            
+            logger.info(f"User {user.id} authenticated successfully")
+            return user
+            
+        except Exception as e:
+            logger.error(f"Authentication error: {e}")
+            return None
+    
+    async def get_user_by_id(self, db: AsyncSession, user_id: str) -> Optional[User]:
+        """Get user by ID.
+        
+        Args:
+            db: Database session
+            user_id: User ID
+            
+        Returns:
+            User object if found, None otherwise
+        """
+        try:
+            result = await db.execute(
+                select(User).where(
+                    User.id == user_id,
+                    User.is_active == True,
+                    User.is_deleted == 'N'
+                )
+            )
+            return result.scalar_one_or_none()
+        except Exception as e:
+            logger.error(f"Error getting user by ID {user_id}: {e}")
+            return None
+    
+    async def get_user_by_email(self, db: AsyncSession, email: str) -> Optional[User]:
+        """Get user by email.
+        
+        Args:
+            db: Database session
+            email: User email
+            
+        Returns:
+            User object if found, None otherwise
+        """
+        try:
+            result = await db.execute(
+                select(User).where(
+                    User.email == email,
+                    User.is_deleted == 'N'
+                )
+            )
+            return result.scalar_one_or_none()
+        except Exception as e:
+            logger.error(f"Error getting user by email {email}: {e}")
+            return None
+    
+    def create_token_pair(self, user: User) -> Tuple[str, str]:
+        """Create access and refresh token pair for user.
+        
+        Args:
+            user: User object
+            
+        Returns:
+            Tuple of (access_token, refresh_token)
+        """
+        token_data = {
+            "sub": str(user.id),
+            "email": user.email,
+            "username": user.username,
+            "is_verified": user.is_verified,
+            "is_superuser": user.is_superuser
+        }
+        
+        access_token = self.create_access_token(token_data)
+        refresh_token = self.create_refresh_token(token_data)
+        
+        return access_token, refresh_token
+    
+    def extract_token_from_header(self, authorization: str) -> str:
+        """Extract token from Authorization header.
+        
+        Args:
+            authorization: Authorization header value
+            
+        Returns:
+            Extracted token
+            
+        Raises:
+            HTTPException: If header format is invalid
+        """
+        if not authorization:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Authorization header missing"
+            )
+        
+        try:
+            scheme, token = authorization.split()
+            if scheme.lower() != "bearer":
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Invalid authentication scheme"
+                )
+            return token
+        except ValueError:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid authorization header format"
+            )
+    
+    async def get_current_user(self, db: AsyncSession, token: str) -> User:
+        """Get current user from JWT token.
+        
+        Args:
+            db: Database session
+            token: JWT access token
+            
+        Returns:
+            Current user object
+            
+        Raises:
+            HTTPException: If token is invalid or user not found
+        """
+        try:
+            payload = self.verify_token(token, "access")
+            user_id = payload.get("sub")
+            
+            if not user_id:
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Invalid token payload"
+                )
+            
+            user = await self.get_user_by_id(db, user_id)
+            if not user:
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="User not found"
+                )
+            
+            return user
+            
+        except HTTPException:
+            raise
+        except Exception as e:
+            logger.error(f"Error getting current user: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Authentication failed"
+            )
+    
+    def validate_password_strength(self, password: str) -> Tuple[bool, str]:
+        """Validate password strength.
+        
+        Args:
+            password: Password to validate
+            
+        Returns:
+            Tuple of (is_valid, error_message)
+        """
         if len(password) < 8:
-            logger.debug("Password validation failed: too short")
-            return False, config_loader.get_message("validation", "password_too_short")
+            return False, "Password must be at least 8 characters long"
         
         if not any(c.isupper() for c in password):
-            logger.debug("Password validation failed: no uppercase")
-            return False, config_loader.get_message("validation", "password_no_uppercase")
+            return False, "Password must contain at least one uppercase letter"
         
         if not any(c.islower() for c in password):
-            logger.debug("Password validation failed: no lowercase")
-            return False, config_loader.get_message("validation", "password_no_lowercase")
+            return False, "Password must contain at least one lowercase letter"
         
         if not any(c.isdigit() for c in password):
-            logger.debug("Password validation failed: no number")
-            return False, config_loader.get_message("validation", "password_no_number")
+            return False, "Password must contain at least one digit"
         
         if not any(c in "!@#$%^&*()_+-=[]{}|;:,.<>?" for c in password):
-            logger.debug("Password validation failed: no special character")
-            return False, config_loader.get_message("validation", "password_no_special")
+            return False, "Password must contain at least one special character"
         
-        logger.debug("Password validation passed: strong password")
-        return True, config_loader.get_message("validation", "password_strong")
+        return True, ""
     
-
-# get_current_user function moved to services/dependencies.py to avoid duplication
-
-# Lazy loading to avoid environment variable issues during import
-_auth_service_instance = None
-
-def get_auth_service():
-    global _auth_service_instance
-    if _auth_service_instance is None:
-        logger.debug("Creating new AuthService instance")
-        _auth_service_instance = AuthService()
-    else:
-        logger.debug("Returning existing AuthService instance")
-    return _auth_service_instance
+    def generate_password_reset_token(self, user: User) -> str:
+        """Generate password reset token.
+        
+        Args:
+            user: User object
+            
+        Returns:
+            Password reset token
+        """
+        data = {
+            "sub": str(user.id),
+            "email": user.email,
+            "type": "password_reset"
+        }
+        
+        # Password reset tokens expire in 1 hour
+        expires_delta = timedelta(hours=1)
+        return self.create_access_token(data, expires_delta)
+    
+    def verify_password_reset_token(self, token: str) -> Dict[str, Any]:
+        """Verify password reset token.
+        
+        Args:
+            token: Password reset token
+            
+        Returns:
+            Decoded token payload
+            
+        Raises:
+            HTTPException: If token is invalid
+        """
+        try:
+            payload = jwt.decode(token, self.secret_key, algorithms=[self.algorithm])
+            
+            if payload.get("type") != "password_reset":
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Invalid token type"
+                )
+            
+            return payload
+            
+        except JWTError as e:
+            logger.error(f"Password reset token verification error: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Invalid or expired password reset token"
+            )

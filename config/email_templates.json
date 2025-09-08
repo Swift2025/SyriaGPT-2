@@ -1,17 +1,82 @@
 {
-  "verification": {
-    "subject": "Welcome to Syria GPT - Verify Your Email",
-    "text_template": "Welcome to Syria GPT!\n\nHello {display_name},\n\nThank you for signing up with Syria GPT! To complete your registration, please verify your email address by visiting this link:\n\n{verification_url}\n\nThis verification link will expire in 24 hours.\n\nIf you didn't create an account with Syria GPT, please ignore this email.\n\nWelcome aboard!\n\n--\nSyria GPT Team",
-    "html_style": "body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4; } .container { background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); } .header { text-align: center; margin-bottom: 30px; } .logo { color: #2c3e50; font-size: 28px; font-weight: bold; margin-bottom: 10px; } .verify-btn { display: inline-block; background-color: #3498db; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; text-align: center; } .verify-btn:hover { background-color: #2980b9; } .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 14px; color: #666; text-align: center; } .warning { background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px; padding: 15px; margin: 20px 0; color: #856404; }"
-  },
-  "welcome": {
-    "subject": "Welcome to Syria GPT - Account Verified!",
-    "text_template": "Welcome to Syria GPT!\n\nHello {display_name},\n\nCongratulations! Your email address has been verified and your Syria GPT account is now fully active.\n\nYou can now enjoy all the features and services that Syria GPT has to offer. Start exploring and make the most of your experience with us!\n\nIf you have any questions or need assistance, our support team is here to help.\n\nThank you for choosing Syria GPT!\n\n--\nSyria GPT Team",
-    "html_style": "body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4; } .container { background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); } .header { text-align: center; margin-bottom: 30px; } .logo { color: #2c3e50; font-size: 28px; font-weight: bold; margin-bottom: 10px; } .success { background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 5px; padding: 15px; margin: 20px 0; color: #155724; text-align: center; } .cta-btn { display: inline-block; background-color: #27ae60; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; } .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 14px; color: #666; text-align: center; }"
+  "email_verification": {
+    "subject": "تأكيد البريد الإلكتروني - SyriaGPT",
+    "subject_en": "Email Verification - SyriaGPT",
+    "html_template": "email_verification.html",
+    "text_template": "email_verification.txt",
+    "variables": ["user_name", "verification_link", "expiry_time"],
+    "priority": "high"
   },
   "password_reset": {
-    "subject": "Reset Your Password - Syria GPT",
-    "text_template": "Password Reset Request\n\nHello {display_name},\n\nWe received a request to reset your password for your Syria GPT account. If you made this request, please click the link below to reset your password:\n\n{reset_link}\n\nThis password reset link will expire in 60 minutes.\n\nIf you didn't request a password reset, please ignore this email. Your password will remain unchanged.\n\nFor security reasons, this link can only be used once.\n\n--\nSyria GPT Team",
-    "html_style": "body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4; } .container { background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); } .header { text-align: center; margin-bottom: 30px; } .logo { color: #2c3e50; font-size: 28px; font-weight: bold; margin-bottom: 10px; } .reset-btn { display: inline-block; background-color: #e74c3c; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; text-align: center; } .reset-btn:hover { background-color: #c0392b; } .warning { background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px; padding: 15px; margin: 20px 0; color: #856404; } .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 14px; color: #666; text-align: center; }"
+    "subject": "إعادة تعيين كلمة المرور - SyriaGPT",
+    "subject_en": "Password Reset - SyriaGPT",
+    "html_template": "password_reset.html",
+    "text_template": "password_reset.txt",
+    "variables": ["user_name", "reset_link", "expiry_time"],
+    "priority": "high"
+  },
+  "welcome": {
+    "subject": "مرحباً بك في SyriaGPT",
+    "subject_en": "Welcome to SyriaGPT",
+    "html_template": "welcome.html",
+    "text_template": "welcome.txt",
+    "variables": ["user_name", "login_link"],
+    "priority": "normal"
+  },
+  "two_factor_code": {
+    "subject": "رمز المصادقة الثنائية - SyriaGPT",
+    "subject_en": "Two-Factor Authentication Code - SyriaGPT",
+    "html_template": "two_factor_code.html",
+    "text_template": "two_factor_code.txt",
+    "variables": ["user_name", "verification_code", "expiry_time"],
+    "priority": "high"
+  },
+  "account_locked": {
+    "subject": "تم قفل حسابك - SyriaGPT",
+    "subject_en": "Account Locked - SyriaGPT",
+    "html_template": "account_locked.html",
+    "text_template": "account_locked.txt",
+    "variables": ["user_name", "unlock_link", "reason"],
+    "priority": "high"
+  },
+  "password_changed": {
+    "subject": "تم تغيير كلمة المرور - SyriaGPT",
+    "subject_en": "Password Changed - SyriaGPT",
+    "html_template": "password_changed.html",
+    "text_template": "password_changed.txt",
+    "variables": ["user_name", "change_time", "ip_address"],
+    "priority": "normal"
+  },
+  "login_alert": {
+    "subject": "تنبيه تسجيل الدخول - SyriaGPT",
+    "subject_en": "Login Alert - SyriaGPT",
+    "html_template": "login_alert.html",
+    "text_template": "login_alert.txt",
+    "variables": ["user_name", "login_time", "ip_address", "location", "device"],
+    "priority": "normal"
+  },
+  "newsletter": {
+    "subject": "النشرة الإخبارية - SyriaGPT",
+    "subject_en": "Newsletter - SyriaGPT",
+    "html_template": "newsletter.html",
+    "text_template": "newsletter.txt",
+    "variables": ["user_name", "news_content", "unsubscribe_link"],
+    "priority": "low"
+  },
+  "system_notification": {
+    "subject": "إشعار النظام - SyriaGPT",
+    "subject_en": "System Notification - SyriaGPT",
+    "html_template": "system_notification.html",
+    "text_template": "system_notification.txt",
+    "variables": ["user_name", "notification_title", "notification_content", "action_link"],
+    "priority": "normal"
+  },
+  "chat_summary": {
+    "subject": "ملخص المحادثة - SyriaGPT",
+    "subject_en": "Chat Summary - SyriaGPT",
+    "html_template": "chat_summary.html",
+    "text_template": "chat_summary.txt",
+    "variables": ["user_name", "chat_title", "summary", "chat_link"],
+    "priority": "low"
   }
 }

@@ -1,510 +1,333 @@
-from fastapi import APIRouter, Depends, HTTPException, status, Query
-from sqlalchemy.orm import Session
-from typing import Optional
+"""
+User management API routes for SyriaGPT.
+"""
 
-from services.database.database import get_db
-from services.auth import get_auth_service
-from services.auth.user_management_service import get_user_management_service
-from models.domain.user import User
+import logging
+from typing import Optional
+from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from sqlalchemy.ext.asyncio import AsyncSession
+
 from models.schemas.request_models import (
-    UserUpdateRequest, UserPasswordChangeRequest, UserStatusUpdateRequest,
-    UserSearchRequest, UserBulkActionRequest, UserSettingsRequest
+    UserUpdateRequest, 
+    PasswordChangeRequest, 
+    UserPreferencesUpdateRequest
 )
 from models.schemas.response_models import (
-    UserResponse, UserDetailResponse, UserListResponse, UserStatsResponse,
-    UserUpdateResponse, UserPasswordChangeResponse, UserBulkActionResponse,
-    UserSettingsResponse, SettingsUpdateResponse
+    UserResponse, 
+    UserUpdateResponse, 
+    UserListResponse,
+    UserPreferencesResponse
 )
-from services.dependencies import get_current_user
-from config.logging_config import get_logger
+from services.database.database import get_db
+from services.dependencies import get_current_user, get_current_superuser
+from services.auth.user_management_service import UserManagementService
+from config.config_loader import ConfigLoader
 
-logger = get_logger(__name__)
+logger = logging.getLogger(__name__)
 
-router = APIRouter(prefix="/users", tags=["User Management"])
+# Initialize router
+user_router = APIRouter()
+
+# Initialize services
+config = ConfigLoader()
+user_management_service = UserManagementService(config)
+
+# Security scheme
+security = HTTPBearer()
 
 
-# User CRUD Operations
-@router.get("/", response_model=UserListResponse)
-async def search_users(
-    search_request: UserSearchRequest = Depends(),
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+@user_router.get("/profile", response_model=UserResponse, tags=["User Management"])
+async def get_user_profile(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
 ):
-    """
-    Search and filter users with pagination.
-    Requires authentication and admin privileges.
-    """
+    """Get current user profile."""
     try:
-        # Check if user has admin privileges (you can implement your own admin check)
-        if current_user.status != "active":
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Insufficient permissions"
-            )
+        user = await get_current_user(credentials, db)
         
-        user_service = get_user_management_service()
-        return user_service.search_users(db, search_request)
-        
-    except Exception as e:
-        logger.error(f"Error searching users: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-@router.get("/stats", response_model=UserStatsResponse)
-async def get_user_stats(
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Get comprehensive user statistics.
-    Requires authentication and admin privileges.
-    """
-    try:
-        # Check if user has admin privileges
-        if current_user.status != "active":
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Insufficient permissions"
-            )
-        
-        user_service = get_user_management_service()
-        return user_service.get_user_stats(db)
-        
-    except Exception as e:
-        logger.error(f"Error getting user stats: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-@router.get("/{user_id}", response_model=UserResponse)
-async def get_user(
-    user_id: str,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Get user by ID.
-    Users can only access their own profile unless they have admin privileges.
-    """
-    try:
-        # Check if user is accessing their own profile or has admin privileges
-        if str(current_user.id) != user_id and current_user.status != "active":
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Insufficient permissions"
-            )
-        
-        user_service = get_user_management_service()
-        user = user_service.get_user_by_id(db, user_id)
-        
-        if not user:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="User not found"
-            )
-        
-        return user
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error getting user {user_id}: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-@router.get("/{user_id}/detail", response_model=UserDetailResponse)
-async def get_user_detail(
-    user_id: str,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Get detailed user information including session stats.
-    Users can only access their own profile unless they have admin privileges.
-    """
-    try:
-        # Check if user is accessing their own profile or has admin privileges
-        if str(current_user.id) != user_id and current_user.status != "active":
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Insufficient permissions"
-            )
-        
-        user_service = get_user_management_service()
-        user_detail = user_service.get_user_detail(db, user_id)
-        
-        if not user_detail:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="User not found"
-            )
-        
-        return user_detail
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error getting user detail {user_id}: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-@router.put("/{user_id}", response_model=UserUpdateResponse)
-async def update_user(
-    user_id: str,
-    update_request: UserUpdateRequest,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Update user information.
-    Users can only update their own profile unless they have admin privileges.
-    """
-    try:
-        # Check if user is updating their own profile or has admin privileges
-        if str(current_user.id) != user_id and current_user.status != "active":
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Insufficient permissions"
-            )
-        
-        user_service = get_user_management_service()
-        result = user_service.update_user(db, user_id, update_request)
-        
-        if not result:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="User not found"
-            )
-        
-        return result
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error updating user {user_id}: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-@router.post("/{user_id}/change-password", response_model=UserPasswordChangeResponse)
-async def change_password(
-    user_id: str,
-    password_request: UserPasswordChangeRequest,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Change user password.
-    Users can only change their own password.
-    """
-    try:
-        # Users can only change their own password
-        if str(current_user.id) != user_id:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="You can only change your own password"
-            )
-        
-        user_service = get_user_management_service()
-        result = user_service.change_password(db, user_id, password_request)
-        
-        if not result:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Invalid current password or user not found"
-            )
-        
-        return result
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error changing password for user {user_id}: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-@router.put("/{user_id}/status", response_model=UserUpdateResponse)
-async def update_user_status(
-    user_id: str,
-    status_request: UserStatusUpdateRequest,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Update user status (admin only).
-    Requires admin privileges.
-    """
-    try:
-        # Check if user has admin privileges
-        if current_user.status != "active":
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Insufficient permissions"
-            )
-        
-        user_service = get_user_management_service()
-        result = user_service.update_user_status(db, user_id, status_request)
-        
-        if not result:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="User not found"
-            )
-        
-        return result
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error updating user status {user_id}: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-@router.post("/bulk-action", response_model=UserBulkActionResponse)
-async def bulk_user_action(
-    bulk_request: UserBulkActionRequest,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Perform bulk actions on users (admin only).
-    Requires admin privileges.
-    """
-    try:
-        # Check if user has admin privileges
-        if current_user.status != "active":
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Insufficient permissions"
-            )
-        
-        user_service = get_user_management_service()
-        return user_service.bulk_action(db, bulk_request)
-        
-    except Exception as e:
-        logger.error(f"Error performing bulk user action: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-# User Settings
-@router.get("/{user_id}/settings", response_model=UserSettingsResponse)
-async def get_user_settings(
-    user_id: str,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Get user settings.
-    Users can only access their own settings.
-    """
-    try:
-        # Users can only access their own settings
-        if str(current_user.id) != user_id:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="You can only access your own settings"
-            )
-        
-        user_service = get_user_management_service()
-        settings = user_service.get_user_settings(db, user_id)
-        
-        return UserSettingsResponse(
-            user_id=user_id,
-            **settings,
-            updated_at=current_user.updated_at
-        )
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error getting user settings {user_id}: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-@router.put("/{user_id}/settings", response_model=SettingsUpdateResponse)
-async def update_user_settings(
-    user_id: str,
-    settings_request: UserSettingsRequest,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Update user settings.
-    Users can only update their own settings.
-    """
-    try:
-        # Users can only update their own settings
-        if str(current_user.id) != user_id:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="You can only update your own settings"
-            )
-        
-        user_service = get_user_management_service()
-        updated_settings = user_service.update_user_settings(db, user_id, settings_request)
-        
-        return SettingsUpdateResponse(
-            settings=UserSettingsResponse(
-                user_id=user_id,
-                **updated_settings,
-                updated_at=current_user.updated_at
-            ),
-            message="Settings updated successfully"
-        )
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error updating user settings {user_id}: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-# Profile Management
-@router.get("/me/profile", response_model=UserResponse)
-async def get_my_profile(
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Get current user's profile.
-    """
-    try:
         return UserResponse(
-            id=str(current_user.id),
-            email=current_user.email,
-            phone_number=current_user.phone_number,
-            first_name=current_user.first_name,
-            last_name=current_user.last_name,
-            full_name=current_user.full_name,
-            profile_picture=current_user.profile_picture,
-            oauth_provider=current_user.oauth_provider,
-            oauth_provider_id=current_user.oauth_provider_id,
-            two_factor_enabled=current_user.two_factor_enabled,
-            is_email_verified=current_user.is_email_verified,
-            is_phone_verified=current_user.is_phone_verified,
-            status=current_user.status,
-            last_login_at=current_user.last_login_at,
-            created_at=current_user.created_at,
-            updated_at=current_user.updated_at
+            id=str(user.id),
+            email=user.email,
+            username=user.username,
+            first_name=user.first_name,
+            last_name=user.last_name,
+            full_name=user.full_name,
+            display_name=user.display_name,
+            avatar_url=user.avatar_url,
+            bio=user.bio,
+            location=user.location,
+            website=user.website,
+            language_preference=user.language_preference,
+            timezone=user.timezone,
+            is_active=user.is_active,
+            is_verified=user.is_verified,
+            is_oauth_user=user.is_oauth_user,
+            two_factor_enabled=user.two_factor_enabled,
+            last_login_at=user.last_login_at,
+            created_at=user.created_at,
+            updated_at=user.updated_at
         )
-        
-    except Exception as e:
-        logger.error(f"Error getting current user profile: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
-        )
-
-
-@router.put("/me/profile", response_model=UserUpdateResponse)
-async def update_my_profile(
-    update_request: UserUpdateRequest,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """
-    Update current user's profile.
-    """
-    try:
-        user_service = get_user_management_service()
-        result = user_service.update_user(db, str(current_user.id), update_request)
-        
-        if not result:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="User not found"
-            )
-        
-        return result
         
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Error updating current user profile: {e}")
+        logger.error(f"Get user profile error: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
+            detail="Failed to retrieve user profile"
         )
 
 
-@router.get("/me/settings", response_model=UserSettingsResponse)
-async def get_my_settings(
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+@user_router.put("/profile", response_model=UserUpdateResponse, tags=["User Management"])
+async def update_user_profile(
+    request: UserUpdateRequest,
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
 ):
-    """
-    Get current user's settings.
-    """
+    """Update current user profile."""
     try:
-        user_service = get_user_management_service()
-        settings = user_service.get_user_settings(db, str(current_user.id))
+        user = await get_current_user(credentials, db)
         
-        return UserSettingsResponse(
-            user_id=str(current_user.id),
-            **settings,
-            updated_at=current_user.updated_at
+        # Update user profile
+        updated_user = await user_management_service.update_user_profile(
+            db=db,
+            user=user,
+            username=request.username,
+            first_name=request.first_name,
+            last_name=request.last_name,
+            bio=request.bio,
+            location=request.location,
+            website=request.website,
+            language_preference=request.language_preference,
+            timezone=request.timezone
         )
         
+        return UserUpdateResponse(
+            status="success",
+            message="User profile updated successfully",
+            user=UserResponse(
+                id=str(updated_user.id),
+                email=updated_user.email,
+                username=updated_user.username,
+                first_name=updated_user.first_name,
+                last_name=updated_user.last_name,
+                full_name=updated_user.full_name,
+                display_name=updated_user.display_name,
+                avatar_url=updated_user.avatar_url,
+                bio=updated_user.bio,
+                location=updated_user.location,
+                website=updated_user.website,
+                language_preference=updated_user.language_preference,
+                timezone=updated_user.timezone,
+                is_active=updated_user.is_active,
+                is_verified=updated_user.is_verified,
+                is_oauth_user=updated_user.is_oauth_user,
+                two_factor_enabled=updated_user.two_factor_enabled,
+                last_login_at=updated_user.last_login_at,
+                created_at=updated_user.created_at,
+                updated_at=updated_user.updated_at
+            )
+        )
+        
+    except HTTPException:
+        raise
     except Exception as e:
-        logger.error(f"Error getting current user settings: {e}")
+        logger.error(f"Update user profile error: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
+            detail="Failed to update user profile"
         )
 
 
-@router.put("/me/settings", response_model=SettingsUpdateResponse)
-async def update_my_settings(
-    settings_request: UserSettingsRequest,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+@user_router.post("/change-password", tags=["User Management"])
+async def change_password(
+    request: PasswordChangeRequest,
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
 ):
-    """
-    Update current user's settings.
-    """
+    """Change user password."""
     try:
-        user_service = get_user_management_service()
-        updated_settings = user_service.update_user_settings(db, str(current_user.id), settings_request)
+        user = await get_current_user(credentials, db)
         
-        return SettingsUpdateResponse(
-            settings=UserSettingsResponse(
-                user_id=str(current_user.id),
-                **updated_settings,
-                updated_at=current_user.updated_at
-            ),
-            message="Settings updated successfully"
+        # Change password
+        success = await user_management_service.change_password(
+            db=db,
+            user=user,
+            current_password=request.current_password,
+            new_password=request.new_password
         )
         
+        if success:
+            return {
+                "status": "success",
+                "message": "Password changed successfully"
+            }
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to change password"
+            )
+        
+    except HTTPException:
+        raise
     except Exception as e:
-        logger.error(f"Error updating current user settings: {e}")
+        logger.error(f"Change password error: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal server error"
+            detail="Failed to change password"
+        )
+
+
+@user_router.get("/preferences", response_model=UserPreferencesResponse, tags=["User Management"])
+async def get_user_preferences(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Get user preferences."""
+    try:
+        user = await get_current_user(credentials, db)
+        
+        return UserPreferencesResponse(
+            status="success",
+            message="User preferences retrieved successfully",
+            preferences=user.preferences or {},
+            notification_settings=user.notification_settings or {}
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Get user preferences error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve user preferences"
+        )
+
+
+@user_router.put("/preferences", tags=["User Management"])
+async def update_user_preferences(
+    request: UserPreferencesUpdateRequest,
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Update user preferences."""
+    try:
+        user = await get_current_user(credentials, db)
+        
+        # Update preferences
+        if request.preferences:
+            await user_management_service.update_user_preferences(db, user, request.preferences)
+        
+        # Update notification settings
+        if request.notification_settings:
+            await user_management_service.update_notification_settings(db, user, request.notification_settings)
+        
+        return {
+            "status": "success",
+            "message": "User preferences updated successfully"
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Update user preferences error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to update user preferences"
+        )
+
+
+@user_router.get("/stats", tags=["User Management"])
+async def get_user_stats(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Get user statistics."""
+    try:
+        user = await get_current_user(credentials, db)
+        
+        # Get user stats
+        stats = await user_management_service.get_user_stats(db, user)
+        
+        return {
+            "status": "success",
+            "message": "User statistics retrieved successfully",
+            "stats": stats
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Get user stats error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve user statistics"
+        )
+
+
+@user_router.delete("/account", tags=["User Management"])
+async def delete_user_account(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Delete user account (soft delete)."""
+    try:
+        user = await get_current_user(credentials, db)
+        
+        # Delete user account
+        success = await user_management_service.delete_user(db, user)
+        
+        if success:
+            return {
+                "status": "success",
+                "message": "User account deleted successfully"
+            }
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to delete user account"
+            )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Delete user account error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to delete user account"
+        )
+
+
+@user_router.get("/", response_model=UserListResponse, tags=["User Management"])
+async def get_all_users(
+    page: int = 1,
+    page_size: int = 20,
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Get all users (superuser only)."""
+    try:
+        # Only superusers can access this endpoint
+        await get_current_superuser(credentials, db)
+        
+        # This would require implementing a user repository
+        # For now, return empty list
+        return UserListResponse(
+            status="success",
+            message="Users retrieved successfully",
+            users=[],
+            total_count=0,
+            page=page,
+            page_size=page_size,
+            total_pages=0
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Get all users error: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve users"
         )

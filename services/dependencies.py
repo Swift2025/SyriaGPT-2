@@ -1,58 +1,116 @@
-# In SyriaGPT/services/dependencies.py
+"""
+Dependency injection for SyriaGPT services.
+"""
 
-from fastapi import Depends, HTTPException, status, Request
-from sqlalchemy.orm import Session
-from fastapi.security import OAuth2PasswordBearer
-from jose import JWTError
-from slowapi import Limiter
-from slowapi.util import get_remote_address
-import logging
-import time
+from typing import AsyncGenerator
+from fastapi import Depends, HTTPException, status
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from services.auth import get_auth_service, oauth2_scheme
 from services.database.database import get_db
-from config.logging_config import get_logger
+from services.auth.auth import AuthService
+from config.config_loader import ConfigLoader
 
-logger = get_logger(__name__)
-# Removed direct import - using get_user_repository() function instead
+# Initialize configuration
+config = ConfigLoader()
 
-limiter = Limiter(key_func=get_remote_address)
+# Initialize services
+auth_service = AuthService(config)
 
-def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
-    logger.debug("Authenticating user with token")
-    credentials_exception = HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Could not validate credentials",
-        headers={"WWW-Authenticate": "Bearer"},
-    )
+# Security scheme
+security = HTTPBearer()
+
+
+async def get_current_user(
+    credentials: HTTPAuthorizationCredentials = Depends(security),
+    db: AsyncSession = Depends(get_db)
+):
+    """Get current authenticated user.
+    
+    Args:
+        credentials: HTTP authorization credentials
+        db: Database session
+        
+    Returns:
+        Current user object
+        
+    Raises:
+        HTTPException: If authentication fails
+    """
     try:
-        logger.debug("Getting auth service")
-        auth_service = get_auth_service()
-        logger.debug("Verifying token")
-        payload = auth_service.verify_token(token)
-        if payload is None:
-            logger.error("Token verification failed - payload is None")
-            raise credentials_exception
-        email: str = payload.get("sub")
-        if email is None:
-            logger.error("Token payload missing 'sub' field")
-            raise credentials_exception
+        token = credentials.credentials
+        user = await auth_service.get_current_user(db, token)
+        return user
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Authentication failed"
+        )
+
+
+async def get_current_active_user(
+    current_user = Depends(get_current_user)
+):
+    """Get current active user.
+    
+    Args:
+        current_user: Current user from get_current_user
         
-        logger.info(f"Token validated successfully for email: {email}")
+    Returns:
+        Current active user
         
-    except JWTError as e:
-        logger.error(f"JWT token validation error: {e}")
-        raise credentials_exception
+    Raises:
+        HTTPException: If user is not active
+    """
+    if not current_user.is_active:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Inactive user"
+        )
+    return current_user
+
+
+async def get_current_verified_user(
+    current_user = Depends(get_current_active_user)
+):
+    """Get current verified user.
     
-    logger.debug("Getting user repository")
-    from services.repositories import get_user_repository
-    user_repo = get_user_repository()
-    logger.debug(f"Looking up user by email: {email}")
-    user = user_repo.get_user_by_email(db, email)
+    Args:
+        current_user: Current active user
+        
+    Returns:
+        Current verified user
+        
+    Raises:
+        HTTPException: If user is not verified
+    """
+    if not current_user.is_verified:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Email not verified"
+        )
+    return current_user
+
+
+async def get_current_superuser(
+    current_user = Depends(get_current_active_user)
+):
+    """Get current superuser.
     
-    if user is None:
-        logger.error(f"User not found in database for email: {email}")
-        raise credentials_exception
-    
-    logger.info(f"User authenticated successfully: {user.email}")
-    return user
+    Args:
+        current_user: Current active user
+        
+    Returns:
+        Current superuser
+        
+    Raises:
+        HTTPException: If user is not a superuser
+    """
+    if not current_user.is_superuser:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Not enough permissions"
+        )
+    return current_user
