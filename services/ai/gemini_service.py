@@ -6,6 +6,10 @@ import google.generativeai as genai
 import ast
 from config.logging_config import get_logger
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 logger = get_logger(__name__)
 
 class GeminiService:

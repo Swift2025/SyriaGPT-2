@@ -48,7 +48,7 @@ class EmbeddingService:
         """Generate embedding for a single text."""
         try:
             if not self.initialized:
-                raise RuntimeError("Embedding service not initialized")
+                await self.initialize()
 
             result = genai.embed_content(
                 model=self.model_name,

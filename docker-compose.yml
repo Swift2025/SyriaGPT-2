@@ -23,7 +23,7 @@ services:
     networks:
       - syriagpt-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
+      test: ["CMD", "curl", "-f", "http://app:9000/health"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -84,7 +84,7 @@ services:
     networks:
       - syriagpt-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:6333/health"]
+      test: ["CMD", "curl", "-f", "http://qdrant:6333/health"]
       interval: 30s
       timeout: 10s
       retries: 3
