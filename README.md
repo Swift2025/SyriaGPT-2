@@ -1,84 +1,173 @@
-# SyriaGPT - AI Chatbot System
+# SyriaGPT 🤖
 
-A sophisticated FastAPI-based AI chatbot system that provides intelligent Q&A capabilities about Syria, with advanced features including authentication, vector search, chat management, and email systems.
+**Intelligent Q&A System for Syria-related Questions Powered by Google Gemini AI**
 
-## 🚀 Features
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.116.1-009688?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Python](https://img.shields.io/badge/Python-3.13-blue?style=flat-square&logo=python)](https://www.python.org/)
+[![Docker](https://img.shields.io/badge/Docker-Compose-3.9-2496ED?style=flat-square&logo=docker)](https://www.docker.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
 
-### Core Features
-- **🤖 AI Integration**: Google Gemini AI for intelligent responses about Syria
-- **🔐 Authentication**: JWT-based auth with OAuth (Google), 2FA, email verification
-- **🔍 Vector Search**: Qdrant vector database for semantic search
-- **💬 Chat Management**: Persistent chat sessions with message history
-- **📧 Email System**: Dynamic SMTP configuration with multiple providers
-- **🗄️ Database**: PostgreSQL with Alembic migrations
-- **📊 Logging**: Comprehensive structured logging system
-- **🐳 Docker Support**: Full containerization with docker-compose
+[![Qdrant](https://img.shields.io/badge/Qdrant-1.15-FF6B6B?style=flat-square)](https://qdrant.tech/)
 
-### Advanced Features
-- **Multilingual Support**: Arabic and English language support
-- **Context-Aware Responses**: Intelligent Q&A about Syria with context
-- **Question Variant Generation**: Generate multiple ways to ask questions
-- **News Integration**: Web scraping and news integration
-- **User Management**: Complete user profile and preference management
-- **Session Management**: Secure session handling with refresh tokens
-- **Rate Limiting**: Built-in rate limiting for API protection
-- **Health Monitoring**: Comprehensive health checks for all services
+## 📖 Table of Contents
 
-## 📁 Project Structure
+- [Overview](#overview)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Technology Stack](#technology-stack)
+- [Prerequisites](#prerequisites)
+- [Installation & Setup](#installation--setup)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Authentication Guide](#authentication-guide)
+- [Data Sources](#data-sources)
+- [Development](#development)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+
+## 🎯 Overview
+
+SyriaGPT is an intelligent question-answering system specifically designed to provide accurate, comprehensive, and contextually relevant information about Syria. The system leverages advanced AI technologies including Google Gemini, vector search, and semantic understanding to deliver high-quality responses to user queries.
+
+### Key Capabilities
+
+- **Intelligent Q&A**: Advanced question processing with semantic understanding
+- **Multi-language Support**: English and Arabic language support
+- **Vector Search**: Semantic similarity search using Qdrant vector database
+- **User Authentication**: Complete user management with OAuth support
+- **Session Management**: Persistent user sessions and conversation history
+- **Real-time Processing**: Fast response times with vector search
+
+## ✨ Features
+
+### 🤖 AI-Powered Q&A
+- **Google Gemini Integration**: State-of-the-art AI model for answer generation
+- **Semantic Search**: Vector-based similarity search for relevant information
+- **Context Awareness**: Maintains conversation context for better responses
+- **Quality Assessment**: Confidence scoring for answer reliability
+
+### 🔐 Authentication & Security
+- **User Registration/Login**: Complete user management system
+- **OAuth Integration**: Social login support (Google)
+- **Two-Factor Authentication**: Enhanced security with TOTP
+- **Password Recovery**: Secure password reset functionality
+- **Email Verification**: Account verification via email
+- **Dynamic SMTP Configuration**: Support for multiple email providers (Gmail, Hotmail, Outlook, Yahoo, etc.)
+
+### 📊 Data Management
+- **Comprehensive Knowledge Base**: Extensive Syria-related data
+- **Vector Database**: Qdrant for semantic search capabilities
+- **Session Storage**: Persistent user sessions and history
+
+### 🌐 API Features
+- **RESTful API**: Clean, documented API endpoints
+- **Real-time Processing**: Fast response times
+- **Health Monitoring**: System health checks and monitoring
+- **Error Handling**: Comprehensive error management
+
+## 🏗️ Architecture
+
+### System Components
 
 ```
-SyriaGPT-2/
-├── main.py                          # Main FastAPI application
-├── requirements.txt                 # Python dependencies
-├── docker-compose.yml              # Docker services configuration
-├── Dockerfile                      # Docker image configuration
-├── alembic.ini                     # Alembic configuration
-├── env.example                     # Environment variables template
-├── README.md                       # This file
-├── api/                           # API routes and endpoints
-│   ├── authentication/            # Authentication endpoints
-│   ├── ai/                        # AI and chat endpoints
-│   ├── session/                   # Session management
-│   ├── smtp/                      # SMTP configuration
-│   └── user_management/           # User management
-├── config/                        # Configuration files
-│   ├── config_loader.py           # Configuration management
-│   ├── logging_config.py          # Logging configuration
-│   ├── messages.json              # System messages
-│   ├── oauth_providers.json       # OAuth provider configs
-│   ├── smtp_providers.json        # SMTP provider configs
-│   ├── email_templates.json       # Email templates
-│   └── identity_responses.json    # AI identity responses
-├── data/                          # Knowledge base data
-│   └── syria_knowledge/           # Syria-specific knowledge
-├── logs/                          # Application logs
-├── migrations/                    # Database migrations
-├── models/                        # Database models and schemas
-│   ├── domain/                    # SQLAlchemy models
-│   └── schemas/                   # Pydantic schemas
-└── services/                      # Business logic services
-    ├── ai/                        # AI and ML services
-    ├── auth/                      # Authentication services
-    ├── database/                  # Database services
-    ├── email/                     # Email services
-    └── repositories/              # Data access layer
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   FastAPI App   │    │   PostgreSQL    │    │   Qdrant        │
+│   (Port 9000)   │◄──►│   (Port 5432)   │◄──►│   (Port 6333)   │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Google Gemini │    │   Email Service │    │   Vector Search │
+│   AI           │    │   (SMTP)        │    │   Engine        │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
-## 🛠️ Installation
+### Processing Pipeline
 
-### Prerequisites
+1. **Input Normalization** → Question preprocessing and standardization
+2. **Semantic Search** → Qdrant vector similarity search
+3. **Quality Evaluation** → Confidence scoring and validation
+4. **AI Generation** → Google Gemini API for new answers
+5. **Storage** → Multi-system persistence (PostgreSQL, Qdrant)
 
-- Python 3.11+
-- PostgreSQL 15+
-- Redis (optional)
-- Docker & Docker Compose (for containerized deployment)
+## 🛠️ Technology Stack
 
-### Local Development Setup
+### Backend Framework
+- **FastAPI 0.116.1**: Modern, fast web framework for building APIs
+- **Python 3.13**: Latest Python version for optimal performance
+- **Uvicorn**: ASGI server for running FastAPI applications
+
+### Database & Storage
+- **PostgreSQL 15**: Primary relational database
+- **Qdrant 1.15**: Vector database for semantic search
+
+### AI & Machine Learning
+- **Google Gemini**: Advanced AI model for answer generation
+- **Vector Embeddings**: Semantic representation of text
+- **Similarity Search**: Vector-based information retrieval
+
+### Authentication & Security
+- **JWT Tokens**: Secure authentication mechanism
+- **OAuth 2.0**: Social login integration
+- **TOTP**: Two-factor authentication
+- **bcrypt**: Password hashing
+
+### Development & Deployment
+- **Docker & Docker Compose**: Containerized deployment
+- **Alembic**: Database migration management
+- **Pydantic**: Data validation and serialization
+- **SQLAlchemy**: ORM for database operations
+
+## 📋 Prerequisites
+
+Before setting up SyriaGPT, ensure you have the following installed:
+
+- **Docker** (version 20.10 or higher)
+- **Docker Compose** (version 2.0 or higher)
+- **Python 3.13** (for local development)
+- **Git** (for version control)
+
+### System Requirements
+
+- **RAM**: Minimum 4GB, Recommended 8GB+
+- **Storage**: Minimum 10GB free space
+- **CPU**: Multi-core processor recommended
+- **Network**: Internet connection for AI API calls
+
+## 🚀 Installation & Setup
+
+### Quick Start with Docker (Recommended)
 
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd SyriaGPT-2
+   cd SyriaGPT
+   ```
+
+2. **Create environment file**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
+
+3. **Start the application**
+   ```bash
+   docker-compose up -d
+   ```
+
+4. **Access the application**
+   - **API**: http://localhost:9000
+   - **API Documentation**: http://localhost:9000/docs
+   - **PgAdmin**: http://localhost:5050 (admin@admin.com / admin123)
+
+### Local Development Setup
+
+1. **Clone and navigate to project**
+   ```bash
+   git clone <repository-url>
+   cd SyriaGPT
    ```
 
 2. **Create virtual environment**
@@ -94,347 +183,300 @@ SyriaGPT-2/
 
 4. **Set up environment variables**
    ```bash
-   cp env.example .env
-   # Edit .env with your configuration
+   cp .env.example .env
+   # Configure your .env file
    ```
 
-5. **Set up database**
+5. **Start required services**
    ```bash
-   # Create PostgreSQL database
-   createdb syriagpt
-   
-   # Run migrations
+   docker-compose up -d db qdrant
+   ```
+
+6. **Run database migrations**
+   ```bash
    alembic upgrade head
    ```
 
-6. **Run the application**
+7. **Start the application**
    ```bash
-   python main.py
-   ```
-
-### Docker Deployment
-
-1. **Clone and navigate to project**
-   ```bash
-   git clone <repository-url>
-   cd SyriaGPT-2
-   ```
-
-2. **Set up environment variables**
-   ```bash
-   cp env.example .env
-   # Edit .env with your configuration
-   ```
-
-3. **Start services**
-   ```bash
-   docker-compose up -d
-   ```
-
-4. **Run migrations**
-   ```bash
-   docker-compose exec syriagpt alembic upgrade head
+   uvicorn main:app --host 0.0.0.0 --port 9000 --reload
    ```
 
 ## ⚙️ Configuration
 
 ### Environment Variables
 
-Copy `env.example` to `.env` and configure the following:
+Create a `.env` file in the root directory with the following variables:
 
-#### Database Configuration
 ```env
-DATABASE_URL=postgresql+psycopg2://admin:admin123@localhost:5432/syriagpt
-DATABASE_HOST=localhost
-DATABASE_PORT=5432
-DATABASE_NAME=syriagpt
-DATABASE_USER=admin
-DATABASE_PASSWORD=admin123
-```
+# Database Configuration
+DATABASE_URL=postgresql://admin:admin123@localhost:5432/syriagpt
 
-#### Security Configuration
-```env
-SECRET_KEY=your-super-secret-key-change-this-in-production
-JWT_SECRET_KEY=your-jwt-secret-key-change-this-in-production
-JWT_ALGORITHM=HS256
-JWT_ACCESS_TOKEN_EXPIRE_MINUTES=30
-JWT_REFRESH_TOKEN_EXPIRE_DAYS=7
-```
+# AI Configuration
+GEMINI_API_KEY=your_gemini_api_key_here
 
-#### Google AI Configuration
-```env
-GOOGLE_API_KEY=your-google-api-key-here
-GEMINI_API_KEY=your-gemini-api-key-here
-```
-
-#### OAuth Configuration
-```env
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
-GOOGLE_REDIRECT_URI=http://localhost:9000/auth/google/callback
-```
-
-#### Qdrant Vector Database
-```env
-QDRANT_HOST=localhost
-QDRANT_PORT=6333
-QDRANT_COLLECTION=syria_qa_vectors
-QDRANT_API_KEY=your-qdrant-api-key
-EMBEDDING_DIM=768
-```
-
-#### Email Configuration
-```env
+# Email Configuration
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
-SMTP_USERNAME=your-email@gmail.com
-SMTP_PASSWORD=your-app-password
-SMTP_USE_TLS=true
-SMTP_USE_SSL=false
-EMAIL_FROM_NAME=SyriaGPT
-EMAIL_FROM_ADDRESS=noreply@syriagpt.com
+SMTP_USERNAME=your_email@gmail.com
+SMTP_PASSWORD=your_app_password
+
+# Security
+SECRET_KEY=your_secret_key_here
+JWT_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+# OAuth Configuration
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+# Application Settings
+DEBUG=True
+LOG_LEVEL=INFO
 ```
 
 ### Configuration Files
 
-The system uses JSON configuration files in the `config/` directory:
+The application uses several configuration files in the `config/` directory:
 
-- **`messages.json`**: System messages in Arabic and English
+- **`messages.json`**: Localized message templates
 - **`oauth_providers.json`**: OAuth provider configurations
-- **`smtp_providers.json`**: SMTP provider configurations
-- **`email_templates.json`**: Email template configurations
-- **`identity_responses.json`**: AI identity and response templates
+- **`email_templates.json`**: Email template definitions
+- **`smtp_providers.json`**: SMTP provider configurations for dynamic email setup
 
-## 🔧 API Documentation
+### SMTP Configuration
 
-### Authentication Endpoints
+The system supports dynamic SMTP configuration for multiple email providers:
 
-#### Register User
-```http
-POST /auth/register
-Content-Type: application/json
+#### Supported Providers
+- **Gmail**: `smtp.gmail.com:587` (requires App Password)
+- **Hotmail/Outlook**: `smtp-mail.outlook.com:587`
+- **Yahoo**: `smtp.mail.yahoo.com:587` (requires App Password)
+- **iCloud**: `smtp.mail.me.com:587` (requires App Password)
+- **Zoho**: `smtp.zoho.com:587`
+- **ProtonMail**: Via Bridge application
+- **Custom SMTP**: User-defined servers
 
-{
-  "email": "user@example.com",
-  "username": "username",
-  "password": "password123",
-  "confirm_password": "password123",
-  "first_name": "John",
-  "last_name": "Doe",
-  "language_preference": "ar"
-}
+#### Environment Variables
+```bash
+# Email Configuration
+SMTP_USER=your_email@example.com
+SMTP_PASSWORD=your_password_or_app_password
+EMAIL_FROM=noreply@syriagpt.com
+EMAIL_FROM_NAME=Syria GPT
+
+# Optional: Override auto-detection
+SMTP_PROVIDER=gmail
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
 ```
 
-#### Login User
+#### API Endpoints
 ```http
-POST /auth/login
-Content-Type: application/json
-
-{
-  "email": "user@example.com",
-  "password": "password123",
-  "remember_me": false,
-  "two_factor_code": "123456"
-}
+GET  /smtp/providers              # Get all SMTP providers
+GET  /smtp/providers/{provider}   # Get provider details
+POST /smtp/test                   # Test SMTP connection
+POST /smtp/detect-provider        # Detect provider from email
+GET  /smtp/supported-domains      # Get supported domains
+POST /smtp/configure              # Configure SMTP settings
+GET  /smtp/health                 # SMTP health check
 ```
 
-#### OAuth Login
+For detailed SMTP configuration instructions, see [SMTP_CONFIGURATION_GUIDE.md](SMTP_CONFIGURATION_GUIDE.md).
+
+## 📚 Usage
+
+### API Endpoints
+
+#### Authentication Endpoints
+
 ```http
-GET /auth/oauth/google
+POST /auth/register          # User registration
+POST /auth/login             # User login
+POST /auth/oauth/{provider}/authorize  # OAuth authorization
+GET  /auth/oauth/{provider}/callback   # OAuth callback
+POST /auth/forgot-password   # Password recovery
+POST /auth/reset-password    # Password reset
+POST /auth/2fa/setup         # Two-factor setup
+POST /auth/2fa/verify        # Two-factor verification
 ```
 
-#### Refresh Token
-```http
-POST /auth/refresh
-Content-Type: application/json
+#### Q&A Endpoints
 
-{
-  "refresh_token": "your-refresh-token"
-}
+```http
+POST /intelligent-qa/ask           # Ask intelligent question (with optional health, quota, stats, variants)
+POST /intelligent-qa/scrape-news   # Scrape news sources (with optional knowledge base update, stats, status)
+GET  /questions                    # Get user questions
+POST /questions                    # Create new question
+GET  /answers                      # Get answers
+POST /answers                      # Create new answer
 ```
 
-### Chat Endpoints
+#### Session Management
 
-#### Create Chat
 ```http
-POST /chat/
-Authorization: Bearer your-access-token
-Content-Type: application/json
-
-{
-  "title": "My Chat",
-  "description": "Chat about Syria",
-  "ai_model": "gemini-pro",
-  "language": "ar",
-  "max_tokens": 2048,
-  "temperature": "0.7"
-}
+GET  /session/current        # Get current session
+POST /session/logout         # Logout user
+GET  /session/history        # Get session history
 ```
 
-#### Send Message
-```http
-POST /chat/{chat_id}/messages
-Authorization: Bearer your-access-token
-Content-Type: application/json
+### Example API Usage
 
-{
-  "content": "What is the capital of Syria?",
-  "role": "user",
-  "message_type": "text"
-}
+#### Ask a Question
+
+```bash
+# Basic question
+curl -X POST "http://localhost:9000/intelligent-qa/ask?question=What is the capital of Syria?" \
+  -H "Authorization: Bearer YOUR_TOKEN"
+
+# Question with additional information
+curl -X POST "http://localhost:9000/intelligent-qa/ask?question=What is the capital of Syria?&include_health=true&include_quota=true" \
+  -H "Authorization: Bearer YOUR_TOKEN"
+
+# Scrape news sources
+curl -X POST "http://localhost:9000/intelligent-qa/scrape-news?sources=sana&max_articles=10&update_knowledge_base=true" \
+  -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
-### Intelligent Q&A Endpoints
+#### User Registration
 
-#### Ask Question
-```http
-POST /intelligent-qa/ask
-Authorization: Bearer your-access-token
-Content-Type: application/json
-
-{
-  "question": "What is the history of Damascus?",
-  "language": "ar",
-  "include_sources": true,
-  "max_results": 5
-}
+```bash
+curl -X POST "http://localhost:9000/auth/register" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "securepassword123",
+    "first_name": "John",
+    "last_name": "Doe"
+  }'
 ```
 
-#### Generate Question Variants
-```http
-POST /intelligent-qa/variants
-Authorization: Bearer your-access-token
-Content-Type: application/json
+#### User Login
 
-{
-  "question": "What is the capital of Syria?",
-  "language": "ar",
-  "num_variants": 3
-}
+```bash
+curl -X POST "http://localhost:9000/auth/login" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "securepassword123"
+  }'
 ```
 
-### User Management Endpoints
+### Web Interface
 
-#### Get User Profile
-```http
-GET /user/profile
-Authorization: Bearer your-access-token
+Access the interactive API documentation at:
+- **Swagger UI**: http://localhost:9000/docs
+- **ReDoc**: http://localhost:9000/redoc
+
+## 🔐 Authentication Guide
+
+For detailed instructions on how to use authentication in Swagger UI, see the [Swagger Authentication Guide](SWAGGER_AUTHENTICATION_GUIDE.md).
+
+### Quick Authentication Steps:
+1. **Get a token**: Use `POST /auth/login` with your credentials
+2. **Authorize in Swagger**: Click the 🔒 Authorize button and enter `Bearer YOUR_TOKEN`
+3. **Test**: Use `GET /auth/me` to verify authentication
+
+## 📊 Data Sources
+
+The system includes comprehensive Syria-related knowledge in the following categories:
+
+### Knowledge Base Structure
+
+```
+data/syria_knowledge/
+├── cities.json                    # Syrian cities and locations
+├── culture.json                   # Cultural information
+├── economy.json                   # Economic data
+├── general.json                   # General information
+├── government.json                # Government and politics
+└── Real_post_liberation_events.json  # Post-liberation events
 ```
 
-#### Update User Profile
-```http
-PUT /user/profile
-Authorization: Bearer your-access-token
-Content-Type: application/json
+### Data Categories
 
-{
-  "username": "new_username",
-  "first_name": "New Name",
-  "bio": "Updated bio"
-}
+- **Cities**: Geographic information about Syrian cities
+- **Culture**: Cultural heritage, traditions, and customs
+- **Economy**: Economic indicators, trade, and financial data
+- **General**: General facts and information about Syria
+- **Government**: Political structure, institutions, and governance
+- **Post-Liberation Events**: Historical events and developments
+
+## 🔧 Development
+
+### Project Structure
+
+```
+SyriaGPT/
+├── api/                          # API endpoints and routes
+│   ├── authentication/           # Auth-related endpoints
+│   ├── questions/                # Question management
+│   ├── answers/                  # Answer management
+│   └── ai/                       # AI Q&A endpoints
+├── config/                       # Configuration files
+├── data/                         # Knowledge base data
+├── models/                       # Data models and schemas
+├── services/                     # Business logic services
+│   ├── ai/                       # AI-related services
+│   ├── auth/                     # Authentication services
+│   ├── database/                 # Database services
+│   └── repositories/             # Data access layer
+├── migrations/                   # Database migrations
+├── main.py                       # Application entry point
+├── requirements.txt              # Python dependencies
+├── docker-compose.yml            # Docker services
+└── Dockerfile                    # Docker configuration
 ```
 
-### Health Check Endpoints
+### Development Commands
 
-#### Basic Health Check
-```http
-GET /health
+```bash
+# Run tests
+pytest
+
+# Format code
+black .
+
+# Lint code
+flake8 .
+
+# Type checking
+mypy .
+
+# Database migrations
+alembic revision --autogenerate -m "Description"
+alembic upgrade head
+
+# Start development server
+uvicorn main:app --reload --host 0.0.0.0 --port 9000
 ```
 
-#### Detailed Health Check
-```http
-GET /health/detailed
-```
+### Adding New Features
 
-## 🗄️ Database Schema
-
-### Users Table
-- User authentication and profile information
-- OAuth integration fields
-- Two-factor authentication settings
-- Preferences and notification settings
-
-### Chats Table
-- Chat sessions with AI models
-- Chat settings and metadata
-- Message count and token usage
-
-### Chat Messages Table
-- Individual messages in chats
-- Message types (text, image, file, etc.)
-- AI processing metadata
-
-### User Sessions Table
-- JWT session management
-- Session security and device information
-- Session expiration and revocation
-
-### QA Pairs Table
-- Question-answer pairs for knowledge base
-- Vector embeddings for semantic search
-- Source attribution and quality ratings
-
-## 🔐 Security Features
-
-### Authentication & Authorization
-- JWT-based authentication with refresh tokens
-- OAuth integration (Google, Facebook, GitHub, etc.)
-- Two-factor authentication with TOTP
-- Email verification system
-- Password strength validation
-
-### Session Management
-- Secure session handling
-- Session revocation and cleanup
-- Device and location tracking
-- Session timeout management
-
-### Data Protection
-- Password hashing with bcrypt
-- SQL injection prevention
-- XSS protection
-- CSRF protection
-- Rate limiting
-
-## 📊 Monitoring & Logging
-
-### Logging System
-- Structured logging with JSON format
-- Multiple log levels (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-- Log rotation and file management
-- Colored console output for development
-
-### Health Monitoring
-- Service health checks
-- Database connectivity monitoring
-- External service monitoring
-- Performance metrics
-
-### Error Handling
-- Comprehensive error handling
-- Structured error responses
-- Error logging and tracking
-- Graceful degradation
+1. **Create new API endpoints** in the appropriate `api/` subdirectory
+2. **Add business logic** in the `services/` directory
+3. **Define data models** in `models/` directory
+4. **Update database schema** using Alembic migrations
+5. **Add tests** for new functionality
+6. **Update documentation** and API docs
 
 ## 🚀 Deployment
 
 ### Production Deployment
 
-1. **Set up production environment**
+1. **Prepare production environment**
    ```bash
    # Set production environment variables
    export ENVIRONMENT=production
-   export DEBUG=false
-   export LOG_LEVEL=INFO
+   export DEBUG=False
    ```
 
-2. **Use production database**
+2. **Build and deploy with Docker**
    ```bash
-   # Update DATABASE_URL for production
-   export DATABASE_URL=postgresql+psycopg2://user:pass@prod-db:5432/syriagpt
+   docker-compose -f docker-compose.prod.yml up -d
    ```
 
-3. **Configure reverse proxy (Nginx)**
+3. **Set up reverse proxy** (Nginx recommended)
    ```nginx
    server {
        listen 80;
@@ -444,157 +486,75 @@ GET /health/detailed
            proxy_pass http://localhost:9000;
            proxy_set_header Host $host;
            proxy_set_header X-Real-IP $remote_addr;
-           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-           proxy_set_header X-Forwarded-Proto $scheme;
        }
    }
    ```
 
-4. **Set up SSL certificates**
+4. **Configure SSL** with Let's Encrypt
    ```bash
-   # Using Let's Encrypt
    certbot --nginx -d your-domain.com
    ```
 
-### Docker Production Deployment
+### Monitoring & Logging
 
-1. **Use production docker-compose**
-   ```bash
-   docker-compose -f docker-compose.prod.yml up -d
-   ```
+- **Application Logs**: Check container logs with `docker-compose logs -f app`
+- **Database Monitoring**: Use PgAdmin at http://localhost:5050
+- **Health Checks**: Monitor `/intelligent-qa/health` endpoint
+- **Performance**: Monitor response times and vector search performance
 
-2. **Set up monitoring**
-   ```bash
-   # Add monitoring services
-   docker-compose -f docker-compose.monitoring.yml up -d
-   ```
+### Scaling Considerations
 
-## 🧪 Testing
-
-### Running Tests
-```bash
-# Install test dependencies
-pip install pytest pytest-asyncio httpx
-
-# Run tests
-pytest
-
-# Run with coverage
-pytest --cov=.
-
-# Run specific test file
-pytest tests/test_auth.py
-```
-
-### Test Structure
-```
-tests/
-├── test_auth.py              # Authentication tests
-├── test_chat.py              # Chat functionality tests
-├── test_ai.py                # AI service tests
-├── test_user_management.py   # User management tests
-└── conftest.py               # Test configuration
-```
-
-## 📈 Performance Optimization
-
-### Database Optimization
-- Connection pooling
-- Query optimization
-- Index optimization
-- Caching strategies
-
-### API Optimization
-- Response caching
-- Pagination
-- Rate limiting
-- Async processing
-
-### AI Service Optimization
-- Embedding caching
-- Vector search optimization
-- Model optimization
-- Batch processing
+- **Horizontal Scaling**: Use multiple application instances behind a load balancer
+- **Database Scaling**: Consider read replicas for PostgreSQL
+- **Vector Database Scaling**: Scale Qdrant with multiple nodes
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+We welcome contributions to SyriaGPT! Please follow these guidelines:
+
+### Contribution Process
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes** and add tests
+4. **Commit your changes**: `git commit -m 'Add amazing feature'`
+5. **Push to the branch**: `git push origin feature/amazing-feature`
+6. **Open a Pull Request**
 
 ### Development Guidelines
 
-- Follow PEP 8 style guidelines
-- Write comprehensive tests
-- Update documentation
-- Use type hints
-- Follow security best practices
+- **Code Style**: Follow PEP 8 and use Black for formatting
+- **Testing**: Write tests for new features and ensure all tests pass
+- **Documentation**: Update documentation for new features
+- **Type Hints**: Use type hints for all function parameters and return values
+- **Error Handling**: Implement proper error handling and logging
+
+### Code of Conduct
+
+- Be respectful and inclusive
+- Focus on constructive feedback
+- Follow the project's coding standards
+- Test your changes thoroughly
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
+## 🙏 Acknowledgments
 
-### Documentation
-- API Documentation: `http://localhost:9000/docs`
-- ReDoc Documentation: `http://localhost:9000/redoc`
+- **Google Gemini**: For providing the AI capabilities
+- **FastAPI**: For the excellent web framework
+- **Qdrant**: For the vector database technology
+- **Open Source Community**: For the various libraries and tools used
 
-### Getting Help
-- Check the [Issues](https://github.com/your-repo/issues) page
-- Create a new issue for bugs or feature requests
-- Join our community discussions
+## 📞 Support
 
-### Common Issues
+For support and questions:
 
-#### Database Connection Issues
-```bash
-# Check database connectivity
-psql -h localhost -U admin -d syriagpt
-
-# Reset database
-dropdb syriagpt && createdb syriagpt
-alembic upgrade head
-```
-
-#### Email Configuration Issues
-```bash
-# Test SMTP configuration
-python -c "
-import smtplib
-smtp = smtplib.SMTP('smtp.gmail.com', 587)
-smtp.starttls()
-smtp.login('your-email@gmail.com', 'your-app-password')
-print('SMTP connection successful')
-smtp.quit()
-"
-```
-
-#### OAuth Configuration Issues
-- Verify OAuth credentials in environment variables
-- Check redirect URIs in OAuth provider settings
-- Ensure OAuth provider is enabled in configuration
-
-## 🎯 Roadmap
-
-### Upcoming Features
-- [ ] Advanced AI model support
-- [ ] Real-time chat with WebSockets
-- [ ] Mobile app integration
-- [ ] Advanced analytics dashboard
-- [ ] Multi-tenant support
-- [ ] API rate limiting improvements
-- [ ] Advanced caching strategies
-- [ ] Machine learning model training
-
-### Version History
-- **v2.0.0**: Complete rewrite with FastAPI, advanced features
-- **v1.0.0**: Initial release with basic functionality
+- **Issues**: Create an issue on GitHub
+- **Documentation**: Check the API docs at `/docs`
+- **Email**: Contact the development team
 
 ---
 
-**SyriaGPT** - Intelligent Q&A System for Syria 🇸🇾
-
-Built with ❤️ using FastAPI, PostgreSQL, and Google AI
+**Made with ❤️ for Syria and its people**

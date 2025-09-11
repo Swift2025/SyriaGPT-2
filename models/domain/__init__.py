@@ -1,20 +1,7 @@
-"""
-Domain models package for SyriaGPT.
-"""
-
+# Domain models (database entities)
 from .base import Base
 from .user import User
-from .chat import Chat, ChatMessage, ChatFeedback, ChatSettings
-from .session import UserSession
+from .session import Session
 from .qa_pair import QAPair
 
-__all__ = [
-    "Base",
-    "User", 
-    "Chat",
-    "ChatMessage",
-    "ChatFeedback",
-    "ChatSettings",
-    "UserSession",
-    "QAPair"
-]
+__all__ = ["Base", "User", "Session", "QAPair"]

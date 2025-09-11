@@ -120,14 +120,14 @@ class IdentityService:
         
         return None
     
-    def get_identity_response(self, question: str, language: str = "arabic") -> Optional[Dict[str, any]]:
+    def get_identity_response(self, question: str) -> Optional[Dict[str, any]]:
         """Get appropriate identity response for the question"""
         logger.info(f"🔍 [IDENTITY_SERVICE] فحص السؤال: {question[:50]}...")
         response_type = self.detect_identity_question(question)
         
         if response_type:
             logger.info(f"✅ [IDENTITY_SERVICE] تم اكتشاف نوع السؤال: {response_type}")
-            response_text = config_loader.get_identity_response(response_type, language)
+            response_text = config_loader.get_identity_response(response_type)
             
             return {
                 "status": "success",
@@ -139,7 +139,7 @@ class IdentityService:
                 "is_identity_question": True,
                 "debug_info": {
                     "detected_type": response_type,
-                    "language": language,
+                    "language": "arabic",
                     "question_length": len(question)
                 }
             }

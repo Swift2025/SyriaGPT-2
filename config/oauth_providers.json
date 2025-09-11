@@ -1,110 +1,16 @@
 {
   "google": {
-    "name": "Google",
-    "client_id_env": "GOOGLE_CLIENT_ID",
-    "client_secret_env": "GOOGLE_CLIENT_SECRET",
-    "authorization_url": "https://accounts.google.com/o/oauth2/v2/auth",
-    "token_url": "https://oauth2.googleapis.com/token",
+    "name": "google",
+    "display_name": "Google",
+    "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth",
+    "access_token_url": "https://oauth2.googleapis.com/token",
     "user_info_url": "https://www.googleapis.com/oauth2/v2/userinfo",
-    "scope": [
-      "openid",
-      "email",
-      "profile"
-    ],
-    "redirect_uri": "http://localhost:9000/auth/google/callback",
-    "response_type": "code",
-    "access_type": "offline",
-    "prompt": "consent",
-    "enabled": true,
-    "icon": "https://developers.google.com/identity/images/g-logo.png",
-    "color": "#4285F4"
-  },
-  "facebook": {
-    "name": "Facebook",
-    "client_id_env": "FACEBOOK_CLIENT_ID",
-    "client_secret_env": "FACEBOOK_CLIENT_SECRET",
-    "authorization_url": "https://www.facebook.com/v18.0/dialog/oauth",
-    "token_url": "https://graph.facebook.com/v18.0/oauth/access_token",
-    "user_info_url": "https://graph.facebook.com/me",
-    "scope": [
-      "email",
-      "public_profile"
-    ],
-    "redirect_uri": "http://localhost:9000/auth/facebook/callback",
-    "response_type": "code",
-    "enabled": false,
-    "icon": "https://facebook.com/favicon.ico",
-    "color": "#1877F2"
-  },
-  "twitter": {
-    "name": "Twitter",
-    "client_id_env": "TWITTER_CLIENT_ID",
-    "client_secret_env": "TWITTER_CLIENT_SECRET",
-    "authorization_url": "https://twitter.com/i/oauth2/authorize",
-    "token_url": "https://api.twitter.com/2/oauth2/token",
-    "user_info_url": "https://api.twitter.com/2/users/me",
-    "scope": [
-      "tweet.read",
-      "users.read"
-    ],
-    "redirect_uri": "http://localhost:9000/auth/twitter/callback",
-    "response_type": "code",
-    "code_challenge_method": "S256",
-    "enabled": false,
-    "icon": "https://abs.twimg.com/favicons/twitter.ico",
-    "color": "#1DA1F2"
-  },
-  "github": {
-    "name": "GitHub",
-    "client_id_env": "GITHUB_CLIENT_ID",
-    "client_secret_env": "GITHUB_CLIENT_SECRET",
-    "authorization_url": "https://github.com/login/oauth/authorize",
-    "token_url": "https://github.com/login/oauth/access_token",
-    "user_info_url": "https://api.github.com/user",
-    "scope": [
-      "user:email",
-      "read:user"
-    ],
-    "redirect_uri": "http://localhost:9000/auth/github/callback",
-    "response_type": "code",
-    "enabled": false,
-    "icon": "https://github.com/favicon.ico",
-    "color": "#333333"
-  },
-  "microsoft": {
-    "name": "Microsoft",
-    "client_id_env": "MICROSOFT_CLIENT_ID",
-    "client_secret_env": "MICROSOFT_CLIENT_SECRET",
-    "authorization_url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
-    "token_url": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
-    "user_info_url": "https://graph.microsoft.com/v1.0/me",
-    "scope": [
-      "openid",
-      "email",
-      "profile"
-    ],
-    "redirect_uri": "http://localhost:9000/auth/microsoft/callback",
-    "response_type": "code",
-    "enabled": false,
-    "icon": "https://c.s-microsoft.com/favicon.ico",
-    "color": "#0078D4"
-  },
-  "apple": {
-    "name": "Apple",
-    "client_id_env": "APPLE_CLIENT_ID",
-    "client_secret_env": "APPLE_CLIENT_SECRET",
-    "authorization_url": "https://appleid.apple.com/auth/authorize",
-    "token_url": "https://appleid.apple.com/auth/token",
-    "user_info_url": "https://appleid.apple.com/auth/userinfo",
-    "scope": [
-      "name",
-      "email"
-    ],
-    "redirect_uri": "http://localhost:9000/auth/apple/callback",
-    "response_type": "code",
-    "response_mode": "form_post",
-    "enabled": false,
-    "icon": "https://apple.com/favicon.ico",
-    "color": "#000000"
+    "scope": "openid email profile",
+    "user_info_mapping": {
+      "provider_id": "id",
+      "email": "email",
+      "name": "name",
+      "picture": "picture"
+    }
   }
 }

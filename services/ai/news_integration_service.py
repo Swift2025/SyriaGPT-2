@@ -5,6 +5,7 @@ from typing import Dict, List, Optional, Any
 from datetime import datetime, timedelta
 import json
 import hashlib
+import uuid
 
 from .web_scraping_service import web_scraping_service, ScrapedArticle
 from .embedding_service import embedding_service
@@ -41,6 +42,7 @@ class NewsIntegrationService:
         2. اكتب إجابات واضحة ومفصلة لكل سؤال
         3. ركز على المعلومات المهمة والحديثة
         4. استخدم لغة عربية واضحة
+        5. لا تعد اي شيء غير الاجابة المطلوبة لا قبل مثل(اليك الاجبة بتنسيق json ) ولا يعدها مياشرة اعد الاجابة المطلوبة
         
         الإجابة المطلوبة بتنسيق JSON:
         {{
@@ -237,7 +239,7 @@ class NewsIntegrationService:
                 return None
             
             # Generate unique ID
-            qa_id = f"news_{hashlib.md5(f'{question}{answer}'.encode()).hexdigest()[:16]}"
+            qa_id = uuid.uuid4()
             
             # Enhance with metadata
             processed_pair = {

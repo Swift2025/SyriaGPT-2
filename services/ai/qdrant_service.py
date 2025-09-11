@@ -42,10 +42,6 @@ class QdrantService:
             logger.error(f"Failed to connect to Qdrant: {e}")
             self.client = None
 
-    async def initialize(self):
-        """Initialize Qdrant service and ensure collection exists"""
-        await self._ensure_collection_exists()
-
     async def _ensure_collection_exists(self):
         """Create collection if it doesn't exist"""
         if not self.client:

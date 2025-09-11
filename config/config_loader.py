@@ -1,238 +1,180 @@
-"""
-Configuration loader for SyriaGPT application.
-Handles environment variables and configuration files.
-"""
-
-import os
 import json
+import os
 import logging
-from typing import Any, Dict, Optional, Union
+from config.logging_config import get_logger, log_function_entry, log_function_exit, log_performance, log_error_with_context
+import time
+from typing import Dict, Any
 from pathlib import Path
 
-logger = logging.getLogger(__name__)
+from .logging_config import get_logger
 
+logger = get_logger(__name__)
 
 class ConfigLoader:
-    """Configuration loader that handles environment variables and JSON config files."""
-    
-    def __init__(self, config_dir: str = "config"):
-        """Initialize configuration loader.
-        
-        Args:
-            config_dir: Directory containing configuration files
-        """
-        self.config_dir = Path(config_dir)
-        self._config_cache: Dict[str, Any] = {}
-        self._load_config_files()
-    
-    def _load_config_files(self):
-        """Load configuration from JSON files."""
-        config_files = [
-            "messages.json",
-            "oauth_providers.json", 
-            "smtp_providers.json",
-            "email_templates.json",
-            "identity_responses.json"
-        ]
-        
-        for config_file in config_files:
-            file_path = self.config_dir / config_file
-            if file_path.exists():
-                try:
-                    with open(file_path, 'r', encoding='utf-8') as f:
-                        config_name = config_file.replace('.json', '')
-                        self._config_cache[config_name] = json.load(f)
-                        logger.debug(f"Loaded configuration from {config_file}")
-                except Exception as e:
-                    logger.error(f"Failed to load {config_file}: {e}")
-            else:
-                logger.warning(f"Configuration file {config_file} not found")
-    
-    def get(self, key: str, default: Any = None) -> Any:
-        """Get configuration value from environment variables or config files.
-        
-        Args:
-            key: Configuration key
-            default: Default value if key not found
-            
-        Returns:
-            Configuration value
-        """
-        # First check environment variables
-        env_value = os.getenv(key)
-        if env_value is not None:
-            # Try to convert to appropriate type
-            if env_value.lower() in ('true', 'false'):
-                return env_value.lower() == 'true'
+    def __init__(self):
+        self.config_path = Path(__file__).parent
+        self._messages = None
+        self._oauth_providers = None
+        self._email_templates = None
+        self._smtp_providers = None
+        self._identity_responses = None
+
+    def load_messages(self) -> Dict[str, Any]:
+        logger.debug("Loading messages configuration")
+        if self._messages is None:
             try:
-                # Try to convert to int
-                if '.' not in env_value:
-                    return int(env_value)
-            except ValueError:
-                pass
+                logger.debug(f"Reading messages from {self.config_path / 'messages.json'}")
+                with open(self.config_path / "messages.json", "r", encoding="utf-8") as f:
+                    self._messages = json.load(f)
+                logger.debug(f"Successfully loaded {len(self._messages)} message categories")
+            except FileNotFoundError:
+                logger.warning("messages.json not found, using empty dict")
+                self._messages = {}
+            except json.JSONDecodeError as e:
+                logger.error(f"Invalid JSON in messages.json: {e}")
+                self._messages = {}
+        return self._messages
+
+    def load_oauth_providers(self) -> Dict[str, Any]:
+        logger.debug("Loading OAuth providers configuration")
+        if self._oauth_providers is None:
             try:
-                # Try to convert to float
-                return float(env_value)
-            except ValueError:
-                pass
-            return env_value
-        
-        # Check config cache
-        if key in self._config_cache:
-            return self._config_cache[key]
-        
-        # Check nested keys in config cache (e.g., "database.host")
-        if '.' in key:
-            keys = key.split('.')
-            value = self._config_cache
+                logger.debug(f"Reading OAuth providers from {self.config_path / 'oauth_providers.json'}")
+                with open(self.config_path / "oauth_providers.json", "r", encoding="utf-8") as f:
+                    self._oauth_providers = json.load(f)
+                logger.debug(f"Successfully loaded {len(self._oauth_providers)} OAuth providers")
+            except FileNotFoundError:
+                logger.warning("oauth_providers.json not found, using empty dict")
+                self._oauth_providers = {}
+            except json.JSONDecodeError as e:
+                logger.error(f"Invalid JSON in oauth_providers.json: {e}")
+                self._oauth_providers = {}
+        return self._oauth_providers
+
+    def load_email_templates(self) -> Dict[str, Any]:
+        logger.debug("Loading email templates configuration")
+        if self._email_templates is None:
             try:
-                for k in keys:
-                    value = value[k]
-                return value
-            except (KeyError, TypeError):
-                pass
+                logger.debug(f"Reading email templates from {self.config_path / 'email_templates.json'}")
+                with open(self.config_path / "email_templates.json", "r", encoding="utf-8") as f:
+                    self._email_templates = json.load(f)
+                logger.debug(f"Successfully loaded {len(self._email_templates)} email templates")
+            except FileNotFoundError:
+                logger.warning("email_templates.json not found, using empty dict")
+                self._email_templates = {}
+            except json.JSONDecodeError as e:
+                logger.error(f"Invalid JSON in email_templates.json: {e}")
+                self._email_templates = {}
+        return self._email_templates
+
+    def load_smtp_providers(self) -> Dict[str, Any]:
+        logger.debug("Loading SMTP providers configuration")
+        if self._smtp_providers is None:
+            try:
+                logger.debug(f"Reading SMTP providers from {self.config_path / 'smtp_providers.json'}")
+                with open(self.config_path / "smtp_providers.json", "r", encoding="utf-8") as f:
+                    self._smtp_providers = json.load(f)
+                logger.debug(f"Successfully loaded {len(self._smtp_providers)} SMTP providers")
+            except FileNotFoundError:
+                logger.warning("smtp_providers.json not found, using empty dict")
+                self._smtp_providers = {}
+            except json.JSONDecodeError as e:
+                logger.error(f"Invalid JSON in smtp_providers.json: {e}")
+                self._smtp_providers = {}
+        return self._smtp_providers
+
+    def load_identity_responses(self) -> Dict[str, Any]:
+        """Load identity responses configuration"""
+        logger.debug("Loading identity responses configuration")
+        if self._identity_responses is None:
+            try:
+                logger.debug(f"Reading identity responses from {self.config_path / 'identity_responses.json'}")
+                with open(self.config_path / "identity_responses.json", "r", encoding="utf-8") as f:
+                    self._identity_responses = json.load(f)
+                logger.debug(f"Successfully loaded identity responses configuration")
+            except FileNotFoundError:
+                logger.warning("identity_responses.json not found, using default responses")
+                self._identity_responses = self._get_default_identity_responses()
+            except json.JSONDecodeError as e:
+                logger.error(f"Invalid JSON in identity_responses.json: {e}")
+                self._identity_responses = self._get_default_identity_responses()
+        return self._identity_responses
+
+    def _get_default_identity_responses(self) -> Dict[str, Any]:
+        """Default identity responses if file is not found"""
+        return {
+            "identity_responses": {
+                "who_are_you": {
+                    "arabic": "أنا SyriaGPT، نموذج ذكاء اصطناعي تم تدريبي من قبل وكالة نظم المعلومات السورية."
+                }
+            }
+        }
+
+    def get_identity_response(self, response_type: str) -> str:
+        """Get identity response for specific type and language"""
+        logger.debug(f"Getting identity response for type: {response_type}, language: arabic")
+        identity_responses = self.load_identity_responses()
         
-        return default
-    
-    def get_database_url(self) -> str:
-        """Get database URL from environment or construct from components."""
-        database_url = self.get("DATABASE_URL")
-        if database_url:
-            return database_url
+        responses = identity_responses.get("identity_responses", {})
+        response_data = responses.get(response_type, {})
         
-        # Construct from components
-        host = self.get("DATABASE_HOST", "localhost")
-        port = self.get("DATABASE_PORT", "5432")
-        name = self.get("DATABASE_NAME", "syriagpt")
-        user = self.get("DATABASE_USER", "admin")
-        password = self.get("DATABASE_PASSWORD", "admin123")
+        if response_data:
+            response = response_data.get("arabic", response_data.get("arabic", ""))
+            if response:
+                logger.debug(f"Found identity response: {response[:50]}...")
+                return response
         
-        return f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{name}"
-    
-    def get_redis_url(self) -> str:
-        """Get Redis URL from environment or construct from components."""
-        redis_url = self.get("REDIS_URL")
-        if redis_url:
-            return redis_url
-        
-        # Construct from components
-        host = self.get("REDIS_HOST", "localhost")
-        port = self.get("REDIS_PORT", "6379")
-        db = self.get("REDIS_DB", "0")
-        
-        return f"redis://{host}:{port}/{db}"
-    
-    def get_qdrant_config(self) -> Dict[str, Any]:
-        """Get Qdrant configuration."""
-        return {
-            "host": self.get("QDRANT_HOST", "localhost"),
-            "port": int(self.get("QDRANT_PORT", "6333")),
-            "collection": self.get("QDRANT_COLLECTION", "syria_qa_vectors"),
-            "api_key": self.get("QDRANT_API_KEY"),
-            "embedding_dim": int(self.get("EMBEDDING_DIM", "768")),
-            "embedding_model": self.get("EMBEDDING_MODEL", "text-embedding-004")
-        }
-    
-    def get_smtp_config(self) -> Dict[str, Any]:
-        """Get SMTP configuration."""
-        return {
-            "host": self.get("SMTP_HOST", "smtp.gmail.com"),
-            "port": int(self.get("SMTP_PORT", "587")),
-            "username": self.get("SMTP_USERNAME"),
-            "password": self.get("SMTP_PASSWORD"),
-            "use_tls": str(self.get("SMTP_USE_TLS", "true")).lower() == "true",
-            "use_ssl": str(self.get("SMTP_USE_SSL", "false")).lower() == "true",
-            "from_name": self.get("EMAIL_FROM_NAME", "SyriaGPT"),
-            "from_address": self.get("EMAIL_FROM_ADDRESS", "noreply@syriagpt.com")
-        }
-    
-    def get_jwt_config(self) -> Dict[str, Any]:
-        """Get JWT configuration."""
-        return {
-            "secret_key": self.get("JWT_SECRET_KEY", self.get("SECRET_KEY", "default-secret")),
-            "algorithm": self.get("JWT_ALGORITHM", "HS256"),
-            "access_token_expire_minutes": int(self.get("JWT_ACCESS_TOKEN_EXPIRE_MINUTES", "30")),
-            "refresh_token_expire_days": int(self.get("JWT_REFRESH_TOKEN_EXPIRE_DAYS", "7"))
-        }
-    
-    def get_oauth_config(self) -> Dict[str, Any]:
-        """Get OAuth configuration."""
-        return {
-            "google_client_id": self.get("GOOGLE_CLIENT_ID"),
-            "google_client_secret": self.get("GOOGLE_CLIENT_SECRET"),
-            "google_redirect_uri": self.get("GOOGLE_REDIRECT_URI", "http://localhost:9000/auth/google/callback")
-        }
-    
-    def get_ai_config(self) -> Dict[str, Any]:
-        """Get AI configuration."""
-        return {
-            "google_api_key": self.get("GOOGLE_API_KEY"),
-            "gemini_api_key": self.get("GEMINI_API_KEY"),
-            "model_name": self.get("AI_MODEL_NAME", "gemini-pro"),
-            "max_tokens": int(self.get("AI_MAX_TOKENS", "2048")),
-            "temperature": float(self.get("AI_TEMPERATURE", "0.7")),
-            "top_p": float(self.get("AI_TOP_P", "0.8")),
-            "top_k": int(self.get("AI_TOP_K", "40"))
-        }
-    
-    def get_logging_config(self) -> Dict[str, Any]:
-        """Get logging configuration."""
-        return {
-            "level": self.get("LOG_LEVEL", "INFO"),
-            "ultra_verbose": str(self.get("ULTRA_VERBOSE", "false")).lower() == "true",
-            "verbose_modules": self.get("VERBOSE_MODULES", "").split(",") if self.get("VERBOSE_MODULES") else [],
-            "file_path": self.get("LOG_FILE_PATH", "logs/syriagpt.log"),
-            "max_size": int(self.get("LOG_MAX_SIZE", "10485760")),  # 10MB
-            "backup_count": int(self.get("LOG_BACKUP_COUNT", "5"))
-        }
-    
-    def get_rate_limit_config(self) -> Dict[str, Any]:
-        """Get rate limiting configuration."""
-        return {
-            "enabled": str(self.get("RATE_LIMIT_ENABLED", "true")).lower() == "true",
-            "requests_per_minute": int(self.get("RATE_LIMIT_REQUESTS_PER_MINUTE", "60")),
-            "burst": int(self.get("RATE_LIMIT_BURST", "10"))
-        }
-    
-    def get_chat_config(self) -> Dict[str, Any]:
-        """Get chat configuration."""
-        return {
-            "max_messages": int(self.get("CHAT_MAX_MESSAGES", "100")),
-            "session_timeout": int(self.get("CHAT_SESSION_TIMEOUT", "3600")),
-            "message_max_length": int(self.get("CHAT_MESSAGE_MAX_LENGTH", "4000"))
-        }
-    
-    def get_totp_config(self) -> Dict[str, Any]:
-        """Get TOTP configuration."""
-        return {
-            "issuer_name": self.get("TOTP_ISSUER_NAME", "SyriaGPT"),
-            "algorithm": self.get("TOTP_ALGORITHM", "SHA1"),
-            "digits": int(self.get("TOTP_DIGITS", "6")),
-            "period": int(self.get("TOTP_PERIOD", "30"))
-        }
-    
-    def is_development(self) -> bool:
-        """Check if running in development mode."""
-        return str(self.get("ENVIRONMENT", "development")).lower() == "development"
-    
-    def is_docker(self) -> bool:
-        """Check if running in Docker."""
-        return str(self.get("DOCKER_ENV", "false")).lower() == "true" or \
-               str(self.get("RUNNING_IN_DOCKER", "false")).lower() == "true"
-    
-    def get_config_file(self, config_name: str) -> Optional[Dict[str, Any]]:
-        """Get configuration from a specific JSON file.
-        
-        Args:
-            config_name: Name of the configuration file (without .json)
-            
-        Returns:
-            Configuration dictionary or None if not found
-        """
-        return self._config_cache.get(config_name)
-    
-    def reload_config(self):
-        """Reload configuration files."""
-        self._config_cache.clear()
-        self._load_config_files()
-        logger.info("Configuration reloaded")
+        # الرد الافتراضي
+        default_response = f"أنا SyriaGPT، مساعدك الذكي من وكالة نظم المعلومات السورية."
+        logger.warning(f"No identity response found for {response_type}, using default")
+        return default_response
+
+    def get_message(self, category: str, key: str, **kwargs) -> str:
+        logger.debug(f"Getting message for category: {category}, key: {key}")
+        messages = self.load_messages()
+        message = messages.get(category, {}).get(key, f"Missing message: {category}.{key}")
+        if kwargs:
+            try:
+                formatted_message = message.format(**kwargs)
+                logger.debug(f"Formatted message: {formatted_message}")
+                return formatted_message
+            except KeyError as e:
+                logger.error(f"Message formatting error for {category}.{key}: {e}")
+                return f"Message formatting error: {e}"
+        logger.debug(f"Returning message: {message}")
+        return message
+
+    def get_oauth_provider_config(self, provider: str) -> Dict[str, Any]:
+        logger.debug(f"Getting OAuth provider config for: {provider}")
+        providers = self.load_oauth_providers()
+        config = providers.get(provider, {})
+        logger.debug(f"OAuth provider config for {provider}: {len(config)} keys found")
+        return config
+
+    def get_email_template(self, template_name: str) -> Dict[str, Any]:
+        logger.debug(f"Getting email template: {template_name}")
+        templates = self.load_email_templates()
+        template = templates.get(template_name, {})
+        logger.debug(f"Email template {template_name}: {len(template)} keys found")
+        return template
+
+    def get_smtp_provider_config(self, provider: str) -> Dict[str, Any]:
+        logger.debug(f"Getting SMTP provider config for: {provider}")
+        providers = self.load_smtp_providers()
+        config = providers.get(provider, {})
+        logger.debug(f"SMTP provider config for {provider}: {len(config)} keys found")
+        return config
+
+    def get_all_smtp_providers(self) -> Dict[str, Any]:
+        logger.debug("Getting all SMTP providers")
+        providers = self.load_smtp_providers()
+        logger.debug(f"Found {len(providers)} SMTP providers")
+        return providers
+
+    def get_config_value(self, key: str, default: Any = None) -> Any:
+        value = os.getenv(key, default)
+        logger.debug(f"Config value for {key}: {value if key != 'SECRET_KEY' else '[REDACTED]'}")
+        return value
+
+
+config_loader = ConfigLoader()

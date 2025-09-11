@@ -1,5 +1,8 @@
-"""
-Database services package for SyriaGPT.
-"""
+# Database services
+from .database import SessionLocal, get_db, engine
 
-__version__ = "2.0.0"
+__all__ = [
+    "SessionLocal",
+    "get_db", 
+    "engine"
+]

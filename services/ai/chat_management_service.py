@@ -1,7 +1,7 @@
 import logging
 import time
 from typing import Dict, List, Optional, Any, Tuple
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import uuid
 import json
 
@@ -454,7 +454,7 @@ class ChatManagementService:
                 "chat": chat.to_dict(),
                 "messages": [msg.to_dict() for msg in chat.messages],
                 "export_info": {
-                    "exported_at": datetime.now(datetime.UTC).isoformat(),
+                    "exported_at": datetime.now(timezone.utc).isoformat(),
                     "format": format,
                     "total_messages": len(chat.messages)
                 }
@@ -469,7 +469,7 @@ class ChatManagementService:
                     "export_id": str(uuid.uuid4()),
                     "format": format,
                     "data": export_data,
-                    "expires_at": (datetime.now(datetime.UTC) + timedelta(hours=24)).isoformat()
+                    "expires_at": (datetime.now(timezone.utc) + timedelta(hours=24)).isoformat()
                 }
             }
             

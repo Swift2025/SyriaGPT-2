@@ -59,6 +59,12 @@ class WebScrapingService:
         self.scraped_urls: Set[str] = set()
         self.last_request_time = 0
         
+        # Initialize timeout variables
+        self.connection_timeout = 10
+        self.read_timeout = 30
+        self.total_timeout = 60
+        self.rss_parse_timeout = 15
+        
         # Only the 5 specific RSS feeds requested
         self.news_sources = {
             "sana_english": {
@@ -664,11 +670,12 @@ class WebScrapingService:
             soup = BeautifulSoup(content, 'html.parser')
             
             # Extract article data
-            title = self._extract_title(soup, source_config["title_selector"])
-            article_content = self._extract_content(soup, source_config["content_selector"])
-            published_date = self._extract_date(soup, source_config["date_selector"])
-            author = self._extract_author(soup, source_config["author_selector"])
-            category = self._extract_category(soup, source_config["category_selector"])
+            content_selectors = source_config.get("content_selectors", {})
+            title = self._extract_title(soup, content_selectors.get("title"))
+            article_content = self._extract_content(soup, content_selectors.get("content"))
+            published_date = self._extract_date(soup, content_selectors.get("date"))
+            author = self._extract_author(soup, content_selectors.get("author"))
+            category = self._extract_category(soup, content_selectors.get("category"))
             
             # Validate content quality
             if not self._is_valid_article(title, article_content):

@@ -1,5 +1,1 @@
-"""
-AI services package for SyriaGPT.
-"""
-
-__version__ = "2.0.0"
+# AI and machine learning services

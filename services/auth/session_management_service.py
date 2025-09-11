@@ -1,392 +1,599 @@
-"""
-Session management service for SyriaGPT.
-Handles user session creation, validation, and management.
-"""
-
 import logging
+import time
+import uuid
+import secrets
 from datetime import datetime, timedelta
-from typing import Optional, List, Dict, Any
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, and_
-from fastapi import HTTPException, status
+from typing import Dict, List, Optional, Tuple, Any
+from sqlalchemy.orm import Session
+from sqlalchemy import and_, or_, func, desc, asc
 
+from models.domain.session import Session as SessionModel
 from models.domain.user import User
-from models.domain.session import UserSession
-from config.config_loader import ConfigLoader
+from models.schemas.request_models import (
+    SessionCreateRequest, SessionUpdateRequest, SessionSearchRequest,
+    SessionBulkActionRequest
+)
+from models.schemas.response_models import (
+    SessionResponse, SessionDetailResponse, SessionListResponse, SessionStatsResponse,
+    SessionCreateResponse, SessionUpdateResponse, SessionBulkActionResponse
+)
+from services.repositories import get_user_repository
+from config.logging_config import get_logger
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class SessionManagementService:
-    """Session management service for handling user sessions."""
+    """
+    Comprehensive session management service with CRUD operations and advanced features.
+    """
     
-    def __init__(self, config: ConfigLoader):
-        """Initialize session management service.
-        
-        Args:
-            config: Configuration loader instance
-        """
-        self.config = config
-        self.jwt_config = config.get_jwt_config()
+    def __init__(self):
+        self.user_repo = get_user_repository()
     
-    async def create_session(
-        self,
-        db: AsyncSession,
-        user: User,
-        access_token: str,
-        refresh_token: str,
-        remember_me: bool = False,
-        ip_address: Optional[str] = None,
-        user_agent: Optional[str] = None,
-        device_info: Optional[Dict[str, Any]] = None,
-        location_info: Optional[Dict[str, Any]] = None
-    ) -> UserSession:
-        """Create a new user session.
-        
-        Args:
-            db: Database session
-            user: User object
-            access_token: JWT access token
-            refresh_token: JWT refresh token
-            remember_me: Whether to remember the session longer
-            ip_address: Client IP address
-            user_agent: Client user agent
-            device_info: Device information
-            location_info: Location information
-            
-        Returns:
-            Created session object
-        """
+    def create_session(self, db: Session, user_id: str, create_request: SessionCreateRequest) -> Optional[SessionCreateResponse]:
+        """Create a new session for a user"""
         try:
-            # Determine session duration
-            if remember_me:
-                expires_hours = 30 * 24  # 30 days
-            else:
-                expires_hours = 24  # 1 day
+            # Check if user exists
+            user = self.user_repo.get_user_by_id(db, user_id)
+            if not user:
+                return None
+            
+            # Generate session tokens
+            session_token = secrets.token_urlsafe(32)
+            refresh_token = secrets.token_urlsafe(32)
+            
+            # Calculate expiry time
+            expires_at = datetime.utcnow() + timedelta(hours=create_request.expires_in_hours)
             
             # Create session
-            session = UserSession.create_session(
-                user_id=str(user.id),
-                session_token=access_token,
+            session = SessionModel(
+                user_id=uuid.UUID(user_id),
+                session_token=session_token,
                 refresh_token=refresh_token,
-                expires_hours=expires_hours,
-                ip_address=ip_address,
-                user_agent=user_agent,
-                device_info=device_info,
-                location_info=location_info
+                device_info=create_request.device_info,
+                ip_address=create_request.ip_address,
+                user_agent=create_request.user_agent,
+                location=create_request.location,
+                is_mobile=create_request.is_mobile,
+                expires_at=expires_at
             )
             
             db.add(session)
-            await db.commit()
-            await db.refresh(session)
+            db.commit()
+            db.refresh(session)
             
-            logger.info(f"Session created for user {user.id}")
-            return session
+            # Generate JWT access token
+            from services.auth import get_auth_service
+            auth_service = get_auth_service()
+            access_token = auth_service.create_access_token(data={"sub": user.email})
+            
+            return SessionCreateResponse(
+                session=SessionResponse(
+                    id=str(session.id),
+                    user_id=str(session.user_id),
+                    session_token=session.session_token,
+                    device_info=session.device_info,
+                    ip_address=session.ip_address,
+                    user_agent=session.user_agent,
+                    location=session.location,
+                    is_active=session.is_active,
+                    is_mobile=session.is_mobile,
+                    last_activity_at=session.last_activity_at,
+                    expires_at=session.expires_at,
+                    created_at=session.created_at,
+                    updated_at=session.updated_at
+                ),
+                access_token=access_token,
+                refresh_token=refresh_token,
+                message="Session created successfully"
+            )
             
         except Exception as e:
-            logger.error(f"Session creation error: {e}")
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail="Failed to create session"
-            )
-    
-    async def get_session_by_token(self, db: AsyncSession, token: str) -> Optional[UserSession]:
-        """Get session by token.
-        
-        Args:
-            db: Database session
-            token: Session token
-            
-        Returns:
-            Session object if found and valid, None otherwise
-        """
-        try:
-            result = await db.execute(
-                select(UserSession).where(
-                    and_(
-                        UserSession.session_token == token,
-                        UserSession.is_active == True,
-                        UserSession.is_revoked == False,
-                        UserSession.expires_at > datetime.utcnow(),
-                        UserSession.is_deleted == 'N'
-                    )
-                )
-            )
-            session = result.scalar_one_or_none()
-            
-            if session:
-                # Update last activity
-                session.update_activity()
-                await db.commit()
-            
-            return session
-            
-        except Exception as e:
-            logger.error(f"Session retrieval error: {e}")
+            logger.error(f"Error creating session for user {user_id}: {e}")
+            db.rollback()
             return None
     
-    async def get_session_by_refresh_token(self, db: AsyncSession, refresh_token: str) -> Optional[UserSession]:
-        """Get session by refresh token.
-        
-        Args:
-            db: Database session
-            refresh_token: Refresh token
-            
-        Returns:
-            Session object if found and valid, None otherwise
-        """
+    def get_session_by_id(self, db: Session, session_id: str) -> Optional[SessionResponse]:
+        """Get session by ID"""
         try:
-            result = await db.execute(
-                select(UserSession).where(
-                    and_(
-                        UserSession.refresh_token == refresh_token,
-                        UserSession.is_active == True,
-                        UserSession.is_revoked == False,
-                        UserSession.expires_at > datetime.utcnow(),
-                        UserSession.is_deleted == 'N'
-                    )
+            session = db.query(SessionModel).filter(SessionModel.id == uuid.UUID(session_id)).first()
+            if session:
+                return SessionResponse(
+                    id=str(session.id),
+                    user_id=str(session.user_id),
+                    session_token=session.session_token,
+                    device_info=session.device_info,
+                    ip_address=session.ip_address,
+                    user_agent=session.user_agent,
+                    location=session.location,
+                    is_active=session.is_active,
+                    is_mobile=session.is_mobile,
+                    last_activity_at=session.last_activity_at,
+                    expires_at=session.expires_at,
+                    created_at=session.created_at,
+                    updated_at=session.updated_at
                 )
-            )
-            return result.scalar_one_or_none()
-            
+            return None
         except Exception as e:
-            logger.error(f"Session retrieval by refresh token error: {e}")
+            logger.error(f"Error getting session by ID {session_id}: {e}")
             return None
     
-    async def revoke_session(self, db: AsyncSession, session: UserSession) -> bool:
-        """Revoke a session.
-        
-        Args:
-            db: Database session
-            session: Session object
-            
-        Returns:
-            True if revoked successfully
-        """
+    def get_session_detail(self, db: Session, session_id: str) -> Optional[SessionDetailResponse]:
+        """Get detailed session information including user data"""
         try:
-            session.revoke_session()
-            await db.commit()
+            session = db.query(SessionModel).filter(SessionModel.id == uuid.UUID(session_id)).first()
+            if not session:
+                return None
             
-            logger.info(f"Session revoked: {session.id}")
-            return True
-            
-        except Exception as e:
-            logger.error(f"Session revocation error: {e}")
-            return False
-    
-    async def revoke_session_by_token(self, db: AsyncSession, token: str) -> bool:
-        """Revoke session by token.
-        
-        Args:
-            db: Database session
-            token: Session token
-            
-        Returns:
-            True if revoked successfully
-        """
-        try:
-            session = await self.get_session_by_token(db, token)
-            if session:
-                return await self.revoke_session(db, session)
-            return False
-            
-        except Exception as e:
-            logger.error(f"Session revocation by token error: {e}")
-            return False
-    
-    async def revoke_all_user_sessions(self, db: AsyncSession, user: User) -> int:
-        """Revoke all sessions for a user.
-        
-        Args:
-            db: Database session
-            user: User object
-            
-        Returns:
-            Number of sessions revoked
-        """
-        try:
-            result = await db.execute(
-                select(UserSession).where(
-                    and_(
-                        UserSession.user_id == user.id,
-                        UserSession.is_active == True,
-                        UserSession.is_revoked == False,
-                        UserSession.is_deleted == 'N'
-                    )
+            # Get user information
+            user = self.user_repo.get_user_by_id(db, str(session.user_id))
+            user_response = None
+            if user:
+                from models.schemas.response_models import UserResponse
+                user_response = UserResponse(
+                    id=str(user.id),
+                    email=user.email,
+                    phone_number=user.phone_number,
+                    first_name=user.first_name,
+                    last_name=user.last_name,
+                    full_name=user.full_name,
+                    profile_picture=user.profile_picture,
+                    oauth_provider=user.oauth_provider,
+                    oauth_provider_id=user.oauth_provider_id,
+                    two_factor_enabled=user.two_factor_enabled,
+                    is_email_verified=user.is_email_verified,
+                    is_phone_verified=user.is_phone_verified,
+                    status=user.status,
+                    last_login_at=user.last_login_at,
+                    created_at=user.created_at,
+                    updated_at=user.updated_at
                 )
-            )
-            sessions = result.scalars().all()
             
-            revoked_count = 0
+            # Parse device info
+            device_summary = self._parse_device_info(session.device_info)
+            
+            # Get location info
+            location_info = self._parse_location_info(session.location)
+            
+            return SessionDetailResponse(
+                session=SessionResponse(
+                    id=str(session.id),
+                    user_id=str(session.user_id),
+                    session_token=session.session_token,
+                    device_info=session.device_info,
+                    ip_address=session.ip_address,
+                    user_agent=session.user_agent,
+                    location=session.location,
+                    is_active=session.is_active,
+                    is_mobile=session.is_mobile,
+                    last_activity_at=session.last_activity_at,
+                    expires_at=session.expires_at,
+                    created_at=session.created_at,
+                    updated_at=session.updated_at
+                ),
+                user=user_response,
+                device_summary=device_summary,
+                location_info=location_info
+            )
+            
+        except Exception as e:
+            logger.error(f"Error getting session detail for {session_id}: {e}")
+            return None
+    
+    def search_sessions(self, db: Session, search_request: SessionSearchRequest) -> SessionListResponse:
+        """Search and filter sessions with pagination"""
+        try:
+            # Build query filters
+            filters = []
+            
+            if search_request.user_id:
+                filters.append(SessionModel.user_id == uuid.UUID(search_request.user_id))
+            
+            if search_request.is_active is not None:
+                filters.append(SessionModel.is_active == search_request.is_active)
+            
+            if search_request.is_mobile is not None:
+                filters.append(SessionModel.is_mobile == search_request.is_mobile)
+            
+            if search_request.ip_address:
+                filters.append(SessionModel.ip_address.ilike(f"%{search_request.ip_address}%"))
+            
+            if search_request.created_after:
+                filters.append(SessionModel.created_at >= search_request.created_after)
+            
+            if search_request.created_before:
+                filters.append(SessionModel.created_at <= search_request.created_before)
+            
+            if search_request.expires_after:
+                filters.append(SessionModel.expires_at >= search_request.expires_after)
+            
+            if search_request.expires_before:
+                filters.append(SessionModel.expires_at <= search_request.expires_before)
+            
+            # Get total count
+            total_count = db.query(SessionModel).filter(and_(*filters)).count()
+            
+            # Calculate pagination
+            offset = (search_request.page - 1) * search_request.page_size
+            total_pages = (total_count + search_request.page_size - 1) // search_request.page_size
+            
+            # Get sessions with pagination
+            sessions = db.query(SessionModel).filter(and_(*filters)).order_by(
+                desc(SessionModel.created_at)
+            ).offset(offset).limit(search_request.page_size).all()
+            
+            # Convert to response models
+            session_responses = []
             for session in sessions:
-                session.revoke_session()
-                revoked_count += 1
+                session_responses.append(SessionResponse(
+                    id=str(session.id),
+                    user_id=str(session.user_id),
+                    session_token=session.session_token,
+                    device_info=session.device_info,
+                    ip_address=session.ip_address,
+                    user_agent=session.user_agent,
+                    location=session.location,
+                    is_active=session.is_active,
+                    is_mobile=session.is_mobile,
+                    last_activity_at=session.last_activity_at,
+                    expires_at=session.expires_at,
+                    created_at=session.created_at,
+                    updated_at=session.updated_at
+                ))
             
-            await db.commit()
-            
-            logger.info(f"Revoked {revoked_count} sessions for user {user.id}")
-            return revoked_count
-            
-        except Exception as e:
-            logger.error(f"Revoke all sessions error: {e}")
-            return 0
-    
-    async def get_user_sessions(self, db: AsyncSession, user: User, active_only: bool = True) -> List[UserSession]:
-        """Get all sessions for a user.
-        
-        Args:
-            db: Database session
-            user: User object
-            active_only: Whether to return only active sessions
-            
-        Returns:
-            List of session objects
-        """
-        try:
-            query = select(UserSession).where(
-                and_(
-                    UserSession.user_id == user.id,
-                    UserSession.is_deleted == 'N'
-                )
+            return SessionListResponse(
+                sessions=session_responses,
+                total_count=total_count,
+                page=search_request.page,
+                page_size=search_request.page_size,
+                total_pages=total_pages
             )
             
-            if active_only:
-                query = query.where(
-                    and_(
-                        UserSession.is_active == True,
-                        UserSession.is_revoked == False,
-                        UserSession.expires_at > datetime.utcnow()
-                    )
-                )
+        except Exception as e:
+            logger.error(f"Error searching sessions: {e}")
+            return SessionListResponse(
+                sessions=[],
+                total_count=0,
+                page=search_request.page,
+                page_size=search_request.page_size,
+                total_pages=0
+            )
+    
+    def update_session(self, db: Session, session_id: str, update_request: SessionUpdateRequest) -> Optional[SessionUpdateResponse]:
+        """Update session information"""
+        try:
+            session = db.query(SessionModel).filter(SessionModel.id == uuid.UUID(session_id)).first()
+            if not session:
+                return None
             
-            result = await db.execute(query)
-            return result.scalars().all()
+            # Update fields
+            if update_request.device_info is not None:
+                session.device_info = update_request.device_info
+            
+            if update_request.location is not None:
+                session.location = update_request.location
+            
+            if update_request.is_mobile is not None:
+                session.is_mobile = update_request.is_mobile
+            
+            session.updated_at = datetime.utcnow()
+            
+            # Save changes
+            db.commit()
+            db.refresh(session)
+            
+            return SessionUpdateResponse(
+                session=SessionResponse(
+                    id=str(session.id),
+                    user_id=str(session.user_id),
+                    session_token=session.session_token,
+                    device_info=session.device_info,
+                    ip_address=session.ip_address,
+                    user_agent=session.user_agent,
+                    location=session.location,
+                    is_active=session.is_active,
+                    is_mobile=session.is_mobile,
+                    last_activity_at=session.last_activity_at,
+                    expires_at=session.expires_at,
+                    created_at=session.created_at,
+                    updated_at=session.updated_at
+                ),
+                message="Session updated successfully"
+            )
             
         except Exception as e:
-            logger.error(f"Get user sessions error: {e}")
-            return []
+            logger.error(f"Error updating session {session_id}: {e}")
+            db.rollback()
+            return None
     
-    async def update_session_tokens(
-        self,
-        db: AsyncSession,
-        old_refresh_token: str,
-        new_access_token: str,
-        new_refresh_token: str
-    ) -> bool:
-        """Update session tokens.
-        
-        Args:
-            db: Database session
-            old_refresh_token: Old refresh token
-            new_access_token: New access token
-            new_refresh_token: New refresh token
-            
-        Returns:
-            True if updated successfully
-        """
+    def revoke_session(self, db: Session, session_id: str) -> bool:
+        """Revoke a session"""
         try:
-            session = await self.get_session_by_refresh_token(db, old_refresh_token)
+            session = db.query(SessionModel).filter(SessionModel.id == uuid.UUID(session_id)).first()
             if not session:
                 return False
             
-            session.session_token = new_access_token
-            session.refresh_token = new_refresh_token
-            session.update_activity()
+            session.is_active = False
+            session.updated_at = datetime.utcnow()
             
-            await db.commit()
+            db.commit()
             return True
             
         except Exception as e:
-            logger.error(f"Update session tokens error: {e}")
+            logger.error(f"Error revoking session {session_id}: {e}")
+            db.rollback()
             return False
     
-    async def extend_session(self, db: AsyncSession, session: UserSession, hours: int = 24) -> bool:
-        """Extend session expiration.
-        
-        Args:
-            db: Database session
-            session: Session object
-            hours: Hours to extend
-            
-        Returns:
-            True if extended successfully
-        """
+    def extend_session(self, db: Session, session_id: str, hours: int) -> Optional[SessionResponse]:
+        """Extend session expiry time"""
         try:
-            session.extend_session(hours)
-            await db.commit()
-            return True
+            session = db.query(SessionModel).filter(SessionModel.id == uuid.UUID(session_id)).first()
+            if not session:
+                return None
             
-        except Exception as e:
-            logger.error(f"Extend session error: {e}")
-            return False
-    
-    async def cleanup_expired_sessions(self, db: AsyncSession) -> int:
-        """Clean up expired sessions.
-        
-        Args:
-            db: Database session
+            session.expires_at = session.expires_at + timedelta(hours=hours)
+            session.updated_at = datetime.utcnow()
             
-        Returns:
-            Number of sessions cleaned up
-        """
-        try:
-            result = await db.execute(
-                select(UserSession).where(
-                    and_(
-                        UserSession.expires_at < datetime.utcnow(),
-                        UserSession.is_deleted == 'N'
-                    )
-                )
+            db.commit()
+            db.refresh(session)
+            
+            return SessionResponse(
+                id=str(session.id),
+                user_id=str(session.user_id),
+                session_token=session.session_token,
+                device_info=session.device_info,
+                ip_address=session.ip_address,
+                user_agent=session.user_agent,
+                location=session.location,
+                is_active=session.is_active,
+                is_mobile=session.is_mobile,
+                last_activity_at=session.last_activity_at,
+                expires_at=session.expires_at,
+                created_at=session.created_at,
+                updated_at=session.updated_at
             )
-            expired_sessions = result.scalars().all()
-            
-            cleaned_count = 0
-            for session in expired_sessions:
-                session.revoke_session()
-                cleaned_count += 1
-            
-            await db.commit()
-            
-            if cleaned_count > 0:
-                logger.info(f"Cleaned up {cleaned_count} expired sessions")
-            
-            return cleaned_count
             
         except Exception as e:
-            logger.error(f"Cleanup expired sessions error: {e}")
+            logger.error(f"Error extending session {session_id}: {e}")
+            db.rollback()
+            return None
+    
+    def revoke_all_user_sessions(self, db: Session, user_id: str) -> int:
+        """Revoke all active sessions for a user"""
+        try:
+            result = db.query(SessionModel).filter(
+                and_(
+                    SessionModel.user_id == uuid.UUID(user_id),
+                    SessionModel.is_active == True
+                )
+            ).update({
+                "is_active": False,
+                "updated_at": datetime.utcnow()
+            })
+            
+            db.commit()
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error revoking all sessions for user {user_id}: {e}")
+            db.rollback()
             return 0
     
-    async def get_session_stats(self, db: AsyncSession, user: User) -> Dict[str, Any]:
-        """Get session statistics for user.
-        
-        Args:
-            db: Database session
-            user: User object
-            
-        Returns:
-            Session statistics
-        """
+    def get_user_session_stats(self, db: Session, user_id: str) -> Dict[str, Any]:
+        """Get session statistics for a user"""
         try:
-            sessions = await self.get_user_sessions(db, user, active_only=False)
+            # Get session counts
+            total_sessions = db.query(SessionModel).filter(
+                SessionModel.user_id == uuid.UUID(user_id)
+            ).count()
             
-            active_sessions = [s for s in sessions if s.is_valid]
-            expired_sessions = [s for s in sessions if s.is_expired]
-            revoked_sessions = [s for s in sessions if s.is_revoked]
+            active_sessions = db.query(SessionModel).filter(
+                and_(
+                    SessionModel.user_id == uuid.UUID(user_id),
+                    SessionModel.is_active == True
+                )
+            ).count()
+            
+            # Get last activity
+            last_session = db.query(SessionModel).filter(
+                SessionModel.user_id == uuid.UUID(user_id)
+            ).order_by(desc(SessionModel.last_activity_at)).first()
+            
+            last_activity = last_session.last_activity_at if last_session else None
             
             return {
-                "total_sessions": len(sessions),
-                "active_sessions": len(active_sessions),
-                "expired_sessions": len(expired_sessions),
-                "revoked_sessions": len(revoked_sessions),
-                "last_activity": max([s.last_activity_at for s in active_sessions]) if active_sessions else None
+                "total_sessions": total_sessions,
+                "active_sessions": active_sessions,
+                "expired_sessions": total_sessions - active_sessions,
+                "last_activity": last_activity
             }
             
         except Exception as e:
-            logger.error(f"Get session stats error: {e}")
+            logger.error(f"Error getting session stats for user {user_id}: {e}")
             return {
                 "total_sessions": 0,
                 "active_sessions": 0,
                 "expired_sessions": 0,
-                "revoked_sessions": 0,
                 "last_activity": None
             }
+    
+    def get_session_stats(self, db: Session) -> SessionStatsResponse:
+        """Get comprehensive session statistics"""
+        try:
+            now = datetime.utcnow()
+            today = now.date()
+            week_ago = now - timedelta(days=7)
+            
+            # Basic counts
+            total_sessions = db.query(SessionModel).count()
+            active_sessions = db.query(SessionModel).filter(SessionModel.is_active == True).count()
+            expired_sessions = total_sessions - active_sessions
+            
+            # Device type counts
+            mobile_sessions = db.query(SessionModel).filter(SessionModel.is_mobile == True).count()
+            desktop_sessions = total_sessions - mobile_sessions
+            
+            # Time-based counts
+            sessions_created_today = db.query(SessionModel).filter(
+                func.date(SessionModel.created_at) == today
+            ).count()
+            
+            sessions_created_this_week = db.query(SessionModel).filter(
+                SessionModel.created_at >= week_ago
+            ).count()
+            
+            # Calculate average session duration
+            active_sessions_data = db.query(SessionModel).filter(
+                SessionModel.is_active == True
+            ).all()
+            
+            total_duration = timedelta()
+            valid_sessions = 0
+            
+            for session in active_sessions_data:
+                if session.expires_at and session.created_at:
+                    duration = session.expires_at - session.created_at
+                    total_duration += duration
+                    valid_sessions += 1
+            
+            average_duration_hours = 0
+            if valid_sessions > 0:
+                average_duration_hours = total_duration.total_seconds() / 3600 / valid_sessions
+            
+            return SessionStatsResponse(
+                total_sessions=total_sessions,
+                active_sessions=active_sessions,
+                expired_sessions=expired_sessions,
+                mobile_sessions=mobile_sessions,
+                desktop_sessions=desktop_sessions,
+                sessions_created_today=sessions_created_today,
+                sessions_created_this_week=sessions_created_this_week,
+                average_session_duration_hours=average_duration_hours
+            )
+            
+        except Exception as e:
+            logger.error(f"Error getting session stats: {e}")
+            return SessionStatsResponse(
+                total_sessions=0,
+                active_sessions=0,
+                expired_sessions=0,
+                mobile_sessions=0,
+                desktop_sessions=0,
+                sessions_created_today=0,
+                sessions_created_this_week=0,
+                average_session_duration_hours=0.0
+            )
+    
+    def bulk_action(self, db: Session, bulk_request: SessionBulkActionRequest) -> SessionBulkActionResponse:
+        """Perform bulk actions on sessions"""
+        try:
+            success_count = 0
+            failed_count = 0
+            failed_sessions = []
+            
+            for session_id in bulk_request.session_ids:
+                try:
+                    session = db.query(SessionModel).filter(SessionModel.id == uuid.UUID(session_id)).first()
+                    if not session:
+                        failed_sessions.append({"session_id": session_id, "error": "Session not found"})
+                        failed_count += 1
+                        continue
+                    
+                    if bulk_request.action == "revoke":
+                        session.is_active = False
+                    elif bulk_request.action == "extend" and bulk_request.expires_in_hours:
+                        session.expires_at = session.expires_at + timedelta(hours=bulk_request.expires_in_hours)
+                    elif bulk_request.action == "update_location":
+                        # This would typically update location based on IP or other data
+                        pass
+                    
+                    session.updated_at = datetime.utcnow()
+                    success_count += 1
+                    
+                except Exception as e:
+                    failed_sessions.append({"session_id": session_id, "error": str(e)})
+                    failed_count += 1
+            
+            db.commit()
+            
+            return SessionBulkActionResponse(
+                success_count=success_count,
+                failed_count=failed_count,
+                failed_sessions=failed_sessions,
+                message=f"Bulk action '{bulk_request.action}' completed"
+            )
+            
+        except Exception as e:
+            logger.error(f"Error performing bulk session action: {e}")
+            db.rollback()
+            return SessionBulkActionResponse(
+                success_count=0,
+                failed_count=len(bulk_request.session_ids),
+                failed_sessions=[{"session_id": sid, "error": str(e)} for sid in bulk_request.session_ids],
+                message=f"Bulk action failed: {str(e)}"
+            )
+    
+    def cleanup_expired_sessions(self, db: Session) -> int:
+        """Clean up expired sessions"""
+        try:
+            now = datetime.utcnow()
+            result = db.query(SessionModel).filter(
+                and_(
+                    SessionModel.expires_at < now,
+                    SessionModel.is_active == True
+                )
+            ).update({
+                "is_active": False,
+                "updated_at": now
+            })
+            
+            db.commit()
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error cleaning up expired sessions: {e}")
+            db.rollback()
+            return 0
+    
+    def _parse_device_info(self, device_info: Optional[str]) -> Optional[str]:
+        """Parse device information into a readable summary"""
+        if not device_info:
+            return None
+        
+        try:
+            # This is a simple parser - in a real implementation, you might use a more sophisticated approach
+            if "mobile" in device_info.lower():
+                return "Mobile Device"
+            elif "tablet" in device_info.lower():
+                return "Tablet"
+            elif "desktop" in device_info.lower():
+                return "Desktop"
+            else:
+                return "Unknown Device"
+        except:
+            return "Unknown Device"
+    
+    def _parse_location_info(self, location: Optional[str]) -> Optional[Dict[str, Any]]:
+        """Parse location information"""
+        if not location:
+            return None
+        
+        try:
+            # This is a placeholder - in a real implementation, you might parse IP geolocation data
+            return {
+                "country": "Unknown",
+                "city": "Unknown",
+                "timezone": "UTC"
+            }
+        except:
+            return None
+
+
+# Service instance
+session_management_service = SessionManagementService()
+
+
+def get_session_management_service() -> SessionManagementService:
+    """Get session management service instance"""
+    return session_management_service
